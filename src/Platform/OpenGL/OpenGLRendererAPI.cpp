@@ -1,0 +1,97 @@
+#include "Kinai/Platform/OpenGL/OpenGLRendererAPI.hpp"
+
+namespace Kinai
+{
+
+#ifdef EG_PLATFORM_DESKTOP
+void	OpenGLMessageCallback(
+	unsigned source,
+	unsigned type,
+	unsigned id,
+	unsigned severity,
+	int length,
+	const char* message,
+	const void* userParam)
+{
+	(void)source;
+	(void)type;
+	(void)id;
+	(void)length;
+	(void)userParam;
+	switch (severity)
+	{
+		case GL_DEBUG_SEVERITY_HIGH:         std::cerr << message << std::endl; return;
+		case GL_DEBUG_SEVERITY_MEDIUM:       std::cerr << message << std::endl; return;
+		case GL_DEBUG_SEVERITY_LOW:          std::cerr << message << std::endl; return;
+		case GL_DEBUG_SEVERITY_NOTIFICATION: std::cout << message << std::endl; return;
+	}
+
+	EG_ASSERT(false, "Unknown severity level!");
+}
+#endif
+
+void	OpenGLRendererAPI::Init()
+{
+	EG_PRINT_FUNC();
+
+#if defined(EG_DEV) && defined(EG_PLATFORM_DESKTOP)
+	glEnable(GL_DEBUG_OUTPUT);
+	glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
+	glDebugMessageCallback(OpenGLMessageCallback, nullptr);
+	glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DEBUG_SEVERITY_NOTIFICATION, 0, NULL, GL_FALSE);
+#endif
+
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LESS);
+
+	glDisable(GL_BLEND);
+	glDisable(GL_STENCIL_TEST);
+
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_BACK);
+
+#ifdef EG_PLATFORM_DESKTOP
+	glEnable(GL_LINE_SMOOTH);
+#endif
+}
+
+void	OpenGLRendererAPI::SetViewport(uint32_t x, uint32_t y, uint32_t width, uint32_t height)
+{
+	glViewport(x, y, width, height);
+}
+
+void	OpenGLRendererAPI::SetClearColor(const glm::vec4& color)
+{
+	glClearColor(color.r, color.g, color.b, color.a);
+}
+
+void	OpenGLRendererAPI::Clear()
+{
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
+
+void	OpenGLRendererAPI::DrawIndexed(const std::shared_ptr<VertexArray>& vertexArray, uint32_t indexCount)
+{
+	vertexArray->Bind();
+	uint32_t count = indexCount ? indexCount : vertexArray->GetIndexBuffer()->GetCount();
+	glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_INT, nullptr);
+}
+
+void	OpenGLRendererAPI::DrawLines(const std::shared_ptr<VertexArray>& vertexArray, uint32_t vertexCount)
+{
+	vertexArray->Bind();
+	glDrawArrays(GL_LINES, 0, vertexCount);
+}
+
+void	OpenGLRendererAPI::DrawTriangles(const std::shared_ptr<VertexArray>& vertexArray, uint32_t vertexCount)
+{
+	vertexArray->Bind();
+	glDrawArrays(GL_TRIANGLES, 0, vertexCount);
+}
+
+void	OpenGLRendererAPI::SetLineWidth(float width)
+{
+	glLineWidth(width);
+}
+
+} // Kinai

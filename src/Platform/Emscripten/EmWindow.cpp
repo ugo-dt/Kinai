@@ -1,0 +1,291 @@
+#include "Kinai/Platform/Emscripten/Emscripten.hpp"
+#include "Kinai/Core/Application.hpp"
+#include "Kinai/Core/Core.hpp"
+
+namespace Kinai
+{
+
+EmWindow*				EmWindow::_instance;
+const char*				EmWindow::_canvas_name;
+int						EmWindow::_sample_count;
+double					EmWindow::_width;
+double					EmWindow::_height;
+GLint					EmWindow::_framebuffer;
+Window::EventCallback	EmWindow::_eventCallback;
+
+EmWindow::EmWindow(const WindowProps& props, int flags)
+{
+	EG_PRINT_FUNC();
+
+	EG_ASSERT(!_instance, "EmWindow already exists!");
+	_instance = this;
+
+	_canvas_name = "#canvas";
+	emscripten_set_window_title(props.title.c_str());
+	emscripten_get_element_css_size(_canvas_name, &_width, &_height);
+	emscripten_set_canvas_element_size(_canvas_name, _width, _height);
+	emscripten_set_resize_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, 0, false, EmWindow::OnWindowResize);
+	EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx;
+	EmscriptenWebGLContextAttributes attrs;
+	emscripten_webgl_init_context_attributes(&attrs);
+	attrs.antialias = flags & EMSC_ANTIALIAS;
+	attrs.majorVersion = 2;
+	_sample_count = (flags & EMSC_ANTIALIAS) ? 4 : 1;
+	ctx = emscripten_webgl_create_context(_canvas_name, &attrs);
+	emscripten_webgl_make_context_current(ctx);
+	glGetIntegerv(GL_FRAMEBUFFER_BINDING, (GLint *)&_framebuffer);
+
+	emscripten_set_keydown_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, this, true, EmWindow::OnKeyPressed);
+	emscripten_set_keyup_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, this, true, EmWindow::OnKeyReleased);
+	emscripten_set_keypress_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, this, true, EmWindow::OnChar);
+	emscripten_set_mousedown_callback("canvas", this, true, EmWindow::OnMouseButtonDown);
+	emscripten_set_mouseup_callback("canvas", this, true, EmWindow::OnMouseButtonUp);
+	// emscripten_set_mouseenter_callback("canvas", this, true,
+	// 	[](int, const EmscriptenMouseEvent*, void*)->EM_BOOL {
+	// 		auto& io = ImGui::GetIO();
+	// 		for (int i = 0; i < 3; i++) {
+	// 			_button_down[i] = _button_up[i] = false;
+	// 			io.MouseDown[i] = false;
+	// 		}
+	// 		return true;
+	// 	});
+	// emscripten_set_mouseleave_callback("canvas", this, true,
+	// 	[](int, const EmscriptenMouseEvent*, void*)->EM_BOOL {
+	// 		auto& io = ImGui::GetIO();
+	// 		for (int i = 0; i < 3; i++) {
+	// 			_button_down[i] = _button_up[i] = false;
+	// 			io.MouseDown[i] = false;
+	// 		}
+	// 		return true;
+	// 	});
+	emscripten_set_mousemove_callback("canvas", this, true, EmWindow::OnMouseMotion);
+	emscripten_set_wheel_callback("canvas", this, true, EmWindow::OnMouseWheel);
+}
+
+void	EmWindow::OnUpdate()
+{
+	EG_PRINT_FUNC();
+}
+
+void*	EmWindow::GetNativeWindow() const
+{
+	return nullptr;
+}
+
+glm::ivec2		EmWindow::GetSize() const
+{
+	EG_PRINT_FUNC();
+
+	return glm::ivec2(GetWidth(), GetHeight());
+}
+
+uint32_t	EmWindow::GetWidth() const
+{
+	EG_PRINT_FUNC();
+
+	return _width;
+}
+
+uint32_t	EmWindow::GetHeight() const
+{
+	EG_PRINT_FUNC();
+
+	return _height;
+}
+
+sg_environment	EmWindow::GetSokolEnvironment() const
+{
+	EG_PRINT_FUNC();
+
+	sg_environment env = {};
+
+	env.defaults.color_format = SG_PIXELFORMAT_RGBA8;
+	env.defaults.depth_format = SG_PIXELFORMAT_DEPTH_STENCIL;
+	env.defaults.sample_count = _sample_count;
+	return env;
+}
+
+sg_swapchain	EmWindow::GetSokolSwapchain() const
+{
+	EG_PRINT_FUNC();
+
+	sg_swapchain swapchain = {};
+
+	swapchain.width = (int)_width;
+	swapchain.height = (int)_height;
+	swapchain.sample_count = _sample_count;
+	swapchain.color_format = SG_PIXELFORMAT_RGBA8;
+	swapchain.depth_format = SG_PIXELFORMAT_DEPTH_STENCIL;
+	swapchain.gl.framebuffer = (uint32_t)_framebuffer;
+	return swapchain;
+}
+
+bool	EmWindow::IsVSync() const
+{
+	EG_PRINT_FUNC();
+
+	int mode;
+	emscripten_get_main_loop_timing(&mode, nullptr);
+	return mode == EM_TIMING_RAF;
+}
+
+void	EmWindow::SetVSync(bool enabled)
+{
+	EG_PRINT_FUNC();
+
+	if (enabled)
+		emscripten_set_main_loop_timing(EM_TIMING_RAF, 1);
+	else
+		emscripten_set_main_loop_timing(EM_TIMING_SETTIMEOUT, 1);
+}
+
+void	EmWindow::SetEventCallback(const EventCallback &callback)
+{
+	EG_PRINT_FUNC();
+
+	_eventCallback = callback;
+}
+
+void	EmWindow::SetTitle(const std::string &title)
+{
+	EG_PRINT_FUNC();
+
+	emscripten_set_window_title(title.c_str());
+}
+
+bool	EmWindow::OnWindowResize(int, const EmscriptenUiEvent *, void *)
+{
+	EG_PRINT_FUNC();
+
+	emscripten_get_element_css_size(_canvas_name, &_width, &_height);
+	emscripten_set_canvas_element_size(_canvas_name, _width, _height);
+	return true;
+}
+
+bool	EmWindow::OnKeyPressed(int, const EmscriptenKeyboardEvent *e, void *)
+{
+	if (e->keyCode < 512)
+	{
+		ImGuiKey imguiKey = Em_KeyEventToImGuiKey(e);
+		ImGui::GetIO().AddKeyEvent(imguiKey, true);
+
+		KeyCode key = Em_KeyEventToKeyCode(e);
+		KeyPressedEvent event(key);
+		_eventCallback(event);
+	}
+
+	// Only forward alpha-numeric keys to browser
+	return e->keyCode < 32;
+}
+
+bool	EmWindow::OnKeyReleased(int, const EmscriptenKeyboardEvent *e, void *)
+{
+	if (e->keyCode < 512)
+	{
+		ImGuiKey imguiKey = Em_KeyEventToImGuiKey(e);
+		ImGui::GetIO().AddKeyEvent(imguiKey, false);
+
+		KeyCode key = Em_KeyEventToKeyCode(e);
+		KeyReleasedEvent event(key);
+		_eventCallback(event);
+	}
+	// Only forward alpha-numeric keys to browser
+	return e->keyCode < 32;
+}
+
+bool	EmWindow::OnChar(int, const EmscriptenKeyboardEvent *e, void *)
+{
+	ImGui::GetIO().AddInputCharacter((ImWchar)e->charCode);
+	return true;
+}
+
+bool	EmWindow::OnMouseButtonDown(int, const EmscriptenMouseEvent *e, void *)
+{
+	/**
+	 * Emscripten mouse buttons:
+	 * Left: 0, Middle: 1, Right: 2, X1: 3, X2: 4
+	 * 
+	 * ImGui mouse buttons:
+	 * Left: 0, Middle: 2, Right: 1, X1: 3, X2: 4
+	 */
+	switch (e->button)
+	{
+		case 0:
+		{
+			ImGui::GetIO().AddMouseButtonEvent(2, true);
+
+			MouseButtonPressedEvent event(Mouse::ButtonMiddle);
+			_eventCallback(event);
+			break;
+		}
+		case 2:
+		{
+			ImGui::GetIO().AddMouseButtonEvent(1, true);
+
+			MouseButtonPressedEvent event(Mouse::ButtonRight);
+			_eventCallback(event);
+			break;
+		}
+		default:
+		{
+			ImGui::GetIO().AddMouseButtonEvent(e->button, true);
+
+			MouseButtonPressedEvent event(e->button);
+			_eventCallback(event);
+			break;
+		}
+	}
+	return true;
+}
+
+bool	EmWindow::OnMouseButtonUp(int, const EmscriptenMouseEvent *e, void *)
+{
+	switch (e->button)
+	{
+		case 1:
+		{
+			ImGui::GetIO().AddMouseButtonEvent(2, false);
+
+			MouseButtonReleasedEvent event(Mouse::ButtonMiddle);
+			_eventCallback(event);
+			break;
+		}
+		case 2:
+		{
+			ImGui::GetIO().AddMouseButtonEvent(1, false);
+
+			MouseButtonReleasedEvent event(Mouse::ButtonRight);
+			_eventCallback(event);
+			break;
+		}
+		default:
+		{
+			ImGui::GetIO().AddMouseButtonEvent(e->button, false);
+
+			MouseButtonReleasedEvent event(e->button);
+			_eventCallback(event);
+			break;
+		}
+	}
+	return true;
+}
+
+bool	EmWindow::OnMouseMotion(int, const EmscriptenMouseEvent *e, void *)
+{
+	ImGui::GetIO().AddMousePosEvent(e->targetX, e->targetY);
+
+	MouseMotionEvent event(e->targetX, e->targetY, e->movementX, e->movementY);
+	_eventCallback(event);
+	return true;
+}
+
+bool	EmWindow::OnMouseWheel(int, const EmscriptenWheelEvent *e, void *)
+{
+	ImGui::GetIO().AddMouseWheelEvent(e->deltaX, e->deltaY);
+
+	MouseWheelEvent event(e->deltaX, e->deltaY);
+	_eventCallback(event);
+	return true;
+}
+
+} // Kinai

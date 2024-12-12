@@ -1,0 +1,40 @@
+#pragma once
+
+#include "Kinai/Core/Core.hpp"
+#include "Kinai/Core/Window.hpp"
+
+namespace Kinai
+{
+
+class HeadlessWindow : public Window
+{
+public:
+	HeadlessWindow(const WindowProps& props);
+	~HeadlessWindow();
+
+	void			OnUpdate() override;
+
+	void*			GetNativeWindow() const override;
+	glm::ivec2		GetSize() const override;
+	uint32_t		GetWidth() const override;
+	uint32_t		GetHeight() const override;
+	bool			GetRelativeMouseMode() const override;
+
+	bool			IsVSync() const override;
+	bool			IsFocused() const override;
+	bool			IsHovered() const override;
+
+	sg_environment	GetSokolEnvironment() const override;
+	sg_swapchain	GetSokolSwapchain() const override;
+
+	void			SetVSync(bool enabled) override;
+	void			SetEventCallback(const EventCallback &callback) override;
+	void			SetTitle(const std::string &title) override;
+	void			SetRelativeMouseMode(bool enabled) override;
+	void			WarpMouse(float x, float y) override;
+
+private:
+	EventCallback	_eventCallback;
+};
+
+} // Kinai
