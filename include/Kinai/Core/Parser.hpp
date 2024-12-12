@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 12:54:59 by ugdaniel          #+#    #+#             */
-/*   Updated: 2024/12/12 11:43:26 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2024/12/12 17:18:17 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,15 @@ public:
 public:
 	Parser(const std::string& filepath);
 	
-	static EG_INLINE string_type	YELLOW(const string_type &s);
-	static EG_INLINE string_type	CYAN(const string_type &s);
-	static EG_INLINE string_type	MAGENTA(const string_type &s);
-	static EG_INLINE string_type	RED(const string_type &s);
-	static EG_INLINE string_type	WHITE(const string_type &s);
+	static KN_INLINE string_type	YELLOW(const string_type &s);
+	static KN_INLINE string_type	CYAN(const string_type &s);
+	static KN_INLINE string_type	MAGENTA(const string_type &s);
+	static KN_INLINE string_type	RED(const string_type &s);
+	static KN_INLINE string_type	WHITE(const string_type &s);
 
-	static constexpr EG_INLINE bool	iterator_equals(const_iterator &it, const token_type &t)
+	static constexpr KN_INLINE bool	iterator_equals(const_iterator &it, const token_type &t)
 		{ return (*it).type == t; }
-	static constexpr EG_INLINE bool	iterator_equals(const_iterator &it, const string_type &s)
+	static constexpr KN_INLINE bool	iterator_equals(const_iterator &it, const string_type &s)
 		{ return (*it).text == s; }
 
 protected:
@@ -70,34 +70,34 @@ protected:
 	std::vector<value_type>	_tokens;
 
 protected:
-	EG_INLINE iterator			_make_iter(pointer p);
-	EG_INLINE const_iterator	_make_iter(pointer p) const;
-	EG_INLINE iterator			_make_iter(size_t pos);
-	EG_INLINE const_iterator	_make_iter(size_t pos) const;
-	EG_INLINE bool				_is_token(size_t pos, const token_type &t);
+	KN_INLINE iterator			_make_iter(pointer p);
+	KN_INLINE const_iterator	_make_iter(pointer p) const;
+	KN_INLINE iterator			_make_iter(size_t pos);
+	KN_INLINE const_iterator	_make_iter(size_t pos) const;
+	KN_INLINE bool				_is_token(size_t pos, const token_type &t);
 
-	EG_INLINE string_type	_make_error_string(const string_type &error);
-	EG_INLINE string_type	_make_error_string(const_iterator& error_it, const string_type &error);
-	EG_INLINE string_type	_make_warning_string(const string_type &warning);
-	EG_INLINE string_type	_make_warning_string(const_iterator& warning_it, const string_type &warning);
-	EG_INLINE string_type	_make_note_string(const_iterator& note_it, const string_type &note);
+	KN_INLINE string_type	_make_error_string(const string_type &error);
+	KN_INLINE string_type	_make_error_string(const_iterator& error_it, const string_type &error);
+	KN_INLINE string_type	_make_warning_string(const string_type &warning);
+	KN_INLINE string_type	_make_warning_string(const_iterator& warning_it, const string_type &warning);
+	KN_INLINE string_type	_make_note_string(const_iterator& note_it, const string_type &note);
 
-	EG_INLINE void	_throw_invalid_argument(const char *) EG_NORETURN;
-	EG_INLINE void	_throw_parser(const string_type &error) EG_NORETURN;
-	EG_INLINE void	_throw_parser(const_iterator& it, const string_type &error) EG_NORETURN;
-	EG_INLINE void	_throw_parser_with_note(const_iterator& it, const string_type &error, const_iterator& note_it, const string_type &note) EG_NORETURN;
+	KN_INLINE void	_throw_invalid_argument(const char *) KN_NORETURN;
+	KN_INLINE void	_throw_parser(const string_type &error) KN_NORETURN;
+	KN_INLINE void	_throw_parser(const_iterator& it, const string_type &error) KN_NORETURN;
+	KN_INLINE void	_throw_parser_with_note(const_iterator& it, const string_type &error, const_iterator& note_it, const string_type &note) KN_NORETURN;
 
-	static EG_INLINE string_type	WHITE(const_iterator& it);
-	static EG_INLINE string_type	WHITE(const string_type &s, const_iterator& it);
-	static EG_INLINE string_type	WHITE(const string_type &s, const_iterator& it, const string_type &name);
+	static KN_INLINE string_type	WHITE(const_iterator& it);
+	static KN_INLINE string_type	WHITE(const string_type &s, const_iterator& it);
+	static KN_INLINE string_type	WHITE(const string_type &s, const_iterator& it, const string_type &name);
 
 private:
-	EG_INLINE string_type	_make_log_string_impl(const string_type &log_name, const string_type &log);
-	EG_INLINE string_type	_make_log_string_impl(const_iterator& it, const string_type &log_name, const string_type &log);
+	KN_INLINE string_type	_make_log_string_impl(const string_type &log_name, const string_type &log);
+	KN_INLINE string_type	_make_log_string_impl(const_iterator& it, const string_type &log_name, const string_type &log);
 };
 
 template <class Token>
-EG_NORETURN EG_INLINE void
+KN_NORETURN KN_INLINE void
 Parser<Token>::_throw_invalid_argument(const char *arg)
 {
 	throw std::invalid_argument(arg);
@@ -110,98 +110,98 @@ Parser<Token>::Parser(const std::string& filepath)
 }
 
 template <class Token>
-EG_NODISCARD EG_INLINE typename Parser<Token>::string_type
+KN_NODISCARD KN_INLINE typename Parser<Token>::string_type
 Parser<Token>::YELLOW(const string_type &s)
 {
 	return "\033[93m" + string_type(s) + "\033[39m";
 }
 
 template <class Token>
-EG_NODISCARD EG_INLINE typename Parser<Token>::string_type
+KN_NODISCARD KN_INLINE typename Parser<Token>::string_type
 Parser<Token>::CYAN(const string_type &s)
 {
 	return "\033[96m" + string_type(s) + "\033[39m";
 }
 
 template <class Token>
-EG_NODISCARD EG_INLINE typename Parser<Token>::string_type
+KN_NODISCARD KN_INLINE typename Parser<Token>::string_type
 Parser<Token>::MAGENTA(const string_type &s)
 {
 	return "\033[95m" + string_type(s) + "\033[39m";
 }
 
 template <class Token>
-EG_NODISCARD EG_INLINE typename Parser<Token>::string_type
+KN_NODISCARD KN_INLINE typename Parser<Token>::string_type
 Parser<Token>::RED(const string_type &s)
 {
 	return "\033[91m" + string_type(s) + "\033[39m";
 }
 
 template <class Token>
-EG_NODISCARD EG_INLINE typename Parser<Token>::string_type
+KN_NODISCARD KN_INLINE typename Parser<Token>::string_type
 Parser<Token>::WHITE(const string_type &s)
 {
 	return "\033[97m" + string_type(s) + "\033[39m";
 }
 
 template <class Token>
-EG_NODISCARD EG_INLINE typename Parser<Token>::string_type
+KN_NODISCARD KN_INLINE typename Parser<Token>::string_type
 Parser<Token>::WHITE(const_iterator& it)
 {
 	return "\033[97m" + (*it).text + "\033[39m";
 }
 
 template <class Token>
-EG_NODISCARD EG_INLINE typename Parser<Token>::string_type
+KN_NODISCARD KN_INLINE typename Parser<Token>::string_type
 Parser<Token>::WHITE(const string_type &s, const_iterator& it)
 {
 	return "\033[97m" + string_type(s) + (*it).text + "\033[39m";
 }
 
 template <class Token>
-EG_NODISCARD EG_INLINE typename Parser<Token>::string_type
+KN_NODISCARD KN_INLINE typename Parser<Token>::string_type
 Parser<Token>::WHITE(const string_type &s, const_iterator& it, const string_type &name)
 {
 	return "\033[97m" + string_type(s) + (*it).text + (name.empty() ? "" : " ") + name + "\033[39m";
 }
 
 template <class Tp>
-EG_NODISCARD EG_INLINE typename Parser<Tp>::iterator
+KN_NODISCARD KN_INLINE typename Parser<Tp>::iterator
 Parser<Tp>::_make_iter(pointer p)
 {
 	return iterator(p);
 }
 
 template <class Tp>
-EG_NODISCARD EG_INLINE typename Parser<Tp>::const_iterator
+KN_NODISCARD KN_INLINE typename Parser<Tp>::const_iterator
 Parser<Tp>::_make_iter(pointer p) const
 {
 	return const_iterator(p);
 }
 
 template <class Tp>
-EG_NODISCARD EG_INLINE typename Parser<Tp>::iterator
+KN_NODISCARD KN_INLINE typename Parser<Tp>::iterator
 Parser<Tp>::_make_iter(size_t pos)
 {
 	return _tokens.begin() + pos;
 }
 
 template <class Tp>
-EG_NODISCARD EG_INLINE typename Parser<Tp>::const_iterator
+KN_NODISCARD KN_INLINE typename Parser<Tp>::const_iterator
 Parser<Tp>::_make_iter(size_t pos) const
 {
 	return _tokens.cbegin() + pos;
 }
 
 template <class Tp>
-EG_INLINE bool
+KN_INLINE bool
 Parser<Tp>::_is_token(size_t pos, const token_type &t)
 {
 	return (_make_iter(pos)) == t;
 }
 
 template <class Token>
-EG_NODISCARD EG_INLINE typename Parser<Token>::string_type
+KN_NODISCARD KN_INLINE typename Parser<Token>::string_type
 Parser<Token>::_make_log_string_impl(const_iterator& it, const string_type &log_type, const string_type &arg)
 {
 	return string_type(_filepath + ":" +
@@ -212,63 +212,63 @@ Parser<Token>::_make_log_string_impl(const_iterator& it, const string_type &log_
 }
 
 template <class Token>
-EG_NODISCARD EG_INLINE typename Parser<Token>::string_type
+KN_NODISCARD KN_INLINE typename Parser<Token>::string_type
 Parser<Token>::_make_log_string_impl(const string_type &log_type, const string_type &arg)
 {
 	return string_type(_filepath + ": " + log_type + "\033[39m " + arg);
 }
 
 template <class Token>
-EG_NODISCARD EG_INLINE typename Parser<Token>::string_type
+KN_NODISCARD KN_INLINE typename Parser<Token>::string_type
 Parser<Token>::_make_error_string(const_iterator& error_it, const string_type &error)
 {
 	return _make_log_string_impl(error_it, RED("error:"), error);
 }
 
 template <class Token>
-EG_NODISCARD EG_INLINE typename Parser<Token>::string_type
+KN_NODISCARD KN_INLINE typename Parser<Token>::string_type
 Parser<Token>::_make_error_string(const string_type &error)
 {
 	return _make_log_string_impl(RED("error:"), error);
 }
 
 template <class Token>
-EG_NODISCARD EG_INLINE typename Parser<Token>::string_type
+KN_NODISCARD KN_INLINE typename Parser<Token>::string_type
 Parser<Token>::_make_warning_string(const_iterator& warning_it, const string_type &warning)
 {
 	return _make_log_string_impl(warning_it, MAGENTA("warning:"), warning);
 }
 
 template <class Token>
-EG_NODISCARD EG_INLINE typename Parser<Token>::string_type
+KN_NODISCARD KN_INLINE typename Parser<Token>::string_type
 Parser<Token>::_make_warning_string(const string_type &warning)
 {
 	return _make_log_string_impl(MAGENTA("warning:"), warning);
 }
 
 template <class Token>
-EG_NODISCARD EG_INLINE typename Parser<Token>::string_type
+KN_NODISCARD KN_INLINE typename Parser<Token>::string_type
 Parser<Token>::_make_note_string(const_iterator& note_it, const string_type &note)
 {
 	return _make_log_string_impl(note_it, CYAN("note:"), note);
 }
 
 template <class Token>
-EG_NORETURN EG_INLINE void
+KN_NORETURN KN_INLINE void
 Parser<Token>::_throw_parser(const_iterator& it, const string_type &error)
 {
 	_throw_invalid_argument(_make_error_string(it, error).c_str());
 }
 
 template <class Token>
-EG_NORETURN EG_INLINE void
+KN_NORETURN KN_INLINE void
 Parser<Token>::_throw_parser(const string_type &error)
 {
 	_throw_invalid_argument(_make_error_string(error).c_str());
 }
 
 template <class Token>
-EG_NORETURN EG_INLINE void
+KN_NORETURN KN_INLINE void
 Parser<Token>::_throw_parser_with_note(
 	const_iterator& it, const string_type &error,
 	const_iterator& note_it, const string_type &note)
@@ -277,7 +277,7 @@ Parser<Token>::_throw_parser_with_note(
 }
 
 // trim from start (in place)
-static EG_INLINE void	ltrim(std::string &s)
+static KN_INLINE void	ltrim(std::string &s)
 {
 	s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](unsigned char ch) {
 		return !std::isspace(ch);
@@ -285,7 +285,7 @@ static EG_INLINE void	ltrim(std::string &s)
 }
 
 // trim from end (in place)
-static EG_INLINE void	rtrim(std::string &s)
+static KN_INLINE void	rtrim(std::string &s)
 {
 	s.erase(std::find_if(s.rbegin(), s.rend(), [](unsigned char ch) {
 		return !std::isspace(ch);
@@ -293,13 +293,13 @@ static EG_INLINE void	rtrim(std::string &s)
 }
 
 // trim from both ends (in place)
-static EG_INLINE void	trim(std::string &s)
+static KN_INLINE void	trim(std::string &s)
 {
     rtrim(s);
     ltrim(s);
 }
 
-static EG_INLINE std::string	str_toupper(std::string s)
+static KN_INLINE std::string	str_toupper(std::string s)
 {
     std::transform(s.begin(), s.end(), s.begin(), [](unsigned char c){ return std::toupper(c); });
     return s;

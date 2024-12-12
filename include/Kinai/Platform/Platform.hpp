@@ -5,7 +5,7 @@
 	/* Windows x64/x86 */
 	#if defined(_WIN64)
 		/* Windows x64  */
-		#define EG_PLATFORM_WINDOWS
+		#define KN_PLATFORM_WINDOWS
 	#else
 		/* Windows x86 */
 		#error "x86 Builds are not supported!"
@@ -19,27 +19,27 @@
 	#if TARGET_IPHONE_SIMULATOR == 1
 		#error "IOS simulator is not supported!"
 	#elif TARGET_OS_IPHONE == 1
-		#define EG_PLATFORM_IOS
+		#define KN_PLATFORM_IOS
 		#error "IOS is not supported!"
 	#elif TARGET_OS_MAC == 1
-		#define EG_PLATFORM_MACOS
+		#define KN_PLATFORM_MACOS
 	#else
 		#error "Unknown Apple platform!"
 	#endif
 #elif defined(__ANDROID__)
-	#define EG_PLATFORM_ANDROID
+	#define KN_PLATFORM_ANDROID
 	#error "Android is not supported!"
 #elif defined(__EMSCRIPTEN__)
-	#define EG_PLATFORM_WEB
+	#define KN_PLATFORM_WEB
 #elif defined(__linux__)
-	#define EG_PLATFORM_LINUX
+	#define KN_PLATFORM_LINUX
 #else
 	/* Unknown compiler/platform */
 	#error "Unknown platform!"
 #endif // End of platform detection
 
-#if defined(EG_PLATFORM_WINDOWS) || defined(EG_PLATFORM_LINUX) || defined(EG_PLATFORM_MACOS)
-	#define EG_PLATFORM_DESKTOP
+#if defined(KN_PLATFORM_WINDOWS) || defined(KN_PLATFORM_LINUX) || defined(KN_PLATFORM_MACOS)
+	#define KN_PLATFORM_DESKTOP
 	#include <glad/glad.h>
 	#if defined(_WIN32)
 		#define WIN32_MEAN_AND_LEAN
@@ -53,7 +53,7 @@
 		#include <GL/gl.h>
 		#include <GL/glu.h>
 	#endif
-#elif defined(EG_PLATFORM_WEB)
+#elif defined(KN_PLATFORM_WEB)
 	#include <emscripten/emscripten.h>
 	#include <emscripten/key_codes.h>
 	#include <GLES3/gl3.h>
@@ -62,6 +62,6 @@
 	#define glCreateTextures		glGenTextures
 #endif
 
-#if !defined(EG_OPENGL) && !defined(EG_HEADLESS)
-# error "Please select a backend by defining EG_OPENGL or EG_HEADLESS"
+#if !defined(KN_OPENGL) && !defined(KN_HEADLESS)
+# error "Please select a backend by defining KN_OPENGL or KN_HEADLESS"
 #endif

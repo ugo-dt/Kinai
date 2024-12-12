@@ -9,15 +9,15 @@ namespace Kinai
 
 std::shared_ptr<VertexArray>	VertexArray::Create()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
-#ifdef EG_HEADLESS
+#ifdef KN_HEADLESS
 	return std::make_shared<HeadlessVertexArray>();
-#elif defined(EG_OPENGL)
+#elif defined(KN_OPENGL)
 	return std::make_shared<OpenGLVertexArray>();
 #endif
 
-	EG_ASSERT(false, "Unknown RendererAPI");
+	KN_ASSERT(false, "Unknown RendererAPI");
 	return nullptr;
 }
 

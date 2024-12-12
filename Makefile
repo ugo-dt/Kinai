@@ -1,41 +1,49 @@
 ifndef __KINAI_MK
 __KINAI_MK = 1
 
-include $(dir $(abspath $(lastword $(MAKEFILE_LIST))))make/lib.mk
+ifndef KINAI_PATH
+  KINAI_PATH = $(CURDIR)
+endif
 
-KINAI = $(__kinai_root_dir)/bin/$(target)/libKinai.a
-KINAI_SRC = $(wildcard								\
-	$(__kinai_root_dir)/src/Core/*.cpp				\
-	$(__kinai_root_dir)/src/ImGui/*.cpp				\
-	$(__kinai_root_dir)/src/Renderer/*.cpp			\
-	$(__kinai_root_dir)/src/Core/*.cpp				\
-	$(__kinai_root_dir)/src/Platform/SDL/*.cpp		\
-	$(__kinai_root_dir)/src/Platform/OpenGL/*.cpp	\
+include $(KINAI_PATH)/make/lib.mk
+
+KINAI = $(KINAI_PATH)/bin/$(target)/libKinai.a
+KINAI_SRC = $(wildcard						\
+	$(KINAI_PATH)/src/Core/*.cpp			\
+	$(KINAI_PATH)/src/ImGui/*.cpp			\
+	$(KINAI_PATH)/src/Renderer/*.cpp		\
+	$(KINAI_PATH)/src/Platform/SDL/*.cpp	\
+	$(KINAI_PATH)/src/Platform/OpenGL/*.cpp	\
 )
 
 ifeq ($(target),$(__EMSCRIPTEN__))
-  KINAI_SRC += $(wildcard $(__kinai_root_dir)/src/Kinai/Platform/Emscripten/*.cpp)
+  KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/Emscripten/*.cpp)
 endif
 
-__kinai_objs_dir = $(__kinai_root_dir)/$(OBJS_DIR)
-
 # Backend
-CFLAGS += -DEG_OPENGL
-CXXFLAGS += -DEG_OPENGL
+CFLAGS += -DKN_OPENGL
+CXXFLAGS += -DKN_OPENGL
 
-KINAI_OBJS = $(patsubst $(__kinai_root_dir)/src/%.cpp,$(__kinai_objs_dir)/%.o,$(KINAI_SRC))
-INCLUDE += -I $(__kinai_root_dir)/include -I $(__kinai_root_dir)/include/Kinai
+KINAI_OBJS = $(patsubst $(KINAI_PATH)/src/%.cpp,$(__kinai_objs_dir)/%.o,$(KINAI_SRC))
+INCLUDE += -I $(KINAI_PATH)/include -I $(KINAI_PATH)/include/Kinai
 
 all: $(KINAI)
 
 $(KINAI): $(LIB_OBJS) $(KINAI_OBJS)
 	$(SILENT)mkdir -p $(dir $@)
 	$(SILENT)$(AR) rcs $(KINAI) $(KINAI_OBJS) $(LIB_OBJS)
-	@echo "$(COLOR_GREEN)Successfully built $(KINAI) $(COLOR_DEFAULT)"
+	@echo "$(COLOR_GREEN)Successfully built $(notdir $(KINAI)) $(COLOR_DEFAULT)"
 
-$(__kinai_objs_dir)/%.o: $(__kinai_root_dir)/src/%.cpp
+$(__kinai_objs_dir)/%.o: $(KINAI_PATH)/src/%.cpp
 	@echo "$(COLOR_GREY)Compiling $<...$(COLOR_DEFAULT)"
 	$(SILENT)mkdir -p $(dir $@)
 	$(SILENT)$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
+
+clean::
+	$(SILENT)rm -rf $(KINAI_OBJS)
+
+fclean::
+	$(SILENT)$(MAKE) $(NO_PRINT_DIRECTORY) clean
+	$(SILENT)rm -rf ./bin/$(target) $(KINAI)
 
 endif # __KINAI_MK

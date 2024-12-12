@@ -34,33 +34,33 @@
 #include <vector>
 
 #define BIT(x) (1 << x)
-#define EG_EXPAND_MACRO(x) x
-#define EG_BIND_EVENT_FN(fn) [this](auto&&... args) -> decltype(auto) { return this->fn(std::forward<decltype(args)>(args)...); }
+#define KN_EXPAND_MACRO(x) x
+#define KN_BIND_EVENT_FN(fn) [this](auto&&... args) -> decltype(auto) { return this->fn(std::forward<decltype(args)>(args)...); }
 
-#if defined(EG_DEBUG)
-	#define EG_PRINT_FUNC() printf("%s at '%s:%d'\n", __PRETTY_FUNCTION__, __FILE__, __LINE__);
+#if defined(KN_DEBUG)
+	#define KN_PRINT_FUNC() printf("%s at '%s:%d'\n", __PRETTY_FUNCTION__, __FILE__, __LINE__);
 #else
-	#define EG_PRINT_FUNC()
+	#define KN_PRINT_FUNC()
 #endif
 
-#if defined(EG_DEBUG) || defined(EG_DEV)
-	#define EG_ENABLE_ASSERTS
+#if defined(KN_DEBUG) || defined(KN_DEV)
+	#define KN_ENABLE_ASSERTS
 #endif
 
 #if defined(__clang__) || defined(__GNUC__)
-	#define EG_INLINE		inline __attribute__((__always_inline__))
-	#define EG_NEVER_INLINE	__attribute__((__noinline__))
-	#define EG_NORETURN		__attribute__ ((noreturn))
-	#define EG_UNUSED		__attribute__ ((unused))
-	#define EG_NOTUSED(x)	((void)(x));
-	#define EG_NODISCARD	[[nodiscard]]
+	#define KN_INLINE		inline __attribute__((__always_inline__))
+	#define KN_NEVER_INLINE	__attribute__((__noinline__))
+	#define KN_NORETURN		__attribute__ ((noreturn))
+	#define KN_UNUSED		__attribute__ ((unused))
+	#define KN_NOTUSED(x)	((void)(x));
+	#define KN_NODISCARD	[[nodiscard]]
 #else
-	#define EG_INLINE		inline
-	#define EG_NEVER_INLINE
-	#define EG_NORETURN
-	#define EG_UNUSED
-	#define EG_NOTUSED(x)
-	#define EG_NODISCARD
+	#define KN_INLINE		inline
+	#define KN_NEVER_INLINE
+	#define KN_NORETURN
+	#define KN_UNUSED
+	#define KN_NOTUSED(x)
+	#define KN_NODISCARD
 #endif // defined(__clang__) || defined(__GNUC__)
 
 #include "Kinai/Core/Log.hpp"

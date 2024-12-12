@@ -1,13 +1,17 @@
 ifndef __LIB_MK
 __LIB_MK = 1
 
-__kinai_root_dir := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))..
-include $(__kinai_root_dir)/make/__platform.mk
+ifndef KINAI_PATH
+	"Error: No KINAI_PATH."
+endif
 
-__default_lib_path	= $(__kinai_root_dir)/lib
+include $(KINAI_PATH)/make/__platform.mk
+
+__kinai_objs_dir = $(KINAI_PATH)/$(OBJS_DIR)
+__default_lib_path	= $(KINAI_PATH)/lib
 
 # Compile the libs in a separate 'lib' folder to avoid recompiling
-__lib_obj_dir		= $(__kinai_root_dir)/.obj/lib/$(target)
+__lib_obj_dir		= $(__kinai_objs_dir)/lib
 
 # Glad
 __glad_path			= $(__default_lib_path)/glad
@@ -45,21 +49,15 @@ __stb_image_path	= $(__default_lib_path)/stb
 __stb_image_src		= $(__stb_image_path)/stb_image.c
 __stb_image_objs	= $(patsubst $(__stb_image_path)/%.c,$(__lib_obj_dir)/stb_image/%.o,$(__stb_image_src))
 
-# Kinako
-__kinako_path		= $(__default_lib_path)/Kinako
-__kinako_src		= $(wildcard $(__kinako_path)/*/*.cpp)
-__kinako_objs		= $(patsubst $(__kinako_path)/%.cpp,$(__lib_obj_dir)/Kinako/%.o,$(__kinako_src))
-
 __lib_include		=	-I $(__default_lib_path)	\
-						-I $(__glm_path)			\
-						-I $(__sdl3_path)/include	\
 						-I $(__glad_path)/include	\
 						-I $(__imgui_path)			\
-						-I $(__imgui_path)/backends	\
-						-I $(__kinako_path)
+						-I $(__imgui_path)/backends \
+						-I $(__glm_path)			\
+						-I $(__sdl3_path)/include
 
 INCLUDE				+= $(__lib_include)
-LIB_OBJS			= $(__glad_objs) $(__imgui_objs) $(__stb_image_objs) $(__kinako_objs)
+LIB_OBJS			= $(__glad_objs) $(__imgui_objs) $(__stb_image_objs)
 
 ifeq ($(target),$(__MACOS__))
   LDFLAGS			+= $(shell pkg-config --libs SDL3)

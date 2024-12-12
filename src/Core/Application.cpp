@@ -12,9 +12,9 @@ Application::Application(const ApplicationConfig &config)
 	  _layerstack(),
 	  _minimized(false)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
-	EG_ASSERT(!_instance, "Application already exists!");
+	KN_ASSERT(!_instance, "Application already exists!");
 	_instance = this;
 
 	_window = Window::Create(
@@ -25,9 +25,9 @@ Application::Application(const ApplicationConfig &config)
 		)
 	);
 	
-	SDL_RegisterEvents(EG_CUSTOM_EVENT_TYPE_COUNT);
+	SDL_RegisterEvents(KN_CUSTOM_EVENT_TYPE_COUNT);
 
-	_window->SetEventCallback(EG_BIND_EVENT_FN(Application::OnEvent));
+	_window->SetEventCallback(KN_BIND_EVENT_FN(Application::OnEvent));
 	std::memset(&_time, 0, sizeof(Time));
 
 	Renderer::Init();
@@ -38,7 +38,7 @@ Application::Application(const ApplicationConfig &config)
 		_imgui_layer = static_cast<ImGuiLayer *>(PushOverlay(new ImGuiLayer()));
 	}
 
-#ifdef EG_HEADLESS
+#ifdef KN_HEADLESS
 	void SigIntHandler(int signum);
 	std::signal(SIGINT, SigIntHandler);
 #endif
@@ -46,7 +46,7 @@ Application::Application(const ApplicationConfig &config)
 
 Application::~Application()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	_layerstack.Clear();
 	Renderer::Shutdown();
@@ -54,11 +54,11 @@ Application::~Application()
 
 void	Application::OnEvent(Event& event)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 	EventDispatcher	dispatcher(event);
 
-	dispatcher.Dispatch<WindowCloseEvent>(EG_BIND_EVENT_FN(Application::OnWindowClose));
-	dispatcher.Dispatch<WindowResizeEvent>(EG_BIND_EVENT_FN(Application::OnWindowResize));
+	dispatcher.Dispatch<WindowCloseEvent>(KN_BIND_EVENT_FN(Application::OnWindowClose));
+	dispatcher.Dispatch<WindowResizeEvent>(KN_BIND_EVENT_FN(Application::OnWindowResize));
 	for (auto it = _layerstack.rbegin(); it != _layerstack.rend(); it++)
 	{
 		(*it)->OnEvent(event);
@@ -69,7 +69,7 @@ void	Application::OnEvent(Event& event)
 
 Layer	*Application::PushLayer(Layer* layer)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	_layerstack.PushLayer(layer);
 	layer->OnAttach();
@@ -78,7 +78,7 @@ Layer	*Application::PushLayer(Layer* layer)
 
 Layer	*Application::PushOverlay(Layer* layer)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	_layerstack.PushOverlay(layer);
 	layer->OnAttach();
@@ -87,20 +87,20 @@ Layer	*Application::PushOverlay(Layer* layer)
 
 void	Application::Close()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
-#if defined(EG_PLATFORM_DESKTOP)
+#if defined(KN_PLATFORM_DESKTOP)
 	g_KinaiApplicationRunning = false;
-#elif defined(EG_PLATFORM_WEB)
+#elif defined(KN_PLATFORM_WEB)
 	emscripten_cancel_main_loop();
 #endif
 }
 
 void	Application::Run()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
-#ifdef EG_PLATFORM_DESKTOP
+#ifdef KN_PLATFORM_DESKTOP
 	while (g_KinaiApplicationRunning)
 #endif
 	{
@@ -138,7 +138,7 @@ void	Application::Run()
 
 bool	Application::OnWindowClose(WindowCloseEvent &event)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	(void)event;
 	Close();
@@ -147,7 +147,7 @@ bool	Application::OnWindowClose(WindowCloseEvent &event)
 
 bool	Application::OnWindowResize(WindowResizeEvent &event)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	(void)event;
 

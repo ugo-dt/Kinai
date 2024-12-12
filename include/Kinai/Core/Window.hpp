@@ -4,8 +4,8 @@
 #include "Kinai/Events/Event.hpp"
 #include "Kinai/Sokol/Sokol.hpp"
 
-static constexpr uint32_t EG_DEFAULT_WINDOW_WIDTH = 1280;
-static constexpr uint32_t EG_DEFAULT_WINDOW_HEIGHT = 720;
+static constexpr uint32_t KN_DEFAULT_WINDOW_WIDTH = 1280;
+static constexpr uint32_t KN_DEFAULT_WINDOW_HEIGHT = 720;
 
 namespace Kinai
 {
@@ -20,8 +20,8 @@ struct WindowProps
 
 	WindowProps(
 		const std::string& title = "Kinai",
-		uint32_t width = EG_DEFAULT_WINDOW_WIDTH,
-		uint32_t height = EG_DEFAULT_WINDOW_HEIGHT,
+		uint32_t width = KN_DEFAULT_WINDOW_WIDTH,
+		uint32_t height = KN_DEFAULT_WINDOW_HEIGHT,
 		bool fullscreen = false,
 		bool vsync = true
 	)

@@ -44,7 +44,7 @@ class AppTickEvent : public Event
 public:
 	AppTickEvent() = default;
 
-	EVENT_CLASS_TYPE(EG_EVENT_WINDOW_TICK)
+	EVENT_CLASS_TYPE(KN_EVENT_WINDOW_TICK)
 	EVENT_CLASS_CATEGORY(EventCategoryApplication)
 };
 
@@ -53,7 +53,7 @@ class AppUpdateEvent : public Event
 public:
 	AppUpdateEvent() = default;
 
-	EVENT_CLASS_TYPE(EG_EVENT_WINDOW_UPDATE)
+	EVENT_CLASS_TYPE(KN_EVENT_WINDOW_UPDATE)
 	EVENT_CLASS_CATEGORY(EventCategoryApplication)
 };
 
@@ -62,7 +62,7 @@ class AppRenderEvent : public Event
 public:
 	AppRenderEvent() = default;
 
-	EVENT_CLASS_TYPE(EG_EVENT_WINDOW_RENDER)
+	EVENT_CLASS_TYPE(KN_EVENT_WINDOW_RENDER)
 	EVENT_CLASS_CATEGORY(EventCategoryApplication)
 };
 

@@ -20,7 +20,7 @@ struct Kinai_Sokol_SDL_Desc {
 
 SDLWindow::SDLWindow(const WindowProps &props)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	Kinai_Sokol_SDL_Desc	desc = {
 		.width = props.width,
@@ -52,7 +52,7 @@ SDLWindow::SDLWindow(const WindowProps &props)
 
 	(void)status;
 	status = SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS);
-	EG_ASSERT(status == true && "Failed to init SDL");
+	KN_ASSERT(status == true && "Failed to init SDL");
 
 	Log::Info("CORE - Initialized SDL.");
 
@@ -74,7 +74,7 @@ SDLWindow::SDLWindow(const WindowProps &props)
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_COMPATIBILITY);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
 
-	#ifdef EG_DEV
+	#ifdef KN_DEV
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_DEBUG_FLAG);
 	#endif
 
@@ -82,16 +82,16 @@ SDLWindow::SDLWindow(const WindowProps &props)
 	if (desc_def.fullscreen)
 		flags |= SDL_WINDOW_FULLSCREEN;
 	_handle = SDL_CreateWindow(desc_def.title, desc_def.width, desc_def.height, flags);
-	EG_ASSERT(_handle);
+	KN_ASSERT(_handle);
 	_gl_context = SDL_GL_CreateContext(_handle);
-	EG_ASSERT(_gl_context);
+	KN_ASSERT(_gl_context);
 
 	SDL_GL_MakeCurrent(_handle, _gl_context);
 	SDL_GL_SetSwapInterval(desc_def.vsync);
 
-	#ifdef EG_PLATFORM_DESKTOP
+	#ifdef KN_PLATFORM_DESKTOP
 		status = gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress);
-		EG_ASSERT(status != 0);
+		KN_ASSERT(status != 0);
 	#endif
 
 	Log::Info("CORE - OpenGL info:");

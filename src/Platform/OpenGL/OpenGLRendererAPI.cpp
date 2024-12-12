@@ -3,7 +3,7 @@
 namespace Kinai
 {
 
-#ifdef EG_PLATFORM_DESKTOP
+#ifdef KN_PLATFORM_DESKTOP
 void	OpenGLMessageCallback(
 	unsigned source,
 	unsigned type,
@@ -26,15 +26,15 @@ void	OpenGLMessageCallback(
 		case GL_DEBUG_SEVERITY_NOTIFICATION: std::cout << message << std::endl; return;
 	}
 
-	EG_ASSERT(false, "Unknown severity level!");
+	KN_ASSERT(false, "Unknown severity level!");
 }
 #endif
 
 void	OpenGLRendererAPI::Init()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
-#if defined(EG_DEV) && defined(EG_PLATFORM_DESKTOP)
+#if defined(KN_DEV) && defined(KN_PLATFORM_DESKTOP)
 	glEnable(GL_DEBUG_OUTPUT);
 	glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
 	glDebugMessageCallback(OpenGLMessageCallback, nullptr);
@@ -50,7 +50,7 @@ void	OpenGLRendererAPI::Init()
 	glEnable(GL_CULL_FACE);
 	glCullFace(GL_BACK);
 
-#ifdef EG_PLATFORM_DESKTOP
+#ifdef KN_PLATFORM_DESKTOP
 	glEnable(GL_LINE_SMOOTH);
 #endif
 }

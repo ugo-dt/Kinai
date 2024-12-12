@@ -71,7 +71,7 @@ Log::Print(OStream& stream, const char *color, const char *log_name, std::string
 		return;
 
 	// Enable colors only when using a terminal output.
-#ifdef EG_PLATFORM_DESKTOP
+#ifdef KN_PLATFORM_DESKTOP
 	bool tty = isatty(STDOUT_FILENO);
 #else
 	bool tty = false;

@@ -164,9 +164,9 @@ void	PerspectiveCameraController::OnEvent(Event &e)
 {
 	EventDispatcher	dispatcher(e);
 
-	dispatcher.Dispatch<MouseWheelEvent>(EG_BIND_EVENT_FN(PerspectiveCameraController::OnMouseWheel));
-	dispatcher.Dispatch<MouseMotionEvent>(EG_BIND_EVENT_FN(PerspectiveCameraController::OnMouseMotion));
-	dispatcher.Dispatch<WindowResizeEvent>(EG_BIND_EVENT_FN(PerspectiveCameraController::OnWindowResize));
+	dispatcher.Dispatch<MouseWheelEvent>(KN_BIND_EVENT_FN(PerspectiveCameraController::OnMouseWheel));
+	dispatcher.Dispatch<MouseMotionEvent>(KN_BIND_EVENT_FN(PerspectiveCameraController::OnMouseMotion));
+	dispatcher.Dispatch<WindowResizeEvent>(KN_BIND_EVENT_FN(PerspectiveCameraController::OnWindowResize));
 }
 
 void	PerspectiveCameraController::OnResize(float width, float height)

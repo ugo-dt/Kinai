@@ -8,15 +8,15 @@ namespace Kinai
 
 std::unique_ptr<RendererAPI>	RendererAPI::Create()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
-#if defined(EG_HEADLESS)
+#if defined(KN_HEADLESS)
 	return std::make_unique<HeadlessRendererAPI>();
-#elif defined(EG_OPENGL)
+#elif defined(KN_OPENGL)
 	return std::make_unique<OpenGLRendererAPI>();
 #endif
 
-	EG_ASSERT(false, "Unknown RendererAPI");
+	KN_ASSERT(false, "Unknown RendererAPI");
 	return nullptr;
 }
 

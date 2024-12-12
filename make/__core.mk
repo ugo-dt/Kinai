@@ -5,6 +5,11 @@ ifndef __PLATFORM_MK
 	Do not include make/__core.mk directly. Use make/lib.mk.
 endif
 
+ifndef verbose
+  SILENT = @
+  NO_PRINT_DIRECTORY = --no-print-directory
+endif
+
 # CC
 CC				= gcc-14
 CXX				= g++
@@ -20,11 +25,6 @@ COLOR_YELLOW	= \033[33m
 COLOR_GREY		= \033[90m
 COLOR_RED		= \033[91m
 
-ifndef verbose
-  SILENT = @
-  NO_PRINT_DIRECTORY = --no-print-directory
-endif
-
 # Object files
 __base_objs_dir		= .obj
 OBJS_DIR			= $(__base_objs_dir)/$(target)/$(__arch)
@@ -39,29 +39,25 @@ ifndef build
 endif
 # Debug
 ifeq ($(build),$(__build_debug))
-  CFLAGS += -DEG_DEBUG -g
-  CXXFLAGS += -DEG_DEBUG -g
+  CFLAGS	+= -DKN_DEBUG -g
+  CXXFLAGS	+= -DKN_DEBUG -g
 
 # Dev
 else ifeq ($(build),$(__build_dev))
-  CFLAGS += -DEG_DEV -g
-  CXXFLAGS += -DEG_DEV -g
+  CFLAGS	+= -DKN_DEV -g
+  CXXFLAGS	+= -DKN_DEV -g
 
 # Release
 else ifeq ($(build),$(__build_release))
-  CFLAGS += -DEG_RELEASE -O3
-  CXXFLAGS += -DEG_RELEASE -O3
+  CFLAGS	+= -DKN_RELEASE -O3
+  CXXFLAGS	+= -DKN_RELEASE -O3
 
 else
-  __unknown_build:
-	@echo "Unknown build '$(build)'."
-	@exit 1
+	"Unknown build '$(build)'."
 endif
 
 ifeq ($(build),)
-  __empty_build:
-	@echo "Empty build."
-	@exit 1
+	"Empty build."
 endif
 
 endif # __CORE_MK

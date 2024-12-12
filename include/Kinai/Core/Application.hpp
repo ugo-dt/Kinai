@@ -21,8 +21,8 @@ namespace Kinai
 struct ApplicationConfig
 {
 	std::string	name = "Kinai Application";
-	uint32_t	window_width = EG_DEFAULT_WINDOW_WIDTH;
-	uint32_t	window_height = EG_DEFAULT_WINDOW_HEIGHT;
+	uint32_t	window_width = KN_DEFAULT_WINDOW_WIDTH;
+	uint32_t	window_height = KN_DEFAULT_WINDOW_HEIGHT;
 	bool		fullscreen = false;
 	bool		vsync = true;
 	bool		enable_imgui = false;

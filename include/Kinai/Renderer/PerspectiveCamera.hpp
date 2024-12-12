@@ -65,8 +65,8 @@ private:
 
 struct CameraControllerConfig
 {
-	float		viewport_width = EG_DEFAULT_WINDOW_WIDTH;
-	float		viewport_height = EG_DEFAULT_WINDOW_HEIGHT;
+	float		viewport_width = KN_DEFAULT_WINDOW_WIDTH;
+	float		viewport_height = KN_DEFAULT_WINDOW_HEIGHT;
 	float		fov = 45.0f;
 	float		near_clip = 0.1f;
 	float		far_clip = 1000.0f;

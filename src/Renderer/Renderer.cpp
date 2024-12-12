@@ -9,31 +9,31 @@ glm::mat4	Renderer::_view_proj;
 
 void	Renderer::Init()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	RenderCommand::Init();
 }
 
 void	Renderer::Shutdown()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 }
 
 void	Renderer::BeginFrame(PerspectiveCamera& _camera)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	_view_proj = _camera.GetViewProjectionMatrix();
 }
 
 void	Renderer::EndFrame()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 }
 
 void	Renderer::OnWindowResize(uint32_t width, uint32_t height)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	RenderCommand::SetViewport(0, 0, width, height);
 }

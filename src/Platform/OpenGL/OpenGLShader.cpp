@@ -3,27 +3,27 @@
 namespace Kinai
 {
 
-EG_INLINE bool	operator==(OpenGLShaderParser::const_iterator &it, const OpenGLShaderParser::token_type &t)
+KN_INLINE bool	operator==(OpenGLShaderParser::const_iterator &it, const OpenGLShaderParser::token_type &t)
 	{ return OpenGLShaderParser::iterator_equals(it, t); }
-EG_INLINE bool	operator!=(OpenGLShaderParser::const_iterator &it, const OpenGLShaderParser::token_type &t)
+KN_INLINE bool	operator!=(OpenGLShaderParser::const_iterator &it, const OpenGLShaderParser::token_type &t)
 	{ return !(it == t); }
-EG_INLINE bool	operator==(OpenGLShaderParser::const_iterator &it, const std::string &s)
+KN_INLINE bool	operator==(OpenGLShaderParser::const_iterator &it, const std::string &s)
 	{ return OpenGLShaderParser::iterator_equals(it, s); }
-EG_INLINE bool	operator!=(OpenGLShaderParser::const_iterator &it, const std::string &s)
+KN_INLINE bool	operator!=(OpenGLShaderParser::const_iterator &it, const std::string &s)
 	{ return !(it == s); }
 
-EG_INLINE bool	OpenGLShaderParser::_is_separator(const char& c)
+KN_INLINE bool	OpenGLShaderParser::_is_separator(const char& c)
 	{ return strchr(separators, c); }
 
-EG_INLINE void	OpenGLShaderParser::_throw_parser_with_context(
+KN_INLINE void	OpenGLShaderParser::_throw_parser_with_context(
 	const_iterator& error_it, const std::string &error,
 	const std::string &note, std::string optional_declaration)
 {
-	EG_ASSERT((_context_token + 1) != _tokens.end(), "OpenGLShaderParser: unexpected end of file");
+	KN_ASSERT((_context_token + 1) != _tokens.end(), "OpenGLShaderParser: unexpected end of file");
 	_throw_parser_with_note(error_it, error, _context_token, note + " '" + WHITE("@", _context_token + 1, optional_declaration) + "'");
 }
 
-EG_INLINE void	OpenGLShaderParser::_print_warning_with_note(
+KN_INLINE void	OpenGLShaderParser::_print_warning_with_note(
 	const_iterator& warning_it, const std::string &warning,
 	const_iterator& note_it, const std::string &note,
 	std::string optional_declaration)
@@ -35,11 +35,11 @@ EG_INLINE void	OpenGLShaderParser::_print_warning_with_note(
 	std::cerr << _make_note_string(note_it, _note) << '\n';
 }
 
-EG_INLINE void	OpenGLShaderParser::_print_warning_with_context_note(
+KN_INLINE void	OpenGLShaderParser::_print_warning_with_context_note(
 	const_iterator& warning_it, const std::string &warning,
 	const std::string &note, std::string optional_declaration)
 {
-	EG_ASSERT((_context_token + 1) != _tokens.end(), "OpenGLShaderParser: unexpected end of file");
+	KN_ASSERT((_context_token + 1) != _tokens.end(), "OpenGLShaderParser: unexpected end of file");
 	_print_warning_with_note(warning_it, warning, _context_token,
 		note + " '" + WHITE("@", _context_token + 1, optional_declaration) + "'");
 }
@@ -193,7 +193,7 @@ void	OpenGLShaderParser::_parse_shader_context(size_t &current, const_iterator &
 	if (use)
 	{
 		_shaders.push_back({name, contents, context, _context_token});
-		// EG_INFO_LOG(context == CONTEXT_VERTEX_SHADER ? LOG_FOUND_VERT_SHADER : LOG_FOUND_FRAG_SHADER, name);
+		// KN_INFO_LOG(context == CONTEXT_VERTEX_SHADER ? LOG_FOUND_VERT_SHADER : LOG_FOUND_FRAG_SHADER, name);
 	}
 }
 
@@ -390,7 +390,7 @@ void	OpenGLShaderParser::MakeShader(const std::string& program_name, std::string
 	std::ifstream file(_filepath, std::ios::binary);
 	if (!file)
 	{
-		// EG_ERROR_LOG(LOG_CANT_OPEN_FILE, _filepath);
+		// KN_ERROR_LOG(LOG_CANT_OPEN_FILE, _filepath);
 		return ;
 	}
 
@@ -412,7 +412,7 @@ void	OpenGLShaderParser::MakeShader(const std::string& program_name, std::string
 
 	vertex_out = _get_vertex_source(*p);
 	fragment_out = _get_fragment_source(*p);
-	// EG_INFO_LOG(LOG_CREATE_SHADER_PROGRAM, ": " << YELLOW(p->name) << " (" << CYAN(p->vs) << ", " << CYAN(p->fs) << ")");
+	// KN_INFO_LOG(LOG_CREATE_SHADER_PROGRAM, ": " << YELLOW(p->name) << " (" << CYAN(p->vs) << ", " << CYAN(p->fs) << ")");
 }
 
 OpenGLShader::OpenGLShader(const std::string& filepath, const std::string& program_name)
@@ -441,7 +441,7 @@ OpenGLShader::~OpenGLShader()
 	glDeleteProgram(_renderer_id);
 }
 
-static EG_INLINE std::string	get_shader_info_log(GLuint shader, void (*f)(GLuint, GLsizei, GLsizei *, GLchar *))
+static KN_INLINE std::string	get_shader_info_log(GLuint shader, void (*f)(GLuint, GLsizei, GLsizei *, GLchar *))
 {
 	char	info[1024];
 	f(shader, 1024, nullptr, info);
@@ -459,20 +459,20 @@ void	OpenGLShader::CreateProgram(const char *vertex, const char *fragment)
 	glShaderSource(vertex_id, 1, &vertex, NULL);
 	glCompileShader(vertex_id);
 	glGetShaderiv(vertex_id, GL_COMPILE_STATUS, &status);
-	EG_ASSERT(status == GL_TRUE, "{}: Vertex shader: {}", _name, get_shader_info_log(vertex_id, glGetShaderInfoLog));
+	KN_ASSERT(status == GL_TRUE, "{}: Vertex shader: {}", _name, get_shader_info_log(vertex_id, glGetShaderInfoLog));
 
 	int fragment_id = glCreateShader(GL_FRAGMENT_SHADER);
 	glShaderSource(fragment_id, 1, &fragment, NULL);
 	glCompileShader(fragment_id);
 	glGetShaderiv(fragment_id, GL_COMPILE_STATUS, &status);
-	EG_ASSERT(status == GL_TRUE, "{}: Fragment shader: {}", _name, get_shader_info_log(fragment_id, glGetShaderInfoLog));
+	KN_ASSERT(status == GL_TRUE, "{}: Fragment shader: {}", _name, get_shader_info_log(fragment_id, glGetShaderInfoLog));
 
 	int id = glCreateProgram();
 	glAttachShader(id, vertex_id);
 	glAttachShader(id, fragment_id);
 	glLinkProgram(id);
 	glGetProgramiv(id, GL_LINK_STATUS, &status);
-	EG_ASSERT(status == GL_TRUE, "glLinkProgram(): {}", get_shader_info_log(id, glGetProgramInfoLog));
+	KN_ASSERT(status == GL_TRUE, "glLinkProgram(): {}", get_shader_info_log(id, glGetProgramInfoLog));
 
 	glDeleteShader(vertex_id);
 	glDeleteShader(fragment_id);
@@ -482,21 +482,21 @@ void	OpenGLShader::CreateProgram(const char *vertex, const char *fragment)
 
 void	OpenGLShader::Bind() const
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	glUseProgram(_renderer_id);
 }
 
 void	OpenGLShader::Unbind() const
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	glUseProgram(0);
 }
 
 void	OpenGLShader::SetInt(const std::string& name, int value)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	UploadUniformInt(name, value);
 }
@@ -508,35 +508,35 @@ void	OpenGLShader::SetIntArray(const std::string& name, int* values, uint32_t co
 
 void	OpenGLShader::SetFloat(const std::string& name, float value)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	UploadUniformFloat(name, value);
 }
 
 void	OpenGLShader::SetFloat2(const std::string& name, const glm::vec2& value)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	UploadUniformFloat2(name, value);
 }
 
 void	OpenGLShader::SetFloat3(const std::string& name, const glm::vec3& value)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	UploadUniformFloat3(name, value);
 }
 
 void	OpenGLShader::SetFloat4(const std::string& name, const glm::vec4& value)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	UploadUniformFloat4(name, value);
 }
 
 void	OpenGLShader::SetMat4(const std::string& name, const glm::mat4& value)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	UploadUniformMat4(name, value);
 }

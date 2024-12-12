@@ -5,7 +5,7 @@ namespace Kinai
 
 OpenGLVertexBuffer::OpenGLVertexBuffer(uint32_t size)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	glCreateBuffers(1, &_renderer_id);
 	glBindBuffer(GL_ARRAY_BUFFER, _renderer_id);
@@ -14,7 +14,7 @@ OpenGLVertexBuffer::OpenGLVertexBuffer(uint32_t size)
 
 OpenGLVertexBuffer::OpenGLVertexBuffer(const void* vertices, uint32_t size)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	glCreateBuffers(1, &_renderer_id);
 	glBindBuffer(GL_ARRAY_BUFFER, _renderer_id);
@@ -23,28 +23,28 @@ OpenGLVertexBuffer::OpenGLVertexBuffer(const void* vertices, uint32_t size)
 
 OpenGLVertexBuffer::~OpenGLVertexBuffer()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	glDeleteBuffers(1, &_renderer_id);
 }
 
 void	OpenGLVertexBuffer::Bind() const
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	glBindBuffer(GL_ARRAY_BUFFER, _renderer_id);
 }
 
 void	OpenGLVertexBuffer::Unbind() const
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
 void	OpenGLVertexBuffer::SetData(const void* data, uint32_t size)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	glBindBuffer(GL_ARRAY_BUFFER, _renderer_id);
 	glBufferSubData(GL_ARRAY_BUFFER, 0, size, data);
@@ -55,7 +55,7 @@ void	OpenGLVertexBuffer::SetData(const void* data, uint32_t size)
 OpenGLIndexBuffer::OpenGLIndexBuffer(const uint32_t* indices, uint32_t count)
 	: _count(count)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	glCreateBuffers(1, &_renderer_id);
 	
@@ -67,21 +67,21 @@ OpenGLIndexBuffer::OpenGLIndexBuffer(const uint32_t* indices, uint32_t count)
 
 OpenGLIndexBuffer::~OpenGLIndexBuffer()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	glDeleteBuffers(1, &_renderer_id);
 }
 
 void	OpenGLIndexBuffer::Bind() const
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _renderer_id);
 }
 
 void	OpenGLIndexBuffer::Unbind() const
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }

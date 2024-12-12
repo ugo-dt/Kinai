@@ -29,43 +29,43 @@ static GLenum	ShaderDataTypeToOpenGLBaseType(ShaderDataType type)
 		case ShaderDataType::UInt4:		return GL_UNSIGNED_INT;
 	}
 
-	EG_ASSERT(false, "Unknown ShaderDataType!");
+	KN_ASSERT(false, "Unknown ShaderDataType!");
 	return 0;
 }
 
 OpenGLVertexArray::OpenGLVertexArray()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	glCreateVertexArrays(1, &_renderer_id);
 }
 
 OpenGLVertexArray::~OpenGLVertexArray()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	glDeleteVertexArrays(1, &_renderer_id);
 }
 
 void	OpenGLVertexArray::Bind() const
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	glBindVertexArray(_renderer_id);
 }
 
 void	OpenGLVertexArray::Unbind() const
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	glBindVertexArray(0);
 }
 
 void	OpenGLVertexArray::AddVertexBuffer(const std::shared_ptr<VertexBuffer>& vertexBuffer)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
-	EG_ASSERT(vertexBuffer->GetLayout().GetElements().size() && "Vertex Buffer has no layout!");
+	KN_ASSERT(vertexBuffer->GetLayout().GetElements().size() && "Vertex Buffer has no layout!");
 
 	glBindVertexArray(_renderer_id);
 	vertexBuffer->Bind();
@@ -132,7 +132,7 @@ void	OpenGLVertexArray::AddVertexBuffer(const std::shared_ptr<VertexBuffer>& ver
 				break;
 			}
 			default:
-				EG_ASSERT(false, "Unknown ShaderDataType!");
+				KN_ASSERT(false, "Unknown ShaderDataType!");
 		}
 	}
 
@@ -141,7 +141,7 @@ void	OpenGLVertexArray::AddVertexBuffer(const std::shared_ptr<VertexBuffer>& ver
 
 void	OpenGLVertexArray::SetIndexBuffer(const std::shared_ptr<IndexBuffer>& indexBuffer)
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	glBindVertexArray(_renderer_id);
 	indexBuffer->Bind();

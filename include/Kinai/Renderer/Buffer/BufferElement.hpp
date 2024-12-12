@@ -42,7 +42,7 @@ static inline uint32_t	ShaderDataTypeSize(ShaderDataType type)
 		case ShaderDataType::UInt4:		return sizeof(unsigned int) * 4;
 	}
 
-	EG_ASSERT(false, "Unknown ShaderDataType");
+	KN_ASSERT(false, "Unknown ShaderDataType");
 	return 0;
 }
 
@@ -86,7 +86,7 @@ struct BufferElement
 			case ShaderDataType::UInt4:		return 4;
 		}
 
-		EG_ASSERT(false && "Unknown ShaderDataType");
+		KN_ASSERT(false && "Unknown ShaderDataType");
 		return 0;
 	}
 };

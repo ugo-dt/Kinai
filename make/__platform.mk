@@ -5,7 +5,7 @@ ifndef __LIB_MK
 	Do not include make/__platform.mk directly. Use make/lib.mk.
 endif
 
-include $(dir $(abspath $(lastword $(MAKEFILE_LIST))))__core.mk
+include $(KINAI_PATH)/make/__core.mk
 
 # Available platforms
 __WIN32__		= win32

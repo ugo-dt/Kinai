@@ -9,7 +9,7 @@ sg_pass_action Sokol::_pass_action;
 
 void	Sokol::Init()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	sg_desc	desc = {};
 
@@ -20,19 +20,19 @@ void	Sokol::Init()
 	Sokol::_pass_action = {};
 	Sokol::_pass_action.colors[0].load_action = SG_LOADACTION_CLEAR;
 	Sokol::_pass_action.colors[0].clear_value = {0.12f, 0.12f, 0.12f, 1.0f};
-	EG_ASSERT(sg_isvalid());
+	KN_ASSERT(sg_isvalid());
 }
 
 void	Sokol::Shutdown()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	sg_shutdown();
 }
 
 void	Sokol::BeginFrame()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 	sg_pass	pass = {};
 	pass.action = Sokol::_pass_action;
 
@@ -42,7 +42,7 @@ void	Sokol::BeginFrame()
 
 void	Sokol::EndFrame()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	sg_end_pass();
 	sg_commit();
@@ -50,21 +50,21 @@ void	Sokol::EndFrame()
 
 sg_pass_action&	Sokol::GetPassAction()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	return Sokol::_pass_action;
 }
 
 sg_environment	Sokol::GetEnvironment()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	return Application::Get().GetWindow().GetSokolEnvironment();
 }
 
 sg_swapchain	Sokol::GetSwapchain()
 {
-	EG_PRINT_FUNC();
+	KN_PRINT_FUNC();
 
 	return Application::Get().GetWindow().GetSokolSwapchain();
 }
