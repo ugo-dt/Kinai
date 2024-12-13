@@ -88,6 +88,7 @@ else ifeq ($(target),$(__EMSCRIPTEN__))
   CC		= emcc
   CXX		= em++
   AR		= emar
+  CXXFLAGS	+= -DIMGUI_IMPL_OPENGL_ES3
   LDFLAGS	+= -sFULL_ES3=1 -sALLOW_MEMORY_GROWTH
 endif
 

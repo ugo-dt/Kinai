@@ -19,11 +19,11 @@ void	Renderer::Shutdown()
 	KN_PRINT_FUNC();
 }
 
-void	Renderer::BeginFrame(PerspectiveCamera& _camera)
+void	Renderer::BeginFrame(PerspectiveCamera& camera)
 {
 	KN_PRINT_FUNC();
 
-	_view_proj = _camera.GetViewProjectionMatrix();
+	_view_proj = camera.GetViewProjectionMatrix();
 }
 
 void	Renderer::EndFrame()

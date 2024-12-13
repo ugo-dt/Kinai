@@ -21,10 +21,10 @@ Application::Application(const ApplicationConfig &config)
 		WindowProps(
 			config.name,
 			config.window_width, config.window_height,
-			config.fullscreen, config.vsync
+			config.fullscreen, config.no_vsync
 		)
 	);
-	
+
 	SDL_RegisterEvents(KN_CUSTOM_EVENT_TYPE_COUNT);
 
 	_window->SetEventCallback(KN_BIND_EVENT_FN(Application::OnEvent));

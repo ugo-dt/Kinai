@@ -16,16 +16,16 @@ struct WindowProps
 	uint32_t	width;
 	uint32_t	height;
 	bool		fullscreen;
-	bool		vsync;
+	bool		no_vsync;
 
 	WindowProps(
 		const std::string& title = "Kinai",
 		uint32_t width = KN_DEFAULT_WINDOW_WIDTH,
 		uint32_t height = KN_DEFAULT_WINDOW_HEIGHT,
 		bool fullscreen = false,
-		bool vsync = true
+		bool no_vsync = false
 	)
-		: title(title), width(width), height(height), fullscreen(fullscreen), vsync(vsync)
+		: title(title), width(width), height(height), fullscreen(fullscreen), no_vsync(no_vsync)
 	{
 	}
 };

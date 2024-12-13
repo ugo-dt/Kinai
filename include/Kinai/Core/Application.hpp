@@ -24,7 +24,7 @@ struct ApplicationConfig
 	uint32_t	window_width = KN_DEFAULT_WINDOW_WIDTH;
 	uint32_t	window_height = KN_DEFAULT_WINDOW_HEIGHT;
 	bool		fullscreen = false;
-	bool		vsync = true;
+	bool		no_vsync = true;
 	bool		enable_imgui = false;
 };
 

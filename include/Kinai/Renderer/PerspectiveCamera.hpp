@@ -14,7 +14,6 @@ public:
 	~PerspectiveCamera() = default;
 
 	void	OnUpdate();
-	void	OnEvent(Event& event);
 
 	void				SetViewportSize(float width, float height) { _viewport_width = width; _viewport_height = height; UpdateProjection();}
 	inline void			SetDistance(float distance)	{ _distance = distance; }
@@ -72,9 +71,9 @@ struct CameraControllerConfig
 	float		far_clip = 1000.0f;
 	float		speed = 5.0f;
 	glm::vec3	position = {0.0f, 0.0f, 2.0f};
-	bool		enable_rotation = true;
-	bool		lock_cursor = true;
-	bool		lock_rotation = true; // When true, lock the cursor when rotation is enabled. Unlock it when disabled.
+	bool		no_rotation = false;
+	bool		no_lock_cursor = false;
+	bool		no_lock_rotation = false; // When true, lock the cursor when rotation is enabled. Unlock it when disabled.
 };
 
 class PerspectiveCameraController

@@ -2,8 +2,11 @@
 #include "Kinai/Renderer/Renderer.hpp"
 #include "Kinai/Platform/OpenGL/OpenGLShader.hpp"
 
+#if defined(KN_HEADLESS)
 #include "Kinai/Platform/Headless/HeadlessShader.hpp"
+#elif defined(KN_OPENGL)
 #include "Kinai/Platform/OpenGL/OpenGLShader.hpp"
+#endif
 
 namespace Kinai
 {

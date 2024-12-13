@@ -15,7 +15,7 @@ struct Kinai_Sokol_SDL_Desc {
     int				version_minor;
 	const char*		title;
 	bool			fullscreen;
-	bool			vsync;
+	bool			no_vsync;
 };
 
 SDLWindow::SDLWindow(const WindowProps &props)
@@ -31,7 +31,7 @@ SDLWindow::SDLWindow(const WindowProps &props)
 		.version_minor = 1,
 		.title = props.title.c_str(),
 		.fullscreen = props.fullscreen,
-		.vsync = props.vsync,
+		.no_vsync = props.no_vsync,
 	};
 
     int				status;
@@ -87,7 +87,7 @@ SDLWindow::SDLWindow(const WindowProps &props)
 	KN_ASSERT(_gl_context);
 
 	SDL_GL_MakeCurrent(_handle, _gl_context);
-	SDL_GL_SetSwapInterval(desc_def.vsync);
+	SDL_GL_SetSwapInterval(!desc_def.no_vsync);
 
 	#ifdef KN_PLATFORM_DESKTOP
 		status = gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress);

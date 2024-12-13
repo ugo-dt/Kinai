@@ -128,8 +128,8 @@ PerspectiveCameraController::PerspectiveCameraController(const CameraControllerC
 	: _camera(config.viewport_width, config.viewport_height, config.fov, config.near_clip, config.far_clip),
 	  _config(config)
 {
-	SetRotationEnabled(config.enable_rotation);
-	SetCursorLock(config.lock_cursor);
+	SetRotationEnabled(!config.no_rotation);
+	SetCursorLock(!config.no_lock_cursor);
 }
 
 void	PerspectiveCameraController::OnUpdate(float delta)
@@ -182,7 +182,7 @@ bool	PerspectiveCameraController::OnMouseWheel(MouseWheelEvent& event)
 
 bool	PerspectiveCameraController::OnMouseMotion(MouseMotionEvent& event)
 {
-	if (_config.enable_rotation)
+	if (!_config.no_rotation)
 		_camera.OnMouseMotion(event);
 	return false;
 }
@@ -196,33 +196,33 @@ bool	PerspectiveCameraController::OnWindowResize(WindowResizeEvent& event)
 bool	PerspectiveCameraController::IsCursorLocked() const
 {
 	// return Application::Get().GetWindow().GetRelativeMouseMode();
-	return _config.lock_cursor;
+	return !_config.no_lock_cursor;
 }
 
 void	PerspectiveCameraController::SetCursorLock(bool lock)
 {
-	_config.lock_cursor = lock;
+	_config.no_lock_cursor = !lock;
 	Application::Get().GetWindow().SetRelativeMouseMode(lock);
 }
 
 bool	PerspectiveCameraController::IsRotationEnabled() const
 {
-	return _config.enable_rotation;
+	return !_config.no_rotation;
 }
 
 void	PerspectiveCameraController::SetRotationEnabled(bool enabled)
 {
-	_config.enable_rotation = enabled;
+	_config.no_rotation = !enabled;
 
 	if (enabled)
 	{
 		Window& window = Application::Get().GetWindow();
 
-		if (_config.lock_rotation || IsCursorLocked())
+		if (!_config.no_lock_rotation || IsCursorLocked())
 			window.SetRelativeMouseMode(true);
 		window.WarpMouse(window.GetWidth() / 2, window.GetHeight() / 2);
 	}
-	else if (_config.lock_rotation || !IsCursorLocked())
+	else if (!_config.no_lock_rotation || !IsCursorLocked())
 		Application::Get().GetWindow().SetRelativeMouseMode(false);
 }
 

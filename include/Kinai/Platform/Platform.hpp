@@ -55,6 +55,7 @@
 	#endif
 #elif defined(KN_PLATFORM_WEB)
 	#include <emscripten/emscripten.h>
+	#include <emscripten/html5.h>
 	#include <emscripten/key_codes.h>
 	#include <GLES3/gl3.h>
 	#define glCreateBuffers			glGenBuffers
