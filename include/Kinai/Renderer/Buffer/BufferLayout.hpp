@@ -16,6 +16,12 @@ public:
 		CalculateOffsetsAndStride();
 	}
 
+	BufferLayout(const std::vector<BufferElement>& elements)
+		: _elements(elements)
+	{
+		CalculateOffsetsAndStride();
+	}
+
 	uint32_t							GetStride()   const { return stride; }
 	const std::vector<BufferElement>&	GetElements() const { return _elements; }
 
