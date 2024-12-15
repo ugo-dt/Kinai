@@ -18,10 +18,10 @@ void	ImGuiLayer::OnAttach()
 	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;		// Enable Docking
 	io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;		// Enable Multi-Viewport / Platform Windows
 
-#if defined(KN_OPENGL)
+#if defined(KINAI_OPENGL)
 	ImGui_ImplSDL3_InitForOpenGL(SDL_GL_GetCurrentWindow(), SDL_GL_GetCurrentContext());
 	ImGui_ImplOpenGL3_Init();
-#elif defined(KN_HEADLESS)
+#elif defined(KINAI_HEADLESS)
 	unsigned char* tex_pixels = nullptr;
     int tex_w, tex_h;
     io.Fonts->GetTexDataAsRGBA32(&tex_pixels, &tex_w, &tex_h);
@@ -34,7 +34,7 @@ void	ImGuiLayer::OnAttach()
 
 void	ImGuiLayer::OnDetach()
 {
-#ifdef KN_OPENGL
+#ifdef KINAI_OPENGL
 	ImGui_ImplOpenGL3_Shutdown();
 	ImGui_ImplSDL3_Shutdown();
 #endif
@@ -54,7 +54,7 @@ void	ImGuiLayer::OnEvent(Event &e)
 
 void	ImGuiLayer::Begin()
 {
-#ifdef KN_OPENGL
+#ifdef KINAI_OPENGL
 	ImGui_ImplOpenGL3_NewFrame();
 	ImGui_ImplSDL3_NewFrame();
 #endif
@@ -66,7 +66,7 @@ void	ImGuiLayer::End()
 {
 	ImGui::Render();
 
-#ifdef KN_OPENGL
+#ifdef KINAI_OPENGL
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
 	ImGuiIO& io = ImGui::GetIO();

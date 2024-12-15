@@ -8,7 +8,7 @@ namespace Kinai
 
 class Layer
 {
-public:
+protected:
 	Layer(const std::string name = "DefaultLayer"): _debug_name(name) {}
 
 	virtual ~Layer(void) = default;

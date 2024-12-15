@@ -2,9 +2,9 @@
 #include "Kinai/Renderer/Renderer.hpp"
 #include "Kinai/Platform/OpenGL/OpenGLShader.hpp"
 
-#if defined(KN_HEADLESS)
+#if defined(KINAI_HEADLESS)
 #include "Kinai/Platform/Headless/HeadlessShader.hpp"
-#elif defined(KN_OPENGL)
+#elif defined(KINAI_OPENGL)
 #include "Kinai/Platform/OpenGL/OpenGLShader.hpp"
 #endif
 
@@ -15,9 +15,9 @@ std::shared_ptr<Shader> Shader::Create(const std::string& filepath, const std::s
 {
 	KN_PRINT_FUNC();
 
-#if defined(KN_HEADLESS)
+#if defined(KINAI_HEADLESS)
 	return std::make_shared<HeadlessShader>(filepath, program_name);
-#elif defined(KN_OPENGL)
+#elif defined(KINAI_OPENGL)
 	return std::make_shared<OpenGLShader>(filepath, program_name);
 #endif
 
@@ -29,9 +29,9 @@ std::shared_ptr<Shader> Shader::Create(const std::string& name, const std::strin
 {
 	KN_PRINT_FUNC();
 
-#if defined(KN_HEADLESS)
+#if defined(KINAI_HEADLESS)
 	return std::make_shared<HeadlessShader>(name, vertexSrc, fragmentSrc);
-#elif defined(KN_OPENGL)
+#elif defined(KINAI_OPENGL)
 	return std::make_shared<OpenGLShader>(name, vertexSrc, fragmentSrc);
 #endif
 

@@ -38,7 +38,7 @@ Application::Application(const ApplicationConfig &config)
 		_imgui_layer = static_cast<ImGuiLayer *>(PushOverlay(new ImGuiLayer()));
 	}
 
-#ifdef KN_HEADLESS
+#ifdef KINAI_HEADLESS
 	void SigIntHandler(int signum);
 	std::signal(SIGINT, SigIntHandler);
 #endif

@@ -21,13 +21,16 @@ ifeq ($(target),$(__EMSCRIPTEN__))
 endif
 
 # Backend
-CFLAGS += -DKN_OPENGL
-CXXFLAGS += -DKN_OPENGL
+CFLAGS += -DKINAI_OPENGL
+CXXFLAGS += -DKINAI_OPENGL
 
 KINAI_OBJS = $(patsubst $(KINAI_PATH)/src/%.cpp,$(__kinai_objs_dir)/%.o,$(KINAI_SRC))
 INCLUDE += -I $(KINAI_PATH)/include -I $(KINAI_PATH)/include/Kinai
 
 all: $(KINAI)
+
+# Examples
+include $(KINAI_PATH)/make/examples.mk
 
 $(KINAI): $(LIB_OBJS) $(KINAI_OBJS)
 	$(SILENT)mkdir -p $(dir $@)

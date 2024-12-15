@@ -1,9 +1,9 @@
 #include "Kinai/Core/Window.hpp"
 #include "Kinai/Renderer/Renderer.hpp"
 
-#if defined(KN_HEADLESS)
+#if defined(KINAI_HEADLESS)
 #include "Kinai/Platform/Headless/HeadlessWindow.hpp"
-#elif defined(KN_OPENGL)
+#elif defined(KINAI_OPENGL)
 	#if defined(KN_PLATFORM_DESKTOP)
 		#include "Kinai/Platform/SDL/SDLWindow.hpp"
 	#elif defined(KN_PLATFORM_WEB)
@@ -18,9 +18,9 @@ std::unique_ptr<Window>	Window::Create(const WindowProps &props)
 {
 	KN_PRINT_FUNC();
 
-#if defined(KN_HEADLESS)
+#if defined(KINAI_HEADLESS)
 		return std::make_unique<HeadlessWindow>(props);
-#elif defined(KN_OPENGL)
+#elif defined(KINAI_OPENGL)
 	#if defined(KN_PLATFORM_DESKTOP)
 		return std::make_unique<SDLWindow>(props);
 	#elif defined(KN_PLATFORM_WEB)

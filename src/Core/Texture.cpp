@@ -1,9 +1,9 @@
 #include "Kinai/Core/Texture.hpp"
 #include "Kinai/Renderer/Renderer.hpp"
 
-#if defined(KN_HEADLESS)
+#if defined(KINAI_HEADLESS)
 #include "Kinai/Platform/Headless/HeadlessTexture.hpp"
-#elif defined(KN_OPENGL)
+#elif defined(KINAI_OPENGL)
 #include "Kinai/Platform/OpenGL/OpenGLTexture.hpp"
 #endif
 
@@ -14,9 +14,9 @@ std::shared_ptr<Texture2D> Texture2D::Create(const TextureConfig& config)
 {
 	KN_PRINT_FUNC();
 
-#if defined(KN_HEADLESS)
+#if defined(KINAI_HEADLESS)
 	return std::make_shared<HeadlessTexture2D>(config);
-#elif defined(KN_OPENGL)
+#elif defined(KINAI_OPENGL)
 	return std::make_shared<OpenGLTexture2D>(config);
 #endif
 
@@ -28,9 +28,9 @@ std::shared_ptr<Texture2D> Texture2D::Create(const std::string& path, GLenum min
 {
 	KN_PRINT_FUNC();
 
-#if defined(KN_HEADLESS)
+#if defined(KINAI_HEADLESS)
 	return std::make_shared<HeadlessTexture2D>(path);
-#elif defined(KN_OPENGL)
+#elif defined(KINAI_OPENGL)
 	return std::make_shared<OpenGLTexture2D>(path, min_filter, max_filter);
 #endif
 

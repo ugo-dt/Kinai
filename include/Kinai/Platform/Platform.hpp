@@ -63,6 +63,6 @@
 	#define glCreateTextures		glGenTextures
 #endif
 
-#if !defined(KN_OPENGL) && !defined(KN_HEADLESS)
-# error "Please select a backend by defining KN_OPENGL or KN_HEADLESS"
+#if !defined(KINAI_OPENGL) && !defined(KINAI_HEADLESS)
+# error "Please select a backend by defining KINAI_OPENGL or KINAI_HEADLESS"
 #endif

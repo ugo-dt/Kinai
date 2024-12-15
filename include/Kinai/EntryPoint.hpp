@@ -1,0 +1,1 @@
+#include "Kinai/Core/EntryPoint.hpp"

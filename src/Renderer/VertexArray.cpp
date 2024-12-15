@@ -11,9 +11,9 @@ std::shared_ptr<VertexArray>	VertexArray::Create()
 {
 	KN_PRINT_FUNC();
 
-#ifdef KN_HEADLESS
+#ifdef KINAI_HEADLESS
 	return std::make_shared<HeadlessVertexArray>();
-#elif defined(KN_OPENGL)
+#elif defined(KINAI_OPENGL)
 	return std::make_shared<OpenGLVertexArray>();
 #endif
 

@@ -3,9 +3,9 @@
 #include "Kinai/Renderer/Buffer/VertexBuffer.hpp"
 #include "Kinai/Renderer/Renderer.hpp"
 
-#if defined(KN_HEADLESS)
+#if defined(KINAI_HEADLESS)
 #include "Kinai/Platform/Headless/HeadlessBuffer.hpp"
-#elif defined(KN_OPENGL)
+#elif defined(KINAI_OPENGL)
 #include "Kinai/Platform/OpenGL/OpenGLBuffer.hpp"
 #endif
 
@@ -16,9 +16,9 @@ std::shared_ptr<VertexBuffer> VertexBuffer::Create(uint32_t size)
 {
 	KN_PRINT_FUNC();
 
-#if defined(KN_HEADLESS)
+#if defined(KINAI_HEADLESS)
 	return std::make_shared<HeadlessVertexBuffer>(size);
-#elif defined(KN_OPENGL)
+#elif defined(KINAI_OPENGL)
 	return std::make_shared<OpenGLVertexBuffer>(size);
 #endif
 
@@ -30,9 +30,9 @@ std::shared_ptr<VertexBuffer> VertexBuffer::Create(const void* vertices, uint32_
 {
 	KN_PRINT_FUNC();
 
-#if defined(KN_HEADLESS)
+#if defined(KINAI_HEADLESS)
 	return std::make_shared<HeadlessVertexBuffer>(vertices, size);
-#elif defined(KN_OPENGL)
+#elif defined(KINAI_OPENGL)
 	return std::make_shared<OpenGLVertexBuffer>(vertices, size);
 #endif
 
@@ -44,9 +44,9 @@ std::shared_ptr<IndexBuffer> IndexBuffer::Create(const uint32_t* indices, uint32
 {
 	KN_PRINT_FUNC();
 
-#if defined(KN_HEADLESS)
+#if defined(KINAI_HEADLESS)
 	return std::make_shared<HeadlessIndexBuffer>(indices, count);
-#elif defined(KN_OPENGL)
+#elif defined(KINAI_OPENGL)
 	return std::make_shared<OpenGLIndexBuffer>(indices, count);
 #endif
 

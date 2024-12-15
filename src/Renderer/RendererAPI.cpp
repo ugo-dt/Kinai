@@ -10,9 +10,9 @@ std::unique_ptr<RendererAPI>	RendererAPI::Create()
 {
 	KN_PRINT_FUNC();
 
-#if defined(KN_HEADLESS)
+#if defined(KINAI_HEADLESS)
 	return std::make_unique<HeadlessRendererAPI>();
-#elif defined(KN_OPENGL)
+#elif defined(KINAI_OPENGL)
 	return std::make_unique<OpenGLRendererAPI>();
 #endif
 
