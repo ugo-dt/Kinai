@@ -72,10 +72,18 @@ ifeq ($(target),)
   $(error Empty target)
 endif
 
-
 # Rendering backend.
 ifndef backend
   backend = OpenGL
+endif
+
+ifdef KINAI_BACKEND
+  override backend = $(KINAI_BACKEND)
+endif
+
+ifeq ($(backend),)
+  $(info Please select a backend with OpenGL or Headless.)
+  $(error No rendering backend selected)
 endif
 
 # Compare against lowercase to make it case insensitive.
@@ -93,11 +101,6 @@ else ifeq ($(__lc_backend),headless)
   CXXFLAGS += -DKINAI_HEADLESS
 else ifeq (,$(filter $(__lc_target),$(__WIN32__) $(__LINUX__) $(__MACOS__) $(__EMSCRIPTEN__)))
   $(error Unknown backend '$(backend)')
-endif
-
-ifeq ($(backend),)
-  $(info Please select a backend with OpenGL or Headless.)
-  $(error No rendering backend selected)
 endif
 
 ifeq ($(target),$(__WIN32__))
