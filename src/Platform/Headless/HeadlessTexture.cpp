@@ -19,7 +19,7 @@ HeadlessTexture2D::HeadlessTexture2D(const std::string& path)
 {
 	KN_PRINT_FUNC();
 
-	(void)path;
+	KN_NOTUSED(path);
 }
 
 HeadlessTexture2D::~HeadlessTexture2D()
@@ -31,15 +31,15 @@ void HeadlessTexture2D::SetData(void* data, uint32_t size)
 {
 	KN_PRINT_FUNC();
 
-	(void)data;
-	(void)size;
+	KN_NOTUSED(data);
+	KN_NOTUSED(size);
 }
 
 void HeadlessTexture2D::Bind(uint32_t slot) const
 {
 	KN_PRINT_FUNC();
 
-	(void)slot;
+	KN_NOTUSED(slot);
 }
 
 } // Kinai

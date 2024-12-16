@@ -19,7 +19,7 @@ public:
 
 	void	OnUpdate(float delta)
 	{
-		(void)delta;
+		KN_NOTUSED(delta);
 
 		float time = SDL_GetTicks() / 1000.f;
 		float r = glm::sin(time) * 0.5f + 0.5f,
@@ -75,8 +75,8 @@ public:
 
 Kinai::Application*	Kinai::CreateApplication(int argc, char **argv)
 {
-	(void)argc;
-	(void)argv;
+	KN_NOTUSED(argc);
+	KN_NOTUSED(argv);
 
 	return new App();
 }

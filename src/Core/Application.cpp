@@ -25,7 +25,9 @@ Application::Application(const ApplicationConfig &config)
 		)
 	);
 
+#ifdef KINAI_OPENGL
 	SDL_RegisterEvents(KN_CUSTOM_EVENT_TYPE_COUNT);
+#endif
 
 	_window->SetEventCallback(KN_BIND_EVENT_FN(Application::OnEvent));
 	std::memset(&_time, 0, sizeof(Time));
@@ -140,7 +142,7 @@ bool	Application::OnWindowClose(WindowCloseEvent &event)
 {
 	KN_PRINT_FUNC();
 
-	(void)event;
+	KN_NOTUSED(event);
 	Close();
 	return true;
 }
@@ -148,8 +150,6 @@ bool	Application::OnWindowClose(WindowCloseEvent &event)
 bool	Application::OnWindowResize(WindowResizeEvent &event)
 {
 	KN_PRINT_FUNC();
-
-	(void)event;
 
 	if (event.GetWidth() == 0 || event.GetHeight() == 0)
 	{

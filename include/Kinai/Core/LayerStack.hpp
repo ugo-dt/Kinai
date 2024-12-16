@@ -9,8 +9,8 @@ namespace Kinai
 class LayerStack
 {
 public:
-	LayerStack(void);
-	~LayerStack(void);
+	LayerStack();
+	~LayerStack();
 
 	void	PushLayer(Layer *layer);
 	void	PopLayer(Layer *layer);

@@ -60,11 +60,11 @@ INCLUDE				+= $(__lib_include)
 LIB_OBJS			= $(__glad_objs) $(__imgui_objs) $(__stb_image_objs)
 
 ifeq ($(target),$(__MACOS__))
-  LDFLAGS			+= $(shell pkg-config --libs SDL3)
+LDFLAGS			+= $(shell pkg-config --libs SDL3)
 else ifeq ($(target),$(__WIN32__))
-  LDFLAGS			+= $(__sdl3_path)/bin/$(target)/libSDL3.dll.a
+LDFLAGS			+= $(__sdl3_path)/bin/$(target)/libSDL3.dll.a
 else
-  LDFLAGS			+= -L $(__sdl3_path)/bin/$(target) -lSDL3
+LDFLAGS			+= -L $(__sdl3_path)/bin/$(target) -lSDL3
 endif
 
 $(__lib_obj_dir)/glad/%.o: $(__glad_path)/src/%.c

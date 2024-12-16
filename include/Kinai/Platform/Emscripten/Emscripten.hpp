@@ -46,8 +46,8 @@ public:
 	bool	IsFocused() const override { return true; }
 	bool	IsHovered() const override { return true; }
 	
-	void	SetRelativeMouseMode(bool enabled) override { (void)enabled;}
-	void	WarpMouse(float x, float y) override { (void)x;(void)y;}
+	void	SetRelativeMouseMode(bool enabled) override { KN_NOTUSED(enabled);}
+	void	WarpMouse(float x, float y) override { KN_NOTUSED(x); KN_NOTUSED(y);}
 
 public:
 	static EmWindow	&Get() { return *_instance; }

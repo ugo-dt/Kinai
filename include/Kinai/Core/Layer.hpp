@@ -12,13 +12,13 @@ protected:
 	Layer(const std::string name = "DefaultLayer"): _debug_name(name) {}
 
 public:
-	virtual ~Layer(void) = default;
+	virtual ~Layer() = default;
 
 	virtual void	OnAttach() {};
 	virtual void	OnDetach() {};
-	virtual void	OnUpdate(float delta) { (void)delta; };
+	virtual void	OnUpdate(float delta) { KN_NOTUSED(delta); };
 	virtual void	OnImGuiRender() {}
-	virtual void	OnEvent(Event& event) { (void)event; };
+	virtual void	OnEvent(Event& event) { KN_NOTUSED(event); };
 
 	const std::string&	GetName() const { return _debug_name; }
 

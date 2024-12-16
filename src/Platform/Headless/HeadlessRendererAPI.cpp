@@ -12,17 +12,17 @@ void	HeadlessRendererAPI::SetViewport(uint32_t x, uint32_t y, uint32_t width, ui
 {
 	KN_PRINT_FUNC();
 
-	(void)x;
-	(void)y;
-	(void)width;
-	(void)height;
+	KN_NOTUSED(x);
+	KN_NOTUSED(y);
+	KN_NOTUSED(width);
+	KN_NOTUSED(height);
 }
 
 void	HeadlessRendererAPI::SetClearColor(const glm::vec4& color)
 {
 	KN_PRINT_FUNC();
 
-	(void)color;
+	KN_NOTUSED(color);
 }
 
 void	HeadlessRendererAPI::Clear()
@@ -34,31 +34,31 @@ void	HeadlessRendererAPI::DrawIndexed(const std::shared_ptr<VertexArray>& vertex
 {
 	KN_PRINT_FUNC();
 
-	(void)vertexArray;
-	(void)indexCount;
+	KN_NOTUSED(vertexArray);
+	KN_NOTUSED(indexCount);
 }
 
 void	HeadlessRendererAPI::DrawLines(const std::shared_ptr<VertexArray>& vertexArray, uint32_t vertexCount)
 {
 	KN_PRINT_FUNC();
 
-	(void)vertexArray;
-	(void)vertexCount;
+	KN_NOTUSED(vertexArray);
+	KN_NOTUSED(vertexCount);
 }
 
 void	HeadlessRendererAPI::DrawTriangles(const std::shared_ptr<VertexArray>& vertexArray, uint32_t vertexCount)
 {
 	KN_PRINT_FUNC();
 
-	(void)vertexArray;
-	(void)vertexCount;
+	KN_NOTUSED(vertexArray);
+	KN_NOTUSED(vertexCount);
 }
 
 void	HeadlessRendererAPI::SetLineWidth(float width)
 {
 	KN_PRINT_FUNC();
 
-	(void)width;
+	KN_NOTUSED(width);
 }
 
 } // Kinai

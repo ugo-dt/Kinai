@@ -13,11 +13,11 @@ void	OpenGLMessageCallback(
 	const char* message,
 	const void* userParam)
 {
-	(void)source;
-	(void)type;
-	(void)id;
-	(void)length;
-	(void)userParam;
+	KN_NOTUSED(source);
+	KN_NOTUSED(type);
+	KN_NOTUSED(id);
+	KN_NOTUSED(length);
+	KN_NOTUSED(userParam);
 	switch (severity)
 	{
 		case GL_DEBUG_SEVERITY_HIGH:         std::cerr << message << std::endl; return;

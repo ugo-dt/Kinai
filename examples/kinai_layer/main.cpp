@@ -19,7 +19,7 @@ public:
 
 	void	OnUpdate(float delta)
 	{
-		(void)delta;
+		KN_NOTUSED(delta);
 
 		// Close the window with the Escape key
 		if (Kinai::Input::IsKeyPressed(Kinai::Key::Escape))
@@ -49,8 +49,8 @@ public:
 
 Kinai::Application*	Kinai::CreateApplication(int argc, char **argv)
 {
-	(void)argc;
-	(void)argv;
+	KN_NOTUSED(argc);
+	KN_NOTUSED(argv);
 
 	return new App();
 }

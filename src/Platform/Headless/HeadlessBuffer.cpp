@@ -7,15 +7,15 @@ HeadlessVertexBuffer::HeadlessVertexBuffer(uint32_t size)
 {
 	KN_PRINT_FUNC();
 	
-	(void)size;
+	KN_NOTUSED(size);
 }
 
 HeadlessVertexBuffer::HeadlessVertexBuffer(const void* vertices, uint32_t size)
 {
 	KN_PRINT_FUNC();
 	
-	(void)vertices;
-	(void)size;
+	KN_NOTUSED(vertices);
+	KN_NOTUSED(size);
 }
 
 HeadlessVertexBuffer::~HeadlessVertexBuffer()
@@ -35,8 +35,8 @@ void	HeadlessVertexBuffer::Unbind() const
 
 void	HeadlessVertexBuffer::SetData(const void* data, uint32_t size)
 {
-	(void)data;
-	(void)size;
+	KN_NOTUSED(data);
+	KN_NOTUSED(size);
 }
 
 /** Index buffer */
@@ -46,8 +46,8 @@ HeadlessIndexBuffer::HeadlessIndexBuffer(const uint32_t* indices, uint32_t count
 {
 	KN_PRINT_FUNC();
 	
-	(void)indices;
-	(void)count;
+	KN_NOTUSED(indices);
+	KN_NOTUSED(count);
 }
 
 HeadlessIndexBuffer::~HeadlessIndexBuffer()

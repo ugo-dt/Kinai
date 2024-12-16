@@ -27,14 +27,14 @@ void	HeadlessVertexArray::AddVertexBuffer(const std::shared_ptr<VertexBuffer>& v
 {
 	KN_PRINT_FUNC();
 
-	(void)vertexBuffer;
+	KN_NOTUSED(vertexBuffer);
 }
 
 void	HeadlessVertexArray::SetIndexBuffer(const std::shared_ptr<IndexBuffer>& indexBuffer)
 {
 	KN_PRINT_FUNC();
 
-	(void)indexBuffer;
+	KN_NOTUSED(indexBuffer);
 }
 
 } // Kinai

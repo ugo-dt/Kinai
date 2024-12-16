@@ -145,7 +145,6 @@ void OpenGLTexture2D::SetData(void* data, uint32_t size)
 	uint32_t bpp = _data_format == GL_RGBA ? 4 : 3;
 	KN_ASSERT(size == _width * _height * bpp, "Data must be entire texture!");
 #else
-	(void)size;
 #endif
 
 #ifdef KN_PLATFORM_DESKTOP

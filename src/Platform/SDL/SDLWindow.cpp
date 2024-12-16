@@ -50,7 +50,7 @@ SDLWindow::SDLWindow(const WindowProps &props)
 	_data.sample_count = desc_def.sample_count;
 	_data.no_depth_buffer = desc_def.no_depth_buffer;
 
-	(void)status;
+	KN_NOTUSED(status);
 	status = SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS);
 	KN_ASSERT(status == true && "Failed to init SDL");
 

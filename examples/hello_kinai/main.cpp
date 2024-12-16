@@ -15,8 +15,8 @@ public:
 
 Kinai::Application*	Kinai::CreateApplication(int argc, char **argv)
 {
-	(void)argc;
-	(void)argv;
+	KN_NOTUSED(argc);
+	KN_NOTUSED(argv);
 
 	return new HelloApplication(Kinai::ApplicationConfig{
 		.name = "Hello Kinai",

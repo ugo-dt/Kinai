@@ -8,7 +8,7 @@ HeadlessShader::HeadlessShader(const std::string& filepath, const std::string& p
 {
 	KN_PRINT_FUNC();
 	
-	(void)filepath;
+	KN_NOTUSED(filepath);
 }
 
 HeadlessShader::HeadlessShader(const std::string& name, const std::string& vs, const std::string& fs)
@@ -28,8 +28,8 @@ void	HeadlessShader::CreateProgram(const char *vertex, const char *fragment)
 {
 	KN_PRINT_FUNC();
 
-	(void)vertex;
-	(void)fragment;
+	KN_NOTUSED(vertex);
+	KN_NOTUSED(fragment);
 }
 
 void	HeadlessShader::Bind() const
@@ -46,122 +46,122 @@ void	HeadlessShader::SetInt(const std::string& name, int value)
 {
 	KN_PRINT_FUNC();
 
-	(void)name;
-	(void)value;
+	KN_NOTUSED(name);
+	KN_NOTUSED(value);
 }
 
 void	HeadlessShader::SetIntArray(const std::string& name, int* values, uint32_t count)
 {
 	KN_PRINT_FUNC();
 	
-	(void)name;
-	(void)values;
-	(void)count;
+	KN_NOTUSED(name);
+	KN_NOTUSED(values);
+	KN_NOTUSED(count);
 }
 
 void	HeadlessShader::SetFloat(const std::string& name, float value)
 {
 	KN_PRINT_FUNC();
 	
-	(void)name;
-	(void)value;
+	KN_NOTUSED(name);
+	KN_NOTUSED(value);
 }
 
 void	HeadlessShader::SetFloat2(const std::string& name, const glm::vec2& value)
 {
 	KN_PRINT_FUNC();
 	
-	(void)name;
-	(void)value;
+	KN_NOTUSED(name);
+	KN_NOTUSED(value);
 }
 
 void	HeadlessShader::SetFloat3(const std::string& name, const glm::vec3& value)
 {
 	KN_PRINT_FUNC();
 	
-	(void)name;
-	(void)value;
+	KN_NOTUSED(name);
+	KN_NOTUSED(value);
 }
 
 void	HeadlessShader::SetFloat4(const std::string& name, const glm::vec4& value)
 {
 	KN_PRINT_FUNC();
 	
-	(void)name;
-	(void)value;
+	KN_NOTUSED(name);
+	KN_NOTUSED(value);
 }
 
 void	HeadlessShader::SetMat4(const std::string& name, const glm::mat4& value)
 {
 	KN_PRINT_FUNC();
 	
-	(void)name;
-	(void)value;
+	KN_NOTUSED(name);
+	KN_NOTUSED(value);
 }
 
 void	HeadlessShader::UploadUniformInt(const std::string& name, int value)
 {
 	KN_PRINT_FUNC();
 	
-	(void)name;
-	(void)value;
+	KN_NOTUSED(name);
+	KN_NOTUSED(value);
 }
 
 void	HeadlessShader::UploadUniformIntArray(const std::string& name, int* values, uint32_t count)
 {
 	KN_PRINT_FUNC();
 	
-	(void)name;
-	(void)values;
-	(void)count;
+	KN_NOTUSED(name);
+	KN_NOTUSED(values);
+	KN_NOTUSED(count);
 }
 
 void	HeadlessShader::UploadUniformFloat(const std::string& name, float value)
 {
 	KN_PRINT_FUNC();
 	
-	(void)name;
-	(void)value;
+	KN_NOTUSED(name);
+	KN_NOTUSED(value);
 }
 
 void	HeadlessShader::UploadUniformFloat2(const std::string& name, const glm::vec2& value)
 {
 	KN_PRINT_FUNC();
 	
-	(void)name;
-	(void)value;
+	KN_NOTUSED(name);
+	KN_NOTUSED(value);
 }
 
 void	HeadlessShader::UploadUniformFloat3(const std::string& name, const glm::vec3& value)
 {
 	KN_PRINT_FUNC();
 	
-	(void)name;
-	(void)value;
+	KN_NOTUSED(name);
+	KN_NOTUSED(value);
 }
 
 void	HeadlessShader::UploadUniformFloat4(const std::string& name, const glm::vec4& value)
 {
 	KN_PRINT_FUNC();
 	
-	(void)name;
-	(void)value;
+	KN_NOTUSED(name);
+	KN_NOTUSED(value);
 }
 
 void	HeadlessShader::UploadUniformMat3(const std::string& name, const glm::mat3& matrix)
 {
 	KN_PRINT_FUNC();
 	
-	(void)name;
-	(void)matrix;
+	KN_NOTUSED(name);
+	KN_NOTUSED(matrix);
 }
 
 void	HeadlessShader::UploadUniformMat4(const std::string& name, const glm::mat4& matrix)
 {
 	KN_PRINT_FUNC();
 	
-	(void)name;
-	(void)matrix;
+	KN_NOTUSED(name);
+	KN_NOTUSED(matrix);
 }
 
 } // Kinai

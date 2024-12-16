@@ -90,14 +90,19 @@ endif
 __lc_backend = $(shell echo $(backend) | tr '[:upper:]' '[:lower:]')
 
 ifeq ($(__lc_backend),opengl) # OpenGL
+  override backend = OpenGL
   CXXFLAGS += -DKINAI_OPENGL
 else ifeq ($(__lc_backend),gl)
+  override backend = OpenGL
   CXXFLAGS += -DKINAI_OPENGL
 else ifeq ($(__lc_backend),null) # Headless
+  override backend = Headless
   CXXFLAGS += -DKINAI_HEADLESS
 else ifeq ($(__lc_backend),none)
+  override backend = Headless
   CXXFLAGS += -DKINAI_HEADLESS
 else ifeq ($(__lc_backend),headless)
+  override backend = Headless
   CXXFLAGS += -DKINAI_HEADLESS
 else ifeq (,$(filter $(__lc_target),$(__WIN32__) $(__LINUX__) $(__MACOS__) $(__EMSCRIPTEN__)))
   $(error Unknown backend '$(backend)')
