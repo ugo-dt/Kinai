@@ -10,7 +10,7 @@ class HeadlessVertexBuffer : public VertexBuffer
 {
 public:
 	HeadlessVertexBuffer(uint32_t size);
-	HeadlessVertexBuffer(float* vertices, uint32_t size);
+	HeadlessVertexBuffer(const void* vertices, uint32_t size);
 	~HeadlessVertexBuffer();
 
 	void	Bind() const override;

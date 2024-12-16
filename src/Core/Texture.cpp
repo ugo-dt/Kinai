@@ -29,6 +29,8 @@ std::shared_ptr<Texture2D> Texture2D::Create(const std::string& path, GLenum min
 	KN_PRINT_FUNC();
 
 #if defined(KINAI_HEADLESS)
+	(void)min_filter;
+	(void)max_filter;
 	return std::make_shared<HeadlessTexture2D>(path);
 #elif defined(KINAI_OPENGL)
 	return std::make_shared<OpenGLTexture2D>(path, min_filter, max_filter);

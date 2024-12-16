@@ -10,7 +10,7 @@ HeadlessVertexBuffer::HeadlessVertexBuffer(uint32_t size)
 	(void)size;
 }
 
-HeadlessVertexBuffer::HeadlessVertexBuffer(float* vertices, uint32_t size)
+HeadlessVertexBuffer::HeadlessVertexBuffer(const void* vertices, uint32_t size)
 {
 	KN_PRINT_FUNC();
 	
