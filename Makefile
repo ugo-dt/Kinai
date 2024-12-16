@@ -20,10 +20,6 @@ ifeq ($(target),$(__EMSCRIPTEN__))
   KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/Emscripten/*.cpp)
 endif
 
-# Backend
-CFLAGS += -DKINAI_OPENGL
-CXXFLAGS += -DKINAI_OPENGL
-
 KINAI_OBJS = $(patsubst $(KINAI_PATH)/src/%.cpp,$(__kinai_objs_dir)/%.o,$(KINAI_SRC))
 INCLUDE += -I $(KINAI_PATH)/include -I $(KINAI_PATH)/include/Kinai
 
@@ -48,5 +44,9 @@ clean::
 fclean::
 	$(SILENT)$(MAKE) $(NO_PRINT_DIRECTORY) clean
 	$(SILENT)rm -rf ./bin/$(target) $(KINAI)
+
+re::
+	$(SILENT)$(MAKE) $(NO_PRINT_DIRECTORY) fclean
+	$(SILENT)$(MAKE) $(NO_PRINT_DIRECTORY) all
 
 endif # __KINAI_MK

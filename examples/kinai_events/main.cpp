@@ -33,6 +33,7 @@ public:
 	{
 		Kinai::EventDispatcher dispatcher(event);
 
+		// Send specific events to the appropriate function
 		dispatcher.Dispatch<Kinai::KeyPressedEvent>(KN_BIND_EVENT_FN(OnKeyPressed));
 		dispatcher.Dispatch<Kinai::MouseButtonPressedEvent>(KN_BIND_EVENT_FN(OnMouseButtonPressed));
 	}
@@ -42,6 +43,7 @@ public:
 		Kinai::Log::Info("Pressed key {}", event.GetKeyCode());
 		switch (event.GetKeyCode())
 		{
+			// Close the window with the Escape key
 			case Kinai::Key::Escape:
 				Kinai::Application::Get().Close();
 				break;

@@ -49,10 +49,8 @@ ifdef target
   else ifeq ($(__lc_target),emsc)
     override target = $(__EMSCRIPTEN__)
 
-  else ifneq (,$(filter $(GCC_MINOR),$(__WIN32__) $(__LINUX__) $(__MACOS__) $(__EMSCRIPTEN__)))
-  __unknown_target:
-	@echo "Unknown target '$(target)'."
-	@exit 1
+  else ifeq (,$(filter $(__lc_target),$(__WIN32__) $(__LINUX__) $(__MACOS__) $(__EMSCRIPTEN__)))
+    $(error Unknown target '$(target)')
   endif
 else # Detect current platform.
   ifeq ($(__platform),linux)
@@ -68,6 +66,38 @@ else # Detect current platform.
   else
     target = $(__platform)
   endif
+endif
+
+ifeq ($(target),)
+  $(error Empty target)
+endif
+
+
+# Rendering backend.
+ifndef backend
+  backend = OpenGL
+endif
+
+# Compare against lowercase to make it case insensitive.
+__lc_backend = $(shell echo $(backend) | tr '[:upper:]' '[:lower:]')
+
+ifeq ($(__lc_backend),opengl) # OpenGL
+  CXXFLAGS += -DKINAI_OPENGL
+else ifeq ($(__lc_backend),gl)
+  CXXFLAGS += -DKINAI_OPENGL
+else ifeq ($(__lc_backend),null) # Headless
+  CXXFLAGS += -DKINAI_HEADLESS
+else ifeq ($(__lc_backend),none)
+  CXXFLAGS += -DKINAI_HEADLESS
+else ifeq ($(__lc_backend),headless)
+  CXXFLAGS += -DKINAI_HEADLESS
+else ifeq (,$(filter $(__lc_target),$(__WIN32__) $(__LINUX__) $(__MACOS__) $(__EMSCRIPTEN__)))
+  $(error Unknown backend '$(backend)')
+endif
+
+ifeq ($(backend),)
+  $(info Please select a backend with OpenGL or Headless.)
+  $(error No rendering backend selected)
 endif
 
 ifeq ($(target),$(__WIN32__))
@@ -90,12 +120,6 @@ else ifeq ($(target),$(__EMSCRIPTEN__))
   AR		= emar
   CXXFLAGS	+= -DIMGUI_IMPL_OPENGL_ES3
   LDFLAGS	+= -sFULL_ES3=1 -sALLOW_MEMORY_GROWTH
-endif
-
-ifeq ($(target),)
-  __empty_target:
-	@echo "Empty target."
-	@exit 1
 endif
 
 endif # __PLATFORM_MK

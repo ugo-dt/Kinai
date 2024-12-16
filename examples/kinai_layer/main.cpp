@@ -21,6 +21,7 @@ public:
 	{
 		(void)delta;
 
+		// Close the window with the Escape key
 		if (Kinai::Input::IsKeyPressed(Kinai::Key::Escape))
 			Kinai::Application::Get().Close();
 

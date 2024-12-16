@@ -11,6 +11,7 @@ class Layer
 protected:
 	Layer(const std::string name = "DefaultLayer"): _debug_name(name) {}
 
+public:
 	virtual ~Layer(void) = default;
 
 	virtual void	OnAttach() {};

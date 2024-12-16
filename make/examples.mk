@@ -10,6 +10,7 @@ $(1):
 
 endef
 
-all_examples: $(foreach example,$(EXAMPLES),$(notdir $(example)))
+.PHONY: examples
+examples: $(foreach example,$(EXAMPLES),$(notdir $(example)))
 
 $(eval $(foreach example,$(EXAMPLES),$(call __make_example_rule,$(notdir $(example)))))

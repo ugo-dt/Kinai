@@ -37,27 +37,20 @@ __build_release		= release
 ifndef build
   build = $(__build_dev)
 endif
-# Debug
-ifeq ($(build),$(__build_debug))
+
+ifeq ($(build),$(__build_debug)) # Debug
   CFLAGS	+= -DKN_DEBUG -g
   CXXFLAGS	+= -DKN_DEBUG -g
-
-# Dev
-else ifeq ($(build),$(__build_dev))
+else ifeq ($(build),$(__build_dev)) # Dev
   CFLAGS	+= -DKN_DEV -g
   CXXFLAGS	+= -DKN_DEV -g
-
-# Release
-else ifeq ($(build),$(__build_release))
+else ifeq ($(build),$(__build_release)) # Release
   CFLAGS	+= -DKN_RELEASE -O3
   CXXFLAGS	+= -DKN_RELEASE -O3
-
+else ifeq ($(build),)
+  $(error Empty build)
 else
-	"Unknown build '$(build)'."
-endif
-
-ifeq ($(build),)
-	"Empty build."
+  $(error Unknown build '$(build)')
 endif
 
 endif # __CORE_MK
