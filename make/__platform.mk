@@ -72,6 +72,28 @@ ifeq ($(target),)
   $(error Empty target)
 endif
 
+ifeq ($(target),$(__WIN32__))
+  EXE		= .exe
+  CC		= $(__arch)-w64-mingw32-gcc
+  CXX		= $(__arch)-w64-mingw32-c++
+  AR		= $(__arch)-w64-mingw32-ar
+  LDFLAGS	+= -lmingw32 -lopengl32 -lglu32 -static
+else ifeq ($(target),$(__LINUX__))
+  EXE 		= .out
+  LDFLAGS	+= -lm -lGL
+else ifeq ($(target),$(__MACOS__))
+  EXE		= .out
+  INCLUDE	+= -I /opt/homebrew/include
+  LDFLAGS	+= -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo -lncurses
+else ifeq ($(target),$(__EMSCRIPTEN__))
+  EXE		= .html
+  CC		= emcc
+  CXX		= em++
+  AR		= emar
+  CXXFLAGS	+= -DIMGUI_IMPL_OPENGL_ES3
+  LDFLAGS	+= -sFULL_ES3=1 -sALLOW_MEMORY_GROWTH
+endif
+
 # Rendering backend.
 ifndef backend
   backend = OpenGL
@@ -106,28 +128,6 @@ else ifeq ($(__lc_backend),headless)
   CXXFLAGS += -DKINAI_HEADLESS
 else ifeq (,$(filter $(__lc_target),$(__WIN32__) $(__LINUX__) $(__MACOS__) $(__EMSCRIPTEN__)))
   $(error Unknown backend '$(backend)')
-endif
-
-ifeq ($(target),$(__WIN32__))
-  EXE		= .exe
-  CC		= $(__arch)-w64-mingw32-gcc
-  CXX		= $(__arch)-w64-mingw32-c++
-  AR		= $(__arch)-w64-mingw32-ar
-  LDFLAGS	+= -lmingw32 -lopengl32 -lglu32 -static
-else ifeq ($(target),$(__LINUX__))
-  EXE 		= .out
-  LDFLAGS	+= -lm -lGL
-else ifeq ($(target),$(__MACOS__))
-  EXE		= .out
-  INCLUDE	+= -I /opt/homebrew/include
-  LDFLAGS	+= -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo -lncurses
-else ifeq ($(target),$(__EMSCRIPTEN__))
-  EXE		= .html
-  CC		= emcc
-  CXX		= em++
-  AR		= emar
-  CXXFLAGS	+= -DIMGUI_IMPL_OPENGL_ES3
-  LDFLAGS	+= -sFULL_ES3=1 -sALLOW_MEMORY_GROWTH
 endif
 
 endif # __PLATFORM_MK
