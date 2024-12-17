@@ -107,14 +107,7 @@ void	OpenGLShaderParser::_tokenize(const std::string &data)
 				j = i;
 				while (i < line.length())
 				{
-					if (line[i] == SHADER_TOKEN_LESS || line[i] == SHADER_TOKEN_GREATER)
-					{
-						if (line[i + 1] == line[i])
-							i++;
-						else
-							_tokens.push_back(value_type(static_cast<ShaderParserTokenType>(line[i]), std::string(1, line[i]), row, i + 1));
-					}
-					else if (isspace(line[i]) || _is_separator(line[i]))
+					if (isspace(line[i]) || _is_separator(line[i]))
 						break ;
 					i++;
 				}
@@ -202,10 +195,8 @@ void	OpenGLShaderParser::_include(size_t &current)
 	bool	use = true;
 	bool	quote = false;
 
-	if (_make_iter(current) != SHADER_TOKEN_QUOTE && _make_iter(current) != SHADER_TOKEN_LESS)
+	if (_make_iter(current) != SHADER_TOKEN_QUOTE)
 		_throw_parser_with_context(_make_iter(current) - 1, "expected file path", "after");
-	if (_make_iter(current) == SHADER_TOKEN_QUOTE)
-		quote = true;
 	current++;
 	if (_make_iter(current) != SHADER_TOKEN_TEXT)
 		_throw_parser_with_context(_make_iter(current) - 1, "expected file path", "after");
@@ -222,13 +213,8 @@ void	OpenGLShaderParser::_include(size_t &current)
 		_included_files.push_back(path.string());
 	current++;
 
-	if (quote)
-	{
-		if (_make_iter(current) != SHADER_TOKEN_QUOTE)
-			_throw_parser_with_note(_make_iter(current), "expected '" + WHITE("\"") + "'", _make_iter(current) - 1, "to match this");
-	}
-	else if (_make_iter(current) != SHADER_TOKEN_GREATER)
-			_throw_parser_with_note(_make_iter(current), "expected '" + WHITE(">") + "'", _make_iter(current) - 1, "to match this");
+	if (_make_iter(current) != SHADER_TOKEN_QUOTE)
+		_throw_parser_with_note(_make_iter(current), "expected '" + WHITE("\"") + "'", _make_iter(current) - 1, "to match this");
 	current++;
 	if (use)
 	{
@@ -390,7 +376,7 @@ void	OpenGLShaderParser::MakeShader(const std::string& program_name, std::string
 	std::ifstream file(_filepath, std::ios::binary);
 	if (!file)
 	{
-		// KN_ERROR_LOG(LOG_CANT_OPEN_FILE, _filepath);
+		KN_ASSERT(false, "OpenGLShaderParser: Cannot open file '{}'", _filepath);
 		return ;
 	}
 
@@ -399,7 +385,7 @@ void	OpenGLShaderParser::MakeShader(const std::string& program_name, std::string
 	buffer << file.rdbuf();
 	_tokenize(buffer.str());
 	if (_tokens.empty())
-		std::cerr << _make_warning_string("make_shader: empty file: " + _filepath) << '\n';
+		std::cerr << _make_warning_string("OpenGLShaderParser: empty file: " + _filepath) << '\n';
 	else
 		_parse_tokens(0, _tokens.size(), false);
 
@@ -412,7 +398,6 @@ void	OpenGLShaderParser::MakeShader(const std::string& program_name, std::string
 
 	vertex_out = _get_vertex_source(*p);
 	fragment_out = _get_fragment_source(*p);
-	// KN_INFO_LOG(LOG_CREATE_SHADER_PROGRAM, ": " << YELLOW(p->name) << " (" << CYAN(p->vs) << ", " << CYAN(p->fs) << ")");
 }
 
 OpenGLShader::OpenGLShader(const std::string& filepath, const std::string& program_name)

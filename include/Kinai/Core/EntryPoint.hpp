@@ -20,7 +20,7 @@ int	Main(int argc, char **argv)
 
 	while (g_KinaiApplicationRunning)
 	{
-		Kinai::Application	*app = Kinai::CreateApplication(argc, argv);
+		Kinai::Application	*app = ::Kinai::CreateApplication(argc, argv);
 		app->Run();
 		delete app;
 	}

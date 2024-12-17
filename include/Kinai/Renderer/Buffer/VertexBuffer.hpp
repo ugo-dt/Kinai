@@ -23,4 +23,6 @@ public:
 	static std::shared_ptr<VertexBuffer>	Create(const void* vertices, uint32_t size);
 };
 
+using VertexBufferRef = std::shared_ptr<VertexBuffer>;
+
 } // Kinai

@@ -20,7 +20,7 @@ static inline uint32_t	ShaderDataTypeSize(ShaderDataType type)
 {
 	switch (type)
 	{
-		case ShaderDataType::None:		break;
+		case ShaderDataType::None:		return 0;
 		case ShaderDataType::Float:		return sizeof(float) * 1;
 		case ShaderDataType::Float2:	return sizeof(float) * 2;
 		case ShaderDataType::Float3:	return sizeof(float) * 3;
@@ -64,7 +64,7 @@ struct BufferElement
 	{
 		switch (type)
 		{
-			case ShaderDataType::None:		break;
+			case ShaderDataType::None:		return 0;
 			case ShaderDataType::Float:		return 1;
 			case ShaderDataType::Float2:	return 2;
 			case ShaderDataType::Float3:	return 3;

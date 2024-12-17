@@ -6,15 +6,15 @@ namespace Kinai
 
 void	SigIntHandler(int signum)
 {
-	(void)signum;
-	std::cout << "[Kinai] Caught signal interrupt. Stopping." << std::endl;
+	KN_NOTUSED(signum);
+	Log::Info("[Kinai] Caught signal interrupt. Stopping.");
 	Application::Get().Close();
 }
 
 HeadlessWindow::HeadlessWindow(const WindowProps& props)
 	: _eventCallback(nullptr)
 {
-	std::cout << "[Kinai] Running '" << props.title << "'." << std::endl;
+	Log::Info("[Kinai] Headless --- {}", props.title);
 }
 
 HeadlessWindow::~HeadlessWindow()

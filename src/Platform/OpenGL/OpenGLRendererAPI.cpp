@@ -20,10 +20,10 @@ void	OpenGLMessageCallback(
 	KN_NOTUSED(userParam);
 	switch (severity)
 	{
-		case GL_DEBUG_SEVERITY_HIGH:         std::cerr << message << std::endl; return;
-		case GL_DEBUG_SEVERITY_MEDIUM:       std::cerr << message << std::endl; return;
-		case GL_DEBUG_SEVERITY_LOW:          std::cerr << message << std::endl; return;
-		case GL_DEBUG_SEVERITY_NOTIFICATION: std::cout << message << std::endl; return;
+		case GL_DEBUG_SEVERITY_HIGH:         Log::Error("{}", message); return;
+		case GL_DEBUG_SEVERITY_MEDIUM:       Log::Warn("{}", message); return;
+		case GL_DEBUG_SEVERITY_LOW:
+		case GL_DEBUG_SEVERITY_NOTIFICATION: Log::Info("{}", message); return;
 	}
 
 	KN_ASSERT(false, "Unknown severity level!");

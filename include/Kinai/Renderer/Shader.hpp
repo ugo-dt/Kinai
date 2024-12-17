@@ -27,6 +27,8 @@ public:
 	static std::shared_ptr<Shader>	Create(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc);
 };
 
+using ShaderRef = std::shared_ptr<Shader>;
+
 class ShaderLibrary
 {
 public:

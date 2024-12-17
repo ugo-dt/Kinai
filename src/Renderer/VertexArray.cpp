@@ -21,4 +21,6 @@ std::shared_ptr<VertexArray>	VertexArray::Create()
 	return nullptr;
 }
 
+using VertexArrayRef = std::shared_ptr<VertexArray>;
+
 } // Kinai

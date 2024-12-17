@@ -11,8 +11,6 @@ enum ShaderParserTokenType : char
 	SHADER_TOKEN_AT			= '@',
 	SHADER_TOKEN_NEWLINE	= '\n',
 	SHADER_TOKEN_QUOTE		= '"',
-	SHADER_TOKEN_LESS		= '<',
-	SHADER_TOKEN_GREATER	= '>',
 	SHADER_TOKEN_TEXT		= '\0',
 };
 
@@ -32,7 +30,7 @@ public:
 	void	MakeShader(const std::string& program_name, std::string &vertex_out, std::string &fragment_out);
 
 private:
-	static inline constexpr const char *separators = "@\"<>";
+	static inline constexpr const char *separators = "@\"";
 
 	enum Context { CONTEXT_NONE, CONTEXT_VERTEX_SHADER, CONTEXT_FRAGMENT_SHADER, CONTEXT_PROGRAM, CONTEXT_INCLUDE, CONTEXT_EXPORT };
 

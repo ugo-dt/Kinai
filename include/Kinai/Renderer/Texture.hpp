@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Kinai/Core/Core.hpp"
+#include "Kinai/Renderer/Renderer.hpp"
 
 namespace Kinai
 {
@@ -52,5 +53,7 @@ public:
 	static std::shared_ptr<Texture2D>	Create(const TextureConfig &config);
 	static std::shared_ptr<Texture2D>	Create(const std::string &path, GLenum min_filter, GLenum max_filter);
 };
+
+using Texture2DRef = std::shared_ptr<Texture2D>;
 
 }

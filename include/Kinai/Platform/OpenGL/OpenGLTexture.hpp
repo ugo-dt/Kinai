@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Kinai/Core/Texture.hpp"
+#include "Kinai/Renderer/Texture.hpp"
 
 namespace Kinai
 {

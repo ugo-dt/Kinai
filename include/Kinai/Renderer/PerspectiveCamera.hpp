@@ -22,7 +22,7 @@ public:
 	inline float		GetDistance()             const { return _distance; }
 
 	const glm::mat4&	GetViewMatrix()           const { return _view_matrix; }
-	glm::mat4			GetViewProjectionMatrix() const { return _projection * _view_matrix; }
+	glm::mat4			GetViewProjectionMatrix() const { return _projection_matrix * _view_matrix; }
 
 	glm::vec3			GetUpDirection()          const { return glm::rotate(GetOrientation(), glm::vec3(0.f, 1.f, 0.f)); }
 	glm::vec3			GetRightDirection()       const { return glm::rotate(GetOrientation(), glm::vec3(1.f, 0.f, 0.f)); }
@@ -62,7 +62,7 @@ private:
 	float		_viewport_height;
 };
 
-struct CameraControllerConfig
+struct PerspectiveCameraControllerConfig
 {
 	float		viewport_width = KN_DEFAULT_WINDOW_WIDTH;
 	float		viewport_height = KN_DEFAULT_WINDOW_HEIGHT;
@@ -79,7 +79,7 @@ struct CameraControllerConfig
 class PerspectiveCameraController
 {
 public:
-	PerspectiveCameraController(const CameraControllerConfig& config = CameraControllerConfig());
+	PerspectiveCameraController(const PerspectiveCameraControllerConfig& config = PerspectiveCameraControllerConfig());
 
 	void	OnUpdate(float delta);
 	void	OnEvent(Event &e);
@@ -101,8 +101,8 @@ private:
 	bool	OnWindowResize(WindowResizeEvent& event);
 
 private:
-	PerspectiveCamera		_camera;
-	CameraControllerConfig	_config;
+	PerspectiveCamera					_camera;
+	PerspectiveCameraControllerConfig	_config;
 };
 
 } // Kinai

@@ -1,5 +1,4 @@
-#include "Kinai/Core/Texture.hpp"
-#include "Kinai/Renderer/Renderer.hpp"
+#include "Kinai/Renderer/Texture.hpp"
 
 #if defined(KINAI_HEADLESS)
 #include "Kinai/Platform/Headless/HeadlessTexture.hpp"

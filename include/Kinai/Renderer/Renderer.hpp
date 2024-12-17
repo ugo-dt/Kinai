@@ -14,7 +14,7 @@ public:
 	static void	Init();
 	static void	Shutdown();
 
-	static void	BeginFrame(PerspectiveCamera& camera);
+	static void	BeginFrame(const PerspectiveCamera& camera);
 	static void	EndFrame();
 
 	static void	OnWindowResize(uint32_t width, uint32_t height);

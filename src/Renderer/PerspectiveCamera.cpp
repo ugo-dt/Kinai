@@ -32,7 +32,7 @@ void	PerspectiveCamera::OnUpdate()
 void	PerspectiveCamera::UpdateProjection()
 {
 	_aspect_ratio = _viewport_width / _viewport_height;
-	_projection = glm::perspective(glm::radians(_fov), _viewport_width / _viewport_height, _near_clip, _far_clip);
+	_projection_matrix = glm::perspective(glm::radians(_fov), _viewport_width / _viewport_height, _near_clip, _far_clip);
 }
 
 void	PerspectiveCamera::UpdateView()
@@ -124,7 +124,7 @@ float	PerspectiveCamera::ZoomSpeed() const
 	return speed;
 }
 
-PerspectiveCameraController::PerspectiveCameraController(const CameraControllerConfig& config)
+PerspectiveCameraController::PerspectiveCameraController(const PerspectiveCameraControllerConfig& config)
 	: _camera(config.viewport_width, config.viewport_height, config.fov, config.near_clip, config.far_clip),
 	  _config(config)
 {

@@ -7,7 +7,7 @@ static GLenum	ShaderDataTypeToOpenGLBaseType(ShaderDataType type)
 {
 	switch (type)
 	{
-		case ShaderDataType::None:		break;
+		case ShaderDataType::None:		return GL_FLOAT;
 		case ShaderDataType::Float:		return GL_FLOAT;
 		case ShaderDataType::Float2:	return GL_FLOAT;
 		case ShaderDataType::Float3:	return GL_FLOAT;
@@ -75,6 +75,7 @@ void	OpenGLVertexArray::AddVertexBuffer(const std::shared_ptr<VertexBuffer>& ver
 	{
 		switch (element.type)
 		{
+			case ShaderDataType::None:
 			case ShaderDataType::Float:
 			case ShaderDataType::Float2:
 			case ShaderDataType::Float3:

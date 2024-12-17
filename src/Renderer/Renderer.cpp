@@ -1,5 +1,6 @@
-#include "Kinai/Renderer/Renderer.hpp"
 #include "Kinai/Core/Application.hpp"
+#include "Kinai/Renderer/Renderer.hpp"
+#include "Kinai/Renderer/Renderer2D.hpp"
 #include "Kinai/Renderer/RenderCommand.hpp"
 
 namespace Kinai
@@ -12,14 +13,17 @@ void	Renderer::Init()
 	KN_PRINT_FUNC();
 
 	RenderCommand::Init();
+	Renderer2D::Init();
 }
 
 void	Renderer::Shutdown()
 {
 	KN_PRINT_FUNC();
+	
+	Renderer2D::Shutdown();
 }
 
-void	Renderer::BeginFrame(PerspectiveCamera& camera)
+void	Renderer::BeginFrame(const PerspectiveCamera& camera)
 {
 	KN_PRINT_FUNC();
 
