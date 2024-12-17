@@ -12,7 +12,7 @@ public:
 	OrthographicCamera(float left, float right, float bottom, float top);
 	
 	void	SetProjection(float left, float right, float bottom, float top);
-	void	SetPosition(const glm::vec3& position) { _position = position; }
+	void	SetPosition(const glm::vec3& position) { _position = position; UpdateView(); }
 	void	SetRotation(float rotation) { _rotation = rotation; }
 
 	const glm::vec3&	GetPosition()             const { return _position; }
@@ -35,7 +35,7 @@ private:
 struct OrthographicCameraControllerConfig
 {
 	float		aspect_ratio = KN_DEFAULT_WINDOW_WIDTH / (float)KN_DEFAULT_WINDOW_HEIGHT;
-	bool		rotation = false;
+	bool		enable_rotation = false;
 	float		translation_speed = 5.0f;
 	float		rotation_speed = 180.0f;
 	glm::vec3	position = glm::vec3(0.0f, 0.0f, 0.0f);
@@ -46,7 +46,7 @@ struct OrthographicCameraControllerConfig
 class OrthographicCameraController
 {
 public:
-	OrthographicCameraController(const OrthographicCameraControllerConfig &config);
+	OrthographicCameraController(const OrthographicCameraControllerConfig &config = OrthographicCameraControllerConfig());
 
 	void	OnUpdate(float delta);
 	void	OnEvent(Event& event);

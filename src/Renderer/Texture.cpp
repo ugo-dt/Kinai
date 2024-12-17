@@ -9,30 +9,30 @@
 namespace Kinai
 {
 
-std::shared_ptr<Texture2D> Texture2D::Create(const TextureConfig& config)
+Ref<Texture2D> Texture2D::Create(const TextureConfig& config)
 {
 	KN_PRINT_FUNC();
 
 #if defined(KINAI_HEADLESS)
-	return std::make_shared<HeadlessTexture2D>(config);
+	return CreateRef<HeadlessTexture2D>(config);
 #elif defined(KINAI_OPENGL)
-	return std::make_shared<OpenGLTexture2D>(config);
+	return CreateRef<OpenGLTexture2D>(config);
 #endif
 
 	KN_ASSERT(false, "Unknown RendererAPI!");
 	return nullptr;
 }
 
-std::shared_ptr<Texture2D> Texture2D::Create(const std::string& path, GLenum min_filter, GLenum max_filter)
+Ref<Texture2D> Texture2D::Create(const std::string& path, GLenum min_filter, GLenum max_filter)
 {
 	KN_PRINT_FUNC();
 
 #if defined(KINAI_HEADLESS)
 	KN_NOTUSED(min_filter);
 	KN_NOTUSED(max_filter);
-	return std::make_shared<HeadlessTexture2D>(path);
+	return CreateRef<HeadlessTexture2D>(path);
 #elif defined(KINAI_OPENGL)
-	return std::make_shared<OpenGLTexture2D>(path, min_filter, max_filter);
+	return CreateRef<OpenGLTexture2D>(path, min_filter, max_filter);
 #endif
 
 	KN_ASSERT(false, "Unknown RendererAPI!");

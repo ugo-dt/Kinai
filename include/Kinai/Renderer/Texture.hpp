@@ -50,10 +50,8 @@ public:
 class Texture2D : public Texture
 {
 public:
-	static std::shared_ptr<Texture2D>	Create(const TextureConfig &config);
-	static std::shared_ptr<Texture2D>	Create(const std::string &path, GLenum min_filter, GLenum max_filter);
+	static Ref<Texture2D>	Create(const TextureConfig &config);
+	static Ref<Texture2D>	Create(const std::string &path, GLenum min_filter, GLenum max_filter);
 };
-
-using Texture2DRef = std::shared_ptr<Texture2D>;
 
 }

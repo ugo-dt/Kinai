@@ -193,7 +193,6 @@ void	OpenGLShaderParser::_parse_shader_context(size_t &current, const_iterator &
 void	OpenGLShaderParser::_include(size_t &current)
 {
 	bool	use = true;
-	bool	quote = false;
 
 	if (_make_iter(current) != SHADER_TOKEN_QUOTE)
 		_throw_parser_with_context(_make_iter(current) - 1, "expected file path", "after");
@@ -410,7 +409,7 @@ OpenGLShader::OpenGLShader(const std::string& filepath, const std::string& progr
 	_name = program_name;
 
 	CreateProgram(vs.c_str(), fs.c_str());
-	Log::Info("Created shader program '{}' (file: '{}')", _name, filepath);
+	Log::Trace("Created shader program '{}' (file: '{}')", _name, filepath);
 }
 
 OpenGLShader::OpenGLShader(const std::string& name, const std::string& vs, const std::string& fs)
@@ -418,7 +417,7 @@ OpenGLShader::OpenGLShader(const std::string& name, const std::string& vs, const
 {
 	_name = name;
 	CreateProgram(vs.c_str(), fs.c_str());
-	Log::Info("Created shader program '{}'", _name);
+	Log::Trace("Created shader program '{}'", _name);
 }
 
 OpenGLShader::~OpenGLShader()

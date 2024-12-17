@@ -14,17 +14,17 @@
 namespace Kinai
 {
 
-std::unique_ptr<Window>	Window::Create(const WindowProps &props)
+Scope<Window>	Window::Create(const WindowProps &props)
 {
 	KN_PRINT_FUNC();
 
 #if defined(KINAI_HEADLESS)
-		return std::make_unique<HeadlessWindow>(props);
+		return CreateScope<HeadlessWindow>(props);
 #elif defined(KINAI_OPENGL)
 	#if defined(KN_PLATFORM_DESKTOP)
-		return std::make_unique<SDLWindow>(props);
+		return CreateScope<SDLWindow>(props);
 	#elif defined(KN_PLATFORM_WEB)
-		return std::make_unique<EmWindow>(props, 0);
+		return CreateScope<EmWindow>(props, 0);
 	#endif
 #endif
 

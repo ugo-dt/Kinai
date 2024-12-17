@@ -68,7 +68,7 @@ void	OrthographicCameraController::OnUpdate(float delta)
 		_config.position.y += sin(glm::radians(_config.rotation)) * _config.translation_speed * delta;
 	}
 
-	if (_config.rotation)
+	if (_config.enable_rotation)
 	{
 		if (Input::IsKeyPressed(Key::Q))
 			_config.rotation += _config.rotation_speed * delta;
@@ -93,7 +93,7 @@ void	OrthographicCameraController::OnEvent(Event& event)
 
 	EventDispatcher	dispatcher(event);
 	dispatcher.Dispatch<MouseWheelEvent>(KN_BIND_EVENT_FN(OrthographicCameraController::OnMouseWheel));
-	dispatcher.Dispatch<MouseWheelEvent>(KN_BIND_EVENT_FN(OrthographicCameraController::OnWindowResize));
+	dispatcher.Dispatch<WindowResizeEvent>(KN_BIND_EVENT_FN(OrthographicCameraController::OnWindowResize));
 }
 
 void	OrthographicCameraController::OnResize(float width, float height)

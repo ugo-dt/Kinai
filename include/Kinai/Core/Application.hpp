@@ -56,7 +56,7 @@ private:
 	bool	OnWindowResize(WindowResizeEvent &event);
 
 private:
-	std::unique_ptr<Window>	_window;
+	Scope<Window>	_window;
 	ApplicationConfig		_config;
 	ImGuiLayer*				_imgui_layer;
 	Time					_time;

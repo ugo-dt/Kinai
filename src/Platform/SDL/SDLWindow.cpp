@@ -54,7 +54,7 @@ SDLWindow::SDLWindow(const WindowProps &props)
 	status = SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS);
 	KN_ASSERT(status == true && "Failed to init SDL");
 
-	Log::Info("CORE - Initialized SDL.");
+	Log::Trace("CORE - Initialized SDL.");
 
 	if (desc_def.no_depth_buffer)
 	{
@@ -154,7 +154,7 @@ SDLWindow::SDLWindow(const WindowProps &props)
 		MouseMotionEvent event(mouse_x, mouse_y, rel_x, rel_y);
 		window._data.eventCallback(event);
 	};
-	Log::Info("CORE - Created SDLWindow '{}' ({}, {}).", props.title, props.width, props.height);
+	Log::Trace("CORE - Created SDLWindow '{}' ({}, {}).", props.title, props.width, props.height);
 }
 
 SDLWindow::~SDLWindow()
@@ -164,7 +164,7 @@ SDLWindow::~SDLWindow()
 	SDL_DestroyWindow(_handle);
 	_handle = NULL;
 	SDL_Quit();
-	Log::Info("CORE - Destroyed SDLWindow '{}'.", _data.title);
+	Log::Trace("CORE - Destroyed SDLWindow '{}'.", _data.title);
 }
 
 void	SDLWindow::_handle_window_events(SDL_WindowEvent *_window_event)

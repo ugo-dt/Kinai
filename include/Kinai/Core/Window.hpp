@@ -61,7 +61,7 @@ public:
 	virtual void			SetRelativeMouseMode(bool enabled) = 0;
 	virtual void			WarpMouse(float x, float y) = 0;
 
-	static std::unique_ptr<Window>	Create(const WindowProps &props);
+	static Scope<Window>	Create(const WindowProps &props);
 };
 
 }

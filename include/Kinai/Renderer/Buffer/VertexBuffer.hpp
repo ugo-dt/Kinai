@@ -19,10 +19,8 @@ public:
 
 	virtual const BufferLayout&	GetLayout() const = 0;
 
-	static std::shared_ptr<VertexBuffer>	Create(uint32_t size);
-	static std::shared_ptr<VertexBuffer>	Create(const void* vertices, uint32_t size);
+	static Ref<VertexBuffer>	Create(uint32_t size);
+	static Ref<VertexBuffer>	Create(const void* vertices, uint32_t size);
 };
-
-using VertexBufferRef = std::shared_ptr<VertexBuffer>;
 
 } // Kinai

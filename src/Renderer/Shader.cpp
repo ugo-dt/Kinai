@@ -11,35 +11,35 @@
 namespace Kinai
 {
 
-std::shared_ptr<Shader> Shader::Create(const std::string& filepath, const std::string& program_name)
+Ref<Shader> Shader::Create(const std::string& filepath, const std::string& program_name)
 {
 	KN_PRINT_FUNC();
 
 #if defined(KINAI_HEADLESS)
-	return std::make_shared<HeadlessShader>(filepath, program_name);
+	return CreateRef<HeadlessShader>(filepath, program_name);
 #elif defined(KINAI_OPENGL)
-	return std::make_shared<OpenGLShader>(filepath, program_name);
+	return CreateRef<OpenGLShader>(filepath, program_name);
 #endif
 
 	KN_ASSERT(false, "Unknown RendererAPI!");
 	return nullptr;
 }
 
-std::shared_ptr<Shader> Shader::Create(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc)
+Ref<Shader> Shader::Create(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc)
 {
 	KN_PRINT_FUNC();
 
 #if defined(KINAI_HEADLESS)
-	return std::make_shared<HeadlessShader>(name, vertexSrc, fragmentSrc);
+	return CreateRef<HeadlessShader>(name, vertexSrc, fragmentSrc);
 #elif defined(KINAI_OPENGL)
-	return std::make_shared<OpenGLShader>(name, vertexSrc, fragmentSrc);
+	return CreateRef<OpenGLShader>(name, vertexSrc, fragmentSrc);
 #endif
 
 	KN_ASSERT(false, "Unknown RendererAPI!");
 	return nullptr;
 }
 
-void ShaderLibrary::Add(const std::string& name, const std::shared_ptr<Shader>& shader)
+void ShaderLibrary::Add(const std::string& name, const Ref<Shader>& shader)
 {
 	KN_PRINT_FUNC();
 
@@ -47,7 +47,7 @@ void ShaderLibrary::Add(const std::string& name, const std::shared_ptr<Shader>& 
 	_shaders[name] = shader;
 }
 
-void ShaderLibrary::Add(const std::shared_ptr<Shader>& shader)
+void ShaderLibrary::Add(const Ref<Shader>& shader)
 {
 	KN_PRINT_FUNC();
 
@@ -55,7 +55,7 @@ void ShaderLibrary::Add(const std::shared_ptr<Shader>& shader)
 	Add(name, shader);
 }
 
-std::shared_ptr<Shader> ShaderLibrary::Load(const std::string& filepath, const std::string& name)
+Ref<Shader> ShaderLibrary::Load(const std::string& filepath, const std::string& name)
 {
 	KN_PRINT_FUNC();
 
@@ -64,7 +64,7 @@ std::shared_ptr<Shader> ShaderLibrary::Load(const std::string& filepath, const s
 	return shader;
 }
 
-std::shared_ptr<Shader> ShaderLibrary::Get(const std::string& name)
+Ref<Shader> ShaderLibrary::Get(const std::string& name)
 {
 	KN_PRINT_FUNC();
 

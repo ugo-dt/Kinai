@@ -42,7 +42,7 @@ void	Renderer::OnWindowResize(uint32_t width, uint32_t height)
 	RenderCommand::SetViewport(0, 0, width, height);
 }
 
-void	Renderer::Submit(const std::shared_ptr<Shader>& shader, const std::shared_ptr<VertexArray>& vertexArray, const glm::mat4& transform)
+void	Renderer::Submit(const Ref<Shader>& shader, const Ref<VertexArray>& vertexArray, const glm::mat4& transform)
 {
 	shader->Bind();
 	shader->SetMat4("u_ViewProjection", _view_proj);
@@ -52,7 +52,7 @@ void	Renderer::Submit(const std::shared_ptr<Shader>& shader, const std::shared_p
 	RenderCommand::DrawIndexed(vertexArray);
 }
 
-void	Renderer::SubmitTriangles(const std::shared_ptr<Shader>& shader, const std::shared_ptr<VertexArray>& vertexArray, uint32_t vertex_count, const glm::mat4& transform)
+void	Renderer::SubmitTriangles(const Ref<Shader>& shader, const Ref<VertexArray>& vertexArray, uint32_t vertex_count, const glm::mat4& transform)
 {
 	shader->Bind();
 	shader->SetMat4("u_ViewProjection", _view_proj);

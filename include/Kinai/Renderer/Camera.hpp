@@ -10,14 +10,14 @@ namespace Kinai
 
 class Camera
 {
-protected:
+public:
 	Camera() = default;
 	Camera(const glm::mat4& projection_matrix)
 		: _projection_matrix(projection_matrix) {}
 
 	virtual ~Camera() = default;
 
-	const glm::mat4&	GetProjectionMatrix() { return _projection_matrix; }
+	const glm::mat4&	GetProjectionMatrix() const { return _projection_matrix; }
 
 protected:
 	glm::mat4	_projection_matrix = glm::mat4(1.0f);

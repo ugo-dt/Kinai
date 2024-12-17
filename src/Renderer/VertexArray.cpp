@@ -7,20 +7,18 @@
 namespace Kinai
 {
 
-std::shared_ptr<VertexArray>	VertexArray::Create()
+Ref<VertexArray>	VertexArray::Create()
 {
 	KN_PRINT_FUNC();
 
 #ifdef KINAI_HEADLESS
-	return std::make_shared<HeadlessVertexArray>();
+	return CreateRef<HeadlessVertexArray>();
 #elif defined(KINAI_OPENGL)
-	return std::make_shared<OpenGLVertexArray>();
+	return CreateRef<OpenGLVertexArray>();
 #endif
 
 	KN_ASSERT(false, "Unknown RendererAPI");
 	return nullptr;
 }
-
-using VertexArrayRef = std::shared_ptr<VertexArray>;
 
 } // Kinai

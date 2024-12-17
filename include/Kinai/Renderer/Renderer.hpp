@@ -19,8 +19,8 @@ public:
 
 	static void	OnWindowResize(uint32_t width, uint32_t height);
 
-	static void	Submit(const std::shared_ptr<Shader>& shader, const std::shared_ptr<VertexArray>& vertex_array, const glm::mat4& transform = glm::mat4(1.0f));
-	static void	SubmitTriangles(const std::shared_ptr<Shader>& shader, const std::shared_ptr<VertexArray>& vertex_array, uint32_t vertex_count, const glm::mat4& transform = glm::mat4(1.0f));
+	static void	Submit(const Ref<Shader>& shader, const Ref<VertexArray>& vertex_array, const glm::mat4& transform = glm::mat4(1.0f));
+	static void	SubmitTriangles(const Ref<Shader>& shader, const Ref<VertexArray>& vertex_array, uint32_t vertex_count, const glm::mat4& transform = glm::mat4(1.0f));
 
 private:
 	static glm::mat4	_view_proj;

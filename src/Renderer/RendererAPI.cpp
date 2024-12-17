@@ -6,14 +6,14 @@
 namespace Kinai
 {
 
-std::unique_ptr<RendererAPI>	RendererAPI::Create()
+Scope<RendererAPI>	RendererAPI::Create()
 {
 	KN_PRINT_FUNC();
 
 #if defined(KINAI_HEADLESS)
-	return std::make_unique<HeadlessRendererAPI>();
+	return CreateScope<HeadlessRendererAPI>();
 #elif defined(KINAI_OPENGL)
-	return std::make_unique<OpenGLRendererAPI>();
+	return CreateScope<OpenGLRendererAPI>();
 #endif
 
 	KN_ASSERT(false, "Unknown RendererAPI");

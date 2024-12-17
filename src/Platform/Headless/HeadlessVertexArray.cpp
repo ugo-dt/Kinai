@@ -23,14 +23,14 @@ void	HeadlessVertexArray::Unbind() const
 	KN_PRINT_FUNC();
 }
 
-void	HeadlessVertexArray::AddVertexBuffer(const std::shared_ptr<VertexBuffer>& vertexBuffer)
+void	HeadlessVertexArray::AddVertexBuffer(const Ref<VertexBuffer>& vertexBuffer)
 {
 	KN_PRINT_FUNC();
 
 	KN_NOTUSED(vertexBuffer);
 }
 
-void	HeadlessVertexArray::SetIndexBuffer(const std::shared_ptr<IndexBuffer>& indexBuffer)
+void	HeadlessVertexArray::SetIndexBuffer(const Ref<IndexBuffer>& indexBuffer)
 {
 	KN_PRINT_FUNC();
 

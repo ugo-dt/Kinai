@@ -38,17 +38,17 @@ public:
 		_renderer_api->Clear();
 	}
 
-	static void	DrawIndexed(const std::shared_ptr<VertexArray>& vertex_array, uint32_t index_count = 0)
+	static void	DrawIndexed(const Ref<VertexArray>& vertex_array, uint32_t index_count = 0)
 	{
 		_renderer_api->DrawIndexed(vertex_array, index_count);
 	}
 
-	static void	DrawLines(const std::shared_ptr<VertexArray>& vertex_array, uint32_t vertex_count)
+	static void	DrawLines(const Ref<VertexArray>& vertex_array, uint32_t vertex_count)
 	{
 		_renderer_api->DrawLines(vertex_array, vertex_count);
 	}
 
-	static void	DrawTriangles(const std::shared_ptr<VertexArray>& vertex_array, uint32_t vertex_count)
+	static void	DrawTriangles(const Ref<VertexArray>& vertex_array, uint32_t vertex_count)
 	{
 		_renderer_api->DrawTriangles(vertex_array, vertex_count);
 	}
@@ -59,7 +59,7 @@ public:
 	}
 
 private:
-	static std::unique_ptr<RendererAPI>	_renderer_api;
+	static Scope<RendererAPI>	_renderer_api;
 };
 
 } // Kinai

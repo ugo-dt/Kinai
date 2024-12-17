@@ -14,9 +14,9 @@ public:
 	void	SetClearColor(const glm::vec4& color) override;
 	void	Clear() override;
 
-	void	DrawIndexed(const std::shared_ptr<VertexArray>& vertexArray, uint32_t indexCount = 0) override;
-	void	DrawLines(const std::shared_ptr<VertexArray>& vertexArray, uint32_t vertexCount) override;
-	void	DrawTriangles(const std::shared_ptr<VertexArray>& vertexArray, uint32_t vertexCount) override;
+	void	DrawIndexed(const Ref<VertexArray>& vertexArray, uint32_t indexCount = 0) override;
+	void	DrawLines(const Ref<VertexArray>& vertexArray, uint32_t vertexCount) override;
+	void	DrawTriangles(const Ref<VertexArray>& vertexArray, uint32_t vertexCount) override;
 	
 	void	SetLineWidth(float width) override;
 };
