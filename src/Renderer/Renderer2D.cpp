@@ -81,6 +81,8 @@ struct Renderer2DState
 	};
 	CameraData			camera_buffer;
 	Ref<UniformBuffer>	camera_uniform_buffer;
+	
+	Renderer2D::Statistics	stats;
 };
 
 static Renderer2DState state;
@@ -227,6 +229,7 @@ void Renderer2D::Flush()
 
 		state.quad_shader->Bind();
 		RenderCommand::DrawIndexed(state.quad_vertex_array, state.quad_index_count);
+		state.stats.DrawCalls++;
 	}
 
 	if (state.circle_index_count)
@@ -236,6 +239,7 @@ void Renderer2D::Flush()
 
 		state.circle_shader->Bind();
 		RenderCommand::DrawIndexed(state.circle_vertex_array, state.circle_index_count);
+		state.stats.DrawCalls++;
 	}
 
 	if (state.line_vertex_count)
@@ -246,6 +250,7 @@ void Renderer2D::Flush()
 		state.line_shader->Bind();
 		RenderCommand::SetLineWidth(state.line_width);
 		RenderCommand::DrawLines(state.line_vertex_array, state.line_vertex_count);
+		state.stats.DrawCalls++;
 	}
 }
 
@@ -308,6 +313,8 @@ void Renderer2D::DrawQuad(const glm::mat4& transform, const glm::vec4& color)
 	}
 
 	state.quad_index_count += 6;
+	
+	state.stats.QuadCount++;
 }
 
 void Renderer2D::DrawQuad(const glm::mat4& transform, const Ref<Texture2D>& texture, float tilingFactor, const glm::vec4& tintColor)
@@ -351,6 +358,8 @@ void Renderer2D::DrawQuad(const glm::mat4& transform, const Ref<Texture2D>& text
 	}
 
 	state.quad_index_count += 6;
+
+	state.stats.QuadCount++;
 }
 
 void Renderer2D::DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const glm::vec4& color)
@@ -404,6 +413,8 @@ void Renderer2D::DrawCircle(const glm::mat4& transform, const glm::vec4& color, 
 	}
 
 	state.circle_index_count += 6;
+	
+	state.stats.QuadCount++;
 }
 
 void Renderer2D::DrawLine(const glm::vec3& p0, glm::vec3& p1, const glm::vec4& color)
@@ -452,6 +463,16 @@ float Renderer2D::GetLineWidth()
 void Renderer2D::SetLineWidth(float width)
 {
 	state.line_width = width;
+}
+
+void Renderer2D::Statistics::Reset()
+{
+	memset(this, 0, sizeof(Statistics));
+}
+
+Renderer2D::Statistics& Renderer2D::GetStats()
+{
+	return state.stats;
 }
 
 } // Kinai

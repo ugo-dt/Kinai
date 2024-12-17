@@ -56,12 +56,12 @@ private:
 	bool	OnWindowResize(WindowResizeEvent &event);
 
 private:
-	Scope<Window>	_window;
-	ApplicationConfig		_config;
-	ImGuiLayer*				_imgui_layer;
-	Time					_time;
-	LayerStack				_layerstack;
-	bool					_minimized;
+	Scope<Window>		_window;
+	ApplicationConfig	_config;
+	ImGuiLayer*			_imgui_layer;
+	Time				_time;
+	LayerStack			_layerstack;
+	bool				_minimized;
 
 private:
 	static Application	*_instance;

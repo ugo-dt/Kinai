@@ -63,6 +63,9 @@
 	#define KN_NODISCARD
 #endif // defined(__clang__) || defined(__GNUC__)
 
+namespace Kinai
+{
+
 template<typename T>
 using Scope = std::unique_ptr<T>;
 template<typename T, typename ... Args>
@@ -78,6 +81,8 @@ constexpr Ref<T> CreateRef(Args&& ... args)
 {
 	return std::make_shared<T>(std::forward<Args>(args)...);
 }
+
+} // Kinai
 
 #include "Kinai/Core/Log.hpp"
 #include "Kinai/Core/Assert.hpp"

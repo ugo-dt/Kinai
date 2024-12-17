@@ -5,3 +5,4 @@ libKinai.a
 SDL3.dll
 *.exe
 *.out
+imgui.ini
