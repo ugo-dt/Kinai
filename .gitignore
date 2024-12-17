@@ -3,3 +3,5 @@ libKinai.a
 *.o
 .vscode
 SDL3.dll
+*.exe
+*.out
