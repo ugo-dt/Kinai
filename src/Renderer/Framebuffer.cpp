@@ -1,0 +1,23 @@
+#include "Kinai/Renderer/Framebuffer.hpp"
+
+#include "Kinai/Platform/Headless/HeadlessFramebuffer.hpp"
+#include "Kinai/Platform/OpenGL/OpenGLFramebuffer.hpp"
+
+namespace Kinai
+{
+
+Ref<Framebuffer> Framebuffer::Create(const FramebufferConfig& spec)
+{
+	KN_PRINT_FUNC();
+
+#if defined(KINAI_HEADLESS)
+	return CreateScope<HeadlessFramebuffer>(spec);
+#elif defined(KINAI_OPENGL)
+	return CreateScope<OpenGLFramebuffer>(spec);
+#endif
+
+	KN_ASSERT(false, "Unknown RendererAPI");
+	return nullptr;
+}
+
+} // Kinai

@@ -20,16 +20,16 @@ public:
 
 	static void	DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color);
 	static void	DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color);
-	static void	DrawQuad(const glm::vec2& position, const glm::vec2& size, const Ref<Texture2D>& texture, float tiling_factor = 1.0f, const glm::vec4& tint_color = glm::vec4(1.0f));
-	static void	DrawQuad(const glm::vec3& position, const glm::vec2& size, const Ref<Texture2D>& texture, float tiling_factor = 1.0f, const glm::vec4& tint_color = glm::vec4(1.0f));
+	static void	DrawQuad(const glm::vec2& position, const glm::vec2& size, const Ref<Texture2D>& texture, const glm::vec4& tint_color = glm::vec4(1.0f));
+	static void	DrawQuad(const glm::vec3& position, const glm::vec2& size, const Ref<Texture2D>& texture, const glm::vec4& tint_color = glm::vec4(1.0f));
 
 	static void	DrawQuad(const glm::mat4& transform, const glm::vec4& color);
-	static void	DrawQuad(const glm::mat4& transform, const Ref<Texture2D>& texture, float tiling_factor = 1.0f, const glm::vec4& tint_color = glm::vec4(1.0f));
+	static void	DrawQuad(const glm::mat4& transform, const Ref<Texture2D>& texture, const glm::vec4& tint_color = glm::vec4(1.0f));
 
 	static void	DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const glm::vec4& color);
 	static void	DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const glm::vec4& color);
-	static void	DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const Ref<Texture2D>& texture, float tilingFactor = 1.0f, const glm::vec4& tintColor = glm::vec4(1.0f));
-	static void	DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const Ref<Texture2D>& texture, float tilingFactor = 1.0f, const glm::vec4& tintColor = glm::vec4(1.0f));
+	static void	DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const Ref<Texture2D>& texture, const glm::vec4& tintColor = glm::vec4(1.0f));
+	static void	DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const Ref<Texture2D>& texture, const glm::vec4& tintColor = glm::vec4(1.0f));
 
 	static void	DrawCircle(const glm::mat4& transform, const glm::vec4& color, float thickness = 1.0f, float fade = 0.005f);
 	
@@ -41,8 +41,8 @@ public:
 	static float GetLineWidth();
 	static void	SetLineWidth(float width);
 
-	void	Renderer2D::BindCustomShader(Ref<Shader>& shader);
-	void	Renderer2D::UnBindCustomShader(Ref<Shader>& shader);
+	static void	AddVertexShader(const std::string& filepath);
+	static void	AddFragmentShader(const std::string& filepath);
 
 	// Stats
 	struct Statistics
@@ -57,6 +57,8 @@ public:
 	static Statistics&	GetStats();
 
 private:
+	static void	MakeShaders();
+	static void SetShaderUniforms(Ref<Shader>& shader);
 	static void	StartBatch();
 	static void	NextBatch();
 };

@@ -116,10 +116,12 @@ public:
 	void	UploadUniformMat3(const std::string& name, const glm::mat3& matrix);
 	void	UploadUniformMat4(const std::string& name, const glm::mat4& matrix);
 
+public:
+	static void	GenerateHeaderFromShader(const std::string& filepath, const std::string& program_name, const std::string& vs, const std::string fs);
+	static void	GenerateHeaderFromShader(const std::string& filepath, const std::string& program_name);
+
 private:
 	void	CreateProgram(const char *vertex, const char *fragment);
-	void	GenerateHeaderFromShader(const std::string& filepath, const std::string& program_name,
-		const std::string& vs, const std::string fs);
 
 private:
 	std::string	_name;

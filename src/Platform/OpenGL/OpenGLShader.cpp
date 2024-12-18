@@ -395,8 +395,8 @@ void	OpenGLShaderParser::MakeShader(const std::string& program_name, std::string
 	if (!p)
 		_throw_parser("OpenGLShaderParser: unknown program name: '" + WHITE(program_name) + "'");
 
-	vertex_out = _get_vertex_source(*p);
-	fragment_out = _get_fragment_source(*p);
+	vertex_out += _get_vertex_source(*p);
+	fragment_out += _get_fragment_source(*p);
 }
 
 void	OpenGLShader::GenerateHeaderFromShader(
@@ -411,9 +411,9 @@ void	OpenGLShader::GenerateHeaderFromShader(
 	auto Generate = [&header, &program_name](const std::string& shader, bool vertex)
 	{
 		if (vertex)
-			header << "const char kn2d_" << program_name << "_vs_source[] = {\n\t";
+			header << "const char " << program_name << "_vs_source[] = {\n\t";
 		else
-			header << "const char kn2d_" << program_name << "_fs_source[] = {\n\t";
+			header << "const char " << program_name << "_fs_source[] = {\n\t";
 
 		size_t i = 1;
 		for (const auto c : shader)
@@ -431,6 +431,15 @@ void	OpenGLShader::GenerateHeaderFromShader(
 	Generate(fs, false);
 }
 
+void	OpenGLShader::GenerateHeaderFromShader(const std::string& filepath, const std::string& program_name)
+{
+	OpenGLShaderParser	parser(filepath);
+	std::string			vs, fs;
+
+	parser.MakeShader(program_name, vs, fs);
+	GenerateHeaderFromShader(filepath, program_name, vs, fs);
+}
+
 OpenGLShader::OpenGLShader(const std::string& filepath, const std::string& program_name)
 	: _name(program_name)
 {
@@ -440,6 +449,8 @@ OpenGLShader::OpenGLShader(const std::string& filepath, const std::string& progr
 	parser.MakeShader(program_name, vs, fs);
 	_name = program_name;
 
+	// vs.insert(0, "#version 450 core\n\n");
+	// fs.insert(0, "#version 450 core\n\n");
 	CreateProgram(vs.c_str(), fs.c_str());
 	Log::Trace("Created shader program '{}' (file: '{}')", _name, filepath);
 

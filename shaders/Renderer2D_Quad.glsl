@@ -1,100 +1,69 @@
-@vs vs
-#version 450 core
-
+@vs __kn2d_quad_vs_source
 layout(location = 0) in vec3 a_Position;
 layout(location = 1) in vec4 a_Color;
 layout(location = 2) in vec2 a_TexCoord;
 layout(location = 3) in float a_TexIndex;
-layout(location = 4) in float a_TilingFactor;
 
 layout(std140, binding = 0) uniform Camera
 {
 	mat4 u_ViewProjection;
+	vec2 u_Viewport;
 };
 
-struct VertexOutput
-{
-	vec4 Color;
-	vec2 TexCoord;
-	float TilingFactor;
-};
-
-layout (location = 0) out VertexOutput Output;
-layout (location = 3) out flat float v_TexIndex;
+/*
+in    mat4	CANVAS_MATRIX;
+inout vec2	VERTEX;
+in    int	VERTEX_ID;
+inout vec2	UV;
+inout vec4	COLOR;
+in    float	POINT_SIZE;
+out vec2 VIEWPORT;
+*/
 
 void main()
 {
-	Output.Color = a_Color;
-	Output.TexCoord = a_TexCoord;
-	Output.TilingFactor = a_TilingFactor;
 	v_TexIndex = a_TexIndex;
 
-	gl_Position = u_ViewProjection * vec4(a_Position, 1.0);
+	// Custom vertex shader built-in variables
+	CANVAS_MATRIX = u_ViewProjection;
+	VERTEX = vec2(a_Position.xy);
+	VERTEX_ID = gl_VertexID;
+	UV = a_TexCoord;
+	COLOR = a_Color;
+	POINT_SIZE = gl_PointSize;
+	VIEWPORT = u_Viewport;
+
+	// Run custom shader
+	vertex();
+
+	gl_Position = vec4(VERTEX, 0.0, 1.0);
 }
 @end
 
-@fs fs
-#version 450 core
-
-layout(location = 0) out vec4 o_Color;
-
-struct VertexOutput
-{
-	vec4 Color;
-	vec2 TexCoord;
-	float TilingFactor;
-};
-
-layout (location = 0) in VertexOutput Input;
-layout (location = 3) in flat float v_TexIndex;
-
-layout (binding = 0) uniform sampler2D u_Textures[32];
+@fs __kn2d_quad_fs_source
+/*
+in vec4 FRAGCOORD;
+in vec2	VERTEX;
+in vec2	UV;
+in vec4	COLOR;
+in sampler2D TEXTURE;
+in vec2 VIEWPORT;
+*/
 
 void main()
 {
-	vec4 texColor = Input.Color;
+	FRAGCOORD = gl_FragCoord;
+	VERTEX = _v_VERTEX;
+	UV = _v_UV;
+	COLOR = _v_COLOR;
 
-	switch(int(v_TexIndex))
-	{
-		case  0: texColor *= texture(u_Textures[ 0], Input.TexCoord * Input.TilingFactor); break;
-		case  1: texColor *= texture(u_Textures[ 1], Input.TexCoord * Input.TilingFactor); break;
-		case  2: texColor *= texture(u_Textures[ 2], Input.TexCoord * Input.TilingFactor); break;
-		case  3: texColor *= texture(u_Textures[ 3], Input.TexCoord * Input.TilingFactor); break;
-		case  4: texColor *= texture(u_Textures[ 4], Input.TexCoord * Input.TilingFactor); break;
-		case  5: texColor *= texture(u_Textures[ 5], Input.TexCoord * Input.TilingFactor); break;
-		case  6: texColor *= texture(u_Textures[ 6], Input.TexCoord * Input.TilingFactor); break;
-		case  7: texColor *= texture(u_Textures[ 7], Input.TexCoord * Input.TilingFactor); break;
-		case  8: texColor *= texture(u_Textures[ 8], Input.TexCoord * Input.TilingFactor); break;
-		case  9: texColor *= texture(u_Textures[ 9], Input.TexCoord * Input.TilingFactor); break;
-		case 10: texColor *= texture(u_Textures[10], Input.TexCoord * Input.TilingFactor); break;
-		case 11: texColor *= texture(u_Textures[11], Input.TexCoord * Input.TilingFactor); break;
-		case 12: texColor *= texture(u_Textures[12], Input.TexCoord * Input.TilingFactor); break;
-		case 13: texColor *= texture(u_Textures[13], Input.TexCoord * Input.TilingFactor); break;
-		case 14: texColor *= texture(u_Textures[14], Input.TexCoord * Input.TilingFactor); break;
-		case 15: texColor *= texture(u_Textures[15], Input.TexCoord * Input.TilingFactor); break;
-		case 16: texColor *= texture(u_Textures[16], Input.TexCoord * Input.TilingFactor); break;
-		case 17: texColor *= texture(u_Textures[17], Input.TexCoord * Input.TilingFactor); break;
-		case 18: texColor *= texture(u_Textures[18], Input.TexCoord * Input.TilingFactor); break;
-		case 19: texColor *= texture(u_Textures[19], Input.TexCoord * Input.TilingFactor); break;
-		case 20: texColor *= texture(u_Textures[20], Input.TexCoord * Input.TilingFactor); break;
-		case 21: texColor *= texture(u_Textures[21], Input.TexCoord * Input.TilingFactor); break;
-		case 22: texColor *= texture(u_Textures[22], Input.TexCoord * Input.TilingFactor); break;
-		case 23: texColor *= texture(u_Textures[23], Input.TexCoord * Input.TilingFactor); break;
-		case 24: texColor *= texture(u_Textures[24], Input.TexCoord * Input.TilingFactor); break;
-		case 25: texColor *= texture(u_Textures[25], Input.TexCoord * Input.TilingFactor); break;
-		case 26: texColor *= texture(u_Textures[26], Input.TexCoord * Input.TilingFactor); break;
-		case 27: texColor *= texture(u_Textures[27], Input.TexCoord * Input.TilingFactor); break;
-		case 28: texColor *= texture(u_Textures[28], Input.TexCoord * Input.TilingFactor); break;
-		case 29: texColor *= texture(u_Textures[29], Input.TexCoord * Input.TilingFactor); break;
-		case 30: texColor *= texture(u_Textures[30], Input.TexCoord * Input.TilingFactor); break;
-		case 31: texColor *= texture(u_Textures[31], Input.TexCoord * Input.TilingFactor); break;
-	}
+	vec4 texCol = texture(TEXTURE, UV);
 
-	if (texColor.a == 0.0)
-		discard;
+	COLOR *= texCol;
 
-	o_Color = texColor;
+	// Run custom shader
+	fragment();
 }
 @end
 
-@program quad vs fs
+@program __kn2d_quad_program __kn2d_quad_vs_source __kn2d_quad_fs_source

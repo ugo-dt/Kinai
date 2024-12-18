@@ -1,6 +1,4 @@
-@vs vs
-#version 450 core
-
+@vs __kn2d_circle_vs_source
 layout(location = 0) in vec3 a_WorldPosition;
 layout(location = 1) in vec3 a_LocalPosition;
 layout(location = 2) in vec4 a_Color;
@@ -33,10 +31,8 @@ void main()
 }
 @end
 
-@fs fs
-#version 450 core
-
-layout(location = 0) out vec4 o_Color;
+@fs __kn2d_circle_fs_source
+layout(location = 0) out vec4 fragColor;
 
 struct VertexOutput
 {
@@ -59,9 +55,9 @@ void main()
 		discard;
 
     // Set output color
-    o_Color = Input.Color;
-	o_Color.a *= circle;
+    fragColor = Input.Color;
+	fragColor.a *= circle;
 }
 @end
 
-@program circle vs fs
+@program __kn2d_circle_program __kn2d_circle_vs_source __kn2d_circle_fs_source
