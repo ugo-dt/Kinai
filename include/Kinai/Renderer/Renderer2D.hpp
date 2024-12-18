@@ -14,6 +14,7 @@ public:
 
 	static void	BeginFrame(const Camera& camera, const glm::mat4& transform);
 	static void	BeginFrame(const OrthographicCamera& camera);
+	static void	BeginFrame(const PerspectiveCamera& camera);
 	static void	EndFrame();
 	static void	Flush();
 

@@ -95,9 +95,9 @@ SDLWindow::SDLWindow(const WindowProps &props)
 	#endif
 
 	Log::Info("CORE - OpenGL info:");
-	Log::Info("  Vendor: {}", glGetString(GL_VENDOR));
-	Log::Info("  Renderer: {}", glGetString(GL_RENDERER));
-	Log::Info("  Version: {}", glGetString(GL_VERSION));
+	Log::Info("  Vendor: {}", (const char *)glGetString(GL_VENDOR));
+	Log::Info("  Renderer: {}", (const char *)glGetString(GL_RENDERER));
+	Log::Info("  Version: {}", (const char *)glGetString(GL_VERSION));
 
 	_data.title = props.title;
 	SDL_WarpMouseInWindow(_handle, (props.width / 2), (props.height / 2));

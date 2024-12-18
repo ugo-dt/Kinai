@@ -185,6 +185,16 @@ void Renderer2D::BeginFrame(const OrthographicCamera& camera)
 	StartBatch();
 }
 
+void Renderer2D::BeginFrame(const PerspectiveCamera& camera)
+{
+	KN_PRINT_FUNC();
+
+	state.camera_buffer.view_projection = camera.GetViewProjectionMatrix();
+	state.camera_uniform_buffer->SetData(&state.camera_buffer, sizeof(Renderer2DState::CameraData));
+
+	StartBatch();
+}
+
 void Renderer2D::BeginFrame(const Camera& camera, const glm::mat4& transform)
 {
 	KN_PRINT_FUNC();

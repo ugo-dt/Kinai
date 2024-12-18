@@ -25,8 +25,8 @@ public:
 		Kinai::RenderCommand::Clear();
 
 		Kinai::Renderer2D::BeginFrame(_camera.GetCamera());
-		Kinai::Renderer2D::DrawQuad(glm::vec2(.25f), glm::vec2(.3f), _texture);
-		Kinai::Renderer2D::DrawQuad(glm::vec2(.5f), glm::vec2(.3f), _texture);
+		Kinai::Renderer2D::DrawQuad(glm::vec2(.5f, .1f), glm::vec2(.3f), _texture);
+		Kinai::Renderer2D::DrawQuad(glm::vec2(.5f, .5f), glm::vec2(.3f), _texture);
 		Kinai::Renderer2D::EndFrame();
 	}
 

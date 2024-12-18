@@ -101,13 +101,6 @@ Log::Info(std::string_view fmt, Args&&... args)
 		Log::Print(*stream, COLOR_WHITE, "INFO", fmt, std::make_format_args(args...));
 }
 
-template <>
-inline void
-Log::Info(std::string_view fmt, const unsigned char*&& arg)
-{
-	Log::Info(fmt, (const char *)arg);
-}
-
 template <class... Args>
 inline void
 Log::Warn(std::string_view fmt, Args&&... args)
