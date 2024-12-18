@@ -64,4 +64,4 @@ void main()
 }
 @end
 
-@program 2d_circle vs fs
+@program circle vs fs

@@ -26,7 +26,10 @@ else ifeq ($(backend),Headless)
 endif
 
 KINAI_OBJS = $(patsubst $(KINAI_PATH)/src/%.cpp,$(__kinai_objs_dir)/%.o,$(KINAI_SRC))
-INCLUDE += -I $(KINAI_PATH)/include -I $(KINAI_PATH)/include/Kinai
+INCLUDE += -I $(KINAI_PATH)/include -I $(KINAI_PATH)/include/Kinai -I $(KINAI_PATH)
+
+CFLAGS		+= -DKINAI_PATH=\"./lib/Kinai/\"
+CXXFLAGS	+= -DKINAI_PATH=\"./lib/Kinai/\"
 
 $(info Target: $(target))
 $(info Rendering backend: $(backend))

@@ -399,6 +399,38 @@ void	OpenGLShaderParser::MakeShader(const std::string& program_name, std::string
 	fragment_out = _get_fragment_source(*p);
 }
 
+void	OpenGLShader::GenerateHeaderFromShader(
+	const std::string& filepath,
+	const std::string& program_name,
+	const std::string& vs,
+	const std::string fs)
+{
+	std::ofstream	header(filepath + ".hpp");
+	KN_ASSERT(header, "Could not open file {}.hpp", filepath);
+
+	auto Generate = [&header, &program_name](const std::string& shader, bool vertex)
+	{
+		if (vertex)
+			header << "const char kn2d_" << program_name << "_vs_source[] = {\n\t";
+		else
+			header << "const char kn2d_" << program_name << "_fs_source[] = {\n\t";
+
+		size_t i = 1;
+		for (const auto c : shader)
+		{
+			header << "0x" << std::hex << std::setw(2) << std::setfill('0') << (int)c << ",";
+			if (i++ % 16 == 0)
+				header << "\n\t";
+		}
+		header << "0x00\n};\n";
+	};
+	
+	header << "#pragma once\n\n";
+	Generate(vs, true);
+	header << "\n";
+	Generate(fs, false);
+}
+
 OpenGLShader::OpenGLShader(const std::string& filepath, const std::string& program_name)
 	: _name(program_name)
 {
@@ -410,6 +442,9 @@ OpenGLShader::OpenGLShader(const std::string& filepath, const std::string& progr
 
 	CreateProgram(vs.c_str(), fs.c_str());
 	Log::Trace("Created shader program '{}' (file: '{}')", _name, filepath);
+
+	// TODO: make this into a real program
+	// GenerateHeaderFromShader(filepath, program_name, vs, fs);
 }
 
 OpenGLShader::OpenGLShader(const std::string& name, const std::string& vs, const std::string& fs)

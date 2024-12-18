@@ -36,6 +36,7 @@ struct OrthographicCameraControllerConfig
 {
 	float		aspect_ratio = KN_DEFAULT_WINDOW_WIDTH / (float)KN_DEFAULT_WINDOW_HEIGHT;
 	bool		enable_rotation = false;
+	bool		enable_zoom = false;
 	float		translation_speed = 5.0f;
 	float		rotation_speed = 180.0f;
 	glm::vec3	position = glm::vec3(0.0f, 0.0f, 0.0f);

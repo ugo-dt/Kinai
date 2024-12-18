@@ -2,6 +2,10 @@
 #include "Kinai/Renderer/RenderCommand.hpp"
 #include "Kinai/Renderer/UniformBuffer.hpp"
 
+#include "shaders/Renderer2D_Circle.glsl.hpp"
+#include "shaders/Renderer2D_Line.glsl.hpp"
+#include "shaders/Renderer2D_Quad.glsl.hpp"
+
 namespace Kinai
 {
 
@@ -81,6 +85,8 @@ struct Renderer2DState
 	};
 	CameraData			camera_buffer;
 	Ref<UniformBuffer>	camera_uniform_buffer;
+
+	bool				user_shader_bound = false;
 	
 	Renderer2D::Statistics	stats;
 };
@@ -155,9 +161,9 @@ void	Renderer2D::Init()
 	uint32_t whiteTextureData = 0xffffffff;
 	state.white_texture->SetData(&whiteTextureData, sizeof(uint32_t));
 
-	state.quad_shader   = Shader::Create("shaders/Renderer2D_Quad.glsl",   "2d_quad");
-	state.circle_shader = Shader::Create("shaders/Renderer2D_Circle.glsl", "2d_circle");
-	state.line_shader   = Shader::Create("shaders/Renderer2D_Line.glsl",   "2d_line");
+	state.quad_shader   = Shader::Create("quad", kn2d_quad_vs_source, kn2d_quad_fs_source);
+	state.circle_shader = Shader::Create("circle", kn2d_circle_vs_source, kn2d_circle_fs_source);
+	state.line_shader   = Shader::Create("line", kn2d_line_vs_source, kn2d_line_fs_source);
 
 	// Set first texture slot to 0
 	state.texture_slots[0] = state.white_texture;
@@ -175,7 +181,7 @@ void	Renderer2D::Shutdown()
 	delete[] state.quad_vertex_buffer_base;
 }
 
-void Renderer2D::BeginFrame(const OrthographicCamera& camera)
+void	Renderer2D::BeginFrame(const OrthographicCamera& camera)
 {
 	KN_PRINT_FUNC();
 
@@ -185,7 +191,7 @@ void Renderer2D::BeginFrame(const OrthographicCamera& camera)
 	StartBatch();
 }
 
-void Renderer2D::BeginFrame(const PerspectiveCamera& camera)
+void	Renderer2D::BeginFrame(const PerspectiveCamera& camera)
 {
 	KN_PRINT_FUNC();
 
@@ -195,7 +201,7 @@ void Renderer2D::BeginFrame(const PerspectiveCamera& camera)
 	StartBatch();
 }
 
-void Renderer2D::BeginFrame(const Camera& camera, const glm::mat4& transform)
+void	Renderer2D::BeginFrame(const Camera& camera, const glm::mat4& transform)
 {
 	KN_PRINT_FUNC();
 
@@ -205,14 +211,26 @@ void Renderer2D::BeginFrame(const Camera& camera, const glm::mat4& transform)
 	StartBatch();
 }
 
-void Renderer2D::EndFrame()
+void	Renderer2D::EndFrame()
 {
 	KN_PRINT_FUNC();
 
 	Flush();
 }
 
-void Renderer2D::StartBatch()
+void	Renderer2D::BindCustomShader(Ref<Shader>& shader)
+{
+	state.user_shader_bound = true;
+	shader->Bind();
+}
+
+void	Renderer2D::UnBindCustomShader(Ref<Shader>& shader)
+{
+	state.user_shader_bound = false;
+	shader->Unbind();
+}
+
+void	Renderer2D::StartBatch()
 {
 	state.quad_index_count = 0;
 	state.quad_vertex_buffer_ptr = state.quad_vertex_buffer_base;
@@ -226,7 +244,7 @@ void Renderer2D::StartBatch()
 	state.texture_slot_index = 1;
 }
 
-void Renderer2D::Flush()
+void	Renderer2D::Flush()
 {
 	if (state.quad_index_count)
 	{
@@ -264,18 +282,18 @@ void Renderer2D::Flush()
 	}
 }
 
-void Renderer2D::NextBatch()
+void	Renderer2D::NextBatch()
 {
 	Flush();
 	StartBatch();
 }
 
-void Renderer2D::DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color)
+void	Renderer2D::DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color)
 {
 	DrawQuad({ position.x, position.y, 0.0f }, size, color);
 }
 
-void Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color)
+void	Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color)
 {
 	KN_PRINT_FUNC();
 
@@ -285,12 +303,12 @@ void Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, cons
 	DrawQuad(transform, color);
 }
 
-void Renderer2D::DrawQuad(const glm::vec2& position, const glm::vec2& size, const Ref<Texture2D>& texture, float tilingFactor, const glm::vec4& tintColor)
+void	Renderer2D::DrawQuad(const glm::vec2& position, const glm::vec2& size, const Ref<Texture2D>& texture, float tilingFactor, const glm::vec4& tintColor)
 {
 	DrawQuad({ position.x, position.y, 0.0f }, size, texture, tilingFactor, tintColor);
 }
 
-void Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const Ref<Texture2D>& texture, float tilingFactor, const glm::vec4& tintColor)
+void	Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const Ref<Texture2D>& texture, float tilingFactor, const glm::vec4& tintColor)
 {
 	KN_PRINT_FUNC();
 
@@ -300,7 +318,7 @@ void Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, cons
 	DrawQuad(transform, texture, tilingFactor, tintColor);
 }
 
-void Renderer2D::DrawQuad(const glm::mat4& transform, const glm::vec4& color)
+void	Renderer2D::DrawQuad(const glm::mat4& transform, const glm::vec4& color)
 {
 	KN_PRINT_FUNC();
 
@@ -327,7 +345,7 @@ void Renderer2D::DrawQuad(const glm::mat4& transform, const glm::vec4& color)
 	state.stats.QuadCount++;
 }
 
-void Renderer2D::DrawQuad(const glm::mat4& transform, const Ref<Texture2D>& texture, float tilingFactor, const glm::vec4& tintColor)
+void	Renderer2D::DrawQuad(const glm::mat4& transform, const Ref<Texture2D>& texture, float tilingFactor, const glm::vec4& tintColor)
 {
 	KN_PRINT_FUNC();
 
@@ -372,12 +390,12 @@ void Renderer2D::DrawQuad(const glm::mat4& transform, const Ref<Texture2D>& text
 	state.stats.QuadCount++;
 }
 
-void Renderer2D::DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const glm::vec4& color)
+void	Renderer2D::DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const glm::vec4& color)
 {
 	DrawRotatedQuad({ position.x, position.y, 0.0f }, size, rotation, color);
 }
 
-void Renderer2D::DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const glm::vec4& color)
+void	Renderer2D::DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const glm::vec4& color)
 {
 	KN_PRINT_FUNC();
 
@@ -388,12 +406,12 @@ void Renderer2D::DrawRotatedQuad(const glm::vec3& position, const glm::vec2& siz
 	DrawQuad(transform, color);
 }
 
-void Renderer2D::DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const Ref<Texture2D>& texture, float tilingFactor, const glm::vec4& tintColor)
+void	Renderer2D::DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const Ref<Texture2D>& texture, float tilingFactor, const glm::vec4& tintColor)
 {
 	DrawRotatedQuad({ position.x, position.y, 0.0f }, size, rotation, texture, tilingFactor, tintColor);
 }
 
-void Renderer2D::DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const Ref<Texture2D>& texture, float tilingFactor, const glm::vec4& tintColor)
+void	Renderer2D::DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const Ref<Texture2D>& texture, float tilingFactor, const glm::vec4& tintColor)
 {
 	KN_PRINT_FUNC();
 
@@ -404,7 +422,7 @@ void Renderer2D::DrawRotatedQuad(const glm::vec3& position, const glm::vec2& siz
 	DrawQuad(transform, texture, tilingFactor, tintColor);
 }
 
-void Renderer2D::DrawCircle(const glm::mat4& transform, const glm::vec4& color, float thickness /*= 1.0f*/, float fade /*= 0.005f*/)
+void	Renderer2D::DrawCircle(const glm::mat4& transform, const glm::vec4& color, float thickness /*= 1.0f*/, float fade /*= 0.005f*/)
 {
 	KN_PRINT_FUNC();
 
@@ -427,7 +445,7 @@ void Renderer2D::DrawCircle(const glm::mat4& transform, const glm::vec4& color, 
 	state.stats.QuadCount++;
 }
 
-void Renderer2D::DrawLine(const glm::vec3& p0, glm::vec3& p1, const glm::vec4& color)
+void	Renderer2D::DrawLine(const glm::vec3& p0, glm::vec3& p1, const glm::vec4& color)
 {
 	state.line_vertex_buffer_ptr->position = p0;
 	state.line_vertex_buffer_ptr->color = color;
@@ -440,7 +458,7 @@ void Renderer2D::DrawLine(const glm::vec3& p0, glm::vec3& p1, const glm::vec4& c
 	state.line_vertex_count += 2;
 }
 
-void Renderer2D::DrawRect(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color)
+void	Renderer2D::DrawRect(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color)
 {
 	glm::vec3 p0 = glm::vec3(position.x - size.x * 0.5f, position.y - size.y * 0.5f, position.z);
 	glm::vec3 p1 = glm::vec3(position.x + size.x * 0.5f, position.y - size.y * 0.5f, position.z);
@@ -453,7 +471,7 @@ void Renderer2D::DrawRect(const glm::vec3& position, const glm::vec2& size, cons
 	DrawLine(p3, p0, color);
 }
 
-void Renderer2D::DrawRect(const glm::mat4& transform, const glm::vec4& color)
+void	Renderer2D::DrawRect(const glm::mat4& transform, const glm::vec4& color)
 {
 	glm::vec3 lineVertices[4];
 	for (size_t i = 0; i < 4; i++)
@@ -470,12 +488,12 @@ float Renderer2D::GetLineWidth()
 	return state.line_width;
 }
 
-void Renderer2D::SetLineWidth(float width)
+void	Renderer2D::SetLineWidth(float width)
 {
 	state.line_width = width;
 }
 
-void Renderer2D::Statistics::Reset()
+void	Renderer2D::Statistics::Reset()
 {
 	memset(this, 0, sizeof(Statistics));
 }

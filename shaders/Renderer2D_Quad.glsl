@@ -97,4 +97,4 @@ void main()
 }
 @end
 
-@program 2d_quad vs fs
+@program quad vs fs

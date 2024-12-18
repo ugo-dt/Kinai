@@ -41,6 +41,9 @@ public:
 	static float GetLineWidth();
 	static void	SetLineWidth(float width);
 
+	void	Renderer2D::BindCustomShader(Ref<Shader>& shader);
+	void	Renderer2D::UnBindCustomShader(Ref<Shader>& shader);
+
 	// Stats
 	struct Statistics
 	{

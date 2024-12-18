@@ -118,6 +118,8 @@ public:
 
 private:
 	void	CreateProgram(const char *vertex, const char *fragment);
+	void	GenerateHeaderFromShader(const std::string& filepath, const std::string& program_name,
+		const std::string& vs, const std::string fs);
 
 private:
 	std::string	_name;

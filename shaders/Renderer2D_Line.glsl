@@ -42,4 +42,4 @@ void main()
 }
 @end
 
-@program 2d_line vs fs
+@program line vs fs

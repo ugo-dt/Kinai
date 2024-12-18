@@ -108,9 +108,12 @@ bool	OrthographicCameraController::OnMouseWheel(MouseWheelEvent& event)
 {
 	KN_PRINT_FUNC();
 
-	_config.zoom_level -= event.GetYOffset() * 0.25f;
-	_config.zoom_level = std::max(_config.zoom_level, 0.25f);
-	_camera.SetProjection(-_config.aspect_ratio * _config.zoom_level, _config.aspect_ratio * _config.zoom_level, -_config.zoom_level, _config.zoom_level);
+	if (_config.enable_zoom)
+	{
+		_config.zoom_level -= event.GetYOffset() * 0.25f;
+		_config.zoom_level = std::max(_config.zoom_level, 0.25f);
+		_camera.SetProjection(-_config.aspect_ratio * _config.zoom_level, _config.aspect_ratio * _config.zoom_level, -_config.zoom_level, _config.zoom_level);
+	}
 	return false;
 }
 
