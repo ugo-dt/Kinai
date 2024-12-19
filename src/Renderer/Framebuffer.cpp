@@ -6,14 +6,14 @@
 namespace Kinai
 {
 
-Ref<Framebuffer> Framebuffer::Create(const FramebufferConfig& spec)
+Ref<Framebuffer> Framebuffer::Create(const FramebufferConfig& config)
 {
 	KN_PRINT_FUNC();
 
 #if defined(KINAI_HEADLESS)
-	return CreateScope<HeadlessFramebuffer>(spec);
+	return CreateScope<HeadlessFramebuffer>(config);
 #elif defined(KINAI_OPENGL)
-	return CreateScope<OpenGLFramebuffer>(spec);
+	return CreateScope<OpenGLFramebuffer>(config);
 #endif
 
 	KN_ASSERT(false, "Unknown RendererAPI");

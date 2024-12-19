@@ -1,6 +1,7 @@
 #include "Kinai/Renderer/Renderer2D.hpp"
 #include "Kinai/Renderer/RenderCommand.hpp"
 #include "Kinai/Renderer/UniformBuffer.hpp"
+#include "Kinai/Renderer/Framebuffer.hpp"
 #include "Kinai/Platform/OpenGL/OpenGLShader.hpp"
 #include "Kinai/Core/Application.hpp"
 
@@ -83,7 +84,6 @@ struct Renderer2DState
 	struct CameraData
 	{
 		glm::mat4	view_projection;
-		glm::vec2	viewport;
 	};
 	CameraData			camera_buffer;
 	Ref<UniformBuffer>	camera_uniform_buffer;
@@ -105,6 +105,10 @@ struct Renderer2DState
 
 	std::vector<std::string>	custom_vertex_source;
 	std::vector<std::string>	custom_fragment_source;
+
+	Ref<Framebuffer>	screen_framebuffer;
+	Ref<Shader>			screen_shader;
+	Ref<VertexArray>	screen_vao;
 };
 
 const char *custom_vertex_builtins = R"(
@@ -118,7 +122,6 @@ const char *custom_vertex_builtins = R"(
 	layout (location = 1) out vec2 UV;
 	layout (location = 2) out vec4 COLOR;
 	layout (location = 3) out flat float v_TexIndex;
-	layout (location = 4) out vec2 VIEWPORT;
 )";
 
 const char *custom_fragments_builtins = R"(
@@ -128,7 +131,6 @@ const char *custom_fragments_builtins = R"(
 	layout (location = 1) in vec2 _v_UV;
 	layout (location = 2) in vec4 _v_COLOR;
 	layout (location = 3) in flat float v_TexIndex;
-	layout (location = 4) in vec2 VIEWPORT;
 
 	layout (binding = 0) uniform sampler2D u_Textures[32];
 
@@ -176,12 +178,8 @@ void	Renderer2D::AddFragmentShader(const std::string& filepath)
 	MakeShaders();
 }
 
-void	Renderer2D::MakeShaders()
+void	MakeScreenShaders()
 {
-	OpenGLShader::GenerateHeaderFromShader(KINAI_PATH "shaders/Renderer2D_Quad.glsl", "__kn2d_quad_program");
-	OpenGLShader::GenerateHeaderFromShader(KINAI_PATH "shaders/Renderer2D_Circle.glsl", "__kn2d_circle_program");
-	OpenGLShader::GenerateHeaderFromShader(KINAI_PATH "shaders/Renderer2D_Line.glsl", "__kn2d_line_program");
-
 	std::string	custom_vs;
 	std::string	custom_fs;
 
@@ -204,6 +202,17 @@ void	Renderer2D::MakeShaders()
 		custom_vs + __kn2d_quad_program_vs_source,
 		custom_fs + __kn2d_quad_program_fs_source
 	);
+}
+
+void	Renderer2D::MakeShaders()
+{
+	// OpenGLShader::GenerateHeaderFromShader(KINAI_PATH "shaders/Renderer2D_Quad.glsl", "__kn2d_quad_program");
+	// OpenGLShader::GenerateHeaderFromShader(KINAI_PATH "shaders/Renderer2D_Circle.glsl", "__kn2d_circle_program");
+	// OpenGLShader::GenerateHeaderFromShader(KINAI_PATH "shaders/Renderer2D_Line.glsl", "__kn2d_line_program");
+
+	state.quad_shader = Shader::Create("__kn2d_quad_program", __kn2d_quad_program_vs_source, __kn2d_quad_program_fs_source);
+	state.circle_shader = Shader::Create("__kn2d_circle_program", __kn2d_circle_program_vs_source, __kn2d_circle_program_fs_source);
+	state.line_shader = Shader::Create("__kn2d_line_program", __kn2d_line_program_vs_source, __kn2d_line_program_fs_source);
 }
 
 void	Renderer2D::Init()
@@ -293,6 +302,9 @@ void	Renderer2D::Init()
 
 	state.global_builtins_uniform_buffer = UniformBuffer::Create(sizeof(Renderer2DState::GlobalBuiltins), 1);
 	state.global_builtins_uniform_buffer->SetData(&state.global_builtins_buffer, sizeof(Renderer2DState::GlobalBuiltins));
+
+	state.screen_vao = Kinai::VertexArray::Create();
+	state.screen_shader = Kinai::Shader::Create("assets/shaders/screen.glsl", "screen");
 }
 
 void	Renderer2D::Shutdown()
@@ -305,7 +317,6 @@ void	Renderer2D::BeginFrame(const OrthographicCamera& camera)
 	KN_PRINT_FUNC();
 
 	state.camera_buffer.view_projection = camera.GetViewProjectionMatrix();
-	state.camera_buffer.viewport = Application::Get().GetWindow().GetSize();
 	state.camera_uniform_buffer->SetData(&state.camera_buffer, sizeof(Renderer2DState::CameraData));
 
 	StartBatch();
@@ -316,7 +327,6 @@ void	Renderer2D::BeginFrame(const PerspectiveCamera& camera)
 	KN_PRINT_FUNC();
 
 	state.camera_buffer.view_projection = camera.GetViewProjectionMatrix();
-	state.camera_buffer.viewport = Application::Get().GetWindow().GetSize();
 	state.camera_uniform_buffer->SetData(&state.camera_buffer, sizeof(Renderer2DState::CameraData));
 
 	StartBatch();
@@ -327,7 +337,6 @@ void	Renderer2D::BeginFrame(const Camera& camera, const glm::mat4& transform)
 	KN_PRINT_FUNC();
 
 	state.camera_buffer.view_projection = camera.GetProjectionMatrix() * glm::inverse(transform);
-	state.camera_buffer.viewport = Application::Get().GetWindow().GetSize();
 	state.camera_uniform_buffer->SetData(&state.camera_buffer, sizeof(Renderer2DState::CameraData));
 
 	StartBatch();
@@ -609,6 +618,11 @@ float Renderer2D::GetLineWidth()
 void	Renderer2D::SetLineWidth(float width)
 {
 	state.line_width = width;
+}
+
+Ref<Shader>&	Renderer2D::GetQuadShader()
+{
+	return state.quad_shader;
 }
 
 void	Renderer2D::Statistics::Reset()

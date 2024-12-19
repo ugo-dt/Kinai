@@ -6,6 +6,17 @@
 namespace Kinai
 {
 
+struct Pipeline2D
+{
+	Ref<Shader>	shader;
+	
+	// primitive type
+	// blend
+	// color format
+	// depth format
+	// sample count
+};
+
 class Renderer2D
 {
 public:
@@ -43,6 +54,8 @@ public:
 
 	static void	AddVertexShader(const std::string& filepath);
 	static void	AddFragmentShader(const std::string& filepath);
+
+	static Ref<Shader>&	GetQuadShader();
 
 	// Stats
 	struct Statistics

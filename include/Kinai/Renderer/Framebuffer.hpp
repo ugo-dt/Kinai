@@ -30,10 +30,10 @@ struct FramebufferTextureConfig
 	// TODO: filtering/wrap
 };
 
-struct FramebufferAttachmentSpecification
+struct FramebufferAttachmentConfig
 {
-	FramebufferAttachmentSpecification() = default;
-	FramebufferAttachmentSpecification(std::initializer_list<FramebufferTextureConfig> attachments)
+	FramebufferAttachmentConfig() = default;
+	FramebufferAttachmentConfig(std::initializer_list<FramebufferTextureConfig> attachments)
 		: Attachments(attachments) {}
 
 	std::vector<FramebufferTextureConfig> Attachments;
@@ -42,7 +42,7 @@ struct FramebufferAttachmentSpecification
 struct FramebufferConfig
 {
 	uint32_t	width = 0, height = 0;
-	FramebufferAttachmentSpecification	attachments;
+	FramebufferAttachmentConfig	attachments;
 	uint32_t	samples = 1;
 	bool		swapChainTarget = false;
 };
@@ -64,7 +64,7 @@ public:
 
 	virtual const FramebufferConfig&	GetConfig() const = 0;
 
-	static Ref<Framebuffer> Create(const FramebufferConfig& spec);
+	static Ref<Framebuffer> Create(const FramebufferConfig& config);
 };
 
 } // Kinai

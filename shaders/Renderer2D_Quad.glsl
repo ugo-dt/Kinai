@@ -10,33 +10,10 @@ layout(std140, binding = 0) uniform Camera
 	vec2 u_Viewport;
 };
 
-/*
-in    mat4	CANVAS_MATRIX;
-inout vec2	VERTEX;
-in    int	VERTEX_ID;
-inout vec2	UV;
-inout vec4	COLOR;
-in    float	POINT_SIZE;
-out vec2 VIEWPORT;
-*/
-
 void main()
 {
-	v_TexIndex = a_TexIndex;
-
-	// Custom vertex shader built-in variables
-	CANVAS_MATRIX = u_ViewProjection;
-	VERTEX = vec2(a_Position.xy);
-	VERTEX_ID = gl_VertexID;
-	UV = a_TexCoord;
-	COLOR = a_Color;
-	POINT_SIZE = gl_PointSize;
-	VIEWPORT = u_Viewport;
-
-	// Run custom shader
-	vertex();
-
-	gl_Position = vec4(VERTEX, 0.0, 1.0);
+	gl_Position = vec4(a_Position.xy, 0.0, 1.0);
+	gl_PointSize = 1.0;
 }
 @end
 
@@ -47,7 +24,6 @@ in vec2	VERTEX;
 in vec2	UV;
 in vec4	COLOR;
 in sampler2D TEXTURE;
-in vec2 VIEWPORT;
 */
 
 void main()
