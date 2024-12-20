@@ -26,6 +26,7 @@ public:
 		KN_ASSERT(index < _color_attachments.size());
 		return _color_attachments[index];
 	}
+	uint32_t	GetRendererID() const override { return _renderer_id; }
 
 	const FramebufferConfig&	GetConfig() const override { return _config; }
 

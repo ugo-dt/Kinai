@@ -34,9 +34,9 @@ struct FramebufferAttachmentConfig
 {
 	FramebufferAttachmentConfig() = default;
 	FramebufferAttachmentConfig(std::initializer_list<FramebufferTextureConfig> attachments)
-		: Attachments(attachments) {}
+		: attachments(attachments) {}
 
-	std::vector<FramebufferTextureConfig> Attachments;
+	std::vector<FramebufferTextureConfig> attachments;
 };
 
 struct FramebufferConfig
@@ -63,8 +63,10 @@ public:
 	virtual uint32_t	GetColorAttachmentRendererID(uint32_t index = 0) const = 0;
 
 	virtual const FramebufferConfig&	GetConfig() const = 0;
+	virtual uint32_t	GetRendererID() const = 0;
 
 	static Ref<Framebuffer> Create(const FramebufferConfig& config);
+
 };
 
 } // Kinai

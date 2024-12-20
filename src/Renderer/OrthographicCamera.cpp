@@ -92,8 +92,8 @@ void	OrthographicCameraController::OnEvent(Event& event)
 	KN_PRINT_FUNC();
 
 	EventDispatcher	dispatcher(event);
-	dispatcher.Dispatch<MouseWheelEvent>(KN_BIND_EVENT_FN(OrthographicCameraController::OnMouseWheel));
-	dispatcher.Dispatch<WindowResizeEvent>(KN_BIND_EVENT_FN(OrthographicCameraController::OnWindowResize));
+	dispatcher.Dispatch<MouseWheelEvent>(KN_BIND_EVENT_FN(OnMouseWheel));
+	dispatcher.Dispatch<WindowResizeEvent>(KN_BIND_EVENT_FN(OnWindowResize));
 }
 
 void	OrthographicCameraController::OnResize(float width, float height)
@@ -110,7 +110,7 @@ bool	OrthographicCameraController::OnMouseWheel(MouseWheelEvent& event)
 
 	if (_config.enable_zoom)
 	{
-		_config.zoom_level -= event.GetYOffset() * 0.25f;
+		_config.zoom_level -= event.GetYOffset() * 0.1f;
 		_config.zoom_level = std::max(_config.zoom_level, 0.25f);
 		_camera.SetProjection(-_config.aspect_ratio * _config.zoom_level, _config.aspect_ratio * _config.zoom_level, -_config.zoom_level, _config.zoom_level);
 	}

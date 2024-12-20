@@ -89,7 +89,7 @@ static GLenum	FBTextureFormatToGL(FramebufferTextureFormat format)
 OpenGLFramebuffer::OpenGLFramebuffer(const FramebufferConfig& spec)
 	: _config(spec)
 {
-	for (auto spec : _config.attachments.Attachments)
+	for (auto spec : _config.attachments.attachments)
 	{
 		if (!IsDepthFormat(spec.TextureFormat))
 			_color_attachment_configs.emplace_back(spec);

@@ -1,6 +1,6 @@
 #include "Kinai/Core/Application.hpp"
 #include "Kinai/Renderer/Renderer.hpp"
-#include "Kinai/Renderer/Renderer2D.hpp"
+#include "Kinai/Renderer/2D/Renderer2D.hpp"
 #include "Kinai/Renderer/RenderCommand.hpp"
 
 namespace Kinai

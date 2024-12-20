@@ -64,6 +64,15 @@ Ref<Shader> ShaderLibrary::Load(const std::string& filepath, const std::string& 
 	return shader;
 }
 
+Ref<Shader> ShaderLibrary::Load(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc)
+{
+	KN_PRINT_FUNC();
+
+	auto shader = Shader::Create(name, vertexSrc, fragmentSrc);
+	Add(name, shader);
+	return shader;
+}
+
 Ref<Shader> ShaderLibrary::Get(const std::string& name)
 {
 	KN_PRINT_FUNC();

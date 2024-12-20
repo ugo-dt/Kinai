@@ -8,10 +8,11 @@ endif
 include $(KINAI_PATH)/make/lib.mk
 
 KINAI = $(KINAI_PATH)/bin/$(target)/libKinai.a
-KINAI_SRC = $(wildcard						\
-	$(KINAI_PATH)/src/Core/*.cpp			\
-	$(KINAI_PATH)/src/ImGui/*.cpp			\
-	$(KINAI_PATH)/src/Renderer/*.cpp		\
+KINAI_SRC = $(wildcard					\
+	$(KINAI_PATH)/src/Core/*.cpp		\
+	$(KINAI_PATH)/src/ImGui/*.cpp		\
+	$(KINAI_PATH)/src/Renderer/*.cpp	\
+	$(KINAI_PATH)/src/Renderer/2D/*.cpp	\
 )
 
 ifeq ($(target),$(__EMSCRIPTEN__))
@@ -28,8 +29,8 @@ endif
 KINAI_OBJS = $(patsubst $(KINAI_PATH)/src/%.cpp,$(__kinai_objs_dir)/%.o,$(KINAI_SRC))
 INCLUDE += -I $(KINAI_PATH)/include -I $(KINAI_PATH)/include/Kinai -I $(KINAI_PATH)
 
-CFLAGS		+= -DKINAI_PATH=\"./lib/Kinai/\"
-CXXFLAGS	+= -DKINAI_PATH=\"./lib/Kinai/\"
+CFLAGS		+= -DKINAI_PATH=\"$(KINAI_PATH)/\"
+CXXFLAGS	+= -DKINAI_PATH=\"$(KINAI_PATH)/\"
 
 $(info Target: $(target))
 $(info Rendering backend: $(backend))

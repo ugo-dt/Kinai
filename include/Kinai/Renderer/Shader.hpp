@@ -33,6 +33,7 @@ public:
 	void		Add(const std::string& name, const Ref<Shader>& shader);
 	void		Add(const Ref<Shader>& shader);
 	Ref<Shader>	Load(const std::string& filepath, const std::string& name);
+	Ref<Shader>	Load(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc);
 
 	Ref<Shader>	Get(const std::string& name);
 

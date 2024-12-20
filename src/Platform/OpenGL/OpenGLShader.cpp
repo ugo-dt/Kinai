@@ -451,6 +451,7 @@ OpenGLShader::OpenGLShader(const std::string& filepath, const std::string& progr
 
 	// vs.insert(0, "#version 450 core\n\n");
 	// fs.insert(0, "#version 450 core\n\n");
+
 	CreateProgram(vs.c_str(), fs.c_str());
 	Log::Trace("Created shader program '{}' (file: '{}')", _name, filepath);
 
@@ -462,6 +463,7 @@ OpenGLShader::OpenGLShader(const std::string& name, const std::string& vs, const
 	: _name(name)
 {
 	_name = name;
+
 	CreateProgram(vs.c_str(), fs.c_str());
 	Log::Trace("Created shader program '{}'", _name);
 }

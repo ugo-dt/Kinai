@@ -1,16 +1,40 @@
 #include <Kinai/Kinai.hpp>
 #include <Kinai/EntryPoint.hpp>
 
+const char *custom_shader_vs = R"(
+	void	vertex()
+	{
+		VERTEX = (CANVAS_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy;
+	}
+)";
+
+const char *custom_shader_fs = R"(
+	uniform vec2 scroll = vec2(0.05, 0.05);
+	uniform float distortion_strength = 0.2;
+
+	void	fragment()
+	{
+		vec4 screen_col = texture(TEXTURE, UV + scroll * TIME);
+		COLOR = screen_col;
+	}
+)";
+
 class AppLayer : public Kinai::Layer
 {
 public:
 	AppLayer()
-	: Kinai::Layer("App Layer"),
-	  _camera(Kinai::OrthographicCameraControllerConfig{
-		.enable_rotation = true
-	  }),
-	  _texture(Kinai::Texture2D::Create("./examples/assets/cobblestone.png", GL_NEAREST, GL_NEAREST))
+		: Kinai::Layer("App Layer"),
+	  	  _camera(Kinai::OrthographicCameraControllerConfig{
+		  	.enable_zoom = true,
+	  	  }),
+	  	  _texture(Kinai::Texture2D::Create("./examples/assets/cobblestone.png", GL_NEAREST, GL_NEAREST)),
+	  	  _shader(Kinai::Renderer2D::MakeShader("customquad", custom_shader_vs, custom_shader_fs))
 	{
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		glEnable(GL_BLEND);
+
+		glDisable(GL_DEPTH_TEST);
+
 		_texture->Bind();
 	}
 	~AppLayer() = default;
@@ -25,8 +49,13 @@ public:
 		Kinai::RenderCommand::Clear();
 
 		Kinai::Renderer2D::BeginFrame(_camera.GetCamera());
-		Kinai::Renderer2D::DrawQuad(glm::vec2(.5f, .1f), glm::vec2(.3f), _texture);
-		Kinai::Renderer2D::DrawQuad(glm::vec2(.5f, .5f), glm::vec2(.3f), _texture);
+		Kinai::Renderer2D::SetQuadShader(_shader);
+		Kinai::Renderer2D::DrawQuad(glm::vec2(0), glm::vec2(.3f), _texture);
+		Kinai::Renderer2D::ResetQuadShader();
+		Kinai::Renderer2D::DrawQuad(glm::vec2(0.1f), glm::vec2(.3f), _texture);
+
+		Kinai::Renderer2D::SetQuadShader(_shader);
+		Kinai::Renderer2D::DrawQuad(glm::vec2(.2f, .2f), glm::vec2(.3f), _texture);
 		Kinai::Renderer2D::EndFrame();
 	}
 
@@ -34,17 +63,17 @@ public:
 	{
 		Kinai::Application& app = Kinai::Application::Get();
 
-		static uint32_t total_draw_calls = 0;
+		static uint32_t total_draw_calls = 0;	
 
 		ImGui::Begin("Stats");
 
 		auto& stats = Kinai::Renderer2D::GetStats();
 		ImGui::Text("Renderer2D Stats:");
-		ImGui::Text("Current Draw Calls: %d", stats.DrawCalls);
+		ImGui::Text("Current Draw Calls: %d", stats.GetDrawCalls());
 		ImGui::Text("Total Draw Calls: %d", total_draw_calls);
-		total_draw_calls += stats.DrawCalls;
+		total_draw_calls += stats.GetDrawCalls();
 
-		ImGui::Text("Quads: %d", stats.QuadCount);
+		ImGui::Text("Quads: %d", stats.GetQuadCount());
 		ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
 		ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
 		ImGui::Text("FPS: %zu", app.GetFPS());
@@ -79,6 +108,7 @@ public:
 private:
 	Kinai::OrthographicCameraController	_camera;
 	Kinai::Ref<Kinai::Texture2D>		_texture;
+	Kinai::Renderer2D::Shader2D			_shader;
 };
 
 class App : public Kinai::Application
