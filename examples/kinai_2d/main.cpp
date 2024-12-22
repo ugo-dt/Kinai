@@ -9,13 +9,26 @@ const char *custom_shader_vs = R"(
 )";
 
 const char *custom_shader_fs = R"(
-	uniform vec2 scroll = vec2(0.05, 0.05);
-	uniform float distortion_strength = 0.2;
+	uniform vec2 scroll1;
+	uniform vec2 scroll2;
+	uniform float oscillation_speed;
+	uniform float light_start = 0.275;
+	uniform float light_end = 0.4;
+
+	uniform vec4 top_color;
+	uniform vec4 tone_color;
+	uniform float alpha;
 
 	void	fragment()
 	{
-		vec4 screen_col = texture(TEXTURE, UV + scroll * TIME);
-		COLOR = screen_col;
+		float oscillation = sin(TIME * oscillation_speed);
+		float distortion_strength = mix(-0.05, 0.05, (oscillation + 1.0) / 2.0);
+
+		float depth = texture(TEXTURE, UV + scroll1 * TIME).r * texture(TEXTURE, UV + scroll2 * TIME).r;
+		vec4 screen_col = texture(SCREEN_TEXTURE, SCREEN_UV + distortion_strength * vec2(depth));
+		vec4 top_light = smoothstep(light_start, light_end, depth) * top_color;
+		COLOR = screen_col * tone_color + top_light;
+		COLOR.a = alpha;
 	}
 )";
 
@@ -27,15 +40,20 @@ public:
 	  	  _camera(Kinai::OrthographicCameraControllerConfig{
 		  	.enable_zoom = true,
 	  	  }),
-	  	  _texture(Kinai::Texture2D::Create("./examples/assets/cobblestone.png", GL_NEAREST, GL_NEAREST)),
-	  	  _shader(Kinai::Renderer2D::MakeShader("customquad", custom_shader_vs, custom_shader_fs))
+	  	  _cobblestone(Kinai::Texture2D::Create("./examples/assets/cobblestone.png", GL_NEAREST, GL_NEAREST)),
+	  	  _noise(Kinai::Texture2D::Create("./examples/assets/cobblestone128.png", GL_NEAREST, GL_NEAREST)),
+	  	  _shader(Kinai::Renderer2D::MakeShader("customquad", custom_shader_vs, custom_shader_fs)),
+		  _scroll1(0.05f),
+		  _scroll2(-0.05f),
+		  _speed(0.1f),
+		  _tone_color(0.0f, 0.60f, 1.0f, 1.0f),
+		  _top_color(1.0f),
+		  _alpha(1.f)
 	{
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glEnable(GL_BLEND);
 
 		glDisable(GL_DEPTH_TEST);
-
-		_texture->Bind();
 	}
 	~AppLayer() = default;
 
@@ -49,13 +67,19 @@ public:
 		Kinai::RenderCommand::Clear();
 
 		Kinai::Renderer2D::BeginFrame(_camera.GetCamera());
-		Kinai::Renderer2D::SetQuadShader(_shader);
-		Kinai::Renderer2D::DrawQuad(glm::vec2(0), glm::vec2(.3f), _texture);
-		Kinai::Renderer2D::ResetQuadShader();
-		Kinai::Renderer2D::DrawQuad(glm::vec2(0.1f), glm::vec2(.3f), _texture);
+		Kinai::Renderer2D::DrawQuad(glm::vec2(0.f),    glm::vec2(1.f), _cobblestone);
 
 		Kinai::Renderer2D::SetQuadShader(_shader);
-		Kinai::Renderer2D::DrawQuad(glm::vec2(.2f, .2f), glm::vec2(.3f), _texture);
+		_shader.GetShader()->Bind();
+		_shader.GetShader()->SetFloat2("scroll1", glm::vec2(_scroll1.x));
+		_shader.GetShader()->SetFloat2("scroll2", glm::vec2(_scroll2.x));
+		_shader.GetShader()->SetFloat("oscillation_speed", _speed.x);
+		_shader.GetShader()->SetFloat4("tone_color", _tone_color);
+		_shader.GetShader()->SetFloat4("top_color", _top_color);
+		_shader.GetShader()->SetFloat("alpha", _alpha.x);
+		Kinai::Renderer2D::DrawQuad(glm::vec2(0.f), glm::vec2(2.f), _noise);
+		Kinai::Renderer2D::ResetQuadShader();
+
 		Kinai::Renderer2D::EndFrame();
 	}
 
@@ -65,7 +89,7 @@ public:
 
 		static uint32_t total_draw_calls = 0;	
 
-		ImGui::Begin("Stats");
+		ImGui::Begin("Debug");
 
 		auto& stats = Kinai::Renderer2D::GetStats();
 		ImGui::Text("Renderer2D Stats:");
@@ -80,6 +104,12 @@ public:
 		ImGui::SameLine();
 		if (ImGui::Button(app.GetWindow().IsVSync() ? "VSync ON" : "VSync OFF"))
 			app.GetWindow().SetVSync(!app.GetWindow().IsVSync());
+		ImGui::SliderFloat("Scroll1", (float*)&_scroll1, -1.f, 1.f, nullptr);
+		ImGui::SliderFloat("Scroll2", (float*)&_scroll2, -1.f, 1.f, nullptr);
+		ImGui::SliderFloat("Oscillation", (float*)&_speed, 0.f, 4.f, nullptr);
+		ImGui::ColorEdit4("Tone color", (float*)&_tone_color);
+		ImGui::ColorEdit4("Top color", (float*)&_top_color);
+		ImGui::SliderFloat("Alpha cap", (float*)&_alpha, 0.0, 1.f, nullptr);
 		ImGui::End();
 		stats.Reset();
 	}
@@ -107,8 +137,15 @@ public:
 
 private:
 	Kinai::OrthographicCameraController	_camera;
-	Kinai::Ref<Kinai::Texture2D>		_texture;
+	Kinai::Ref<Kinai::Texture2D>		_cobblestone;
+	Kinai::Ref<Kinai::Texture2D>		_noise;
 	Kinai::Renderer2D::Shader2D			_shader;
+	glm::vec2							_scroll1;
+	glm::vec2							_scroll2;
+	glm::vec1							_speed;
+	glm::vec4							_tone_color;
+	glm::vec4							_top_color;
+	glm::vec1							_alpha;
 };
 
 class App : public Kinai::Application

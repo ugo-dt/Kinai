@@ -35,9 +35,12 @@ layout (location = 1) in vec2 UV;
 layout (location = 2) in vec4 COLOR;
 layout (location = 3) in flat int TEX_INDEX;
 
-layout (binding = 0) uniform sampler2D	TEXTURES_SLOTS[32];
+layout (binding = 0) uniform sampler2D TEXTURE_SLOTS[32];
+#define TEXTURE                       (TEXTURE_SLOTS[TEX_INDEX])
 
-#define TEXTURE (TEXTURES_SLOTS[TEX_INDEX])
+uniform sampler2D SCREEN_TEXTURE;
+
+uniform vec2 VIEWPORT;
 
 void main()
 {

@@ -10,11 +10,10 @@ void	Renderer2D::MakeQuadPipeline()
 
 	_pip_quad.vertex_buffer = VertexBuffer::Create(Renderer2D::MAX_VERTICES * sizeof(QuadVertex));
 	_pip_quad.vertex_buffer->SetLayout({
-		{ ShaderDataType::Float2, "a_VERTEX"        },
-		{ ShaderDataType::Float2, "a_UV"            },
-		{ ShaderDataType::Float4, "a_COLOR"         },
-		{ ShaderDataType::Int,    "a_TEXTURE_INDEX" },
-		{ ShaderDataType::Float2, "a_SCREEN_UV"     },
+		{ ShaderDataType::Float2, "a_VERTEX"    },
+		{ ShaderDataType::Float2, "a_UV"        },
+		{ ShaderDataType::Float4, "a_COLOR"     },
+		{ ShaderDataType::Int,    "a_TEX_INDEX" },
 	});
 	_pip_quad.vertex_array->AddVertexBuffer(_pip_quad.vertex_buffer);
 
@@ -91,8 +90,7 @@ void	Renderer2D::DrawQuad(const glm::mat4& transform, const glm::vec4& color)
 		_pip_quad.vertex_buffer_ptr->position = transform * _quad_vertex_positions[i];
 		_pip_quad.vertex_buffer_ptr->color = color;
 		_pip_quad.vertex_buffer_ptr->tex_coord = textureCoords[i];
-		_pip_quad.vertex_buffer_ptr->tex_index = 0.f; // White texture
-		_pip_quad.vertex_buffer_ptr->screen_uv = textureCoords[i],
+		_pip_quad.vertex_buffer_ptr->tex_index = 0; // White texture
 		_pip_quad.vertex_buffer_ptr++;
 	}
 
@@ -131,18 +129,12 @@ void	Renderer2D::DrawQuad(const glm::mat4& transform, const Ref<Texture2D>& text
 		_texture_slot_index++;
 	}
 
-	glm::ivec2 winsize = Application::Get().GetWindow().GetSize();
-
 	for (size_t i = 0; i < quadVertexCount; i++)
 	{
 		_pip_quad.vertex_buffer_ptr->position = transform * _quad_vertex_positions[i];
 		_pip_quad.vertex_buffer_ptr->color = tintColor;
 		_pip_quad.vertex_buffer_ptr->tex_coord = textureCoords[i];
 		_pip_quad.vertex_buffer_ptr->tex_index = tex_index;
-		_pip_quad.vertex_buffer_ptr->screen_uv = glm::vec2(
-			(textureCoords[i].x * winsize.x) - 0.5f,
-			((1 - textureCoords[i].y) * winsize.y) - 0.5f
-		);
 		_pip_quad.vertex_buffer_ptr++;
 	}
 
@@ -190,11 +182,14 @@ void	Renderer2D::FlushQuadPipeline()
 		uint32_t dataSize = (uint32_t)((uint8_t*)_pip_quad.vertex_buffer_ptr - (uint8_t*)_pip_quad.vertex_buffer_base);
 		_pip_quad.vertex_buffer->SetData(_pip_quad.vertex_buffer_base, dataSize);
 
+		_pip_quad.shader->Bind();
+
 		// Bind textures
 		for (uint32_t i = 0; i < _texture_slot_index; i++)
 			_texture_slots[i]->Bind(i);
 
-		_pip_quad.shader->Bind();
+		_pip_quad.shader->SetFloat2("VIEWPORT", glm::vec2(Application::Get().GetWindow().GetSize()));
+
 		RenderCommand::DrawIndexed(_pip_quad.vertex_array, _pip_quad.index);
 		_stats._draw_calls++;
 	}
@@ -206,10 +201,6 @@ void	Renderer2D::SetQuadShader(Shader2D& shader)
 	{
 		NextBatch();
 		_pip_quad.shader = shader._shader;
-
-		// _pip_quad.shader->Bind();
-    	// _pip_quad.shader->SetInt("SCREEN_TEXTURE", 0);
-		// glBindTexture(GL_TEXTURE_2D, _screen_main_framebuffer->GetColorAttachmentRendererID());	// use the color attachment texture as the texture of the quad plane
 	}
 }
 

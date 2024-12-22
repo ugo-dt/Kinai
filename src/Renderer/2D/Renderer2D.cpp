@@ -39,7 +39,7 @@ void	Renderer2D::Init()
 {
 	MakeCommonPipelines();
 	MakeShaders();
-	// MakeScreenFramebuffers();
+	MakeScreenFramebuffers();
 
 	// Create a white texture
 	_texture_slots[0] = Texture2D::Create(TextureConfig());
@@ -72,7 +72,7 @@ void	Renderer2D::BeginFrame(const OrthographicCamera& camera)
 
 	_camera_uniforms.view_projection = camera.GetViewProjectionMatrix();
 	_camera_uniforms_buffer->SetData(&_camera_uniforms, sizeof(CameraUniforms));
-
+	
 	StartBatch();
 }
 
@@ -92,7 +92,7 @@ void	Renderer2D::BeginFrame(const Camera& camera, const glm::mat4& transform)
 
 	_camera_uniforms.view_projection = camera.GetProjectionMatrix() * glm::inverse(transform);
 	_camera_uniforms_buffer->SetData(&_camera_uniforms, sizeof(CameraUniforms));
-
+	
 	StartBatch();
 }
 
@@ -101,6 +101,7 @@ void	Renderer2D::Flush()
 	FlushQuadPipeline();
 	FlushCirclePipeline();
 	FlushLinePipeline();
+	CopyScreenToBackBuffer();
 }
 
 void	Renderer2D::EndFrame()
@@ -108,15 +109,12 @@ void	Renderer2D::EndFrame()
 	KN_PRINT_FUNC();
 
 	Flush();
-	// RenderFramebuffer();
 }
 
 void	Renderer2D::StartBatch()
 {
 	_builtin_uniforms.time = SDL_GetTicks() / 1000.0f;
 	_builtin_uniforms_buffer->SetData(&_builtin_uniforms, sizeof(BuiltinUniforms));
-
-	// UseMainFramebuffer();
 
 	_pip_quad.index = 0;
 	_pip_quad.vertex_buffer_ptr = _pip_quad.vertex_buffer_base;
@@ -126,8 +124,8 @@ void	Renderer2D::StartBatch()
 
 	// _line_vertex_count = 0;
 	// _line_vertex_buffer_ptr = _line_vertex_buffer_base;	
-	
-	_texture_slot_index = 1;
+
+	_texture_slot_index = 2;
 }
 
 void	Renderer2D::NextBatch()

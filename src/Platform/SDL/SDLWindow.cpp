@@ -71,7 +71,7 @@ SDLWindow::SDLWindow(const WindowProps &props)
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, desc_def.version_major);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, desc_def.version_major);
 
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_COMPATIBILITY);
+	// SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_COMPATIBILITY);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
 
 	#ifdef KN_DEV
@@ -82,9 +82,9 @@ SDLWindow::SDLWindow(const WindowProps &props)
 	if (desc_def.fullscreen)
 		flags |= SDL_WINDOW_FULLSCREEN;
 	_handle = SDL_CreateWindow(desc_def.title, desc_def.width, desc_def.height, flags);
-	KN_ASSERT(_handle);
+	KN_ASSERT(_handle, "{}", SDL_GetError());
 	_gl_context = SDL_GL_CreateContext(_handle);
-	KN_ASSERT(_gl_context);
+	KN_ASSERT(_gl_context, "{}", SDL_GetError());
 
 	SDL_GL_MakeCurrent(_handle, _gl_context);
 	SDL_GL_SetSwapInterval(!desc_def.no_vsync);

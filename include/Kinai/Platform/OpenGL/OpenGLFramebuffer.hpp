@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Kinai/Renderer/Framebuffer.hpp"
+#include "Kinai/Renderer/Texture.hpp"
 
 namespace Kinai
 {
@@ -29,6 +30,8 @@ public:
 	uint32_t	GetRendererID() const override { return _renderer_id; }
 
 	const FramebufferConfig&	GetConfig() const override { return _config; }
+
+	void	CopyTextureData(Ref<Texture2D>& dest);
 
 private:
 	uint32_t _renderer_id = 0;

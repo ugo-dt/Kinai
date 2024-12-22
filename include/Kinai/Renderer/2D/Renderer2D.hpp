@@ -34,7 +34,6 @@ struct QuadVertex
 	glm::vec2	tex_coord;
 	glm::vec4	color;
 	int			tex_index;
-	glm::vec2	screen_uv;
 };
 
 template <class Tp>
@@ -92,6 +91,10 @@ public:
 public:
 	class Shader2D
 	{
+	public:
+		Ref<Shader>&	GetShader() { return _shader; }
+
+	private:
 		Shader2D(const Ref<Shader>& shader): _shader(shader) {}
 		Ref<Shader> _shader;
 		friend class Renderer2D;
@@ -135,7 +138,7 @@ private:
 	static constexpr uint32_t	MAX_QUADS = 20000;
 	static constexpr uint32_t	MAX_VERTICES = MAX_QUADS * 4;
 	static constexpr uint32_t	MAX_INDICES = MAX_QUADS * 6;
-	static constexpr uint32_t	MAX_TEXTURE_SLOTS = 32;
+	static constexpr uint32_t	MAX_TEXTURE_SLOTS = 31;
 
 private:
 	static void	StartBatch();
@@ -153,8 +156,6 @@ private:
 	static void	MakeShaders();
 
 	static void	MakeScreenFramebuffers();
-	static void	UseMainFramebuffer();
-	static void	RenderFramebuffer();
 	static void	CopyScreenToBackBuffer();
 
 private:
@@ -183,10 +184,7 @@ private:
 	static BuiltinUniforms		_builtin_uniforms;
 	static Ref<UniformBuffer>	_builtin_uniforms_buffer;
 
-	static Ref<Framebuffer>		_screen_main_framebuffer;
-	static Ref<Framebuffer>		_screen_shader_framebuffer;
-	static Ref<VertexArray>		_screen_vertex_array;
-	static Ref<Shader>			_screen_shader;
+	static unsigned int			_screen_framebuffer;
 
 	static Statistics	_stats;
 };

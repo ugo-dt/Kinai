@@ -32,11 +32,8 @@ const char *VERTEX_VARIABLES_SOURCE = R"(
 	layout (location = 2) in  vec4 a_COLOR;
 	layout (location = 2) out vec4   COLOR;
 
-	layout (location = 3) in       int a_TEXTURE_INDEX;
-	layout (location = 3) out flat int   TEXTURE_INDEX;
-
-	layout (location = 4) in  vec2 a_SCREEN_UV;
-	layout (location = 4) out vec2   SCREEN_UV;
+	layout (location = 3) in       int a_TEX_INDEX;
+	layout (location = 3) out flat int   TEX_INDEX;
 
 	int VERTEX_ID; // gl_VertexID
 	float POINT_SIZE; // gl_PointSize
@@ -50,8 +47,7 @@ const char *VERTEX_MAIN_SOURCE = R"(
 		VERTEX = a_VERTEX;
 		UV = a_UV;
 		COLOR = a_COLOR;
-		TEXTURE_INDEX = a_TEXTURE_INDEX;
-		SCREEN_UV = a_SCREEN_UV;
+		TEX_INDEX = a_TEX_INDEX;
 
 		// Custom shader code
 		vertex();
@@ -65,19 +61,19 @@ const char *FRAGMENT_VARIABLES_SOURCE = R"(
 	layout (location = 0) in vec2 v_VERTEX;
 	layout (location = 1) in vec2 v_UV;
 	layout (location = 2) in vec4 v_COLOR;
-	layout (location = 3) in flat int  v_TEXTURE_INDEX;
-	layout (location = 4) in vec2 v_SCREEN_UV;
+	layout (location = 3) in flat int  v_TEX_INDEX;
 
 	vec2 VERTEX;
 	vec2 UV;
 	vec4 COLOR;
-	int  TEXTURE_INDEX;
+	int  TEX_INDEX;
 	vec2 SCREEN_UV;
 
 	layout (binding = 0) uniform sampler2D TEXTURE_SLOTS[32];
+	#define TEXTURE                       (TEXTURE_SLOTS[TEX_INDEX])
+	#define SCREEN_TEXTURE                (TEXTURE_SLOTS[1])
 
-	#define TEXTURE        (TEXTURE_SLOTS[TEXTURE_INDEX])
-	#define SCREEN_TEXTURE (TEXTURE_SLOTS[0])
+	uniform vec2 VIEWPORT;
 
 	vec4 FRAGCOORD; // gl_FragCoord
 	vec2 SCREEN_PIXEL_SIZE; // TODO
@@ -91,11 +87,10 @@ const char *FRAGMENT_MAIN_SOURCE = R"(
 		VERTEX = v_VERTEX;
 		UV = v_UV;
 		COLOR = v_COLOR;
-		TEXTURE_INDEX = v_TEXTURE_INDEX;
-		SCREEN_UV = v_SCREEN_UV;
-
+		TEX_INDEX = v_TEX_INDEX;
 		FRAGCOORD = gl_FragCoord;
 		// SCREEN_PIXEL_SIZE = 
+		SCREEN_UV = gl_FragCoord.xy / VIEWPORT;
 
 		// Custom shader code
 		fragment();
