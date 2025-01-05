@@ -103,7 +103,7 @@ enum : KeyCode
 									*/
 	KPDivide = 84,
 	KPMultiply = 85,
-	KPSubstract = 86,
+	KPSubtract = 86,
 	KPAdd = 87,
 	KPEnter = 88,
 	KP1 = 89,

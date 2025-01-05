@@ -87,9 +87,4 @@ $(__lib_obj_dir)/stb_image/%.o: $(__stb_image_path)/%.c
 	$(SILENT)mkdir -p $(dir $@)
 	$(SILENT)$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
-$(__lib_obj_dir)/Kinako/%.o: $(__kinako_path)/%.cpp
-	@echo "$(COLOR_GREY)Compiling $<...$(COLOR_DEFAULT)"
-	$(SILENT)mkdir -p $(dir $@)
-	$(SILENT)$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
-
 endif # __LIB_MK

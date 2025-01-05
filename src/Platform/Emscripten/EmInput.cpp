@@ -461,7 +461,7 @@ KeyCode	Em_KeyEventToKeyCode(const EmscriptenKeyboardEvent* e)
 		case DOM_VK_MULTIPLY: return Key::KPMultiply;
 		case DOM_VK_ADD: return Key::KPAdd;
 		// case DOM_VK_SEPARATOR: return Key::;
-		case DOM_VK_SUBTRACT: return Key::KPSubstract;
+		case DOM_VK_SUBTRACT: return Key::KPSubtract;
 		case DOM_VK_DECIMAL: return Key::KPPeriod;
 		case DOM_VK_DIVIDE: return Key::KPDivide;
 		case DOM_VK_F1: return Key::F1;
@@ -638,7 +638,7 @@ KeyCode	Em_KeyEventToKeyCode(const EmscriptenKeyboardEvent* e)
 	EM_KEYCODE("Numpad7", Key::KP7);
 	EM_KEYCODE("Numpad8", Key::KP8);
 	EM_KEYCODE("Numpad9", Key::KP9);
-	EM_KEYCODE("NumpadSubtract", Key::KPSubstract);
+	EM_KEYCODE("NumpadSubtract", Key::KPSubtract);
 	EM_KEYCODE("Numpad4", Key::KP4);
 	EM_KEYCODE("Numpad5", Key::KP5);
 	EM_KEYCODE("Numpad6", Key::KP6);

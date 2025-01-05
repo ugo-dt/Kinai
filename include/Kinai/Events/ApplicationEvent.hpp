@@ -27,7 +27,6 @@ public:
 
 private:
 	uint32_t	_width, _height;
-
 };
 
 class WindowCloseEvent : public Event
