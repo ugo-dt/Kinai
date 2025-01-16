@@ -62,6 +62,7 @@ public:
 	static void	BeginFrame(const PerspectiveCamera& camera);
 
 	static void	Flush();
+	static void	UpdateViewport();
 
 	/** This function calls Renderer2D::Flush(). */
 	static void	EndFrame();

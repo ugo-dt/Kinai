@@ -104,6 +104,13 @@ void	Renderer2D::Flush()
 	CopyScreenToBackBuffer();
 }
 
+void	Renderer2D::UpdateViewport()
+{
+	glDeleteFramebuffers(1, &_screen_framebuffer);
+	_texture_slots[1] = nullptr;
+	MakeScreenFramebuffers();
+}
+
 void	Renderer2D::EndFrame()
 {
 	KN_PRINT_FUNC();

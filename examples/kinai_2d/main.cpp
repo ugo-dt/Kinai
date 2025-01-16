@@ -34,6 +34,18 @@ const char *custom_shader_fs = R"(
 
 class AppLayer : public Kinai::Layer
 {
+// Private members are at the top for convenience
+private:
+	Kinai::OrthographicCameraController	_camera;
+	Kinai::Ref<Kinai::Texture2D>		_cobblestone;
+	Kinai::Ref<Kinai::Texture2D>		_noise;
+	Kinai::Renderer2D::Shader2D			_shader;
+	glm::vec2							_scroll1;
+	glm::vec2							_scroll2;
+	glm::vec1							_oscillation;
+	glm::vec4							_tone_color;
+	glm::vec4							_top_color;
+	glm::vec1							_alpha;
 public:
 	AppLayer()
 		: Kinai::Layer("App Layer"),
@@ -41,18 +53,17 @@ public:
 		  	.enable_zoom = true,
 	  	  }),
 	  	  _cobblestone(Kinai::Texture2D::Create("./examples/assets/cobblestone.png", GL_NEAREST, GL_NEAREST)),
-	  	  _noise(Kinai::Texture2D::Create("./examples/assets/cobblestone128.png", GL_NEAREST, GL_NEAREST)),
+	  	  _noise(Kinai::Texture2D::Create("./examples/assets/seamless_noise.png", GL_NEAREST, GL_NEAREST)),
 	  	  _shader(Kinai::Renderer2D::MakeShader("customquad", custom_shader_vs, custom_shader_fs)),
 		  _scroll1(0.05f),
 		  _scroll2(-0.05f),
-		  _speed(0.1f),
+		  _oscillation(1.0f),
 		  _tone_color(0.0f, 0.60f, 1.0f, 1.0f),
 		  _top_color(1.0f),
 		  _alpha(1.f)
 	{
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glEnable(GL_BLEND);
-
 		glDisable(GL_DEPTH_TEST);
 	}
 	~AppLayer() = default;
@@ -73,7 +84,7 @@ public:
 		_shader.GetShader()->Bind();
 		_shader.GetShader()->SetFloat2("scroll1", glm::vec2(_scroll1.x));
 		_shader.GetShader()->SetFloat2("scroll2", glm::vec2(_scroll2.x));
-		_shader.GetShader()->SetFloat("oscillation_speed", _speed.x);
+		_shader.GetShader()->SetFloat("oscillation_speed", _oscillation.x);
 		_shader.GetShader()->SetFloat4("tone_color", _tone_color);
 		_shader.GetShader()->SetFloat4("top_color", _top_color);
 		_shader.GetShader()->SetFloat("alpha", _alpha.x);
@@ -101,17 +112,18 @@ public:
 		ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
 		ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
 		ImGui::Text("FPS: %zu", app.GetFPS());
+		stats.Reset();
+
 		ImGui::SameLine();
 		if (ImGui::Button(app.GetWindow().IsVSync() ? "VSync ON" : "VSync OFF"))
 			app.GetWindow().SetVSync(!app.GetWindow().IsVSync());
 		ImGui::SliderFloat("Scroll1", (float*)&_scroll1, -1.f, 1.f, nullptr);
 		ImGui::SliderFloat("Scroll2", (float*)&_scroll2, -1.f, 1.f, nullptr);
-		ImGui::SliderFloat("Oscillation", (float*)&_speed, 0.f, 4.f, nullptr);
+		ImGui::SliderFloat("Oscillation", (float*)&_oscillation, 0.f, 4.f, nullptr);
 		ImGui::ColorEdit4("Tone color", (float*)&_tone_color);
 		ImGui::ColorEdit4("Top color", (float*)&_top_color);
 		ImGui::SliderFloat("Alpha cap", (float*)&_alpha, 0.0, 1.f, nullptr);
 		ImGui::End();
-		stats.Reset();
 	}
 
 	void	OnEvent(Kinai::Event& event)
@@ -134,18 +146,6 @@ public:
 		}
 		return true;
 	}
-
-private:
-	Kinai::OrthographicCameraController	_camera;
-	Kinai::Ref<Kinai::Texture2D>		_cobblestone;
-	Kinai::Ref<Kinai::Texture2D>		_noise;
-	Kinai::Renderer2D::Shader2D			_shader;
-	glm::vec2							_scroll1;
-	glm::vec2							_scroll2;
-	glm::vec1							_speed;
-	glm::vec4							_tone_color;
-	glm::vec4							_top_color;
-	glm::vec1							_alpha;
 };
 
 class App : public Kinai::Application
