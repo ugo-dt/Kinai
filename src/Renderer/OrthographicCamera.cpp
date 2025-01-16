@@ -26,8 +26,12 @@ void	OrthographicCamera::UpdateView()
 {
 	KN_PRINT_FUNC();
 
-	glm::mat4 transform = glm::translate(glm::mat4(1.0f), _position) *
-		glm::rotate(glm::mat4(1.0f), glm::radians(_rotation), glm::vec3(0.0f, 0.0f, 1.0f));
+	glm::mat4 transform = glm::mat4(1.0f);
+
+	transform = glm::translate(transform, _position);
+	transform = glm::rotate(transform, glm::radians(_rotation.x), glm::vec3(1.0f, 0.0f, 0.0f));
+	transform = glm::rotate(transform, glm::radians(_rotation.y), glm::vec3(0.0f, 1.0f, 0.0f));
+	transform = glm::rotate(transform, glm::radians(_rotation.z), glm::vec3(0.0f, 0.0f, 1.0f));
 	
 	_view_matrix = glm::inverse(transform);
 	_view_projection_matrix = _projection_matrix * _view_matrix;
@@ -49,36 +53,36 @@ void	OrthographicCameraController::OnUpdate(float delta)
 
 	if (Input::IsKeyPressed(Key::W))
 	{
-		_config.position.x += -sin(glm::radians(_config.rotation)) * _config.translation_speed * delta;
-		_config.position.y += cos(glm::radians(_config.rotation)) * _config.translation_speed * delta;
+		_config.position.x += -sin(glm::radians(_config.rotation.z)) * _config.translation_speed * delta;
+		_config.position.y += cos(glm::radians(_config.rotation.z)) * _config.translation_speed * delta;
 	}
 	if (Input::IsKeyPressed(Key::S))
 	{
-		_config.position.x -= -sin(glm::radians(_config.rotation)) * _config.translation_speed * delta;
-		_config.position.y -= cos(glm::radians(_config.rotation)) * _config.translation_speed * delta;
+		_config.position.x -= -sin(glm::radians(_config.rotation.z)) * _config.translation_speed * delta;
+		_config.position.y -= cos(glm::radians(_config.rotation.z)) * _config.translation_speed * delta;
 	}
 	if (Input::IsKeyPressed(Key::A))
 	{
-		_config.position.x -= cos(glm::radians(_config.rotation)) * _config.translation_speed * delta;
-		_config.position.y -= sin(glm::radians(_config.rotation)) * _config.translation_speed * delta;
+		_config.position.x -= cos(glm::radians(_config.rotation.z)) * _config.translation_speed * delta;
+		_config.position.y -= sin(glm::radians(_config.rotation.z)) * _config.translation_speed * delta;
 	}
 	if (Input::IsKeyPressed(Key::D))
 	{
-		_config.position.x += cos(glm::radians(_config.rotation)) * _config.translation_speed * delta;
-		_config.position.y += sin(glm::radians(_config.rotation)) * _config.translation_speed * delta;
+		_config.position.x += cos(glm::radians(_config.rotation.z)) * _config.translation_speed * delta;
+		_config.position.y += sin(glm::radians(_config.rotation.z)) * _config.translation_speed * delta;
 	}
 
 	if (_config.enable_rotation)
 	{
 		if (Input::IsKeyPressed(Key::Q))
-			_config.rotation += _config.rotation_speed * delta;
+			_config.rotation.z += _config.rotation_speed * delta;
 		if (Input::IsKeyPressed(Key::E))
-			_config.rotation -= _config.rotation_speed * delta;
-		
-		if (_config.rotation > 180.0f)
-			_config.rotation -= 360.0f;
-		else if (_config.rotation <= -180.0f)
-			_config.rotation += 360.0f;
+			_config.rotation.z -= _config.rotation_speed * delta;
+
+		if (_config.rotation.z > 180.0f)
+			_config.rotation.z -= 360.0f;
+		else if (_config.rotation.z <= -180.0f)
+			_config.rotation.z += 360.0f;
 		
 		_camera.SetRotation(_config.rotation);
 	}

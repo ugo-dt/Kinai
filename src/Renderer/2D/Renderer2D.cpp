@@ -66,11 +66,11 @@ void	Renderer2D::Shutdown()
 	DestroyQuadPipeline();
 }
 
-void	Renderer2D::BeginFrame(const OrthographicCamera& camera)
+void	Renderer2D::BeginFrame(const Camera& camera, const glm::mat4& transform)
 {
 	KN_PRINT_FUNC();
 
-	_camera_uniforms.view_projection = camera.GetViewProjectionMatrix();
+	_camera_uniforms.view_projection = camera.GetProjectionMatrix() * glm::inverse(transform);
 	_camera_uniforms_buffer->SetData(&_camera_uniforms, sizeof(CameraUniforms));
 	
 	StartBatch();
@@ -86,11 +86,11 @@ void	Renderer2D::BeginFrame(const PerspectiveCamera& camera)
 	StartBatch();
 }
 
-void	Renderer2D::BeginFrame(const Camera& camera, const glm::mat4& transform)
+void	Renderer2D::BeginFrame(const OrthographicCamera& camera)
 {
 	KN_PRINT_FUNC();
 
-	_camera_uniforms.view_projection = camera.GetProjectionMatrix() * glm::inverse(transform);
+	_camera_uniforms.view_projection = camera.GetViewProjectionMatrix();
 	_camera_uniforms_buffer->SetData(&_camera_uniforms, sizeof(CameraUniforms));
 	
 	StartBatch();
