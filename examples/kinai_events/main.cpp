@@ -33,6 +33,8 @@ public:
 	{
 		Kinai::EventDispatcher dispatcher(event);
 
+		std::cout << event.ToString() << std::endl;
+
 		// Send specific events to the appropriate function
 		dispatcher.Dispatch<Kinai::KeyPressedEvent>(KN_BIND_EVENT_FN(OnKeyPressed));
 		dispatcher.Dispatch<Kinai::MouseButtonPressedEvent>(KN_BIND_EVENT_FN(OnMouseButtonPressed));

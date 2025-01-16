@@ -40,6 +40,7 @@ void	Renderer::OnWindowResize(uint32_t width, uint32_t height)
 	KN_PRINT_FUNC();
 
 	RenderCommand::SetViewport(0, 0, width, height);
+	Renderer2D::UpdateViewport();
 }
 
 void	Renderer::Submit(const Ref<Shader>& shader, const Ref<VertexArray>& vertexArray, const glm::mat4& transform)
