@@ -3,6 +3,8 @@
 namespace Kinai
 {
 
+#ifdef KN_PLATFORM_DESKTOP
+
 constexpr uint32_t MAX_FRAME_BUFFER_SIZE = 8192;
 
 static GLenum	TextureTarget(bool multisampled)
@@ -229,5 +231,7 @@ void	OpenGLFramebuffer::ClearAttachment(uint32_t attachmentIndex, int value)
 	glClearTexImage(_color_attachments[attachmentIndex], 0,
 		FBTextureFormatToGL(spec.TextureFormat), GL_INT, &value);
 }
+
+#endif // KN_PLATFORM_DESKTOP
 
 } // Kinai

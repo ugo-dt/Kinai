@@ -20,10 +20,7 @@ Kinai::Application*	Kinai::CreateApplication(int argc, char **argv)
 
 	return new HelloApplication(Kinai::ApplicationConfig{
 		.name = "Hello Kinai",
-		.window_width = 400,
-		.window_height = 400,
-		.fullscreen = false,
-		.no_vsync = true,
-		.enable_imgui = false,
+		.window_width = 500,
+		.window_height = 500,
 	});
 }
