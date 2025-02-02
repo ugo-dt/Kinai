@@ -33,8 +33,6 @@ class Application
 public:
 	Application(const ApplicationConfig &config);
 	virtual ~Application();
-	
-	void		OnEvent(Event& event);
 
 	Layer*		PushLayer(Layer* layer);
 	Layer*		PushOverlay(Layer* layer);
@@ -52,6 +50,7 @@ public:
 	static Application& Get() { return *_instance; }
 
 private:
+	void	OnEvent(Event& event);
 	bool	OnWindowClose(WindowCloseEvent &event);
 	bool	OnWindowResize(WindowResizeEvent &event);
 
