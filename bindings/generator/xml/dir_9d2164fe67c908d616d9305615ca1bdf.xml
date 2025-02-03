@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_9d2164fe67c908d616d9305615ca1bdf" kind="dir">
+    <compoundname>Buffer</compoundname>
+    <innerfile refid="Buffer_8hpp">Buffer.hpp</innerfile>
+    <innerfile refid="BufferElement_8hpp">BufferElement.hpp</innerfile>
+    <innerfile refid="BufferLayout_8hpp">BufferLayout.hpp</innerfile>
+    <innerfile refid="IndexBuffer_8hpp">IndexBuffer.hpp</innerfile>
+    <innerfile refid="VertexBuffer_8hpp">VertexBuffer.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Renderer/Buffer/"/>
+  </compounddef>
+</doxygen>

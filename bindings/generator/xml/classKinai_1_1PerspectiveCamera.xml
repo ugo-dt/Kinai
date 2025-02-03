@@ -1,0 +1,720 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classKinai_1_1PerspectiveCamera" kind="class" language="C++" prot="public">
+    <compoundname>Kinai::PerspectiveCamera</compoundname>
+    <basecompoundref refid="classKinai_1_1Camera" prot="public" virt="non-virtual">Kinai::Camera</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classKinai_1_1PerspectiveCamera_1aa1c7117fe0e375162160b78b1e8a3f94" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Kinai::PerspectiveCamera::_fov</definition>
+        <argsstring></argsstring>
+        <name>_fov</name>
+        <qualifiedname>Kinai::PerspectiveCamera::_fov</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="54" column="6" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1PerspectiveCamera_1ab609cc0a5880be50b5aacf9e16fcef8d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Kinai::PerspectiveCamera::_aspect_ratio</definition>
+        <argsstring></argsstring>
+        <name>_aspect_ratio</name>
+        <qualifiedname>Kinai::PerspectiveCamera::_aspect_ratio</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="54" column="11" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1PerspectiveCamera_1a9170805ac139eed52ffa9ffccd605949" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Kinai::PerspectiveCamera::_near_clip</definition>
+        <argsstring></argsstring>
+        <name>_near_clip</name>
+        <qualifiedname>Kinai::PerspectiveCamera::_near_clip</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="54" column="25" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1PerspectiveCamera_1ab436f77680baa413e7e418b076e87d2d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Kinai::PerspectiveCamera::_far_clip</definition>
+        <argsstring></argsstring>
+        <name>_far_clip</name>
+        <qualifiedname>Kinai::PerspectiveCamera::_far_clip</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="54" column="36" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1PerspectiveCamera_1a68a25376f1d289f7f4e5bb952ce3c419" prot="private" static="no" mutable="no">
+        <type>glm::mat4</type>
+        <definition>glm::mat4 Kinai::PerspectiveCamera::_view_matrix</definition>
+        <argsstring></argsstring>
+        <name>_view_matrix</name>
+        <qualifiedname>Kinai::PerspectiveCamera::_view_matrix</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="55" column="10" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1PerspectiveCamera_1af0a71fe4c3df90b7e1ca045ddcd22a3a" prot="private" static="no" mutable="no">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 Kinai::PerspectiveCamera::_position</definition>
+        <argsstring></argsstring>
+        <name>_position</name>
+        <qualifiedname>Kinai::PerspectiveCamera::_position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="56" column="10" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1PerspectiveCamera_1ace041d75dfba5c606b9577f8e8dd7adc" prot="private" static="no" mutable="no">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 Kinai::PerspectiveCamera::_focal_point</definition>
+        <argsstring></argsstring>
+        <name>_focal_point</name>
+        <qualifiedname>Kinai::PerspectiveCamera::_focal_point</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="57" column="10" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1PerspectiveCamera_1a9c175b08ae56e99b9166ea2151dc7bda" prot="private" static="no" mutable="no">
+        <type>glm::vec2</type>
+        <definition>glm::vec2 Kinai::PerspectiveCamera::_inital_mouse_position</definition>
+        <argsstring></argsstring>
+        <name>_inital_mouse_position</name>
+        <qualifiedname>Kinai::PerspectiveCamera::_inital_mouse_position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="58" column="10" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1PerspectiveCamera_1a8f119a9c2e1156a958ef78cc6f980ebc" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Kinai::PerspectiveCamera::_distance</definition>
+        <argsstring></argsstring>
+        <name>_distance</name>
+        <qualifiedname>Kinai::PerspectiveCamera::_distance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="59" column="6" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1PerspectiveCamera_1afb1d385337bfe6e7affc758d078e6634" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Kinai::PerspectiveCamera::_pitch</definition>
+        <argsstring></argsstring>
+        <name>_pitch</name>
+        <qualifiedname>Kinai::PerspectiveCamera::_pitch</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="60" column="6" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1PerspectiveCamera_1a5b1df55bb8f5f2f2b2df6c020c7a2cf3" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Kinai::PerspectiveCamera::_yaw</definition>
+        <argsstring></argsstring>
+        <name>_yaw</name>
+        <qualifiedname>Kinai::PerspectiveCamera::_yaw</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="60" column="13" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1PerspectiveCamera_1a554ee4aaa9ff4f211b34361ca34afb8a" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Kinai::PerspectiveCamera::_viewport_width</definition>
+        <argsstring></argsstring>
+        <name>_viewport_width</name>
+        <qualifiedname>Kinai::PerspectiveCamera::_viewport_width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="61" column="6" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1PerspectiveCamera_1ac6e9c874f9310eab459dc574e1ead823" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Kinai::PerspectiveCamera::_viewport_height</definition>
+        <argsstring></argsstring>
+        <name>_viewport_height</name>
+        <qualifiedname>Kinai::PerspectiveCamera::_viewport_height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="62" column="6" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a2e763ca6bae6e055054833676f7c884d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::PerspectiveCamera::PerspectiveCamera</definition>
+        <argsstring>()=default</argsstring>
+        <name>PerspectiveCamera</name>
+        <qualifiedname>Kinai::PerspectiveCamera::PerspectiveCamera</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="12" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1ae81931e68dcab73bd1d5d9755fcea78c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::PerspectiveCamera::PerspectiveCamera</definition>
+        <argsstring>(float viewport_width, float viewport_height, float fov, float near_clip, float far_clip)</argsstring>
+        <name>PerspectiveCamera</name>
+        <qualifiedname>Kinai::PerspectiveCamera::PerspectiveCamera</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>viewport_width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>viewport_height</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>fov</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>near_clip</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>far_clip</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="13" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a80b29b03467c427f525e56661ba1007e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::PerspectiveCamera::~PerspectiveCamera</definition>
+        <argsstring>()=default</argsstring>
+        <name>~PerspectiveCamera</name>
+        <qualifiedname>Kinai::PerspectiveCamera::~PerspectiveCamera</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="14" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a301f4e13d88c13ca6f54f21aed924170" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::PerspectiveCamera::OnUpdate</definition>
+        <argsstring>()</argsstring>
+        <name>OnUpdate</name>
+        <qualifiedname>Kinai::PerspectiveCamera::OnUpdate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="16" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1adfcd40ecc4005d1a23b46a060ff53451" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::PerspectiveCamera::SetViewportSize</definition>
+        <argsstring>(float width, float height)</argsstring>
+        <name>SetViewportSize</name>
+        <qualifiedname>Kinai::PerspectiveCamera::SetViewportSize</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="18" column="5" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1ad68d89cdf584fb6c89d83c9d576d40fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::PerspectiveCamera::SetDistance</definition>
+        <argsstring>(float distance)</argsstring>
+        <name>SetDistance</name>
+        <qualifiedname>Kinai::PerspectiveCamera::SetDistance</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>distance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="19" column="12" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1ab811b85f3b89d695c9e7613b35965364" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::PerspectiveCamera::SetPosition</definition>
+        <argsstring>(const glm::vec3 &amp;position)</argsstring>
+        <name>SetPosition</name>
+        <qualifiedname>Kinai::PerspectiveCamera::SetPosition</qualifiedname>
+        <param>
+          <type>const glm::vec3 &amp;</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="20" column="5" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a488b28f3af0a031ec03839a9be9c5580" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Kinai::PerspectiveCamera::GetDistance</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDistance</name>
+        <qualifiedname>Kinai::PerspectiveCamera::GetDistance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="22" column="13" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1ae81cf466367b5ebcc0100e99edb5ccaa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const glm::mat4 &amp;</type>
+        <definition>const glm::mat4 &amp; Kinai::PerspectiveCamera::GetViewMatrix</definition>
+        <argsstring>() const</argsstring>
+        <name>GetViewMatrix</name>
+        <qualifiedname>Kinai::PerspectiveCamera::GetViewMatrix</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="24" column="16" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="24" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a56c842e597589e696a7a3167103a94b8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>glm::mat4</type>
+        <definition>glm::mat4 Kinai::PerspectiveCamera::GetViewProjectionMatrix</definition>
+        <argsstring>() const</argsstring>
+        <name>GetViewProjectionMatrix</name>
+        <qualifiedname>Kinai::PerspectiveCamera::GetViewProjectionMatrix</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="25" column="10" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="25" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1ac9e475ca944060782e31aa8b6dc162a3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 Kinai::PerspectiveCamera::GetUpDirection</definition>
+        <argsstring>() const</argsstring>
+        <name>GetUpDirection</name>
+        <qualifiedname>Kinai::PerspectiveCamera::GetUpDirection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="27" column="10" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="27" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a5e6402220764c10b840263dd85dcd40d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 Kinai::PerspectiveCamera::GetRightDirection</definition>
+        <argsstring>() const</argsstring>
+        <name>GetRightDirection</name>
+        <qualifiedname>Kinai::PerspectiveCamera::GetRightDirection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="28" column="10" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1adcada5a96b7eb58f2d27abb2db771855" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 Kinai::PerspectiveCamera::GetForwardDirection</definition>
+        <argsstring>() const</argsstring>
+        <name>GetForwardDirection</name>
+        <qualifiedname>Kinai::PerspectiveCamera::GetForwardDirection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="29" column="10" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a7f586f4c4acc0e5a808565e85cfe28f1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>glm::quat</type>
+        <definition>glm::quat Kinai::PerspectiveCamera::GetOrientation</definition>
+        <argsstring>() const</argsstring>
+        <name>GetOrientation</name>
+        <qualifiedname>Kinai::PerspectiveCamera::GetOrientation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="30" column="10" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a054ea88cb1fe5d9eb7fd1fde82318b53" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const glm::vec3 &amp;</type>
+        <definition>const glm::vec3 &amp; Kinai::PerspectiveCamera::GetPosition</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPosition</name>
+        <qualifiedname>Kinai::PerspectiveCamera::GetPosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="32" column="16" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a905a1c2de4606c392ef7541574ef9058" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Kinai::PerspectiveCamera::GetPitch</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPitch</name>
+        <qualifiedname>Kinai::PerspectiveCamera::GetPitch</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="33" column="6" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a4ae99e1cec4dc2ecf5225a8104330144" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Kinai::PerspectiveCamera::GetYaw</definition>
+        <argsstring>() const</argsstring>
+        <name>GetYaw</name>
+        <qualifiedname>Kinai::PerspectiveCamera::GetYaw</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="34" column="6" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a8324a45f18dc00b8529782052872cc31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Kinai::PerspectiveCamera::OnMouseWheel</definition>
+        <argsstring>(MouseWheelEvent &amp;e)</argsstring>
+        <name>OnMouseWheel</name>
+        <qualifiedname>Kinai::PerspectiveCamera::OnMouseWheel</qualifiedname>
+        <param>
+          <type><ref refid="classKinai_1_1MouseWheelEvent" kindref="compound">MouseWheelEvent</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="36" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a0f601d820825a0ee3d170c7e203c7b4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Kinai::PerspectiveCamera::OnMouseMotion</definition>
+        <argsstring>(MouseMotionEvent &amp;event)</argsstring>
+        <name>OnMouseMotion</name>
+        <qualifiedname>Kinai::PerspectiveCamera::OnMouseMotion</qualifiedname>
+        <param>
+          <type><ref refid="classKinai_1_1MouseMotionEvent" kindref="compound">MouseMotionEvent</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="37" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1ad8207842ac12ae3944971f973ddf679b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::PerspectiveCamera::UpdateProjection</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateProjection</name>
+        <qualifiedname>Kinai::PerspectiveCamera::UpdateProjection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="40" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a96dd3719c5880044a3f4a96ca2bfda15" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::PerspectiveCamera::UpdateView</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateView</name>
+        <qualifiedname>Kinai::PerspectiveCamera::UpdateView</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="41" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a2c56a4ddc07c7dcbe8e72858e8ad7cd6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::PerspectiveCamera::MousePan</definition>
+        <argsstring>(const glm::vec2 &amp;delta)</argsstring>
+        <name>MousePan</name>
+        <qualifiedname>Kinai::PerspectiveCamera::MousePan</qualifiedname>
+        <param>
+          <type>const glm::vec2 &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="43" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a36eda31a9f8914fd7ed02723b41434ad" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::PerspectiveCamera::MouseRotate</definition>
+        <argsstring>(const glm::vec2 &amp;delta)</argsstring>
+        <name>MouseRotate</name>
+        <qualifiedname>Kinai::PerspectiveCamera::MouseRotate</qualifiedname>
+        <param>
+          <type>const glm::vec2 &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="44" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1ad047d2f6e353bd70ea67af29b72dfee6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::PerspectiveCamera::MouseZoom</definition>
+        <argsstring>(const float delta)</argsstring>
+        <name>MouseZoom</name>
+        <qualifiedname>Kinai::PerspectiveCamera::MouseZoom</qualifiedname>
+        <param>
+          <type>const float</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="45" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a79ff8ac8ef7982c67f94754d559a0778" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 Kinai::PerspectiveCamera::CalculatePosition</definition>
+        <argsstring>() const</argsstring>
+        <name>CalculatePosition</name>
+        <qualifiedname>Kinai::PerspectiveCamera::CalculatePosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="47" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a53d24a5537d5b270ace0c66372dc3143" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>glm::vec2</type>
+        <definition>glm::vec2 Kinai::PerspectiveCamera::PanSpeed</definition>
+        <argsstring>() const</argsstring>
+        <name>PanSpeed</name>
+        <qualifiedname>Kinai::PerspectiveCamera::PanSpeed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="49" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1ab4831302f1aebbd9cfbbc489eade1422" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Kinai::PerspectiveCamera::RotationSpeed</definition>
+        <argsstring>() const</argsstring>
+        <name>RotationSpeed</name>
+        <qualifiedname>Kinai::PerspectiveCamera::RotationSpeed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="50" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1PerspectiveCamera_1a82c704ec75744886a72520752efef04a" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Kinai::PerspectiveCamera::ZoomSpeed</definition>
+        <argsstring>() const</argsstring>
+        <name>ZoomSpeed</name>
+        <qualifiedname>Kinai::PerspectiveCamera::ZoomSpeed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="51" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Kinai::Camera</label>
+        <link refid="classKinai_1_1Camera"/>
+      </node>
+      <node id="1">
+        <label>Kinai::PerspectiveCamera</label>
+        <link refid="classKinai_1_1PerspectiveCamera"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Kinai::Camera</label>
+        <link refid="classKinai_1_1Camera"/>
+      </node>
+      <node id="1">
+        <label>Kinai::PerspectiveCamera</label>
+        <link refid="classKinai_1_1PerspectiveCamera"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/Kinai/Renderer/PerspectiveCamera.hpp" line="9" column="1" bodyfile="include/Kinai/Renderer/PerspectiveCamera.hpp" bodystart="10" bodyend="63"/>
+    <listofallmembers>
+      <member refid="classKinai_1_1PerspectiveCamera_1ab609cc0a5880be50b5aacf9e16fcef8d" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>_aspect_ratio</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a8f119a9c2e1156a958ef78cc6f980ebc" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>_distance</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1ab436f77680baa413e7e418b076e87d2d" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>_far_clip</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1ace041d75dfba5c606b9577f8e8dd7adc" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>_focal_point</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1aa1c7117fe0e375162160b78b1e8a3f94" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>_fov</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a9c175b08ae56e99b9166ea2151dc7bda" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>_inital_mouse_position</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a9170805ac139eed52ffa9ffccd605949" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>_near_clip</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1afb1d385337bfe6e7affc758d078e6634" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>_pitch</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1af0a71fe4c3df90b7e1ca045ddcd22a3a" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>_position</name></member>
+      <member refid="classKinai_1_1Camera_1a52f792b1fffeb20ef1e5c8f3624a76cf" prot="protected" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>_projection_matrix</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a68a25376f1d289f7f4e5bb952ce3c419" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>_view_matrix</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1ac6e9c874f9310eab459dc574e1ead823" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>_viewport_height</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a554ee4aaa9ff4f211b34361ca34afb8a" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>_viewport_width</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a5b1df55bb8f5f2f2b2df6c020c7a2cf3" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>_yaw</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a79ff8ac8ef7982c67f94754d559a0778" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>CalculatePosition</name></member>
+      <member refid="classKinai_1_1Camera_1a8aadb79e8fcf822ccfd45f55ac68915c" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>Camera</name></member>
+      <member refid="classKinai_1_1Camera_1a65d09d24338d2650aebfc18d966949e6" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>Camera</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a488b28f3af0a031ec03839a9be9c5580" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>GetDistance</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1adcada5a96b7eb58f2d27abb2db771855" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>GetForwardDirection</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a7f586f4c4acc0e5a808565e85cfe28f1" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>GetOrientation</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a905a1c2de4606c392ef7541574ef9058" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>GetPitch</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a054ea88cb1fe5d9eb7fd1fde82318b53" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>GetPosition</name></member>
+      <member refid="classKinai_1_1Camera_1a9a4678b11595112c6c334abe5c41752b" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>GetProjectionMatrix</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a5e6402220764c10b840263dd85dcd40d" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>GetRightDirection</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1ac9e475ca944060782e31aa8b6dc162a3" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>GetUpDirection</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1ae81cf466367b5ebcc0100e99edb5ccaa" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>GetViewMatrix</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a56c842e597589e696a7a3167103a94b8" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>GetViewProjectionMatrix</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a4ae99e1cec4dc2ecf5225a8104330144" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>GetYaw</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a2c56a4ddc07c7dcbe8e72858e8ad7cd6" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>MousePan</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a36eda31a9f8914fd7ed02723b41434ad" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>MouseRotate</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1ad047d2f6e353bd70ea67af29b72dfee6" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>MouseZoom</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a0f601d820825a0ee3d170c7e203c7b4f" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>OnMouseMotion</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a8324a45f18dc00b8529782052872cc31" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>OnMouseWheel</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a301f4e13d88c13ca6f54f21aed924170" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>OnUpdate</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a53d24a5537d5b270ace0c66372dc3143" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>PanSpeed</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a2e763ca6bae6e055054833676f7c884d" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>PerspectiveCamera</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1ae81931e68dcab73bd1d5d9755fcea78c" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>PerspectiveCamera</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1ab4831302f1aebbd9cfbbc489eade1422" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>RotationSpeed</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1ad68d89cdf584fb6c89d83c9d576d40fa" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>SetDistance</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1ab811b85f3b89d695c9e7613b35965364" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>SetPosition</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1adfcd40ecc4005d1a23b46a060ff53451" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>SetViewportSize</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1ad8207842ac12ae3944971f973ddf679b" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>UpdateProjection</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a96dd3719c5880044a3f4a96ca2bfda15" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>UpdateView</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a82c704ec75744886a72520752efef04a" prot="private" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>ZoomSpeed</name></member>
+      <member refid="classKinai_1_1Camera_1a3f583e446932af14a312e756e7dbfc57" prot="public" virt="virtual"><scope>Kinai::PerspectiveCamera</scope><name>~Camera</name></member>
+      <member refid="classKinai_1_1PerspectiveCamera_1a80b29b03467c427f525e56661ba1007e" prot="public" virt="non-virtual"><scope>Kinai::PerspectiveCamera</scope><name>~PerspectiveCamera</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

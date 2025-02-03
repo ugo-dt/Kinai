@@ -1,0 +1,1800 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "Window_8hpp",
+            "@kind": "file",
+            "@language": "C++",
+            "briefdescription": null,
+            "compoundname": "Window.hpp",
+            "detaileddescription": null,
+            "innerclass": [
+                {
+                    "#text": "Kinai::WindowProps",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1WindowProps"
+                },
+                {
+                    "#text": "Kinai::Window",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Window"
+                }
+            ],
+            "innernamespace": {
+                "#text": "Kinai",
+                "@refid": "namespaceKinai"
+            },
+            "location": {
+                "@file": "include/Kinai/Core/Window.hpp"
+            },
+            "programlisting": {
+                "codeline": [
+                    {
+                        "@lineno": "1",
+                        "highlight": [
+                            {
+                                "#text": "#pragmaonce",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "2",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "3",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include\"Kinai/Core/Core.hpp\"",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "4",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include\"Kinai/Events/Event.hpp\"",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "5",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include\"Kinai/Sokol/Sokol.hpp\"",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "6",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "7",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "static",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "constexpr",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "uint32_tKN_DEFAULT_WINDOW_WIDTH=1280;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "8",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "static",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "constexpr",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "uint32_tKN_DEFAULT_WINDOW_HEIGHT=720;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "9",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "10",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "namespace",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "#text": "Kinai",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "11",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "12",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "13",
+                        "@refid": "structKinai_1_1WindowProps",
+                        "@refkind": "compound",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "struct",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "WindowProps",
+                                    "@kindref": "compound",
+                                    "@refid": "structKinai_1_1WindowProps"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "14",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "15",
+                        "highlight": {
+                            "#text": "std::stringtitle;",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "16",
+                        "highlight": {
+                            "#text": "uint32_twidth;",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "17",
+                        "highlight": {
+                            "#text": "uint32_theight;",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "18",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "fullscreen;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "19",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "no_vsync;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "20",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "21",
+                        "highlight": {
+                            "#text": "(",
+                            "@class": "normal",
+                            "ref": {
+                                "#text": "WindowProps",
+                                "@kindref": "compound",
+                                "@refid": "structKinai_1_1WindowProps"
+                            },
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "22",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "std::string&title=",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "\"Kinai\"",
+                                "@class": "stringliteral"
+                            },
+                            {
+                                "#text": ",",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "23",
+                        "highlight": {
+                            "#text": "uint32_twidth=KN_DEFAULT_WINDOW_WIDTH,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "24",
+                        "highlight": {
+                            "#text": "uint32_theight=KN_DEFAULT_WINDOW_HEIGHT,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "25",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "fullscreen=",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "false",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ",",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "26",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "no_vsync=",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "false",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "27",
+                        "highlight": {
+                            "#text": ")",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "28",
+                        "highlight": {
+                            "#text": ":title(title),width(width),height(height),fullscreen(fullscreen),no_vsync(no_vsync)",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "29",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "30",
+                        "highlight": {
+                            "#text": "}",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "31",
+                        "highlight": {
+                            "#text": "};",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "32",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "33",
+                        "@refid": "classKinai_1_1Window",
+                        "@refkind": "compound",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "class",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "Window",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Window"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "34",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "35",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "public",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ":",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "36",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "using",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "#text": "EventCallback=std::function<void(&event)>;",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "Event",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Event"
+                                },
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "37",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "38",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "protected",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ":",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "39",
+                        "highlight": [
+                            {
+                                "#text": "()=",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "Window",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Window"
+                                },
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "default",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": ";",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "40",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "41",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "public",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ":",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "42",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "()=",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "~Window",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Window"
+                                },
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "default",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": ";",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "43",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "44",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "void",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "OnUpdate()=0;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "45",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "46",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "void",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "*GetNativeWindow()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "=0;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "47",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "glm::ivec2GetSize()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "=0;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "48",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "uint32_tGetWidth()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "=0;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "49",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "uint32_tGetHeight()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "=0;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "50",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "GetRelativeMouseMode()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "=0;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "51",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "IsFocused()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "=0;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "52",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "IsHovered()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "=0;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "53",
+                        "highlight": {
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "54",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "sg_environmentGetSokolEnvironment()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "=0;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "55",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "sg_swapchainGetSokolSwapchain()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "=0;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "56",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "57",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "IsVSync()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "=0;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "58",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "void",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "SetVSync(",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "enabled)=0;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "59",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "void",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "SetEventCallback(",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "EventCallback&callback)=0;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "60",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "void",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "SetTitle(",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "std::string&title)=0;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "61",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "void",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "SetRelativeMouseMode(",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "enabled)=0;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "62",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "void",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "WarpMouse(",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "float",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "x,",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "float",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "y)=0;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "63",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "64",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "static",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "Scope<Window>Create(",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "&props);",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "WindowProps",
+                                    "@kindref": "compound",
+                                    "@refid": "structKinai_1_1WindowProps"
+                                },
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "65",
+                        "highlight": {
+                            "#text": "};",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "66",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "67",
+                        "highlight": {
+                            "#text": "}",
+                            "@class": "normal"
+                        }
+                    }
+                ]
+            },
+            "sectiondef": {
+                "@kind": "var",
+                "memberdef": [
+                    {
+                        "@constexpr": "yes",
+                        "@id": "Window_8hpp_1a01bb89928a9413e37eefff7d9c3f0694",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "yes",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "constexpr uint32_t KN_DEFAULT_WINDOW_WIDTH",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "initializer": "= 1280",
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Core/Window.hpp",
+                            "@bodystart": "7",
+                            "@column": "27",
+                            "@file": "include/Kinai/Core/Window.hpp",
+                            "@line": "7"
+                        },
+                        "name": "KN_DEFAULT_WINDOW_WIDTH",
+                        "type": "constexpr uint32_t"
+                    },
+                    {
+                        "@constexpr": "yes",
+                        "@id": "Window_8hpp_1aebf07355db990eac4f3107b28da554a7",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "yes",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "constexpr uint32_t KN_DEFAULT_WINDOW_HEIGHT",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "initializer": "= 720",
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Core/Window.hpp",
+                            "@bodystart": "8",
+                            "@column": "27",
+                            "@file": "include/Kinai/Core/Window.hpp",
+                            "@line": "8"
+                        },
+                        "name": "KN_DEFAULT_WINDOW_HEIGHT",
+                        "type": "constexpr uint32_t"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,1746 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "OrthographicCamera_8hpp",
+            "@kind": "file",
+            "@language": "C++",
+            "briefdescription": null,
+            "compoundname": "OrthographicCamera.hpp",
+            "detaileddescription": null,
+            "innerclass": [
+                {
+                    "#text": "Kinai::OrthographicCamera",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1OrthographicCamera"
+                },
+                {
+                    "#text": "Kinai::OrthographicCameraControllerConfig",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1OrthographicCameraControllerConfig"
+                },
+                {
+                    "#text": "Kinai::OrthographicCameraController",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1OrthographicCameraController"
+                }
+            ],
+            "innernamespace": {
+                "#text": "Kinai",
+                "@refid": "namespaceKinai"
+            },
+            "location": {
+                "@file": "include/Kinai/Renderer/OrthographicCamera.hpp"
+            },
+            "programlisting": {
+                "codeline": [
+                    {
+                        "@lineno": "1",
+                        "highlight": [
+                            {
+                                "#text": "#pragmaonce",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "2",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "3",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include\"Kinai/Renderer/Camera.hpp\"",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "4",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include\"Kinai/Core/Window.hpp\"",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "5",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "6",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "namespace",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "#text": "Kinai",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "7",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "8",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "9",
+                        "@refid": "classKinai_1_1OrthographicCamera",
+                        "@refkind": "compound",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "class",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "OrthographicCamera",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1OrthographicCamera"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "10",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "11",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "public",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ":",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "12",
+                        "highlight": [
+                            {
+                                "#text": "(",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "OrthographicCamera",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1OrthographicCamera"
+                                },
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "float",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "left,",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "float",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "right,",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "float",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "bottom,",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "float",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "top);",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "13",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "virtual",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "()=",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "~OrthographicCamera",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1OrthographicCamera"
+                                },
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "default",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": ";",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "14",
+                        "highlight": {
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "15",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "void",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "SetProjection(",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "float",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "left,",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "float",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "right,",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "float",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "bottom,",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "float",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "top);",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "16",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "void",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "SetPosition(",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "glm::vec3&position){_position=position;UpdateView();}",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "17",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "void",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "SetRotation(",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "glm::vec3&rotation){_rotation=rotation;}",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "18",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "19",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "glm::vec3&GetPosition()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "{",
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "_position;}",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "20",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "glm::vec3&GetRotation()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "{",
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "_rotation;}",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "21",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "22",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "glm::mat4&GetProjectionMatrix()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "{",
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "_projection_matrix;}",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "23",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "glm::mat4&GetViewMatrix()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "{",
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "_view_matrix;}",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "24",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "glm::mat4&GetViewProjectionMatrix()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "{",
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "_view_projection_matrix;}",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "25",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "26",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "private",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ":",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "27",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "void",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "UpdateView();",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "28",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "29",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "private",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ":",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "30",
+                        "highlight": {
+                            "#text": "glm::vec3_position;",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "31",
+                        "highlight": {
+                            "#text": "glm::vec3_rotation;",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "32",
+                        "highlight": {
+                            "#text": "glm::mat4_projection_matrix;",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "33",
+                        "highlight": {
+                            "#text": "glm::mat4_view_matrix;",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "34",
+                        "highlight": {
+                            "#text": "glm::mat4_view_projection_matrix;",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "35",
+                        "highlight": {
+                            "#text": "};",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "36",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "37",
+                        "@refid": "structKinai_1_1OrthographicCameraControllerConfig",
+                        "@refkind": "compound",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "struct",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "OrthographicCameraControllerConfig",
+                                    "@kindref": "compound",
+                                    "@refid": "structKinai_1_1OrthographicCameraControllerConfig"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "38",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "39",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "float",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "aspect_ratio=KN_DEFAULT_WINDOW_WIDTH/(float)KN_DEFAULT_WINDOW_HEIGHT;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "40",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "enable_rotation=",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "false",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ";",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "41",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "enable_zoom=",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "false",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ";",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "42",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "float",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "translation_speed=5.0f;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "43",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "float",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "rotation_speed=180.0f;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "44",
+                        "highlight": {
+                            "#text": "glm::vec3position=glm::vec3(0.0f);",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "45",
+                        "highlight": {
+                            "#text": "glm::vec3rotation=glm::vec3(0.0f);",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "46",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "float",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "zoom_level=1.0f;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "47",
+                        "highlight": {
+                            "#text": "};",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "48",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "49",
+                        "@refid": "classKinai_1_1OrthographicCameraController",
+                        "@refkind": "compound",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "class",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "OrthographicCameraController",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1OrthographicCameraController"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "50",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "51",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "public",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ":",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "52",
+                        "highlight": [
+                            {
+                                "#text": "(",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "OrthographicCameraController",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1OrthographicCameraController"
+                                },
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "&config=());",
+                                "@class": "normal",
+                                "ref": [
+                                    {
+                                        "#text": "OrthographicCameraControllerConfig",
+                                        "@kindref": "compound",
+                                        "@refid": "structKinai_1_1OrthographicCameraControllerConfig"
+                                    },
+                                    {
+                                        "#text": "OrthographicCameraControllerConfig",
+                                        "@kindref": "compound",
+                                        "@refid": "structKinai_1_1OrthographicCameraControllerConfig"
+                                    }
+                                ],
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "53",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "54",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "void",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "OnUpdate(",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "float",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "delta);",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "55",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "void",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "OnEvent(&event);",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "Event",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Event"
+                                },
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "56",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "void",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "OnResize(",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "float",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "width,",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "float",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "height);",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "57",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "58",
+                        "highlight": [
+                            {
+                                "#text": "&GetCamera(){",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "OrthographicCamera",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1OrthographicCamera"
+                                },
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "_camera;}",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "59",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "&GetCamera()",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "OrthographicCamera",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1OrthographicCamera"
+                                },
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "{",
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "_camera;}",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "60",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "61",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "private",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ":",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "62",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "OnMouseWheel(&event);",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "MouseWheelEvent",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1MouseWheelEvent"
+                                },
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "63",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "OnWindowResize(&event);",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "WindowResizeEvent",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1WindowResizeEvent"
+                                },
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "64",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "65",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "private",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ":",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "66",
+                        "highlight": {
+                            "#text": "_camera;",
+                            "@class": "normal",
+                            "ref": {
+                                "#text": "OrthographicCamera",
+                                "@kindref": "compound",
+                                "@refid": "classKinai_1_1OrthographicCamera"
+                            },
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "67",
+                        "highlight": {
+                            "#text": "_config;",
+                            "@class": "normal",
+                            "ref": {
+                                "#text": "OrthographicCameraControllerConfig",
+                                "@kindref": "compound",
+                                "@refid": "structKinai_1_1OrthographicCameraControllerConfig"
+                            },
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "68",
+                        "highlight": {
+                            "#text": "};",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "69",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "70",
+                        "highlight": [
+                            {
+                                "#text": "}",
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "//Kinai",
+                                "@class": "comment",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

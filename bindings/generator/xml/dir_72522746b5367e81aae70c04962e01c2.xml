@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_72522746b5367e81aae70c04962e01c2" kind="dir">
+    <compoundname>Events</compoundname>
+    <innerfile refid="ApplicationEvent_8hpp">ApplicationEvent.hpp</innerfile>
+    <innerfile refid="Event_8hpp">Event.hpp</innerfile>
+    <innerfile refid="KeyEvent_8hpp">KeyEvent.hpp</innerfile>
+    <innerfile refid="MouseEvent_8hpp">MouseEvent.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Events/"/>
+  </compounddef>
+</doxygen>

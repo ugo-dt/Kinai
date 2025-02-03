@@ -1,0 +1,544 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@abstract": "yes",
+            "@id": "classKinai_1_1Shader",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::Shader",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Shader_1a606b34d3eeb7a75ca82be75e2a2cdbfe",
+                        "@virt": "pure-virtual",
+                        "name": "Bind",
+                        "scope": "Kinai::Shader"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Shader_1a5cdd787b70114ea5f7f9e7c989313cc8",
+                        "@virt": "non-virtual",
+                        "name": "Create",
+                        "scope": "Kinai::Shader"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Shader_1a85f83d912605221514c2b1c012cecf7d",
+                        "@virt": "non-virtual",
+                        "name": "Create",
+                        "scope": "Kinai::Shader"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Shader_1ae591d83e94d05a934c6423291a63ecd1",
+                        "@virt": "pure-virtual",
+                        "name": "GetName",
+                        "scope": "Kinai::Shader"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Shader_1a9b1653f006f17494cf8be65138e75a5f",
+                        "@virt": "pure-virtual",
+                        "name": "SetFloat",
+                        "scope": "Kinai::Shader"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Shader_1a400693a2fad5fd2f7354d5027df17bb8",
+                        "@virt": "pure-virtual",
+                        "name": "SetFloat2",
+                        "scope": "Kinai::Shader"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Shader_1a5b068ab0e0906dab8bbee65fc1843640",
+                        "@virt": "pure-virtual",
+                        "name": "SetFloat3",
+                        "scope": "Kinai::Shader"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Shader_1ac6214b078ca235aab97e34c4bb125ade",
+                        "@virt": "pure-virtual",
+                        "name": "SetFloat4",
+                        "scope": "Kinai::Shader"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Shader_1a49cb359b8b688ff3e3f378d6919a2c23",
+                        "@virt": "pure-virtual",
+                        "name": "SetInt",
+                        "scope": "Kinai::Shader"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Shader_1a69367aac7b107cc1ddf23e06126ec853",
+                        "@virt": "pure-virtual",
+                        "name": "SetIntArray",
+                        "scope": "Kinai::Shader"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Shader_1a802860e935bfd304459a9147791fded4",
+                        "@virt": "pure-virtual",
+                        "name": "SetMat4",
+                        "scope": "Kinai::Shader"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Shader_1a996e57d8f7fcb164ca7db1b26b14a8ab",
+                        "@virt": "pure-virtual",
+                        "name": "Unbind",
+                        "scope": "Kinai::Shader"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Shader_1acaa90859fc877a3f0e24b57bbc233d4b",
+                        "@virt": "virtual",
+                        "name": "~Shader",
+                        "scope": "Kinai::Shader"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "28",
+                "@bodyfile": "include/Kinai/Renderer/Shader.hpp",
+                "@bodystart": "9",
+                "@column": "1",
+                "@file": "include/Kinai/Renderer/Shader.hpp",
+                "@line": "8"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "public-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Shader_1acaa90859fc877a3f0e24b57bbc233d4b",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "virtual",
+                            "argsstring": "()=default",
+                            "briefdescription": null,
+                            "definition": "virtual Kinai::Shader::~Shader",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "9",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "11"
+                            },
+                            "name": "~Shader",
+                            "qualifiedname": "Kinai::Shader::~Shader",
+                            "type": null
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Shader_1a606b34d3eeb7a75ca82be75e2a2cdbfe",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "() const =0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::Shader::Bind",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "13"
+                            },
+                            "name": "Bind",
+                            "qualifiedname": "Kinai::Shader::Bind",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Shader_1a996e57d8f7fcb164ca7db1b26b14a8ab",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "() const =0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::Shader::Unbind",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "14"
+                            },
+                            "name": "Unbind",
+                            "qualifiedname": "Kinai::Shader::Unbind",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Shader_1a49cb359b8b688ff3e3f378d6919a2c23",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "(const std::string &name, int value)=0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::Shader::SetInt",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "16"
+                            },
+                            "name": "SetInt",
+                            "param": [
+                                {
+                                    "declname": "name",
+                                    "type": "const std::string &"
+                                },
+                                {
+                                    "declname": "value",
+                                    "type": "int"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Shader::SetInt",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Shader_1a69367aac7b107cc1ddf23e06126ec853",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "(const std::string &name, int *values, uint32_t count)=0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::Shader::SetIntArray",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "17"
+                            },
+                            "name": "SetIntArray",
+                            "param": [
+                                {
+                                    "declname": "name",
+                                    "type": "const std::string &"
+                                },
+                                {
+                                    "declname": "values",
+                                    "type": "int *"
+                                },
+                                {
+                                    "declname": "count",
+                                    "type": "uint32_t"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Shader::SetIntArray",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Shader_1a9b1653f006f17494cf8be65138e75a5f",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "(const std::string &name, float value)=0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::Shader::SetFloat",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "18"
+                            },
+                            "name": "SetFloat",
+                            "param": [
+                                {
+                                    "declname": "name",
+                                    "type": "const std::string &"
+                                },
+                                {
+                                    "declname": "value",
+                                    "type": "float"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Shader::SetFloat",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Shader_1a400693a2fad5fd2f7354d5027df17bb8",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "(const std::string &name, const glm::vec2 &value)=0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::Shader::SetFloat2",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "19"
+                            },
+                            "name": "SetFloat2",
+                            "param": [
+                                {
+                                    "declname": "name",
+                                    "type": "const std::string &"
+                                },
+                                {
+                                    "declname": "value",
+                                    "type": "const glm::vec2 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Shader::SetFloat2",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Shader_1a5b068ab0e0906dab8bbee65fc1843640",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "(const std::string &name, const glm::vec3 &value)=0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::Shader::SetFloat3",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "20"
+                            },
+                            "name": "SetFloat3",
+                            "param": [
+                                {
+                                    "declname": "name",
+                                    "type": "const std::string &"
+                                },
+                                {
+                                    "declname": "value",
+                                    "type": "const glm::vec3 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Shader::SetFloat3",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Shader_1ac6214b078ca235aab97e34c4bb125ade",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "(const std::string &name, const glm::vec4 &value)=0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::Shader::SetFloat4",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "21"
+                            },
+                            "name": "SetFloat4",
+                            "param": [
+                                {
+                                    "declname": "name",
+                                    "type": "const std::string &"
+                                },
+                                {
+                                    "declname": "value",
+                                    "type": "const glm::vec4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Shader::SetFloat4",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Shader_1a802860e935bfd304459a9147791fded4",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "(const std::string &name, const glm::mat4 &value)=0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::Shader::SetMat4",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "22"
+                            },
+                            "name": "SetMat4",
+                            "param": [
+                                {
+                                    "declname": "name",
+                                    "type": "const std::string &"
+                                },
+                                {
+                                    "declname": "value",
+                                    "type": "const glm::mat4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Shader::SetMat4",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Shader_1ae591d83e94d05a934c6423291a63ecd1",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "() const =0",
+                            "briefdescription": null,
+                            "definition": "virtual const std::string & Kinai::Shader::GetName",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "26",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "24"
+                            },
+                            "name": "GetName",
+                            "qualifiedname": "Kinai::Shader::GetName",
+                            "type": "const std::string &"
+                        }
+                    ]
+                },
+                {
+                    "@kind": "public-static-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Shader_1a5cdd787b70114ea5f7f9e7c989313cc8",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const std::string &filepath, const std::string &program_name)",
+                            "briefdescription": null,
+                            "definition": "static Ref< Shader > Kinai::Shader::Create",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "11",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "26"
+                            },
+                            "name": "Create",
+                            "param": [
+                                {
+                                    "declname": "filepath",
+                                    "type": "const std::string &"
+                                },
+                                {
+                                    "declname": "program_name",
+                                    "type": "const std::string &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Shader::Create",
+                            "type": {
+                                "#text": "Ref<  >",
+                                "ref": {
+                                    "#text": "Shader",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Shader"
+                                }
+                            }
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Shader_1a85f83d912605221514c2b1c012cecf7d",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const std::string &name, const std::string &vertexSrc, const std::string &fragmentSrc)",
+                            "briefdescription": null,
+                            "definition": "static Ref< Shader > Kinai::Shader::Create",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "11",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "27"
+                            },
+                            "name": "Create",
+                            "param": [
+                                {
+                                    "declname": "name",
+                                    "type": "const std::string &"
+                                },
+                                {
+                                    "declname": "vertexSrc",
+                                    "type": "const std::string &"
+                                },
+                                {
+                                    "declname": "fragmentSrc",
+                                    "type": "const std::string &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Shader::Create",
+                            "type": {
+                                "#text": "Ref<  >",
+                                "ref": {
+                                    "#text": "Shader",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Shader"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

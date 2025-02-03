@@ -1,0 +1,1525 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "Core_8hpp",
+            "@kind": "file",
+            "@language": "C++",
+            "briefdescription": null,
+            "compoundname": "Core.hpp",
+            "detaileddescription": null,
+            "innernamespace": {
+                "#text": "Kinai",
+                "@refid": "namespaceKinai"
+            },
+            "location": {
+                "@file": "include/Kinai/Core/Core.hpp"
+            },
+            "programlisting": {
+                "codeline": [
+                    {
+                        "@lineno": "1",
+                        "highlight": [
+                            {
+                                "#text": "#pragmaonce",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "2",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "3",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include\"Kinai/Platform/Platform.hpp\"",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "4",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "5",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<SDL3/SDL.h>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "6",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "7",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineGLM_ENABLE_EXPERIMENTAL",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "8",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<glm/glm.hpp>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "9",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<glm/gtc/matrix_transform.hpp>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "10",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<glm/gtc/type_ptr.hpp>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "11",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<glm/gtx/rotate_vector.hpp>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "12",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<glm/gtx/vector_angle.hpp>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "13",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "14",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<imgui/imgui.h>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "15",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<imgui/backends/imgui_impl_sdl3.h>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "16",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<imgui/backends/imgui_impl_opengl3.h>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "17",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "18",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<sokol/sokol_gfx.h>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "19",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<sokol/sokol_log.h>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "20",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "21",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<algorithm>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "22",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<cassert>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "23",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<csignal>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "24",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<cstddef>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "25",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<iostream>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "26",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<filesystem>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "27",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<fstream>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "28",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<memory>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "29",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<sstream>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "30",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<string>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "31",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<string_view>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "32",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<type_traits>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "33",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<utility>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "34",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include<vector>",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "35",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "36",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineBIT(x)(1<<x)",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "37",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_EXPAND_MACRO(x)x",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "38",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_STRINGIFY(x)#x",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "39",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_BIND_EVENT_FN(fn)[this](auto&&...args)->decltype(auto){returnthis->fn(std::forward<decltype(args)>(args)...);}",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "40",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "41",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#ifdefined(KN_DEBUG)",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "42",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_PRINT_FUNC()printf(\"%sat'%s:%d'\\n\",__PRETTY_FUNCTION__,__FILE__,__LINE__);",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "43",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#else",
+                                "@class": "preprocessor"
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "44",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_PRINT_FUNC()",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "45",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#endif",
+                                "@class": "preprocessor"
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "46",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "47",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#ifdefined(KN_DEBUG)||defined(KN_DEV)",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "48",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_ENABLE_ASSERTS",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "49",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#endif",
+                                "@class": "preprocessor"
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "50",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "51",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#ifdefined(__clang__)||defined(__GNUC__)",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "52",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_INLINEinline__attribute__((__always_inline__))",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "53",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_NEVER_INLINE__attribute__((__noinline__))",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "54",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_NORETURN__attribute__((noreturn))",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "55",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_UNUSED__attribute__((unused))",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "56",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_NOTUSED(x)((void)(x));",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "57",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_NODISCARD[[nodiscard]]",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "58",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#else",
+                                "@class": "preprocessor"
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "59",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_INLINEinline",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "60",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_NEVER_INLINE",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "61",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_NORETURN",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "62",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_UNUSED",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "63",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_NOTUSED(x)",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "64",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#defineKN_NODISCARD",
+                                "@class": "preprocessor",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "65",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#endif",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "#text": "//defined(__clang__)||defined(__GNUC__)",
+                                "@class": "comment",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "66",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "67",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "namespace",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "#text": "Kinai",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "68",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "69",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "70",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "template",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "<",
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "typename",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "T>",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "71",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "using",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "#text": "Scope=std::unique_ptr<T>;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "72",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "template",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "<",
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "typename",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "T,",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "typename",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "...Args>",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "73",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "constexpr",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "Scope<T>CreateScope(Args&&...args)",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "74",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "75",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "std::make_unique<T>(std::forward<Args>(args)...);",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "76",
+                        "highlight": {
+                            "#text": "}",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "77",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "78",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "template",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "<",
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "typename",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "T>",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "79",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "using",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "#text": "Ref=std::shared_ptr<T>;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "80",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "template",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "<",
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "typename",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "T,",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "typename",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "...Args>",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "81",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "constexpr",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "Ref<T>CreateRef(Args&&...args)",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "82",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "83",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "std::make_shared<T>(std::forward<Args>(args)...);",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "84",
+                        "highlight": {
+                            "#text": "}",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "85",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "86",
+                        "highlight": [
+                            {
+                                "#text": "}",
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "//Kinai",
+                                "@class": "comment",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "87",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "88",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include\"Kinai/Core/Log.hpp\"",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "89",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include\"Kinai/Core/Assert.hpp\"",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

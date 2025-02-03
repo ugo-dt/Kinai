@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classKinai_1_1Framebuffer" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Kinai::Framebuffer</compoundname>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKinai_1_1Framebuffer_1aabc06dfef75f6d398299ad6d81864a36" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Kinai::Framebuffer::~Framebuffer</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Framebuffer</name>
+        <qualifiedname>Kinai::Framebuffer::~Framebuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Framebuffer.hpp" line="53" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Framebuffer_1a2f1647d17a134acfe2dbc8b7e7d6685e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::Framebuffer::Bind</definition>
+        <argsstring>()=0</argsstring>
+        <name>Bind</name>
+        <qualifiedname>Kinai::Framebuffer::Bind</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Framebuffer.hpp" line="55" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Framebuffer_1ae123139b376477f31af0ee771a22b4c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::Framebuffer::Unbind</definition>
+        <argsstring>()=0</argsstring>
+        <name>Unbind</name>
+        <qualifiedname>Kinai::Framebuffer::Unbind</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Framebuffer.hpp" line="56" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Framebuffer_1a0e894614145bf7a989581caabfbd87b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::Framebuffer::Resize</definition>
+        <argsstring>(uint32_t width, uint32_t height)=0</argsstring>
+        <name>Resize</name>
+        <qualifiedname>Kinai::Framebuffer::Resize</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Framebuffer.hpp" line="58" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Framebuffer_1ad65734708f5706e63f0023bb90461c29" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int Kinai::Framebuffer::ReadPixel</definition>
+        <argsstring>(uint32_t attachmentIndex, int x, int y)=0</argsstring>
+        <name>ReadPixel</name>
+        <qualifiedname>Kinai::Framebuffer::ReadPixel</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>attachmentIndex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Framebuffer.hpp" line="59" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Framebuffer_1aecfc161e6242251a01d38736567de439" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::Framebuffer::ClearAttachment</definition>
+        <argsstring>(uint32_t attachmentIndex, int value)=0</argsstring>
+        <name>ClearAttachment</name>
+        <qualifiedname>Kinai::Framebuffer::ClearAttachment</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>attachmentIndex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Framebuffer.hpp" line="61" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Framebuffer_1a5c14b294c116f2a49fe4682d49843070" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>uint32_t</type>
+        <definition>virtual uint32_t Kinai::Framebuffer::GetColorAttachmentRendererID</definition>
+        <argsstring>(uint32_t index=0) const =0</argsstring>
+        <name>GetColorAttachmentRendererID</name>
+        <qualifiedname>Kinai::Framebuffer::GetColorAttachmentRendererID</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>index</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Framebuffer.hpp" line="63" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Framebuffer_1a8470f8e4ceb35f93ba8724ecf23cf708" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>const <ref refid="structKinai_1_1FramebufferConfig" kindref="compound">FramebufferConfig</ref> &amp;</type>
+        <definition>virtual const FramebufferConfig &amp; Kinai::Framebuffer::GetConfig</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetConfig</name>
+        <qualifiedname>Kinai::Framebuffer::GetConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Framebuffer.hpp" line="65" column="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Framebuffer_1a4954a293a13843a1f949414de81e0e66" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>uint32_t</type>
+        <definition>virtual uint32_t Kinai::Framebuffer::GetRendererID</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetRendererID</name>
+        <qualifiedname>Kinai::Framebuffer::GetRendererID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Framebuffer.hpp" line="66" column="17"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classKinai_1_1Framebuffer_1aac00e75fd4ca5bbecbc8292027c8fa0b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Ref&lt; <ref refid="classKinai_1_1Framebuffer" kindref="compound">Framebuffer</ref> &gt;</type>
+        <definition>static Ref&lt; Framebuffer &gt; Kinai::Framebuffer::Create</definition>
+        <argsstring>(const FramebufferConfig &amp;config)</argsstring>
+        <name>Create</name>
+        <qualifiedname>Kinai::Framebuffer::Create</qualifiedname>
+        <param>
+          <type>const <ref refid="structKinai_1_1FramebufferConfig" kindref="compound">FramebufferConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Framebuffer.hpp" line="68" column="12"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Renderer/Framebuffer.hpp" line="50" column="1" bodyfile="include/Kinai/Renderer/Framebuffer.hpp" bodystart="51" bodyend="70"/>
+    <listofallmembers>
+      <member refid="classKinai_1_1Framebuffer_1a2f1647d17a134acfe2dbc8b7e7d6685e" prot="public" virt="pure-virtual"><scope>Kinai::Framebuffer</scope><name>Bind</name></member>
+      <member refid="classKinai_1_1Framebuffer_1aecfc161e6242251a01d38736567de439" prot="public" virt="pure-virtual"><scope>Kinai::Framebuffer</scope><name>ClearAttachment</name></member>
+      <member refid="classKinai_1_1Framebuffer_1aac00e75fd4ca5bbecbc8292027c8fa0b" prot="public" virt="non-virtual"><scope>Kinai::Framebuffer</scope><name>Create</name></member>
+      <member refid="classKinai_1_1Framebuffer_1a5c14b294c116f2a49fe4682d49843070" prot="public" virt="pure-virtual"><scope>Kinai::Framebuffer</scope><name>GetColorAttachmentRendererID</name></member>
+      <member refid="classKinai_1_1Framebuffer_1a8470f8e4ceb35f93ba8724ecf23cf708" prot="public" virt="pure-virtual"><scope>Kinai::Framebuffer</scope><name>GetConfig</name></member>
+      <member refid="classKinai_1_1Framebuffer_1a4954a293a13843a1f949414de81e0e66" prot="public" virt="pure-virtual"><scope>Kinai::Framebuffer</scope><name>GetRendererID</name></member>
+      <member refid="classKinai_1_1Framebuffer_1ad65734708f5706e63f0023bb90461c29" prot="public" virt="pure-virtual"><scope>Kinai::Framebuffer</scope><name>ReadPixel</name></member>
+      <member refid="classKinai_1_1Framebuffer_1a0e894614145bf7a989581caabfbd87b2" prot="public" virt="pure-virtual"><scope>Kinai::Framebuffer</scope><name>Resize</name></member>
+      <member refid="classKinai_1_1Framebuffer_1ae123139b376477f31af0ee771a22b4c1" prot="public" virt="pure-virtual"><scope>Kinai::Framebuffer</scope><name>Unbind</name></member>
+      <member refid="classKinai_1_1Framebuffer_1aabc06dfef75f6d398299ad6d81864a36" prot="public" virt="virtual"><scope>Kinai::Framebuffer</scope><name>~Framebuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

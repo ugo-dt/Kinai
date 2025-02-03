@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structKinai_1_1Pipeline" kind="struct" language="C++" prot="public">
+    <compoundname>Kinai::Pipeline</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class Tp</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structKinai_1_1Pipeline_1acc92a15c08c0f3bab0b8eb77d0ff6422" prot="public" static="no" mutable="no">
+        <type>Ref&lt; <ref refid="classKinai_1_1Shader" kindref="compound">Shader</ref> &gt;</type>
+        <definition>Ref&lt;Shader&gt; Kinai::Pipeline&lt; Tp &gt;::shader</definition>
+        <argsstring></argsstring>
+        <name>shader</name>
+        <qualifiedname>Kinai::Pipeline::shader</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="42" column="5" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1Pipeline_1a480add19e4876859d552e3c3aa03ed6d" prot="public" static="no" mutable="no">
+        <type>Ref&lt; <ref refid="classKinai_1_1VertexArray" kindref="compound">VertexArray</ref> &gt;</type>
+        <definition>Ref&lt;VertexArray&gt; Kinai::Pipeline&lt; Tp &gt;::vertex_array</definition>
+        <argsstring></argsstring>
+        <name>vertex_array</name>
+        <qualifiedname>Kinai::Pipeline::vertex_array</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="43" column="5" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1Pipeline_1aa925b12f654482b69ddc08d5fe70353d" prot="public" static="no" mutable="no">
+        <type>Ref&lt; <ref refid="classKinai_1_1VertexBuffer" kindref="compound">VertexBuffer</ref> &gt;</type>
+        <definition>Ref&lt;VertexBuffer&gt; Kinai::Pipeline&lt; Tp &gt;::vertex_buffer</definition>
+        <argsstring></argsstring>
+        <name>vertex_buffer</name>
+        <qualifiedname>Kinai::Pipeline::vertex_buffer</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="44" column="5" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1Pipeline_1a25675e694fb8adc26ab75429128ffd86" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Kinai::Pipeline&lt; Tp &gt;::index</definition>
+        <argsstring></argsstring>
+        <name>index</name>
+        <qualifiedname>Kinai::Pipeline::index</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="46" column="10" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1Pipeline_1a6efdfde8ce1722da6827bfbf18f3a4fc" prot="public" static="no" mutable="no">
+        <type>Tp *</type>
+        <definition>Tp* Kinai::Pipeline&lt; Tp &gt;::vertex_buffer_base</definition>
+        <argsstring></argsstring>
+        <name>vertex_buffer_base</name>
+        <qualifiedname>Kinai::Pipeline::vertex_buffer_base</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="47" column="4" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1Pipeline_1a6e473e764f188af3eed02f326a3dc68c" prot="public" static="no" mutable="no">
+        <type>Tp *</type>
+        <definition>Tp* Kinai::Pipeline&lt; Tp &gt;::vertex_buffer_ptr</definition>
+        <argsstring></argsstring>
+        <name>vertex_buffer_ptr</name>
+        <qualifiedname>Kinai::Pipeline::vertex_buffer_ptr</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="48" column="4" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="40" column="1" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="41" bodyend="55"/>
+    <listofallmembers>
+      <member refid="structKinai_1_1Pipeline_1a25675e694fb8adc26ab75429128ffd86" prot="public" virt="non-virtual"><scope>Kinai::Pipeline</scope><name>index</name></member>
+      <member refid="structKinai_1_1Pipeline_1acc92a15c08c0f3bab0b8eb77d0ff6422" prot="public" virt="non-virtual"><scope>Kinai::Pipeline</scope><name>shader</name></member>
+      <member refid="structKinai_1_1Pipeline_1a480add19e4876859d552e3c3aa03ed6d" prot="public" virt="non-virtual"><scope>Kinai::Pipeline</scope><name>vertex_array</name></member>
+      <member refid="structKinai_1_1Pipeline_1aa925b12f654482b69ddc08d5fe70353d" prot="public" virt="non-virtual"><scope>Kinai::Pipeline</scope><name>vertex_buffer</name></member>
+      <member refid="structKinai_1_1Pipeline_1a6efdfde8ce1722da6827bfbf18f3a4fc" prot="public" virt="non-virtual"><scope>Kinai::Pipeline</scope><name>vertex_buffer_base</name></member>
+      <member refid="structKinai_1_1Pipeline_1a6e473e764f188af3eed02f326a3dc68c" prot="public" virt="non-virtual"><scope>Kinai::Pipeline</scope><name>vertex_buffer_ptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

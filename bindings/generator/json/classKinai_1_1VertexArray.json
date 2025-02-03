@@ -1,0 +1,323 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@abstract": "yes",
+            "@id": "classKinai_1_1VertexArray",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::VertexArray",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1VertexArray_1ad22df6be1a0c5f40239f4d3cb1b13860",
+                        "@virt": "pure-virtual",
+                        "name": "AddVertexBuffer",
+                        "scope": "Kinai::VertexArray"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1VertexArray_1a0185ecc79683f8387cc4528451aae2f1",
+                        "@virt": "pure-virtual",
+                        "name": "Bind",
+                        "scope": "Kinai::VertexArray"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1VertexArray_1a2adf283f6d6d6f82f531724389401384",
+                        "@virt": "non-virtual",
+                        "name": "Create",
+                        "scope": "Kinai::VertexArray"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1VertexArray_1a6ed49b9f5407f6581e458a769d252251",
+                        "@virt": "pure-virtual",
+                        "name": "GetIndexBuffer",
+                        "scope": "Kinai::VertexArray"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1VertexArray_1ae047870c8c4e4a520c74bc606483b336",
+                        "@virt": "pure-virtual",
+                        "name": "GetVertexBuffers",
+                        "scope": "Kinai::VertexArray"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1VertexArray_1a5839c106d466177feff7b713d92fdc9e",
+                        "@virt": "pure-virtual",
+                        "name": "SetIndexBuffer",
+                        "scope": "Kinai::VertexArray"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1VertexArray_1aede0285221420c1f59f00f4cea6279e7",
+                        "@virt": "pure-virtual",
+                        "name": "Unbind",
+                        "scope": "Kinai::VertexArray"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1VertexArray_1a59133ba1d5ed293abca57222eeaed5ee",
+                        "@virt": "virtual",
+                        "name": "~VertexArray",
+                        "scope": "Kinai::VertexArray"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "24",
+                "@bodyfile": "include/Kinai/Renderer/VertexArray.hpp",
+                "@bodystart": "10",
+                "@column": "1",
+                "@file": "include/Kinai/Renderer/VertexArray.hpp",
+                "@line": "9"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "public-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1VertexArray_1a59133ba1d5ed293abca57222eeaed5ee",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "virtual",
+                            "argsstring": "()=default",
+                            "briefdescription": null,
+                            "definition": "virtual Kinai::VertexArray::~VertexArray",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "9",
+                                "@file": "include/Kinai/Renderer/VertexArray.hpp",
+                                "@line": "12"
+                            },
+                            "name": "~VertexArray",
+                            "qualifiedname": "Kinai::VertexArray::~VertexArray",
+                            "type": null
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1VertexArray_1a0185ecc79683f8387cc4528451aae2f1",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "() const =0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::VertexArray::Bind",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/VertexArray.hpp",
+                                "@line": "14"
+                            },
+                            "name": "Bind",
+                            "qualifiedname": "Kinai::VertexArray::Bind",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1VertexArray_1aede0285221420c1f59f00f4cea6279e7",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "() const =0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::VertexArray::Unbind",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/VertexArray.hpp",
+                                "@line": "15"
+                            },
+                            "name": "Unbind",
+                            "qualifiedname": "Kinai::VertexArray::Unbind",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1VertexArray_1ad22df6be1a0c5f40239f4d3cb1b13860",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "(const Ref< VertexBuffer > &vertex_buffer)=0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::VertexArray::AddVertexBuffer",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/VertexArray.hpp",
+                                "@line": "17"
+                            },
+                            "name": "AddVertexBuffer",
+                            "param": {
+                                "declname": "vertex_buffer",
+                                "type": {
+                                    "#text": "const Ref<  > &",
+                                    "ref": {
+                                        "#text": "VertexBuffer",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1VertexBuffer"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::VertexArray::AddVertexBuffer",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1VertexArray_1a5839c106d466177feff7b713d92fdc9e",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "(const Ref< IndexBuffer > &index_buffer)=0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::VertexArray::SetIndexBuffer",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/VertexArray.hpp",
+                                "@line": "18"
+                            },
+                            "name": "SetIndexBuffer",
+                            "param": {
+                                "declname": "index_buffer",
+                                "type": {
+                                    "#text": "const Ref<  > &",
+                                    "ref": {
+                                        "#text": "IndexBuffer",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1IndexBuffer"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::VertexArray::SetIndexBuffer",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1VertexArray_1ae047870c8c4e4a520c74bc606483b336",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "() const =0",
+                            "briefdescription": null,
+                            "definition": "virtual const std::vector< Ref< VertexBuffer > > & Kinai::VertexArray::GetVertexBuffers",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "26",
+                                "@file": "include/Kinai/Renderer/VertexArray.hpp",
+                                "@line": "20"
+                            },
+                            "name": "GetVertexBuffers",
+                            "qualifiedname": "Kinai::VertexArray::GetVertexBuffers",
+                            "type": {
+                                "#text": "const std::vector< Ref<  > > &",
+                                "ref": {
+                                    "#text": "VertexBuffer",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1VertexBuffer"
+                                }
+                            }
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1VertexArray_1a6ed49b9f5407f6581e458a769d252251",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "() const =0",
+                            "briefdescription": null,
+                            "definition": "virtual const Ref< IndexBuffer > & Kinai::VertexArray::GetIndexBuffer",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "18",
+                                "@file": "include/Kinai/Renderer/VertexArray.hpp",
+                                "@line": "21"
+                            },
+                            "name": "GetIndexBuffer",
+                            "qualifiedname": "Kinai::VertexArray::GetIndexBuffer",
+                            "type": {
+                                "#text": "const Ref<  > &",
+                                "ref": {
+                                    "#text": "IndexBuffer",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1IndexBuffer"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "@kind": "public-static-func",
+                    "memberdef": {
+                        "@const": "no",
+                        "@explicit": "no",
+                        "@id": "classKinai_1_1VertexArray_1a2adf283f6d6d6f82f531724389401384",
+                        "@inline": "no",
+                        "@kind": "function",
+                        "@prot": "public",
+                        "@static": "yes",
+                        "@virt": "non-virtual",
+                        "argsstring": "()",
+                        "briefdescription": null,
+                        "definition": "static Ref< VertexArray > Kinai::VertexArray::Create",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@column": "11",
+                            "@file": "include/Kinai/Renderer/VertexArray.hpp",
+                            "@line": "23"
+                        },
+                        "name": "Create",
+                        "qualifiedname": "Kinai::VertexArray::Create",
+                        "type": {
+                            "#text": "Ref<  >",
+                            "ref": {
+                                "#text": "VertexArray",
+                                "@kindref": "compound",
+                                "@refid": "classKinai_1_1VertexArray"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

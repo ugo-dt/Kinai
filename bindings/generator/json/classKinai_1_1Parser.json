@@ -1,0 +1,1537 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "classKinai_1_1Parser",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::Parser",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1a3a9150fa8d1e6a2e8afd47ff0f4b3dcd",
+                        "@virt": "non-virtual",
+                        "name": "_filepath",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1af8517c5978c3184e84858e71909a3f6c",
+                        "@virt": "non-virtual",
+                        "name": "_is_token",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1acee9082bd5e7e812548a5b40123bced0",
+                        "@virt": "non-virtual",
+                        "name": "_make_error_string",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1a3f2e0226ffd453fb0f6323ba5fd03428",
+                        "@virt": "non-virtual",
+                        "name": "_make_error_string",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1a126e3e7ff30cce92e514310af51d46d8",
+                        "@virt": "non-virtual",
+                        "name": "_make_iter",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1a31ee50011df6d0bdcd5ce23992f15365",
+                        "@virt": "non-virtual",
+                        "name": "_make_iter",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1a50b561c38556dcff39443567c1664981",
+                        "@virt": "non-virtual",
+                        "name": "_make_iter",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1ab573a776bcbe2224a162df7d34145b46",
+                        "@virt": "non-virtual",
+                        "name": "_make_iter",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Parser_1af337314428a953a892a0f0377a233385",
+                        "@virt": "non-virtual",
+                        "name": "_make_log_string_impl",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Parser_1a3b081b3fb6280e6233961e6ec4e76f38",
+                        "@virt": "non-virtual",
+                        "name": "_make_log_string_impl",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1a9a386f1559a323da3bcb6365378b97ae",
+                        "@virt": "non-virtual",
+                        "name": "_make_note_string",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1a1778534e75aaea02e1ba4ed722faeed0",
+                        "@virt": "non-virtual",
+                        "name": "_make_warning_string",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1ac973d4e2e43da531d13208169470f9de",
+                        "@virt": "non-virtual",
+                        "name": "_make_warning_string",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1a6d0fcddb65bcdbf7f3ca10378e0e92d9",
+                        "@virt": "non-virtual",
+                        "name": "_throw_invalid_argument",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1ad44f5fefba4d39414b64f760626b12f8",
+                        "@virt": "non-virtual",
+                        "name": "_throw_parser",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1a8a071d81f5429351d328fd0ed74504f6",
+                        "@virt": "non-virtual",
+                        "name": "_throw_parser",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1a54753b1bfb909762d4f61c52d975a9c0",
+                        "@virt": "non-virtual",
+                        "name": "_throw_parser_with_note",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1acbec47b439c8d3fb5bb5c6cda8b690d3",
+                        "@virt": "non-virtual",
+                        "name": "_tokens",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1a9d43a110c610d6583fa6aa4cd2ddb901",
+                        "@virt": "non-virtual",
+                        "name": "const_iterator",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1a0144368d4498500b63d06d59509f6660",
+                        "@virt": "non-virtual",
+                        "name": "const_pointer",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1ad5241667411ff58c986051a49b041c54",
+                        "@virt": "non-virtual",
+                        "name": "const_reference",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1a6a6122460c960ce355447ce80673d64b",
+                        "@virt": "non-virtual",
+                        "name": "CYAN",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1a038ffcc28cfe1e0170646b55d84729ae",
+                        "@virt": "non-virtual",
+                        "name": "difference_type",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1a8809887c63a0d480c04bd3222dbff916",
+                        "@virt": "non-virtual",
+                        "name": "iterator",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1a9fde5480c4bb61ef5167db6d30b79fe6",
+                        "@virt": "non-virtual",
+                        "name": "iterator_equals",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1abc4b4dd0890051b73ef57f6d7185e593",
+                        "@virt": "non-virtual",
+                        "name": "iterator_equals",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1ae8dcc9268cce1b07cd3457fa3d8e2704",
+                        "@virt": "non-virtual",
+                        "name": "MAGENTA",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1abc6dc57274d3ef7f11ae8b73e01cc182",
+                        "@virt": "non-virtual",
+                        "name": "Parser",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1a153956c53c196044f9db00c1038ab042",
+                        "@virt": "non-virtual",
+                        "name": "pointer",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1a0e2e0791ffb1a22eae92a3ad44e0f137",
+                        "@virt": "non-virtual",
+                        "name": "RED",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1a879306a78c8ffa1c19f1329f0fb49180",
+                        "@virt": "non-virtual",
+                        "name": "reference",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1a27f1ff9b4b6ad84a34c57726ec6ef973",
+                        "@virt": "non-virtual",
+                        "name": "size_type",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1ac98b97f1403b6033ac3c6f43520f087c",
+                        "@virt": "non-virtual",
+                        "name": "string_type",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1a6e6ca1f4afa6391dfaf55783fcbdc78f",
+                        "@virt": "non-virtual",
+                        "name": "token_type",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1abf299e0d3b4f21f72ccf245957a03dbc",
+                        "@virt": "non-virtual",
+                        "name": "value_type",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1a0a5f4f307501c5ae7f0a244a4d1db983",
+                        "@virt": "non-virtual",
+                        "name": "WHITE",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1ac6a0a8b4985f1b2fecc0f42cdaf209c2",
+                        "@virt": "non-virtual",
+                        "name": "WHITE",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1a8a7e10bbf5cc0c95febafe67dbbe02f3",
+                        "@virt": "non-virtual",
+                        "name": "WHITE",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Parser_1a4012c50f32044c3a2aebe3b25c1b764a",
+                        "@virt": "non-virtual",
+                        "name": "WHITE",
+                        "scope": "Kinai::Parser"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Parser_1a161ea06f60e949b40616f7cca9b5a280",
+                        "@virt": "non-virtual",
+                        "name": "YELLOW",
+                        "scope": "Kinai::Parser"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "97",
+                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                "@bodystart": "40",
+                "@column": "1",
+                "@file": "include/Kinai/Core/Parser.hpp",
+                "@line": "39"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "public-type",
+                    "memberdef": [
+                        {
+                            "@id": "classKinai_1_1Parser_1abf299e0d3b4f21f72ccf245957a03dbc",
+                            "@kind": "typedef",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "typedef Token Kinai::Parser< Token >::value_type",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "42",
+                                "@column": "14",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "42"
+                            },
+                            "name": "value_type",
+                            "qualifiedname": "Kinai::Parser::value_type",
+                            "type": "Token"
+                        },
+                        {
+                            "@id": "classKinai_1_1Parser_1a879306a78c8ffa1c19f1329f0fb49180",
+                            "@kind": "typedef",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "typedef value_type& Kinai::Parser< Token >::reference",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "43",
+                                "@column": "23",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "43"
+                            },
+                            "name": "reference",
+                            "qualifiedname": "Kinai::Parser::reference",
+                            "type": "value_type &"
+                        },
+                        {
+                            "@id": "classKinai_1_1Parser_1ad5241667411ff58c986051a49b041c54",
+                            "@kind": "typedef",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "typedef const value_type& Kinai::Parser< Token >::const_reference",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "44",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "44"
+                            },
+                            "name": "const_reference",
+                            "qualifiedname": "Kinai::Parser::const_reference",
+                            "type": "const value_type &"
+                        },
+                        {
+                            "@id": "classKinai_1_1Parser_1a153956c53c196044f9db00c1038ab042",
+                            "@kind": "typedef",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "typedef value_type* Kinai::Parser< Token >::pointer",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "45",
+                                "@column": "19",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "45"
+                            },
+                            "name": "pointer",
+                            "qualifiedname": "Kinai::Parser::pointer",
+                            "type": "value_type *"
+                        },
+                        {
+                            "@id": "classKinai_1_1Parser_1a0144368d4498500b63d06d59509f6660",
+                            "@kind": "typedef",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "typedef const value_type* Kinai::Parser< Token >::const_pointer",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "46",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "46"
+                            },
+                            "name": "const_pointer",
+                            "qualifiedname": "Kinai::Parser::const_pointer",
+                            "type": "const value_type *"
+                        },
+                        {
+                            "@id": "classKinai_1_1Parser_1a6e6ca1f4afa6391dfaf55783fcbdc78f",
+                            "@kind": "typedef",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "typedef Token::token_type Kinai::Parser< Token >::token_type",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "47",
+                                "@column": "35",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "47"
+                            },
+                            "name": "token_type",
+                            "qualifiedname": "Kinai::Parser::token_type",
+                            "type": "Token::token_type"
+                        },
+                        {
+                            "@id": "classKinai_1_1Parser_1a27f1ff9b4b6ad84a34c57726ec6ef973",
+                            "@kind": "typedef",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "typedef Token::size_type Kinai::Parser< Token >::size_type",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "48",
+                                "@column": "34",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "48"
+                            },
+                            "name": "size_type",
+                            "qualifiedname": "Kinai::Parser::size_type",
+                            "type": "Token::size_type"
+                        },
+                        {
+                            "@id": "classKinai_1_1Parser_1a038ffcc28cfe1e0170646b55d84729ae",
+                            "@kind": "typedef",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "typedef Token::difference_type Kinai::Parser< Token >::difference_type",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "49",
+                                "@column": "40",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "49"
+                            },
+                            "name": "difference_type",
+                            "qualifiedname": "Kinai::Parser::difference_type",
+                            "type": "Token::difference_type"
+                        },
+                        {
+                            "@id": "classKinai_1_1Parser_1ac98b97f1403b6033ac3c6f43520f087c",
+                            "@kind": "typedef",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "typedef Token::string_type Kinai::Parser< Token >::string_type",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "50",
+                                "@column": "36",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "50"
+                            },
+                            "name": "string_type",
+                            "qualifiedname": "Kinai::Parser::string_type",
+                            "type": "Token::string_type"
+                        },
+                        {
+                            "@id": "classKinai_1_1Parser_1a8809887c63a0d480c04bd3222dbff916",
+                            "@kind": "typedef",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "typedef std::vector<value_type>::iterator Kinai::Parser< Token >::iterator",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "51",
+                                "@column": "40",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "51"
+                            },
+                            "name": "iterator",
+                            "qualifiedname": "Kinai::Parser::iterator",
+                            "type": "std::vector< value_type >::iterator"
+                        },
+                        {
+                            "@id": "classKinai_1_1Parser_1a9d43a110c610d6583fa6aa4cd2ddb901",
+                            "@kind": "typedef",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "typedef const std::vector<value_type>::const_iterator Kinai::Parser< Token >::const_iterator",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "52",
+                                "@column": "52",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "52"
+                            },
+                            "name": "const_iterator",
+                            "qualifiedname": "Kinai::Parser::const_iterator",
+                            "type": "const std::vector< value_type >::const_iterator"
+                        }
+                    ]
+                },
+                {
+                    "@kind": "protected-attrib",
+                    "memberdef": [
+                        {
+                            "@id": "classKinai_1_1Parser_1a3a9150fa8d1e6a2e8afd47ff0f4b3dcd",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "protected",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "string_type Kinai::Parser< Token >::_filepath",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "69",
+                                "@column": "12",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "69"
+                            },
+                            "name": "_filepath",
+                            "qualifiedname": "Kinai::Parser::_filepath",
+                            "type": "string_type"
+                        },
+                        {
+                            "@id": "classKinai_1_1Parser_1acbec47b439c8d3fb5bb5c6cda8b690d3",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "protected",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "std::vector<value_type> Kinai::Parser< Token >::_tokens",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "70",
+                                "@column": "12",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "70"
+                            },
+                            "name": "_tokens",
+                            "qualifiedname": "Kinai::Parser::_tokens",
+                            "type": "std::vector< value_type >"
+                        }
+                    ]
+                },
+                {
+                    "@kind": "public-func",
+                    "memberdef": {
+                        "@const": "no",
+                        "@explicit": "no",
+                        "@id": "classKinai_1_1Parser_1abc6dc57274d3ef7f11ae8b73e01cc182",
+                        "@inline": "no",
+                        "@kind": "function",
+                        "@prot": "public",
+                        "@static": "no",
+                        "@virt": "non-virtual",
+                        "argsstring": "(const std::string &filepath)",
+                        "briefdescription": null,
+                        "definition": "Kinai::Parser< Token >::Parser",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "110",
+                            "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                            "@bodystart": "107",
+                            "@column": "1",
+                            "@file": "include/Kinai/Core/Parser.hpp",
+                            "@line": "55"
+                        },
+                        "name": "Parser",
+                        "param": {
+                            "declname": "filepath",
+                            "type": "const std::string &"
+                        },
+                        "qualifiedname": "Kinai::Parser::Parser",
+                        "type": null
+                    }
+                },
+                {
+                    "@kind": "public-static-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1a161ea06f60e949b40616f7cca9b5a280",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const string_type &s)",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Token >::string_type Kinai::Parser< Token >::YELLOW",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "117",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "114",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "57"
+                            },
+                            "name": "YELLOW",
+                            "param": {
+                                "declname": "s",
+                                "type": "const string_type &"
+                            },
+                            "qualifiedname": "Kinai::Parser::YELLOW",
+                            "type": "KN_INLINE string_type"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1a6a6122460c960ce355447ce80673d64b",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const string_type &s)",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Token >::string_type Kinai::Parser< Token >::CYAN",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "124",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "121",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "58"
+                            },
+                            "name": "CYAN",
+                            "param": {
+                                "declname": "s",
+                                "type": "const string_type &"
+                            },
+                            "qualifiedname": "Kinai::Parser::CYAN",
+                            "type": "KN_INLINE string_type"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1ae8dcc9268cce1b07cd3457fa3d8e2704",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const string_type &s)",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Token >::string_type Kinai::Parser< Token >::MAGENTA",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "131",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "128",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "59"
+                            },
+                            "name": "MAGENTA",
+                            "param": {
+                                "declname": "s",
+                                "type": "const string_type &"
+                            },
+                            "qualifiedname": "Kinai::Parser::MAGENTA",
+                            "type": "KN_INLINE string_type"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1a0e2e0791ffb1a22eae92a3ad44e0f137",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const string_type &s)",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Token >::string_type Kinai::Parser< Token >::RED",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "138",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "135",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "60"
+                            },
+                            "name": "RED",
+                            "param": {
+                                "declname": "s",
+                                "type": "const string_type &"
+                            },
+                            "qualifiedname": "Kinai::Parser::RED",
+                            "type": "KN_INLINE string_type"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1a0a5f4f307501c5ae7f0a244a4d1db983",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const string_type &s)",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Token >::string_type Kinai::Parser< Token >::WHITE",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "145",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "142",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "61"
+                            },
+                            "name": "WHITE",
+                            "param": {
+                                "declname": "s",
+                                "type": "const string_type &"
+                            },
+                            "qualifiedname": "Kinai::Parser::WHITE",
+                            "type": "KN_INLINE string_type"
+                        },
+                        {
+                            "@const": "no",
+                            "@constexpr": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1a9fde5480c4bb61ef5167db6d30b79fe6",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const_iterator &it, const token_type &t)",
+                            "briefdescription": null,
+                            "definition": "static constexpr KN_INLINE bool Kinai::Parser< Token >::iterator_equals",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "64",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "63",
+                                "@column": "32",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "63"
+                            },
+                            "name": "iterator_equals",
+                            "param": [
+                                {
+                                    "declname": "it",
+                                    "type": "const_iterator &"
+                                },
+                                {
+                                    "declname": "t",
+                                    "type": "const token_type &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Parser::iterator_equals",
+                            "type": "constexpr KN_INLINE bool"
+                        },
+                        {
+                            "@const": "no",
+                            "@constexpr": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1abc4b4dd0890051b73ef57f6d7185e593",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const_iterator &it, const string_type &s)",
+                            "briefdescription": null,
+                            "definition": "static constexpr KN_INLINE bool Kinai::Parser< Token >::iterator_equals",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "66",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "65",
+                                "@column": "32",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "65"
+                            },
+                            "name": "iterator_equals",
+                            "param": [
+                                {
+                                    "declname": "it",
+                                    "type": "const_iterator &"
+                                },
+                                {
+                                    "declname": "s",
+                                    "type": "const string_type &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Parser::iterator_equals",
+                            "type": "constexpr KN_INLINE bool"
+                        }
+                    ]
+                },
+                {
+                    "@kind": "protected-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1a126e3e7ff30cce92e514310af51d46d8",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "protected",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(pointer p)",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Tp >::iterator Kinai::Parser< Tp >::_make_iter",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "173",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "170",
+                                "@column": "19",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "73"
+                            },
+                            "name": "_make_iter",
+                            "param": {
+                                "declname": "p",
+                                "type": "pointer"
+                            },
+                            "qualifiedname": "Kinai::Parser::_make_iter",
+                            "type": "KN_INLINE iterator"
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1a31ee50011df6d0bdcd5ce23992f15365",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "protected",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(pointer p) const",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Tp >::const_iterator Kinai::Parser< Tp >::_make_iter",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "180",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "177",
+                                "@column": "25",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "74"
+                            },
+                            "name": "_make_iter",
+                            "param": {
+                                "declname": "p",
+                                "type": "pointer"
+                            },
+                            "qualifiedname": "Kinai::Parser::_make_iter",
+                            "type": "KN_INLINE const_iterator"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1a50b561c38556dcff39443567c1664981",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "protected",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(size_t pos)",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Tp >::iterator Kinai::Parser< Tp >::_make_iter",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "187",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "184",
+                                "@column": "19",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "75"
+                            },
+                            "name": "_make_iter",
+                            "param": {
+                                "declname": "pos",
+                                "type": "size_t"
+                            },
+                            "qualifiedname": "Kinai::Parser::_make_iter",
+                            "type": "KN_INLINE iterator"
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1ab573a776bcbe2224a162df7d34145b46",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "protected",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(size_t pos) const",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Tp >::const_iterator Kinai::Parser< Tp >::_make_iter",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "194",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "191",
+                                "@column": "25",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "76"
+                            },
+                            "name": "_make_iter",
+                            "param": {
+                                "declname": "pos",
+                                "type": "size_t"
+                            },
+                            "qualifiedname": "Kinai::Parser::_make_iter",
+                            "type": "KN_INLINE const_iterator"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1af8517c5978c3184e84858e71909a3f6c",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "protected",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(size_t pos, const token_type &t)",
+                            "briefdescription": null,
+                            "definition": "KN_INLINE bool Kinai::Parser< Tp >::_is_token",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "201",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "198",
+                                "@column": "15",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "77"
+                            },
+                            "name": "_is_token",
+                            "param": [
+                                {
+                                    "declname": "pos",
+                                    "type": "size_t"
+                                },
+                                {
+                                    "declname": "t",
+                                    "type": "const token_type &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Parser::_is_token",
+                            "type": "KN_INLINE bool"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1acee9082bd5e7e812548a5b40123bced0",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "protected",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const string_type &error)",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Token >::string_type Kinai::Parser< Token >::_make_error_string",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "233",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "230",
+                                "@column": "22",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "79"
+                            },
+                            "name": "_make_error_string",
+                            "param": {
+                                "declname": "error",
+                                "type": "const string_type &"
+                            },
+                            "qualifiedname": "Kinai::Parser::_make_error_string",
+                            "type": "KN_INLINE string_type"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1a3f2e0226ffd453fb0f6323ba5fd03428",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "protected",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const_iterator &error_it, const string_type &error)",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Token >::string_type Kinai::Parser< Token >::_make_error_string",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "226",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "223",
+                                "@column": "22",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "80"
+                            },
+                            "name": "_make_error_string",
+                            "param": [
+                                {
+                                    "declname": "error_it",
+                                    "type": "const_iterator &"
+                                },
+                                {
+                                    "declname": "error",
+                                    "type": "const string_type &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Parser::_make_error_string",
+                            "type": "KN_INLINE string_type"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1a1778534e75aaea02e1ba4ed722faeed0",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "protected",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const string_type &warning)",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Token >::string_type Kinai::Parser< Token >::_make_warning_string",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "247",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "244",
+                                "@column": "22",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "81"
+                            },
+                            "name": "_make_warning_string",
+                            "param": {
+                                "declname": "warning",
+                                "type": "const string_type &"
+                            },
+                            "qualifiedname": "Kinai::Parser::_make_warning_string",
+                            "type": "KN_INLINE string_type"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1ac973d4e2e43da531d13208169470f9de",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "protected",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const_iterator &warning_it, const string_type &warning)",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Token >::string_type Kinai::Parser< Token >::_make_warning_string",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "240",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "237",
+                                "@column": "22",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "82"
+                            },
+                            "name": "_make_warning_string",
+                            "param": [
+                                {
+                                    "declname": "warning_it",
+                                    "type": "const_iterator &"
+                                },
+                                {
+                                    "declname": "warning",
+                                    "type": "const string_type &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Parser::_make_warning_string",
+                            "type": "KN_INLINE string_type"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1a9a386f1559a323da3bcb6365378b97ae",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "protected",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const_iterator &note_it, const string_type &note)",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Token >::string_type Kinai::Parser< Token >::_make_note_string",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "254",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "251",
+                                "@column": "22",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "83"
+                            },
+                            "name": "_make_note_string",
+                            "param": [
+                                {
+                                    "declname": "note_it",
+                                    "type": "const_iterator &"
+                                },
+                                {
+                                    "declname": "note",
+                                    "type": "const string_type &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Parser::_make_note_string",
+                            "type": "KN_INLINE string_type"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1a6d0fcddb65bcdbf7f3ca10378e0e92d9",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "protected",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const char *) KN_NORETURN",
+                            "briefdescription": null,
+                            "definition": "KN_NORETURN KN_INLINE void Kinai::Parser< Token >::_throw_invalid_argument",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "104",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "101",
+                                "@column": "15",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "85"
+                            },
+                            "name": "_throw_invalid_argument",
+                            "param": {
+                                "defname": "arg",
+                                "type": "const char *"
+                            },
+                            "qualifiedname": "Kinai::Parser::_throw_invalid_argument",
+                            "type": "KN_INLINE void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1ad44f5fefba4d39414b64f760626b12f8",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "protected",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const string_type &error) KN_NORETURN",
+                            "briefdescription": null,
+                            "definition": "KN_NORETURN KN_INLINE void Kinai::Parser< Token >::_throw_parser",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "268",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "265",
+                                "@column": "15",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "86"
+                            },
+                            "name": "_throw_parser",
+                            "param": {
+                                "declname": "error",
+                                "type": "const string_type &"
+                            },
+                            "qualifiedname": "Kinai::Parser::_throw_parser",
+                            "type": "KN_INLINE void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1a8a071d81f5429351d328fd0ed74504f6",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "protected",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const_iterator &it, const string_type &error) KN_NORETURN",
+                            "briefdescription": null,
+                            "definition": "KN_NORETURN KN_INLINE void Kinai::Parser< Token >::_throw_parser",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "261",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "258",
+                                "@column": "15",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "87"
+                            },
+                            "name": "_throw_parser",
+                            "param": [
+                                {
+                                    "declname": "it",
+                                    "type": "const_iterator &"
+                                },
+                                {
+                                    "declname": "error",
+                                    "type": "const string_type &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Parser::_throw_parser",
+                            "type": "KN_INLINE void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1a54753b1bfb909762d4f61c52d975a9c0",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "protected",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const_iterator &it, const string_type &error, const_iterator &note_it, const string_type &note) KN_NORETURN",
+                            "briefdescription": null,
+                            "definition": "KN_NORETURN KN_INLINE void Kinai::Parser< Token >::_throw_parser_with_note",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "277",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "272",
+                                "@column": "15",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "88"
+                            },
+                            "name": "_throw_parser_with_note",
+                            "param": [
+                                {
+                                    "declname": "it",
+                                    "type": "const_iterator &"
+                                },
+                                {
+                                    "declname": "error",
+                                    "type": "const string_type &"
+                                },
+                                {
+                                    "declname": "note_it",
+                                    "type": "const_iterator &"
+                                },
+                                {
+                                    "declname": "note",
+                                    "type": "const string_type &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Parser::_throw_parser_with_note",
+                            "type": "KN_INLINE void"
+                        }
+                    ]
+                },
+                {
+                    "@kind": "protected-static-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1ac6a0a8b4985f1b2fecc0f42cdaf209c2",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "protected",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const_iterator &it)",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Token >::string_type Kinai::Parser< Token >::WHITE",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "152",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "149",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "90"
+                            },
+                            "name": "WHITE",
+                            "param": {
+                                "declname": "it",
+                                "type": "const_iterator &"
+                            },
+                            "qualifiedname": "Kinai::Parser::WHITE",
+                            "type": "KN_INLINE string_type"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1a8a7e10bbf5cc0c95febafe67dbbe02f3",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "protected",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const string_type &s, const_iterator &it)",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Token >::string_type Kinai::Parser< Token >::WHITE",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "159",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "156",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "91"
+                            },
+                            "name": "WHITE",
+                            "param": [
+                                {
+                                    "declname": "s",
+                                    "type": "const string_type &"
+                                },
+                                {
+                                    "declname": "it",
+                                    "type": "const_iterator &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Parser::WHITE",
+                            "type": "KN_INLINE string_type"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1a4012c50f32044c3a2aebe3b25c1b764a",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "protected",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const string_type &s, const_iterator &it, const string_type &name)",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Token >::string_type Kinai::Parser< Token >::WHITE",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "166",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "163",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "92"
+                            },
+                            "name": "WHITE",
+                            "param": [
+                                {
+                                    "declname": "s",
+                                    "type": "const string_type &"
+                                },
+                                {
+                                    "declname": "it",
+                                    "type": "const_iterator &"
+                                },
+                                {
+                                    "declname": "name",
+                                    "type": "const string_type &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Parser::WHITE",
+                            "type": "KN_INLINE string_type"
+                        }
+                    ]
+                },
+                {
+                    "@kind": "private-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1af337314428a953a892a0f0377a233385",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const string_type &log_name, const string_type &log)",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Token >::string_type Kinai::Parser< Token >::_make_log_string_impl",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "219",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "216",
+                                "@column": "22",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "95"
+                            },
+                            "name": "_make_log_string_impl",
+                            "param": [
+                                {
+                                    "declname": "log_name",
+                                    "type": "const string_type &"
+                                },
+                                {
+                                    "declname": "log",
+                                    "type": "const string_type &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Parser::_make_log_string_impl",
+                            "type": "KN_INLINE string_type"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Parser_1a3b081b3fb6280e6233961e6ec4e76f38",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const_iterator &it, const string_type &log_name, const string_type &log)",
+                            "briefdescription": null,
+                            "definition": "KN_NODISCARD KN_INLINE Parser< Token >::string_type Kinai::Parser< Token >::_make_log_string_impl",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "212",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "205",
+                                "@column": "22",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "96"
+                            },
+                            "name": "_make_log_string_impl",
+                            "param": [
+                                {
+                                    "declname": "it",
+                                    "type": "const_iterator &"
+                                },
+                                {
+                                    "declname": "log_name",
+                                    "type": "const string_type &"
+                                },
+                                {
+                                    "declname": "log",
+                                    "type": "const string_type &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Parser::_make_log_string_impl",
+                            "type": "KN_INLINE string_type"
+                        }
+                    ]
+                }
+            ],
+            "templateparamlist": {
+                "param": {
+                    "type": "class Token"
+                }
+            }
+        }
+    }
+}

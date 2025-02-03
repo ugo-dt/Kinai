@@ -1,0 +1,220 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "structKinai_1_1ApplicationConfig",
+            "@kind": "struct",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::ApplicationConfig",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1ApplicationConfig_1a6c2ce1b65500022ffcd92c47d12655c5",
+                        "@virt": "non-virtual",
+                        "name": "enable_imgui",
+                        "scope": "Kinai::ApplicationConfig"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1ApplicationConfig_1ad6978e040d26c0175161f067f69c9233",
+                        "@virt": "non-virtual",
+                        "name": "fullscreen",
+                        "scope": "Kinai::ApplicationConfig"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1ApplicationConfig_1a99a66bce03a724d6c5af99e09e0db0b2",
+                        "@virt": "non-virtual",
+                        "name": "name",
+                        "scope": "Kinai::ApplicationConfig"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1ApplicationConfig_1a5b27b2915fe5d5d5034185ec003a5acd",
+                        "@virt": "non-virtual",
+                        "name": "no_vsync",
+                        "scope": "Kinai::ApplicationConfig"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1ApplicationConfig_1a5fb3ba37f3f91dc77bcdd41d7cf52f63",
+                        "@virt": "non-virtual",
+                        "name": "window_height",
+                        "scope": "Kinai::ApplicationConfig"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1ApplicationConfig_1a7a5b89ee24bdbffbd3fd92dba7294ddb",
+                        "@virt": "non-virtual",
+                        "name": "window_width",
+                        "scope": "Kinai::ApplicationConfig"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "28",
+                "@bodyfile": "include/Kinai/Core/Application.hpp",
+                "@bodystart": "21",
+                "@column": "1",
+                "@file": "include/Kinai/Core/Application.hpp",
+                "@line": "20"
+            },
+            "sectiondef": {
+                "@kind": "public-attrib",
+                "memberdef": [
+                    {
+                        "@id": "structKinai_1_1ApplicationConfig_1a99a66bce03a724d6c5af99e09e0db0b2",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "std::string Kinai::ApplicationConfig::name",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "initializer": "= \"Kinai Application\"",
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Core/Application.hpp",
+                            "@bodystart": "22",
+                            "@column": "12",
+                            "@file": "include/Kinai/Core/Application.hpp",
+                            "@line": "22"
+                        },
+                        "name": "name",
+                        "qualifiedname": "Kinai::ApplicationConfig::name",
+                        "type": "std::string"
+                    },
+                    {
+                        "@id": "structKinai_1_1ApplicationConfig_1a7a5b89ee24bdbffbd3fd92dba7294ddb",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "uint32_t Kinai::ApplicationConfig::window_width",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "initializer": "= KN_DEFAULT_WINDOW_WIDTH",
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Core/Application.hpp",
+                            "@bodystart": "23",
+                            "@column": "9",
+                            "@file": "include/Kinai/Core/Application.hpp",
+                            "@line": "23"
+                        },
+                        "name": "window_width",
+                        "qualifiedname": "Kinai::ApplicationConfig::window_width",
+                        "type": "uint32_t"
+                    },
+                    {
+                        "@id": "structKinai_1_1ApplicationConfig_1a5fb3ba37f3f91dc77bcdd41d7cf52f63",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "uint32_t Kinai::ApplicationConfig::window_height",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "initializer": "= KN_DEFAULT_WINDOW_HEIGHT",
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Core/Application.hpp",
+                            "@bodystart": "24",
+                            "@column": "9",
+                            "@file": "include/Kinai/Core/Application.hpp",
+                            "@line": "24"
+                        },
+                        "name": "window_height",
+                        "qualifiedname": "Kinai::ApplicationConfig::window_height",
+                        "type": "uint32_t"
+                    },
+                    {
+                        "@id": "structKinai_1_1ApplicationConfig_1ad6978e040d26c0175161f067f69c9233",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "bool Kinai::ApplicationConfig::fullscreen",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "initializer": "= false",
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Core/Application.hpp",
+                            "@bodystart": "25",
+                            "@column": "5",
+                            "@file": "include/Kinai/Core/Application.hpp",
+                            "@line": "25"
+                        },
+                        "name": "fullscreen",
+                        "qualifiedname": "Kinai::ApplicationConfig::fullscreen",
+                        "type": "bool"
+                    },
+                    {
+                        "@id": "structKinai_1_1ApplicationConfig_1a5b27b2915fe5d5d5034185ec003a5acd",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "bool Kinai::ApplicationConfig::no_vsync",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "initializer": "= false",
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Core/Application.hpp",
+                            "@bodystart": "26",
+                            "@column": "5",
+                            "@file": "include/Kinai/Core/Application.hpp",
+                            "@line": "26"
+                        },
+                        "name": "no_vsync",
+                        "qualifiedname": "Kinai::ApplicationConfig::no_vsync",
+                        "type": "bool"
+                    },
+                    {
+                        "@id": "structKinai_1_1ApplicationConfig_1a6c2ce1b65500022ffcd92c47d12655c5",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "bool Kinai::ApplicationConfig::enable_imgui",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "initializer": "= false",
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Core/Application.hpp",
+                            "@bodystart": "27",
+                            "@column": "5",
+                            "@file": "include/Kinai/Core/Application.hpp",
+                            "@line": "27"
+                        },
+                        "name": "enable_imgui",
+                        "qualifiedname": "Kinai::ApplicationConfig::enable_imgui",
+                        "type": "bool"
+                    }
+                ]
+            }
+        }
+    }
+}

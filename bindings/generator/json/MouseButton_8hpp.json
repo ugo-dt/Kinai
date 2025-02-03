@@ -1,0 +1,448 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "MouseButton_8hpp",
+            "@kind": "file",
+            "@language": "C++",
+            "briefdescription": null,
+            "compoundname": "MouseButton.hpp",
+            "detaileddescription": null,
+            "innernamespace": [
+                {
+                    "#text": "Kinai",
+                    "@refid": "namespaceKinai"
+                },
+                {
+                    "#text": "Kinai::Mouse",
+                    "@refid": "namespaceKinai_1_1Mouse"
+                }
+            ],
+            "location": {
+                "@file": "include/Kinai/Core/MouseButton.hpp"
+            },
+            "programlisting": {
+                "codeline": [
+                    {
+                        "@lineno": "1",
+                        "highlight": [
+                            {
+                                "#text": "#pragmaonce",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "2",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "3",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include\"Kinai/Core/Core.hpp\"",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "4",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "5",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "namespace",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "#text": "Kinai",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "6",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "7",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "8",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "using",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "#text": "MouseButton=uint16_t;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "9",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "10",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "namespace",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "#text": "Mouse",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "11",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "12",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "13",
+                        "highlight": {
+                            "#text": "enum:MouseButton",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "14",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "15",
+                        "highlight": {
+                            "#text": "Button0=0,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "16",
+                        "highlight": {
+                            "#text": "Button1=SDL_BUTTON_LEFT,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "17",
+                        "highlight": {
+                            "#text": "Button2=SDL_BUTTON_MIDDLE,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "18",
+                        "highlight": {
+                            "#text": "Button3=SDL_BUTTON_RIGHT,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "19",
+                        "highlight": {
+                            "#text": "Button4=SDL_BUTTON_X1,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "20",
+                        "highlight": {
+                            "#text": "Button5=SDL_BUTTON_X2,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "21",
+                        "highlight": {
+                            "#text": "Button6=6,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "22",
+                        "highlight": {
+                            "#text": "Button7=7,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "23",
+                        "highlight": {
+                            "#text": "ButtonLast=Button7,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "24",
+                        "highlight": {
+                            "#text": "ButtonLeft=Button1,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "25",
+                        "highlight": {
+                            "#text": "ButtonMiddle=Button2,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "26",
+                        "highlight": {
+                            "#text": "ButtonRight=Button3,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "27",
+                        "highlight": {
+                            "#text": "};",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "28",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "29",
+                        "highlight": {
+                            "#text": "}",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "30",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "31",
+                        "highlight": [
+                            {
+                                "#text": "}",
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "//Kinai",
+                                "@class": "comment",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

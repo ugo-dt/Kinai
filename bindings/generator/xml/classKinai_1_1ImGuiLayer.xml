@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classKinai_1_1ImGuiLayer" kind="class" language="C++" prot="public" final="yes">
+    <compoundname>Kinai::ImGuiLayer</compoundname>
+    <basecompoundref refid="classKinai_1_1Layer" prot="public" virt="non-virtual">Kinai::Layer</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classKinai_1_1ImGuiLayer_1af801ecde3976318c94e170f5060bd1b8" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Kinai::ImGuiLayer::_block_events</definition>
+        <argsstring></argsstring>
+        <name>_block_events</name>
+        <qualifiedname>Kinai::ImGuiLayer::_block_events</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/ImGui/ImGuiLayer.hpp" line="25" column="5" bodyfile="include/Kinai/ImGui/ImGuiLayer.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKinai_1_1ImGuiLayer_1a4ba22f95e70db0c8a4870fc50c7e18e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::ImGuiLayer::ImGuiLayer</definition>
+        <argsstring>()</argsstring>
+        <name>ImGuiLayer</name>
+        <qualifiedname>Kinai::ImGuiLayer::ImGuiLayer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/ImGui/ImGuiLayer.hpp" line="12" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1ImGuiLayer_1a5cf5210c772a5e0a4fcca6f43c53285d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::ImGuiLayer::~ImGuiLayer</definition>
+        <argsstring>()=default</argsstring>
+        <name>~ImGuiLayer</name>
+        <qualifiedname>Kinai::ImGuiLayer::~ImGuiLayer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/ImGui/ImGuiLayer.hpp" line="13" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1ImGuiLayer_1aae89e7f3aab625049bb8e64f8067ceed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::ImGuiLayer::Begin</definition>
+        <argsstring>()</argsstring>
+        <name>Begin</name>
+        <qualifiedname>Kinai::ImGuiLayer::Begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/ImGui/ImGuiLayer.hpp" line="15" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1ImGuiLayer_1abccf029bf34df251ce759e0b613dd8b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::ImGuiLayer::End</definition>
+        <argsstring>()</argsstring>
+        <name>End</name>
+        <qualifiedname>Kinai::ImGuiLayer::End</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/ImGui/ImGuiLayer.hpp" line="16" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1ImGuiLayer_1a8da8dae75e0edd72bf722b849252bac2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::ImGuiLayer::OnAttach</definition>
+        <argsstring>() override</argsstring>
+        <name>OnAttach</name>
+        <qualifiedname>Kinai::ImGuiLayer::OnAttach</qualifiedname>
+        <reimplements refid="classKinai_1_1Layer_1a520a89c2b970da74dac812b96c7efb21">OnAttach</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/ImGui/ImGuiLayer.hpp" line="18" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1ImGuiLayer_1aaf5da0f84e7b937bf0440bbb306be674" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::ImGuiLayer::OnDetach</definition>
+        <argsstring>() override</argsstring>
+        <name>OnDetach</name>
+        <qualifiedname>Kinai::ImGuiLayer::OnDetach</qualifiedname>
+        <reimplements refid="classKinai_1_1Layer_1aca356ad003f9f9c3251a62481d8d3152">OnDetach</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/ImGui/ImGuiLayer.hpp" line="19" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1ImGuiLayer_1aa4f232191d86506b8479a0b6f38dc6f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::ImGuiLayer::OnEvent</definition>
+        <argsstring>(Event &amp;event) override</argsstring>
+        <name>OnEvent</name>
+        <qualifiedname>Kinai::ImGuiLayer::OnEvent</qualifiedname>
+        <reimplements refid="classKinai_1_1Layer_1ab543b787da010b413883ef62c859a9e0">OnEvent</reimplements>
+        <param>
+          <type><ref refid="classKinai_1_1Event" kindref="compound">Event</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/ImGui/ImGuiLayer.hpp" line="20" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1ImGuiLayer_1a9c702a1a9d7fec0a238975feb67ca116" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::ImGuiLayer::BlockEvents</definition>
+        <argsstring>(bool block)</argsstring>
+        <name>BlockEvents</name>
+        <qualifiedname>Kinai::ImGuiLayer::BlockEvents</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>block</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/ImGui/ImGuiLayer.hpp" line="22" column="5" bodyfile="include/Kinai/ImGui/ImGuiLayer.hpp" bodystart="22" bodyend="22"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Kinai::ImGuiLayer</label>
+        <link refid="classKinai_1_1ImGuiLayer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Kinai::Layer</label>
+        <link refid="classKinai_1_1Layer"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Kinai::ImGuiLayer</label>
+        <link refid="classKinai_1_1ImGuiLayer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Kinai::Layer</label>
+        <link refid="classKinai_1_1Layer"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/Kinai/ImGui/ImGuiLayer.hpp" line="9" column="1" bodyfile="include/Kinai/ImGui/ImGuiLayer.hpp" bodystart="10" bodyend="26"/>
+    <listofallmembers>
+      <member refid="classKinai_1_1ImGuiLayer_1af801ecde3976318c94e170f5060bd1b8" prot="private" virt="non-virtual"><scope>Kinai::ImGuiLayer</scope><name>_block_events</name></member>
+      <member refid="classKinai_1_1ImGuiLayer_1aae89e7f3aab625049bb8e64f8067ceed" prot="public" virt="non-virtual"><scope>Kinai::ImGuiLayer</scope><name>Begin</name></member>
+      <member refid="classKinai_1_1ImGuiLayer_1a9c702a1a9d7fec0a238975feb67ca116" prot="public" virt="non-virtual"><scope>Kinai::ImGuiLayer</scope><name>BlockEvents</name></member>
+      <member refid="classKinai_1_1ImGuiLayer_1abccf029bf34df251ce759e0b613dd8b3" prot="public" virt="non-virtual"><scope>Kinai::ImGuiLayer</scope><name>End</name></member>
+      <member refid="classKinai_1_1Layer_1af822136e2e0533a9093bf912e459fa90" prot="public" virt="non-virtual"><scope>Kinai::ImGuiLayer</scope><name>GetName</name></member>
+      <member refid="classKinai_1_1ImGuiLayer_1a4ba22f95e70db0c8a4870fc50c7e18e3" prot="public" virt="non-virtual"><scope>Kinai::ImGuiLayer</scope><name>ImGuiLayer</name></member>
+      <member refid="classKinai_1_1Layer_1a398b18d2e10824bf0a9e292587d33c2c" prot="protected" virt="non-virtual"><scope>Kinai::ImGuiLayer</scope><name>Layer</name></member>
+      <member refid="classKinai_1_1ImGuiLayer_1a8da8dae75e0edd72bf722b849252bac2" prot="public" virt="virtual"><scope>Kinai::ImGuiLayer</scope><name>OnAttach</name></member>
+      <member refid="classKinai_1_1ImGuiLayer_1aaf5da0f84e7b937bf0440bbb306be674" prot="public" virt="virtual"><scope>Kinai::ImGuiLayer</scope><name>OnDetach</name></member>
+      <member refid="classKinai_1_1ImGuiLayer_1aa4f232191d86506b8479a0b6f38dc6f9" prot="public" virt="virtual"><scope>Kinai::ImGuiLayer</scope><name>OnEvent</name></member>
+      <member refid="classKinai_1_1Layer_1abf530c17ec13961debc4ac73db537f3f" prot="public" virt="virtual"><scope>Kinai::ImGuiLayer</scope><name>OnImGuiRender</name></member>
+      <member refid="classKinai_1_1Layer_1a10c02fa847f8219c55cfb8e28d1a733a" prot="public" virt="virtual"><scope>Kinai::ImGuiLayer</scope><name>OnUpdate</name></member>
+      <member refid="classKinai_1_1ImGuiLayer_1a5cf5210c772a5e0a4fcca6f43c53285d" prot="public" virt="non-virtual"><scope>Kinai::ImGuiLayer</scope><name>~ImGuiLayer</name></member>
+      <member refid="classKinai_1_1Layer_1a229a1526155eae5204bb05f3a9620218" prot="public" virt="virtual"><scope>Kinai::ImGuiLayer</scope><name>~Layer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

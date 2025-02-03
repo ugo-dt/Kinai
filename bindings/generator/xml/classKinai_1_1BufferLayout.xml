@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classKinai_1_1BufferLayout" kind="class" language="C++" prot="public">
+    <compoundname>Kinai::BufferLayout</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classKinai_1_1BufferLayout_1a2b8516ac4ecf210d9084b4f778dcb5a2" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structKinai_1_1BufferElement" kindref="compound">BufferElement</ref> &gt;</type>
+        <definition>std::vector&lt;BufferElement&gt; Kinai::BufferLayout::_elements</definition>
+        <argsstring></argsstring>
+        <name>_elements</name>
+        <qualifiedname>Kinai::BufferLayout::_elements</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/BufferLayout.hpp" line="45" column="13" bodyfile="include/Kinai/Renderer/Buffer/BufferLayout.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1BufferLayout_1aff5409353c4ec7e3c144dfc9ed47d05f" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Kinai::BufferLayout::stride</definition>
+        <argsstring></argsstring>
+        <name>stride</name>
+        <qualifiedname>Kinai::BufferLayout::stride</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/BufferLayout.hpp" line="46" column="10" bodyfile="include/Kinai/Renderer/Buffer/BufferLayout.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKinai_1_1BufferLayout_1a8baea9656980aef850acf26ba21f3a3f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::BufferLayout::BufferLayout</definition>
+        <argsstring>()</argsstring>
+        <name>BufferLayout</name>
+        <qualifiedname>Kinai::BufferLayout::BufferLayout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/BufferLayout.hpp" line="12" column="1" bodyfile="include/Kinai/Renderer/Buffer/BufferLayout.hpp" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1BufferLayout_1a0aae2f776d5970b93170f6bb954c3134" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::BufferLayout::BufferLayout</definition>
+        <argsstring>(std::initializer_list&lt; BufferElement &gt; elements)</argsstring>
+        <name>BufferLayout</name>
+        <qualifiedname>Kinai::BufferLayout::BufferLayout</qualifiedname>
+        <param>
+          <type>std::initializer_list&lt; <ref refid="structKinai_1_1BufferElement" kindref="compound">BufferElement</ref> &gt;</type>
+          <declname>elements</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/BufferLayout.hpp" line="13" column="1" bodyfile="include/Kinai/Renderer/Buffer/BufferLayout.hpp" bodystart="13" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1BufferLayout_1ab0e69528fa027fe68d66b8e756c8a91e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::BufferLayout::BufferLayout</definition>
+        <argsstring>(const std::vector&lt; BufferElement &gt; &amp;elements)</argsstring>
+        <name>BufferLayout</name>
+        <qualifiedname>Kinai::BufferLayout::BufferLayout</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="structKinai_1_1BufferElement" kindref="compound">BufferElement</ref> &gt; &amp;</type>
+          <declname>elements</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/BufferLayout.hpp" line="19" column="1" bodyfile="include/Kinai/Renderer/Buffer/BufferLayout.hpp" bodystart="19" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1BufferLayout_1a02f82aa691e24d0c9332fa6ddb0ac2ab" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Kinai::BufferLayout::GetStride</definition>
+        <argsstring>() const</argsstring>
+        <name>GetStride</name>
+        <qualifiedname>Kinai::BufferLayout::GetStride</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/BufferLayout.hpp" line="25" column="9" bodyfile="include/Kinai/Renderer/Buffer/BufferLayout.hpp" bodystart="25" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1BufferLayout_1a7125ea6f0e2dacf04ba508cc4d945a8c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="structKinai_1_1BufferElement" kindref="compound">BufferElement</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt; BufferElement &gt; &amp; Kinai::BufferLayout::GetElements</definition>
+        <argsstring>() const</argsstring>
+        <name>GetElements</name>
+        <qualifiedname>Kinai::BufferLayout::GetElements</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/BufferLayout.hpp" line="26" column="18" bodyfile="include/Kinai/Renderer/Buffer/BufferLayout.hpp" bodystart="26" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1BufferLayout_1a35ca77026c78f0d2167fa9c4ad8c6c55" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="structKinai_1_1BufferElement" kindref="compound">BufferElement</ref> &gt;::iterator</type>
+        <definition>std::vector&lt; BufferElement &gt;::iterator Kinai::BufferLayout::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <qualifiedname>Kinai::BufferLayout::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/BufferLayout.hpp" line="28" column="23" bodyfile="include/Kinai/Renderer/Buffer/BufferLayout.hpp" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1BufferLayout_1ab76f83b1c531184d384d21a044f6036f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="structKinai_1_1BufferElement" kindref="compound">BufferElement</ref> &gt;::iterator</type>
+        <definition>std::vector&lt; BufferElement &gt;::iterator Kinai::BufferLayout::end</definition>
+        <argsstring>()</argsstring>
+        <name>end</name>
+        <qualifiedname>Kinai::BufferLayout::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/BufferLayout.hpp" line="29" column="23" bodyfile="include/Kinai/Renderer/Buffer/BufferLayout.hpp" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1BufferLayout_1a9577d138bddfa826a2913521dd0860e9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="structKinai_1_1BufferElement" kindref="compound">BufferElement</ref> &gt;::const_iterator</type>
+        <definition>std::vector&lt; BufferElement &gt;::const_iterator Kinai::BufferLayout::begin</definition>
+        <argsstring>() const</argsstring>
+        <name>begin</name>
+        <qualifiedname>Kinai::BufferLayout::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/BufferLayout.hpp" line="30" column="29" bodyfile="include/Kinai/Renderer/Buffer/BufferLayout.hpp" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1BufferLayout_1ad2b33beb959cb4d43fada54ade5b707d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="structKinai_1_1BufferElement" kindref="compound">BufferElement</ref> &gt;::const_iterator</type>
+        <definition>std::vector&lt; BufferElement &gt;::const_iterator Kinai::BufferLayout::end</definition>
+        <argsstring>() const</argsstring>
+        <name>end</name>
+        <qualifiedname>Kinai::BufferLayout::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/BufferLayout.hpp" line="31" column="29" bodyfile="include/Kinai/Renderer/Buffer/BufferLayout.hpp" bodystart="31" bodyend="31"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classKinai_1_1BufferLayout_1a64e76a7fb878fc72ffdcbbe8d8ec092a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::BufferLayout::CalculateOffsetsAndStride</definition>
+        <argsstring>()</argsstring>
+        <name>CalculateOffsetsAndStride</name>
+        <qualifiedname>Kinai::BufferLayout::CalculateOffsetsAndStride</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/BufferLayout.hpp" line="33" column="6" bodyfile="include/Kinai/Renderer/Buffer/BufferLayout.hpp" bodystart="33" bodyend="43"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Renderer/Buffer/BufferLayout.hpp" line="9" column="1" bodyfile="include/Kinai/Renderer/Buffer/BufferLayout.hpp" bodystart="10" bodyend="47"/>
+    <listofallmembers>
+      <member refid="classKinai_1_1BufferLayout_1a2b8516ac4ecf210d9084b4f778dcb5a2" prot="private" virt="non-virtual"><scope>Kinai::BufferLayout</scope><name>_elements</name></member>
+      <member refid="classKinai_1_1BufferLayout_1a35ca77026c78f0d2167fa9c4ad8c6c55" prot="public" virt="non-virtual"><scope>Kinai::BufferLayout</scope><name>begin</name></member>
+      <member refid="classKinai_1_1BufferLayout_1a9577d138bddfa826a2913521dd0860e9" prot="public" virt="non-virtual"><scope>Kinai::BufferLayout</scope><name>begin</name></member>
+      <member refid="classKinai_1_1BufferLayout_1a8baea9656980aef850acf26ba21f3a3f" prot="public" virt="non-virtual"><scope>Kinai::BufferLayout</scope><name>BufferLayout</name></member>
+      <member refid="classKinai_1_1BufferLayout_1a0aae2f776d5970b93170f6bb954c3134" prot="public" virt="non-virtual"><scope>Kinai::BufferLayout</scope><name>BufferLayout</name></member>
+      <member refid="classKinai_1_1BufferLayout_1ab0e69528fa027fe68d66b8e756c8a91e" prot="public" virt="non-virtual"><scope>Kinai::BufferLayout</scope><name>BufferLayout</name></member>
+      <member refid="classKinai_1_1BufferLayout_1a64e76a7fb878fc72ffdcbbe8d8ec092a" prot="private" virt="non-virtual"><scope>Kinai::BufferLayout</scope><name>CalculateOffsetsAndStride</name></member>
+      <member refid="classKinai_1_1BufferLayout_1ab76f83b1c531184d384d21a044f6036f" prot="public" virt="non-virtual"><scope>Kinai::BufferLayout</scope><name>end</name></member>
+      <member refid="classKinai_1_1BufferLayout_1ad2b33beb959cb4d43fada54ade5b707d" prot="public" virt="non-virtual"><scope>Kinai::BufferLayout</scope><name>end</name></member>
+      <member refid="classKinai_1_1BufferLayout_1a7125ea6f0e2dacf04ba508cc4d945a8c" prot="public" virt="non-virtual"><scope>Kinai::BufferLayout</scope><name>GetElements</name></member>
+      <member refid="classKinai_1_1BufferLayout_1a02f82aa691e24d0c9332fa6ddb0ac2ab" prot="public" virt="non-virtual"><scope>Kinai::BufferLayout</scope><name>GetStride</name></member>
+      <member refid="classKinai_1_1BufferLayout_1aff5409353c4ec7e3c144dfc9ed47d05f" prot="private" virt="non-virtual"><scope>Kinai::BufferLayout</scope><name>stride</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

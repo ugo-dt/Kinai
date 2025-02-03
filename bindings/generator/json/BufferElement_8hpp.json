@@ -1,0 +1,3044 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "BufferElement_8hpp",
+            "@kind": "file",
+            "@language": "C++",
+            "briefdescription": null,
+            "compoundname": "BufferElement.hpp",
+            "detaileddescription": null,
+            "innerclass": {
+                "#text": "Kinai::BufferElement",
+                "@prot": "public",
+                "@refid": "structKinai_1_1BufferElement"
+            },
+            "innernamespace": {
+                "#text": "Kinai",
+                "@refid": "namespaceKinai"
+            },
+            "location": {
+                "@file": "include/Kinai/Renderer/Buffer/BufferElement.hpp"
+            },
+            "programlisting": {
+                "codeline": [
+                    {
+                        "@lineno": "1",
+                        "highlight": [
+                            {
+                                "#text": "#pragmaonce",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "2",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "3",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include\"Kinai/Core/Core.hpp\"",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "4",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "5",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "namespace",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "#text": "Kinai",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "6",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "7",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "8",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "enumclass",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "#text": "ShaderDataType",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "9",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "10",
+                        "highlight": {
+                            "#text": "None=0,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "11",
+                        "highlight": {
+                            "#text": "Float,Float2,Float3,Float4,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "12",
+                        "highlight": {
+                            "#text": "Mat3,Mat4,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "13",
+                        "highlight": {
+                            "#text": "Int,Int2,Int3,Int4,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "14",
+                        "highlight": {
+                            "#text": "Bool,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "15",
+                        "highlight": {
+                            "#text": "UByte,UByte2,UByte3,UByte4,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "16",
+                        "highlight": {
+                            "#text": "UInt,UInt2,UInt3,UInt4,",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "17",
+                        "highlight": {
+                            "#text": "};",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "18",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "19",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "static",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "inline",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "uint32_tShaderDataTypeSize(ShaderDataTypetype)",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "20",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "21",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "switch",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "(type)",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "22",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "23",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::None:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "0;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "24",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Float:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(float)*1;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "25",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Float2:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(float)*2;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "26",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Float3:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(float)*3;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "27",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Float4:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(float)*4;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "28",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Mat3:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(float)*3*3;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "29",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Mat4:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(float)*4*4;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "30",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Int:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(int)*1;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "31",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Int2:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(int)*2;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "32",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Int3:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(int)*3;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "33",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Int4:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(int)*4;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "34",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Bool:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(bool);",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "35",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::UByte:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(",
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "unsigned",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "char)*1;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "36",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::UByte2:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(",
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "unsigned",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "char)*2;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "37",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::UByte3:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(",
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "unsigned",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "char)*3;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "38",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::UByte4:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(",
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "unsigned",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "char)*4;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "39",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::UInt:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(",
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "unsigned",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "int)*1;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "40",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::UInt2:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(",
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "unsigned",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "int)*2;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "41",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::UInt3:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(",
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "unsigned",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "int)*3;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "42",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::UInt4:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "sizeof",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "(",
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "unsigned",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "int)*4;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "43",
+                        "highlight": {
+                            "#text": "}",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "44",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "45",
+                        "highlight": [
+                            {
+                                "#text": "KN_ASSERT(",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "false",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ",",
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "\"UnknownShaderDataType\"",
+                                "@class": "stringliteral",
+                                "sp": null
+                            },
+                            {
+                                "#text": ");",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "46",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "0;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "47",
+                        "highlight": {
+                            "#text": "}",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "48",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "49",
+                        "@refid": "structKinai_1_1BufferElement",
+                        "@refkind": "compound",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "struct",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "BufferElement",
+                                    "@kindref": "compound",
+                                    "@refid": "structKinai_1_1BufferElement"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "50",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "51",
+                        "highlight": {
+                            "#text": "std::stringname;",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "52",
+                        "highlight": {
+                            "#text": "ShaderDataTypetype;",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "53",
+                        "highlight": {
+                            "#text": "uint32_tsize;",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "54",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "size_t",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "offset;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "55",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "normalized;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "56",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "57",
+                        "highlight": [
+                            {
+                                "#text": "()=",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "BufferElement",
+                                    "@kindref": "compound",
+                                    "@refid": "structKinai_1_1BufferElement"
+                                },
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "default",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": ";",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "58",
+                        "highlight": [
+                            {
+                                "#text": "(ShaderDataTypetype,",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "BufferElement",
+                                    "@kindref": "compound",
+                                    "@refid": "structKinai_1_1BufferElement"
+                                },
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "std::string&name,",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "normalized=",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "false",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ")",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "59",
+                        "highlight": {
+                            "#text": ":name(name),type(type),size(ShaderDataTypeSize(type)),offset(0),normalized(normalized)",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "60",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "61",
+                        "highlight": {
+                            "#text": "}",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "62",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "63",
+                        "highlight": [
+                            {
+                                "#text": "uint32_tGetComponentCount()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "64",
+                        "highlight": [
+                            {
+                                "@class": "keyword",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "{",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "65",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "switch",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "(type)",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "66",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "67",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::None:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "0;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "68",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Float:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "1;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "69",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Float2:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "2;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "70",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Float3:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "3;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "71",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Float4:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "4;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "72",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Mat3:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "3;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "//3*float3",
+                                "@class": "comment",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "73",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Mat4:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "4;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "//4*float4",
+                                "@class": "comment",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "74",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Int:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "1;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "75",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Int2:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "2;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "76",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Int3:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "3;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "77",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Int4:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "4;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "78",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::Bool:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "1;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "79",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::UByte:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "1;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "80",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::UByte2:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "2;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "81",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::UByte3:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "3;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "82",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::UByte4:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "4;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "83",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::UInt:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "1;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "84",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::UInt2:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "2;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "85",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::UInt3:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "3;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "86",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "case",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ShaderDataType::UInt4:",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "4;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "87",
+                        "highlight": {
+                            "#text": "}",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "88",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "89",
+                        "highlight": [
+                            {
+                                "#text": "KN_ASSERT(",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "false",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "&&",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "\"UnknownShaderDataType\"",
+                                "@class": "stringliteral",
+                                "sp": null
+                            },
+                            {
+                                "#text": ");",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "90",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "0;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "91",
+                        "highlight": {
+                            "#text": "}",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "92",
+                        "highlight": {
+                            "#text": "};",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "93",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "94",
+                        "highlight": [
+                            {
+                                "#text": "}",
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "//Kinai",
+                                "@class": "comment",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,1120 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "KeyEvent_8hpp",
+            "@kind": "file",
+            "@language": "C++",
+            "briefdescription": null,
+            "compoundname": "KeyEvent.hpp",
+            "detaileddescription": null,
+            "innerclass": [
+                {
+                    "#text": "Kinai::KeyEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1KeyEvent"
+                },
+                {
+                    "#text": "Kinai::KeyPressedEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1KeyPressedEvent"
+                },
+                {
+                    "#text": "Kinai::KeyReleasedEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1KeyReleasedEvent"
+                }
+            ],
+            "innernamespace": {
+                "#text": "Kinai",
+                "@refid": "namespaceKinai"
+            },
+            "location": {
+                "@file": "include/Kinai/Events/KeyEvent.hpp"
+            },
+            "programlisting": {
+                "codeline": [
+                    {
+                        "@lineno": "1",
+                        "highlight": [
+                            {
+                                "#text": "#pragmaonce",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "2",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "3",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include\"Kinai/Core/Core.hpp\"",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "4",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include\"Kinai/Core/KeyCode.hpp\"",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "5",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "#include\"Kinai/Events/Event.hpp\"",
+                                "@class": "preprocessor",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "6",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "7",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "namespace",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "#text": "Kinai",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "8",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "9",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "10",
+                        "@refid": "classKinai_1_1KeyEvent",
+                        "@refkind": "compound",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "class",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "#text": ":",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "KeyEvent",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1KeyEvent"
+                                },
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "public",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "Event",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Event"
+                                },
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "11",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "12",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "public",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ":",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "13",
+                        "highlight": [
+                            {
+                                "#text": "KeyCodeGetKeyCode()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "{",
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "_key_code;}",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "14",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "15",
+                        "highlight": {
+                            "#text": "EVENT_CLASS_CATEGORY(EventCategoryKeyboard|EventCategoryInput)",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "16",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "protected",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ":",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "17",
+                        "highlight": [
+                            {
+                                "#text": "(",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "KeyEvent",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1KeyEvent"
+                                },
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "KeyCodekeycode)",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "18",
+                        "highlight": {
+                            "#text": ":_key_code(keycode){}",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "19",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "20",
+                        "highlight": {
+                            "#text": "KeyCode_key_code;",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "21",
+                        "highlight": {
+                            "#text": "};",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "22",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "23",
+                        "@refid": "classKinai_1_1KeyPressedEvent",
+                        "@refkind": "compound",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "class",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "#text": ":",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "KeyPressedEvent",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1KeyPressedEvent"
+                                },
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "public",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "KeyEvent",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1KeyEvent"
+                                },
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "24",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "25",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "public",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ":",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "26",
+                        "highlight": [
+                            {
+                                "#text": "(",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "KeyPressedEvent",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1KeyPressedEvent"
+                                },
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "KeyCodekeycode,",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "repeat=",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "false",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ")",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "27",
+                        "highlight": {
+                            "#text": ":(keycode),_is_repeat(repeat){}",
+                            "@class": "normal",
+                            "ref": {
+                                "#text": "KeyEvent",
+                                "@kindref": "compound",
+                                "@refid": "classKinai_1_1KeyEvent"
+                            },
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "28",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "29",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "IsRepeat()",
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "{",
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "_is_repeat;}",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "30",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "31",
+                        "highlight": [
+                            {
+                                "#text": "std::stringToString()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "constoverride",
+                                "@class": "keyword",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "32",
+                        "highlight": [
+                            {
+                                "@class": "keyword",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "{",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "33",
+                        "highlight": {
+                            "#text": "std::stringstreamss;",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "34",
+                        "highlight": [
+                            {
+                                "#text": "ss<<",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "\"KeyPressedEvent:\"",
+                                "@class": "stringliteral",
+                                "sp": null
+                            },
+                            {
+                                "#text": "<<_key_code<<",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "\"(repeat=\"",
+                                "@class": "stringliteral",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "<<_is_repeat<<",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "\")\"",
+                                "@class": "stringliteral"
+                            },
+                            {
+                                "#text": ";",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "35",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ss.str();",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "36",
+                        "highlight": {
+                            "#text": "}",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "37",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "38",
+                        "highlight": {
+                            "#text": "EVENT_CLASS_TYPE(SDL_EVENT_KEY_DOWN)",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "39",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "private",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ":",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "40",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "bool",
+                                "@class": "keywordtype"
+                            },
+                            {
+                                "#text": "_is_repeat;",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "41",
+                        "highlight": {
+                            "#text": "};",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "42",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "43",
+                        "@refid": "classKinai_1_1KeyReleasedEvent",
+                        "@refkind": "compound",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "class",
+                                "@class": "keyword",
+                                "sp": null
+                            },
+                            {
+                                "#text": ":",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "KeyReleasedEvent",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1KeyReleasedEvent"
+                                },
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "public",
+                                "@class": "keyword"
+                            },
+                            {
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "KeyEvent",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1KeyEvent"
+                                },
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "44",
+                        "highlight": {
+                            "#text": "{",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "45",
+                        "highlight": [
+                            {
+                                "@class": "normal"
+                            },
+                            {
+                                "#text": "public",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": ":",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "46",
+                        "highlight": [
+                            {
+                                "#text": "(",
+                                "@class": "normal",
+                                "ref": {
+                                    "#text": "KeyReleasedEvent",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1KeyReleasedEvent"
+                                },
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "const",
+                                "@class": "keyword"
+                            },
+                            {
+                                "#text": "KeyCodekeycode)",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "47",
+                        "highlight": {
+                            "#text": ":(keycode){}",
+                            "@class": "normal",
+                            "ref": {
+                                "#text": "KeyEvent",
+                                "@kindref": "compound",
+                                "@refid": "classKinai_1_1KeyEvent"
+                            },
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "48",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "49",
+                        "highlight": [
+                            {
+                                "#text": "std::stringToString()",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "constoverride",
+                                "@class": "keyword",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "50",
+                        "highlight": [
+                            {
+                                "@class": "keyword",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "{",
+                                "@class": "normal"
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "51",
+                        "highlight": {
+                            "#text": "std::stringstreamss;",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "52",
+                        "highlight": [
+                            {
+                                "#text": "ss<<",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "\"KeyReleasedEvent:\"",
+                                "@class": "stringliteral",
+                                "sp": null
+                            },
+                            {
+                                "#text": "<<_key_code;",
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "53",
+                        "highlight": [
+                            {
+                                "@class": "normal",
+                                "sp": [
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            },
+                            {
+                                "#text": "return",
+                                "@class": "keywordflow"
+                            },
+                            {
+                                "#text": "ss.str();",
+                                "@class": "normal",
+                                "sp": null
+                            }
+                        ]
+                    },
+                    {
+                        "@lineno": "54",
+                        "highlight": {
+                            "#text": "}",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "55",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "56",
+                        "highlight": {
+                            "#text": "EVENT_CLASS_TYPE(SDL_EVENT_KEY_UP)",
+                            "@class": "normal",
+                            "sp": [
+                                null,
+                                null,
+                                null,
+                                null
+                            ]
+                        }
+                    },
+                    {
+                        "@lineno": "57",
+                        "highlight": {
+                            "#text": "};",
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "58",
+                        "highlight": {
+                            "@class": "normal"
+                        }
+                    },
+                    {
+                        "@lineno": "59",
+                        "highlight": [
+                            {
+                                "#text": "}",
+                                "@class": "normal",
+                                "sp": null
+                            },
+                            {
+                                "#text": "//Kinai",
+                                "@class": "comment",
+                                "sp": null
+                            },
+                            {
+                                "@class": "normal"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

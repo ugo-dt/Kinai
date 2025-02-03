@@ -1,0 +1,184 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "structKinai_1_1CircleVertex",
+            "@kind": "struct",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::CircleVertex",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1CircleVertex_1af114148a5725c3a6452b15bf1f351efb",
+                        "@virt": "non-virtual",
+                        "name": "color",
+                        "scope": "Kinai::CircleVertex"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1CircleVertex_1a5f20f496c23028c6872a77f80d26cb01",
+                        "@virt": "non-virtual",
+                        "name": "fade",
+                        "scope": "Kinai::CircleVertex"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1CircleVertex_1ad64e6002e8b2ff2c75b3a547893c20f8",
+                        "@virt": "non-virtual",
+                        "name": "local_position",
+                        "scope": "Kinai::CircleVertex"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1CircleVertex_1a2a7d156740cd467cdd8b8f7b1bc74453",
+                        "@virt": "non-virtual",
+                        "name": "thickness",
+                        "scope": "Kinai::CircleVertex"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1CircleVertex_1a26e4c2c218d007bb56b1022f2e442b61",
+                        "@virt": "non-virtual",
+                        "name": "world_position",
+                        "scope": "Kinai::CircleVertex"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "22",
+                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                "@bodystart": "16",
+                "@column": "1",
+                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                "@line": "15"
+            },
+            "sectiondef": {
+                "@kind": "public-attrib",
+                "memberdef": [
+                    {
+                        "@id": "structKinai_1_1CircleVertex_1a26e4c2c218d007bb56b1022f2e442b61",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "glm::vec3 Kinai::CircleVertex::world_position",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@bodystart": "17",
+                            "@column": "10",
+                            "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@line": "17"
+                        },
+                        "name": "world_position",
+                        "qualifiedname": "Kinai::CircleVertex::world_position",
+                        "type": "glm::vec3"
+                    },
+                    {
+                        "@id": "structKinai_1_1CircleVertex_1ad64e6002e8b2ff2c75b3a547893c20f8",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "glm::vec3 Kinai::CircleVertex::local_position",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@bodystart": "18",
+                            "@column": "10",
+                            "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@line": "18"
+                        },
+                        "name": "local_position",
+                        "qualifiedname": "Kinai::CircleVertex::local_position",
+                        "type": "glm::vec3"
+                    },
+                    {
+                        "@id": "structKinai_1_1CircleVertex_1af114148a5725c3a6452b15bf1f351efb",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "glm::vec4 Kinai::CircleVertex::color",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@bodystart": "19",
+                            "@column": "10",
+                            "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@line": "19"
+                        },
+                        "name": "color",
+                        "qualifiedname": "Kinai::CircleVertex::color",
+                        "type": "glm::vec4"
+                    },
+                    {
+                        "@id": "structKinai_1_1CircleVertex_1a2a7d156740cd467cdd8b8f7b1bc74453",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "float Kinai::CircleVertex::thickness",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@bodystart": "20",
+                            "@column": "6",
+                            "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@line": "20"
+                        },
+                        "name": "thickness",
+                        "qualifiedname": "Kinai::CircleVertex::thickness",
+                        "type": "float"
+                    },
+                    {
+                        "@id": "structKinai_1_1CircleVertex_1a5f20f496c23028c6872a77f80d26cb01",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "float Kinai::CircleVertex::fade",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@bodystart": "21",
+                            "@column": "6",
+                            "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@line": "21"
+                        },
+                        "name": "fade",
+                        "qualifiedname": "Kinai::CircleVertex::fade",
+                        "type": "float"
+                    }
+                ]
+            }
+        }
+    }
+}

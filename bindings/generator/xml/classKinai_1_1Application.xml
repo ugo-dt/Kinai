@@ -1,0 +1,387 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classKinai_1_1Application" kind="class" language="C++" prot="public">
+    <compoundname>Kinai::Application</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classKinai_1_1Application_1af238825f4043a2e9bbc6c3397024e3c6" prot="private" static="no" mutable="no">
+        <type>Scope&lt; <ref refid="classKinai_1_1Window" kindref="compound">Window</ref> &gt;</type>
+        <definition>Scope&lt;Window&gt; Kinai::Application::_window</definition>
+        <argsstring></argsstring>
+        <name>_window</name>
+        <qualifiedname>Kinai::Application::_window</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="67" column="6" bodyfile="include/Kinai/Core/Application.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1Application_1a185c349de2657769a7350b44edf65905" prot="private" static="no" mutable="no">
+        <type><ref refid="structKinai_1_1ApplicationConfig" kindref="compound">ApplicationConfig</ref></type>
+        <definition>ApplicationConfig Kinai::Application::_config</definition>
+        <argsstring></argsstring>
+        <name>_config</name>
+        <qualifiedname>Kinai::Application::_config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="68" column="18" bodyfile="include/Kinai/Core/Application.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1Application_1a564941c4849408d2e005930125227adc" prot="private" static="no" mutable="no">
+        <type><ref refid="classKinai_1_1ImGuiLayer" kindref="compound">ImGuiLayer</ref> *</type>
+        <definition>ImGuiLayer* Kinai::Application::_imgui_layer</definition>
+        <argsstring></argsstring>
+        <name>_imgui_layer</name>
+        <qualifiedname>Kinai::Application::_imgui_layer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="69" column="11" bodyfile="include/Kinai/Core/Application.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1Application_1aa346946ae353e97373bed20e257c397c" prot="private" static="no" mutable="no">
+        <type><ref refid="structKinai_1_1Time" kindref="compound">Time</ref></type>
+        <definition>Time Kinai::Application::_time</definition>
+        <argsstring></argsstring>
+        <name>_time</name>
+        <qualifiedname>Kinai::Application::_time</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="70" column="5" bodyfile="include/Kinai/Core/Application.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1Application_1abc2acf4be01c9233847cdd3736503d94" prot="private" static="no" mutable="no">
+        <type><ref refid="classKinai_1_1LayerStack" kindref="compound">LayerStack</ref></type>
+        <definition>LayerStack Kinai::Application::_layerstack</definition>
+        <argsstring></argsstring>
+        <name>_layerstack</name>
+        <qualifiedname>Kinai::Application::_layerstack</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="71" column="11" bodyfile="include/Kinai/Core/Application.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1Application_1a2fad4e1253265d7fe6e92f6552c0ca8a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Kinai::Application::_minimized</definition>
+        <argsstring></argsstring>
+        <name>_minimized</name>
+        <qualifiedname>Kinai::Application::_minimized</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="72" column="5" bodyfile="include/Kinai/Core/Application.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classKinai_1_1Application_1ae47cd65652362aeeedcbdaf78610646f" prot="private" static="yes" mutable="no">
+        <type><ref refid="classKinai_1_1Application" kindref="compound">Application</ref> *</type>
+        <definition>Application* Kinai::Application::_instance</definition>
+        <argsstring></argsstring>
+        <name>_instance</name>
+        <qualifiedname>Kinai::Application::_instance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="75" column="19" bodyfile="include/Kinai/Core/Application.hpp" bodystart="75" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKinai_1_1Application_1a6e6ed0145a82da0ee502e2003d660d4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::Application::Application</definition>
+        <argsstring>(const ApplicationConfig &amp;config)</argsstring>
+        <name>Application</name>
+        <qualifiedname>Kinai::Application::Application</qualifiedname>
+        <param>
+          <type>const <ref refid="structKinai_1_1ApplicationConfig" kindref="compound">ApplicationConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="43" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Application_1a99278555e31e5baf78af4747514015dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Kinai::Application::~Application</definition>
+        <argsstring>()</argsstring>
+        <name>~Application</name>
+        <qualifiedname>Kinai::Application::~Application</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="44" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Application_1aa79f96d744fcff879a36c72cb76a6120" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classKinai_1_1Layer" kindref="compound">Layer</ref> *</type>
+        <definition>Layer * Kinai::Application::PushLayer</definition>
+        <argsstring>(Layer *layer)</argsstring>
+        <name>PushLayer</name>
+        <qualifiedname>Kinai::Application::PushLayer</qualifiedname>
+        <param>
+          <type><ref refid="classKinai_1_1Layer" kindref="compound">Layer</ref> *</type>
+          <declname>layer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="46" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Application_1acf34be4c469030b4c5ba20915de483d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classKinai_1_1Layer" kindref="compound">Layer</ref> *</type>
+        <definition>Layer * Kinai::Application::PushOverlay</definition>
+        <argsstring>(Layer *layer)</argsstring>
+        <name>PushOverlay</name>
+        <qualifiedname>Kinai::Application::PushOverlay</qualifiedname>
+        <param>
+          <type><ref refid="classKinai_1_1Layer" kindref="compound">Layer</ref> *</type>
+          <declname>layer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="47" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Application_1adea958436e3b05c7e3ebafcd49f61121" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::Application::Close</definition>
+        <argsstring>()</argsstring>
+        <name>Close</name>
+        <qualifiedname>Kinai::Application::Close</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="49" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Application_1a1e486f7c712532448836d1f73cb27abf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classKinai_1_1Window" kindref="compound">Window</ref> &amp;</type>
+        <definition>Window &amp; Kinai::Application::GetWindow</definition>
+        <argsstring>()</argsstring>
+        <name>GetWindow</name>
+        <qualifiedname>Kinai::Application::GetWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="51" column="7" bodyfile="include/Kinai/Core/Application.hpp" bodystart="51" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Application_1ad12ad291745ed59c125a0aa1455ffd47" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t Kinai::Application::GetFPS</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFPS</name>
+        <qualifiedname>Kinai::Application::GetFPS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="53" column="9" bodyfile="include/Kinai/Core/Application.hpp" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Application_1a3649bf1a96d5fcbdf5f5987e064d4345" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Kinai::Application::GetDeltaTime</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDeltaTime</name>
+        <qualifiedname>Kinai::Application::GetDeltaTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="54" column="6" bodyfile="include/Kinai/Core/Application.hpp" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Application_1a1c0c136ce1611c72bb724f2359bcbf7f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classKinai_1_1ImGuiLayer" kindref="compound">ImGuiLayer</ref> *</type>
+        <definition>ImGuiLayer * Kinai::Application::GetImGuiLayer</definition>
+        <argsstring>() const</argsstring>
+        <name>GetImGuiLayer</name>
+        <qualifiedname>Kinai::Application::GetImGuiLayer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="55" column="11" bodyfile="include/Kinai/Core/Application.hpp" bodystart="55" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Application_1a07a7860360f0c13cc32454db4926b555" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::Application::Run</definition>
+        <argsstring>()</argsstring>
+        <name>Run</name>
+        <qualifiedname>Kinai::Application::Run</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="57" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classKinai_1_1Application_1a9e89270ac50b756c19e624a6a07d392f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classKinai_1_1Application" kindref="compound">Application</ref> &amp;</type>
+        <definition>static Application &amp; Kinai::Application::Get</definition>
+        <argsstring>()</argsstring>
+        <name>Get</name>
+        <qualifiedname>Kinai::Application::Get</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="59" column="20" bodyfile="include/Kinai/Core/Application.hpp" bodystart="59" bodyend="59"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classKinai_1_1Application_1a0658e2052a1cb95d14f16b3c990593b0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::Application::OnEvent</definition>
+        <argsstring>(Event &amp;event)</argsstring>
+        <name>OnEvent</name>
+        <qualifiedname>Kinai::Application::OnEvent</qualifiedname>
+        <param>
+          <type><ref refid="classKinai_1_1Event" kindref="compound">Event</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="62" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Application_1a6852385ea6f562ac4dc3d6a5e5a6b63e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Kinai::Application::OnWindowClose</definition>
+        <argsstring>(WindowCloseEvent &amp;event)</argsstring>
+        <name>OnWindowClose</name>
+        <qualifiedname>Kinai::Application::OnWindowClose</qualifiedname>
+        <param>
+          <type><ref refid="classKinai_1_1WindowCloseEvent" kindref="compound">WindowCloseEvent</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="63" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Application_1a188fdf877007cd1de894f3a968d48046" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Kinai::Application::OnWindowResize</definition>
+        <argsstring>(WindowResizeEvent &amp;event)</argsstring>
+        <name>OnWindowResize</name>
+        <qualifiedname>Kinai::Application::OnWindowResize</qualifiedname>
+        <param>
+          <type><ref refid="classKinai_1_1WindowResizeEvent" kindref="compound">WindowResizeEvent</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="64" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classKinai_1_1Application_1a2e4ab429e2968cf4bc709e3c44f9dd9a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Main</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>Main</name>
+        <qualifiedname>Kinai::Application::Main</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="78" column="11" bodyfile="include/Kinai/Core/EntryPoint.hpp" bodystart="17" bodyend="28"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Core/Application.hpp" line="40" column="1" bodyfile="include/Kinai/Core/Application.hpp" bodystart="41" bodyend="79"/>
+    <listofallmembers>
+      <member refid="classKinai_1_1Application_1a185c349de2657769a7350b44edf65905" prot="private" virt="non-virtual"><scope>Kinai::Application</scope><name>_config</name></member>
+      <member refid="classKinai_1_1Application_1a564941c4849408d2e005930125227adc" prot="private" virt="non-virtual"><scope>Kinai::Application</scope><name>_imgui_layer</name></member>
+      <member refid="classKinai_1_1Application_1ae47cd65652362aeeedcbdaf78610646f" prot="private" virt="non-virtual"><scope>Kinai::Application</scope><name>_instance</name></member>
+      <member refid="classKinai_1_1Application_1abc2acf4be01c9233847cdd3736503d94" prot="private" virt="non-virtual"><scope>Kinai::Application</scope><name>_layerstack</name></member>
+      <member refid="classKinai_1_1Application_1a2fad4e1253265d7fe6e92f6552c0ca8a" prot="private" virt="non-virtual"><scope>Kinai::Application</scope><name>_minimized</name></member>
+      <member refid="classKinai_1_1Application_1aa346946ae353e97373bed20e257c397c" prot="private" virt="non-virtual"><scope>Kinai::Application</scope><name>_time</name></member>
+      <member refid="classKinai_1_1Application_1af238825f4043a2e9bbc6c3397024e3c6" prot="private" virt="non-virtual"><scope>Kinai::Application</scope><name>_window</name></member>
+      <member refid="classKinai_1_1Application_1a6e6ed0145a82da0ee502e2003d660d4e" prot="public" virt="non-virtual"><scope>Kinai::Application</scope><name>Application</name></member>
+      <member refid="classKinai_1_1Application_1adea958436e3b05c7e3ebafcd49f61121" prot="public" virt="non-virtual"><scope>Kinai::Application</scope><name>Close</name></member>
+      <member refid="classKinai_1_1Application_1a9e89270ac50b756c19e624a6a07d392f" prot="public" virt="non-virtual"><scope>Kinai::Application</scope><name>Get</name></member>
+      <member refid="classKinai_1_1Application_1a3649bf1a96d5fcbdf5f5987e064d4345" prot="public" virt="non-virtual"><scope>Kinai::Application</scope><name>GetDeltaTime</name></member>
+      <member refid="classKinai_1_1Application_1ad12ad291745ed59c125a0aa1455ffd47" prot="public" virt="non-virtual"><scope>Kinai::Application</scope><name>GetFPS</name></member>
+      <member refid="classKinai_1_1Application_1a1c0c136ce1611c72bb724f2359bcbf7f" prot="public" virt="non-virtual"><scope>Kinai::Application</scope><name>GetImGuiLayer</name></member>
+      <member refid="classKinai_1_1Application_1a1e486f7c712532448836d1f73cb27abf" prot="public" virt="non-virtual"><scope>Kinai::Application</scope><name>GetWindow</name></member>
+      <member refid="classKinai_1_1Application_1a2e4ab429e2968cf4bc709e3c44f9dd9a" prot="private" virt="non-virtual"><scope>Kinai::Application</scope><name>Main</name></member>
+      <member refid="classKinai_1_1Application_1a0658e2052a1cb95d14f16b3c990593b0" prot="private" virt="non-virtual"><scope>Kinai::Application</scope><name>OnEvent</name></member>
+      <member refid="classKinai_1_1Application_1a6852385ea6f562ac4dc3d6a5e5a6b63e" prot="private" virt="non-virtual"><scope>Kinai::Application</scope><name>OnWindowClose</name></member>
+      <member refid="classKinai_1_1Application_1a188fdf877007cd1de894f3a968d48046" prot="private" virt="non-virtual"><scope>Kinai::Application</scope><name>OnWindowResize</name></member>
+      <member refid="classKinai_1_1Application_1aa79f96d744fcff879a36c72cb76a6120" prot="public" virt="non-virtual"><scope>Kinai::Application</scope><name>PushLayer</name></member>
+      <member refid="classKinai_1_1Application_1acf34be4c469030b4c5ba20915de483d7" prot="public" virt="non-virtual"><scope>Kinai::Application</scope><name>PushOverlay</name></member>
+      <member refid="classKinai_1_1Application_1a07a7860360f0c13cc32454db4926b555" prot="public" virt="non-virtual"><scope>Kinai::Application</scope><name>Run</name></member>
+      <member refid="classKinai_1_1Application_1a99278555e31e5baf78af4747514015dc" prot="public" virt="virtual"><scope>Kinai::Application</scope><name>~Application</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

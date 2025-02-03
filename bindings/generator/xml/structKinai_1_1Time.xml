@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structKinai_1_1Time" kind="struct" language="C++" prot="public">
+    <compoundname>Kinai::Time</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structKinai_1_1Time_1af27f4ac99178ca402dc3ede75564e8e5" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t Kinai::Time::fps</definition>
+        <argsstring></argsstring>
+        <name>fps</name>
+        <qualifiedname>Kinai::Time::fps</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="32" column="9" bodyfile="include/Kinai/Core/Application.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1Time_1a4adc3fbab9732c413608a61e5ca1f66b" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t Kinai::Time::frames</definition>
+        <argsstring></argsstring>
+        <name>frames</name>
+        <qualifiedname>Kinai::Time::frames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="33" column="9" bodyfile="include/Kinai/Core/Application.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1Time_1a723554efa069e70481889f0f7f3b40c9" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t Kinai::Time::last</definition>
+        <argsstring></argsstring>
+        <name>last</name>
+        <qualifiedname>Kinai::Time::last</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="34" column="9" bodyfile="include/Kinai/Core/Application.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1Time_1a65262a607946f5ce68f32a418d63da68" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t Kinai::Time::last_second</definition>
+        <argsstring></argsstring>
+        <name>last_second</name>
+        <qualifiedname>Kinai::Time::last_second</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="35" column="9" bodyfile="include/Kinai/Core/Application.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1Time_1a52d2e605fb61b77811ff85b60f41d00d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Kinai::Time::frame_time</definition>
+        <argsstring></argsstring>
+        <name>frame_time</name>
+        <qualifiedname>Kinai::Time::frame_time</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="36" column="6" bodyfile="include/Kinai/Core/Application.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1Time_1a985213de245267b2761d1feca38e07d7" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Kinai::Time::delta</definition>
+        <argsstring></argsstring>
+        <name>delta</name>
+        <qualifiedname>Kinai::Time::delta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="37" column="6" bodyfile="include/Kinai/Core/Application.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Core/Application.hpp" line="30" column="1" bodyfile="include/Kinai/Core/Application.hpp" bodystart="31" bodyend="38"/>
+    <listofallmembers>
+      <member refid="structKinai_1_1Time_1a985213de245267b2761d1feca38e07d7" prot="public" virt="non-virtual"><scope>Kinai::Time</scope><name>delta</name></member>
+      <member refid="structKinai_1_1Time_1af27f4ac99178ca402dc3ede75564e8e5" prot="public" virt="non-virtual"><scope>Kinai::Time</scope><name>fps</name></member>
+      <member refid="structKinai_1_1Time_1a52d2e605fb61b77811ff85b60f41d00d" prot="public" virt="non-virtual"><scope>Kinai::Time</scope><name>frame_time</name></member>
+      <member refid="structKinai_1_1Time_1a4adc3fbab9732c413608a61e5ca1f66b" prot="public" virt="non-virtual"><scope>Kinai::Time</scope><name>frames</name></member>
+      <member refid="structKinai_1_1Time_1a723554efa069e70481889f0f7f3b40c9" prot="public" virt="non-virtual"><scope>Kinai::Time</scope><name>last</name></member>
+      <member refid="structKinai_1_1Time_1a65262a607946f5ce68f32a418d63da68" prot="public" virt="non-virtual"><scope>Kinai::Time</scope><name>last_second</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

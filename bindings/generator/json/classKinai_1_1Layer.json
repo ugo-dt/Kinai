@@ -1,0 +1,393 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "classKinai_1_1Layer",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::Layer",
+            "derivedcompoundref": {
+                "#text": "Kinai::ImGuiLayer",
+                "@prot": "public",
+                "@refid": "classKinai_1_1ImGuiLayer",
+                "@virt": "non-virtual"
+            },
+            "detaileddescription": null,
+            "inheritancegraph": {
+                "node": [
+                    {
+                        "@id": "2",
+                        "childnode": {
+                            "@refid": "1",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::ImGuiLayer",
+                        "link": {
+                            "@refid": "classKinai_1_1ImGuiLayer"
+                        }
+                    },
+                    {
+                        "@id": "1",
+                        "label": "Kinai::Layer",
+                        "link": {
+                            "@refid": "classKinai_1_1Layer"
+                        }
+                    }
+                ]
+            },
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Layer_1a4c52aff3c0dd2062864de794da550638",
+                        "@virt": "non-virtual",
+                        "name": "_debug_name",
+                        "scope": "Kinai::Layer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Layer_1af822136e2e0533a9093bf912e459fa90",
+                        "@virt": "non-virtual",
+                        "name": "GetName",
+                        "scope": "Kinai::Layer"
+                    },
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Layer_1a398b18d2e10824bf0a9e292587d33c2c",
+                        "@virt": "non-virtual",
+                        "name": "Layer",
+                        "scope": "Kinai::Layer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Layer_1a520a89c2b970da74dac812b96c7efb21",
+                        "@virt": "virtual",
+                        "name": "OnAttach",
+                        "scope": "Kinai::Layer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Layer_1aca356ad003f9f9c3251a62481d8d3152",
+                        "@virt": "virtual",
+                        "name": "OnDetach",
+                        "scope": "Kinai::Layer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Layer_1ab543b787da010b413883ef62c859a9e0",
+                        "@virt": "virtual",
+                        "name": "OnEvent",
+                        "scope": "Kinai::Layer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Layer_1abf530c17ec13961debc4ac73db537f3f",
+                        "@virt": "virtual",
+                        "name": "OnImGuiRender",
+                        "scope": "Kinai::Layer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Layer_1a10c02fa847f8219c55cfb8e28d1a733a",
+                        "@virt": "virtual",
+                        "name": "OnUpdate",
+                        "scope": "Kinai::Layer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Layer_1a229a1526155eae5204bb05f3a9620218",
+                        "@virt": "virtual",
+                        "name": "~Layer",
+                        "scope": "Kinai::Layer"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "27",
+                "@bodyfile": "include/Kinai/Core/Layer.hpp",
+                "@bodystart": "10",
+                "@column": "1",
+                "@file": "include/Kinai/Core/Layer.hpp",
+                "@line": "9"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "private-attrib",
+                    "memberdef": {
+                        "@id": "classKinai_1_1Layer_1a4c52aff3c0dd2062864de794da550638",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "private",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "std::string Kinai::Layer::_debug_name",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Core/Layer.hpp",
+                            "@bodystart": "26",
+                            "@column": "12",
+                            "@file": "include/Kinai/Core/Layer.hpp",
+                            "@line": "26"
+                        },
+                        "name": "_debug_name",
+                        "qualifiedname": "Kinai::Layer::_debug_name",
+                        "type": "std::string"
+                    }
+                },
+                {
+                    "@kind": "protected-func",
+                    "memberdef": {
+                        "@const": "no",
+                        "@explicit": "no",
+                        "@id": "classKinai_1_1Layer_1a398b18d2e10824bf0a9e292587d33c2c",
+                        "@inline": "yes",
+                        "@kind": "function",
+                        "@prot": "protected",
+                        "@static": "no",
+                        "@virt": "non-virtual",
+                        "argsstring": "(const std::string name=\"DefaultLayer\")",
+                        "briefdescription": null,
+                        "definition": "Kinai::Layer::Layer",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "12",
+                            "@bodyfile": "include/Kinai/Core/Layer.hpp",
+                            "@bodystart": "12",
+                            "@column": "1",
+                            "@file": "include/Kinai/Core/Layer.hpp",
+                            "@line": "12"
+                        },
+                        "name": "Layer",
+                        "param": {
+                            "declname": "name",
+                            "defval": "\"DefaultLayer\"",
+                            "type": "const std::string"
+                        },
+                        "qualifiedname": "Kinai::Layer::Layer",
+                        "type": null
+                    }
+                },
+                {
+                    "@kind": "public-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Layer_1a229a1526155eae5204bb05f3a9620218",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "virtual",
+                            "argsstring": "()=default",
+                            "briefdescription": null,
+                            "definition": "virtual Kinai::Layer::~Layer",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "9",
+                                "@file": "include/Kinai/Core/Layer.hpp",
+                                "@line": "15"
+                            },
+                            "name": "~Layer",
+                            "qualifiedname": "Kinai::Layer::~Layer",
+                            "type": null
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Layer_1a520a89c2b970da74dac812b96c7efb21",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::Layer::OnAttach",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "17",
+                                "@bodyfile": "include/Kinai/Core/Layer.hpp",
+                                "@bodystart": "17",
+                                "@column": "13",
+                                "@file": "include/Kinai/Core/Layer.hpp",
+                                "@line": "17"
+                            },
+                            "name": "OnAttach",
+                            "qualifiedname": "Kinai::Layer::OnAttach",
+                            "reimplementedby": {
+                                "#text": "OnAttach",
+                                "@refid": "classKinai_1_1ImGuiLayer_1a8da8dae75e0edd72bf722b849252bac2"
+                            },
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Layer_1aca356ad003f9f9c3251a62481d8d3152",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::Layer::OnDetach",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "18",
+                                "@bodyfile": "include/Kinai/Core/Layer.hpp",
+                                "@bodystart": "18",
+                                "@column": "13",
+                                "@file": "include/Kinai/Core/Layer.hpp",
+                                "@line": "18"
+                            },
+                            "name": "OnDetach",
+                            "qualifiedname": "Kinai::Layer::OnDetach",
+                            "reimplementedby": {
+                                "#text": "OnDetach",
+                                "@refid": "classKinai_1_1ImGuiLayer_1aaf5da0f84e7b937bf0440bbb306be674"
+                            },
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Layer_1a10c02fa847f8219c55cfb8e28d1a733a",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "virtual",
+                            "argsstring": "(float delta)",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::Layer::OnUpdate",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "19",
+                                "@bodyfile": "include/Kinai/Core/Layer.hpp",
+                                "@bodystart": "19",
+                                "@column": "13",
+                                "@file": "include/Kinai/Core/Layer.hpp",
+                                "@line": "19"
+                            },
+                            "name": "OnUpdate",
+                            "param": {
+                                "declname": "delta",
+                                "type": "float"
+                            },
+                            "qualifiedname": "Kinai::Layer::OnUpdate",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Layer_1abf530c17ec13961debc4ac73db537f3f",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::Layer::OnImGuiRender",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "20",
+                                "@bodyfile": "include/Kinai/Core/Layer.hpp",
+                                "@bodystart": "20",
+                                "@column": "13",
+                                "@file": "include/Kinai/Core/Layer.hpp",
+                                "@line": "20"
+                            },
+                            "name": "OnImGuiRender",
+                            "qualifiedname": "Kinai::Layer::OnImGuiRender",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Layer_1ab543b787da010b413883ef62c859a9e0",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "virtual",
+                            "argsstring": "(Event &event)",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::Layer::OnEvent",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "21",
+                                "@bodyfile": "include/Kinai/Core/Layer.hpp",
+                                "@bodystart": "21",
+                                "@column": "13",
+                                "@file": "include/Kinai/Core/Layer.hpp",
+                                "@line": "21"
+                            },
+                            "name": "OnEvent",
+                            "param": {
+                                "declname": "event",
+                                "type": {
+                                    "#text": "&",
+                                    "ref": {
+                                        "#text": "Event",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1Event"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::Layer::OnEvent",
+                            "reimplementedby": {
+                                "#text": "OnEvent",
+                                "@refid": "classKinai_1_1ImGuiLayer_1aa4f232191d86506b8479a0b6f38dc6f9"
+                            },
+                            "type": "void"
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Layer_1af822136e2e0533a9093bf912e459fa90",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "() const",
+                            "briefdescription": null,
+                            "definition": "const std::string & Kinai::Layer::GetName",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "23",
+                                "@bodyfile": "include/Kinai/Core/Layer.hpp",
+                                "@bodystart": "23",
+                                "@column": "18",
+                                "@file": "include/Kinai/Core/Layer.hpp",
+                                "@line": "23"
+                            },
+                            "name": "GetName",
+                            "qualifiedname": "Kinai::Layer::GetName",
+                            "type": "const std::string &"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

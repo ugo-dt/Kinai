@@ -1,0 +1,72 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "dir_fe86284f01105c695ed3f35446b17d8c",
+            "@kind": "dir",
+            "briefdescription": null,
+            "compoundname": "Core",
+            "detaileddescription": null,
+            "innerfile": [
+                {
+                    "#text": "Application.hpp",
+                    "@refid": "Application_8hpp"
+                },
+                {
+                    "#text": "Assert.hpp",
+                    "@refid": "Assert_8hpp"
+                },
+                {
+                    "#text": "Core.hpp",
+                    "@refid": "Core_8hpp"
+                },
+                {
+                    "#text": "Core/EntryPoint.hpp",
+                    "@refid": "Core_2EntryPoint_8hpp"
+                },
+                {
+                    "#text": "Input.hpp",
+                    "@refid": "Input_8hpp"
+                },
+                {
+                    "#text": "KeyCode.hpp",
+                    "@refid": "KeyCode_8hpp"
+                },
+                {
+                    "#text": "Layer.hpp",
+                    "@refid": "Layer_8hpp"
+                },
+                {
+                    "#text": "LayerStack.hpp",
+                    "@refid": "LayerStack_8hpp"
+                },
+                {
+                    "#text": "Log.hpp",
+                    "@refid": "Log_8hpp"
+                },
+                {
+                    "#text": "MouseButton.hpp",
+                    "@refid": "MouseButton_8hpp"
+                },
+                {
+                    "#text": "Parser.hpp",
+                    "@refid": "Parser_8hpp"
+                },
+                {
+                    "#text": "Timer.hpp",
+                    "@refid": "Timer_8hpp"
+                },
+                {
+                    "#text": "Window.hpp",
+                    "@refid": "Window_8hpp"
+                }
+            ],
+            "location": {
+                "@file": "include/Kinai/Core/"
+            }
+        }
+    }
+}

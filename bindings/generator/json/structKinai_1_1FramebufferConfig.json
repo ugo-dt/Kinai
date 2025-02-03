@@ -1,0 +1,217 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "structKinai_1_1FramebufferConfig",
+            "@kind": "struct",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "collaborationgraph": {
+                "node": [
+                    {
+                        "@id": "2",
+                        "label": "Kinai::FramebufferAttachmentConfig",
+                        "link": {
+                            "@refid": "structKinai_1_1FramebufferAttachmentConfig"
+                        }
+                    },
+                    {
+                        "@id": "1",
+                        "childnode": {
+                            "@refid": "2",
+                            "@relation": "usage",
+                            "edgelabel": "attachments"
+                        },
+                        "label": "Kinai::FramebufferConfig",
+                        "link": {
+                            "@refid": "structKinai_1_1FramebufferConfig"
+                        }
+                    }
+                ]
+            },
+            "compoundname": "Kinai::FramebufferConfig",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1FramebufferConfig_1a5942d3af3c2f8b7bcc316969cffefa94",
+                        "@virt": "non-virtual",
+                        "name": "attachments",
+                        "scope": "Kinai::FramebufferConfig"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1FramebufferConfig_1af0784a38e4fff480219ae480195309b2",
+                        "@virt": "non-virtual",
+                        "name": "height",
+                        "scope": "Kinai::FramebufferConfig"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1FramebufferConfig_1af74fa7998d68cc449d3994702f20b743",
+                        "@virt": "non-virtual",
+                        "name": "samples",
+                        "scope": "Kinai::FramebufferConfig"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1FramebufferConfig_1a060b36b7f969fb406fb2cb29a9f57721",
+                        "@virt": "non-virtual",
+                        "name": "swapChainTarget",
+                        "scope": "Kinai::FramebufferConfig"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1FramebufferConfig_1ac3af2a70d4e5b7874696eaf9938106f0",
+                        "@virt": "non-virtual",
+                        "name": "width",
+                        "scope": "Kinai::FramebufferConfig"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "48",
+                "@bodyfile": "include/Kinai/Renderer/Framebuffer.hpp",
+                "@bodystart": "43",
+                "@column": "1",
+                "@file": "include/Kinai/Renderer/Framebuffer.hpp",
+                "@line": "42"
+            },
+            "sectiondef": {
+                "@kind": "public-attrib",
+                "memberdef": [
+                    {
+                        "@id": "structKinai_1_1FramebufferConfig_1ac3af2a70d4e5b7874696eaf9938106f0",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "uint32_t Kinai::FramebufferConfig::width",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "initializer": "= 0",
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/Framebuffer.hpp",
+                            "@bodystart": "44",
+                            "@column": "9",
+                            "@file": "include/Kinai/Renderer/Framebuffer.hpp",
+                            "@line": "44"
+                        },
+                        "name": "width",
+                        "qualifiedname": "Kinai::FramebufferConfig::width",
+                        "type": "uint32_t"
+                    },
+                    {
+                        "@id": "structKinai_1_1FramebufferConfig_1af0784a38e4fff480219ae480195309b2",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "uint32_t Kinai::FramebufferConfig::height",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "initializer": "= 0",
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/Framebuffer.hpp",
+                            "@bodystart": "44",
+                            "@column": "16",
+                            "@file": "include/Kinai/Renderer/Framebuffer.hpp",
+                            "@line": "44"
+                        },
+                        "name": "height",
+                        "qualifiedname": "Kinai::FramebufferConfig::height",
+                        "type": "uint32_t"
+                    },
+                    {
+                        "@id": "structKinai_1_1FramebufferConfig_1a5942d3af3c2f8b7bcc316969cffefa94",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "FramebufferAttachmentConfig Kinai::FramebufferConfig::attachments",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/Framebuffer.hpp",
+                            "@bodystart": "45",
+                            "@column": "28",
+                            "@file": "include/Kinai/Renderer/Framebuffer.hpp",
+                            "@line": "45"
+                        },
+                        "name": "attachments",
+                        "qualifiedname": "Kinai::FramebufferConfig::attachments",
+                        "type": {
+                            "ref": {
+                                "#text": "FramebufferAttachmentConfig",
+                                "@kindref": "compound",
+                                "@refid": "structKinai_1_1FramebufferAttachmentConfig"
+                            }
+                        }
+                    },
+                    {
+                        "@id": "structKinai_1_1FramebufferConfig_1af74fa7998d68cc449d3994702f20b743",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "uint32_t Kinai::FramebufferConfig::samples",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "initializer": "= 1",
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/Framebuffer.hpp",
+                            "@bodystart": "46",
+                            "@column": "9",
+                            "@file": "include/Kinai/Renderer/Framebuffer.hpp",
+                            "@line": "46"
+                        },
+                        "name": "samples",
+                        "qualifiedname": "Kinai::FramebufferConfig::samples",
+                        "type": "uint32_t"
+                    },
+                    {
+                        "@id": "structKinai_1_1FramebufferConfig_1a060b36b7f969fb406fb2cb29a9f57721",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "bool Kinai::FramebufferConfig::swapChainTarget",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "initializer": "= false",
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/Framebuffer.hpp",
+                            "@bodystart": "47",
+                            "@column": "5",
+                            "@file": "include/Kinai/Renderer/Framebuffer.hpp",
+                            "@line": "47"
+                        },
+                        "name": "swapChainTarget",
+                        "qualifiedname": "Kinai::FramebufferConfig::swapChainTarget",
+                        "type": "bool"
+                    }
+                ]
+            }
+        }
+    }
+}

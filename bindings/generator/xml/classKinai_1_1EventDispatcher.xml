@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classKinai_1_1EventDispatcher" kind="class" language="C++" prot="public">
+    <compoundname>Kinai::EventDispatcher</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classKinai_1_1EventDispatcher_1a648ce180f5c6f5b2fbde21ec096a7df4" prot="private" static="no" mutable="no">
+        <type><ref refid="classKinai_1_1Event" kindref="compound">Event</ref> &amp;</type>
+        <definition>Event&amp; Kinai::EventDispatcher::_event</definition>
+        <argsstring></argsstring>
+        <name>_event</name>
+        <qualifiedname>Kinai::EventDispatcher::_event</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/Event.hpp" line="74" column="7" bodyfile="include/Kinai/Events/Event.hpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKinai_1_1EventDispatcher_1a30ef4e1005c4c95a46232521fb21cbe4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::EventDispatcher::EventDispatcher</definition>
+        <argsstring>(Event &amp;event)</argsstring>
+        <name>EventDispatcher</name>
+        <qualifiedname>Kinai::EventDispatcher::EventDispatcher</qualifiedname>
+        <param>
+          <type><ref refid="classKinai_1_1Event" kindref="compound">Event</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/Event.hpp" line="59" column="1" bodyfile="include/Kinai/Events/Event.hpp" bodystart="59" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1EventDispatcher_1ad5c9c8d169b09fe7c807a17fbc62ad61" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename F</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool Kinai::EventDispatcher::Dispatch</definition>
+        <argsstring>(const F &amp;func)</argsstring>
+        <name>Dispatch</name>
+        <qualifiedname>Kinai::EventDispatcher::Dispatch</qualifiedname>
+        <param>
+          <type>const F &amp;</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/Event.hpp" line="64" column="6" bodyfile="include/Kinai/Events/Event.hpp" bodystart="64" bodyend="72"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Events/Event.hpp" line="56" column="1" bodyfile="include/Kinai/Events/Event.hpp" bodystart="57" bodyend="75"/>
+    <listofallmembers>
+      <member refid="classKinai_1_1EventDispatcher_1a648ce180f5c6f5b2fbde21ec096a7df4" prot="private" virt="non-virtual"><scope>Kinai::EventDispatcher</scope><name>_event</name></member>
+      <member refid="classKinai_1_1EventDispatcher_1ad5c9c8d169b09fe7c807a17fbc62ad61" prot="public" virt="non-virtual"><scope>Kinai::EventDispatcher</scope><name>Dispatch</name></member>
+      <member refid="classKinai_1_1EventDispatcher_1a30ef4e1005c4c95a46232521fb21cbe4" prot="public" virt="non-virtual"><scope>Kinai::EventDispatcher</scope><name>EventDispatcher</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

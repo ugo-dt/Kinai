@@ -1,0 +1,137 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "structKinai_1_1FramebufferTextureConfig",
+            "@kind": "struct",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::FramebufferTextureConfig",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1FramebufferTextureConfig_1a5d7546332c330f16bb57545859cbd6f6",
+                        "@virt": "non-virtual",
+                        "name": "FramebufferTextureConfig",
+                        "scope": "Kinai::FramebufferTextureConfig"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1FramebufferTextureConfig_1afa70f7d7d7b49a72ad79a78107d6c7f2",
+                        "@virt": "non-virtual",
+                        "name": "FramebufferTextureConfig",
+                        "scope": "Kinai::FramebufferTextureConfig"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1FramebufferTextureConfig_1ab8807b5d384f27cdfef4c2d4d1c73abe",
+                        "@virt": "non-virtual",
+                        "name": "TextureFormat",
+                        "scope": "Kinai::FramebufferTextureConfig"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "31",
+                "@bodyfile": "include/Kinai/Renderer/Framebuffer.hpp",
+                "@bodystart": "24",
+                "@column": "1",
+                "@file": "include/Kinai/Renderer/Framebuffer.hpp",
+                "@line": "23"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "public-attrib",
+                    "memberdef": {
+                        "@id": "structKinai_1_1FramebufferTextureConfig_1ab8807b5d384f27cdfef4c2d4d1c73abe",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "FramebufferTextureFormat Kinai::FramebufferTextureConfig::TextureFormat",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "initializer": "= FramebufferTextureFormat::None",
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/Framebuffer.hpp",
+                            "@bodystart": "29",
+                            "@column": "26",
+                            "@file": "include/Kinai/Renderer/Framebuffer.hpp",
+                            "@line": "29"
+                        },
+                        "name": "TextureFormat",
+                        "qualifiedname": "Kinai::FramebufferTextureConfig::TextureFormat",
+                        "type": "FramebufferTextureFormat"
+                    }
+                },
+                {
+                    "@kind": "public-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "structKinai_1_1FramebufferTextureConfig_1a5d7546332c330f16bb57545859cbd6f6",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "()=default",
+                            "briefdescription": null,
+                            "definition": "Kinai::FramebufferTextureConfig::FramebufferTextureConfig",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "1",
+                                "@file": "include/Kinai/Renderer/Framebuffer.hpp",
+                                "@line": "25"
+                            },
+                            "name": "FramebufferTextureConfig",
+                            "qualifiedname": "Kinai::FramebufferTextureConfig::FramebufferTextureConfig",
+                            "type": null
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "structKinai_1_1FramebufferTextureConfig_1afa70f7d7d7b49a72ad79a78107d6c7f2",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(FramebufferTextureFormat format)",
+                            "briefdescription": null,
+                            "definition": "Kinai::FramebufferTextureConfig::FramebufferTextureConfig",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "27",
+                                "@bodyfile": "include/Kinai/Renderer/Framebuffer.hpp",
+                                "@bodystart": "26",
+                                "@column": "1",
+                                "@file": "include/Kinai/Renderer/Framebuffer.hpp",
+                                "@line": "26"
+                            },
+                            "name": "FramebufferTextureConfig",
+                            "param": {
+                                "declname": "format",
+                                "type": "FramebufferTextureFormat"
+                            },
+                            "qualifiedname": "Kinai::FramebufferTextureConfig::FramebufferTextureConfig",
+                            "type": null
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

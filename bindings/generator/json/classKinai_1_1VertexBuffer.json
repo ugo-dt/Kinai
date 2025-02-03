@@ -1,0 +1,338 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@abstract": "yes",
+            "@id": "classKinai_1_1VertexBuffer",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::VertexBuffer",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1VertexBuffer_1ad05115354d156cf47599c4f819ffdacb",
+                        "@virt": "pure-virtual",
+                        "name": "Bind",
+                        "scope": "Kinai::VertexBuffer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1VertexBuffer_1a00d88bb65d61111386f28a939b0ec3b0",
+                        "@virt": "non-virtual",
+                        "name": "Create",
+                        "scope": "Kinai::VertexBuffer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1VertexBuffer_1a1c5f39ea3cc87a69d0965fab26b070d0",
+                        "@virt": "non-virtual",
+                        "name": "Create",
+                        "scope": "Kinai::VertexBuffer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1VertexBuffer_1ab0b5b84092277cc309d70f936b7608fc",
+                        "@virt": "pure-virtual",
+                        "name": "GetLayout",
+                        "scope": "Kinai::VertexBuffer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1VertexBuffer_1ac213ffebb79a7e9dfebac4c58e9bcc05",
+                        "@virt": "pure-virtual",
+                        "name": "SetData",
+                        "scope": "Kinai::VertexBuffer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1VertexBuffer_1a660be3e4643be440418593e4808a13b1",
+                        "@virt": "pure-virtual",
+                        "name": "SetLayout",
+                        "scope": "Kinai::VertexBuffer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1VertexBuffer_1a0575c23799eecce3374a9548ad776e6f",
+                        "@virt": "pure-virtual",
+                        "name": "Unbind",
+                        "scope": "Kinai::VertexBuffer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1VertexBuffer_1a896afc08819251737eb42c0f1a0ac63e",
+                        "@virt": "virtual",
+                        "name": "~VertexBuffer",
+                        "scope": "Kinai::VertexBuffer"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "24",
+                "@bodyfile": "include/Kinai/Renderer/Buffer/VertexBuffer.hpp",
+                "@bodystart": "10",
+                "@column": "1",
+                "@file": "include/Kinai/Renderer/Buffer/VertexBuffer.hpp",
+                "@line": "9"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "public-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1VertexBuffer_1a896afc08819251737eb42c0f1a0ac63e",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "virtual",
+                            "argsstring": "()=default",
+                            "briefdescription": null,
+                            "definition": "virtual Kinai::VertexBuffer::~VertexBuffer",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "9",
+                                "@file": "include/Kinai/Renderer/Buffer/VertexBuffer.hpp",
+                                "@line": "12"
+                            },
+                            "name": "~VertexBuffer",
+                            "qualifiedname": "Kinai::VertexBuffer::~VertexBuffer",
+                            "type": null
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1VertexBuffer_1ad05115354d156cf47599c4f819ffdacb",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "() const =0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::VertexBuffer::Bind",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/Buffer/VertexBuffer.hpp",
+                                "@line": "14"
+                            },
+                            "name": "Bind",
+                            "qualifiedname": "Kinai::VertexBuffer::Bind",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1VertexBuffer_1a0575c23799eecce3374a9548ad776e6f",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "() const =0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::VertexBuffer::Unbind",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/Buffer/VertexBuffer.hpp",
+                                "@line": "15"
+                            },
+                            "name": "Unbind",
+                            "qualifiedname": "Kinai::VertexBuffer::Unbind",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1VertexBuffer_1ac213ffebb79a7e9dfebac4c58e9bcc05",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "(const void *data, uint32_t size)=0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::VertexBuffer::SetData",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/Buffer/VertexBuffer.hpp",
+                                "@line": "17"
+                            },
+                            "name": "SetData",
+                            "param": [
+                                {
+                                    "declname": "data",
+                                    "type": "const void *"
+                                },
+                                {
+                                    "declname": "size",
+                                    "type": "uint32_t"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::VertexBuffer::SetData",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1VertexBuffer_1a660be3e4643be440418593e4808a13b1",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "(const BufferLayout &layout)=0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::VertexBuffer::SetLayout",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/Buffer/VertexBuffer.hpp",
+                                "@line": "18"
+                            },
+                            "name": "SetLayout",
+                            "param": {
+                                "declname": "layout",
+                                "type": {
+                                    "#text": "const  &",
+                                    "ref": {
+                                        "#text": "BufferLayout",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1BufferLayout"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::VertexBuffer::SetLayout",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1VertexBuffer_1ab0b5b84092277cc309d70f936b7608fc",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "() const =0",
+                            "briefdescription": null,
+                            "definition": "virtual const BufferLayout & Kinai::VertexBuffer::GetLayout",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "27",
+                                "@file": "include/Kinai/Renderer/Buffer/VertexBuffer.hpp",
+                                "@line": "20"
+                            },
+                            "name": "GetLayout",
+                            "qualifiedname": "Kinai::VertexBuffer::GetLayout",
+                            "type": {
+                                "#text": "const  &",
+                                "ref": {
+                                    "#text": "BufferLayout",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1BufferLayout"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "@kind": "public-static-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1VertexBuffer_1a00d88bb65d61111386f28a939b0ec3b0",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(uint32_t size)",
+                            "briefdescription": null,
+                            "definition": "static Ref< VertexBuffer > Kinai::VertexBuffer::Create",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "11",
+                                "@file": "include/Kinai/Renderer/Buffer/VertexBuffer.hpp",
+                                "@line": "22"
+                            },
+                            "name": "Create",
+                            "param": {
+                                "declname": "size",
+                                "type": "uint32_t"
+                            },
+                            "qualifiedname": "Kinai::VertexBuffer::Create",
+                            "type": {
+                                "#text": "Ref<  >",
+                                "ref": {
+                                    "#text": "VertexBuffer",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1VertexBuffer"
+                                }
+                            }
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1VertexBuffer_1a1c5f39ea3cc87a69d0965fab26b070d0",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const void *vertices, uint32_t size)",
+                            "briefdescription": null,
+                            "definition": "static Ref< VertexBuffer > Kinai::VertexBuffer::Create",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "11",
+                                "@file": "include/Kinai/Renderer/Buffer/VertexBuffer.hpp",
+                                "@line": "23"
+                            },
+                            "name": "Create",
+                            "param": [
+                                {
+                                    "declname": "vertices",
+                                    "type": "const void *"
+                                },
+                                {
+                                    "declname": "size",
+                                    "type": "uint32_t"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::VertexBuffer::Create",
+                            "type": {
+                                "#text": "Ref<  >",
+                                "ref": {
+                                    "#text": "VertexBuffer",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1VertexBuffer"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

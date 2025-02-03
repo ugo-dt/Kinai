@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_c73ecd4420e731df50a04bddc05aa931" kind="dir">
+    <compoundname>Renderer</compoundname>
+    <innerdir refid="dir_e7ac7b722f822fb0d5e834db27abe331">2D</innerdir>
+    <innerdir refid="dir_9d2164fe67c908d616d9305615ca1bdf">Buffer</innerdir>
+    <innerfile refid="Camera_8hpp">Camera.hpp</innerfile>
+    <innerfile refid="Framebuffer_8hpp">Framebuffer.hpp</innerfile>
+    <innerfile refid="OrthographicCamera_8hpp">OrthographicCamera.hpp</innerfile>
+    <innerfile refid="PerspectiveCamera_8hpp">PerspectiveCamera.hpp</innerfile>
+    <innerfile refid="RenderCommand_8hpp">RenderCommand.hpp</innerfile>
+    <innerfile refid="Renderer_8hpp">Renderer.hpp</innerfile>
+    <innerfile refid="RendererAPI_8hpp">RendererAPI.hpp</innerfile>
+    <innerfile refid="Shader_8hpp">Shader.hpp</innerfile>
+    <innerfile refid="Texture_8hpp">Texture.hpp</innerfile>
+    <innerfile refid="UniformBuffer_8hpp">UniformBuffer.hpp</innerfile>
+    <innerfile refid="VertexArray_8hpp">VertexArray.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Renderer/"/>
+  </compounddef>
+</doxygen>

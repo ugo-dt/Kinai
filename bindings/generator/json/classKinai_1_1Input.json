@@ -1,0 +1,192 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "classKinai_1_1Input",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::Input",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Input_1acf6b7570ecba9d5711d2d08ef2e935d0",
+                        "@virt": "non-virtual",
+                        "name": "GetMousePosition",
+                        "scope": "Kinai::Input"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Input_1a0f4123bd0ac063a8ca5f378defa679bb",
+                        "@virt": "non-virtual",
+                        "name": "GetMouseX",
+                        "scope": "Kinai::Input"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Input_1a78bc0fd7352aee5ab7a363e54cd2cf0f",
+                        "@virt": "non-virtual",
+                        "name": "GetMouseY",
+                        "scope": "Kinai::Input"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Input_1a3e1e81c6803b13e6f6888c016abda5c0",
+                        "@virt": "non-virtual",
+                        "name": "IsKeyPressed",
+                        "scope": "Kinai::Input"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Input_1a3b8fed8f05ffa321fb21365fc8e8f6f3",
+                        "@virt": "non-virtual",
+                        "name": "IsMouseButtonPressed",
+                        "scope": "Kinai::Input"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "18",
+                "@bodyfile": "include/Kinai/Core/Input.hpp",
+                "@bodystart": "11",
+                "@column": "1",
+                "@file": "include/Kinai/Core/Input.hpp",
+                "@line": "10"
+            },
+            "sectiondef": {
+                "@kind": "public-static-func",
+                "memberdef": [
+                    {
+                        "@const": "no",
+                        "@explicit": "no",
+                        "@id": "classKinai_1_1Input_1a3e1e81c6803b13e6f6888c016abda5c0",
+                        "@inline": "no",
+                        "@kind": "function",
+                        "@prot": "public",
+                        "@static": "yes",
+                        "@virt": "non-virtual",
+                        "argsstring": "(KeyCode key)",
+                        "briefdescription": null,
+                        "definition": "static bool Kinai::Input::IsKeyPressed",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@column": "12",
+                            "@file": "include/Kinai/Core/Input.hpp",
+                            "@line": "13"
+                        },
+                        "name": "IsKeyPressed",
+                        "param": {
+                            "declname": "key",
+                            "type": "KeyCode"
+                        },
+                        "qualifiedname": "Kinai::Input::IsKeyPressed",
+                        "type": "bool"
+                    },
+                    {
+                        "@const": "no",
+                        "@explicit": "no",
+                        "@id": "classKinai_1_1Input_1a3b8fed8f05ffa321fb21365fc8e8f6f3",
+                        "@inline": "no",
+                        "@kind": "function",
+                        "@prot": "public",
+                        "@static": "yes",
+                        "@virt": "non-virtual",
+                        "argsstring": "(MouseButton button)",
+                        "briefdescription": null,
+                        "definition": "static bool Kinai::Input::IsMouseButtonPressed",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@column": "12",
+                            "@file": "include/Kinai/Core/Input.hpp",
+                            "@line": "14"
+                        },
+                        "name": "IsMouseButtonPressed",
+                        "param": {
+                            "declname": "button",
+                            "type": "MouseButton"
+                        },
+                        "qualifiedname": "Kinai::Input::IsMouseButtonPressed",
+                        "type": "bool"
+                    },
+                    {
+                        "@const": "no",
+                        "@explicit": "no",
+                        "@id": "classKinai_1_1Input_1acf6b7570ecba9d5711d2d08ef2e935d0",
+                        "@inline": "no",
+                        "@kind": "function",
+                        "@prot": "public",
+                        "@static": "yes",
+                        "@virt": "non-virtual",
+                        "argsstring": "()",
+                        "briefdescription": null,
+                        "definition": "static glm::vec2 Kinai::Input::GetMousePosition",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@column": "17",
+                            "@file": "include/Kinai/Core/Input.hpp",
+                            "@line": "15"
+                        },
+                        "name": "GetMousePosition",
+                        "qualifiedname": "Kinai::Input::GetMousePosition",
+                        "type": "glm::vec2"
+                    },
+                    {
+                        "@const": "no",
+                        "@explicit": "no",
+                        "@id": "classKinai_1_1Input_1a0f4123bd0ac063a8ca5f378defa679bb",
+                        "@inline": "no",
+                        "@kind": "function",
+                        "@prot": "public",
+                        "@static": "yes",
+                        "@virt": "non-virtual",
+                        "argsstring": "()",
+                        "briefdescription": null,
+                        "definition": "static float Kinai::Input::GetMouseX",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@column": "13",
+                            "@file": "include/Kinai/Core/Input.hpp",
+                            "@line": "16"
+                        },
+                        "name": "GetMouseX",
+                        "qualifiedname": "Kinai::Input::GetMouseX",
+                        "type": "float"
+                    },
+                    {
+                        "@const": "no",
+                        "@explicit": "no",
+                        "@id": "classKinai_1_1Input_1a78bc0fd7352aee5ab7a363e54cd2cf0f",
+                        "@inline": "no",
+                        "@kind": "function",
+                        "@prot": "public",
+                        "@static": "yes",
+                        "@virt": "non-virtual",
+                        "argsstring": "()",
+                        "briefdescription": null,
+                        "definition": "static float Kinai::Input::GetMouseY",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@column": "13",
+                            "@file": "include/Kinai/Core/Input.hpp",
+                            "@line": "17"
+                        },
+                        "name": "GetMouseY",
+                        "qualifiedname": "Kinai::Input::GetMouseY",
+                        "type": "float"
+                    }
+                ]
+            }
+        }
+    }
+}

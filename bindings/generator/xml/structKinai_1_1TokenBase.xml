@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structKinai_1_1TokenBase" kind="struct" language="C++" prot="public">
+    <compoundname>Kinai::TokenBase</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class Tp</type>
+      </param>
+      <param>
+        <type>typename std::enable_if&lt; <ref refid="structKinai_1_1is__token__type" kindref="compound">is_token_type</ref>&lt; Tp &gt;::value, bool &gt;::type</type>
+        <defval>0</defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structKinai_1_1TokenBase_1af51e8306403483991b53178b5019858b" prot="public" static="no">
+        <type>Tp</type>
+        <definition>typedef Tp Kinai::TokenBase&lt; Tp, type &gt;::token_type</definition>
+        <argsstring></argsstring>
+        <name>token_type</name>
+        <qualifiedname>Kinai::TokenBase::token_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Parser.hpp" line="25" column="11" bodyfile="include/Kinai/Core/Parser.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structKinai_1_1TokenBase_1a5a19f2e71a0b1150dce1b4f7edf870fb" prot="public" static="no">
+        <type>std::size_t</type>
+        <definition>typedef std::size_t Kinai::TokenBase&lt; Tp, type &gt;::size_type</definition>
+        <argsstring></argsstring>
+        <name>size_type</name>
+        <qualifiedname>Kinai::TokenBase::size_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Parser.hpp" line="26" column="29" bodyfile="include/Kinai/Core/Parser.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structKinai_1_1TokenBase_1a04c06923b98af7ccc6d7ae426ac80899" prot="public" static="no">
+        <type>std::ptrdiff_t</type>
+        <definition>typedef std::ptrdiff_t Kinai::TokenBase&lt; Tp, type &gt;::difference_type</definition>
+        <argsstring></argsstring>
+        <name>difference_type</name>
+        <qualifiedname>Kinai::TokenBase::difference_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Parser.hpp" line="27" column="32" bodyfile="include/Kinai/Core/Parser.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structKinai_1_1TokenBase_1a334e399f837314f966b0c556cbb3ae93" prot="public" static="no">
+        <type>std::string</type>
+        <definition>typedef std::string Kinai::TokenBase&lt; Tp, type &gt;::string_type</definition>
+        <argsstring></argsstring>
+        <name>string_type</name>
+        <qualifiedname>Kinai::TokenBase::string_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Parser.hpp" line="28" column="29" bodyfile="include/Kinai/Core/Parser.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structKinai_1_1TokenBase_1ac59763a32e9296bf67fffbcc12882cd7" prot="public" static="no" mutable="no">
+        <type>token_type</type>
+        <definition>token_type Kinai::TokenBase&lt; Tp, type &gt;::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>Kinai::TokenBase::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Parser.hpp" line="33" column="11" bodyfile="include/Kinai/Core/Parser.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1TokenBase_1a9b84962fda36da47449717e098432ed7" prot="public" static="no" mutable="no">
+        <type>string_type</type>
+        <definition>string_type Kinai::TokenBase&lt; Tp, type &gt;::text</definition>
+        <argsstring></argsstring>
+        <name>text</name>
+        <qualifiedname>Kinai::TokenBase::text</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Parser.hpp" line="34" column="12" bodyfile="include/Kinai/Core/Parser.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1TokenBase_1a3f61219408834ff61493ecccbc1c2372" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Kinai::TokenBase&lt; Tp, type &gt;::row</definition>
+        <argsstring></argsstring>
+        <name>row</name>
+        <qualifiedname>Kinai::TokenBase::row</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Parser.hpp" line="35" column="9" bodyfile="include/Kinai/Core/Parser.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1TokenBase_1aa5d84e5281415e8f9732b31eb93166ff" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Kinai::TokenBase&lt; Tp, type &gt;::col</definition>
+        <argsstring></argsstring>
+        <name>col</name>
+        <qualifiedname>Kinai::TokenBase::col</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Parser.hpp" line="35" column="13" bodyfile="include/Kinai/Core/Parser.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structKinai_1_1TokenBase_1a84fe2a5e23ea76a191ac3eeaa19c0396" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::TokenBase&lt; Tp, type &gt;::TokenBase</definition>
+        <argsstring>(Tp t, string_type w, uint32_t r, uint32_t c)</argsstring>
+        <name>TokenBase</name>
+        <qualifiedname>Kinai::TokenBase::TokenBase</qualifiedname>
+        <param>
+          <type>Tp</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>string_type</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Parser.hpp" line="30" column="1" bodyfile="include/Kinai/Core/Parser.hpp" bodystart="30" bodyend="31"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Core/Parser.hpp" line="23" column="1" bodyfile="include/Kinai/Core/Parser.hpp" bodystart="24" bodyend="36"/>
+    <listofallmembers>
+      <member refid="structKinai_1_1TokenBase_1aa5d84e5281415e8f9732b31eb93166ff" prot="public" virt="non-virtual"><scope>Kinai::TokenBase</scope><name>col</name></member>
+      <member refid="structKinai_1_1TokenBase_1a04c06923b98af7ccc6d7ae426ac80899" prot="public" virt="non-virtual"><scope>Kinai::TokenBase</scope><name>difference_type</name></member>
+      <member refid="structKinai_1_1TokenBase_1a3f61219408834ff61493ecccbc1c2372" prot="public" virt="non-virtual"><scope>Kinai::TokenBase</scope><name>row</name></member>
+      <member refid="structKinai_1_1TokenBase_1a5a19f2e71a0b1150dce1b4f7edf870fb" prot="public" virt="non-virtual"><scope>Kinai::TokenBase</scope><name>size_type</name></member>
+      <member refid="structKinai_1_1TokenBase_1a334e399f837314f966b0c556cbb3ae93" prot="public" virt="non-virtual"><scope>Kinai::TokenBase</scope><name>string_type</name></member>
+      <member refid="structKinai_1_1TokenBase_1a9b84962fda36da47449717e098432ed7" prot="public" virt="non-virtual"><scope>Kinai::TokenBase</scope><name>text</name></member>
+      <member refid="structKinai_1_1TokenBase_1af51e8306403483991b53178b5019858b" prot="public" virt="non-virtual"><scope>Kinai::TokenBase</scope><name>token_type</name></member>
+      <member refid="structKinai_1_1TokenBase_1a84fe2a5e23ea76a191ac3eeaa19c0396" prot="public" virt="non-virtual"><scope>Kinai::TokenBase</scope><name>TokenBase</name></member>
+      <member refid="structKinai_1_1TokenBase_1ac59763a32e9296bf67fffbcc12882cd7" prot="public" virt="non-virtual"><scope>Kinai::TokenBase</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

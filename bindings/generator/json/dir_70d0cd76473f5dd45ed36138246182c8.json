@@ -1,0 +1,22 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "dir_70d0cd76473f5dd45ed36138246182c8",
+            "@kind": "dir",
+            "briefdescription": null,
+            "compoundname": "Platform",
+            "detaileddescription": null,
+            "innerfile": {
+                "#text": "Platform.hpp",
+                "@refid": "Platform_8hpp"
+            },
+            "location": {
+                "@file": "include/Kinai/Platform/"
+            }
+        }
+    }
+}

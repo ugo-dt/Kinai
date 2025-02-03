@@ -1,0 +1,154 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "structKinai_1_1QuadVertex",
+            "@kind": "struct",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::QuadVertex",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1QuadVertex_1a81874dcffa05691c8cdc18d809ee98fd",
+                        "@virt": "non-virtual",
+                        "name": "color",
+                        "scope": "Kinai::QuadVertex"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1QuadVertex_1abc1e22be7e6ea6e955a9271f4b4dec64",
+                        "@virt": "non-virtual",
+                        "name": "position",
+                        "scope": "Kinai::QuadVertex"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1QuadVertex_1af2e8074fd48ee91dbb3b1a4878808615",
+                        "@virt": "non-virtual",
+                        "name": "tex_coord",
+                        "scope": "Kinai::QuadVertex"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1QuadVertex_1a6ce43c48260dfc9f77d112ce8a5ff2c5",
+                        "@virt": "non-virtual",
+                        "name": "tex_index",
+                        "scope": "Kinai::QuadVertex"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "37",
+                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                "@bodystart": "32",
+                "@column": "1",
+                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                "@line": "31"
+            },
+            "sectiondef": {
+                "@kind": "public-attrib",
+                "memberdef": [
+                    {
+                        "@id": "structKinai_1_1QuadVertex_1abc1e22be7e6ea6e955a9271f4b4dec64",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "glm::vec2 Kinai::QuadVertex::position",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@bodystart": "33",
+                            "@column": "10",
+                            "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@line": "33"
+                        },
+                        "name": "position",
+                        "qualifiedname": "Kinai::QuadVertex::position",
+                        "type": "glm::vec2"
+                    },
+                    {
+                        "@id": "structKinai_1_1QuadVertex_1af2e8074fd48ee91dbb3b1a4878808615",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "glm::vec2 Kinai::QuadVertex::tex_coord",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@bodystart": "34",
+                            "@column": "10",
+                            "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@line": "34"
+                        },
+                        "name": "tex_coord",
+                        "qualifiedname": "Kinai::QuadVertex::tex_coord",
+                        "type": "glm::vec2"
+                    },
+                    {
+                        "@id": "structKinai_1_1QuadVertex_1a81874dcffa05691c8cdc18d809ee98fd",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "glm::vec4 Kinai::QuadVertex::color",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@bodystart": "35",
+                            "@column": "10",
+                            "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@line": "35"
+                        },
+                        "name": "color",
+                        "qualifiedname": "Kinai::QuadVertex::color",
+                        "type": "glm::vec4"
+                    },
+                    {
+                        "@id": "structKinai_1_1QuadVertex_1a6ce43c48260dfc9f77d112ce8a5ff2c5",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "int Kinai::QuadVertex::tex_index",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@bodystart": "36",
+                            "@column": "4",
+                            "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                            "@line": "36"
+                        },
+                        "name": "tex_index",
+                        "qualifiedname": "Kinai::QuadVertex::tex_index",
+                        "type": "int"
+                    }
+                ]
+            }
+        }
+    }
+}

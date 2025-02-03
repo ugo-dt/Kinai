@@ -1,0 +1,207 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@abstract": "yes",
+            "@id": "classKinai_1_1IndexBuffer",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::IndexBuffer",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1IndexBuffer_1afc1a3c38e33f44bc3305996f6ce557fb",
+                        "@virt": "pure-virtual",
+                        "name": "Bind",
+                        "scope": "Kinai::IndexBuffer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1IndexBuffer_1a3e1d0ab82a597cea16aab333ddfb11f2",
+                        "@virt": "non-virtual",
+                        "name": "Create",
+                        "scope": "Kinai::IndexBuffer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1IndexBuffer_1a2c45e37046c282b973d91982d9f4dd95",
+                        "@virt": "pure-virtual",
+                        "name": "GetCount",
+                        "scope": "Kinai::IndexBuffer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1IndexBuffer_1acce050419d5f300d315ffb5c364104fe",
+                        "@virt": "pure-virtual",
+                        "name": "Unbind",
+                        "scope": "Kinai::IndexBuffer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1IndexBuffer_1a7271f9740775ccff4da7fce6a7b40407",
+                        "@virt": "virtual",
+                        "name": "~IndexBuffer",
+                        "scope": "Kinai::IndexBuffer"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "20",
+                "@bodyfile": "include/Kinai/Renderer/Buffer/IndexBuffer.hpp",
+                "@bodystart": "10",
+                "@column": "1",
+                "@file": "include/Kinai/Renderer/Buffer/IndexBuffer.hpp",
+                "@line": "9"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "public-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1IndexBuffer_1a7271f9740775ccff4da7fce6a7b40407",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "virtual",
+                            "argsstring": "()=default",
+                            "briefdescription": null,
+                            "definition": "virtual Kinai::IndexBuffer::~IndexBuffer",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "9",
+                                "@file": "include/Kinai/Renderer/Buffer/IndexBuffer.hpp",
+                                "@line": "12"
+                            },
+                            "name": "~IndexBuffer",
+                            "qualifiedname": "Kinai::IndexBuffer::~IndexBuffer",
+                            "type": null
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1IndexBuffer_1afc1a3c38e33f44bc3305996f6ce557fb",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "() const =0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::IndexBuffer::Bind",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/Buffer/IndexBuffer.hpp",
+                                "@line": "14"
+                            },
+                            "name": "Bind",
+                            "qualifiedname": "Kinai::IndexBuffer::Bind",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1IndexBuffer_1acce050419d5f300d315ffb5c364104fe",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "() const =0",
+                            "briefdescription": null,
+                            "definition": "virtual void Kinai::IndexBuffer::Unbind",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Renderer/Buffer/IndexBuffer.hpp",
+                                "@line": "15"
+                            },
+                            "name": "Unbind",
+                            "qualifiedname": "Kinai::IndexBuffer::Unbind",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1IndexBuffer_1a2c45e37046c282b973d91982d9f4dd95",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "() const =0",
+                            "briefdescription": null,
+                            "definition": "virtual uint32_t Kinai::IndexBuffer::GetCount",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "17",
+                                "@file": "include/Kinai/Renderer/Buffer/IndexBuffer.hpp",
+                                "@line": "17"
+                            },
+                            "name": "GetCount",
+                            "qualifiedname": "Kinai::IndexBuffer::GetCount",
+                            "type": "uint32_t"
+                        }
+                    ]
+                },
+                {
+                    "@kind": "public-static-func",
+                    "memberdef": {
+                        "@const": "no",
+                        "@explicit": "no",
+                        "@id": "classKinai_1_1IndexBuffer_1a3e1d0ab82a597cea16aab333ddfb11f2",
+                        "@inline": "no",
+                        "@kind": "function",
+                        "@prot": "public",
+                        "@static": "yes",
+                        "@virt": "non-virtual",
+                        "argsstring": "(const uint32_t *indices, uint32_t count)",
+                        "briefdescription": null,
+                        "definition": "static Ref< IndexBuffer > Kinai::IndexBuffer::Create",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@column": "11",
+                            "@file": "include/Kinai/Renderer/Buffer/IndexBuffer.hpp",
+                            "@line": "19"
+                        },
+                        "name": "Create",
+                        "param": [
+                            {
+                                "declname": "indices",
+                                "type": "const uint32_t *"
+                            },
+                            {
+                                "declname": "count",
+                                "type": "uint32_t"
+                            }
+                        ],
+                        "qualifiedname": "Kinai::IndexBuffer::Create",
+                        "type": {
+                            "#text": "Ref<  >",
+                            "ref": {
+                                "#text": "IndexBuffer",
+                                "@kindref": "compound",
+                                "@refid": "classKinai_1_1IndexBuffer"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

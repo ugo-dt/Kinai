@@ -1,0 +1,613 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "classKinai_1_1PerspectiveCameraController",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::PerspectiveCameraController",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1PerspectiveCameraController_1a410cdc6dc8680dff07cfe1244ff713de",
+                        "@virt": "non-virtual",
+                        "name": "_camera",
+                        "scope": "Kinai::PerspectiveCameraController"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1PerspectiveCameraController_1aac0a6d02a124dc9bb53e0c0da8ff40d3",
+                        "@virt": "non-virtual",
+                        "name": "_config",
+                        "scope": "Kinai::PerspectiveCameraController"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1PerspectiveCameraController_1a1750256fed658bfa3e05b62775e3a25b",
+                        "@virt": "non-virtual",
+                        "name": "GetCamera",
+                        "scope": "Kinai::PerspectiveCameraController"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1PerspectiveCameraController_1a4f3bd74c0e1a275f22ae5ab6a8e28823",
+                        "@virt": "non-virtual",
+                        "name": "GetCamera",
+                        "scope": "Kinai::PerspectiveCameraController"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1PerspectiveCameraController_1acd037ec142d8c7026a7b5adfcb61b465",
+                        "@virt": "non-virtual",
+                        "name": "IsCursorLocked",
+                        "scope": "Kinai::PerspectiveCameraController"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1PerspectiveCameraController_1abfb3ceffd7d6d7cdff7c117a90d6aa60",
+                        "@virt": "non-virtual",
+                        "name": "IsRotationEnabled",
+                        "scope": "Kinai::PerspectiveCameraController"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1PerspectiveCameraController_1a205f59b0e31e2889b0e419f7c6d1fd8f",
+                        "@virt": "non-virtual",
+                        "name": "OnEvent",
+                        "scope": "Kinai::PerspectiveCameraController"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1PerspectiveCameraController_1a2c4ddffc404b08d5f9a58302e15111fb",
+                        "@virt": "non-virtual",
+                        "name": "OnMouseMotion",
+                        "scope": "Kinai::PerspectiveCameraController"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1PerspectiveCameraController_1a0e53e62984d6f5b555467e1c77680c07",
+                        "@virt": "non-virtual",
+                        "name": "OnMouseWheel",
+                        "scope": "Kinai::PerspectiveCameraController"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1PerspectiveCameraController_1ac72581a8aebed18df426e90c56770c6d",
+                        "@virt": "non-virtual",
+                        "name": "OnResize",
+                        "scope": "Kinai::PerspectiveCameraController"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1PerspectiveCameraController_1a182c1a80fd866c251f9542ac22276259",
+                        "@virt": "non-virtual",
+                        "name": "OnUpdate",
+                        "scope": "Kinai::PerspectiveCameraController"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1PerspectiveCameraController_1a53841928e01023e3d33d563ea8b54ef3",
+                        "@virt": "non-virtual",
+                        "name": "OnWindowResize",
+                        "scope": "Kinai::PerspectiveCameraController"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1PerspectiveCameraController_1a7d10ad1301c3b4daef390e76b6616ba5",
+                        "@virt": "non-virtual",
+                        "name": "PerspectiveCameraController",
+                        "scope": "Kinai::PerspectiveCameraController"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1PerspectiveCameraController_1a904c9612c54d1090377a3fc6f9c723a2",
+                        "@virt": "non-virtual",
+                        "name": "SetCursorLock",
+                        "scope": "Kinai::PerspectiveCameraController"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1PerspectiveCameraController_1a5340ec72d67586464603ef3b99dc0b14",
+                        "@virt": "non-virtual",
+                        "name": "SetRotationEnabled",
+                        "scope": "Kinai::PerspectiveCameraController"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "106",
+                "@bodyfile": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                "@bodystart": "80",
+                "@column": "1",
+                "@file": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                "@line": "79"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "private-attrib",
+                    "memberdef": [
+                        {
+                            "@id": "classKinai_1_1PerspectiveCameraController_1a410cdc6dc8680dff07cfe1244ff713de",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "PerspectiveCamera Kinai::PerspectiveCameraController::_camera",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@bodystart": "104",
+                                "@column": "18",
+                                "@file": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@line": "104"
+                            },
+                            "name": "_camera",
+                            "qualifiedname": "Kinai::PerspectiveCameraController::_camera",
+                            "type": {
+                                "ref": {
+                                    "#text": "PerspectiveCamera",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1PerspectiveCamera"
+                                }
+                            }
+                        },
+                        {
+                            "@id": "classKinai_1_1PerspectiveCameraController_1aac0a6d02a124dc9bb53e0c0da8ff40d3",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "PerspectiveCameraControllerConfig Kinai::PerspectiveCameraController::_config",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@bodystart": "105",
+                                "@column": "34",
+                                "@file": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@line": "105"
+                            },
+                            "name": "_config",
+                            "qualifiedname": "Kinai::PerspectiveCameraController::_config",
+                            "type": {
+                                "ref": {
+                                    "#text": "PerspectiveCameraControllerConfig",
+                                    "@kindref": "compound",
+                                    "@refid": "structKinai_1_1PerspectiveCameraControllerConfig"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "@kind": "public-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1PerspectiveCameraController_1a7d10ad1301c3b4daef390e76b6616ba5",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const PerspectiveCameraControllerConfig &config=PerspectiveCameraControllerConfig())",
+                            "briefdescription": null,
+                            "definition": "Kinai::PerspectiveCameraController::PerspectiveCameraController",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "1",
+                                "@file": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@line": "82"
+                            },
+                            "name": "PerspectiveCameraController",
+                            "param": {
+                                "declname": "config",
+                                "defval": {
+                                    "#text": "()",
+                                    "ref": {
+                                        "#text": "PerspectiveCameraControllerConfig",
+                                        "@kindref": "compound",
+                                        "@refid": "structKinai_1_1PerspectiveCameraControllerConfig"
+                                    }
+                                },
+                                "type": {
+                                    "#text": "const  &",
+                                    "ref": {
+                                        "#text": "PerspectiveCameraControllerConfig",
+                                        "@kindref": "compound",
+                                        "@refid": "structKinai_1_1PerspectiveCameraControllerConfig"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::PerspectiveCameraController::PerspectiveCameraController",
+                            "type": null
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1PerspectiveCameraController_1a182c1a80fd866c251f9542ac22276259",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(float delta)",
+                            "briefdescription": null,
+                            "definition": "void Kinai::PerspectiveCameraController::OnUpdate",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@line": "84"
+                            },
+                            "name": "OnUpdate",
+                            "param": {
+                                "declname": "delta",
+                                "type": "float"
+                            },
+                            "qualifiedname": "Kinai::PerspectiveCameraController::OnUpdate",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1PerspectiveCameraController_1a205f59b0e31e2889b0e419f7c6d1fd8f",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(Event &e)",
+                            "briefdescription": null,
+                            "definition": "void Kinai::PerspectiveCameraController::OnEvent",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@line": "85"
+                            },
+                            "name": "OnEvent",
+                            "param": {
+                                "declname": "e",
+                                "type": {
+                                    "#text": "&",
+                                    "ref": {
+                                        "#text": "Event",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1Event"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::PerspectiveCameraController::OnEvent",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1PerspectiveCameraController_1ac72581a8aebed18df426e90c56770c6d",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(float width, float height)",
+                            "briefdescription": null,
+                            "definition": "void Kinai::PerspectiveCameraController::OnResize",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@line": "87"
+                            },
+                            "name": "OnResize",
+                            "param": [
+                                {
+                                    "declname": "width",
+                                    "type": "float"
+                                },
+                                {
+                                    "declname": "height",
+                                    "type": "float"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::PerspectiveCameraController::OnResize",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1PerspectiveCameraController_1a1750256fed658bfa3e05b62775e3a25b",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "PerspectiveCamera & Kinai::PerspectiveCameraController::GetCamera",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "89",
+                                "@bodyfile": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@bodystart": "89",
+                                "@column": "18",
+                                "@file": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@line": "89"
+                            },
+                            "name": "GetCamera",
+                            "qualifiedname": "Kinai::PerspectiveCameraController::GetCamera",
+                            "type": {
+                                "#text": "&",
+                                "ref": {
+                                    "#text": "PerspectiveCamera",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1PerspectiveCamera"
+                                }
+                            }
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1PerspectiveCameraController_1a4f3bd74c0e1a275f22ae5ab6a8e28823",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "() const",
+                            "briefdescription": null,
+                            "definition": "const PerspectiveCamera & Kinai::PerspectiveCameraController::GetCamera",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "90",
+                                "@bodyfile": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@bodystart": "90",
+                                "@column": "24",
+                                "@file": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@line": "90"
+                            },
+                            "name": "GetCamera",
+                            "qualifiedname": "Kinai::PerspectiveCameraController::GetCamera",
+                            "type": {
+                                "#text": "const  &",
+                                "ref": {
+                                    "#text": "PerspectiveCamera",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1PerspectiveCamera"
+                                }
+                            }
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1PerspectiveCameraController_1acd037ec142d8c7026a7b5adfcb61b465",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "() const",
+                            "briefdescription": null,
+                            "definition": "bool Kinai::PerspectiveCameraController::IsCursorLocked",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@line": "92"
+                            },
+                            "name": "IsCursorLocked",
+                            "qualifiedname": "Kinai::PerspectiveCameraController::IsCursorLocked",
+                            "type": "bool"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1PerspectiveCameraController_1a904c9612c54d1090377a3fc6f9c723a2",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(bool enabled)",
+                            "briefdescription": null,
+                            "definition": "void Kinai::PerspectiveCameraController::SetCursorLock",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@line": "93"
+                            },
+                            "name": "SetCursorLock",
+                            "param": {
+                                "declname": "enabled",
+                                "type": "bool"
+                            },
+                            "qualifiedname": "Kinai::PerspectiveCameraController::SetCursorLock",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1PerspectiveCameraController_1abfb3ceffd7d6d7cdff7c117a90d6aa60",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "() const",
+                            "briefdescription": null,
+                            "definition": "bool Kinai::PerspectiveCameraController::IsRotationEnabled",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@line": "95"
+                            },
+                            "name": "IsRotationEnabled",
+                            "qualifiedname": "Kinai::PerspectiveCameraController::IsRotationEnabled",
+                            "type": "bool"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1PerspectiveCameraController_1a5340ec72d67586464603ef3b99dc0b14",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(bool enabled)",
+                            "briefdescription": null,
+                            "definition": "void Kinai::PerspectiveCameraController::SetRotationEnabled",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@line": "96"
+                            },
+                            "name": "SetRotationEnabled",
+                            "param": {
+                                "declname": "enabled",
+                                "type": "bool"
+                            },
+                            "qualifiedname": "Kinai::PerspectiveCameraController::SetRotationEnabled",
+                            "type": "void"
+                        }
+                    ]
+                },
+                {
+                    "@kind": "private-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1PerspectiveCameraController_1a0e53e62984d6f5b555467e1c77680c07",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(MouseWheelEvent &event)",
+                            "briefdescription": null,
+                            "definition": "bool Kinai::PerspectiveCameraController::OnMouseWheel",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@line": "99"
+                            },
+                            "name": "OnMouseWheel",
+                            "param": {
+                                "declname": "event",
+                                "type": {
+                                    "#text": "&",
+                                    "ref": {
+                                        "#text": "MouseWheelEvent",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1MouseWheelEvent"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::PerspectiveCameraController::OnMouseWheel",
+                            "type": "bool"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1PerspectiveCameraController_1a2c4ddffc404b08d5f9a58302e15111fb",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(MouseMotionEvent &event)",
+                            "briefdescription": null,
+                            "definition": "bool Kinai::PerspectiveCameraController::OnMouseMotion",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@line": "100"
+                            },
+                            "name": "OnMouseMotion",
+                            "param": {
+                                "declname": "event",
+                                "type": {
+                                    "#text": "&",
+                                    "ref": {
+                                        "#text": "MouseMotionEvent",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1MouseMotionEvent"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::PerspectiveCameraController::OnMouseMotion",
+                            "type": "bool"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1PerspectiveCameraController_1a53841928e01023e3d33d563ea8b54ef3",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(WindowResizeEvent &event)",
+                            "briefdescription": null,
+                            "definition": "bool Kinai::PerspectiveCameraController::OnWindowResize",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/PerspectiveCamera.hpp",
+                                "@line": "101"
+                            },
+                            "name": "OnWindowResize",
+                            "param": {
+                                "declname": "event",
+                                "type": {
+                                    "#text": "&",
+                                    "ref": {
+                                        "#text": "WindowResizeEvent",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1WindowResizeEvent"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::PerspectiveCameraController::OnWindowResize",
+                            "type": "bool"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

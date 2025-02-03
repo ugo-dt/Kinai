@@ -1,0 +1,1277 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "namespaceKinai_1_1Key",
+            "@kind": "namespace",
+            "@language": "C++",
+            "briefdescription": null,
+            "compoundname": "Kinai::Key",
+            "detaileddescription": null,
+            "location": {
+                "@column": "1",
+                "@file": "include/Kinai/Core/KeyCode.hpp",
+                "@line": "10"
+            },
+            "sectiondef": {
+                "@kind": "enum",
+                "memberdef": {
+                    "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675",
+                    "@kind": "enum",
+                    "@prot": "public",
+                    "@static": "no",
+                    "@strong": "no",
+                    "briefdescription": null,
+                    "detaileddescription": null,
+                    "enumvalue": [
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a8b5259f9459d5c4748b540857b87ba77",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 0",
+                            "name": "None"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae2e9cf2421526411a4771d6cca209664",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 4",
+                            "name": "A"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ab03ad5f7811d35190823db54dde061d9",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 5",
+                            "name": "B"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aba5fcc45350e31ccc17620ed492f4afa",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 6",
+                            "name": "C"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ab23fef458062ed1846e68fa69772b24f",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 7",
+                            "name": "D"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ad8c046c65613328aa71d0db847176a4e",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 8",
+                            "name": "E"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675acdd014527ea311f7aeeb24e1671b33ab",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 9",
+                            "name": "F"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a8d651c7988b136e17cd77ee25399d551",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 10",
+                            "name": "G"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a86a070fe00d4424fb60e7d7e52fc37d1",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 11",
+                            "name": "H"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a1178eb3290e8efe5b96401e8af51509d",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 12",
+                            "name": "I"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ad6309e071c8bcbbdf2d1fe776c013820",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 13",
+                            "name": "J"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a515bdf0d92a56fafef74e67158514a92",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 14",
+                            "name": "K"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aeb11181d018504161562d0678d95dd27",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 15",
+                            "name": "L"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a31f1fff589b2d9054d271ba4cdb1156b",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 16",
+                            "name": "M"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675adc5475e36033eea4b52b0ae3ce8cfcf9",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 17",
+                            "name": "N"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675af1dc078cee4326412739d731b7456e31",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 18",
+                            "name": "O"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a7f1ba35bf3507fb721b257643b5fa831",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 19",
+                            "name": "P"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ad657d05bd5bfc5b4dc687378e1881547",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 20",
+                            "name": "Q"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a5b0f708880be4c18b43353dabf727989",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 21",
+                            "name": "R"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a6bda629c9a2ec004b038c4f90939a1f8",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 22",
+                            "name": "S"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a9003621535e9a318498e9c39faf46509",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 23",
+                            "name": "T"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a3d5a2230316113b2223e4531489676ec",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 24",
+                            "name": "U"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac29c1ea7f5d4bfad7f1b0abdb63041f5",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 25",
+                            "name": "V"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a09b0d5b7d92113e52ee649b73995152e",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 26",
+                            "name": "W"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aa9dd53a15f1aca4137aa0bbdb49ebb35",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 27",
+                            "name": "X"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac637782e4ddd80296d082c85358b6ef0",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 28",
+                            "name": "Y"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675af89b9c4e286659c2e57c202617b3dd92",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 29",
+                            "name": "Z"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a5a71fdf06b6adb98520391b45394ad38",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 30",
+                            "name": "D1"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac86edc32bcf484a4e55d83083b9e0107",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 31",
+                            "name": "D2"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aaf5f6fb50f688150c23dce51eb6052f6",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 32",
+                            "name": "D3"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a575e7f87a0b7f958aab11951eacda946",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 33",
+                            "name": "D4"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a88cec52dc6727ec8e9dd4127e99efb34",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 34",
+                            "name": "D5"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a01199698dfd3592c470aae4ca0bf1270",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 35",
+                            "name": "D6"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a74a7da46d67a94e6a78022fafc49afad",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 36",
+                            "name": "D7"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac1db65425ee6173a67ae4ff21969418b",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 37",
+                            "name": "D8"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a3a7cc4f97a0374f9bf6f7b513c87c2e2",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 38",
+                            "name": "D9"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a1ce9be52bfc6c72eb7536af5aadeebc7",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 39",
+                            "name": "D0"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675af3caa4e0b06ed9760b2b173017724b34",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 40",
+                            "name": "Return"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a658530692a054646bbf3637ffe33343d",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 41",
+                            "name": "Escape"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae9b8069798c070bbae95fa458a080f06",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 42",
+                            "name": "Backspace"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aba75091c262336855a45a4e40804fcdc",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 43",
+                            "name": "Tab"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a876a7e0b7fd124ee02c570bcb08efae2",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 44",
+                            "name": "Space"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae13a5570e1bdc3fe3afd36ae085c71ce",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 45",
+                            "name": "Minus"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a5d9421e69f4ed50c5ca9869f2dd0d30d",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 46",
+                            "name": "Equals"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a5b9b8dd81ecc4b202688552a86811c71",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 47",
+                            "name": "LeftBracket"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac62aab20e3494044e6987b27dabf7e30",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 48",
+                            "name": "RightBracket"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675afee60f2f9449123d738df60bfdf4b525",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 49",
+                            "name": "Backslash"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a30e4dd16f8b7efed5373adc228c1eb2e",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 50",
+                            "name": "NonUsHash"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a58673b731030664ef67331531e8aaad9",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 51",
+                            "name": "Semicolon"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675adf63b35d5f6ab4bb73ca00795491c53f",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 52",
+                            "name": "Apostrophe"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675acc314aba22c0a4bb45e3fce184b441a4",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 53",
+                            "name": "GraveAccent"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a4e5a5ba259d7f9fdd9a20e1a913ff648",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 54",
+                            "name": "Comma"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae4cbcc8e0daa9dee50a5ee590c18a933",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 55",
+                            "name": "Period"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a39db7e4f51478cc7b6878c10c8bc6018",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 56",
+                            "name": "Slash"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aefbbb6c78e5fb381a6fb53444eacde99",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 57",
+                            "name": "CapsLock"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a6e8c01304a56798c0ca831baaf926e2c",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 58",
+                            "name": "F1"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a4e843d6664457e2381aaa37b1bdf777c",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 59",
+                            "name": "F2"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a52cfa8d8288149544fc45b665458c082",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 60",
+                            "name": "F3"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a49a1349c8bf64161f02ae74d23913bf5",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 61",
+                            "name": "F4"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a13cf32849348ba1fe464db23d16b9ea4",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 62",
+                            "name": "F5"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a2e7c449a5724c749955b5a2b6a403e59",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 63",
+                            "name": "F6"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a28517dc0751b36b449de94c2e0708d6c",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 64",
+                            "name": "F7"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a0acc4d9b563b381b7694b8adaf9e9141",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 65",
+                            "name": "F8"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a588e296f931132d34020b2167edbd3ab",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 66",
+                            "name": "F9"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aab50f120873001ee14e15a45f3be1fc5",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 67",
+                            "name": "F10"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae74ec91d9463734ff96d2cf7d33f0b68",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 68",
+                            "name": "F11"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a65c802213a355047467975a045f84e76",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 69",
+                            "name": "F12"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a2e9022133d83bedb9154234e609c7a12",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 70",
+                            "name": "PrintScreen"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a5b369f62335c9da7308f73f3df59f187",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 71",
+                            "name": "ScrollLock"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a766441bd92ea2b700a9daf7c9722a4b2",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 72",
+                            "name": "Pause"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a08215225a3e4b697bdde85ca9e6454ba",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "insert on PC, help on some Mac keyboards (but does send code 73, not 117)"
+                            },
+                            "initializer": "= 73",
+                            "name": "Insert"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675adf2636125f41d492ea18d1c3a51bda35",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 74",
+                            "name": "Home"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a9ed44e002fd114ab25f051fc7874ddda",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 75",
+                            "name": "PageUp"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a53b81e448d78f5091d04aefd8e01eff1",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 76",
+                            "name": "Delete"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675acd4d7f7b408126845011c6458ee45288",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 77",
+                            "name": "End"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae18ebfb2922500b205133eed35dfb5ac",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 78",
+                            "name": "PageDown"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a7ade1378b1f595d498e4ac3c67a138fa",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 79",
+                            "name": "Right"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675abd4de5d01050dbb6d601d47e6d262164",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 80",
+                            "name": "Left"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae82fe22e9874c743a96f9ea942d1c728",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 81",
+                            "name": "Down"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a3579250575e3fd5cceb522e9f8102926",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 82",
+                            "name": "Up"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a1e066a5e320828200235d78814a6a2ea",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "num lock on PC, clear on Mac keyboards"
+                            },
+                            "initializer": "= 83",
+                            "name": "NumLockClear"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675abf83145c377f6bda40033904d2ee8544",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 84",
+                            "name": "KPDivide"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a48016ebd3ccee27d784bcc2b6cff85f1",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 85",
+                            "name": "KPMultiply"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a21963bf5bffc7494a5d1a8c4e5ee6b4f",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 86",
+                            "name": "KPSubtract"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a2938681d9a19863831f8bcf368bc6de2",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 87",
+                            "name": "KPAdd"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aead6ca5a35c647760b28e8add5f9654b",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 88",
+                            "name": "KPEnter"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ad66c1f2e689389b0725a794972c79c60",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 89",
+                            "name": "KP1"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ab4c6dcf857f5dd0980c49f4b89029c1d",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 90",
+                            "name": "KP2"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a4216e16535c376fb48ddfd6ffda37bff",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 91",
+                            "name": "KP3"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a57591e027b8a7b89fd2a271fa974552d",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 92",
+                            "name": "KP4"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675adb4323809e830217e729528b31b7157d",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 93",
+                            "name": "KP5"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a45398a62a3f5fa51d822b721431219ea",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 94",
+                            "name": "KP6"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a1d83478477d4ac75b947e2b0bb6da55b",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 95",
+                            "name": "KP7"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675acb2990b2f3e0154aaf3a6949078ed289",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 96",
+                            "name": "KP8"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a5a1c784732622b649ea0af6af1391d36",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 97",
+                            "name": "KP9"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a8168dff41583a8879c1881cda570857f",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 98",
+                            "name": "KP0"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a47c1b0709d06cad560ffed7828823b30",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 99",
+                            "name": "KPPeriod"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a76c117b8493b8633ced32d023daa5775",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 100",
+                            "name": "NonUsBackslash"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675abaf8cf72e5ab5c987210e6b7835cbc6b",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "windows contextual menu, compose"
+                            },
+                            "initializer": "= 101",
+                            "name": "Application"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae2d91e1c4757c6ce99dbdeffb84e4077",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "The USB document says this is a status flag, not a physical key - but some Mac keyboards do have a power key."
+                            },
+                            "initializer": "= 102",
+                            "name": "Power"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae9f6f55f1e9f342dbc2e7592742c8a08",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 103",
+                            "name": "KPEquals"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac4b821a2d39745c0db53dfe054bd4b6f",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 104",
+                            "name": "F13"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac39ac89e781132bf6de5eff4d0669af7",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 105",
+                            "name": "F14"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a2885e846c71078456e788216c068bb89",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 106",
+                            "name": "F15"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a0fb833240e66a20c34d7db380cf98462",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 107",
+                            "name": "F16"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aa6f3a8ca9ccd6adf9726183ad4927c2b",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 108",
+                            "name": "F17"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac853bcc00cc39db892d54a8c4d61f01b",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 109",
+                            "name": "F18"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a1a7cc8e2ac72ecc1d6b1096bca9d43d1",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 110",
+                            "name": "F19"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a055c72d0bbc25d629ba84962aefce5f1",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 111",
+                            "name": "F20"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a628a332a80fa7e9f09b801a2908b573b",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 112",
+                            "name": "F21"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a5502aaf66bfc458a7fd136a2a1d55f8f",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 113",
+                            "name": "F22"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675acbcc667b7eca1e65aabc5ac6231cebc0",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 114",
+                            "name": "F23"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a2a67209ff841092a244f9b3b6e60fea1",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 115",
+                            "name": "F24"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a6d1d11a1f27fc830c27e4d3efcaa1ed6",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 116",
+                            "name": "Execute"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a76bfe2ac7111124878990ce3bf02f166",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "AL Integrated Help Center"
+                            },
+                            "initializer": "= 117",
+                            "name": "Help"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a59209ae32fd12f7a3352455b712f52f8",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "Menu (show menu)"
+                            },
+                            "initializer": "= 118",
+                            "name": "Menu"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675afc1220b4e6f8c124f3cfd575c50ea42b",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 119",
+                            "name": "Select"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ad327c19bc3e29f974284c308b7f4303e",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "AC Stop"
+                            },
+                            "initializer": "= 120",
+                            "name": "Stop"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a77f436250e8bd1873ef61935b70b878a",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "AC Redo/Repeat"
+                            },
+                            "initializer": "= 121",
+                            "name": "Again"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a9a81eaa5fff66cbe5c9c29c3b8102d23",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "AC Undo"
+                            },
+                            "initializer": "= 122",
+                            "name": "Undo"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a57ec11772b1dcbab25abf591f61fc3d3",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "AC Cut"
+                            },
+                            "initializer": "= 123",
+                            "name": "Cut"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a9ee7f4d937026e74ee65f29355a9fd94",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "AC Copy"
+                            },
+                            "initializer": "= 124",
+                            "name": "Copy"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ad32ad41f0908959ecac681f7561f71a1",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "AC Paste"
+                            },
+                            "initializer": "= 125",
+                            "name": "Paste"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a5cf35bf5de2fd48e02759313b1584cef",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "AC Find"
+                            },
+                            "initializer": "= 126",
+                            "name": "Find"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675af6488b80fe86448dd392b91577d6dad3",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 127",
+                            "name": "Mute"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a41ac5feeb10a414ad528ba1d2a706a4a",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 128",
+                            "name": "VolumeUp"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675af2dc373865320336805213a1dbe90cce",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 129",
+                            "name": "VolumeDown"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac39379528f647311a95cbc0393dbbedf",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 133",
+                            "name": "KPComma"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675addcc580acdc8d8434554d33108aa6531",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 134",
+                            "name": "KPEqualsAs400"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae2ca2da7e1c7213af2effd02003b564c",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "Erase-Eaze"
+                            },
+                            "initializer": "= 153",
+                            "name": "Alterase"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aa7658fb1135848ff8c9451c0bbdc2043",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 154",
+                            "name": "SysReq"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae2dbad42e7eae7f90f97cf01fe6e1e87",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "AC Cancel"
+                            },
+                            "initializer": "= 155",
+                            "name": "Cancel"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a2ada92cb47a86493da6b1af0302d77a2",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 156",
+                            "name": "Clear"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae766208227366a548622fd5e3b9f0fde",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 157",
+                            "name": "Prior"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a27f945a6b7885ee88deb57c970004454",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 158",
+                            "name": "Return2"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a02f6a946b6d8473b156376e733f488f3",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 159",
+                            "name": "Separator"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ab5927c1e60d505b3a6d8393b557c9096",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 160",
+                            "name": "Out"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a938c98e4a675e46a4aa04734b58d0cd7",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 161",
+                            "name": "Oper"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a4715b9327fc9843c2c019a3d47c2fb60",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 162",
+                            "name": "ClearAgain"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a6d1ec5273ad5a6d96f359a0a7159b51d",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 163",
+                            "name": "CrSel"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675af52ba8bc45a8b65152dae89f0a264fbe",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 164",
+                            "name": "ExSel"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a22b5dbb42ee35684659f4dceb0461254",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 224",
+                            "name": "LeftCtrl"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a39fd55920b8b9a92233e6aeddf541439",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 225",
+                            "name": "LeftShift"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a52fe2c5a649d5e51776631c23deddd16",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "alt, option"
+                            },
+                            "initializer": "= 226",
+                            "name": "LeftAlt"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a0c8fe37ca5741c12b74b60250a1dbbe0",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "windows, command (apple), meta"
+                            },
+                            "initializer": "= 227",
+                            "name": "LeftSuper"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aa55271f169be31ce6279e74c8373a4a6",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 228",
+                            "name": "RightCtrl"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae32fe7d0895c6970151d5b1e5c38f473",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "initializer": "= 229",
+                            "name": "RightShift"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a8cec57742c786e4b09aa47acb5e02722",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "alt gr, option"
+                            },
+                            "initializer": "= 230",
+                            "name": "RightAlt"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae28bbd692e9cf10d08e388f759dbe0d3",
+                            "@prot": "public",
+                            "briefdescription": null,
+                            "detaileddescription": {
+                                "para": "windows, command (apple), meta"
+                            },
+                            "initializer": "= 231",
+                            "name": "RightSuper"
+                        }
+                    ],
+                    "inbodydescription": null,
+                    "location": {
+                        "@bodyend": "176",
+                        "@bodyfile": "include/Kinai/Core/KeyCode.hpp",
+                        "@bodystart": "15",
+                        "@column": "1",
+                        "@file": "include/Kinai/Core/KeyCode.hpp",
+                        "@line": "14"
+                    },
+                    "name": null,
+                    "qualifiedname": "Kinai::Key",
+                    "type": "KeyCode"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,167 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "classKinai_1_1EventDispatcher",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::EventDispatcher",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1EventDispatcher_1a648ce180f5c6f5b2fbde21ec096a7df4",
+                        "@virt": "non-virtual",
+                        "name": "_event",
+                        "scope": "Kinai::EventDispatcher"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1EventDispatcher_1ad5c9c8d169b09fe7c807a17fbc62ad61",
+                        "@virt": "non-virtual",
+                        "name": "Dispatch",
+                        "scope": "Kinai::EventDispatcher"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1EventDispatcher_1a30ef4e1005c4c95a46232521fb21cbe4",
+                        "@virt": "non-virtual",
+                        "name": "EventDispatcher",
+                        "scope": "Kinai::EventDispatcher"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "75",
+                "@bodyfile": "include/Kinai/Events/Event.hpp",
+                "@bodystart": "57",
+                "@column": "1",
+                "@file": "include/Kinai/Events/Event.hpp",
+                "@line": "56"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "private-attrib",
+                    "memberdef": {
+                        "@id": "classKinai_1_1EventDispatcher_1a648ce180f5c6f5b2fbde21ec096a7df4",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "private",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "Event& Kinai::EventDispatcher::_event",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Events/Event.hpp",
+                            "@bodystart": "74",
+                            "@column": "7",
+                            "@file": "include/Kinai/Events/Event.hpp",
+                            "@line": "74"
+                        },
+                        "name": "_event",
+                        "qualifiedname": "Kinai::EventDispatcher::_event",
+                        "type": {
+                            "#text": "&",
+                            "ref": {
+                                "#text": "Event",
+                                "@kindref": "compound",
+                                "@refid": "classKinai_1_1Event"
+                            }
+                        }
+                    }
+                },
+                {
+                    "@kind": "public-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1EventDispatcher_1a30ef4e1005c4c95a46232521fb21cbe4",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(Event &event)",
+                            "briefdescription": null,
+                            "definition": "Kinai::EventDispatcher::EventDispatcher",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "60",
+                                "@bodyfile": "include/Kinai/Events/Event.hpp",
+                                "@bodystart": "59",
+                                "@column": "1",
+                                "@file": "include/Kinai/Events/Event.hpp",
+                                "@line": "59"
+                            },
+                            "name": "EventDispatcher",
+                            "param": {
+                                "declname": "event",
+                                "type": {
+                                    "#text": "&",
+                                    "ref": {
+                                        "#text": "Event",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1Event"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::EventDispatcher::EventDispatcher",
+                            "type": null
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1EventDispatcher_1ad5c9c8d169b09fe7c807a17fbc62ad61",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const F &func)",
+                            "briefdescription": null,
+                            "definition": "bool Kinai::EventDispatcher::Dispatch",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "72",
+                                "@bodyfile": "include/Kinai/Events/Event.hpp",
+                                "@bodystart": "64",
+                                "@column": "6",
+                                "@file": "include/Kinai/Events/Event.hpp",
+                                "@line": "64"
+                            },
+                            "name": "Dispatch",
+                            "param": {
+                                "declname": "func",
+                                "type": "const F &"
+                            },
+                            "qualifiedname": "Kinai::EventDispatcher::Dispatch",
+                            "templateparamlist": {
+                                "param": [
+                                    {
+                                        "type": "typename T"
+                                    },
+                                    {
+                                        "type": "typename F"
+                                    }
+                                ]
+                            },
+                            "type": "bool"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

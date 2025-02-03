@@ -1,0 +1,150 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "structKinai_1_1FramebufferAttachmentConfig",
+            "@kind": "struct",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::FramebufferAttachmentConfig",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1FramebufferAttachmentConfig_1a7c1a0e5d7e9b65e1c818d8665b960485",
+                        "@virt": "non-virtual",
+                        "name": "attachments",
+                        "scope": "Kinai::FramebufferAttachmentConfig"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1FramebufferAttachmentConfig_1ab023e16cf467e640132738c039cebc75",
+                        "@virt": "non-virtual",
+                        "name": "FramebufferAttachmentConfig",
+                        "scope": "Kinai::FramebufferAttachmentConfig"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1FramebufferAttachmentConfig_1a4f3ac4755bf1ba5a911d5960bfd4b1d4",
+                        "@virt": "non-virtual",
+                        "name": "FramebufferAttachmentConfig",
+                        "scope": "Kinai::FramebufferAttachmentConfig"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "40",
+                "@bodyfile": "include/Kinai/Renderer/Framebuffer.hpp",
+                "@bodystart": "34",
+                "@column": "1",
+                "@file": "include/Kinai/Renderer/Framebuffer.hpp",
+                "@line": "33"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "public-attrib",
+                    "memberdef": {
+                        "@id": "structKinai_1_1FramebufferAttachmentConfig_1a7c1a0e5d7e9b65e1c818d8665b960485",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "std::vector<FramebufferTextureConfig> Kinai::FramebufferAttachmentConfig::attachments",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/Framebuffer.hpp",
+                            "@bodystart": "39",
+                            "@column": "13",
+                            "@file": "include/Kinai/Renderer/Framebuffer.hpp",
+                            "@line": "39"
+                        },
+                        "name": "attachments",
+                        "qualifiedname": "Kinai::FramebufferAttachmentConfig::attachments",
+                        "type": {
+                            "#text": "std::vector<  >",
+                            "ref": {
+                                "#text": "FramebufferTextureConfig",
+                                "@kindref": "compound",
+                                "@refid": "structKinai_1_1FramebufferTextureConfig"
+                            }
+                        }
+                    }
+                },
+                {
+                    "@kind": "public-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "structKinai_1_1FramebufferAttachmentConfig_1ab023e16cf467e640132738c039cebc75",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "()=default",
+                            "briefdescription": null,
+                            "definition": "Kinai::FramebufferAttachmentConfig::FramebufferAttachmentConfig",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "1",
+                                "@file": "include/Kinai/Renderer/Framebuffer.hpp",
+                                "@line": "35"
+                            },
+                            "name": "FramebufferAttachmentConfig",
+                            "qualifiedname": "Kinai::FramebufferAttachmentConfig::FramebufferAttachmentConfig",
+                            "type": null
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "structKinai_1_1FramebufferAttachmentConfig_1a4f3ac4755bf1ba5a911d5960bfd4b1d4",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(std::initializer_list< FramebufferTextureConfig > attachments)",
+                            "briefdescription": null,
+                            "definition": "Kinai::FramebufferAttachmentConfig::FramebufferAttachmentConfig",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "37",
+                                "@bodyfile": "include/Kinai/Renderer/Framebuffer.hpp",
+                                "@bodystart": "36",
+                                "@column": "1",
+                                "@file": "include/Kinai/Renderer/Framebuffer.hpp",
+                                "@line": "36"
+                            },
+                            "name": "FramebufferAttachmentConfig",
+                            "param": {
+                                "declname": "attachments",
+                                "type": {
+                                    "#text": "std::initializer_list<  >",
+                                    "ref": {
+                                        "#text": "FramebufferTextureConfig",
+                                        "@kindref": "compound",
+                                        "@refid": "structKinai_1_1FramebufferTextureConfig"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::FramebufferAttachmentConfig::FramebufferAttachmentConfig",
+                            "type": null
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

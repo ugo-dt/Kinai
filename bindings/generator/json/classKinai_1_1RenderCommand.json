@@ -1,0 +1,520 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "classKinai_1_1RenderCommand",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::RenderCommand",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1RenderCommand_1a7c6d2c79fac84bd0e28237727ef7d2eb",
+                        "@virt": "non-virtual",
+                        "name": "_renderer_api",
+                        "scope": "Kinai::RenderCommand"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1RenderCommand_1a3eb8cca3d15d86211fed94c410de4cf2",
+                        "@virt": "non-virtual",
+                        "name": "Clear",
+                        "scope": "Kinai::RenderCommand"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1RenderCommand_1a7f3fad9c31b060546c139dbff1423ff6",
+                        "@virt": "non-virtual",
+                        "name": "DrawIndexed",
+                        "scope": "Kinai::RenderCommand"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1RenderCommand_1a8e9e50ecbbf25ee23d5cd7bb7334a894",
+                        "@virt": "non-virtual",
+                        "name": "DrawLines",
+                        "scope": "Kinai::RenderCommand"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1RenderCommand_1a0f6f55af29357f537764e10d56490e50",
+                        "@virt": "non-virtual",
+                        "name": "DrawTriangles",
+                        "scope": "Kinai::RenderCommand"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1RenderCommand_1a376dd2a223a1ca33e82bc94412052585",
+                        "@virt": "non-virtual",
+                        "name": "Init",
+                        "scope": "Kinai::RenderCommand"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1RenderCommand_1a8a8fa585aa6aadfdfcf4d5efa2b45225",
+                        "@virt": "non-virtual",
+                        "name": "SetClearColor",
+                        "scope": "Kinai::RenderCommand"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1RenderCommand_1af09497bde16d8dc0e54ef1747ff9984d",
+                        "@virt": "non-virtual",
+                        "name": "SetClearColor",
+                        "scope": "Kinai::RenderCommand"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1RenderCommand_1aecf9886e6851fb0c858d764aeb82bce4",
+                        "@virt": "non-virtual",
+                        "name": "SetClearColor",
+                        "scope": "Kinai::RenderCommand"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1RenderCommand_1a437e722993d2e1d5a4d89d0a7c35ba29",
+                        "@virt": "non-virtual",
+                        "name": "SetLineWidth",
+                        "scope": "Kinai::RenderCommand"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1RenderCommand_1a26449c59205b0ba0226224b1a4a9c4ce",
+                        "@virt": "non-virtual",
+                        "name": "SetViewport",
+                        "scope": "Kinai::RenderCommand"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "63",
+                "@bodyfile": "include/Kinai/Renderer/RenderCommand.hpp",
+                "@bodystart": "9",
+                "@column": "1",
+                "@file": "include/Kinai/Renderer/RenderCommand.hpp",
+                "@line": "8"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "private-static-attrib",
+                    "memberdef": {
+                        "@id": "classKinai_1_1RenderCommand_1a7c6d2c79fac84bd0e28237727ef7d2eb",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "private",
+                        "@static": "yes",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "Scope<RendererAPI> Kinai::RenderCommand::_renderer_api",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/RenderCommand.hpp",
+                            "@bodystart": "62",
+                            "@column": "13",
+                            "@file": "include/Kinai/Renderer/RenderCommand.hpp",
+                            "@line": "62"
+                        },
+                        "name": "_renderer_api",
+                        "qualifiedname": "Kinai::RenderCommand::_renderer_api",
+                        "type": {
+                            "#text": "Scope<  >",
+                            "ref": {
+                                "#text": "RendererAPI",
+                                "@kindref": "compound",
+                                "@refid": "classKinai_1_1RendererAPI"
+                            }
+                        }
+                    }
+                },
+                {
+                    "@kind": "public-static-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1RenderCommand_1a376dd2a223a1ca33e82bc94412052585",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::RenderCommand::Init",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "14",
+                                "@bodyfile": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@bodystart": "11",
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@line": "11"
+                            },
+                            "name": "Init",
+                            "qualifiedname": "Kinai::RenderCommand::Init",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1RenderCommand_1a26449c59205b0ba0226224b1a4a9c4ce",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(uint32_t x, uint32_t y, uint32_t width, uint32_t height)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::RenderCommand::SetViewport",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "19",
+                                "@bodyfile": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@bodystart": "16",
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@line": "16"
+                            },
+                            "name": "SetViewport",
+                            "param": [
+                                {
+                                    "declname": "x",
+                                    "type": "uint32_t"
+                                },
+                                {
+                                    "declname": "y",
+                                    "type": "uint32_t"
+                                },
+                                {
+                                    "declname": "width",
+                                    "type": "uint32_t"
+                                },
+                                {
+                                    "declname": "height",
+                                    "type": "uint32_t"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::RenderCommand::SetViewport",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1RenderCommand_1a8a8fa585aa6aadfdfcf4d5efa2b45225",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::vec4 &color)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::RenderCommand::SetClearColor",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "24",
+                                "@bodyfile": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@bodystart": "21",
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@line": "21"
+                            },
+                            "name": "SetClearColor",
+                            "param": {
+                                "declname": "color",
+                                "type": "const glm::vec4 &"
+                            },
+                            "qualifiedname": "Kinai::RenderCommand::SetClearColor",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1RenderCommand_1af09497bde16d8dc0e54ef1747ff9984d",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(float r, float g, float b, float a)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::RenderCommand::SetClearColor",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "29",
+                                "@bodyfile": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@bodystart": "26",
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@line": "26"
+                            },
+                            "name": "SetClearColor",
+                            "param": [
+                                {
+                                    "declname": "r",
+                                    "type": "float"
+                                },
+                                {
+                                    "declname": "g",
+                                    "type": "float"
+                                },
+                                {
+                                    "declname": "b",
+                                    "type": "float"
+                                },
+                                {
+                                    "declname": "a",
+                                    "type": "float"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::RenderCommand::SetClearColor",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1RenderCommand_1aecf9886e6851fb0c858d764aeb82bce4",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(uint8_t r, uint8_t g, uint8_t b, uint8_t a)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::RenderCommand::SetClearColor",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "34",
+                                "@bodyfile": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@bodystart": "31",
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@line": "31"
+                            },
+                            "name": "SetClearColor",
+                            "param": [
+                                {
+                                    "declname": "r",
+                                    "type": "uint8_t"
+                                },
+                                {
+                                    "declname": "g",
+                                    "type": "uint8_t"
+                                },
+                                {
+                                    "declname": "b",
+                                    "type": "uint8_t"
+                                },
+                                {
+                                    "declname": "a",
+                                    "type": "uint8_t"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::RenderCommand::SetClearColor",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1RenderCommand_1a3eb8cca3d15d86211fed94c410de4cf2",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::RenderCommand::Clear",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "39",
+                                "@bodyfile": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@bodystart": "36",
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@line": "36"
+                            },
+                            "name": "Clear",
+                            "qualifiedname": "Kinai::RenderCommand::Clear",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1RenderCommand_1a7f3fad9c31b060546c139dbff1423ff6",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const Ref< VertexArray > &vertex_array, uint32_t index_count=0)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::RenderCommand::DrawIndexed",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "44",
+                                "@bodyfile": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@bodystart": "41",
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@line": "41"
+                            },
+                            "name": "DrawIndexed",
+                            "param": [
+                                {
+                                    "declname": "vertex_array",
+                                    "type": {
+                                        "#text": "const Ref<  > &",
+                                        "ref": {
+                                            "#text": "VertexArray",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1VertexArray"
+                                        }
+                                    }
+                                },
+                                {
+                                    "declname": "index_count",
+                                    "defval": "0",
+                                    "type": "uint32_t"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::RenderCommand::DrawIndexed",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1RenderCommand_1a8e9e50ecbbf25ee23d5cd7bb7334a894",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const Ref< VertexArray > &vertex_array, uint32_t vertex_count)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::RenderCommand::DrawLines",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "49",
+                                "@bodyfile": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@bodystart": "46",
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@line": "46"
+                            },
+                            "name": "DrawLines",
+                            "param": [
+                                {
+                                    "declname": "vertex_array",
+                                    "type": {
+                                        "#text": "const Ref<  > &",
+                                        "ref": {
+                                            "#text": "VertexArray",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1VertexArray"
+                                        }
+                                    }
+                                },
+                                {
+                                    "declname": "vertex_count",
+                                    "type": "uint32_t"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::RenderCommand::DrawLines",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1RenderCommand_1a0f6f55af29357f537764e10d56490e50",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const Ref< VertexArray > &vertex_array, uint32_t vertex_count)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::RenderCommand::DrawTriangles",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "54",
+                                "@bodyfile": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@bodystart": "51",
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@line": "51"
+                            },
+                            "name": "DrawTriangles",
+                            "param": [
+                                {
+                                    "declname": "vertex_array",
+                                    "type": {
+                                        "#text": "const Ref<  > &",
+                                        "ref": {
+                                            "#text": "VertexArray",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1VertexArray"
+                                        }
+                                    }
+                                },
+                                {
+                                    "declname": "vertex_count",
+                                    "type": "uint32_t"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::RenderCommand::DrawTriangles",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1RenderCommand_1a437e722993d2e1d5a4d89d0a7c35ba29",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(float width)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::RenderCommand::SetLineWidth",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "59",
+                                "@bodyfile": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@bodystart": "56",
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/RenderCommand.hpp",
+                                "@line": "56"
+                            },
+                            "name": "SetLineWidth",
+                            "param": {
+                                "declname": "width",
+                                "type": "float"
+                            },
+                            "qualifiedname": "Kinai::RenderCommand::SetLineWidth",
+                            "type": "void"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

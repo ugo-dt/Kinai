@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classKinai_1_1Camera" kind="class" language="C++" prot="public">
+    <compoundname>Kinai::Camera</compoundname>
+    <derivedcompoundref refid="classKinai_1_1PerspectiveCamera" prot="public" virt="non-virtual">Kinai::PerspectiveCamera</derivedcompoundref>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classKinai_1_1Camera_1a52f792b1fffeb20ef1e5c8f3624a76cf" prot="protected" static="no" mutable="no">
+        <type>glm::mat4</type>
+        <definition>glm::mat4 Kinai::Camera::_projection_matrix</definition>
+        <argsstring></argsstring>
+        <name>_projection_matrix</name>
+        <qualifiedname>Kinai::Camera::_projection_matrix</qualifiedname>
+        <initializer>= glm::mat4(1.0f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Camera.hpp" line="23" column="10" bodyfile="include/Kinai/Renderer/Camera.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKinai_1_1Camera_1a8aadb79e8fcf822ccfd45f55ac68915c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::Camera::Camera</definition>
+        <argsstring>()=default</argsstring>
+        <name>Camera</name>
+        <qualifiedname>Kinai::Camera::Camera</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Camera.hpp" line="14" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Camera_1a65d09d24338d2650aebfc18d966949e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::Camera::Camera</definition>
+        <argsstring>(const glm::mat4 &amp;projection_matrix)</argsstring>
+        <name>Camera</name>
+        <qualifiedname>Kinai::Camera::Camera</qualifiedname>
+        <param>
+          <type>const glm::mat4 &amp;</type>
+          <declname>projection_matrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Camera.hpp" line="15" column="1" bodyfile="include/Kinai/Renderer/Camera.hpp" bodystart="15" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Camera_1a3f583e446932af14a312e756e7dbfc57" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Kinai::Camera::~Camera</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Camera</name>
+        <qualifiedname>Kinai::Camera::~Camera</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Camera.hpp" line="18" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Camera_1a9a4678b11595112c6c334abe5c41752b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const glm::mat4 &amp;</type>
+        <definition>const glm::mat4 &amp; Kinai::Camera::GetProjectionMatrix</definition>
+        <argsstring>() const</argsstring>
+        <name>GetProjectionMatrix</name>
+        <qualifiedname>Kinai::Camera::GetProjectionMatrix</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Camera.hpp" line="20" column="16" bodyfile="include/Kinai/Renderer/Camera.hpp" bodystart="20" bodyend="20"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Kinai::Camera</label>
+        <link refid="classKinai_1_1Camera"/>
+      </node>
+      <node id="2">
+        <label>Kinai::PerspectiveCamera</label>
+        <link refid="classKinai_1_1PerspectiveCamera"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="include/Kinai/Renderer/Camera.hpp" line="11" column="1" bodyfile="include/Kinai/Renderer/Camera.hpp" bodystart="12" bodyend="24"/>
+    <listofallmembers>
+      <member refid="classKinai_1_1Camera_1a52f792b1fffeb20ef1e5c8f3624a76cf" prot="protected" virt="non-virtual"><scope>Kinai::Camera</scope><name>_projection_matrix</name></member>
+      <member refid="classKinai_1_1Camera_1a8aadb79e8fcf822ccfd45f55ac68915c" prot="public" virt="non-virtual"><scope>Kinai::Camera</scope><name>Camera</name></member>
+      <member refid="classKinai_1_1Camera_1a65d09d24338d2650aebfc18d966949e6" prot="public" virt="non-virtual"><scope>Kinai::Camera</scope><name>Camera</name></member>
+      <member refid="classKinai_1_1Camera_1a9a4678b11595112c6c334abe5c41752b" prot="public" virt="non-virtual"><scope>Kinai::Camera</scope><name>GetProjectionMatrix</name></member>
+      <member refid="classKinai_1_1Camera_1a3f583e446932af14a312e756e7dbfc57" prot="public" virt="virtual"><scope>Kinai::Camera</scope><name>~Camera</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

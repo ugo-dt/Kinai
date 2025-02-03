@@ -1,0 +1,249 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "structKinai_1_1WindowProps",
+            "@kind": "struct",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::WindowProps",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1WindowProps_1ad8f91dc5b08c1b265e8bca8898354ee0",
+                        "@virt": "non-virtual",
+                        "name": "fullscreen",
+                        "scope": "Kinai::WindowProps"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1WindowProps_1a74498909ec874697ae8df5f8cfcaf789",
+                        "@virt": "non-virtual",
+                        "name": "height",
+                        "scope": "Kinai::WindowProps"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1WindowProps_1a4ed88300c2d36eabd62334af97ac5152",
+                        "@virt": "non-virtual",
+                        "name": "no_vsync",
+                        "scope": "Kinai::WindowProps"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1WindowProps_1a1f86af1b6ba0475392c986489eeffe21",
+                        "@virt": "non-virtual",
+                        "name": "title",
+                        "scope": "Kinai::WindowProps"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1WindowProps_1a7ce1c8d3c7164c2453276ce2e1a893e3",
+                        "@virt": "non-virtual",
+                        "name": "width",
+                        "scope": "Kinai::WindowProps"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "structKinai_1_1WindowProps_1af2d53118f381305dc3f554fa782e1099",
+                        "@virt": "non-virtual",
+                        "name": "WindowProps",
+                        "scope": "Kinai::WindowProps"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "31",
+                "@bodyfile": "include/Kinai/Core/Window.hpp",
+                "@bodystart": "14",
+                "@column": "1",
+                "@file": "include/Kinai/Core/Window.hpp",
+                "@line": "13"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "public-attrib",
+                    "memberdef": [
+                        {
+                            "@id": "structKinai_1_1WindowProps_1a1f86af1b6ba0475392c986489eeffe21",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "std::string Kinai::WindowProps::title",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Window.hpp",
+                                "@bodystart": "15",
+                                "@column": "12",
+                                "@file": "include/Kinai/Core/Window.hpp",
+                                "@line": "15"
+                            },
+                            "name": "title",
+                            "qualifiedname": "Kinai::WindowProps::title",
+                            "type": "std::string"
+                        },
+                        {
+                            "@id": "structKinai_1_1WindowProps_1a7ce1c8d3c7164c2453276ce2e1a893e3",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "uint32_t Kinai::WindowProps::width",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Window.hpp",
+                                "@bodystart": "16",
+                                "@column": "9",
+                                "@file": "include/Kinai/Core/Window.hpp",
+                                "@line": "16"
+                            },
+                            "name": "width",
+                            "qualifiedname": "Kinai::WindowProps::width",
+                            "type": "uint32_t"
+                        },
+                        {
+                            "@id": "structKinai_1_1WindowProps_1a74498909ec874697ae8df5f8cfcaf789",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "uint32_t Kinai::WindowProps::height",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Window.hpp",
+                                "@bodystart": "17",
+                                "@column": "9",
+                                "@file": "include/Kinai/Core/Window.hpp",
+                                "@line": "17"
+                            },
+                            "name": "height",
+                            "qualifiedname": "Kinai::WindowProps::height",
+                            "type": "uint32_t"
+                        },
+                        {
+                            "@id": "structKinai_1_1WindowProps_1ad8f91dc5b08c1b265e8bca8898354ee0",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "bool Kinai::WindowProps::fullscreen",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Window.hpp",
+                                "@bodystart": "18",
+                                "@column": "5",
+                                "@file": "include/Kinai/Core/Window.hpp",
+                                "@line": "18"
+                            },
+                            "name": "fullscreen",
+                            "qualifiedname": "Kinai::WindowProps::fullscreen",
+                            "type": "bool"
+                        },
+                        {
+                            "@id": "structKinai_1_1WindowProps_1a4ed88300c2d36eabd62334af97ac5152",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "bool Kinai::WindowProps::no_vsync",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Window.hpp",
+                                "@bodystart": "19",
+                                "@column": "5",
+                                "@file": "include/Kinai/Core/Window.hpp",
+                                "@line": "19"
+                            },
+                            "name": "no_vsync",
+                            "qualifiedname": "Kinai::WindowProps::no_vsync",
+                            "type": "bool"
+                        }
+                    ]
+                },
+                {
+                    "@kind": "public-func",
+                    "memberdef": {
+                        "@const": "no",
+                        "@explicit": "no",
+                        "@id": "structKinai_1_1WindowProps_1af2d53118f381305dc3f554fa782e1099",
+                        "@inline": "yes",
+                        "@kind": "function",
+                        "@prot": "public",
+                        "@static": "no",
+                        "@virt": "non-virtual",
+                        "argsstring": "(const std::string &title=\"Kinai\", uint32_t width=KN_DEFAULT_WINDOW_WIDTH, uint32_t height=KN_DEFAULT_WINDOW_HEIGHT, bool fullscreen=false, bool no_vsync=false)",
+                        "briefdescription": null,
+                        "definition": "Kinai::WindowProps::WindowProps",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "30",
+                            "@bodyfile": "include/Kinai/Core/Window.hpp",
+                            "@bodystart": "21",
+                            "@column": "1",
+                            "@file": "include/Kinai/Core/Window.hpp",
+                            "@line": "21"
+                        },
+                        "name": "WindowProps",
+                        "param": [
+                            {
+                                "declname": "title",
+                                "defval": "\"Kinai\"",
+                                "type": "const std::string &"
+                            },
+                            {
+                                "declname": "width",
+                                "defval": "KN_DEFAULT_WINDOW_WIDTH",
+                                "type": "uint32_t"
+                            },
+                            {
+                                "declname": "height",
+                                "defval": "KN_DEFAULT_WINDOW_HEIGHT",
+                                "type": "uint32_t"
+                            },
+                            {
+                                "declname": "fullscreen",
+                                "defval": "false",
+                                "type": "bool"
+                            },
+                            {
+                                "declname": "no_vsync",
+                                "defval": "false",
+                                "type": "bool"
+                            }
+                        ],
+                        "qualifiedname": "Kinai::WindowProps::WindowProps",
+                        "type": null
+                    }
+                }
+            ]
+        }
+    }
+}

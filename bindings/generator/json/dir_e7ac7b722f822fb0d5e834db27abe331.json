@@ -1,0 +1,28 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "dir_e7ac7b722f822fb0d5e834db27abe331",
+            "@kind": "dir",
+            "briefdescription": null,
+            "compoundname": "2D",
+            "detaileddescription": null,
+            "innerfile": [
+                {
+                    "#text": "Renderer2D.hpp",
+                    "@refid": "Renderer2D_8hpp"
+                },
+                {
+                    "#text": "2D/Shader.hpp",
+                    "@refid": "2D_2Shader_8hpp"
+                }
+            ],
+            "location": {
+                "@file": "include/Kinai/Renderer/2D/"
+            }
+        }
+    }
+}

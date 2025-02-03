@@ -1,0 +1,50 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "dir_b48b7b2876bf0f47d47112cddec52d6b",
+            "@kind": "dir",
+            "briefdescription": null,
+            "compoundname": "Kinai",
+            "detaileddescription": null,
+            "innerdir": [
+                {
+                    "#text": "Core",
+                    "@refid": "dir_fe86284f01105c695ed3f35446b17d8c"
+                },
+                {
+                    "#text": "Events",
+                    "@refid": "dir_72522746b5367e81aae70c04962e01c2"
+                },
+                {
+                    "#text": "ImGui",
+                    "@refid": "dir_2a4431228de4b6dd89b179ec97ce567e"
+                },
+                {
+                    "#text": "Platform",
+                    "@refid": "dir_70d0cd76473f5dd45ed36138246182c8"
+                },
+                {
+                    "#text": "Renderer",
+                    "@refid": "dir_c73ecd4420e731df50a04bddc05aa931"
+                }
+            ],
+            "innerfile": [
+                {
+                    "#text": "EntryPoint.hpp",
+                    "@refid": "EntryPoint_8hpp"
+                },
+                {
+                    "#text": "Kinai.hpp",
+                    "@refid": "Kinai_8hpp"
+                }
+            ],
+            "location": {
+                "@file": "include/Kinai/"
+            }
+        }
+    }
+}

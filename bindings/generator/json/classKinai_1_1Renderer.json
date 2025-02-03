@@ -1,0 +1,362 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "classKinai_1_1Renderer",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::Renderer",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer_1a5ab47b679790ee7162094c1a6a4731cb",
+                        "@virt": "non-virtual",
+                        "name": "_view_proj",
+                        "scope": "Kinai::Renderer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer_1a91ec663e5b1e555ea631a504b4808de8",
+                        "@virt": "non-virtual",
+                        "name": "BeginFrame",
+                        "scope": "Kinai::Renderer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer_1ab934b878d924079ceb620354a0710445",
+                        "@virt": "non-virtual",
+                        "name": "EndFrame",
+                        "scope": "Kinai::Renderer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer_1a1c2a20fb47222ebb46b3aa479ab81cd9",
+                        "@virt": "non-virtual",
+                        "name": "Init",
+                        "scope": "Kinai::Renderer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer_1a12ad99c6065428f90e0956f52c79197d",
+                        "@virt": "non-virtual",
+                        "name": "OnWindowResize",
+                        "scope": "Kinai::Renderer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer_1a81c38924ae46bbb0644c798cade51a2a",
+                        "@virt": "non-virtual",
+                        "name": "Shutdown",
+                        "scope": "Kinai::Renderer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer_1ab63bfc117f745ffe3435f6c43b497352",
+                        "@virt": "non-virtual",
+                        "name": "Submit",
+                        "scope": "Kinai::Renderer"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer_1a357df584c417b9b800cc5598d04fba4a",
+                        "@virt": "non-virtual",
+                        "name": "SubmitTriangles",
+                        "scope": "Kinai::Renderer"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "27",
+                "@bodyfile": "include/Kinai/Renderer/Renderer.hpp",
+                "@bodystart": "12",
+                "@column": "1",
+                "@file": "include/Kinai/Renderer/Renderer.hpp",
+                "@line": "11"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "private-static-attrib",
+                    "memberdef": {
+                        "@id": "classKinai_1_1Renderer_1a5ab47b679790ee7162094c1a6a4731cb",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "private",
+                        "@static": "yes",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "glm::mat4 Kinai::Renderer::_view_proj",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/Renderer.hpp",
+                            "@bodystart": "26",
+                            "@column": "17",
+                            "@file": "include/Kinai/Renderer/Renderer.hpp",
+                            "@line": "26"
+                        },
+                        "name": "_view_proj",
+                        "qualifiedname": "Kinai::Renderer::_view_proj",
+                        "type": "glm::mat4"
+                    }
+                },
+                {
+                    "@kind": "public-static-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer_1a1c2a20fb47222ebb46b3aa479ab81cd9",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer::Init",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/Renderer.hpp",
+                                "@line": "14"
+                            },
+                            "name": "Init",
+                            "qualifiedname": "Kinai::Renderer::Init",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer_1a81c38924ae46bbb0644c798cade51a2a",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer::Shutdown",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/Renderer.hpp",
+                                "@line": "15"
+                            },
+                            "name": "Shutdown",
+                            "qualifiedname": "Kinai::Renderer::Shutdown",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer_1a91ec663e5b1e555ea631a504b4808de8",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const PerspectiveCamera &camera)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer::BeginFrame",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/Renderer.hpp",
+                                "@line": "17"
+                            },
+                            "name": "BeginFrame",
+                            "param": {
+                                "declname": "camera",
+                                "type": {
+                                    "#text": "const  &",
+                                    "ref": {
+                                        "#text": "PerspectiveCamera",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1PerspectiveCamera"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::Renderer::BeginFrame",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer_1ab934b878d924079ceb620354a0710445",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer::EndFrame",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/Renderer.hpp",
+                                "@line": "18"
+                            },
+                            "name": "EndFrame",
+                            "qualifiedname": "Kinai::Renderer::EndFrame",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer_1a12ad99c6065428f90e0956f52c79197d",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(uint32_t width, uint32_t height)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer::OnWindowResize",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/Renderer.hpp",
+                                "@line": "20"
+                            },
+                            "name": "OnWindowResize",
+                            "param": [
+                                {
+                                    "declname": "width",
+                                    "type": "uint32_t"
+                                },
+                                {
+                                    "declname": "height",
+                                    "type": "uint32_t"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer::OnWindowResize",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer_1ab63bfc117f745ffe3435f6c43b497352",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const Ref< Shader > &shader, const Ref< VertexArray > &vertex_array, const glm::mat4 &transform=glm::mat4(1.0f))",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer::Submit",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/Renderer.hpp",
+                                "@line": "22"
+                            },
+                            "name": "Submit",
+                            "param": [
+                                {
+                                    "declname": "shader",
+                                    "type": {
+                                        "#text": "const Ref<  > &",
+                                        "ref": {
+                                            "#text": "Shader",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1Shader"
+                                        }
+                                    }
+                                },
+                                {
+                                    "declname": "vertex_array",
+                                    "type": {
+                                        "#text": "const Ref<  > &",
+                                        "ref": {
+                                            "#text": "VertexArray",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1VertexArray"
+                                        }
+                                    }
+                                },
+                                {
+                                    "declname": "transform",
+                                    "defval": "glm::mat4(1.0f)",
+                                    "type": "const glm::mat4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer::Submit",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer_1a357df584c417b9b800cc5598d04fba4a",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const Ref< Shader > &shader, const Ref< VertexArray > &vertex_array, uint32_t vertex_count, const glm::mat4 &transform=glm::mat4(1.0f))",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer::SubmitTriangles",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/Renderer.hpp",
+                                "@line": "23"
+                            },
+                            "name": "SubmitTriangles",
+                            "param": [
+                                {
+                                    "declname": "shader",
+                                    "type": {
+                                        "#text": "const Ref<  > &",
+                                        "ref": {
+                                            "#text": "Shader",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1Shader"
+                                        }
+                                    }
+                                },
+                                {
+                                    "declname": "vertex_array",
+                                    "type": {
+                                        "#text": "const Ref<  > &",
+                                        "ref": {
+                                            "#text": "VertexArray",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1VertexArray"
+                                        }
+                                    }
+                                },
+                                {
+                                    "declname": "vertex_count",
+                                    "type": "uint32_t"
+                                },
+                                {
+                                    "declname": "transform",
+                                    "defval": "glm::mat4(1.0f)",
+                                    "type": "const glm::mat4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer::SubmitTriangles",
+                            "type": "void"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

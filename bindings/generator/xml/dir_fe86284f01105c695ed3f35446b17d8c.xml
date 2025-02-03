@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_fe86284f01105c695ed3f35446b17d8c" kind="dir">
+    <compoundname>Core</compoundname>
+    <innerfile refid="Application_8hpp">Application.hpp</innerfile>
+    <innerfile refid="Assert_8hpp">Assert.hpp</innerfile>
+    <innerfile refid="Core_8hpp">Core.hpp</innerfile>
+    <innerfile refid="Core_2EntryPoint_8hpp">Core/EntryPoint.hpp</innerfile>
+    <innerfile refid="Input_8hpp">Input.hpp</innerfile>
+    <innerfile refid="KeyCode_8hpp">KeyCode.hpp</innerfile>
+    <innerfile refid="Layer_8hpp">Layer.hpp</innerfile>
+    <innerfile refid="LayerStack_8hpp">LayerStack.hpp</innerfile>
+    <innerfile refid="Log_8hpp">Log.hpp</innerfile>
+    <innerfile refid="MouseButton_8hpp">MouseButton.hpp</innerfile>
+    <innerfile refid="Parser_8hpp">Parser.hpp</innerfile>
+    <innerfile refid="Timer_8hpp">Timer.hpp</innerfile>
+    <innerfile refid="Window_8hpp">Window.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Core/"/>
+  </compounddef>
+</doxygen>

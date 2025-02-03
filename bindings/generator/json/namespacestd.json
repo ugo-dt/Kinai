@@ -1,0 +1,21 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "namespacestd",
+            "@kind": "namespace",
+            "@language": "C++",
+            "briefdescription": null,
+            "compoundname": "std",
+            "detaileddescription": null,
+            "location": {
+                "@column": "1",
+                "@file": "[generated]",
+                "@line": "1"
+            }
+        }
+    }
+}

@@ -1,0 +1,444 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "classKinai_1_1OrthographicCameraController",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::OrthographicCameraController",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1OrthographicCameraController_1aa5325b712d9912bdce0859164e1ca317",
+                        "@virt": "non-virtual",
+                        "name": "_camera",
+                        "scope": "Kinai::OrthographicCameraController"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1OrthographicCameraController_1abc1c2e362194deadca5b5ab868360e4d",
+                        "@virt": "non-virtual",
+                        "name": "_config",
+                        "scope": "Kinai::OrthographicCameraController"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1OrthographicCameraController_1aa3b0c1c5730e6def01e05bfb677e09f8",
+                        "@virt": "non-virtual",
+                        "name": "GetCamera",
+                        "scope": "Kinai::OrthographicCameraController"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1OrthographicCameraController_1aa9a8d6ac8b0a5ad7e5cf2ea1378b678c",
+                        "@virt": "non-virtual",
+                        "name": "GetCamera",
+                        "scope": "Kinai::OrthographicCameraController"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1OrthographicCameraController_1aa5ffed1e0072e2f942d8f934a9f2adf5",
+                        "@virt": "non-virtual",
+                        "name": "OnEvent",
+                        "scope": "Kinai::OrthographicCameraController"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1OrthographicCameraController_1a1fe41228233c72eab57fa642342d3c6e",
+                        "@virt": "non-virtual",
+                        "name": "OnMouseWheel",
+                        "scope": "Kinai::OrthographicCameraController"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1OrthographicCameraController_1ae70a84a491438356d3d2f67339e05a1b",
+                        "@virt": "non-virtual",
+                        "name": "OnResize",
+                        "scope": "Kinai::OrthographicCameraController"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1OrthographicCameraController_1adc80117d9423d3abac7b954dca5ee6c2",
+                        "@virt": "non-virtual",
+                        "name": "OnUpdate",
+                        "scope": "Kinai::OrthographicCameraController"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1OrthographicCameraController_1a166e922510d08ef9b027ef296611ed6e",
+                        "@virt": "non-virtual",
+                        "name": "OnWindowResize",
+                        "scope": "Kinai::OrthographicCameraController"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1OrthographicCameraController_1a364194542cc02dac147d191054ce28b1",
+                        "@virt": "non-virtual",
+                        "name": "OrthographicCameraController",
+                        "scope": "Kinai::OrthographicCameraController"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "68",
+                "@bodyfile": "include/Kinai/Renderer/OrthographicCamera.hpp",
+                "@bodystart": "50",
+                "@column": "1",
+                "@file": "include/Kinai/Renderer/OrthographicCamera.hpp",
+                "@line": "49"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "private-attrib",
+                    "memberdef": [
+                        {
+                            "@id": "classKinai_1_1OrthographicCameraController_1aa5325b712d9912bdce0859164e1ca317",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "OrthographicCamera Kinai::OrthographicCameraController::_camera",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/OrthographicCamera.hpp",
+                                "@bodystart": "66",
+                                "@column": "19",
+                                "@file": "include/Kinai/Renderer/OrthographicCamera.hpp",
+                                "@line": "66"
+                            },
+                            "name": "_camera",
+                            "qualifiedname": "Kinai::OrthographicCameraController::_camera",
+                            "type": {
+                                "ref": {
+                                    "#text": "OrthographicCamera",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1OrthographicCamera"
+                                }
+                            }
+                        },
+                        {
+                            "@id": "classKinai_1_1OrthographicCameraController_1abc1c2e362194deadca5b5ab868360e4d",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "OrthographicCameraControllerConfig Kinai::OrthographicCameraController::_config",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/OrthographicCamera.hpp",
+                                "@bodystart": "67",
+                                "@column": "35",
+                                "@file": "include/Kinai/Renderer/OrthographicCamera.hpp",
+                                "@line": "67"
+                            },
+                            "name": "_config",
+                            "qualifiedname": "Kinai::OrthographicCameraController::_config",
+                            "type": {
+                                "ref": {
+                                    "#text": "OrthographicCameraControllerConfig",
+                                    "@kindref": "compound",
+                                    "@refid": "structKinai_1_1OrthographicCameraControllerConfig"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "@kind": "public-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1OrthographicCameraController_1a364194542cc02dac147d191054ce28b1",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const OrthographicCameraControllerConfig &config=OrthographicCameraControllerConfig())",
+                            "briefdescription": null,
+                            "definition": "Kinai::OrthographicCameraController::OrthographicCameraController",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "1",
+                                "@file": "include/Kinai/Renderer/OrthographicCamera.hpp",
+                                "@line": "52"
+                            },
+                            "name": "OrthographicCameraController",
+                            "param": {
+                                "declname": "config",
+                                "defval": {
+                                    "#text": "()",
+                                    "ref": {
+                                        "#text": "OrthographicCameraControllerConfig",
+                                        "@kindref": "compound",
+                                        "@refid": "structKinai_1_1OrthographicCameraControllerConfig"
+                                    }
+                                },
+                                "type": {
+                                    "#text": "const  &",
+                                    "ref": {
+                                        "#text": "OrthographicCameraControllerConfig",
+                                        "@kindref": "compound",
+                                        "@refid": "structKinai_1_1OrthographicCameraControllerConfig"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::OrthographicCameraController::OrthographicCameraController",
+                            "type": null
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1OrthographicCameraController_1adc80117d9423d3abac7b954dca5ee6c2",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(float delta)",
+                            "briefdescription": null,
+                            "definition": "void Kinai::OrthographicCameraController::OnUpdate",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/OrthographicCamera.hpp",
+                                "@line": "54"
+                            },
+                            "name": "OnUpdate",
+                            "param": {
+                                "declname": "delta",
+                                "type": "float"
+                            },
+                            "qualifiedname": "Kinai::OrthographicCameraController::OnUpdate",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1OrthographicCameraController_1aa5ffed1e0072e2f942d8f934a9f2adf5",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(Event &event)",
+                            "briefdescription": null,
+                            "definition": "void Kinai::OrthographicCameraController::OnEvent",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/OrthographicCamera.hpp",
+                                "@line": "55"
+                            },
+                            "name": "OnEvent",
+                            "param": {
+                                "declname": "event",
+                                "type": {
+                                    "#text": "&",
+                                    "ref": {
+                                        "#text": "Event",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1Event"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::OrthographicCameraController::OnEvent",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1OrthographicCameraController_1ae70a84a491438356d3d2f67339e05a1b",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(float width, float height)",
+                            "briefdescription": null,
+                            "definition": "void Kinai::OrthographicCameraController::OnResize",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/OrthographicCamera.hpp",
+                                "@line": "56"
+                            },
+                            "name": "OnResize",
+                            "param": [
+                                {
+                                    "declname": "width",
+                                    "type": "float"
+                                },
+                                {
+                                    "declname": "height",
+                                    "type": "float"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::OrthographicCameraController::OnResize",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1OrthographicCameraController_1aa3b0c1c5730e6def01e05bfb677e09f8",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "OrthographicCamera & Kinai::OrthographicCameraController::GetCamera",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "58",
+                                "@bodyfile": "include/Kinai/Renderer/OrthographicCamera.hpp",
+                                "@bodystart": "58",
+                                "@column": "19",
+                                "@file": "include/Kinai/Renderer/OrthographicCamera.hpp",
+                                "@line": "58"
+                            },
+                            "name": "GetCamera",
+                            "qualifiedname": "Kinai::OrthographicCameraController::GetCamera",
+                            "type": {
+                                "#text": "&",
+                                "ref": {
+                                    "#text": "OrthographicCamera",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1OrthographicCamera"
+                                }
+                            }
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1OrthographicCameraController_1aa9a8d6ac8b0a5ad7e5cf2ea1378b678c",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "() const",
+                            "briefdescription": null,
+                            "definition": "const OrthographicCamera & Kinai::OrthographicCameraController::GetCamera",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "59",
+                                "@bodyfile": "include/Kinai/Renderer/OrthographicCamera.hpp",
+                                "@bodystart": "59",
+                                "@column": "25",
+                                "@file": "include/Kinai/Renderer/OrthographicCamera.hpp",
+                                "@line": "59"
+                            },
+                            "name": "GetCamera",
+                            "qualifiedname": "Kinai::OrthographicCameraController::GetCamera",
+                            "type": {
+                                "#text": "const  &",
+                                "ref": {
+                                    "#text": "OrthographicCamera",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1OrthographicCamera"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "@kind": "private-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1OrthographicCameraController_1a1fe41228233c72eab57fa642342d3c6e",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(MouseWheelEvent &event)",
+                            "briefdescription": null,
+                            "definition": "bool Kinai::OrthographicCameraController::OnMouseWheel",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/OrthographicCamera.hpp",
+                                "@line": "62"
+                            },
+                            "name": "OnMouseWheel",
+                            "param": {
+                                "declname": "event",
+                                "type": {
+                                    "#text": "&",
+                                    "ref": {
+                                        "#text": "MouseWheelEvent",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1MouseWheelEvent"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::OrthographicCameraController::OnMouseWheel",
+                            "type": "bool"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1OrthographicCameraController_1a166e922510d08ef9b027ef296611ed6e",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(WindowResizeEvent &event)",
+                            "briefdescription": null,
+                            "definition": "bool Kinai::OrthographicCameraController::OnWindowResize",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/OrthographicCamera.hpp",
+                                "@line": "63"
+                            },
+                            "name": "OnWindowResize",
+                            "param": {
+                                "declname": "event",
+                                "type": {
+                                    "#text": "&",
+                                    "ref": {
+                                        "#text": "WindowResizeEvent",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1WindowResizeEvent"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::OrthographicCameraController::OnWindowResize",
+                            "type": "bool"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

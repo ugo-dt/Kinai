@@ -1,0 +1,74 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "dir_c73ecd4420e731df50a04bddc05aa931",
+            "@kind": "dir",
+            "briefdescription": null,
+            "compoundname": "Renderer",
+            "detaileddescription": null,
+            "innerdir": [
+                {
+                    "#text": "2D",
+                    "@refid": "dir_e7ac7b722f822fb0d5e834db27abe331"
+                },
+                {
+                    "#text": "Buffer",
+                    "@refid": "dir_9d2164fe67c908d616d9305615ca1bdf"
+                }
+            ],
+            "innerfile": [
+                {
+                    "#text": "Camera.hpp",
+                    "@refid": "Camera_8hpp"
+                },
+                {
+                    "#text": "Framebuffer.hpp",
+                    "@refid": "Framebuffer_8hpp"
+                },
+                {
+                    "#text": "OrthographicCamera.hpp",
+                    "@refid": "OrthographicCamera_8hpp"
+                },
+                {
+                    "#text": "PerspectiveCamera.hpp",
+                    "@refid": "PerspectiveCamera_8hpp"
+                },
+                {
+                    "#text": "RenderCommand.hpp",
+                    "@refid": "RenderCommand_8hpp"
+                },
+                {
+                    "#text": "Renderer.hpp",
+                    "@refid": "Renderer_8hpp"
+                },
+                {
+                    "#text": "RendererAPI.hpp",
+                    "@refid": "RendererAPI_8hpp"
+                },
+                {
+                    "#text": "Shader.hpp",
+                    "@refid": "Shader_8hpp"
+                },
+                {
+                    "#text": "Texture.hpp",
+                    "@refid": "Texture_8hpp"
+                },
+                {
+                    "#text": "UniformBuffer.hpp",
+                    "@refid": "UniformBuffer_8hpp"
+                },
+                {
+                    "#text": "VertexArray.hpp",
+                    "@refid": "VertexArray_8hpp"
+                }
+            ],
+            "location": {
+                "@file": "include/Kinai/Renderer/"
+            }
+        }
+    }
+}

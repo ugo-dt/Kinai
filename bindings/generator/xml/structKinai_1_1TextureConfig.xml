@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structKinai_1_1TextureConfig" kind="struct" language="C++" prot="public">
+    <compoundname>Kinai::TextureConfig</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structKinai_1_1TextureConfig_1a298d762797a4f5e01fa2002f7fe63ce6" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Kinai::TextureConfig::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <qualifiedname>Kinai::TextureConfig::width</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Texture.hpp" line="20" column="9" bodyfile="include/Kinai/Renderer/Texture.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1TextureConfig_1ad6af37298b6428a118665f50bb3a0afc" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Kinai::TextureConfig::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <qualifiedname>Kinai::TextureConfig::height</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Texture.hpp" line="21" column="9" bodyfile="include/Kinai/Renderer/Texture.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1TextureConfig_1a10982c446f6c04f85cd495dd5c5df136" prot="public" static="no" mutable="no">
+        <type>ImageFormat</type>
+        <definition>ImageFormat Kinai::TextureConfig::format</definition>
+        <argsstring></argsstring>
+        <name>format</name>
+        <qualifiedname>Kinai::TextureConfig::format</qualifiedname>
+        <initializer>= ImageFormat::RGBA8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Texture.hpp" line="22" column="12" bodyfile="include/Kinai/Renderer/Texture.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1TextureConfig_1a68a7c24546c97924822263934151ee23" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Kinai::TextureConfig::generate_mips</definition>
+        <argsstring></argsstring>
+        <name>generate_mips</name>
+        <qualifiedname>Kinai::TextureConfig::generate_mips</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Texture.hpp" line="23" column="5" bodyfile="include/Kinai/Renderer/Texture.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1TextureConfig_1aa1882c78210079fa54e430e47b6acf24" prot="public" static="no" mutable="no">
+        <type>GLenum</type>
+        <definition>GLenum Kinai::TextureConfig::min_filter</definition>
+        <argsstring></argsstring>
+        <name>min_filter</name>
+        <qualifiedname>Kinai::TextureConfig::min_filter</qualifiedname>
+        <initializer>= GL_LINEAR</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Texture.hpp" line="24" column="7" bodyfile="include/Kinai/Renderer/Texture.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structKinai_1_1TextureConfig_1a2b3e5f401bb7a2f261156aac155eaec7" prot="public" static="no" mutable="no">
+        <type>GLenum</type>
+        <definition>GLenum Kinai::TextureConfig::max_filter</definition>
+        <argsstring></argsstring>
+        <name>max_filter</name>
+        <qualifiedname>Kinai::TextureConfig::max_filter</qualifiedname>
+        <initializer>= GL_LINEAR</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Texture.hpp" line="25" column="7" bodyfile="include/Kinai/Renderer/Texture.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Renderer/Texture.hpp" line="18" column="1" bodyfile="include/Kinai/Renderer/Texture.hpp" bodystart="19" bodyend="26"/>
+    <listofallmembers>
+      <member refid="structKinai_1_1TextureConfig_1a10982c446f6c04f85cd495dd5c5df136" prot="public" virt="non-virtual"><scope>Kinai::TextureConfig</scope><name>format</name></member>
+      <member refid="structKinai_1_1TextureConfig_1a68a7c24546c97924822263934151ee23" prot="public" virt="non-virtual"><scope>Kinai::TextureConfig</scope><name>generate_mips</name></member>
+      <member refid="structKinai_1_1TextureConfig_1ad6af37298b6428a118665f50bb3a0afc" prot="public" virt="non-virtual"><scope>Kinai::TextureConfig</scope><name>height</name></member>
+      <member refid="structKinai_1_1TextureConfig_1a2b3e5f401bb7a2f261156aac155eaec7" prot="public" virt="non-virtual"><scope>Kinai::TextureConfig</scope><name>max_filter</name></member>
+      <member refid="structKinai_1_1TextureConfig_1aa1882c78210079fa54e430e47b6acf24" prot="public" virt="non-virtual"><scope>Kinai::TextureConfig</scope><name>min_filter</name></member>
+      <member refid="structKinai_1_1TextureConfig_1a298d762797a4f5e01fa2002f7fe63ce6" prot="public" virt="non-virtual"><scope>Kinai::TextureConfig</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

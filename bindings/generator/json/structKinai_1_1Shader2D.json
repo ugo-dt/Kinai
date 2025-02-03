@@ -1,0 +1,67 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "structKinai_1_1Shader2D",
+            "@kind": "struct",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::Shader2D",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": {
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1Shader2D_1a762c629623b830337e5a7331db25c54f",
+                    "@virt": "non-virtual",
+                    "name": "shader",
+                    "scope": "Kinai::Shader2D"
+                }
+            },
+            "location": {
+                "@bodyend": "12",
+                "@bodyfile": "include/Kinai/Renderer/2D/Shader.hpp",
+                "@bodystart": "10",
+                "@column": "1",
+                "@file": "include/Kinai/Renderer/2D/Shader.hpp",
+                "@line": "9"
+            },
+            "sectiondef": {
+                "@kind": "public-attrib",
+                "memberdef": {
+                    "@id": "structKinai_1_1Shader2D_1a762c629623b830337e5a7331db25c54f",
+                    "@kind": "variable",
+                    "@mutable": "no",
+                    "@prot": "public",
+                    "@static": "no",
+                    "argsstring": null,
+                    "briefdescription": null,
+                    "definition": "Ref<Shader> Kinai::Shader2D::shader",
+                    "detaileddescription": null,
+                    "inbodydescription": null,
+                    "location": {
+                        "@bodyend": "-1",
+                        "@bodyfile": "include/Kinai/Renderer/2D/Shader.hpp",
+                        "@bodystart": "11",
+                        "@column": "4",
+                        "@file": "include/Kinai/Renderer/2D/Shader.hpp",
+                        "@line": "11"
+                    },
+                    "name": "shader",
+                    "qualifiedname": "Kinai::Shader2D::shader",
+                    "type": {
+                        "#text": "Ref<  >",
+                        "ref": {
+                            "#text": "Shader",
+                            "@kindref": "compound",
+                            "@refid": "classKinai_1_1Shader"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

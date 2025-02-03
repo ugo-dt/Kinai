@@ -1,0 +1,228 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "classKinai_1_1Camera",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::Camera",
+            "derivedcompoundref": {
+                "#text": "Kinai::PerspectiveCamera",
+                "@prot": "public",
+                "@refid": "classKinai_1_1PerspectiveCamera",
+                "@virt": "non-virtual"
+            },
+            "detaileddescription": null,
+            "inheritancegraph": {
+                "node": [
+                    {
+                        "@id": "1",
+                        "label": "Kinai::Camera",
+                        "link": {
+                            "@refid": "classKinai_1_1Camera"
+                        }
+                    },
+                    {
+                        "@id": "2",
+                        "childnode": {
+                            "@refid": "1",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::PerspectiveCamera",
+                        "link": {
+                            "@refid": "classKinai_1_1PerspectiveCamera"
+                        }
+                    }
+                ]
+            },
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "protected",
+                        "@refid": "classKinai_1_1Camera_1a52f792b1fffeb20ef1e5c8f3624a76cf",
+                        "@virt": "non-virtual",
+                        "name": "_projection_matrix",
+                        "scope": "Kinai::Camera"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Camera_1a8aadb79e8fcf822ccfd45f55ac68915c",
+                        "@virt": "non-virtual",
+                        "name": "Camera",
+                        "scope": "Kinai::Camera"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Camera_1a65d09d24338d2650aebfc18d966949e6",
+                        "@virt": "non-virtual",
+                        "name": "Camera",
+                        "scope": "Kinai::Camera"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Camera_1a9a4678b11595112c6c334abe5c41752b",
+                        "@virt": "non-virtual",
+                        "name": "GetProjectionMatrix",
+                        "scope": "Kinai::Camera"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Camera_1a3f583e446932af14a312e756e7dbfc57",
+                        "@virt": "virtual",
+                        "name": "~Camera",
+                        "scope": "Kinai::Camera"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "24",
+                "@bodyfile": "include/Kinai/Renderer/Camera.hpp",
+                "@bodystart": "12",
+                "@column": "1",
+                "@file": "include/Kinai/Renderer/Camera.hpp",
+                "@line": "11"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "protected-attrib",
+                    "memberdef": {
+                        "@id": "classKinai_1_1Camera_1a52f792b1fffeb20ef1e5c8f3624a76cf",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "protected",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "glm::mat4 Kinai::Camera::_projection_matrix",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "initializer": "= glm::mat4(1.0f)",
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/Camera.hpp",
+                            "@bodystart": "23",
+                            "@column": "10",
+                            "@file": "include/Kinai/Renderer/Camera.hpp",
+                            "@line": "23"
+                        },
+                        "name": "_projection_matrix",
+                        "qualifiedname": "Kinai::Camera::_projection_matrix",
+                        "type": "glm::mat4"
+                    }
+                },
+                {
+                    "@kind": "public-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Camera_1a8aadb79e8fcf822ccfd45f55ac68915c",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "()=default",
+                            "briefdescription": null,
+                            "definition": "Kinai::Camera::Camera",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "1",
+                                "@file": "include/Kinai/Renderer/Camera.hpp",
+                                "@line": "14"
+                            },
+                            "name": "Camera",
+                            "qualifiedname": "Kinai::Camera::Camera",
+                            "type": null
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Camera_1a65d09d24338d2650aebfc18d966949e6",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::mat4 &projection_matrix)",
+                            "briefdescription": null,
+                            "definition": "Kinai::Camera::Camera",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "16",
+                                "@bodyfile": "include/Kinai/Renderer/Camera.hpp",
+                                "@bodystart": "15",
+                                "@column": "1",
+                                "@file": "include/Kinai/Renderer/Camera.hpp",
+                                "@line": "15"
+                            },
+                            "name": "Camera",
+                            "param": {
+                                "declname": "projection_matrix",
+                                "type": "const glm::mat4 &"
+                            },
+                            "qualifiedname": "Kinai::Camera::Camera",
+                            "type": null
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Camera_1a3f583e446932af14a312e756e7dbfc57",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "virtual",
+                            "argsstring": "()=default",
+                            "briefdescription": null,
+                            "definition": "virtual Kinai::Camera::~Camera",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "9",
+                                "@file": "include/Kinai/Renderer/Camera.hpp",
+                                "@line": "18"
+                            },
+                            "name": "~Camera",
+                            "qualifiedname": "Kinai::Camera::~Camera",
+                            "type": null
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Camera_1a9a4678b11595112c6c334abe5c41752b",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "() const",
+                            "briefdescription": null,
+                            "definition": "const glm::mat4 & Kinai::Camera::GetProjectionMatrix",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "20",
+                                "@bodyfile": "include/Kinai/Renderer/Camera.hpp",
+                                "@bodystart": "20",
+                                "@column": "16",
+                                "@file": "include/Kinai/Renderer/Camera.hpp",
+                                "@line": "20"
+                            },
+                            "name": "GetProjectionMatrix",
+                            "qualifiedname": "Kinai::Camera::GetProjectionMatrix",
+                            "type": "const glm::mat4 &"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

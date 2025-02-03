@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classKinai_1_1VertexBuffer" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Kinai::VertexBuffer</compoundname>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKinai_1_1VertexBuffer_1a896afc08819251737eb42c0f1a0ac63e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Kinai::VertexBuffer::~VertexBuffer</definition>
+        <argsstring>()=default</argsstring>
+        <name>~VertexBuffer</name>
+        <qualifiedname>Kinai::VertexBuffer::~VertexBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/VertexBuffer.hpp" line="12" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1VertexBuffer_1ad05115354d156cf47599c4f819ffdacb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::VertexBuffer::Bind</definition>
+        <argsstring>() const =0</argsstring>
+        <name>Bind</name>
+        <qualifiedname>Kinai::VertexBuffer::Bind</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/VertexBuffer.hpp" line="14" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1VertexBuffer_1a0575c23799eecce3374a9548ad776e6f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::VertexBuffer::Unbind</definition>
+        <argsstring>() const =0</argsstring>
+        <name>Unbind</name>
+        <qualifiedname>Kinai::VertexBuffer::Unbind</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/VertexBuffer.hpp" line="15" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1VertexBuffer_1ac213ffebb79a7e9dfebac4c58e9bcc05" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::VertexBuffer::SetData</definition>
+        <argsstring>(const void *data, uint32_t size)=0</argsstring>
+        <name>SetData</name>
+        <qualifiedname>Kinai::VertexBuffer::SetData</qualifiedname>
+        <param>
+          <type>const void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/VertexBuffer.hpp" line="17" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1VertexBuffer_1a660be3e4643be440418593e4808a13b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::VertexBuffer::SetLayout</definition>
+        <argsstring>(const BufferLayout &amp;layout)=0</argsstring>
+        <name>SetLayout</name>
+        <qualifiedname>Kinai::VertexBuffer::SetLayout</qualifiedname>
+        <param>
+          <type>const <ref refid="classKinai_1_1BufferLayout" kindref="compound">BufferLayout</ref> &amp;</type>
+          <declname>layout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/VertexBuffer.hpp" line="18" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1VertexBuffer_1ab0b5b84092277cc309d70f936b7608fc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>const <ref refid="classKinai_1_1BufferLayout" kindref="compound">BufferLayout</ref> &amp;</type>
+        <definition>virtual const BufferLayout &amp; Kinai::VertexBuffer::GetLayout</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetLayout</name>
+        <qualifiedname>Kinai::VertexBuffer::GetLayout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/VertexBuffer.hpp" line="20" column="27"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classKinai_1_1VertexBuffer_1a00d88bb65d61111386f28a939b0ec3b0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Ref&lt; <ref refid="classKinai_1_1VertexBuffer" kindref="compound">VertexBuffer</ref> &gt;</type>
+        <definition>static Ref&lt; VertexBuffer &gt; Kinai::VertexBuffer::Create</definition>
+        <argsstring>(uint32_t size)</argsstring>
+        <name>Create</name>
+        <qualifiedname>Kinai::VertexBuffer::Create</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/VertexBuffer.hpp" line="22" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1VertexBuffer_1a1c5f39ea3cc87a69d0965fab26b070d0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Ref&lt; <ref refid="classKinai_1_1VertexBuffer" kindref="compound">VertexBuffer</ref> &gt;</type>
+        <definition>static Ref&lt; VertexBuffer &gt; Kinai::VertexBuffer::Create</definition>
+        <argsstring>(const void *vertices, uint32_t size)</argsstring>
+        <name>Create</name>
+        <qualifiedname>Kinai::VertexBuffer::Create</qualifiedname>
+        <param>
+          <type>const void *</type>
+          <declname>vertices</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/VertexBuffer.hpp" line="23" column="11"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Renderer/Buffer/VertexBuffer.hpp" line="9" column="1" bodyfile="include/Kinai/Renderer/Buffer/VertexBuffer.hpp" bodystart="10" bodyend="24"/>
+    <listofallmembers>
+      <member refid="classKinai_1_1VertexBuffer_1ad05115354d156cf47599c4f819ffdacb" prot="public" virt="pure-virtual"><scope>Kinai::VertexBuffer</scope><name>Bind</name></member>
+      <member refid="classKinai_1_1VertexBuffer_1a00d88bb65d61111386f28a939b0ec3b0" prot="public" virt="non-virtual"><scope>Kinai::VertexBuffer</scope><name>Create</name></member>
+      <member refid="classKinai_1_1VertexBuffer_1a1c5f39ea3cc87a69d0965fab26b070d0" prot="public" virt="non-virtual"><scope>Kinai::VertexBuffer</scope><name>Create</name></member>
+      <member refid="classKinai_1_1VertexBuffer_1ab0b5b84092277cc309d70f936b7608fc" prot="public" virt="pure-virtual"><scope>Kinai::VertexBuffer</scope><name>GetLayout</name></member>
+      <member refid="classKinai_1_1VertexBuffer_1ac213ffebb79a7e9dfebac4c58e9bcc05" prot="public" virt="pure-virtual"><scope>Kinai::VertexBuffer</scope><name>SetData</name></member>
+      <member refid="classKinai_1_1VertexBuffer_1a660be3e4643be440418593e4808a13b1" prot="public" virt="pure-virtual"><scope>Kinai::VertexBuffer</scope><name>SetLayout</name></member>
+      <member refid="classKinai_1_1VertexBuffer_1a0575c23799eecce3374a9548ad776e6f" prot="public" virt="pure-virtual"><scope>Kinai::VertexBuffer</scope><name>Unbind</name></member>
+      <member refid="classKinai_1_1VertexBuffer_1a896afc08819251737eb42c0f1a0ac63e" prot="public" virt="virtual"><scope>Kinai::VertexBuffer</scope><name>~VertexBuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

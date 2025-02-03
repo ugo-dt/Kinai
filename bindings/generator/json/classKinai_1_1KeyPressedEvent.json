@@ -1,0 +1,283 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "classKinai_1_1KeyPressedEvent",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "basecompoundref": {
+                "#text": "Kinai::KeyEvent",
+                "@prot": "public",
+                "@refid": "classKinai_1_1KeyEvent",
+                "@virt": "non-virtual"
+            },
+            "briefdescription": null,
+            "collaborationgraph": {
+                "node": [
+                    {
+                        "@id": "3",
+                        "label": "Kinai::Event",
+                        "link": {
+                            "@refid": "classKinai_1_1Event"
+                        }
+                    },
+                    {
+                        "@id": "2",
+                        "childnode": {
+                            "@refid": "3",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::KeyEvent",
+                        "link": {
+                            "@refid": "classKinai_1_1KeyEvent"
+                        }
+                    },
+                    {
+                        "@id": "1",
+                        "childnode": {
+                            "@refid": "2",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::KeyPressedEvent",
+                        "link": {
+                            "@refid": "classKinai_1_1KeyPressedEvent"
+                        }
+                    }
+                ]
+            },
+            "compoundname": "Kinai::KeyPressedEvent",
+            "detaileddescription": null,
+            "inheritancegraph": {
+                "node": [
+                    {
+                        "@id": "3",
+                        "label": "Kinai::Event",
+                        "link": {
+                            "@refid": "classKinai_1_1Event"
+                        }
+                    },
+                    {
+                        "@id": "2",
+                        "childnode": {
+                            "@refid": "3",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::KeyEvent",
+                        "link": {
+                            "@refid": "classKinai_1_1KeyEvent"
+                        }
+                    },
+                    {
+                        "@id": "1",
+                        "childnode": {
+                            "@refid": "2",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::KeyPressedEvent",
+                        "link": {
+                            "@refid": "classKinai_1_1KeyPressedEvent"
+                        }
+                    }
+                ]
+            },
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1KeyEvent_1a4ce9157b1993ae66ec9337415a1279b4",
+                        "@virt": "non-virtual",
+                        "name": "_key_code",
+                        "scope": "Kinai::KeyPressedEvent"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1KeyEvent_1ac6ffea67705ebdfc7365d82eea063ce1",
+                        "@virt": "non-virtual",
+                        "name": "EVENT_CLASS_CATEGORY",
+                        "scope": "Kinai::KeyPressedEvent"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Event_1a1f2e3dd6426fc209e7f157700816060a",
+                        "@virt": "pure-virtual",
+                        "name": "GetCategoryFlags",
+                        "scope": "Kinai::KeyPressedEvent"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Event_1a4747eda31509c3e25c166997bc83cf2f",
+                        "@virt": "pure-virtual",
+                        "name": "GetEventType",
+                        "scope": "Kinai::KeyPressedEvent"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1KeyEvent_1a2389a7234c362c6a7ef230d9a4e40e57",
+                        "@virt": "non-virtual",
+                        "name": "GetKeyCode",
+                        "scope": "Kinai::KeyPressedEvent"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Event_1aa583e2927f7beda552435b2f8f184025",
+                        "@virt": "pure-virtual",
+                        "name": "GetName",
+                        "scope": "Kinai::KeyPressedEvent"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Event_1a8f35ee9e4c3e69a83262c9a44afb4c0e",
+                        "@virt": "non-virtual",
+                        "name": "handled",
+                        "scope": "Kinai::KeyPressedEvent"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Event_1a7ab92ccea10ad63144a84d5df06a501d",
+                        "@virt": "non-virtual",
+                        "name": "IsInCategory",
+                        "scope": "Kinai::KeyPressedEvent"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1KeyPressedEvent_1a7680b8101c4df7e2de3a1cb39a502084",
+                        "@virt": "non-virtual",
+                        "name": "IsRepeat",
+                        "scope": "Kinai::KeyPressedEvent"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1KeyPressedEvent_1a5996d7401a527f7e07f106f378bdddc8",
+                        "@virt": "non-virtual",
+                        "name": "KeyPressedEvent",
+                        "scope": "Kinai::KeyPressedEvent"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1KeyPressedEvent_1ac1633f44467877b863601753d63b902b",
+                        "@virt": "virtual",
+                        "name": "ToString",
+                        "scope": "Kinai::KeyPressedEvent"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Event_1a61a9ecf4e7a96b855adaa9a681f5d58a",
+                        "@virt": "virtual",
+                        "name": "~Event",
+                        "scope": "Kinai::KeyPressedEvent"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "41",
+                "@bodyfile": "include/Kinai/Events/KeyEvent.hpp",
+                "@bodystart": "24",
+                "@column": "1",
+                "@file": "include/Kinai/Events/KeyEvent.hpp",
+                "@line": "23"
+            },
+            "sectiondef": {
+                "@kind": "public-func",
+                "memberdef": [
+                    {
+                        "@const": "no",
+                        "@explicit": "no",
+                        "@id": "classKinai_1_1KeyPressedEvent_1a5996d7401a527f7e07f106f378bdddc8",
+                        "@inline": "yes",
+                        "@kind": "function",
+                        "@prot": "public",
+                        "@static": "no",
+                        "@virt": "non-virtual",
+                        "argsstring": "(const KeyCode keycode, bool repeat=false)",
+                        "briefdescription": null,
+                        "definition": "Kinai::KeyPressedEvent::KeyPressedEvent",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "27",
+                            "@bodyfile": "include/Kinai/Events/KeyEvent.hpp",
+                            "@bodystart": "26",
+                            "@column": "1",
+                            "@file": "include/Kinai/Events/KeyEvent.hpp",
+                            "@line": "26"
+                        },
+                        "name": "KeyPressedEvent",
+                        "param": [
+                            {
+                                "declname": "keycode",
+                                "type": "const KeyCode"
+                            },
+                            {
+                                "declname": "repeat",
+                                "defval": "false",
+                                "type": "bool"
+                            }
+                        ],
+                        "qualifiedname": "Kinai::KeyPressedEvent::KeyPressedEvent",
+                        "type": null
+                    },
+                    {
+                        "@const": "yes",
+                        "@explicit": "no",
+                        "@id": "classKinai_1_1KeyPressedEvent_1a7680b8101c4df7e2de3a1cb39a502084",
+                        "@inline": "yes",
+                        "@kind": "function",
+                        "@prot": "public",
+                        "@static": "no",
+                        "@virt": "non-virtual",
+                        "argsstring": "() const",
+                        "briefdescription": null,
+                        "definition": "bool Kinai::KeyPressedEvent::IsRepeat",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "29",
+                            "@bodyfile": "include/Kinai/Events/KeyEvent.hpp",
+                            "@bodystart": "29",
+                            "@column": "6",
+                            "@file": "include/Kinai/Events/KeyEvent.hpp",
+                            "@line": "29"
+                        },
+                        "name": "IsRepeat",
+                        "qualifiedname": "Kinai::KeyPressedEvent::IsRepeat",
+                        "type": "bool"
+                    },
+                    {
+                        "@const": "yes",
+                        "@explicit": "no",
+                        "@id": "classKinai_1_1KeyPressedEvent_1ac1633f44467877b863601753d63b902b",
+                        "@inline": "yes",
+                        "@kind": "function",
+                        "@prot": "public",
+                        "@static": "no",
+                        "@virt": "virtual",
+                        "argsstring": "() const override",
+                        "briefdescription": null,
+                        "definition": "std::string Kinai::KeyPressedEvent::ToString",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "36",
+                            "@bodyfile": "include/Kinai/Events/KeyEvent.hpp",
+                            "@bodystart": "31",
+                            "@column": "13",
+                            "@file": "include/Kinai/Events/KeyEvent.hpp",
+                            "@line": "31"
+                        },
+                        "name": "ToString",
+                        "qualifiedname": "Kinai::KeyPressedEvent::ToString",
+                        "reimplements": {
+                            "#text": "ToString",
+                            "@refid": "classKinai_1_1Event_1a0ed0b864f47b05c5ba8f20f548beef29"
+                        },
+                        "type": "std::string"
+                    }
+                ]
+            }
+        }
+    }
+}

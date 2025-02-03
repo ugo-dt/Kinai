@@ -1,0 +1,883 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "classKinai_1_1Application",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::Application",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Application_1a185c349de2657769a7350b44edf65905",
+                        "@virt": "non-virtual",
+                        "name": "_config",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Application_1a564941c4849408d2e005930125227adc",
+                        "@virt": "non-virtual",
+                        "name": "_imgui_layer",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Application_1ae47cd65652362aeeedcbdaf78610646f",
+                        "@virt": "non-virtual",
+                        "name": "_instance",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Application_1abc2acf4be01c9233847cdd3736503d94",
+                        "@virt": "non-virtual",
+                        "name": "_layerstack",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Application_1a2fad4e1253265d7fe6e92f6552c0ca8a",
+                        "@virt": "non-virtual",
+                        "name": "_minimized",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Application_1aa346946ae353e97373bed20e257c397c",
+                        "@virt": "non-virtual",
+                        "name": "_time",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Application_1af238825f4043a2e9bbc6c3397024e3c6",
+                        "@virt": "non-virtual",
+                        "name": "_window",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Application_1a6e6ed0145a82da0ee502e2003d660d4e",
+                        "@virt": "non-virtual",
+                        "name": "Application",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Application_1adea958436e3b05c7e3ebafcd49f61121",
+                        "@virt": "non-virtual",
+                        "name": "Close",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Application_1a9e89270ac50b756c19e624a6a07d392f",
+                        "@virt": "non-virtual",
+                        "name": "Get",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Application_1a3649bf1a96d5fcbdf5f5987e064d4345",
+                        "@virt": "non-virtual",
+                        "name": "GetDeltaTime",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Application_1ad12ad291745ed59c125a0aa1455ffd47",
+                        "@virt": "non-virtual",
+                        "name": "GetFPS",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Application_1a1c0c136ce1611c72bb724f2359bcbf7f",
+                        "@virt": "non-virtual",
+                        "name": "GetImGuiLayer",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Application_1a1e486f7c712532448836d1f73cb27abf",
+                        "@virt": "non-virtual",
+                        "name": "GetWindow",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Application_1a2e4ab429e2968cf4bc709e3c44f9dd9a",
+                        "@virt": "non-virtual",
+                        "name": "Main",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Application_1a0658e2052a1cb95d14f16b3c990593b0",
+                        "@virt": "non-virtual",
+                        "name": "OnEvent",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Application_1a6852385ea6f562ac4dc3d6a5e5a6b63e",
+                        "@virt": "non-virtual",
+                        "name": "OnWindowClose",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Application_1a188fdf877007cd1de894f3a968d48046",
+                        "@virt": "non-virtual",
+                        "name": "OnWindowResize",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Application_1aa79f96d744fcff879a36c72cb76a6120",
+                        "@virt": "non-virtual",
+                        "name": "PushLayer",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Application_1acf34be4c469030b4c5ba20915de483d7",
+                        "@virt": "non-virtual",
+                        "name": "PushOverlay",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Application_1a07a7860360f0c13cc32454db4926b555",
+                        "@virt": "non-virtual",
+                        "name": "Run",
+                        "scope": "Kinai::Application"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Application_1a99278555e31e5baf78af4747514015dc",
+                        "@virt": "virtual",
+                        "name": "~Application",
+                        "scope": "Kinai::Application"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "79",
+                "@bodyfile": "include/Kinai/Core/Application.hpp",
+                "@bodystart": "41",
+                "@column": "1",
+                "@file": "include/Kinai/Core/Application.hpp",
+                "@line": "40"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "private-attrib",
+                    "memberdef": [
+                        {
+                            "@id": "classKinai_1_1Application_1af238825f4043a2e9bbc6c3397024e3c6",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "Scope<Window> Kinai::Application::_window",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Application.hpp",
+                                "@bodystart": "67",
+                                "@column": "6",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "67"
+                            },
+                            "name": "_window",
+                            "qualifiedname": "Kinai::Application::_window",
+                            "type": {
+                                "#text": "Scope<  >",
+                                "ref": {
+                                    "#text": "Window",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Window"
+                                }
+                            }
+                        },
+                        {
+                            "@id": "classKinai_1_1Application_1a185c349de2657769a7350b44edf65905",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "ApplicationConfig Kinai::Application::_config",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Application.hpp",
+                                "@bodystart": "68",
+                                "@column": "18",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "68"
+                            },
+                            "name": "_config",
+                            "qualifiedname": "Kinai::Application::_config",
+                            "type": {
+                                "ref": {
+                                    "#text": "ApplicationConfig",
+                                    "@kindref": "compound",
+                                    "@refid": "structKinai_1_1ApplicationConfig"
+                                }
+                            }
+                        },
+                        {
+                            "@id": "classKinai_1_1Application_1a564941c4849408d2e005930125227adc",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "ImGuiLayer* Kinai::Application::_imgui_layer",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Application.hpp",
+                                "@bodystart": "69",
+                                "@column": "11",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "69"
+                            },
+                            "name": "_imgui_layer",
+                            "qualifiedname": "Kinai::Application::_imgui_layer",
+                            "type": {
+                                "#text": "*",
+                                "ref": {
+                                    "#text": "ImGuiLayer",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1ImGuiLayer"
+                                }
+                            }
+                        },
+                        {
+                            "@id": "classKinai_1_1Application_1aa346946ae353e97373bed20e257c397c",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "Time Kinai::Application::_time",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Application.hpp",
+                                "@bodystart": "70",
+                                "@column": "5",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "70"
+                            },
+                            "name": "_time",
+                            "qualifiedname": "Kinai::Application::_time",
+                            "type": {
+                                "ref": {
+                                    "#text": "Time",
+                                    "@kindref": "compound",
+                                    "@refid": "structKinai_1_1Time"
+                                }
+                            }
+                        },
+                        {
+                            "@id": "classKinai_1_1Application_1abc2acf4be01c9233847cdd3736503d94",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "LayerStack Kinai::Application::_layerstack",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Application.hpp",
+                                "@bodystart": "71",
+                                "@column": "11",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "71"
+                            },
+                            "name": "_layerstack",
+                            "qualifiedname": "Kinai::Application::_layerstack",
+                            "type": {
+                                "ref": {
+                                    "#text": "LayerStack",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1LayerStack"
+                                }
+                            }
+                        },
+                        {
+                            "@id": "classKinai_1_1Application_1a2fad4e1253265d7fe6e92f6552c0ca8a",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "bool Kinai::Application::_minimized",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Application.hpp",
+                                "@bodystart": "72",
+                                "@column": "5",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "72"
+                            },
+                            "name": "_minimized",
+                            "qualifiedname": "Kinai::Application::_minimized",
+                            "type": "bool"
+                        }
+                    ]
+                },
+                {
+                    "@kind": "private-static-attrib",
+                    "memberdef": {
+                        "@id": "classKinai_1_1Application_1ae47cd65652362aeeedcbdaf78610646f",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "private",
+                        "@static": "yes",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "Application* Kinai::Application::_instance",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Core/Application.hpp",
+                            "@bodystart": "75",
+                            "@column": "19",
+                            "@file": "include/Kinai/Core/Application.hpp",
+                            "@line": "75"
+                        },
+                        "name": "_instance",
+                        "qualifiedname": "Kinai::Application::_instance",
+                        "type": {
+                            "#text": "*",
+                            "ref": {
+                                "#text": "Application",
+                                "@kindref": "compound",
+                                "@refid": "classKinai_1_1Application"
+                            }
+                        }
+                    }
+                },
+                {
+                    "@kind": "public-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Application_1a6e6ed0145a82da0ee502e2003d660d4e",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const ApplicationConfig &config)",
+                            "briefdescription": null,
+                            "definition": "Kinai::Application::Application",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "1",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "43"
+                            },
+                            "name": "Application",
+                            "param": {
+                                "declname": "config",
+                                "type": {
+                                    "#text": "const  &",
+                                    "ref": {
+                                        "#text": "ApplicationConfig",
+                                        "@kindref": "compound",
+                                        "@refid": "structKinai_1_1ApplicationConfig"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::Application::Application",
+                            "type": null
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Application_1a99278555e31e5baf78af4747514015dc",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "virtual Kinai::Application::~Application",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "9",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "44"
+                            },
+                            "name": "~Application",
+                            "qualifiedname": "Kinai::Application::~Application",
+                            "type": null
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Application_1aa79f96d744fcff879a36c72cb76a6120",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(Layer *layer)",
+                            "briefdescription": null,
+                            "definition": "Layer * Kinai::Application::PushLayer",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "6",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "46"
+                            },
+                            "name": "PushLayer",
+                            "param": {
+                                "declname": "layer",
+                                "type": {
+                                    "#text": "*",
+                                    "ref": {
+                                        "#text": "Layer",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1Layer"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::Application::PushLayer",
+                            "type": {
+                                "#text": "*",
+                                "ref": {
+                                    "#text": "Layer",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Layer"
+                                }
+                            }
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Application_1acf34be4c469030b4c5ba20915de483d7",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(Layer *layer)",
+                            "briefdescription": null,
+                            "definition": "Layer * Kinai::Application::PushOverlay",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "6",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "47"
+                            },
+                            "name": "PushOverlay",
+                            "param": {
+                                "declname": "layer",
+                                "type": {
+                                    "#text": "*",
+                                    "ref": {
+                                        "#text": "Layer",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1Layer"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::Application::PushOverlay",
+                            "type": {
+                                "#text": "*",
+                                "ref": {
+                                    "#text": "Layer",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Layer"
+                                }
+                            }
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Application_1adea958436e3b05c7e3ebafcd49f61121",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "void Kinai::Application::Close",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "49"
+                            },
+                            "name": "Close",
+                            "qualifiedname": "Kinai::Application::Close",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Application_1a1e486f7c712532448836d1f73cb27abf",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "Window & Kinai::Application::GetWindow",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "51",
+                                "@bodyfile": "include/Kinai/Core/Application.hpp",
+                                "@bodystart": "51",
+                                "@column": "7",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "51"
+                            },
+                            "name": "GetWindow",
+                            "qualifiedname": "Kinai::Application::GetWindow",
+                            "type": {
+                                "#text": "&",
+                                "ref": {
+                                    "#text": "Window",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Window"
+                                }
+                            }
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Application_1ad12ad291745ed59c125a0aa1455ffd47",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "() const",
+                            "briefdescription": null,
+                            "definition": "uint64_t Kinai::Application::GetFPS",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "53",
+                                "@bodyfile": "include/Kinai/Core/Application.hpp",
+                                "@bodystart": "53",
+                                "@column": "9",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "53"
+                            },
+                            "name": "GetFPS",
+                            "qualifiedname": "Kinai::Application::GetFPS",
+                            "type": "uint64_t"
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Application_1a3649bf1a96d5fcbdf5f5987e064d4345",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "() const",
+                            "briefdescription": null,
+                            "definition": "float Kinai::Application::GetDeltaTime",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "54",
+                                "@bodyfile": "include/Kinai/Core/Application.hpp",
+                                "@bodystart": "54",
+                                "@column": "6",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "54"
+                            },
+                            "name": "GetDeltaTime",
+                            "qualifiedname": "Kinai::Application::GetDeltaTime",
+                            "type": "float"
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Application_1a1c0c136ce1611c72bb724f2359bcbf7f",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "() const",
+                            "briefdescription": null,
+                            "definition": "ImGuiLayer * Kinai::Application::GetImGuiLayer",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "55",
+                                "@bodyfile": "include/Kinai/Core/Application.hpp",
+                                "@bodystart": "55",
+                                "@column": "11",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "55"
+                            },
+                            "name": "GetImGuiLayer",
+                            "qualifiedname": "Kinai::Application::GetImGuiLayer",
+                            "type": {
+                                "#text": "*",
+                                "ref": {
+                                    "#text": "ImGuiLayer",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1ImGuiLayer"
+                                }
+                            }
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Application_1a07a7860360f0c13cc32454db4926b555",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "void Kinai::Application::Run",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "57"
+                            },
+                            "name": "Run",
+                            "qualifiedname": "Kinai::Application::Run",
+                            "type": "void"
+                        }
+                    ]
+                },
+                {
+                    "@kind": "public-static-func",
+                    "memberdef": {
+                        "@const": "no",
+                        "@explicit": "no",
+                        "@id": "classKinai_1_1Application_1a9e89270ac50b756c19e624a6a07d392f",
+                        "@inline": "yes",
+                        "@kind": "function",
+                        "@prot": "public",
+                        "@static": "yes",
+                        "@virt": "non-virtual",
+                        "argsstring": "()",
+                        "briefdescription": null,
+                        "definition": "static Application & Kinai::Application::Get",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "59",
+                            "@bodyfile": "include/Kinai/Core/Application.hpp",
+                            "@bodystart": "59",
+                            "@column": "20",
+                            "@file": "include/Kinai/Core/Application.hpp",
+                            "@line": "59"
+                        },
+                        "name": "Get",
+                        "qualifiedname": "Kinai::Application::Get",
+                        "type": {
+                            "#text": "&",
+                            "ref": {
+                                "#text": "Application",
+                                "@kindref": "compound",
+                                "@refid": "classKinai_1_1Application"
+                            }
+                        }
+                    }
+                },
+                {
+                    "@kind": "private-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Application_1a0658e2052a1cb95d14f16b3c990593b0",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(Event &event)",
+                            "briefdescription": null,
+                            "definition": "void Kinai::Application::OnEvent",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "62"
+                            },
+                            "name": "OnEvent",
+                            "param": {
+                                "declname": "event",
+                                "type": {
+                                    "#text": "&",
+                                    "ref": {
+                                        "#text": "Event",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1Event"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::Application::OnEvent",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Application_1a6852385ea6f562ac4dc3d6a5e5a6b63e",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(WindowCloseEvent &event)",
+                            "briefdescription": null,
+                            "definition": "bool Kinai::Application::OnWindowClose",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "63"
+                            },
+                            "name": "OnWindowClose",
+                            "param": {
+                                "declname": "event",
+                                "type": {
+                                    "#text": "&",
+                                    "ref": {
+                                        "#text": "WindowCloseEvent",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1WindowCloseEvent"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::Application::OnWindowClose",
+                            "type": "bool"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Application_1a188fdf877007cd1de894f3a968d48046",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(WindowResizeEvent &event)",
+                            "briefdescription": null,
+                            "definition": "bool Kinai::Application::OnWindowResize",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "64"
+                            },
+                            "name": "OnWindowResize",
+                            "param": {
+                                "declname": "event",
+                                "type": {
+                                    "#text": "&",
+                                    "ref": {
+                                        "#text": "WindowResizeEvent",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1WindowResizeEvent"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::Application::OnWindowResize",
+                            "type": "bool"
+                        }
+                    ]
+                },
+                {
+                    "@kind": "friend",
+                    "memberdef": {
+                        "@const": "no",
+                        "@explicit": "no",
+                        "@id": "classKinai_1_1Application_1a2e4ab429e2968cf4bc709e3c44f9dd9a",
+                        "@inline": "no",
+                        "@kind": "friend",
+                        "@prot": "private",
+                        "@static": "no",
+                        "@virt": "non-virtual",
+                        "argsstring": "(int argc, char **argv)",
+                        "briefdescription": null,
+                        "definition": "int Main",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "28",
+                            "@bodyfile": "include/Kinai/Core/EntryPoint.hpp",
+                            "@bodystart": "17",
+                            "@column": "11",
+                            "@file": "include/Kinai/Core/Application.hpp",
+                            "@line": "78"
+                        },
+                        "name": "Main",
+                        "param": [
+                            {
+                                "declname": "argc",
+                                "type": "int"
+                            },
+                            {
+                                "declname": "argv",
+                                "type": "char **"
+                            }
+                        ],
+                        "qualifiedname": "Kinai::Application::Main",
+                        "type": "int"
+                    }
+                }
+            ]
+        }
+    }
+}

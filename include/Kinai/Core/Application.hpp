@@ -2,10 +2,9 @@
 
 #include "Kinai/Core/Core.hpp"
 #include "Kinai/Core/Input.hpp"
-#include "Kinai/Core/Time.hpp"
-#include "Kinai/Core/Window.hpp"
 #include "Kinai/Core/Layer.hpp"
 #include "Kinai/Core/LayerStack.hpp"
+#include "Kinai/Core/Window.hpp"
 #include "Kinai/Events/Event.hpp"
 #include "Kinai/Events/ApplicationEvent.hpp"
 #include "Kinai/Events/KeyEvent.hpp"
@@ -26,6 +25,16 @@ struct ApplicationConfig
 	bool		fullscreen = false;
 	bool		no_vsync = false;
 	bool		enable_imgui = false;
+};
+
+struct Time
+{
+	uint64_t	fps;
+	uint64_t	frames;
+	uint64_t	last;
+	uint64_t	last_second;
+	float		frame_time;
+	float		delta;
 };
 
 class Application

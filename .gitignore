@@ -6,4 +6,7 @@ SDL3.dll
 *.exe
 *.out
 imgui.ini
-bindings
+bindings/json
+bindings/xml
+bindings/xml
+bindings/xml

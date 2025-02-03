@@ -1,0 +1,337 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "classKinai_1_1ShaderLibrary",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::ShaderLibrary",
+            "detaileddescription": null,
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1ShaderLibrary_1a0bc316978cb63324e3042ddf9f74b96a",
+                        "@virt": "non-virtual",
+                        "name": "_shaders",
+                        "scope": "Kinai::ShaderLibrary"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1ShaderLibrary_1ac9cea627fca0516f19b4160ae7af3f85",
+                        "@virt": "non-virtual",
+                        "name": "Add",
+                        "scope": "Kinai::ShaderLibrary"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1ShaderLibrary_1af322f8df35fea4c6e152c6c0aabbfffe",
+                        "@virt": "non-virtual",
+                        "name": "Add",
+                        "scope": "Kinai::ShaderLibrary"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1ShaderLibrary_1a452f13041fd8e187a3a1b8919f48c861",
+                        "@virt": "non-virtual",
+                        "name": "Exists",
+                        "scope": "Kinai::ShaderLibrary"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1ShaderLibrary_1aed3b5c77dab5db35ae6605246a915170",
+                        "@virt": "non-virtual",
+                        "name": "Get",
+                        "scope": "Kinai::ShaderLibrary"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1ShaderLibrary_1ad8f32526579e83ad63cbbfa178613501",
+                        "@virt": "non-virtual",
+                        "name": "Load",
+                        "scope": "Kinai::ShaderLibrary"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1ShaderLibrary_1a8ef75bbf9100ef20b284fcb142ef6d68",
+                        "@virt": "non-virtual",
+                        "name": "Load",
+                        "scope": "Kinai::ShaderLibrary"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "44",
+                "@bodyfile": "include/Kinai/Renderer/Shader.hpp",
+                "@bodystart": "31",
+                "@column": "1",
+                "@file": "include/Kinai/Renderer/Shader.hpp",
+                "@line": "30"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "private-attrib",
+                    "memberdef": {
+                        "@id": "classKinai_1_1ShaderLibrary_1a0bc316978cb63324e3042ddf9f74b96a",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "private",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "std::unordered_map<std::string, Ref<Shader> > Kinai::ShaderLibrary::_shaders",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Renderer/Shader.hpp",
+                            "@bodystart": "43",
+                            "@column": "20",
+                            "@file": "include/Kinai/Renderer/Shader.hpp",
+                            "@line": "43"
+                        },
+                        "name": "_shaders",
+                        "qualifiedname": "Kinai::ShaderLibrary::_shaders",
+                        "type": {
+                            "#text": "std::unordered_map< std::string, Ref<  > >",
+                            "ref": {
+                                "#text": "Shader",
+                                "@kindref": "compound",
+                                "@refid": "classKinai_1_1Shader"
+                            }
+                        }
+                    }
+                },
+                {
+                    "@kind": "public-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1ShaderLibrary_1ac9cea627fca0516f19b4160ae7af3f85",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const std::string &name, const Ref< Shader > &shader)",
+                            "briefdescription": null,
+                            "definition": "void Kinai::ShaderLibrary::Add",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "33"
+                            },
+                            "name": "Add",
+                            "param": [
+                                {
+                                    "declname": "name",
+                                    "type": "const std::string &"
+                                },
+                                {
+                                    "declname": "shader",
+                                    "type": {
+                                        "#text": "const Ref<  > &",
+                                        "ref": {
+                                            "#text": "Shader",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1Shader"
+                                        }
+                                    }
+                                }
+                            ],
+                            "qualifiedname": "Kinai::ShaderLibrary::Add",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1ShaderLibrary_1af322f8df35fea4c6e152c6c0aabbfffe",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const Ref< Shader > &shader)",
+                            "briefdescription": null,
+                            "definition": "void Kinai::ShaderLibrary::Add",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "34"
+                            },
+                            "name": "Add",
+                            "param": {
+                                "declname": "shader",
+                                "type": {
+                                    "#text": "const Ref<  > &",
+                                    "ref": {
+                                        "#text": "Shader",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1Shader"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::ShaderLibrary::Add",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1ShaderLibrary_1ad8f32526579e83ad63cbbfa178613501",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const std::string &filepath, const std::string &name)",
+                            "briefdescription": null,
+                            "definition": "Ref< Shader > Kinai::ShaderLibrary::Load",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "4",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "35"
+                            },
+                            "name": "Load",
+                            "param": [
+                                {
+                                    "declname": "filepath",
+                                    "type": "const std::string &"
+                                },
+                                {
+                                    "declname": "name",
+                                    "type": "const std::string &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::ShaderLibrary::Load",
+                            "type": {
+                                "#text": "Ref<  >",
+                                "ref": {
+                                    "#text": "Shader",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Shader"
+                                }
+                            }
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1ShaderLibrary_1a8ef75bbf9100ef20b284fcb142ef6d68",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const std::string &name, const std::string &vertexSrc, const std::string &fragmentSrc)",
+                            "briefdescription": null,
+                            "definition": "Ref< Shader > Kinai::ShaderLibrary::Load",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "4",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "36"
+                            },
+                            "name": "Load",
+                            "param": [
+                                {
+                                    "declname": "name",
+                                    "type": "const std::string &"
+                                },
+                                {
+                                    "declname": "vertexSrc",
+                                    "type": "const std::string &"
+                                },
+                                {
+                                    "declname": "fragmentSrc",
+                                    "type": "const std::string &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::ShaderLibrary::Load",
+                            "type": {
+                                "#text": "Ref<  >",
+                                "ref": {
+                                    "#text": "Shader",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Shader"
+                                }
+                            }
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1ShaderLibrary_1aed3b5c77dab5db35ae6605246a915170",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const std::string &name)",
+                            "briefdescription": null,
+                            "definition": "Ref< Shader > Kinai::ShaderLibrary::Get",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "4",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "38"
+                            },
+                            "name": "Get",
+                            "param": {
+                                "declname": "name",
+                                "type": "const std::string &"
+                            },
+                            "qualifiedname": "Kinai::ShaderLibrary::Get",
+                            "type": {
+                                "#text": "Ref<  >",
+                                "ref": {
+                                    "#text": "Shader",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Shader"
+                                }
+                            }
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1ShaderLibrary_1a452f13041fd8e187a3a1b8919f48c861",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const std::string &name) const",
+                            "briefdescription": null,
+                            "definition": "bool Kinai::ShaderLibrary::Exists",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "5",
+                                "@file": "include/Kinai/Renderer/Shader.hpp",
+                                "@line": "40"
+                            },
+                            "name": "Exists",
+                            "param": {
+                                "declname": "name",
+                                "type": "const std::string &"
+                            },
+                            "qualifiedname": "Kinai::ShaderLibrary::Exists",
+                            "type": "bool"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

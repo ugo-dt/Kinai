@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classKinai_1_1Timer" kind="class" language="C++" prot="public">
+    <compoundname>Kinai::Timer</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classKinai_1_1Timer_1a60043b22244c797bd5d15ed6837b883d" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t Kinai::Timer::_start</definition>
+        <argsstring></argsstring>
+        <name>_start</name>
+        <qualifiedname>Kinai::Timer::_start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Timer.hpp" line="29" column="9" bodyfile="include/Kinai/Core/Timer.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKinai_1_1Timer_1a84a68257ca0a76d70be341d755a08bee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::Timer::Timer</definition>
+        <argsstring>()</argsstring>
+        <name>Timer</name>
+        <qualifiedname>Kinai::Timer::Timer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Timer.hpp" line="11" column="1" bodyfile="include/Kinai/Core/Timer.hpp" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Timer_1a02e588b42fd3f27db72034aca024c985" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::Timer::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <qualifiedname>Kinai::Timer::Reset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Timer.hpp" line="13" column="5" bodyfile="include/Kinai/Core/Timer.hpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Timer_1a6c73443a97dfde1f36c0235dc4baa0d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Kinai::Timer::ElapsedSeconds</definition>
+        <argsstring>()</argsstring>
+        <name>ElapsedSeconds</name>
+        <qualifiedname>Kinai::Timer::ElapsedSeconds</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Timer.hpp" line="18" column="6" bodyfile="include/Kinai/Core/Timer.hpp" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Timer_1a5b7e29a66403dc3000e9070cb25a6485" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Kinai::Timer::ElapsedMS</definition>
+        <argsstring>()</argsstring>
+        <name>ElapsedMS</name>
+        <qualifiedname>Kinai::Timer::ElapsedMS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Timer.hpp" line="23" column="6" bodyfile="include/Kinai/Core/Timer.hpp" bodystart="23" bodyend="26"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Core/Timer.hpp" line="8" column="1" bodyfile="include/Kinai/Core/Timer.hpp" bodystart="9" bodyend="30"/>
+    <listofallmembers>
+      <member refid="classKinai_1_1Timer_1a60043b22244c797bd5d15ed6837b883d" prot="private" virt="non-virtual"><scope>Kinai::Timer</scope><name>_start</name></member>
+      <member refid="classKinai_1_1Timer_1a5b7e29a66403dc3000e9070cb25a6485" prot="public" virt="non-virtual"><scope>Kinai::Timer</scope><name>ElapsedMS</name></member>
+      <member refid="classKinai_1_1Timer_1a6c73443a97dfde1f36c0235dc4baa0d9" prot="public" virt="non-virtual"><scope>Kinai::Timer</scope><name>ElapsedSeconds</name></member>
+      <member refid="classKinai_1_1Timer_1a02e588b42fd3f27db72034aca024c985" prot="public" virt="non-virtual"><scope>Kinai::Timer</scope><name>Reset</name></member>
+      <member refid="classKinai_1_1Timer_1a84a68257ca0a76d70be341d755a08bee" prot="public" virt="non-virtual"><scope>Kinai::Timer</scope><name>Timer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

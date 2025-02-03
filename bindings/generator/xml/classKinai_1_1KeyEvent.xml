@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classKinai_1_1KeyEvent" kind="class" language="C++" prot="public">
+    <compoundname>Kinai::KeyEvent</compoundname>
+    <basecompoundref refid="classKinai_1_1Event" prot="public" virt="non-virtual">Kinai::Event</basecompoundref>
+    <derivedcompoundref refid="classKinai_1_1KeyPressedEvent" prot="public" virt="non-virtual">Kinai::KeyPressedEvent</derivedcompoundref>
+    <derivedcompoundref refid="classKinai_1_1KeyReleasedEvent" prot="public" virt="non-virtual">Kinai::KeyReleasedEvent</derivedcompoundref>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classKinai_1_1KeyEvent_1a4ce9157b1993ae66ec9337415a1279b4" prot="public" static="no" mutable="no">
+        <type>KeyCode</type>
+        <definition>KeyCode Kinai::KeyEvent::_key_code</definition>
+        <argsstring></argsstring>
+        <name>_key_code</name>
+        <qualifiedname>Kinai::KeyEvent::_key_code</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/KeyEvent.hpp" line="20" column="9" bodyfile="include/Kinai/Events/KeyEvent.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKinai_1_1KeyEvent_1a2389a7234c362c6a7ef230d9a4e40e57" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>KeyCode</type>
+        <definition>KeyCode Kinai::KeyEvent::GetKeyCode</definition>
+        <argsstring>() const</argsstring>
+        <name>GetKeyCode</name>
+        <qualifiedname>Kinai::KeyEvent::GetKeyCode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/KeyEvent.hpp" line="13" column="9" bodyfile="include/Kinai/Events/KeyEvent.hpp" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1KeyEvent_1ac6ffea67705ebdfc7365d82eea063ce1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::KeyEvent::EVENT_CLASS_CATEGORY</definition>
+        <argsstring>(EventCategoryKeyboard|EventCategoryInput) protected</argsstring>
+        <name>EVENT_CLASS_CATEGORY</name>
+        <qualifiedname>Kinai::KeyEvent::EVENT_CLASS_CATEGORY</qualifiedname>
+        <param>
+          <type>EventCategoryKeyboard|</type>
+          <declname>EventCategoryInput</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/KeyEvent.hpp" line="15" column="1" bodyfile="include/Kinai/Events/KeyEvent.hpp" bodystart="15" bodyend="18"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Kinai::Event</label>
+        <link refid="classKinai_1_1Event"/>
+      </node>
+      <node id="1">
+        <label>Kinai::KeyEvent</label>
+        <link refid="classKinai_1_1KeyEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Kinai::KeyPressedEvent</label>
+        <link refid="classKinai_1_1KeyPressedEvent"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Kinai::KeyReleasedEvent</label>
+        <link refid="classKinai_1_1KeyReleasedEvent"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Kinai::Event</label>
+        <link refid="classKinai_1_1Event"/>
+      </node>
+      <node id="1">
+        <label>Kinai::KeyEvent</label>
+        <link refid="classKinai_1_1KeyEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/Kinai/Events/KeyEvent.hpp" line="10" column="1" bodyfile="include/Kinai/Events/KeyEvent.hpp" bodystart="11" bodyend="21"/>
+    <listofallmembers>
+      <member refid="classKinai_1_1KeyEvent_1a4ce9157b1993ae66ec9337415a1279b4" prot="public" virt="non-virtual"><scope>Kinai::KeyEvent</scope><name>_key_code</name></member>
+      <member refid="classKinai_1_1KeyEvent_1ac6ffea67705ebdfc7365d82eea063ce1" prot="public" virt="non-virtual"><scope>Kinai::KeyEvent</scope><name>EVENT_CLASS_CATEGORY</name></member>
+      <member refid="classKinai_1_1Event_1a1f2e3dd6426fc209e7f157700816060a" prot="public" virt="pure-virtual"><scope>Kinai::KeyEvent</scope><name>GetCategoryFlags</name></member>
+      <member refid="classKinai_1_1Event_1a4747eda31509c3e25c166997bc83cf2f" prot="public" virt="pure-virtual"><scope>Kinai::KeyEvent</scope><name>GetEventType</name></member>
+      <member refid="classKinai_1_1KeyEvent_1a2389a7234c362c6a7ef230d9a4e40e57" prot="public" virt="non-virtual"><scope>Kinai::KeyEvent</scope><name>GetKeyCode</name></member>
+      <member refid="classKinai_1_1Event_1aa583e2927f7beda552435b2f8f184025" prot="public" virt="pure-virtual"><scope>Kinai::KeyEvent</scope><name>GetName</name></member>
+      <member refid="classKinai_1_1Event_1a8f35ee9e4c3e69a83262c9a44afb4c0e" prot="public" virt="non-virtual"><scope>Kinai::KeyEvent</scope><name>handled</name></member>
+      <member refid="classKinai_1_1Event_1a7ab92ccea10ad63144a84d5df06a501d" prot="public" virt="non-virtual"><scope>Kinai::KeyEvent</scope><name>IsInCategory</name></member>
+      <member refid="classKinai_1_1Event_1a0ed0b864f47b05c5ba8f20f548beef29" prot="public" virt="virtual"><scope>Kinai::KeyEvent</scope><name>ToString</name></member>
+      <member refid="classKinai_1_1Event_1a61a9ecf4e7a96b855adaa9a681f5d58a" prot="public" virt="virtual"><scope>Kinai::KeyEvent</scope><name>~Event</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

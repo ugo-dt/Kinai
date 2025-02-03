@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classKinai_1_1Renderer2D_1_1Statistics" kind="class" language="C++" prot="public">
+    <compoundname>Kinai::Renderer2D::Statistics</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classKinai_1_1Renderer2D_1_1Statistics_1a3ae30911086b91efac11335e4dbd328d" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Kinai::Renderer2D::Statistics::_draw_calls</definition>
+        <argsstring></argsstring>
+        <name>_draw_calls</name>
+        <qualifiedname>Kinai::Renderer2D::Statistics::_draw_calls</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="128" column="9" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1Renderer2D_1_1Statistics_1a3f796f54634fb7455a2a3021ec737495" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Kinai::Renderer2D::Statistics::_quad_count</definition>
+        <argsstring></argsstring>
+        <name>_quad_count</name>
+        <qualifiedname>Kinai::Renderer2D::Statistics::_quad_count</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="129" column="9" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="129" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classKinai_1_1Renderer2D_1_1Statistics_1a5222bc319f9a1a80f91167670e26e8db" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class Renderer2D</definition>
+        <argsstring></argsstring>
+        <name>Renderer2D</name>
+        <qualifiedname>Kinai::Renderer2D::Statistics::Renderer2D</qualifiedname>
+        <param>
+          <type><ref refid="classKinai_1_1Renderer2D" kindref="compound">Renderer2D</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="133" column="14" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="133" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKinai_1_1Renderer2D_1_1Statistics_1ac7a0c36ac9bb4a3027f7ed10cd325b90" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Kinai::Renderer2D::Statistics::GetTotalVertexCount</definition>
+        <argsstring>()</argsstring>
+        <name>GetTotalVertexCount</name>
+        <qualifiedname>Kinai::Renderer2D::Statistics::GetTotalVertexCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="120" column="9" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="120" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Renderer2D_1_1Statistics_1a4aae9d2cdc51fde3e476b3e83c083751" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Kinai::Renderer2D::Statistics::GetTotalIndexCount</definition>
+        <argsstring>()</argsstring>
+        <name>GetTotalIndexCount</name>
+        <qualifiedname>Kinai::Renderer2D::Statistics::GetTotalIndexCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="121" column="9" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="121" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Renderer2D_1_1Statistics_1a56fc28d48ac694361cbf23d85105a446" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinai::Renderer2D::Statistics::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <qualifiedname>Kinai::Renderer2D::Statistics::Reset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="122" column="5" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="122" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Renderer2D_1_1Statistics_1a501a635595095d2a657f7ed85437b026" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Kinai::Renderer2D::Statistics::GetDrawCalls</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDrawCalls</name>
+        <qualifiedname>Kinai::Renderer2D::Statistics::GetDrawCalls</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="124" column="9" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="124" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Renderer2D_1_1Statistics_1aefd716be5f9052d3b8d1bc6a9fa2726d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Kinai::Renderer2D::Statistics::GetQuadCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetQuadCount</name>
+        <qualifiedname>Kinai::Renderer2D::Statistics::GetQuadCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="125" column="9" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="125" bodyend="125"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classKinai_1_1Renderer2D_1_1Statistics_1a8d338a77d4e3aa6a6924cfa15f4ac40e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::Renderer2D::Statistics::Statistics</definition>
+        <argsstring>()=default</argsstring>
+        <name>Statistics</name>
+        <qualifiedname>Kinai::Renderer2D::Statistics::Statistics</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="131" column="1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="117" column="1" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="118" bodyend="134"/>
+    <listofallmembers>
+      <member refid="classKinai_1_1Renderer2D_1_1Statistics_1a3ae30911086b91efac11335e4dbd328d" prot="private" virt="non-virtual"><scope>Kinai::Renderer2D::Statistics</scope><name>_draw_calls</name></member>
+      <member refid="classKinai_1_1Renderer2D_1_1Statistics_1a3f796f54634fb7455a2a3021ec737495" prot="private" virt="non-virtual"><scope>Kinai::Renderer2D::Statistics</scope><name>_quad_count</name></member>
+      <member refid="classKinai_1_1Renderer2D_1_1Statistics_1a501a635595095d2a657f7ed85437b026" prot="public" virt="non-virtual"><scope>Kinai::Renderer2D::Statistics</scope><name>GetDrawCalls</name></member>
+      <member refid="classKinai_1_1Renderer2D_1_1Statistics_1aefd716be5f9052d3b8d1bc6a9fa2726d" prot="public" virt="non-virtual"><scope>Kinai::Renderer2D::Statistics</scope><name>GetQuadCount</name></member>
+      <member refid="classKinai_1_1Renderer2D_1_1Statistics_1a4aae9d2cdc51fde3e476b3e83c083751" prot="public" virt="non-virtual"><scope>Kinai::Renderer2D::Statistics</scope><name>GetTotalIndexCount</name></member>
+      <member refid="classKinai_1_1Renderer2D_1_1Statistics_1ac7a0c36ac9bb4a3027f7ed10cd325b90" prot="public" virt="non-virtual"><scope>Kinai::Renderer2D::Statistics</scope><name>GetTotalVertexCount</name></member>
+      <member refid="classKinai_1_1Renderer2D_1_1Statistics_1a5222bc319f9a1a80f91167670e26e8db" prot="private" virt="non-virtual"><scope>Kinai::Renderer2D::Statistics</scope><name>Renderer2D</name></member>
+      <member refid="classKinai_1_1Renderer2D_1_1Statistics_1a56fc28d48ac694361cbf23d85105a446" prot="public" virt="non-virtual"><scope>Kinai::Renderer2D::Statistics</scope><name>Reset</name></member>
+      <member refid="classKinai_1_1Renderer2D_1_1Statistics_1a8d338a77d4e3aa6a6924cfa15f4ac40e" prot="private" virt="non-virtual"><scope>Kinai::Renderer2D::Statistics</scope><name>Statistics</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

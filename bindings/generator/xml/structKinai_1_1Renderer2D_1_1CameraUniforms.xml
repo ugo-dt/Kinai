@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structKinai_1_1Renderer2D_1_1CameraUniforms" kind="struct" language="C++" prot="private">
+    <compoundname>Kinai::Renderer2D::CameraUniforms</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structKinai_1_1Renderer2D_1_1CameraUniforms_1a1295f88bc65f46c4f06f50e2dda2fb08" prot="public" static="no" mutable="no">
+        <type>glm::mat4</type>
+        <definition>glm::mat4 Kinai::Renderer2D::CameraUniforms::view_projection</definition>
+        <argsstring></argsstring>
+        <name>view_projection</name>
+        <qualifiedname>Kinai::Renderer2D::CameraUniforms::view_projection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="173" column="10" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="173" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="171" column="1" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="172" bodyend="174"/>
+    <listofallmembers>
+      <member refid="structKinai_1_1Renderer2D_1_1CameraUniforms_1a1295f88bc65f46c4f06f50e2dda2fb08" prot="public" virt="non-virtual"><scope>Kinai::Renderer2D::CameraUniforms</scope><name>view_projection</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

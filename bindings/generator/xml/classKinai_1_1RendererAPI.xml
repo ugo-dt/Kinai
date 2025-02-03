@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classKinai_1_1RendererAPI" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Kinai::RendererAPI</compoundname>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classKinai_1_1RendererAPI_1ad8094841f9ec6d8fb562118a213df322" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>API</name>
+        <qualifiedname>Kinai::RendererAPI::API</qualifiedname>
+        <enumvalue id="classKinai_1_1RendererAPI_1ad8094841f9ec6d8fb562118a213df322a6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classKinai_1_1RendererAPI_1ad8094841f9ec6d8fb562118a213df322a760716b590ee7c0adc25f434f577d8be" prot="public">
+          <name>OpenGL</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/RendererAPI.hpp" line="12" column="1" bodyfile="include/Kinai/Renderer/RendererAPI.hpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKinai_1_1RendererAPI_1a6b8c39dc94c4ba4070343f4088283b07" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Kinai::RendererAPI::~RendererAPI</definition>
+        <argsstring>()=default</argsstring>
+        <name>~RendererAPI</name>
+        <qualifiedname>Kinai::RendererAPI::~RendererAPI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/RendererAPI.hpp" line="19" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1RendererAPI_1a017fa32aa972f75efb89fa12f69f067e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::RendererAPI::Init</definition>
+        <argsstring>()=0</argsstring>
+        <name>Init</name>
+        <qualifiedname>Kinai::RendererAPI::Init</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/RendererAPI.hpp" line="21" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1RendererAPI_1ad57354380eab04d42203c1203eaf783a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::RendererAPI::SetViewport</definition>
+        <argsstring>(uint32_t x, uint32_t y, uint32_t width, uint32_t height)=0</argsstring>
+        <name>SetViewport</name>
+        <qualifiedname>Kinai::RendererAPI::SetViewport</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/RendererAPI.hpp" line="22" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1RendererAPI_1a4bcb046e4245c55d507d484948f63424" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::RendererAPI::SetClearColor</definition>
+        <argsstring>(const glm::vec4 &amp;color)=0</argsstring>
+        <name>SetClearColor</name>
+        <qualifiedname>Kinai::RendererAPI::SetClearColor</qualifiedname>
+        <param>
+          <type>const glm::vec4 &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/RendererAPI.hpp" line="23" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1RendererAPI_1aa748ed7d13c05cefac00c12f1af961e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::RendererAPI::Clear</definition>
+        <argsstring>()=0</argsstring>
+        <name>Clear</name>
+        <qualifiedname>Kinai::RendererAPI::Clear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/RendererAPI.hpp" line="24" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1RendererAPI_1a1896d1d62b1177699fc4f2ca8ce75ffa" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::RendererAPI::DrawIndexed</definition>
+        <argsstring>(const Ref&lt; VertexArray &gt; &amp;vertex_array, uint32_t index_count)=0</argsstring>
+        <name>DrawIndexed</name>
+        <qualifiedname>Kinai::RendererAPI::DrawIndexed</qualifiedname>
+        <param>
+          <type>const Ref&lt; <ref refid="classKinai_1_1VertexArray" kindref="compound">VertexArray</ref> &gt; &amp;</type>
+          <declname>vertex_array</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>index_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/RendererAPI.hpp" line="26" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1RendererAPI_1a26de9ab55dda07fa79baf96a3de7dc93" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::RendererAPI::DrawLines</definition>
+        <argsstring>(const Ref&lt; VertexArray &gt; &amp;vertex_array, uint32_t vertex_count)=0</argsstring>
+        <name>DrawLines</name>
+        <qualifiedname>Kinai::RendererAPI::DrawLines</qualifiedname>
+        <param>
+          <type>const Ref&lt; <ref refid="classKinai_1_1VertexArray" kindref="compound">VertexArray</ref> &gt; &amp;</type>
+          <declname>vertex_array</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>vertex_count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/RendererAPI.hpp" line="27" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1RendererAPI_1a4e52e436c22605ba7a883fb8ec55e7ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::RendererAPI::DrawTriangles</definition>
+        <argsstring>(const Ref&lt; VertexArray &gt; &amp;vertexArray, uint32_t vertexCount)=0</argsstring>
+        <name>DrawTriangles</name>
+        <qualifiedname>Kinai::RendererAPI::DrawTriangles</qualifiedname>
+        <param>
+          <type>const Ref&lt; <ref refid="classKinai_1_1VertexArray" kindref="compound">VertexArray</ref> &gt; &amp;</type>
+          <declname>vertexArray</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>vertexCount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/RendererAPI.hpp" line="28" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1RendererAPI_1aa3cdba2e606b95417ea9973996299918" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Kinai::RendererAPI::SetLineWidth</definition>
+        <argsstring>(float width)=0</argsstring>
+        <name>SetLineWidth</name>
+        <qualifiedname>Kinai::RendererAPI::SetLineWidth</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/RendererAPI.hpp" line="30" column="13"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classKinai_1_1RendererAPI_1a5c518f04e00520454deae5b6dd9742d6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Scope&lt; <ref refid="classKinai_1_1RendererAPI" kindref="compound">RendererAPI</ref> &gt;</type>
+        <definition>static Scope&lt; RendererAPI &gt; Kinai::RendererAPI::Create</definition>
+        <argsstring>()</argsstring>
+        <name>Create</name>
+        <qualifiedname>Kinai::RendererAPI::Create</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/RendererAPI.hpp" line="32" column="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Renderer/RendererAPI.hpp" line="9" column="1" bodyfile="include/Kinai/Renderer/RendererAPI.hpp" bodystart="10" bodyend="33"/>
+    <listofallmembers>
+      <member refid="classKinai_1_1RendererAPI_1ad8094841f9ec6d8fb562118a213df322" prot="public" virt="non-virtual"><scope>Kinai::RendererAPI</scope><name>API</name></member>
+      <member refid="classKinai_1_1RendererAPI_1aa748ed7d13c05cefac00c12f1af961e6" prot="public" virt="pure-virtual"><scope>Kinai::RendererAPI</scope><name>Clear</name></member>
+      <member refid="classKinai_1_1RendererAPI_1a5c518f04e00520454deae5b6dd9742d6" prot="public" virt="non-virtual"><scope>Kinai::RendererAPI</scope><name>Create</name></member>
+      <member refid="classKinai_1_1RendererAPI_1a1896d1d62b1177699fc4f2ca8ce75ffa" prot="public" virt="pure-virtual"><scope>Kinai::RendererAPI</scope><name>DrawIndexed</name></member>
+      <member refid="classKinai_1_1RendererAPI_1a26de9ab55dda07fa79baf96a3de7dc93" prot="public" virt="pure-virtual"><scope>Kinai::RendererAPI</scope><name>DrawLines</name></member>
+      <member refid="classKinai_1_1RendererAPI_1a4e52e436c22605ba7a883fb8ec55e7ca" prot="public" virt="pure-virtual"><scope>Kinai::RendererAPI</scope><name>DrawTriangles</name></member>
+      <member refid="classKinai_1_1RendererAPI_1a017fa32aa972f75efb89fa12f69f067e" prot="public" virt="pure-virtual"><scope>Kinai::RendererAPI</scope><name>Init</name></member>
+      <member refid="classKinai_1_1RendererAPI_1a4bcb046e4245c55d507d484948f63424" prot="public" virt="pure-virtual"><scope>Kinai::RendererAPI</scope><name>SetClearColor</name></member>
+      <member refid="classKinai_1_1RendererAPI_1aa3cdba2e606b95417ea9973996299918" prot="public" virt="pure-virtual"><scope>Kinai::RendererAPI</scope><name>SetLineWidth</name></member>
+      <member refid="classKinai_1_1RendererAPI_1ad57354380eab04d42203c1203eaf783a" prot="public" virt="pure-virtual"><scope>Kinai::RendererAPI</scope><name>SetViewport</name></member>
+      <member refid="classKinai_1_1RendererAPI_1a6b8c39dc94c4ba4070343f4088283b07" prot="public" virt="virtual"><scope>Kinai::RendererAPI</scope><name>~RendererAPI</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
