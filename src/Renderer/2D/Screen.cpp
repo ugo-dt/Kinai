@@ -39,6 +39,10 @@ const char *SCREEN_SHADER_FRAGMENT = R"(
 
 void	Renderer2D::MakeScreenFramebuffers()
 {
+	KN_PRINT_FUNC();
+
+// FIXME: Abstract this with Kinai::Framebuffer
+# ifdef KINAI_OPENGL
 	glm::ivec2 winsize = Application::Get().GetWindow().GetSize();
 
 	glGenFramebuffers(1, &_screen_framebuffer);
@@ -58,11 +62,16 @@ void	Renderer2D::MakeScreenFramebuffers()
 	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, _texture_slots[1]->GetRendererID(), 0);
 
 	KN_ASSERT(glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE, "Framebuffer is not complete!");
-    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+#endif
 }
 
 void	Renderer2D::CopyScreenToBackBuffer()
 {
+	KN_PRINT_FUNC();
+
+// FIXME: Abstract this with Kinai::Framebuffer
+# ifdef KINAI_OPENGL
 	glm::ivec2 winsize = Application::Get().GetWindow().GetSize();
 
 	glBindFramebuffer(GL_READ_FRAMEBUFFER, 0);
@@ -70,6 +79,7 @@ void	Renderer2D::CopyScreenToBackBuffer()
 	glBlitFramebuffer(0, 0, winsize.x, winsize.y, 0, 0, winsize.x, winsize.y, GL_COLOR_BUFFER_BIT, GL_NEAREST);
 
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+#endif
 }
 
 } // Kinai

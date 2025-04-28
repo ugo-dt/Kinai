@@ -28,6 +28,8 @@ namespace Kinai
 
 void	Renderer2D::FlushLinePipeline()
 {
+	KN_PRINT_FUNC();
+
 	// if (state.line_vertex_count)
 	// {
 	// 	uint32_t dataSize = (uint32_t)((uint8_t*)state.line_vertex_buffer_ptr - (uint8_t*)state.line_vertex_buffer_base);

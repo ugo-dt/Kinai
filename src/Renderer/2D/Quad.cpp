@@ -6,6 +6,8 @@ namespace Kinai
 
 void	Renderer2D::MakeQuadPipeline()
 {
+	KN_PRINT_FUNC();
+
 	_pip_quad.vertex_array = VertexArray::Create();
 
 	_pip_quad.vertex_buffer = VertexBuffer::Create(Renderer2D::MAX_VERTICES * sizeof(QuadVertex));
@@ -42,11 +44,15 @@ void	Renderer2D::MakeQuadPipeline()
 
 void	Renderer2D::DestroyQuadPipeline()
 {
+	KN_PRINT_FUNC();
+
 	delete[] _pip_quad.vertex_buffer_base;
 }
 
 void	Renderer2D::DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color)
 {
+	KN_PRINT_FUNC();
+
 	DrawQuad({ position.x, position.y, 0.0f }, size, color);
 }
 
@@ -62,6 +68,8 @@ void	Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, cons
 
 void	Renderer2D::DrawQuad(const glm::vec2& position, const glm::vec2& size, const Ref<Texture2D>& texture, const glm::vec4& tintColor)
 {
+	KN_PRINT_FUNC();
+
 	DrawQuad({ position.x, position.y, 0.0f }, size, texture, tintColor);
 }
 
@@ -145,6 +153,8 @@ void	Renderer2D::DrawQuad(const glm::mat4& transform, const Ref<Texture2D>& text
 
 void	Renderer2D::DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const glm::vec4& color)
 {
+	KN_PRINT_FUNC();
+
 	DrawRotatedQuad({ position.x, position.y, 0.0f }, size, rotation, color);
 }
 
@@ -161,6 +171,8 @@ void	Renderer2D::DrawRotatedQuad(const glm::vec3& position, const glm::vec2& siz
 
 void	Renderer2D::DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const Ref<Texture2D>& texture, const glm::vec4& tintColor)
 {
+	KN_PRINT_FUNC();
+
 	DrawRotatedQuad({ position.x, position.y, 0.0f }, size, rotation, texture, tintColor);
 }
 
@@ -177,6 +189,8 @@ void	Renderer2D::DrawRotatedQuad(const glm::vec3& position, const glm::vec2& siz
 
 void	Renderer2D::FlushQuadPipeline()
 {
+	KN_PRINT_FUNC();
+
 	if (_pip_quad.index)
 	{
 		uint32_t dataSize = (uint32_t)((uint8_t*)_pip_quad.vertex_buffer_ptr - (uint8_t*)_pip_quad.vertex_buffer_base);
@@ -197,6 +211,8 @@ void	Renderer2D::FlushQuadPipeline()
 
 void	Renderer2D::SetQuadShader(Shader2D& shader)
 {
+	KN_PRINT_FUNC();
+
 	if (_shader_library.Exists(shader._shader->GetName()))
 	{
 		NextBatch();
@@ -206,6 +222,8 @@ void	Renderer2D::SetQuadShader(Shader2D& shader)
 
 void	Renderer2D::ResetQuadShader()
 {
+	KN_PRINT_FUNC();
+
 	NextBatch();
 	_pip_quad.shader = _shader_library.Get("__kn2d_quad_program");
 }

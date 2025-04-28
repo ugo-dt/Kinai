@@ -28,6 +28,8 @@ namespace Kinai
 
 void	Renderer2D::FlushCirclePipeline()
 {
+	KN_PRINT_FUNC();
+
 	// if (state.circle_index_count)
 	// {
 	// 	uint32_t dataSize = (uint32_t)((uint8_t*)state.circle_vertex_buffer_ptr - (uint8_t*)state.circle_vertex_buffer_base);

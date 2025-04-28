@@ -20,11 +20,15 @@ Renderer2D::Statistics				Renderer2D::_stats;
 
 void	Renderer2D::MakeCommonPipelines()
 {
+	KN_PRINT_FUNC();
+
 	MakeQuadPipeline();
 }
 
 void	Renderer2D::MakeShaders()
 {
+	KN_PRINT_FUNC();
+
 #ifndef KINAI_PATH
 	#define KINAI_PATH "./"
 #endif
@@ -33,10 +37,12 @@ void	Renderer2D::MakeShaders()
 	// OpenGLShader::GenerateHeaderFromShader(KINAI_PATH "include/Kinai/Renderer/2D/Shaders/Line.glsl", "__kn2d_line_program");
 
 	_pip_quad.shader = _shader_library.Load(KINAI_PATH "include/Kinai/Renderer/2D/Shaders/Quad.glsl", "__kn2d_quad_program");
-}	
+}
 
 void	Renderer2D::Init()
 {
+	KN_PRINT_FUNC();
+
 	MakeCommonPipelines();
 	MakeShaders();
 	MakeScreenFramebuffers();
@@ -63,6 +69,8 @@ void	Renderer2D::Init()
 
 void	Renderer2D::Shutdown()
 {
+	KN_PRINT_FUNC();
+
 	DestroyQuadPipeline();
 }
 
@@ -98,6 +106,8 @@ void	Renderer2D::BeginFrame(const OrthographicCamera& camera)
 
 void	Renderer2D::Flush()
 {
+	KN_PRINT_FUNC();
+
 	FlushQuadPipeline();
 	FlushCirclePipeline();
 	FlushLinePipeline();
@@ -106,6 +116,8 @@ void	Renderer2D::Flush()
 
 void	Renderer2D::UpdateViewport()
 {
+	KN_PRINT_FUNC();
+
 	glDeleteFramebuffers(1, &_screen_framebuffer);
 	_texture_slots[1] = nullptr;
 	MakeScreenFramebuffers();
@@ -120,6 +132,8 @@ void	Renderer2D::EndFrame()
 
 void	Renderer2D::StartBatch()
 {
+	KN_PRINT_FUNC();
+
 	_builtin_uniforms.time = SDL_GetTicks() / 1000.0f;
 	_builtin_uniforms_buffer->SetData(&_builtin_uniforms, sizeof(BuiltinUniforms));
 
@@ -137,6 +151,8 @@ void	Renderer2D::StartBatch()
 
 void	Renderer2D::NextBatch()
 {
+	KN_PRINT_FUNC();
+
 	Flush();
 	StartBatch();
 }

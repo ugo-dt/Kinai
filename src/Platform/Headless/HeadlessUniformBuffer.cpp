@@ -13,7 +13,7 @@ HeadlessUniformBuffer::~HeadlessUniformBuffer()
 {
 }
 
-void	HeadlessUniformBuffer::SetData(const void *data, uint32_t size, uint32_t offset = 0)
+void	HeadlessUniformBuffer::SetData(const void *data, uint32_t size, uint32_t offset)
 {
 	KN_NOTUSED(data);
 	KN_NOTUSED(size);
