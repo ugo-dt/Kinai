@@ -24,26 +24,28 @@ const char *VERTEX_VARIABLES_SOURCE = R"(
 	};
 
 	layout (location = 0) in  vec2 a_VERTEX;
-	layout (location = 0) out vec2   VERTEX;
-	
 	layout (location = 1) in  vec2 a_UV;
-	layout (location = 1) out vec2   UV;
-
 	layout (location = 2) in  vec4 a_COLOR;
-	layout (location = 2) out vec4   COLOR;
-
 	layout (location = 3) in       int a_TEX_INDEX;
-	layout (location = 3) out flat int   TEX_INDEX;
 
 	int VERTEX_ID; // gl_VertexID
 	float POINT_SIZE; // gl_PointSize
+	vec2 VERTEX;
+	vec2 UV;
+	vec4 COLOR;
+	int  TEX_INDEX;
+
+	out vec2 v_VERTEX;
+	out vec2 v_UV;
+	out vec4 v_COLOR;
+	out flat int v_TEX_INDEX;
 )";
 
 const char *VERTEX_MAIN_SOURCE = R"(
 	void main()
 	{
 		VERTEX_ID = gl_VertexID;
-		POINT_SIZE = gl_PointSize;
+		// POINT_SIZE = gl_PointSize;
 		VERTEX = a_VERTEX;
 		UV = a_UV;
 		COLOR = a_COLOR;
@@ -53,15 +55,20 @@ const char *VERTEX_MAIN_SOURCE = R"(
 		vertex();
 
 		gl_Position = vec4(VERTEX, 0.0, 1.0);
-		gl_PointSize = POINT_SIZE;
+		// gl_PointSize = POINT_SIZE;
+
+		v_VERTEX = VERTEX;
+		v_UV = UV;
+		v_COLOR = COLOR;
+		v_TEX_INDEX = TEX_INDEX;
 	}
 )";
 
 const char *FRAGMENT_VARIABLES_SOURCE = R"(
-	layout (location = 0) in vec2 v_VERTEX;
-	layout (location = 1) in vec2 v_UV;
-	layout (location = 2) in vec4 v_COLOR;
-	layout (location = 3) in flat int  v_TEX_INDEX;
+	in vec2 v_VERTEX;
+	in vec2 v_UV;
+	in vec4 v_COLOR;
+	in flat int  v_TEX_INDEX;
 
 	vec2 VERTEX;
 	vec2 UV;
