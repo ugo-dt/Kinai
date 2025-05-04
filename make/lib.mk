@@ -50,21 +50,23 @@ __stb_image_src		= $(__stb_image_path)/stb_image.c
 __stb_image_objs	= $(patsubst $(__stb_image_path)/%.c,$(__lib_obj_dir)/stb_image/%.o,$(__stb_image_src))
 
 __lib_include		=	-I $(__default_lib_path)	\
+						-I $(__glm_path)			\
 						-I $(__glad_path)/include	\
 						-I $(__imgui_path)			\
 						-I $(__imgui_path)/backends \
-						-I $(__glm_path)			\
 						-I $(__sdl3_path)/include
 
 INCLUDE				+= $(__lib_include)
 LIB_OBJS			= $(__glad_objs) $(__imgui_objs) $(__stb_image_objs)
 
-ifeq ($(target),$(__MACOS__))
-LDFLAGS			+= $(shell pkg-config --libs SDL3)
-else ifeq ($(target),$(__WIN32__))
-LDFLAGS			+= $(__sdl3_path)/bin/$(target)/libSDL3.dll.a
-else
-LDFLAGS			+= -L $(__sdl3_path)/bin/$(target) -lSDL3
+ifeq ($(backend),OpenGL)
+	ifeq ($(target),$(__MACOS__))
+		LDFLAGS += $(shell pkg-config --libs SDL3)
+	else ifeq ($(target),$(__WIN32__))
+		LDFLAGS += $(__sdl3_path)/bin/$(target)/libSDL3.dll.a
+	else
+		LDFLAGS += -L $(__sdl3_path)/bin/$(target) -lSDL3
+	endif
 endif
 
 $(__lib_obj_dir)/glad/%.o: $(__glad_path)/src/%.c

@@ -36,7 +36,7 @@ private:
 	bool			_is_loaded;
 	uint32_t		_width, _height;
 	uint32_t		_renderer_id;
-	GLenum			_internal_format, _data_format;
+	// GLenum			_internal_format, _data_format;
 };
 
 } // Kinai

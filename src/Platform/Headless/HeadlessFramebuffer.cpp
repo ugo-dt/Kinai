@@ -3,7 +3,7 @@
 namespace Kinai
 {
 
-constexpr uint32_t MAX_FRAME_BUFFER_SIZE = 8192;
+// constexpr uint32_t MAX_FRAME_BUFFER_SIZE = 8192;
 
 // static GLenum	TextureTarget(bool multisampled)
 // {
