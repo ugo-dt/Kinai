@@ -43,6 +43,7 @@ def main(json_dir: Path, output_path: Path):
 
 			for n in namespaces:
 				g.writeline(n.__c__())
+			
 			for c in classes:
 				g.writeline(c.__c__())
 

@@ -5,6 +5,25 @@ from .KnGenerator import KnGetAttribute
 from ._KnMember import _KnMember
 from .KnType import KINAI_TYPES
 
+class KnEnumValue:
+	def __init__(self, name: str, initializer: str):
+		self.name = name
+		self.initializer = initializer
+	
+	def __c__(self) -> str:
+		if self.name is None:
+			name = ''
+		else:
+			name = self.name.strip()
+			# if not name.startswith('KN') or name.startswith('Kn'):
+			# 	name = f'Kn{name}'
+		
+		if self.initializer is None:
+			initializer = ''
+		else:
+			initializer = f' {self.initializer.strip()}'
+		return f'{name}{initializer}'
+
 class KnEnum(_KnMember):
 	"""
 	Enum representation.
@@ -13,10 +32,19 @@ class KnEnum(_KnMember):
 		super().__init__(member)
 		KINAI_TYPES.add(self.name)
 
+		self.values: list[KnEnumValue] = []
+
+		if self.enumvalue is not None:
+			for enum in self.enumvalue:
+				self.values.append(KnEnumValue(enum.get('name'), enum.get('initializer')))
+
 		# print(self.__c__())
 
 	def __c__(self) -> str:
-		return f'typedef enum Kn{self.name}\n{{\n}} Kn{self.name};'
+		values: list[str] = []
+		for value in self.values:
+			values.append(value.__c__())
+		return f"typedef enum Kn{self.name}\n{{\n\t{',\n\t'.join(values)}\n}} Kn{self.name};\n"
 
 class KnTypedef(_KnMember):
 	"""
@@ -26,7 +54,7 @@ class KnTypedef(_KnMember):
 		super().__init__(member)
 		KINAI_TYPES.add(self.name)
 
-		print(self.__c__())
+		# print(self.__c__())
 
 	def __c__(self) -> str:
 		return f'typedef {self.type.__c__()} Kn{self.name};'

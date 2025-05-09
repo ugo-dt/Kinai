@@ -6,7 +6,6 @@ SDL3.dll
 *.exe
 *.out
 imgui.ini
-bindings/json
-bindings/xml
-bindings/xml
-bindings/xml
+bindings/output/json
+bindings/output/xml
+bindings/generator/Kinako/__pycache__/*.pyc

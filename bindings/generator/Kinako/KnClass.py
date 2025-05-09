@@ -34,11 +34,27 @@ class KnClass:
 				if section_kind == 'public-func' or section_kind == 'public-static-func':
 					memberdef: list[dict] = KnGetAttribute(section, 'memberdef')
 					for member in memberdef:
-						self.functions.append(KnFunction(member))
+						new_f = KnFunction(member)
+						self.functions.append(new_f)
 
 	def __c__(self) -> str:
 		prefix = f'{self.name.replace('Kinai::', 'Kn')}_'
 		c: list[str] = []
+
+		appended_functions: list[str] = []
+
+		def count_function_name(name: str) -> int:
+			count = 0
+			for func in appended_functions:
+				if func == name:
+					count += 1
+			return count
+
 		for func in self.functions:
-			c.append(f'{func.__c__(prefix=prefix)}')
+			suffix = ''
+			count = count_function_name(f'{self.name}_{func.name}')
+			if count > 0:
+				suffix = f'{count + 1}'
+			c.append(f'{func.__c__(prefix=prefix, suffix=suffix)}')
+			appended_functions.append(f'{self.name}_{func.name}')
 		return '\n'.join(c)

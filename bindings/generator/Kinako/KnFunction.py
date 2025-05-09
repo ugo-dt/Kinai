@@ -18,10 +18,10 @@ class KnFunction(_KnMember):
 		if self.param is not None:
 			for p in self.param:
 				self.args.append(KnParameter(p))
+			
 
-
-	def __c__(self, prefix: str = '') -> str:
-		name = self.name.replace('::', '_').replace('~', 'Destroy')
+	def __c__(self, prefix: str = '', suffix: str = '') -> str:
+		name = self.name.replace('::', '_').replace('~', 'Destroy').replace('operator==', 'equals')
 		args = [arg.__c__() for arg in self.args]
 
-		return f'{self.type.__c__()} {prefix}{name}({", ".join(args)});'
+		return f'{self.type.__c__()} {prefix}{name}{suffix}({", ".join(args)});'
