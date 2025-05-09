@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classKinai_1_1KeyPressedEvent" kind="class" language="C++" prot="public">
+    <compoundname>Kinai::KeyPressedEvent</compoundname>
+    <basecompoundref refid="classKinai_1_1KeyEvent" prot="public" virt="non-virtual">Kinai::KeyEvent</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKinai_1_1KeyPressedEvent_1a5996d7401a527f7e07f106f378bdddc8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::KeyPressedEvent::KeyPressedEvent</definition>
+        <argsstring>(const KeyCode keycode, bool repeat=false)</argsstring>
+        <name>KeyPressedEvent</name>
+        <qualifiedname>Kinai::KeyPressedEvent::KeyPressedEvent</qualifiedname>
+        <param>
+          <type>const KeyCode</type>
+          <declname>keycode</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>repeat</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/KeyEvent.hpp" line="26" column="1" bodyfile="include/Kinai/Events/KeyEvent.hpp" bodystart="26" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1KeyPressedEvent_1a7680b8101c4df7e2de3a1cb39a502084" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Kinai::KeyPressedEvent::IsRepeat</definition>
+        <argsstring>() const</argsstring>
+        <name>IsRepeat</name>
+        <qualifiedname>Kinai::KeyPressedEvent::IsRepeat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/KeyEvent.hpp" line="29" column="6" bodyfile="include/Kinai/Events/KeyEvent.hpp" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1KeyPressedEvent_1ac1633f44467877b863601753d63b902b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string Kinai::KeyPressedEvent::ToString</definition>
+        <argsstring>() const override</argsstring>
+        <name>ToString</name>
+        <qualifiedname>Kinai::KeyPressedEvent::ToString</qualifiedname>
+        <reimplements refid="classKinai_1_1Event_1a0ed0b864f47b05c5ba8f20f548beef29">ToString</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/KeyEvent.hpp" line="31" column="13" bodyfile="include/Kinai/Events/KeyEvent.hpp" bodystart="31" bodyend="36"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>Kinai::Event</label>
+        <link refid="classKinai_1_1Event"/>
+      </node>
+      <node id="2">
+        <label>Kinai::KeyEvent</label>
+        <link refid="classKinai_1_1KeyEvent"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Kinai::KeyPressedEvent</label>
+        <link refid="classKinai_1_1KeyPressedEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>Kinai::Event</label>
+        <link refid="classKinai_1_1Event"/>
+      </node>
+      <node id="2">
+        <label>Kinai::KeyEvent</label>
+        <link refid="classKinai_1_1KeyEvent"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Kinai::KeyPressedEvent</label>
+        <link refid="classKinai_1_1KeyPressedEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/Kinai/Events/KeyEvent.hpp" line="23" column="1" bodyfile="include/Kinai/Events/KeyEvent.hpp" bodystart="24" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classKinai_1_1KeyEvent_1a4ce9157b1993ae66ec9337415a1279b4" prot="public" virt="non-virtual"><scope>Kinai::KeyPressedEvent</scope><name>_key_code</name></member>
+      <member refid="classKinai_1_1KeyEvent_1ac6ffea67705ebdfc7365d82eea063ce1" prot="public" virt="non-virtual"><scope>Kinai::KeyPressedEvent</scope><name>EVENT_CLASS_CATEGORY</name></member>
+      <member refid="classKinai_1_1Event_1a1f2e3dd6426fc209e7f157700816060a" prot="public" virt="pure-virtual"><scope>Kinai::KeyPressedEvent</scope><name>GetCategoryFlags</name></member>
+      <member refid="classKinai_1_1Event_1adbb5d2279374bf7a541badb7dd9389f4" prot="public" virt="pure-virtual"><scope>Kinai::KeyPressedEvent</scope><name>GetEventType</name></member>
+      <member refid="classKinai_1_1KeyEvent_1a2389a7234c362c6a7ef230d9a4e40e57" prot="public" virt="non-virtual"><scope>Kinai::KeyPressedEvent</scope><name>GetKeyCode</name></member>
+      <member refid="classKinai_1_1Event_1aa583e2927f7beda552435b2f8f184025" prot="public" virt="pure-virtual"><scope>Kinai::KeyPressedEvent</scope><name>GetName</name></member>
+      <member refid="classKinai_1_1Event_1a8f35ee9e4c3e69a83262c9a44afb4c0e" prot="public" virt="non-virtual"><scope>Kinai::KeyPressedEvent</scope><name>handled</name></member>
+      <member refid="classKinai_1_1Event_1a7ab92ccea10ad63144a84d5df06a501d" prot="public" virt="non-virtual"><scope>Kinai::KeyPressedEvent</scope><name>IsInCategory</name></member>
+      <member refid="classKinai_1_1KeyPressedEvent_1a7680b8101c4df7e2de3a1cb39a502084" prot="public" virt="non-virtual"><scope>Kinai::KeyPressedEvent</scope><name>IsRepeat</name></member>
+      <member refid="classKinai_1_1KeyPressedEvent_1a5996d7401a527f7e07f106f378bdddc8" prot="public" virt="non-virtual"><scope>Kinai::KeyPressedEvent</scope><name>KeyPressedEvent</name></member>
+      <member refid="classKinai_1_1KeyPressedEvent_1ac1633f44467877b863601753d63b902b" prot="public" virt="virtual"><scope>Kinai::KeyPressedEvent</scope><name>ToString</name></member>
+      <member refid="classKinai_1_1Event_1a61a9ecf4e7a96b855adaa9a681f5d58a" prot="public" virt="virtual"><scope>Kinai::KeyPressedEvent</scope><name>~Event</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

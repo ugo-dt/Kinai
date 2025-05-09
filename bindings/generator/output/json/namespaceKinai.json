@@ -1,0 +1,1608 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "namespaceKinai",
+            "@kind": "namespace",
+            "@language": "C++",
+            "briefdescription": null,
+            "compoundname": "Kinai",
+            "detaileddescription": null,
+            "innerclass": [
+                {
+                    "#text": "Kinai::Application",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Application"
+                },
+                {
+                    "#text": "Kinai::ApplicationConfig",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1ApplicationConfig"
+                },
+                {
+                    "#text": "Kinai::AppRenderEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1AppRenderEvent"
+                },
+                {
+                    "#text": "Kinai::AppTickEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1AppTickEvent"
+                },
+                {
+                    "#text": "Kinai::AppUpdateEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1AppUpdateEvent"
+                },
+                {
+                    "#text": "Kinai::BufferElement",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1BufferElement"
+                },
+                {
+                    "#text": "Kinai::BufferLayout",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1BufferLayout"
+                },
+                {
+                    "#text": "Kinai::Camera",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Camera"
+                },
+                {
+                    "#text": "Kinai::CircleVertex",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1CircleVertex"
+                },
+                {
+                    "#text": "Kinai::Event",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Event"
+                },
+                {
+                    "#text": "Kinai::EventDispatcher",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1EventDispatcher"
+                },
+                {
+                    "#text": "Kinai::Framebuffer",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Framebuffer"
+                },
+                {
+                    "#text": "Kinai::FramebufferAttachmentConfig",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1FramebufferAttachmentConfig"
+                },
+                {
+                    "#text": "Kinai::FramebufferConfig",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1FramebufferConfig"
+                },
+                {
+                    "#text": "Kinai::FramebufferTextureConfig",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1FramebufferTextureConfig"
+                },
+                {
+                    "#text": "Kinai::ImGuiLayer",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1ImGuiLayer"
+                },
+                {
+                    "#text": "Kinai::IndexBuffer",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1IndexBuffer"
+                },
+                {
+                    "#text": "Kinai::Input",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Input"
+                },
+                {
+                    "#text": "Kinai::is_token_type",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1is__token__type"
+                },
+                {
+                    "#text": "Kinai::KeyEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1KeyEvent"
+                },
+                {
+                    "#text": "Kinai::KeyPressedEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1KeyPressedEvent"
+                },
+                {
+                    "#text": "Kinai::KeyReleasedEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1KeyReleasedEvent"
+                },
+                {
+                    "#text": "Kinai::Layer",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Layer"
+                },
+                {
+                    "#text": "Kinai::LayerStack",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1LayerStack"
+                },
+                {
+                    "#text": "Kinai::LineVertex",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1LineVertex"
+                },
+                {
+                    "#text": "Kinai::Log",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Log"
+                },
+                {
+                    "#text": "Kinai::MouseButtonEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1MouseButtonEvent"
+                },
+                {
+                    "#text": "Kinai::MouseButtonPressedEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1MouseButtonPressedEvent"
+                },
+                {
+                    "#text": "Kinai::MouseButtonReleasedEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1MouseButtonReleasedEvent"
+                },
+                {
+                    "#text": "Kinai::MouseMotionEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1MouseMotionEvent"
+                },
+                {
+                    "#text": "Kinai::MouseWheelEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1MouseWheelEvent"
+                },
+                {
+                    "#text": "Kinai::OrthographicCamera",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1OrthographicCamera"
+                },
+                {
+                    "#text": "Kinai::OrthographicCameraController",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1OrthographicCameraController"
+                },
+                {
+                    "#text": "Kinai::OrthographicCameraControllerConfig",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1OrthographicCameraControllerConfig"
+                },
+                {
+                    "#text": "Kinai::Parser",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Parser"
+                },
+                {
+                    "#text": "Kinai::PerspectiveCamera",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1PerspectiveCamera"
+                },
+                {
+                    "#text": "Kinai::PerspectiveCameraController",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1PerspectiveCameraController"
+                },
+                {
+                    "#text": "Kinai::PerspectiveCameraControllerConfig",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1PerspectiveCameraControllerConfig"
+                },
+                {
+                    "#text": "Kinai::Pipeline",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1Pipeline"
+                },
+                {
+                    "#text": "Kinai::QuadVertex",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1QuadVertex"
+                },
+                {
+                    "#text": "Kinai::RenderCommand",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1RenderCommand"
+                },
+                {
+                    "#text": "Kinai::Renderer",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Renderer"
+                },
+                {
+                    "#text": "Kinai::Renderer2D",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Renderer2D"
+                },
+                {
+                    "#text": "Kinai::RendererAPI",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1RendererAPI"
+                },
+                {
+                    "#text": "Kinai::Shader",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Shader"
+                },
+                {
+                    "#text": "Kinai::Shader2D",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1Shader2D"
+                },
+                {
+                    "#text": "Kinai::ShaderLibrary",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1ShaderLibrary"
+                },
+                {
+                    "#text": "Kinai::Texture",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Texture"
+                },
+                {
+                    "#text": "Kinai::Texture2D",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Texture2D"
+                },
+                {
+                    "#text": "Kinai::TextureConfig",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1TextureConfig"
+                },
+                {
+                    "#text": "Kinai::Time",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1Time"
+                },
+                {
+                    "#text": "Kinai::Timer",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Timer"
+                },
+                {
+                    "#text": "Kinai::TokenBase",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1TokenBase"
+                },
+                {
+                    "#text": "Kinai::UniformBuffer",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1UniformBuffer"
+                },
+                {
+                    "#text": "Kinai::VertexArray",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1VertexArray"
+                },
+                {
+                    "#text": "Kinai::VertexBuffer",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1VertexBuffer"
+                },
+                {
+                    "#text": "Kinai::Window",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Window"
+                },
+                {
+                    "#text": "Kinai::WindowCloseEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1WindowCloseEvent"
+                },
+                {
+                    "#text": "Kinai::WindowProps",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1WindowProps"
+                },
+                {
+                    "#text": "Kinai::WindowResizeEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1WindowResizeEvent"
+                }
+            ],
+            "innernamespace": [
+                {
+                    "#text": "Kinai::Key",
+                    "@refid": "namespaceKinai_1_1Key"
+                },
+                {
+                    "#text": "Kinai::Mouse",
+                    "@refid": "namespaceKinai_1_1Mouse"
+                }
+            ],
+            "location": {
+                "@column": "1",
+                "@file": "include/Kinai/Core/Application.hpp",
+                "@line": "17"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "enum",
+                    "memberdef": [
+                        {
+                            "@id": "Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4",
+                            "@kind": "enum",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@strong": "no",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "enumvalue": [
+                                {
+                                    "@id": "Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4a2b7e3d2a181c16bf8de0c3d3e3b7db6f",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "initializer": "= 0",
+                                    "name": "EventCategoryNone"
+                                },
+                                {
+                                    "@id": "Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4ae391003b17af85efc1c45a4bc242723e",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "initializer": "= BIT(0)",
+                                    "name": "EventCategoryApplication"
+                                },
+                                {
+                                    "@id": "Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4a9691e9c72fbde6cb64788b69e2a6b377",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "initializer": "= BIT(1)",
+                                    "name": "EventCategoryInput"
+                                },
+                                {
+                                    "@id": "Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4a0d5c9b1695442f9eb462fcb7e63df61a",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "initializer": "= BIT(2)",
+                                    "name": "EventCategoryKeyboard"
+                                },
+                                {
+                                    "@id": "Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4a5ee72b59ce507eb7e8c63095adf7a27f",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "initializer": "= BIT(3)",
+                                    "name": "EventCategoryMouse"
+                                },
+                                {
+                                    "@id": "Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4a62949d90569686b6123bc22a85518cd2",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "initializer": "= BIT(4)",
+                                    "name": "EventCategoryMouseButton"
+                                }
+                            ],
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "18",
+                                "@bodyfile": "include/Kinai/Events/Event.hpp",
+                                "@bodystart": "11",
+                                "@column": "1",
+                                "@file": "include/Kinai/Events/Event.hpp",
+                                "@line": "10"
+                            },
+                            "name": "EventCategory",
+                            "qualifiedname": "Kinai::EventCategory",
+                            "type": null
+                        },
+                        {
+                            "@id": "Event_8hpp_1a5be7edc6d3ce21ade177d85e143719e1",
+                            "@kind": "enum",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@strong": "no",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "enumvalue": [
+                                {
+                                    "@id": "Event_8hpp_1a5be7edc6d3ce21ade177d85e143719e1ae2370da3c96355b875f31dedca8e1e4a",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "initializer": "= SDL_EVENT_USER",
+                                    "name": "KN_EVENT_WINDOW_TICK"
+                                },
+                                {
+                                    "@id": "Event_8hpp_1a5be7edc6d3ce21ade177d85e143719e1a13b0c1a8a9613a099d5deba71ea79b10",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "KN_EVENT_WINDOW_UPDATE"
+                                },
+                                {
+                                    "@id": "Event_8hpp_1a5be7edc6d3ce21ade177d85e143719e1a5b968b9efa7ca29ebf7eb3ec255d9793",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "KN_EVENT_WINDOW_RENDER"
+                                },
+                                {
+                                    "@id": "Event_8hpp_1a5be7edc6d3ce21ade177d85e143719e1a0f1f282bada973b9ca2b8a6fa8a643a7",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "KN_EVENT_LAST"
+                                }
+                            ],
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "26",
+                                "@bodyfile": "include/Kinai/Events/Event.hpp",
+                                "@bodystart": "21",
+                                "@column": "1",
+                                "@file": "include/Kinai/Events/Event.hpp",
+                                "@line": "20"
+                            },
+                            "name": "KN_CustomEventType",
+                            "qualifiedname": "Kinai::KN_CustomEventType",
+                            "type": "EventType"
+                        },
+                        {
+                            "@id": "Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3e",
+                            "@kind": "enum",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@strong": "yes",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "enumvalue": [
+                                {
+                                    "@id": "Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3ea6adf97f83acf6453d4a6a4b1070f3754",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "initializer": "= 0",
+                                    "name": "None"
+                                },
+                                {
+                                    "@id": "Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3eab4b279046a02077466fa26cabb00c642",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "RGBA8"
+                                },
+                                {
+                                    "@id": "Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3ea2849effb989cbdcfb4b9eb143fd826aa",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "RED_INTEGER"
+                                },
+                                {
+                                    "@id": "Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3ea7ca3e26e4e5c35e4408bd49c1e32e9a3",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "DEPTH24STENCIL8"
+                                },
+                                {
+                                    "@id": "Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3ea675056ad1441b6375b2c5abd48c27ef1",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "initializer": "= DEPTH24STENCIL8",
+                                    "name": "Depth"
+                                }
+                            ],
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "21",
+                                "@bodyfile": "include/Kinai/Renderer/Framebuffer.hpp",
+                                "@bodystart": "9",
+                                "@column": "1",
+                                "@file": "include/Kinai/Renderer/Framebuffer.hpp",
+                                "@line": "8"
+                            },
+                            "name": "FramebufferTextureFormat",
+                            "qualifiedname": "Kinai::FramebufferTextureFormat",
+                            "type": null
+                        },
+                        {
+                            "@id": "Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445",
+                            "@kind": "enum",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@strong": "yes",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "enumvalue": [
+                                {
+                                    "@id": "Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445a6adf97f83acf6453d4a6a4b1070f3754",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "initializer": "= 0",
+                                    "name": "None"
+                                },
+                                {
+                                    "@id": "Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445acfff813d86d447fa2a9c858650ebbb90",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "R8"
+                                },
+                                {
+                                    "@id": "Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445a165c6379d01617e12de274a3952efa63",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "RGB8"
+                                },
+                                {
+                                    "@id": "Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445ab4b279046a02077466fa26cabb00c642",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "RGBA8"
+                                },
+                                {
+                                    "@id": "Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445a703a7a81e586669c930e3dcaf3e8c428",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "RGBA32F"
+                                }
+                            ],
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "16",
+                                "@bodyfile": "include/Kinai/Renderer/Texture.hpp",
+                                "@bodystart": "10",
+                                "@column": "1",
+                                "@file": "include/Kinai/Renderer/Texture.hpp",
+                                "@line": "9"
+                            },
+                            "name": "ImageFormat",
+                            "qualifiedname": "Kinai::ImageFormat",
+                            "type": null
+                        },
+                        {
+                            "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5",
+                            "@kind": "enum",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@strong": "yes",
+                            "briefdescription": null,
+                            "detaileddescription": null,
+                            "enumvalue": [
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a6adf97f83acf6453d4a6a4b1070f3754",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "initializer": "= 0",
+                                    "name": "None"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a22ae0e2b89e5e3d477f988cc36d3272b",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "Float"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a6694430a2b471b5d2de071f2ef1fdc57",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "Float2"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a8a8a1d211464d4bdee46db3c75bfa121",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "Float3"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a33116adc6690289da9b82ea736864eeb",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "Float4"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a2495a7d9c1fab19af6441abbfed823e1",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "Mat3"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a80f7408b0a5b5d78c26adae9f6f420f9",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "Mat4"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a1686a6c336b71b36d77354cea19a8b52",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "Int"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a4c6bc90f2bbdf35523e29c414a57bad3",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "Int2"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a56bf1b0e694b442bf4145a04b82ea943",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "Int3"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a1a44f12c3427b3e11c171d09632bad8d",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "Int4"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5ac26f15e86e3de4c398a8273272aba034",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "Bool"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a4b4ba765b750d5836bfeb2213cc3caea",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "UByte"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a40fc2bf671581b7ec5615a3f2701bddb",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "UByte2"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a37b413f28bc153b93708eba7c1cba8f5",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "UByte3"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a262bbd5c6b4d6c534f97b5e76a8cefa9",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "UByte4"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a0b1291eded63143ac04709711274785a",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "UInt"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a003b50e47c23c2f841dd2b21452f7ec4",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "UInt2"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a424aaa556a2950e0b98713136b7e6439",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "UInt3"
+                                },
+                                {
+                                    "@id": "BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a146988b242dbb9ed1e323e309789115a",
+                                    "@prot": "public",
+                                    "briefdescription": null,
+                                    "detaileddescription": null,
+                                    "name": "UInt4"
+                                }
+                            ],
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "17",
+                                "@bodyfile": "include/Kinai/Renderer/Buffer/BufferElement.hpp",
+                                "@bodystart": "9",
+                                "@column": "1",
+                                "@file": "include/Kinai/Renderer/Buffer/BufferElement.hpp",
+                                "@line": "8"
+                            },
+                            "name": "ShaderDataType",
+                            "qualifiedname": "Kinai::ShaderDataType",
+                            "type": null
+                        }
+                    ]
+                },
+                {
+                    "@kind": "typedef",
+                    "memberdef": [
+                        {
+                            "@id": "Core_8hpp_1a897cb7e44c5be57fcb323cc92b60258d",
+                            "@kind": "typedef",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "using Kinai::Scope = typedef std::unique_ptr<T>",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Core.hpp",
+                                "@bodystart": "69",
+                                "@column": "1",
+                                "@file": "include/Kinai/Core/Core.hpp",
+                                "@line": "69"
+                            },
+                            "name": "Scope",
+                            "qualifiedname": "Kinai::Scope",
+                            "templateparamlist": {
+                                "param": {
+                                    "type": "typename T"
+                                }
+                            },
+                            "type": "std::unique_ptr< T >"
+                        },
+                        {
+                            "@id": "Core_8hpp_1acd3a3ecbdeb61505e4223af16650c3b8",
+                            "@kind": "typedef",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "using Kinai::Ref = typedef std::shared_ptr<T>",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Core.hpp",
+                                "@bodystart": "77",
+                                "@column": "1",
+                                "@file": "include/Kinai/Core/Core.hpp",
+                                "@line": "77"
+                            },
+                            "name": "Ref",
+                            "qualifiedname": "Kinai::Ref",
+                            "templateparamlist": {
+                                "param": {
+                                    "type": "typename T"
+                                }
+                            },
+                            "type": "std::shared_ptr< T >"
+                        },
+                        {
+                            "@id": "KeyCode_8hpp_1abbf0dffb898ee42dbc2425a612e45faf",
+                            "@kind": "typedef",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "using Kinai::KeyCode = typedef uint16_t",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/KeyCode.hpp",
+                                "@bodystart": "8",
+                                "@column": "1",
+                                "@file": "include/Kinai/Core/KeyCode.hpp",
+                                "@line": "8"
+                            },
+                            "name": "KeyCode",
+                            "qualifiedname": "Kinai::KeyCode",
+                            "type": "uint16_t"
+                        },
+                        {
+                            "@id": "MouseButton_8hpp_1ac16381472a18fad6c99e588e7f68ecd8",
+                            "@kind": "typedef",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "using Kinai::MouseButton = typedef uint16_t",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/MouseButton.hpp",
+                                "@bodystart": "8",
+                                "@column": "1",
+                                "@file": "include/Kinai/Core/MouseButton.hpp",
+                                "@line": "8"
+                            },
+                            "name": "MouseButton",
+                            "qualifiedname": "Kinai::MouseButton",
+                            "type": "uint16_t"
+                        },
+                        {
+                            "@id": "Event_8hpp_1ac9f33f1492ef129be29ece907d6818bc",
+                            "@kind": "typedef",
+                            "@prot": "public",
+                            "@static": "no",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "using Kinai::EventType = typedef uint32_t",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Events/Event.hpp",
+                                "@bodystart": "8",
+                                "@column": "1",
+                                "@file": "include/Kinai/Events/Event.hpp",
+                                "@line": "8"
+                            },
+                            "name": "EventType",
+                            "qualifiedname": "Kinai::EventType",
+                            "type": "uint32_t"
+                        }
+                    ]
+                },
+                {
+                    "@kind": "var",
+                    "memberdef": [
+                        {
+                            "@constexpr": "yes",
+                            "@id": "Log_8hpp_1af9b005438446c9e41977e2632a19bf98",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "constexpr const char* Kinai::KN_COLOR_DEFAULT",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "initializer": "= \"\\033[39m\"",
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Log.hpp",
+                                "@bodystart": "11",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Log.hpp",
+                                "@line": "11"
+                            },
+                            "name": "KN_COLOR_DEFAULT",
+                            "qualifiedname": "Kinai::KN_COLOR_DEFAULT",
+                            "type": "constexpr const char *"
+                        },
+                        {
+                            "@constexpr": "yes",
+                            "@id": "Log_8hpp_1abdad8c328c68f96b326a57b9507c3a2c",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "constexpr const char* Kinai::KN_COLOR_RED",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "initializer": "= \"\\033[91m\"",
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Log.hpp",
+                                "@bodystart": "12",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Log.hpp",
+                                "@line": "12"
+                            },
+                            "name": "KN_COLOR_RED",
+                            "qualifiedname": "Kinai::KN_COLOR_RED",
+                            "type": "constexpr const char *"
+                        },
+                        {
+                            "@constexpr": "yes",
+                            "@id": "Log_8hpp_1a31744114506b22460901c21ca55ecff0",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "constexpr const char* Kinai::KN_COLOR_GREEN",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "initializer": "= \"\\033[92m\"",
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Log.hpp",
+                                "@bodystart": "13",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Log.hpp",
+                                "@line": "13"
+                            },
+                            "name": "KN_COLOR_GREEN",
+                            "qualifiedname": "Kinai::KN_COLOR_GREEN",
+                            "type": "constexpr const char *"
+                        },
+                        {
+                            "@constexpr": "yes",
+                            "@id": "Log_8hpp_1af98df997edc1a2fa6d8bfd22d6f613d0",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "constexpr const char* Kinai::KN_COLOR_YELLOW",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "initializer": "= \"\\033[93m\"",
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Log.hpp",
+                                "@bodystart": "14",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Log.hpp",
+                                "@line": "14"
+                            },
+                            "name": "KN_COLOR_YELLOW",
+                            "qualifiedname": "Kinai::KN_COLOR_YELLOW",
+                            "type": "constexpr const char *"
+                        },
+                        {
+                            "@constexpr": "yes",
+                            "@id": "Log_8hpp_1afcacec3c92e81248a5c39b6977b7d9b5",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "constexpr const char* Kinai::KN_COLOR_BLUE",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "initializer": "= \"\\033[94m\"",
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Log.hpp",
+                                "@bodystart": "15",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Log.hpp",
+                                "@line": "15"
+                            },
+                            "name": "KN_COLOR_BLUE",
+                            "qualifiedname": "Kinai::KN_COLOR_BLUE",
+                            "type": "constexpr const char *"
+                        },
+                        {
+                            "@constexpr": "yes",
+                            "@id": "Log_8hpp_1a413ffeaa1cf1140074e14ea1fec6b475",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "constexpr const char* Kinai::KN_COLOR_MAGENTA",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "initializer": "= \"\\033[95m\"",
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Log.hpp",
+                                "@bodystart": "16",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Log.hpp",
+                                "@line": "16"
+                            },
+                            "name": "KN_COLOR_MAGENTA",
+                            "qualifiedname": "Kinai::KN_COLOR_MAGENTA",
+                            "type": "constexpr const char *"
+                        },
+                        {
+                            "@constexpr": "yes",
+                            "@id": "Log_8hpp_1a04f7798e4d7d45810f271d5376974a93",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "constexpr const char* Kinai::KN_COLOR_CYAN",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "initializer": "= \"\\033[96m\"",
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Log.hpp",
+                                "@bodystart": "17",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Log.hpp",
+                                "@line": "17"
+                            },
+                            "name": "KN_COLOR_CYAN",
+                            "qualifiedname": "Kinai::KN_COLOR_CYAN",
+                            "type": "constexpr const char *"
+                        },
+                        {
+                            "@constexpr": "yes",
+                            "@id": "Log_8hpp_1aaeee61777e7ef7abafe7d697ff51b1fb",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "constexpr const char* Kinai::KN_COLOR_WHITE",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "initializer": "= \"\\033[97m\"",
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Core/Log.hpp",
+                                "@bodystart": "18",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Log.hpp",
+                                "@line": "18"
+                            },
+                            "name": "KN_COLOR_WHITE",
+                            "qualifiedname": "Kinai::KN_COLOR_WHITE",
+                            "type": "constexpr const char *"
+                        }
+                    ]
+                },
+                {
+                    "@kind": "func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@extern": "yes",
+                            "@id": "Application_8hpp_1a59ab58b901a05b7a8a90602a8e3a19dc",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(int argc, char **argv)",
+                            "briefdescription": null,
+                            "definition": "Application * Kinai::CreateApplication",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "19",
+                                "@declcolumn": "19",
+                                "@declfile": "include/Kinai/Core/Application.hpp",
+                                "@declline": "81",
+                                "@file": "include/Kinai/Core/Application.hpp",
+                                "@line": "81"
+                            },
+                            "name": "CreateApplication",
+                            "param": [
+                                {
+                                    "declname": "argc",
+                                    "type": "int"
+                                },
+                                {
+                                    "declname": "argv",
+                                    "type": "char **"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::CreateApplication",
+                            "type": {
+                                "#text": "*",
+                                "ref": {
+                                    "#text": "Application",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Application"
+                                }
+                            }
+                        },
+                        {
+                            "@const": "no",
+                            "@constexpr": "yes",
+                            "@explicit": "no",
+                            "@id": "Core_8hpp_1a077be009fb3337df27e2a48e5ae6adea",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(Args &&... args)",
+                            "briefdescription": null,
+                            "definition": "constexpr Scope< T > Kinai::CreateScope",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "74",
+                                "@bodyfile": "include/Kinai/Core/Core.hpp",
+                                "@bodystart": "71",
+                                "@column": "17",
+                                "@file": "include/Kinai/Core/Core.hpp",
+                                "@line": "71"
+                            },
+                            "name": "CreateScope",
+                            "param": {
+                                "declname": "args",
+                                "type": "Args &&..."
+                            },
+                            "qualifiedname": "Kinai::CreateScope",
+                            "templateparamlist": {
+                                "param": [
+                                    {
+                                        "type": "typename T"
+                                    },
+                                    {
+                                        "declname": "Args",
+                                        "defname": "Args",
+                                        "type": "typename ..."
+                                    }
+                                ]
+                            },
+                            "type": "constexpr Scope< T >"
+                        },
+                        {
+                            "@const": "no",
+                            "@constexpr": "yes",
+                            "@explicit": "no",
+                            "@id": "Core_8hpp_1ac427ab4991e31480a92c5e9ab673b68a",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(Args &&... args)",
+                            "briefdescription": null,
+                            "definition": "constexpr Ref< T > Kinai::CreateRef",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "82",
+                                "@bodyfile": "include/Kinai/Core/Core.hpp",
+                                "@bodystart": "79",
+                                "@column": "15",
+                                "@file": "include/Kinai/Core/Core.hpp",
+                                "@line": "79"
+                            },
+                            "name": "CreateRef",
+                            "param": {
+                                "declname": "args",
+                                "type": "Args &&..."
+                            },
+                            "qualifiedname": "Kinai::CreateRef",
+                            "templateparamlist": {
+                                "param": [
+                                    {
+                                        "type": "typename T"
+                                    },
+                                    {
+                                        "declname": "Args",
+                                        "defname": "Args",
+                                        "type": "typename ..."
+                                    }
+                                ]
+                            },
+                            "type": "constexpr Ref< T >"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "Core_2EntryPoint_8hpp_1af1498e0f8bc6ab82dc90b6defce35ab8",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(int argc, char **argv)",
+                            "briefdescription": null,
+                            "definition": "int Kinai::Main",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "28",
+                                "@bodyfile": "include/Kinai/Core/EntryPoint.hpp",
+                                "@bodystart": "17",
+                                "@column": "4",
+                                "@file": "include/Kinai/Core/EntryPoint.hpp",
+                                "@line": "17"
+                            },
+                            "name": "Main",
+                            "param": [
+                                {
+                                    "declname": "argc",
+                                    "type": "int"
+                                },
+                                {
+                                    "declname": "argv",
+                                    "type": "char **"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Main",
+                            "type": "int"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "Log_8hpp_1a070fb75b6c0a50efa10f31c68b8a18dc",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(OStream &os, const glm::vec< L, T, Q > &vector)",
+                            "briefdescription": null,
+                            "definition": "OStream & Kinai::operator<<",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "53",
+                                "@bodyfile": "include/Kinai/Core/Log.hpp",
+                                "@bodystart": "50",
+                                "@column": "8",
+                                "@file": "include/Kinai/Core/Log.hpp",
+                                "@line": "50"
+                            },
+                            "name": "operator<<",
+                            "param": [
+                                {
+                                    "declname": "os",
+                                    "type": "OStream &"
+                                },
+                                {
+                                    "declname": "vector",
+                                    "type": "const glm::vec< L, T, Q > &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::operator<<",
+                            "templateparamlist": {
+                                "param": [
+                                    {
+                                        "type": "typename OStream"
+                                    },
+                                    {
+                                        "declname": "L",
+                                        "defname": "L",
+                                        "type": "glm::length_t"
+                                    },
+                                    {
+                                        "type": "typename T"
+                                    },
+                                    {
+                                        "declname": "Q",
+                                        "defname": "Q",
+                                        "type": "glm::qualifier"
+                                    }
+                                ]
+                            },
+                            "type": "OStream &"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "Log_8hpp_1a9211aa3dd1722db9987ebd0ff38e7b2f",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(OStream &os, const glm::mat< C, R, T, Q > &matrix)",
+                            "briefdescription": null,
+                            "definition": "OStream & Kinai::operator<<",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "59",
+                                "@bodyfile": "include/Kinai/Core/Log.hpp",
+                                "@bodystart": "56",
+                                "@column": "8",
+                                "@file": "include/Kinai/Core/Log.hpp",
+                                "@line": "56"
+                            },
+                            "name": "operator<<",
+                            "param": [
+                                {
+                                    "declname": "os",
+                                    "type": "OStream &"
+                                },
+                                {
+                                    "declname": "matrix",
+                                    "type": "const glm::mat< C, R, T, Q > &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::operator<<",
+                            "templateparamlist": {
+                                "param": [
+                                    {
+                                        "type": "typename OStream"
+                                    },
+                                    {
+                                        "declname": "C",
+                                        "defname": "C",
+                                        "type": "glm::length_t"
+                                    },
+                                    {
+                                        "declname": "R",
+                                        "defname": "R",
+                                        "type": "glm::length_t"
+                                    },
+                                    {
+                                        "type": "typename T"
+                                    },
+                                    {
+                                        "declname": "Q",
+                                        "defname": "Q",
+                                        "type": "glm::qualifier"
+                                    }
+                                ]
+                            },
+                            "type": "OStream &"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "Log_8hpp_1a41c51dd132795c284718505d7e55f7f4",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(OStream &os, glm::qua< T, Q > quaternion)",
+                            "briefdescription": null,
+                            "definition": "OStream & Kinai::operator<<",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "65",
+                                "@bodyfile": "include/Kinai/Core/Log.hpp",
+                                "@bodystart": "62",
+                                "@column": "8",
+                                "@file": "include/Kinai/Core/Log.hpp",
+                                "@line": "62"
+                            },
+                            "name": "operator<<",
+                            "param": [
+                                {
+                                    "declname": "os",
+                                    "type": "OStream &"
+                                },
+                                {
+                                    "declname": "quaternion",
+                                    "type": "glm::qua< T, Q >"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::operator<<",
+                            "templateparamlist": {
+                                "param": [
+                                    {
+                                        "type": "typename OStream"
+                                    },
+                                    {
+                                        "type": "typename T"
+                                    },
+                                    {
+                                        "declname": "Q",
+                                        "defname": "Q",
+                                        "type": "glm::qualifier"
+                                    }
+                                ]
+                            },
+                            "type": "OStream &"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "Parser_8hpp_1a3e6ae9862c0902534de7a82d4da3a247",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(std::string &s)",
+                            "briefdescription": null,
+                            "definition": "static KN_INLINE void Kinai::ltrim",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "285",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "280",
+                                "@column": "22",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "280"
+                            },
+                            "name": "ltrim",
+                            "param": {
+                                "declname": "s",
+                                "type": "std::string &"
+                            },
+                            "qualifiedname": "Kinai::ltrim",
+                            "type": "KN_INLINE void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "Parser_8hpp_1aa3fe52a4c89522a447d76b6d1053d2f7",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(std::string &s)",
+                            "briefdescription": null,
+                            "definition": "static KN_INLINE void Kinai::rtrim",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "293",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "288",
+                                "@column": "22",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "288"
+                            },
+                            "name": "rtrim",
+                            "param": {
+                                "declname": "s",
+                                "type": "std::string &"
+                            },
+                            "qualifiedname": "Kinai::rtrim",
+                            "type": "KN_INLINE void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "Parser_8hpp_1a6725030b5b497c41560c427289d93bb7",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(std::string &s)",
+                            "briefdescription": null,
+                            "definition": "static KN_INLINE void Kinai::trim",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "300",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "296",
+                                "@column": "22",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "296"
+                            },
+                            "name": "trim",
+                            "param": {
+                                "declname": "s",
+                                "type": "std::string &"
+                            },
+                            "qualifiedname": "Kinai::trim",
+                            "type": "KN_INLINE void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "Parser_8hpp_1aefe17741e82ff24a181eda7aa15cc297",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(std::string s)",
+                            "briefdescription": null,
+                            "definition": "static KN_INLINE std::string Kinai::str_toupper",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "306",
+                                "@bodyfile": "include/Kinai/Core/Parser.hpp",
+                                "@bodystart": "302",
+                                "@column": "29",
+                                "@file": "include/Kinai/Core/Parser.hpp",
+                                "@line": "302"
+                            },
+                            "name": "str_toupper",
+                            "param": {
+                                "declname": "s",
+                                "type": "std::string"
+                            },
+                            "qualifiedname": "Kinai::str_toupper",
+                            "type": "KN_INLINE std::string"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "Event_8hpp_1a48b53ddf544bf4ff78a48a8a00490650",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(std::ostream &os, const Event &e)",
+                            "briefdescription": null,
+                            "definition": "std::ostream & Kinai::operator<<",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "80",
+                                "@bodyfile": "include/Kinai/Events/Event.hpp",
+                                "@bodystart": "77",
+                                "@column": "8",
+                                "@file": "include/Kinai/Events/Event.hpp",
+                                "@line": "77"
+                            },
+                            "name": "operator<<",
+                            "param": [
+                                {
+                                    "declname": "os",
+                                    "type": "std::ostream &"
+                                },
+                                {
+                                    "declname": "e",
+                                    "type": {
+                                        "#text": "const  &",
+                                        "ref": {
+                                            "#text": "Event",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1Event"
+                                        }
+                                    }
+                                }
+                            ],
+                            "qualifiedname": "Kinai::operator<<",
+                            "type": "std::ostream &"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "BufferElement_8hpp_1afeb2663bb6983cbc9fb4208d7b545672",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(ShaderDataType type)",
+                            "briefdescription": null,
+                            "definition": "static uint32_t Kinai::ShaderDataTypeSize",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "47",
+                                "@bodyfile": "include/Kinai/Renderer/Buffer/BufferElement.hpp",
+                                "@bodystart": "19",
+                                "@column": "23",
+                                "@file": "include/Kinai/Renderer/Buffer/BufferElement.hpp",
+                                "@line": "19"
+                            },
+                            "name": "ShaderDataTypeSize",
+                            "param": {
+                                "declname": "type",
+                                "type": "ShaderDataType"
+                            },
+                            "qualifiedname": "Kinai::ShaderDataTypeSize",
+                            "type": "uint32_t"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

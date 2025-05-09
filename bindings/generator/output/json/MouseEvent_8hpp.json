@@ -1,0 +1,50 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "MouseEvent_8hpp",
+            "@kind": "file",
+            "@language": "C++",
+            "briefdescription": null,
+            "compoundname": "MouseEvent.hpp",
+            "detaileddescription": null,
+            "innerclass": [
+                {
+                    "#text": "Kinai::MouseMotionEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1MouseMotionEvent"
+                },
+                {
+                    "#text": "Kinai::MouseWheelEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1MouseWheelEvent"
+                },
+                {
+                    "#text": "Kinai::MouseButtonEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1MouseButtonEvent"
+                },
+                {
+                    "#text": "Kinai::MouseButtonPressedEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1MouseButtonPressedEvent"
+                },
+                {
+                    "#text": "Kinai::MouseButtonReleasedEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1MouseButtonReleasedEvent"
+                }
+            ],
+            "innernamespace": {
+                "#text": "Kinai",
+                "@refid": "namespaceKinai"
+            },
+            "location": {
+                "@file": "include/Kinai/Events/MouseEvent.hpp"
+            }
+        }
+    }
+}

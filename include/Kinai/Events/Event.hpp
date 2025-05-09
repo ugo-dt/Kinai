@@ -5,7 +5,7 @@
 namespace Kinai
 {
 
-using KN_EventType = uint32_t;
+using EventType = uint32_t;
 
 enum EventCategory
 {
@@ -17,7 +17,7 @@ enum EventCategory
 	EventCategoryMouseButton    = BIT(4)
 };
 
-enum KN_CustomEventType : KN_EventType
+enum KN_CustomEventType : EventType
 {
 	KN_EVENT_WINDOW_TICK = SDL_EVENT_USER,
 	KN_EVENT_WINDOW_UPDATE,
@@ -29,8 +29,8 @@ static_assert((uint32_t)KN_EVENT_LAST < (uint32_t)SDL_EVENT_LAST);
 
 #define KN_CUSTOM_EVENT_TYPE_COUNT	((uint32_t)KN_EVENT_LAST - (uint32_t)SDL_EVENT_USER)
 
-#define EVENT_CLASS_TYPE(type) static KN_EventType GetStaticType() { return type; }\
-								virtual KN_EventType GetEventType() const override { return GetStaticType(); }\
+#define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return type; }\
+								virtual EventType GetEventType() const override { return GetStaticType(); }\
 								virtual const char* GetName() const override { return #type; }
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
@@ -42,7 +42,7 @@ public:
 
 	bool 		handled = false;
 
-	virtual KN_EventType GetEventType() const = 0;
+	virtual EventType GetEventType() const = 0;
 	virtual const char* GetName() const = 0;
 	virtual int GetCategoryFlags() const = 0;
 	virtual std::string ToString() const { return GetName(); }

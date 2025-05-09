@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classKinai_1_1Renderer2D_1_1Shader2D" kind="class" language="C++" prot="public">
+    <compoundname>Kinai::Renderer2D::Shader2D</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classKinai_1_1Renderer2D_1_1Shader2D_1a92c6d4f90096b84ceea72ad25b0dd6d6" prot="private" static="no" mutable="no">
+        <type>Ref&lt; <ref refid="classKinai_1_1Shader" kindref="compound">Shader</ref> &gt;</type>
+        <definition>Ref&lt;Shader&gt; Kinai::Renderer2D::Shader2D::_shader</definition>
+        <argsstring></argsstring>
+        <name>_shader</name>
+        <qualifiedname>Kinai::Renderer2D::Shader2D::_shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="103" column="5" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classKinai_1_1Renderer2D_1_1Shader2D_1a5222bc319f9a1a80f91167670e26e8db" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class Renderer2D</definition>
+        <argsstring></argsstring>
+        <name>Renderer2D</name>
+        <qualifiedname>Kinai::Renderer2D::Shader2D::Renderer2D</qualifiedname>
+        <param>
+          <type><ref refid="classKinai_1_1Renderer2D" kindref="compound">Renderer2D</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="104" column="14" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="104" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKinai_1_1Renderer2D_1_1Shader2D_1a41566c71fea4bcc63afbfaf3184765e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Ref&lt; <ref refid="classKinai_1_1Shader" kindref="compound">Shader</ref> &gt; &amp;</type>
+        <definition>Ref&lt; Shader &gt; &amp; Kinai::Renderer2D::Shader2D::GetShader</definition>
+        <argsstring>()</argsstring>
+        <name>GetShader</name>
+        <qualifiedname>Kinai::Renderer2D::Shader2D::GetShader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="99" column="4" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="99" bodyend="99"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classKinai_1_1Renderer2D_1_1Shader2D_1a2b34f5adee4bd815d8b9e7d8de6c683f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::Renderer2D::Shader2D::Shader2D</definition>
+        <argsstring>(const Ref&lt; Shader &gt; &amp;shader)</argsstring>
+        <name>Shader2D</name>
+        <qualifiedname>Kinai::Renderer2D::Shader2D::Shader2D</qualifiedname>
+        <param>
+          <type>const Ref&lt; <ref refid="classKinai_1_1Shader" kindref="compound">Shader</ref> &gt; &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="102" column="1" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="102" bodyend="102"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Renderer/2D/Renderer2D.hpp" line="96" column="1" bodyfile="include/Kinai/Renderer/2D/Renderer2D.hpp" bodystart="97" bodyend="105"/>
+    <listofallmembers>
+      <member refid="classKinai_1_1Renderer2D_1_1Shader2D_1a92c6d4f90096b84ceea72ad25b0dd6d6" prot="private" virt="non-virtual"><scope>Kinai::Renderer2D::Shader2D</scope><name>_shader</name></member>
+      <member refid="classKinai_1_1Renderer2D_1_1Shader2D_1a41566c71fea4bcc63afbfaf3184765e0" prot="public" virt="non-virtual"><scope>Kinai::Renderer2D::Shader2D</scope><name>GetShader</name></member>
+      <member refid="classKinai_1_1Renderer2D_1_1Shader2D_1a5222bc319f9a1a80f91167670e26e8db" prot="private" virt="non-virtual"><scope>Kinai::Renderer2D::Shader2D</scope><name>Renderer2D</name></member>
+      <member refid="classKinai_1_1Renderer2D_1_1Shader2D_1a2b34f5adee4bd815d8b9e7d8de6c683f" prot="private" virt="non-virtual"><scope>Kinai::Renderer2D::Shader2D</scope><name>Shader2D</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,964 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceKinai" kind="namespace" language="C++">
+    <compoundname>Kinai</compoundname>
+    <innerclass refid="classKinai_1_1Application" prot="public">Kinai::Application</innerclass>
+    <innerclass refid="structKinai_1_1ApplicationConfig" prot="public">Kinai::ApplicationConfig</innerclass>
+    <innerclass refid="classKinai_1_1AppRenderEvent" prot="public">Kinai::AppRenderEvent</innerclass>
+    <innerclass refid="classKinai_1_1AppTickEvent" prot="public">Kinai::AppTickEvent</innerclass>
+    <innerclass refid="classKinai_1_1AppUpdateEvent" prot="public">Kinai::AppUpdateEvent</innerclass>
+    <innerclass refid="structKinai_1_1BufferElement" prot="public">Kinai::BufferElement</innerclass>
+    <innerclass refid="classKinai_1_1BufferLayout" prot="public">Kinai::BufferLayout</innerclass>
+    <innerclass refid="classKinai_1_1Camera" prot="public">Kinai::Camera</innerclass>
+    <innerclass refid="structKinai_1_1CircleVertex" prot="public">Kinai::CircleVertex</innerclass>
+    <innerclass refid="classKinai_1_1Event" prot="public">Kinai::Event</innerclass>
+    <innerclass refid="classKinai_1_1EventDispatcher" prot="public">Kinai::EventDispatcher</innerclass>
+    <innerclass refid="classKinai_1_1Framebuffer" prot="public">Kinai::Framebuffer</innerclass>
+    <innerclass refid="structKinai_1_1FramebufferAttachmentConfig" prot="public">Kinai::FramebufferAttachmentConfig</innerclass>
+    <innerclass refid="structKinai_1_1FramebufferConfig" prot="public">Kinai::FramebufferConfig</innerclass>
+    <innerclass refid="structKinai_1_1FramebufferTextureConfig" prot="public">Kinai::FramebufferTextureConfig</innerclass>
+    <innerclass refid="classKinai_1_1ImGuiLayer" prot="public">Kinai::ImGuiLayer</innerclass>
+    <innerclass refid="classKinai_1_1IndexBuffer" prot="public">Kinai::IndexBuffer</innerclass>
+    <innerclass refid="classKinai_1_1Input" prot="public">Kinai::Input</innerclass>
+    <innerclass refid="structKinai_1_1is__token__type" prot="public">Kinai::is_token_type</innerclass>
+    <innerclass refid="classKinai_1_1KeyEvent" prot="public">Kinai::KeyEvent</innerclass>
+    <innerclass refid="classKinai_1_1KeyPressedEvent" prot="public">Kinai::KeyPressedEvent</innerclass>
+    <innerclass refid="classKinai_1_1KeyReleasedEvent" prot="public">Kinai::KeyReleasedEvent</innerclass>
+    <innerclass refid="classKinai_1_1Layer" prot="public">Kinai::Layer</innerclass>
+    <innerclass refid="classKinai_1_1LayerStack" prot="public">Kinai::LayerStack</innerclass>
+    <innerclass refid="structKinai_1_1LineVertex" prot="public">Kinai::LineVertex</innerclass>
+    <innerclass refid="classKinai_1_1Log" prot="public">Kinai::Log</innerclass>
+    <innerclass refid="classKinai_1_1MouseButtonEvent" prot="public">Kinai::MouseButtonEvent</innerclass>
+    <innerclass refid="classKinai_1_1MouseButtonPressedEvent" prot="public">Kinai::MouseButtonPressedEvent</innerclass>
+    <innerclass refid="classKinai_1_1MouseButtonReleasedEvent" prot="public">Kinai::MouseButtonReleasedEvent</innerclass>
+    <innerclass refid="classKinai_1_1MouseMotionEvent" prot="public">Kinai::MouseMotionEvent</innerclass>
+    <innerclass refid="classKinai_1_1MouseWheelEvent" prot="public">Kinai::MouseWheelEvent</innerclass>
+    <innerclass refid="classKinai_1_1OrthographicCamera" prot="public">Kinai::OrthographicCamera</innerclass>
+    <innerclass refid="classKinai_1_1OrthographicCameraController" prot="public">Kinai::OrthographicCameraController</innerclass>
+    <innerclass refid="structKinai_1_1OrthographicCameraControllerConfig" prot="public">Kinai::OrthographicCameraControllerConfig</innerclass>
+    <innerclass refid="classKinai_1_1Parser" prot="public">Kinai::Parser</innerclass>
+    <innerclass refid="classKinai_1_1PerspectiveCamera" prot="public">Kinai::PerspectiveCamera</innerclass>
+    <innerclass refid="classKinai_1_1PerspectiveCameraController" prot="public">Kinai::PerspectiveCameraController</innerclass>
+    <innerclass refid="structKinai_1_1PerspectiveCameraControllerConfig" prot="public">Kinai::PerspectiveCameraControllerConfig</innerclass>
+    <innerclass refid="structKinai_1_1Pipeline" prot="public">Kinai::Pipeline</innerclass>
+    <innerclass refid="structKinai_1_1QuadVertex" prot="public">Kinai::QuadVertex</innerclass>
+    <innerclass refid="classKinai_1_1RenderCommand" prot="public">Kinai::RenderCommand</innerclass>
+    <innerclass refid="classKinai_1_1Renderer" prot="public">Kinai::Renderer</innerclass>
+    <innerclass refid="classKinai_1_1Renderer2D" prot="public">Kinai::Renderer2D</innerclass>
+    <innerclass refid="classKinai_1_1RendererAPI" prot="public">Kinai::RendererAPI</innerclass>
+    <innerclass refid="classKinai_1_1Shader" prot="public">Kinai::Shader</innerclass>
+    <innerclass refid="structKinai_1_1Shader2D" prot="public">Kinai::Shader2D</innerclass>
+    <innerclass refid="classKinai_1_1ShaderLibrary" prot="public">Kinai::ShaderLibrary</innerclass>
+    <innerclass refid="classKinai_1_1Texture" prot="public">Kinai::Texture</innerclass>
+    <innerclass refid="classKinai_1_1Texture2D" prot="public">Kinai::Texture2D</innerclass>
+    <innerclass refid="structKinai_1_1TextureConfig" prot="public">Kinai::TextureConfig</innerclass>
+    <innerclass refid="structKinai_1_1Time" prot="public">Kinai::Time</innerclass>
+    <innerclass refid="classKinai_1_1Timer" prot="public">Kinai::Timer</innerclass>
+    <innerclass refid="structKinai_1_1TokenBase" prot="public">Kinai::TokenBase</innerclass>
+    <innerclass refid="classKinai_1_1UniformBuffer" prot="public">Kinai::UniformBuffer</innerclass>
+    <innerclass refid="classKinai_1_1VertexArray" prot="public">Kinai::VertexArray</innerclass>
+    <innerclass refid="classKinai_1_1VertexBuffer" prot="public">Kinai::VertexBuffer</innerclass>
+    <innerclass refid="classKinai_1_1Window" prot="public">Kinai::Window</innerclass>
+    <innerclass refid="classKinai_1_1WindowCloseEvent" prot="public">Kinai::WindowCloseEvent</innerclass>
+    <innerclass refid="structKinai_1_1WindowProps" prot="public">Kinai::WindowProps</innerclass>
+    <innerclass refid="classKinai_1_1WindowResizeEvent" prot="public">Kinai::WindowResizeEvent</innerclass>
+    <innernamespace refid="namespaceKinai_1_1Key">Kinai::Key</innernamespace>
+    <innernamespace refid="namespaceKinai_1_1Mouse">Kinai::Mouse</innernamespace>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4" prot="public" static="no" strong="no">
+        <type></type>
+        <name>EventCategory</name>
+        <qualifiedname>Kinai::EventCategory</qualifiedname>
+        <enumvalue id="Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4a2b7e3d2a181c16bf8de0c3d3e3b7db6f" prot="public">
+          <name>EventCategoryNone</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4ae391003b17af85efc1c45a4bc242723e" prot="public">
+          <name>EventCategoryApplication</name>
+          <initializer>= BIT(0)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4a9691e9c72fbde6cb64788b69e2a6b377" prot="public">
+          <name>EventCategoryInput</name>
+          <initializer>= BIT(1)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4a0d5c9b1695442f9eb462fcb7e63df61a" prot="public">
+          <name>EventCategoryKeyboard</name>
+          <initializer>= BIT(2)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4a5ee72b59ce507eb7e8c63095adf7a27f" prot="public">
+          <name>EventCategoryMouse</name>
+          <initializer>= BIT(3)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4a62949d90569686b6123bc22a85518cd2" prot="public">
+          <name>EventCategoryMouseButton</name>
+          <initializer>= BIT(4)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/Event.hpp" line="10" column="1" bodyfile="include/Kinai/Events/Event.hpp" bodystart="11" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="enum" id="Event_8hpp_1a5be7edc6d3ce21ade177d85e143719e1" prot="public" static="no" strong="no">
+        <type>EventType</type>
+        <name>KN_CustomEventType</name>
+        <qualifiedname>Kinai::KN_CustomEventType</qualifiedname>
+        <enumvalue id="Event_8hpp_1a5be7edc6d3ce21ade177d85e143719e1ae2370da3c96355b875f31dedca8e1e4a" prot="public">
+          <name>KN_EVENT_WINDOW_TICK</name>
+          <initializer>= SDL_EVENT_USER</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Event_8hpp_1a5be7edc6d3ce21ade177d85e143719e1a13b0c1a8a9613a099d5deba71ea79b10" prot="public">
+          <name>KN_EVENT_WINDOW_UPDATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Event_8hpp_1a5be7edc6d3ce21ade177d85e143719e1a5b968b9efa7ca29ebf7eb3ec255d9793" prot="public">
+          <name>KN_EVENT_WINDOW_RENDER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Event_8hpp_1a5be7edc6d3ce21ade177d85e143719e1a0f1f282bada973b9ca2b8a6fa8a643a7" prot="public">
+          <name>KN_EVENT_LAST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/Event.hpp" line="20" column="1" bodyfile="include/Kinai/Events/Event.hpp" bodystart="21" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="enum" id="Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3e" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>FramebufferTextureFormat</name>
+        <qualifiedname>Kinai::FramebufferTextureFormat</qualifiedname>
+        <enumvalue id="Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3ea6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3eab4b279046a02077466fa26cabb00c642" prot="public">
+          <name>RGBA8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3ea2849effb989cbdcfb4b9eb143fd826aa" prot="public">
+          <name>RED_INTEGER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3ea7ca3e26e4e5c35e4408bd49c1e32e9a3" prot="public">
+          <name>DEPTH24STENCIL8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3ea675056ad1441b6375b2c5abd48c27ef1" prot="public">
+          <name>Depth</name>
+          <initializer>= DEPTH24STENCIL8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Framebuffer.hpp" line="8" column="1" bodyfile="include/Kinai/Renderer/Framebuffer.hpp" bodystart="9" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="enum" id="Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ImageFormat</name>
+        <qualifiedname>Kinai::ImageFormat</qualifiedname>
+        <enumvalue id="Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445a6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445acfff813d86d447fa2a9c858650ebbb90" prot="public">
+          <name>R8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445a165c6379d01617e12de274a3952efa63" prot="public">
+          <name>RGB8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445ab4b279046a02077466fa26cabb00c642" prot="public">
+          <name>RGBA8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445a703a7a81e586669c930e3dcaf3e8c428" prot="public">
+          <name>RGBA32F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Texture.hpp" line="9" column="1" bodyfile="include/Kinai/Renderer/Texture.hpp" bodystart="10" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="enum" id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ShaderDataType</name>
+        <qualifiedname>Kinai::ShaderDataType</qualifiedname>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a22ae0e2b89e5e3d477f988cc36d3272b" prot="public">
+          <name>Float</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a6694430a2b471b5d2de071f2ef1fdc57" prot="public">
+          <name>Float2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a8a8a1d211464d4bdee46db3c75bfa121" prot="public">
+          <name>Float3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a33116adc6690289da9b82ea736864eeb" prot="public">
+          <name>Float4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a2495a7d9c1fab19af6441abbfed823e1" prot="public">
+          <name>Mat3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a80f7408b0a5b5d78c26adae9f6f420f9" prot="public">
+          <name>Mat4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a1686a6c336b71b36d77354cea19a8b52" prot="public">
+          <name>Int</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a4c6bc90f2bbdf35523e29c414a57bad3" prot="public">
+          <name>Int2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a56bf1b0e694b442bf4145a04b82ea943" prot="public">
+          <name>Int3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a1a44f12c3427b3e11c171d09632bad8d" prot="public">
+          <name>Int4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5ac26f15e86e3de4c398a8273272aba034" prot="public">
+          <name>Bool</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a4b4ba765b750d5836bfeb2213cc3caea" prot="public">
+          <name>UByte</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a40fc2bf671581b7ec5615a3f2701bddb" prot="public">
+          <name>UByte2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a37b413f28bc153b93708eba7c1cba8f5" prot="public">
+          <name>UByte3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a262bbd5c6b4d6c534f97b5e76a8cefa9" prot="public">
+          <name>UByte4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a0b1291eded63143ac04709711274785a" prot="public">
+          <name>UInt</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a003b50e47c23c2f841dd2b21452f7ec4" prot="public">
+          <name>UInt2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a424aaa556a2950e0b98713136b7e6439" prot="public">
+          <name>UInt3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a146988b242dbb9ed1e323e309789115a" prot="public">
+          <name>UInt4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/BufferElement.hpp" line="8" column="1" bodyfile="include/Kinai/Renderer/Buffer/BufferElement.hpp" bodystart="9" bodyend="17"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="Core_8hpp_1a897cb7e44c5be57fcb323cc92b60258d" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::unique_ptr&lt; T &gt;</type>
+        <definition>using Kinai::Scope = typedef std::unique_ptr&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>Scope</name>
+        <qualifiedname>Kinai::Scope</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Core.hpp" line="69" column="1" bodyfile="include/Kinai/Core/Core.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="Core_8hpp_1acd3a3ecbdeb61505e4223af16650c3b8" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::shared_ptr&lt; T &gt;</type>
+        <definition>using Kinai::Ref = typedef std::shared_ptr&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>Ref</name>
+        <qualifiedname>Kinai::Ref</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Core.hpp" line="77" column="1" bodyfile="include/Kinai/Core/Core.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="KeyCode_8hpp_1abbf0dffb898ee42dbc2425a612e45faf" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>using Kinai::KeyCode = typedef uint16_t</definition>
+        <argsstring></argsstring>
+        <name>KeyCode</name>
+        <qualifiedname>Kinai::KeyCode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/KeyCode.hpp" line="8" column="1" bodyfile="include/Kinai/Core/KeyCode.hpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="MouseButton_8hpp_1ac16381472a18fad6c99e588e7f68ecd8" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>using Kinai::MouseButton = typedef uint16_t</definition>
+        <argsstring></argsstring>
+        <name>MouseButton</name>
+        <qualifiedname>Kinai::MouseButton</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/MouseButton.hpp" line="8" column="1" bodyfile="include/Kinai/Core/MouseButton.hpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="Event_8hpp_1ac9f33f1492ef129be29ece907d6818bc" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>using Kinai::EventType = typedef uint32_t</definition>
+        <argsstring></argsstring>
+        <name>EventType</name>
+        <qualifiedname>Kinai::EventType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/Event.hpp" line="8" column="1" bodyfile="include/Kinai/Events/Event.hpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="Log_8hpp_1af9b005438446c9e41977e2632a19bf98" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr const char *</type>
+        <definition>constexpr const char* Kinai::KN_COLOR_DEFAULT</definition>
+        <argsstring></argsstring>
+        <name>KN_COLOR_DEFAULT</name>
+        <qualifiedname>Kinai::KN_COLOR_DEFAULT</qualifiedname>
+        <initializer>= &quot;\033[39m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Log.hpp" line="11" column="29" bodyfile="include/Kinai/Core/Log.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="Log_8hpp_1abdad8c328c68f96b326a57b9507c3a2c" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr const char *</type>
+        <definition>constexpr const char* Kinai::KN_COLOR_RED</definition>
+        <argsstring></argsstring>
+        <name>KN_COLOR_RED</name>
+        <qualifiedname>Kinai::KN_COLOR_RED</qualifiedname>
+        <initializer>= &quot;\033[91m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Log.hpp" line="12" column="29" bodyfile="include/Kinai/Core/Log.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="Log_8hpp_1a31744114506b22460901c21ca55ecff0" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr const char *</type>
+        <definition>constexpr const char* Kinai::KN_COLOR_GREEN</definition>
+        <argsstring></argsstring>
+        <name>KN_COLOR_GREEN</name>
+        <qualifiedname>Kinai::KN_COLOR_GREEN</qualifiedname>
+        <initializer>= &quot;\033[92m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Log.hpp" line="13" column="29" bodyfile="include/Kinai/Core/Log.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="Log_8hpp_1af98df997edc1a2fa6d8bfd22d6f613d0" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr const char *</type>
+        <definition>constexpr const char* Kinai::KN_COLOR_YELLOW</definition>
+        <argsstring></argsstring>
+        <name>KN_COLOR_YELLOW</name>
+        <qualifiedname>Kinai::KN_COLOR_YELLOW</qualifiedname>
+        <initializer>= &quot;\033[93m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Log.hpp" line="14" column="29" bodyfile="include/Kinai/Core/Log.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="Log_8hpp_1afcacec3c92e81248a5c39b6977b7d9b5" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr const char *</type>
+        <definition>constexpr const char* Kinai::KN_COLOR_BLUE</definition>
+        <argsstring></argsstring>
+        <name>KN_COLOR_BLUE</name>
+        <qualifiedname>Kinai::KN_COLOR_BLUE</qualifiedname>
+        <initializer>= &quot;\033[94m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Log.hpp" line="15" column="29" bodyfile="include/Kinai/Core/Log.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="Log_8hpp_1a413ffeaa1cf1140074e14ea1fec6b475" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr const char *</type>
+        <definition>constexpr const char* Kinai::KN_COLOR_MAGENTA</definition>
+        <argsstring></argsstring>
+        <name>KN_COLOR_MAGENTA</name>
+        <qualifiedname>Kinai::KN_COLOR_MAGENTA</qualifiedname>
+        <initializer>= &quot;\033[95m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Log.hpp" line="16" column="29" bodyfile="include/Kinai/Core/Log.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="Log_8hpp_1a04f7798e4d7d45810f271d5376974a93" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr const char *</type>
+        <definition>constexpr const char* Kinai::KN_COLOR_CYAN</definition>
+        <argsstring></argsstring>
+        <name>KN_COLOR_CYAN</name>
+        <qualifiedname>Kinai::KN_COLOR_CYAN</qualifiedname>
+        <initializer>= &quot;\033[96m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Log.hpp" line="17" column="29" bodyfile="include/Kinai/Core/Log.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="Log_8hpp_1aaeee61777e7ef7abafe7d697ff51b1fb" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr const char *</type>
+        <definition>constexpr const char* Kinai::KN_COLOR_WHITE</definition>
+        <argsstring></argsstring>
+        <name>KN_COLOR_WHITE</name>
+        <qualifiedname>Kinai::KN_COLOR_WHITE</qualifiedname>
+        <initializer>= &quot;\033[97m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Log.hpp" line="18" column="29" bodyfile="include/Kinai/Core/Log.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="Application_8hpp_1a59ab58b901a05b7a8a90602a8e3a19dc" prot="public" static="no" extern="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classKinai_1_1Application" kindref="compound">Application</ref> *</type>
+        <definition>Application * Kinai::CreateApplication</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>CreateApplication</name>
+        <qualifiedname>Kinai::CreateApplication</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="81" column="19" declfile="include/Kinai/Core/Application.hpp" declline="81" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="Core_8hpp_1a077be009fb3337df27e2a48e5ae6adea" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename ...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr Scope&lt; T &gt;</type>
+        <definition>constexpr Scope&lt; T &gt; Kinai::CreateScope</definition>
+        <argsstring>(Args &amp;&amp;... args)</argsstring>
+        <name>CreateScope</name>
+        <qualifiedname>Kinai::CreateScope</qualifiedname>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Core.hpp" line="71" column="17" bodyfile="include/Kinai/Core/Core.hpp" bodystart="71" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="Core_8hpp_1ac427ab4991e31480a92c5e9ab673b68a" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename ...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr Ref&lt; T &gt;</type>
+        <definition>constexpr Ref&lt; T &gt; Kinai::CreateRef</definition>
+        <argsstring>(Args &amp;&amp;... args)</argsstring>
+        <name>CreateRef</name>
+        <qualifiedname>Kinai::CreateRef</qualifiedname>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Core.hpp" line="79" column="15" bodyfile="include/Kinai/Core/Core.hpp" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="Core_2EntryPoint_8hpp_1af1498e0f8bc6ab82dc90b6defce35ab8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Kinai::Main</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>Main</name>
+        <qualifiedname>Kinai::Main</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/EntryPoint.hpp" line="17" column="4" bodyfile="include/Kinai/Core/EntryPoint.hpp" bodystart="17" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="Log_8hpp_1a070fb75b6c0a50efa10f31c68b8a18dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename OStream</type>
+          </param>
+          <param>
+            <type>glm::length_t</type>
+            <declname>L</declname>
+            <defname>L</defname>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>glm::qualifier</type>
+            <declname>Q</declname>
+            <defname>Q</defname>
+          </param>
+        </templateparamlist>
+        <type>OStream &amp;</type>
+        <definition>OStream &amp; Kinai::operator&lt;&lt;</definition>
+        <argsstring>(OStream &amp;os, const glm::vec&lt; L, T, Q &gt; &amp;vector)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>Kinai::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>OStream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const glm::vec&lt; L, T, Q &gt; &amp;</type>
+          <declname>vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Log.hpp" line="50" column="8" bodyfile="include/Kinai/Core/Log.hpp" bodystart="50" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="Log_8hpp_1a9211aa3dd1722db9987ebd0ff38e7b2f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename OStream</type>
+          </param>
+          <param>
+            <type>glm::length_t</type>
+            <declname>C</declname>
+            <defname>C</defname>
+          </param>
+          <param>
+            <type>glm::length_t</type>
+            <declname>R</declname>
+            <defname>R</defname>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>glm::qualifier</type>
+            <declname>Q</declname>
+            <defname>Q</defname>
+          </param>
+        </templateparamlist>
+        <type>OStream &amp;</type>
+        <definition>OStream &amp; Kinai::operator&lt;&lt;</definition>
+        <argsstring>(OStream &amp;os, const glm::mat&lt; C, R, T, Q &gt; &amp;matrix)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>Kinai::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>OStream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const glm::mat&lt; C, R, T, Q &gt; &amp;</type>
+          <declname>matrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Log.hpp" line="56" column="8" bodyfile="include/Kinai/Core/Log.hpp" bodystart="56" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="Log_8hpp_1a41c51dd132795c284718505d7e55f7f4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename OStream</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>glm::qualifier</type>
+            <declname>Q</declname>
+            <defname>Q</defname>
+          </param>
+        </templateparamlist>
+        <type>OStream &amp;</type>
+        <definition>OStream &amp; Kinai::operator&lt;&lt;</definition>
+        <argsstring>(OStream &amp;os, glm::qua&lt; T, Q &gt; quaternion)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>Kinai::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>OStream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>glm::qua&lt; T, Q &gt;</type>
+          <declname>quaternion</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Log.hpp" line="62" column="8" bodyfile="include/Kinai/Core/Log.hpp" bodystart="62" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="Parser_8hpp_1a3e6ae9862c0902534de7a82d4da3a247" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>KN_INLINE void</type>
+        <definition>static KN_INLINE void Kinai::ltrim</definition>
+        <argsstring>(std::string &amp;s)</argsstring>
+        <name>ltrim</name>
+        <qualifiedname>Kinai::ltrim</qualifiedname>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Parser.hpp" line="280" column="22" bodyfile="include/Kinai/Core/Parser.hpp" bodystart="280" bodyend="285"/>
+      </memberdef>
+      <memberdef kind="function" id="Parser_8hpp_1aa3fe52a4c89522a447d76b6d1053d2f7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>KN_INLINE void</type>
+        <definition>static KN_INLINE void Kinai::rtrim</definition>
+        <argsstring>(std::string &amp;s)</argsstring>
+        <name>rtrim</name>
+        <qualifiedname>Kinai::rtrim</qualifiedname>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Parser.hpp" line="288" column="22" bodyfile="include/Kinai/Core/Parser.hpp" bodystart="288" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="Parser_8hpp_1a6725030b5b497c41560c427289d93bb7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>KN_INLINE void</type>
+        <definition>static KN_INLINE void Kinai::trim</definition>
+        <argsstring>(std::string &amp;s)</argsstring>
+        <name>trim</name>
+        <qualifiedname>Kinai::trim</qualifiedname>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Parser.hpp" line="296" column="22" bodyfile="include/Kinai/Core/Parser.hpp" bodystart="296" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="Parser_8hpp_1aefe17741e82ff24a181eda7aa15cc297" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>KN_INLINE std::string</type>
+        <definition>static KN_INLINE std::string Kinai::str_toupper</definition>
+        <argsstring>(std::string s)</argsstring>
+        <name>str_toupper</name>
+        <qualifiedname>Kinai::str_toupper</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Parser.hpp" line="302" column="29" bodyfile="include/Kinai/Core/Parser.hpp" bodystart="302" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="Event_8hpp_1a48b53ddf544bf4ff78a48a8a00490650" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream &amp; Kinai::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Event &amp;e)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>Kinai::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classKinai_1_1Event" kindref="compound">Event</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/Event.hpp" line="77" column="8" bodyfile="include/Kinai/Events/Event.hpp" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="BufferElement_8hpp_1afeb2663bb6983cbc9fb4208d7b545672" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>static uint32_t Kinai::ShaderDataTypeSize</definition>
+        <argsstring>(ShaderDataType type)</argsstring>
+        <name>ShaderDataTypeSize</name>
+        <qualifiedname>Kinai::ShaderDataTypeSize</qualifiedname>
+        <param>
+          <type>ShaderDataType</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Renderer/Buffer/BufferElement.hpp" line="19" column="23" bodyfile="include/Kinai/Renderer/Buffer/BufferElement.hpp" bodystart="19" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Core/Application.hpp" line="17" column="1"/>
+  </compounddef>
+</doxygen>

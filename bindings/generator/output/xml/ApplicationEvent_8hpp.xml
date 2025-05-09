@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="ApplicationEvent_8hpp" kind="file" language="C++">
+    <compoundname>ApplicationEvent.hpp</compoundname>
+    <innerclass refid="classKinai_1_1WindowResizeEvent" prot="public">Kinai::WindowResizeEvent</innerclass>
+    <innerclass refid="classKinai_1_1WindowCloseEvent" prot="public">Kinai::WindowCloseEvent</innerclass>
+    <innerclass refid="classKinai_1_1AppTickEvent" prot="public">Kinai::AppTickEvent</innerclass>
+    <innerclass refid="classKinai_1_1AppUpdateEvent" prot="public">Kinai::AppUpdateEvent</innerclass>
+    <innerclass refid="classKinai_1_1AppRenderEvent" prot="public">Kinai::AppRenderEvent</innerclass>
+    <innernamespace refid="namespaceKinai">Kinai</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Events/ApplicationEvent.hpp"/>
+  </compounddef>
+</doxygen>

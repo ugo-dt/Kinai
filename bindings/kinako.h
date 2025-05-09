@@ -22,9 +22,9 @@
 #include <cglm/cglm.h>
 #include <cglm/struct.h>
 
-typedef uint16_t	KnKeyCode;
-typedef uint16_t	KnMouseButton;
-typedef uint32_t	KN_EventType;
+typedef uint16_t KnKeyCode;
+typedef uint16_t KnMouseButton;
+typedef uint32_t KN_EventType;
 typedef struct KnAppRenderEvent KnAppRenderEvent;
 typedef struct KnAppTickEvent KnAppTickEvent;
 typedef struct KnAppUpdateEvent KnAppUpdateEvent;

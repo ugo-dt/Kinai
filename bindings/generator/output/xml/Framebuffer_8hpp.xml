@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Framebuffer_8hpp" kind="file" language="C++">
+    <compoundname>Framebuffer.hpp</compoundname>
+    <innerclass refid="structKinai_1_1FramebufferTextureConfig" prot="public">Kinai::FramebufferTextureConfig</innerclass>
+    <innerclass refid="structKinai_1_1FramebufferAttachmentConfig" prot="public">Kinai::FramebufferAttachmentConfig</innerclass>
+    <innerclass refid="structKinai_1_1FramebufferConfig" prot="public">Kinai::FramebufferConfig</innerclass>
+    <innerclass refid="classKinai_1_1Framebuffer" prot="public">Kinai::Framebuffer</innerclass>
+    <innernamespace refid="namespaceKinai">Kinai</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Renderer/Framebuffer.hpp"/>
+  </compounddef>
+</doxygen>

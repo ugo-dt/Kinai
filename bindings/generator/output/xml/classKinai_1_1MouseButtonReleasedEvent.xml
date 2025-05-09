@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classKinai_1_1MouseButtonReleasedEvent" kind="class" language="C++" prot="public">
+    <compoundname>Kinai::MouseButtonReleasedEvent</compoundname>
+    <basecompoundref refid="classKinai_1_1MouseButtonEvent" prot="public" virt="non-virtual">Kinai::MouseButtonEvent</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKinai_1_1MouseButtonReleasedEvent_1ad8c4dc54286d8b9110bbb81827eb3b77" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::MouseButtonReleasedEvent::MouseButtonReleasedEvent</definition>
+        <argsstring>(const MouseButton button)</argsstring>
+        <name>MouseButtonReleasedEvent</name>
+        <qualifiedname>Kinai::MouseButtonReleasedEvent::MouseButtonReleasedEvent</qualifiedname>
+        <param>
+          <type>const MouseButton</type>
+          <declname>button</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/MouseEvent.hpp" line="94" column="1" bodyfile="include/Kinai/Events/MouseEvent.hpp" bodystart="94" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1MouseButtonReleasedEvent_1a17b57b26733d03490bd3a5c03e96bbef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::MouseButtonReleasedEvent::EVENT_CLASS_TYPE</definition>
+        <argsstring>(SDL_EVENT_MOUSE_BUTTON_UP)</argsstring>
+        <name>EVENT_CLASS_TYPE</name>
+        <qualifiedname>Kinai::MouseButtonReleasedEvent::EVENT_CLASS_TYPE</qualifiedname>
+        <param>
+          <type>SDL_EVENT_MOUSE_BUTTON_UP</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/MouseEvent.hpp" line="97" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1MouseButtonReleasedEvent_1abbee780a9871cb65005ee6d9fbc18efa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string Kinai::MouseButtonReleasedEvent::ToString</definition>
+        <argsstring>() const override</argsstring>
+        <name>ToString</name>
+        <qualifiedname>Kinai::MouseButtonReleasedEvent::ToString</qualifiedname>
+        <reimplements refid="classKinai_1_1Event_1a0ed0b864f47b05c5ba8f20f548beef29">ToString</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/MouseEvent.hpp" line="99" column="12" bodyfile="include/Kinai/Events/MouseEvent.hpp" bodystart="99" bodyend="104"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>Kinai::Event</label>
+        <link refid="classKinai_1_1Event"/>
+      </node>
+      <node id="2">
+        <label>Kinai::MouseButtonEvent</label>
+        <link refid="classKinai_1_1MouseButtonEvent"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Kinai::MouseButtonReleasedEvent</label>
+        <link refid="classKinai_1_1MouseButtonReleasedEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>Kinai::Event</label>
+        <link refid="classKinai_1_1Event"/>
+      </node>
+      <node id="2">
+        <label>Kinai::MouseButtonEvent</label>
+        <link refid="classKinai_1_1MouseButtonEvent"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Kinai::MouseButtonReleasedEvent</label>
+        <link refid="classKinai_1_1MouseButtonReleasedEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/Kinai/Events/MouseEvent.hpp" line="91" column="1" bodyfile="include/Kinai/Events/MouseEvent.hpp" bodystart="92" bodyend="105"/>
+    <listofallmembers>
+      <member refid="classKinai_1_1MouseButtonEvent_1a8134747ee4f117576cd97a7fc2f9a634" prot="protected" virt="non-virtual"><scope>Kinai::MouseButtonReleasedEvent</scope><name>_button</name></member>
+      <member refid="classKinai_1_1MouseButtonEvent_1a1327699a7921a80f5f08e4bf180d9a23" prot="public" virt="non-virtual"><scope>Kinai::MouseButtonReleasedEvent</scope><name>EVENT_CLASS_CATEGORY</name></member>
+      <member refid="classKinai_1_1MouseButtonReleasedEvent_1a17b57b26733d03490bd3a5c03e96bbef" prot="public" virt="non-virtual"><scope>Kinai::MouseButtonReleasedEvent</scope><name>EVENT_CLASS_TYPE</name></member>
+      <member refid="classKinai_1_1MouseButtonEvent_1a0346ce8832abe57ba6b886738a408309" prot="public" virt="non-virtual"><scope>Kinai::MouseButtonReleasedEvent</scope><name>GetButton</name></member>
+      <member refid="classKinai_1_1Event_1a1f2e3dd6426fc209e7f157700816060a" prot="public" virt="pure-virtual"><scope>Kinai::MouseButtonReleasedEvent</scope><name>GetCategoryFlags</name></member>
+      <member refid="classKinai_1_1Event_1adbb5d2279374bf7a541badb7dd9389f4" prot="public" virt="pure-virtual"><scope>Kinai::MouseButtonReleasedEvent</scope><name>GetEventType</name></member>
+      <member refid="classKinai_1_1Event_1aa583e2927f7beda552435b2f8f184025" prot="public" virt="pure-virtual"><scope>Kinai::MouseButtonReleasedEvent</scope><name>GetName</name></member>
+      <member refid="classKinai_1_1Event_1a8f35ee9e4c3e69a83262c9a44afb4c0e" prot="public" virt="non-virtual"><scope>Kinai::MouseButtonReleasedEvent</scope><name>handled</name></member>
+      <member refid="classKinai_1_1Event_1a7ab92ccea10ad63144a84d5df06a501d" prot="public" virt="non-virtual"><scope>Kinai::MouseButtonReleasedEvent</scope><name>IsInCategory</name></member>
+      <member refid="classKinai_1_1MouseButtonEvent_1acacc5a0ecce6b6602d3738da4d6ca973" prot="public" virt="non-virtual"><scope>Kinai::MouseButtonReleasedEvent</scope><name>MouseButtonEvent</name></member>
+      <member refid="classKinai_1_1MouseButtonEvent_1a4f9bd3ab2951cc1680a330d508109888" prot="protected" virt="non-virtual"><scope>Kinai::MouseButtonReleasedEvent</scope><name>MouseButtonEvent</name></member>
+      <member refid="classKinai_1_1MouseButtonReleasedEvent_1ad8c4dc54286d8b9110bbb81827eb3b77" prot="public" virt="non-virtual"><scope>Kinai::MouseButtonReleasedEvent</scope><name>MouseButtonReleasedEvent</name></member>
+      <member refid="classKinai_1_1MouseButtonReleasedEvent_1abbee780a9871cb65005ee6d9fbc18efa" prot="public" virt="virtual"><scope>Kinai::MouseButtonReleasedEvent</scope><name>ToString</name></member>
+      <member refid="classKinai_1_1Event_1a61a9ecf4e7a96b855adaa9a681f5d58a" prot="public" virt="virtual"><scope>Kinai::MouseButtonReleasedEvent</scope><name>~Event</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

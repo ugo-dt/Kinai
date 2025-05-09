@@ -1,0 +1,89 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "Core_2EntryPoint_8hpp",
+            "@kind": "file",
+            "@language": "C++",
+            "briefdescription": null,
+            "compoundname": "Core/EntryPoint.hpp",
+            "detaileddescription": null,
+            "innernamespace": {
+                "#text": "Kinai",
+                "@refid": "namespaceKinai"
+            },
+            "location": {
+                "@file": "include/Kinai/Core/EntryPoint.hpp"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "var",
+                    "memberdef": {
+                        "@id": "Core_2EntryPoint_8hpp_1a6e342dcb3235220bd9057586be109bdb",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "bool g_KinaiApplicationRunning",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "initializer": "= true",
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Core/EntryPoint.hpp",
+                            "@bodystart": "10",
+                            "@column": "5",
+                            "@file": "include/Kinai/Core/EntryPoint.hpp",
+                            "@line": "10"
+                        },
+                        "name": "g_KinaiApplicationRunning",
+                        "type": "bool"
+                    }
+                },
+                {
+                    "@kind": "func",
+                    "memberdef": {
+                        "@const": "no",
+                        "@explicit": "no",
+                        "@id": "Core_2EntryPoint_8hpp_1a3c04138a5bfe5d72780bb7e82a18e627",
+                        "@inline": "no",
+                        "@kind": "function",
+                        "@prot": "public",
+                        "@static": "no",
+                        "@virt": "non-virtual",
+                        "argsstring": "(int argc, char **argv)",
+                        "briefdescription": null,
+                        "definition": "int main",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "location": {
+                            "@bodyend": "57",
+                            "@bodyfile": "include/Kinai/Core/EntryPoint.hpp",
+                            "@bodystart": "51",
+                            "@column": "4",
+                            "@file": "include/Kinai/Core/EntryPoint.hpp",
+                            "@line": "51"
+                        },
+                        "name": "main",
+                        "param": [
+                            {
+                                "declname": "argc",
+                                "type": "int"
+                            },
+                            {
+                                "declname": "argv",
+                                "type": "char **"
+                            }
+                        ],
+                        "type": "int"
+                    }
+                }
+            ]
+        }
+    }
+}

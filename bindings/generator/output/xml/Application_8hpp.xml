@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Application_8hpp" kind="file" language="C++">
+    <compoundname>Application.hpp</compoundname>
+    <innerclass refid="structKinai_1_1ApplicationConfig" prot="public">Kinai::ApplicationConfig</innerclass>
+    <innerclass refid="structKinai_1_1Time" prot="public">Kinai::Time</innerclass>
+    <innerclass refid="classKinai_1_1Application" prot="public">Kinai::Application</innerclass>
+    <innernamespace refid="namespaceKinai">Kinai</innernamespace>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="Application_8hpp_1a6e342dcb3235220bd9057586be109bdb" prot="public" static="no" extern="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool g_KinaiApplicationRunning</definition>
+        <argsstring></argsstring>
+        <name>g_KinaiApplicationRunning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Core/Application.hpp" line="15" column="12" bodyfile="include/Kinai/Core/EntryPoint.hpp" bodystart="10" bodyend="-1" declfile="include/Kinai/Core/Application.hpp" declline="15" declcolumn="12"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Core/Application.hpp"/>
+  </compounddef>
+</doxygen>

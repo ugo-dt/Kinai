@@ -1,0 +1,2278 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "classKinai_1_1Renderer2D",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::Renderer2D",
+            "detaileddescription": null,
+            "innerclass": [
+                {
+                    "#text": "Kinai::Renderer2D::BuiltinUniforms",
+                    "@prot": "private",
+                    "@refid": "structKinai_1_1Renderer2D_1_1BuiltinUniforms"
+                },
+                {
+                    "#text": "Kinai::Renderer2D::CameraUniforms",
+                    "@prot": "private",
+                    "@refid": "structKinai_1_1Renderer2D_1_1CameraUniforms"
+                },
+                {
+                    "#text": "Kinai::Renderer2D::Shader2D",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Renderer2D_1_1Shader2D"
+                },
+                {
+                    "#text": "Kinai::Renderer2D::Statistics",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Renderer2D_1_1Statistics"
+                }
+            ],
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1a7f0eaba17ad695ffcc2b89d05d5355c5",
+                        "@virt": "non-virtual",
+                        "name": "_builtin_uniforms",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1a676e67ccfe0beb753793a725edcb12f1",
+                        "@virt": "non-virtual",
+                        "name": "_builtin_uniforms_buffer",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1a8a07476c34ebacc58ae86b9d29bbbe45",
+                        "@virt": "non-virtual",
+                        "name": "_camera_uniforms",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1a5944d0cb2fb44675ce7f4a9cacd9eef6",
+                        "@virt": "non-virtual",
+                        "name": "_camera_uniforms_buffer",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1aa96adadf4a5edce87dd31f4a7a7e976d",
+                        "@virt": "non-virtual",
+                        "name": "_pip_quad",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1ac56b980f21d2e9aac441c60e3ca27472",
+                        "@virt": "non-virtual",
+                        "name": "_quad_vertex_positions",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1a3e2ad23073214611844da5220abf2e7b",
+                        "@virt": "non-virtual",
+                        "name": "_screen_framebuffer",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1a83a33af569a9b565b361d4352dcd10e4",
+                        "@virt": "non-virtual",
+                        "name": "_shader_library",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1aa4b7ef14cf20ea838793a3ccfdb412bd",
+                        "@virt": "non-virtual",
+                        "name": "_stats",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1a8d6366ec9902f92a9c6def54f7a2cc86",
+                        "@virt": "non-virtual",
+                        "name": "_texture_slot_index",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1a895b54d0f5fb72362b530a99ded99fd4",
+                        "@virt": "non-virtual",
+                        "name": "_texture_slots",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a1a5a408469c93bb72bc57c60f9899b3b",
+                        "@virt": "non-virtual",
+                        "name": "BeginFrame",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a13add3ecc494294d44c97c93ee7eaccf",
+                        "@virt": "non-virtual",
+                        "name": "BeginFrame",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a505ca85aec8343a248895424a62cf299",
+                        "@virt": "non-virtual",
+                        "name": "BeginFrame",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1a551a63576968886b5ea6a713e5a01b7b",
+                        "@virt": "non-virtual",
+                        "name": "CopyScreenToBackBuffer",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1ad45a51b619616d3b161f8426c13ab2c5",
+                        "@virt": "non-virtual",
+                        "name": "DestroyQuadPipeline",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1af7b5fbb3d9368952c910882e7d15576a",
+                        "@virt": "non-virtual",
+                        "name": "DrawCircle",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1acc6afe0b53610e358192967c57c1925b",
+                        "@virt": "non-virtual",
+                        "name": "DrawLine",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1ad87f29e0a8036b9b37a8f70fb96fa88b",
+                        "@virt": "non-virtual",
+                        "name": "DrawQuad",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a3b8cef68fd7cf14b008d33c60ac8be9a",
+                        "@virt": "non-virtual",
+                        "name": "DrawQuad",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a9f8002d13749f5c12ed6947c7e827f99",
+                        "@virt": "non-virtual",
+                        "name": "DrawQuad",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1add00edfd769bacf7a41e7bd98fee63dc",
+                        "@virt": "non-virtual",
+                        "name": "DrawQuad",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1af728c1a037f48a0dfdd25430bf5e5a19",
+                        "@virt": "non-virtual",
+                        "name": "DrawQuad",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1ac00a2f97e0232af5c0aa45687a823f91",
+                        "@virt": "non-virtual",
+                        "name": "DrawQuad",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a6d8464ba018bb2b496097d4713943102",
+                        "@virt": "non-virtual",
+                        "name": "DrawQuad",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a7beeac87a33b5d162da26fbbff97f77d",
+                        "@virt": "non-virtual",
+                        "name": "DrawQuad",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1ad949a367131ea777890897691f6825f5",
+                        "@virt": "non-virtual",
+                        "name": "DrawQuad",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a8cc0b42002b2f696b4fb58ed057bd479",
+                        "@virt": "non-virtual",
+                        "name": "DrawRect",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a6ba2314251ad1c9c341a617c2f05a7b4",
+                        "@virt": "non-virtual",
+                        "name": "DrawRect",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a5e68082e6889225792377eebf6e20caf",
+                        "@virt": "non-virtual",
+                        "name": "DrawRotatedQuad",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1aa2bcd9c95e97d267458388cffcca08bc",
+                        "@virt": "non-virtual",
+                        "name": "DrawRotatedQuad",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a63dd327280174258d9545326236b9332",
+                        "@virt": "non-virtual",
+                        "name": "DrawRotatedQuad",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1aca9000b958e14efbf1a6da95e40e645f",
+                        "@virt": "non-virtual",
+                        "name": "DrawRotatedQuad",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a7e952226e89ed0556b674e5264d7b9d9",
+                        "@virt": "non-virtual",
+                        "name": "EndFrame",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a25432c43b2ee047e3e161b742b2e6dcb",
+                        "@virt": "non-virtual",
+                        "name": "Flush",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1aeddf92340314c2cfd9b0b059cdde649c",
+                        "@virt": "non-virtual",
+                        "name": "FlushCirclePipeline",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1acbdb2b683ef2257e05cca036b25f53d0",
+                        "@virt": "non-virtual",
+                        "name": "FlushLinePipeline",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1ad15a612b9d451fb3f6f646f7cace39cb",
+                        "@virt": "non-virtual",
+                        "name": "FlushQuadPipeline",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a657b3e1c44a75bf46210cb8b8182af9e",
+                        "@virt": "non-virtual",
+                        "name": "GetLineWidth",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a4ed19d5044bfbb2a2cdbd2b9acc09e21",
+                        "@virt": "non-virtual",
+                        "name": "GetStats",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a98286d2cbdd1f3fd5a994562a1c5f847",
+                        "@virt": "non-virtual",
+                        "name": "Init",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1aef37012adbbf7c7c9044ff7fdf78f543",
+                        "@virt": "non-virtual",
+                        "name": "MakeCommonPipelines",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1a496ddc43f8f47b83050ac41837e5533b",
+                        "@virt": "non-virtual",
+                        "name": "MakeQuadPipeline",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1a5174316fdd17323129a6703fe321240f",
+                        "@virt": "non-virtual",
+                        "name": "MakeScreenFramebuffers",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a1976aa1547c772f1c07654de93b6e040",
+                        "@virt": "non-virtual",
+                        "name": "MakeShader",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1acf654cb5bfd39e3c4eaed0bb54da3e5a",
+                        "@virt": "non-virtual",
+                        "name": "MakeShaders",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1a55ad81c59413e52427f677b3fcdc1e1c",
+                        "@virt": "non-virtual",
+                        "name": "MAX_INDICES",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1abcbe53791c9a67ae123b2723c207e6f5",
+                        "@virt": "non-virtual",
+                        "name": "MAX_QUADS",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1a89d8f322796949138331229da7b205c4",
+                        "@virt": "non-virtual",
+                        "name": "MAX_TEXTURE_SLOTS",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1a342c1a1051f599e09e5156035eb05a21",
+                        "@virt": "non-virtual",
+                        "name": "MAX_VERTICES",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1aec3af12285e0adb541c693241bcf6ebe",
+                        "@virt": "non-virtual",
+                        "name": "NextBatch",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a14596791bfcdaf340c648bf66a4f6e37",
+                        "@virt": "non-virtual",
+                        "name": "ResetQuadShader",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1adecb4b0fc74a86b100f48d37c5f79ab7",
+                        "@virt": "non-virtual",
+                        "name": "SetLineWidth",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a4f960fb0eaebba8b6d20d647944cd49d",
+                        "@virt": "non-virtual",
+                        "name": "SetQuadShader",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a7f27efabb84aad84d7b18a8c4281e0db",
+                        "@virt": "non-virtual",
+                        "name": "Shutdown",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "private",
+                        "@refid": "classKinai_1_1Renderer2D_1a65f33876a0e301a45c89599e261244b4",
+                        "@virt": "non-virtual",
+                        "name": "StartBatch",
+                        "scope": "Kinai::Renderer2D"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Renderer2D_1a6bd1898427d7a420d7c071cb4895c8a9",
+                        "@virt": "non-virtual",
+                        "name": "UpdateViewport",
+                        "scope": "Kinai::Renderer2D"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "195",
+                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                "@bodystart": "58",
+                "@column": "1",
+                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                "@line": "57"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "private-static-attrib",
+                    "memberdef": [
+                        {
+                            "@constexpr": "yes",
+                            "@id": "classKinai_1_1Renderer2D_1abcbe53791c9a67ae123b2723c207e6f5",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "constexpr uint32_t Kinai::Renderer2D::MAX_QUADS",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "initializer": "= 20000",
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@bodystart": "143",
+                                "@column": "26",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "143"
+                            },
+                            "name": "MAX_QUADS",
+                            "qualifiedname": "Kinai::Renderer2D::MAX_QUADS",
+                            "type": "constexpr uint32_t"
+                        },
+                        {
+                            "@constexpr": "yes",
+                            "@id": "classKinai_1_1Renderer2D_1a342c1a1051f599e09e5156035eb05a21",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "constexpr uint32_t Kinai::Renderer2D::MAX_VERTICES",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "initializer": "= MAX_QUADS * 4",
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@bodystart": "144",
+                                "@column": "26",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "144"
+                            },
+                            "name": "MAX_VERTICES",
+                            "qualifiedname": "Kinai::Renderer2D::MAX_VERTICES",
+                            "type": "constexpr uint32_t"
+                        },
+                        {
+                            "@constexpr": "yes",
+                            "@id": "classKinai_1_1Renderer2D_1a55ad81c59413e52427f677b3fcdc1e1c",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "constexpr uint32_t Kinai::Renderer2D::MAX_INDICES",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "initializer": "= MAX_QUADS * 6",
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@bodystart": "145",
+                                "@column": "26",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "145"
+                            },
+                            "name": "MAX_INDICES",
+                            "qualifiedname": "Kinai::Renderer2D::MAX_INDICES",
+                            "type": "constexpr uint32_t"
+                        },
+                        {
+                            "@constexpr": "yes",
+                            "@id": "classKinai_1_1Renderer2D_1a89d8f322796949138331229da7b205c4",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "constexpr uint32_t Kinai::Renderer2D::MAX_TEXTURE_SLOTS",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "initializer": "= 31",
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@bodystart": "146",
+                                "@column": "26",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "146"
+                            },
+                            "name": "MAX_TEXTURE_SLOTS",
+                            "qualifiedname": "Kinai::Renderer2D::MAX_TEXTURE_SLOTS",
+                            "type": "constexpr uint32_t"
+                        },
+                        {
+                            "@id": "classKinai_1_1Renderer2D_1a83a33af569a9b565b361d4352dcd10e4",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "ShaderLibrary Kinai::Renderer2D::_shader_library",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@bodystart": "167",
+                                "@column": "22",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "167"
+                            },
+                            "name": "_shader_library",
+                            "qualifiedname": "Kinai::Renderer2D::_shader_library",
+                            "type": {
+                                "ref": {
+                                    "#text": "ShaderLibrary",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1ShaderLibrary"
+                                }
+                            }
+                        },
+                        {
+                            "@id": "classKinai_1_1Renderer2D_1aa96adadf4a5edce87dd31f4a7a7e976d",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "Pipeline<QuadVertex> Kinai::Renderer2D::_pip_quad",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@bodystart": "169",
+                                "@column": "16",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "169"
+                            },
+                            "name": "_pip_quad",
+                            "qualifiedname": "Kinai::Renderer2D::_pip_quad",
+                            "type": {
+                                "#text": "<  >",
+                                "ref": [
+                                    {
+                                        "#text": "Pipeline",
+                                        "@kindref": "compound",
+                                        "@refid": "structKinai_1_1Pipeline"
+                                    },
+                                    {
+                                        "#text": "QuadVertex",
+                                        "@kindref": "compound",
+                                        "@refid": "structKinai_1_1QuadVertex"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@id": "classKinai_1_1Renderer2D_1ac56b980f21d2e9aac441c60e3ca27472",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "argsstring": "[4]",
+                            "briefdescription": null,
+                            "definition": "glm::vec4 Kinai::Renderer2D::_quad_vertex_positions[4]",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@bodystart": "170",
+                                "@column": "18",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "170"
+                            },
+                            "name": "_quad_vertex_positions",
+                            "qualifiedname": "Kinai::Renderer2D::_quad_vertex_positions",
+                            "type": "glm::vec4"
+                        },
+                        {
+                            "@id": "classKinai_1_1Renderer2D_1a895b54d0f5fb72362b530a99ded99fd4",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "std::array<Ref<Texture2D>, MAX_TEXTURE_SLOTS> Kinai::Renderer2D::_texture_slots",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@bodystart": "172",
+                                "@column": "19",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "172"
+                            },
+                            "name": "_texture_slots",
+                            "qualifiedname": "Kinai::Renderer2D::_texture_slots",
+                            "type": {
+                                "#text": "std::array< Ref<  >, MAX_TEXTURE_SLOTS >",
+                                "ref": {
+                                    "#text": "Texture2D",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Texture2D"
+                                }
+                            }
+                        },
+                        {
+                            "@id": "classKinai_1_1Renderer2D_1a8d6366ec9902f92a9c6def54f7a2cc86",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "uint32_t Kinai::Renderer2D::_texture_slot_index",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@bodystart": "173",
+                                "@column": "17",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "173"
+                            },
+                            "name": "_texture_slot_index",
+                            "qualifiedname": "Kinai::Renderer2D::_texture_slot_index",
+                            "type": "uint32_t"
+                        },
+                        {
+                            "@id": "classKinai_1_1Renderer2D_1a8a07476c34ebacc58ae86b9d29bbbe45",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "CameraUniforms Kinai::Renderer2D::_camera_uniforms",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@bodystart": "179",
+                                "@column": "22",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "179"
+                            },
+                            "name": "_camera_uniforms",
+                            "qualifiedname": "Kinai::Renderer2D::_camera_uniforms",
+                            "type": "CameraUniforms"
+                        },
+                        {
+                            "@id": "classKinai_1_1Renderer2D_1a5944d0cb2fb44675ce7f4a9cacd9eef6",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "Ref<UniformBuffer> Kinai::Renderer2D::_camera_uniforms_buffer",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@bodystart": "180",
+                                "@column": "11",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "180"
+                            },
+                            "name": "_camera_uniforms_buffer",
+                            "qualifiedname": "Kinai::Renderer2D::_camera_uniforms_buffer",
+                            "type": {
+                                "#text": "Ref<  >",
+                                "ref": {
+                                    "#text": "UniformBuffer",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1UniformBuffer"
+                                }
+                            }
+                        },
+                        {
+                            "@id": "classKinai_1_1Renderer2D_1a7f0eaba17ad695ffcc2b89d05d5355c5",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "BuiltinUniforms Kinai::Renderer2D::_builtin_uniforms",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@bodystart": "189",
+                                "@column": "23",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "189"
+                            },
+                            "name": "_builtin_uniforms",
+                            "qualifiedname": "Kinai::Renderer2D::_builtin_uniforms",
+                            "type": "BuiltinUniforms"
+                        },
+                        {
+                            "@id": "classKinai_1_1Renderer2D_1a676e67ccfe0beb753793a725edcb12f1",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "Ref<UniformBuffer> Kinai::Renderer2D::_builtin_uniforms_buffer",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@bodystart": "190",
+                                "@column": "11",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "190"
+                            },
+                            "name": "_builtin_uniforms_buffer",
+                            "qualifiedname": "Kinai::Renderer2D::_builtin_uniforms_buffer",
+                            "type": {
+                                "#text": "Ref<  >",
+                                "ref": {
+                                    "#text": "UniformBuffer",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1UniformBuffer"
+                                }
+                            }
+                        },
+                        {
+                            "@id": "classKinai_1_1Renderer2D_1a3e2ad23073214611844da5220abf2e7b",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "unsigned int Kinai::Renderer2D::_screen_framebuffer",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@bodystart": "192",
+                                "@column": "20",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "192"
+                            },
+                            "name": "_screen_framebuffer",
+                            "qualifiedname": "Kinai::Renderer2D::_screen_framebuffer",
+                            "type": "unsigned int"
+                        },
+                        {
+                            "@id": "classKinai_1_1Renderer2D_1aa4b7ef14cf20ea838793a3ccfdb412bd",
+                            "@kind": "variable",
+                            "@mutable": "no",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "argsstring": null,
+                            "briefdescription": null,
+                            "definition": "Statistics Kinai::Renderer2D::_stats",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "-1",
+                                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@bodystart": "194",
+                                "@column": "18",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "194"
+                            },
+                            "name": "_stats",
+                            "qualifiedname": "Kinai::Renderer2D::_stats",
+                            "type": {
+                                "ref": {
+                                    "#text": "Statistics",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Renderer2D_1_1Statistics"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "@kind": "public-static-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a1a5a408469c93bb72bc57c60f9899b3b",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const Camera &camera, const glm::mat4 &transform)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::BeginFrame",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "60"
+                            },
+                            "name": "BeginFrame",
+                            "param": [
+                                {
+                                    "declname": "camera",
+                                    "type": {
+                                        "#text": "const  &",
+                                        "ref": {
+                                            "#text": "Camera",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1Camera"
+                                        }
+                                    }
+                                },
+                                {
+                                    "declname": "transform",
+                                    "type": "const glm::mat4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::BeginFrame",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a13add3ecc494294d44c97c93ee7eaccf",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const OrthographicCamera &camera)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::BeginFrame",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "61"
+                            },
+                            "name": "BeginFrame",
+                            "param": {
+                                "declname": "camera",
+                                "type": {
+                                    "#text": "const  &",
+                                    "ref": {
+                                        "#text": "OrthographicCamera",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1OrthographicCamera"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::Renderer2D::BeginFrame",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a505ca85aec8343a248895424a62cf299",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const PerspectiveCamera &camera)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::BeginFrame",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "62"
+                            },
+                            "name": "BeginFrame",
+                            "param": {
+                                "declname": "camera",
+                                "type": {
+                                    "#text": "const  &",
+                                    "ref": {
+                                        "#text": "PerspectiveCamera",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1PerspectiveCamera"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::Renderer2D::BeginFrame",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a25432c43b2ee047e3e161b742b2e6dcb",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::Flush",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "64"
+                            },
+                            "name": "Flush",
+                            "qualifiedname": "Kinai::Renderer2D::Flush",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a6bd1898427d7a420d7c071cb4895c8a9",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::UpdateViewport",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "65"
+                            },
+                            "name": "UpdateViewport",
+                            "qualifiedname": "Kinai::Renderer2D::UpdateViewport",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a7e952226e89ed0556b674e5264d7b9d9",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::EndFrame",
+                            "detaileddescription": {
+                                "para": "This function calls Renderer2D::Flush()."
+                            },
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "68"
+                            },
+                            "name": "EndFrame",
+                            "qualifiedname": "Kinai::Renderer2D::EndFrame",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1af7b5fbb3d9368952c910882e7d15576a",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::mat4 &transform, const glm::vec4 &color, float thickness=1.0f, float fade=0.005f)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DrawCircle",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "70"
+                            },
+                            "name": "DrawCircle",
+                            "param": [
+                                {
+                                    "declname": "transform",
+                                    "type": "const glm::mat4 &"
+                                },
+                                {
+                                    "declname": "color",
+                                    "type": "const glm::vec4 &"
+                                },
+                                {
+                                    "declname": "thickness",
+                                    "defval": "1.0f",
+                                    "type": "float"
+                                },
+                                {
+                                    "declname": "fade",
+                                    "defval": "0.005f",
+                                    "type": "float"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::DrawCircle",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1acc6afe0b53610e358192967c57c1925b",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::vec3 &p0, glm::vec3 &p1, const glm::vec4 &color)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DrawLine",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "72"
+                            },
+                            "name": "DrawLine",
+                            "param": [
+                                {
+                                    "declname": "p0",
+                                    "type": "const glm::vec3 &"
+                                },
+                                {
+                                    "declname": "p1",
+                                    "type": "glm::vec3 &"
+                                },
+                                {
+                                    "declname": "color",
+                                    "type": "const glm::vec4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::DrawLine",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a657b3e1c44a75bf46210cb8b8182af9e",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static float Kinai::Renderer2D::GetLineWidth",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "14",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "74"
+                            },
+                            "name": "GetLineWidth",
+                            "qualifiedname": "Kinai::Renderer2D::GetLineWidth",
+                            "type": "float"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1adecb4b0fc74a86b100f48d37c5f79ab7",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(float width)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::SetLineWidth",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "75"
+                            },
+                            "name": "SetLineWidth",
+                            "param": {
+                                "declname": "width",
+                                "type": "float"
+                            },
+                            "qualifiedname": "Kinai::Renderer2D::SetLineWidth",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1ad87f29e0a8036b9b37a8f70fb96fa88b",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::vec2 &position, const glm::vec2 &size, const glm::vec4 &color)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DrawQuad",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "77"
+                            },
+                            "name": "DrawQuad",
+                            "param": [
+                                {
+                                    "declname": "position",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "size",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "color",
+                                    "type": "const glm::vec4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::DrawQuad",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a3b8cef68fd7cf14b008d33c60ac8be9a",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::vec3 &position, const glm::vec2 &size, const glm::vec4 &color)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DrawQuad",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "78"
+                            },
+                            "name": "DrawQuad",
+                            "param": [
+                                {
+                                    "declname": "position",
+                                    "type": "const glm::vec3 &"
+                                },
+                                {
+                                    "declname": "size",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "color",
+                                    "type": "const glm::vec4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::DrawQuad",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a9f8002d13749f5c12ed6947c7e827f99",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::vec2 &position, const glm::vec2 &size, const Ref< Texture2D > &texture, const glm::vec4 &tint_color=glm::vec4(1.0f))",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DrawQuad",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "79"
+                            },
+                            "name": "DrawQuad",
+                            "param": [
+                                {
+                                    "declname": "position",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "size",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "texture",
+                                    "type": {
+                                        "#text": "const Ref<  > &",
+                                        "ref": {
+                                            "#text": "Texture2D",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1Texture2D"
+                                        }
+                                    }
+                                },
+                                {
+                                    "declname": "tint_color",
+                                    "defval": "glm::vec4(1.0f)",
+                                    "type": "const glm::vec4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::DrawQuad",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1add00edfd769bacf7a41e7bd98fee63dc",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::vec3 &position, const glm::vec2 &size, const Ref< Texture2D > &texture, const glm::vec4 &tint_color=glm::vec4(1.0f))",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DrawQuad",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "80"
+                            },
+                            "name": "DrawQuad",
+                            "param": [
+                                {
+                                    "declname": "position",
+                                    "type": "const glm::vec3 &"
+                                },
+                                {
+                                    "declname": "size",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "texture",
+                                    "type": {
+                                        "#text": "const Ref<  > &",
+                                        "ref": {
+                                            "#text": "Texture2D",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1Texture2D"
+                                        }
+                                    }
+                                },
+                                {
+                                    "declname": "tint_color",
+                                    "defval": "glm::vec4(1.0f)",
+                                    "type": "const glm::vec4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::DrawQuad",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1af728c1a037f48a0dfdd25430bf5e5a19",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::vec2 &position, const glm::vec2 &size, const Ref< Texture2D > &texture, const glm::vec2 &uvStart, const glm::vec2 &uvEnd, const glm::vec4 &tint_color=glm::vec4(1.0f))",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DrawQuad",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "81"
+                            },
+                            "name": "DrawQuad",
+                            "param": [
+                                {
+                                    "declname": "position",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "size",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "texture",
+                                    "type": {
+                                        "#text": "const Ref<  > &",
+                                        "ref": {
+                                            "#text": "Texture2D",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1Texture2D"
+                                        }
+                                    }
+                                },
+                                {
+                                    "declname": "uvStart",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "uvEnd",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "tint_color",
+                                    "defval": "glm::vec4(1.0f)",
+                                    "type": "const glm::vec4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::DrawQuad",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1ac00a2f97e0232af5c0aa45687a823f91",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::vec3 &position, const glm::vec2 &size, const Ref< Texture2D > &texture, const glm::vec2 &uvStart, const glm::vec2 &uvEnd, const glm::vec4 &tint_color=glm::vec4(1.0f))",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DrawQuad",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "82"
+                            },
+                            "name": "DrawQuad",
+                            "param": [
+                                {
+                                    "declname": "position",
+                                    "type": "const glm::vec3 &"
+                                },
+                                {
+                                    "declname": "size",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "texture",
+                                    "type": {
+                                        "#text": "const Ref<  > &",
+                                        "ref": {
+                                            "#text": "Texture2D",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1Texture2D"
+                                        }
+                                    }
+                                },
+                                {
+                                    "declname": "uvStart",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "uvEnd",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "tint_color",
+                                    "defval": "glm::vec4(1.0f)",
+                                    "type": "const glm::vec4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::DrawQuad",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a6d8464ba018bb2b496097d4713943102",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::mat4 &transform, const glm::vec4 &color)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DrawQuad",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "83"
+                            },
+                            "name": "DrawQuad",
+                            "param": [
+                                {
+                                    "declname": "transform",
+                                    "type": "const glm::mat4 &"
+                                },
+                                {
+                                    "declname": "color",
+                                    "type": "const glm::vec4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::DrawQuad",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a7beeac87a33b5d162da26fbbff97f77d",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::mat4 &transform, const Ref< Texture2D > &texture)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DrawQuad",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "84"
+                            },
+                            "name": "DrawQuad",
+                            "param": [
+                                {
+                                    "declname": "transform",
+                                    "type": "const glm::mat4 &"
+                                },
+                                {
+                                    "declname": "texture",
+                                    "type": {
+                                        "#text": "const Ref<  > &",
+                                        "ref": {
+                                            "#text": "Texture2D",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1Texture2D"
+                                        }
+                                    }
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::DrawQuad",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1ad949a367131ea777890897691f6825f5",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::mat4 &transform, const Ref< Texture2D > &texture, const glm::vec2 &uvStart, const glm::vec2 &uvEnd, const glm::vec4 &tint_color=glm::vec4(1.0f))",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DrawQuad",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "85"
+                            },
+                            "name": "DrawQuad",
+                            "param": [
+                                {
+                                    "declname": "transform",
+                                    "type": "const glm::mat4 &"
+                                },
+                                {
+                                    "declname": "texture",
+                                    "type": {
+                                        "#text": "const Ref<  > &",
+                                        "ref": {
+                                            "#text": "Texture2D",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1Texture2D"
+                                        }
+                                    }
+                                },
+                                {
+                                    "declname": "uvStart",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "uvEnd",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "tint_color",
+                                    "defval": "glm::vec4(1.0f)",
+                                    "type": "const glm::vec4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::DrawQuad",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a5e68082e6889225792377eebf6e20caf",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::vec2 &position, const glm::vec2 &size, float rotation, const glm::vec4 &color)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DrawRotatedQuad",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "87"
+                            },
+                            "name": "DrawRotatedQuad",
+                            "param": [
+                                {
+                                    "declname": "position",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "size",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "rotation",
+                                    "type": "float"
+                                },
+                                {
+                                    "declname": "color",
+                                    "type": "const glm::vec4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::DrawRotatedQuad",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1aa2bcd9c95e97d267458388cffcca08bc",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::vec3 &position, const glm::vec2 &size, float rotation, const glm::vec4 &color)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DrawRotatedQuad",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "88"
+                            },
+                            "name": "DrawRotatedQuad",
+                            "param": [
+                                {
+                                    "declname": "position",
+                                    "type": "const glm::vec3 &"
+                                },
+                                {
+                                    "declname": "size",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "rotation",
+                                    "type": "float"
+                                },
+                                {
+                                    "declname": "color",
+                                    "type": "const glm::vec4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::DrawRotatedQuad",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a63dd327280174258d9545326236b9332",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::vec2 &position, const glm::vec2 &size, float rotation, const Ref< Texture2D > &texture, const glm::vec4 &tintColor=glm::vec4(1.0f))",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DrawRotatedQuad",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "89"
+                            },
+                            "name": "DrawRotatedQuad",
+                            "param": [
+                                {
+                                    "declname": "position",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "size",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "rotation",
+                                    "type": "float"
+                                },
+                                {
+                                    "declname": "texture",
+                                    "type": {
+                                        "#text": "const Ref<  > &",
+                                        "ref": {
+                                            "#text": "Texture2D",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1Texture2D"
+                                        }
+                                    }
+                                },
+                                {
+                                    "declname": "tintColor",
+                                    "defval": "glm::vec4(1.0f)",
+                                    "type": "const glm::vec4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::DrawRotatedQuad",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1aca9000b958e14efbf1a6da95e40e645f",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::vec3 &position, const glm::vec2 &size, float rotation, const Ref< Texture2D > &texture, const glm::vec4 &tintColor=glm::vec4(1.0f))",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DrawRotatedQuad",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "90"
+                            },
+                            "name": "DrawRotatedQuad",
+                            "param": [
+                                {
+                                    "declname": "position",
+                                    "type": "const glm::vec3 &"
+                                },
+                                {
+                                    "declname": "size",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "rotation",
+                                    "type": "float"
+                                },
+                                {
+                                    "declname": "texture",
+                                    "type": {
+                                        "#text": "const Ref<  > &",
+                                        "ref": {
+                                            "#text": "Texture2D",
+                                            "@kindref": "compound",
+                                            "@refid": "classKinai_1_1Texture2D"
+                                        }
+                                    }
+                                },
+                                {
+                                    "declname": "tintColor",
+                                    "defval": "glm::vec4(1.0f)",
+                                    "type": "const glm::vec4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::DrawRotatedQuad",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a8cc0b42002b2f696b4fb58ed057bd479",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::vec3 &position, const glm::vec2 &size, const glm::vec4 &color)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DrawRect",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "92"
+                            },
+                            "name": "DrawRect",
+                            "param": [
+                                {
+                                    "declname": "position",
+                                    "type": "const glm::vec3 &"
+                                },
+                                {
+                                    "declname": "size",
+                                    "type": "const glm::vec2 &"
+                                },
+                                {
+                                    "declname": "color",
+                                    "type": "const glm::vec4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::DrawRect",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a6ba2314251ad1c9c341a617c2f05a7b4",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const glm::mat4 &transform, const glm::vec4 &color)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DrawRect",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "93"
+                            },
+                            "name": "DrawRect",
+                            "param": [
+                                {
+                                    "declname": "transform",
+                                    "type": "const glm::mat4 &"
+                                },
+                                {
+                                    "declname": "color",
+                                    "type": "const glm::vec4 &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::DrawRect",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a1976aa1547c772f1c07654de93b6e040",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(const std::string &program_name, const std::string &vertexSrc, const std::string &fragmentSrc)",
+                            "briefdescription": null,
+                            "definition": "static Shader2D Kinai::Renderer2D::MakeShader",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "16",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "109"
+                            },
+                            "name": "MakeShader",
+                            "param": [
+                                {
+                                    "declname": "program_name",
+                                    "type": "const std::string &"
+                                },
+                                {
+                                    "declname": "vertexSrc",
+                                    "type": "const std::string &"
+                                },
+                                {
+                                    "declname": "fragmentSrc",
+                                    "type": "const std::string &"
+                                }
+                            ],
+                            "qualifiedname": "Kinai::Renderer2D::MakeShader",
+                            "type": {
+                                "ref": {
+                                    "#text": "Shader2D",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Renderer2D_1_1Shader2D"
+                                }
+                            }
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a4f960fb0eaebba8b6d20d647944cd49d",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "(Shader2D &shader)",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::SetQuadShader",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "111"
+                            },
+                            "name": "SetQuadShader",
+                            "param": {
+                                "declname": "shader",
+                                "type": {
+                                    "#text": "&",
+                                    "ref": {
+                                        "#text": "Shader2D",
+                                        "@kindref": "compound",
+                                        "@refid": "classKinai_1_1Renderer2D_1_1Shader2D"
+                                    }
+                                }
+                            },
+                            "qualifiedname": "Kinai::Renderer2D::SetQuadShader",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a14596791bfcdaf340c648bf66a4f6e37",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::ResetQuadShader",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "112"
+                            },
+                            "name": "ResetQuadShader",
+                            "qualifiedname": "Kinai::Renderer2D::ResetQuadShader",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a98286d2cbdd1f3fd5a994562a1c5f847",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::Init",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "115"
+                            },
+                            "name": "Init",
+                            "qualifiedname": "Kinai::Renderer2D::Init",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a7f27efabb84aad84d7b18a8c4281e0db",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::Shutdown",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "116"
+                            },
+                            "name": "Shutdown",
+                            "qualifiedname": "Kinai::Renderer2D::Shutdown",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a4ed19d5044bfbb2a2cdbd2b9acc09e21",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static Statistics & Kinai::Renderer2D::GetStats",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "140",
+                                "@bodyfile": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@bodystart": "140",
+                                "@column": "18",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "140"
+                            },
+                            "name": "GetStats",
+                            "qualifiedname": "Kinai::Renderer2D::GetStats",
+                            "type": {
+                                "#text": "&",
+                                "ref": {
+                                    "#text": "Statistics",
+                                    "@kindref": "compound",
+                                    "@refid": "classKinai_1_1Renderer2D_1_1Statistics"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "@kind": "private-static-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a65f33876a0e301a45c89599e261244b4",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::StartBatch",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "149"
+                            },
+                            "name": "StartBatch",
+                            "qualifiedname": "Kinai::Renderer2D::StartBatch",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1aec3af12285e0adb541c693241bcf6ebe",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::NextBatch",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "150"
+                            },
+                            "name": "NextBatch",
+                            "qualifiedname": "Kinai::Renderer2D::NextBatch",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1aef37012adbbf7c7c9044ff7fdf78f543",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::MakeCommonPipelines",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "152"
+                            },
+                            "name": "MakeCommonPipelines",
+                            "qualifiedname": "Kinai::Renderer2D::MakeCommonPipelines",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a496ddc43f8f47b83050ac41837e5533b",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::MakeQuadPipeline",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "153"
+                            },
+                            "name": "MakeQuadPipeline",
+                            "qualifiedname": "Kinai::Renderer2D::MakeQuadPipeline",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1ad15a612b9d451fb3f6f646f7cace39cb",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::FlushQuadPipeline",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "155"
+                            },
+                            "name": "FlushQuadPipeline",
+                            "qualifiedname": "Kinai::Renderer2D::FlushQuadPipeline",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1aeddf92340314c2cfd9b0b059cdde649c",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::FlushCirclePipeline",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "156"
+                            },
+                            "name": "FlushCirclePipeline",
+                            "qualifiedname": "Kinai::Renderer2D::FlushCirclePipeline",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1acbdb2b683ef2257e05cca036b25f53d0",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::FlushLinePipeline",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "157"
+                            },
+                            "name": "FlushLinePipeline",
+                            "qualifiedname": "Kinai::Renderer2D::FlushLinePipeline",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1ad45a51b619616d3b161f8426c13ab2c5",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::DestroyQuadPipeline",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "159"
+                            },
+                            "name": "DestroyQuadPipeline",
+                            "qualifiedname": "Kinai::Renderer2D::DestroyQuadPipeline",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1acf654cb5bfd39e3c4eaed0bb54da3e5a",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::MakeShaders",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "161"
+                            },
+                            "name": "MakeShaders",
+                            "qualifiedname": "Kinai::Renderer2D::MakeShaders",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a5174316fdd17323129a6703fe321240f",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::MakeScreenFramebuffers",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "163"
+                            },
+                            "name": "MakeScreenFramebuffers",
+                            "qualifiedname": "Kinai::Renderer2D::MakeScreenFramebuffers",
+                            "type": "void"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Renderer2D_1a551a63576968886b5ea6a713e5a01b7b",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "private",
+                            "@static": "yes",
+                            "@virt": "non-virtual",
+                            "argsstring": "()",
+                            "briefdescription": null,
+                            "definition": "static void Kinai::Renderer2D::CopyScreenToBackBuffer",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "12",
+                                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp",
+                                "@line": "164"
+                            },
+                            "name": "CopyScreenToBackBuffer",
+                            "qualifiedname": "Kinai::Renderer2D::CopyScreenToBackBuffer",
+                            "type": "void"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

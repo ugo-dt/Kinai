@@ -1,0 +1,28 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "Timer_8hpp",
+            "@kind": "file",
+            "@language": "C++",
+            "briefdescription": null,
+            "compoundname": "Timer.hpp",
+            "detaileddescription": null,
+            "innerclass": {
+                "#text": "Kinai::Timer",
+                "@prot": "public",
+                "@refid": "classKinai_1_1Timer"
+            },
+            "innernamespace": {
+                "#text": "Kinai",
+                "@refid": "namespaceKinai"
+            },
+            "location": {
+                "@file": "include/Kinai/Core/Timer.hpp"
+            }
+        }
+    }
+}

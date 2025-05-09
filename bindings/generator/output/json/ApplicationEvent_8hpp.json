@@ -1,0 +1,50 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "ApplicationEvent_8hpp",
+            "@kind": "file",
+            "@language": "C++",
+            "briefdescription": null,
+            "compoundname": "ApplicationEvent.hpp",
+            "detaileddescription": null,
+            "innerclass": [
+                {
+                    "#text": "Kinai::WindowResizeEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1WindowResizeEvent"
+                },
+                {
+                    "#text": "Kinai::WindowCloseEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1WindowCloseEvent"
+                },
+                {
+                    "#text": "Kinai::AppTickEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1AppTickEvent"
+                },
+                {
+                    "#text": "Kinai::AppUpdateEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1AppUpdateEvent"
+                },
+                {
+                    "#text": "Kinai::AppRenderEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1AppRenderEvent"
+                }
+            ],
+            "innernamespace": {
+                "#text": "Kinai",
+                "@refid": "namespaceKinai"
+            },
+            "location": {
+                "@file": "include/Kinai/Events/ApplicationEvent.hpp"
+            }
+        }
+    }
+}

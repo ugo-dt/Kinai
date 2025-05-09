@@ -1,0 +1,501 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@abstract": "yes",
+            "@id": "classKinai_1_1Event",
+            "@kind": "class",
+            "@language": "C++",
+            "@prot": "public",
+            "briefdescription": null,
+            "compoundname": "Kinai::Event",
+            "derivedcompoundref": [
+                {
+                    "#text": "Kinai::AppRenderEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1AppRenderEvent",
+                    "@virt": "non-virtual"
+                },
+                {
+                    "#text": "Kinai::AppTickEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1AppTickEvent",
+                    "@virt": "non-virtual"
+                },
+                {
+                    "#text": "Kinai::AppUpdateEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1AppUpdateEvent",
+                    "@virt": "non-virtual"
+                },
+                {
+                    "#text": "Kinai::KeyEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1KeyEvent",
+                    "@virt": "non-virtual"
+                },
+                {
+                    "#text": "Kinai::MouseButtonEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1MouseButtonEvent",
+                    "@virt": "non-virtual"
+                },
+                {
+                    "#text": "Kinai::MouseMotionEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1MouseMotionEvent",
+                    "@virt": "non-virtual"
+                },
+                {
+                    "#text": "Kinai::MouseWheelEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1MouseWheelEvent",
+                    "@virt": "non-virtual"
+                },
+                {
+                    "#text": "Kinai::WindowCloseEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1WindowCloseEvent",
+                    "@virt": "non-virtual"
+                },
+                {
+                    "#text": "Kinai::WindowResizeEvent",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1WindowResizeEvent",
+                    "@virt": "non-virtual"
+                }
+            ],
+            "detaileddescription": null,
+            "inheritancegraph": {
+                "node": [
+                    {
+                        "@id": "2",
+                        "childnode": {
+                            "@refid": "1",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::AppRenderEvent",
+                        "link": {
+                            "@refid": "classKinai_1_1AppRenderEvent"
+                        }
+                    },
+                    {
+                        "@id": "3",
+                        "childnode": {
+                            "@refid": "1",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::AppTickEvent",
+                        "link": {
+                            "@refid": "classKinai_1_1AppTickEvent"
+                        }
+                    },
+                    {
+                        "@id": "4",
+                        "childnode": {
+                            "@refid": "1",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::AppUpdateEvent",
+                        "link": {
+                            "@refid": "classKinai_1_1AppUpdateEvent"
+                        }
+                    },
+                    {
+                        "@id": "1",
+                        "label": "Kinai::Event",
+                        "link": {
+                            "@refid": "classKinai_1_1Event"
+                        }
+                    },
+                    {
+                        "@id": "5",
+                        "childnode": {
+                            "@refid": "1",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::KeyEvent",
+                        "link": {
+                            "@refid": "classKinai_1_1KeyEvent"
+                        }
+                    },
+                    {
+                        "@id": "6",
+                        "childnode": {
+                            "@refid": "5",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::KeyPressedEvent",
+                        "link": {
+                            "@refid": "classKinai_1_1KeyPressedEvent"
+                        }
+                    },
+                    {
+                        "@id": "7",
+                        "childnode": {
+                            "@refid": "5",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::KeyReleasedEvent",
+                        "link": {
+                            "@refid": "classKinai_1_1KeyReleasedEvent"
+                        }
+                    },
+                    {
+                        "@id": "8",
+                        "childnode": {
+                            "@refid": "1",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::MouseButtonEvent",
+                        "link": {
+                            "@refid": "classKinai_1_1MouseButtonEvent"
+                        }
+                    },
+                    {
+                        "@id": "9",
+                        "childnode": {
+                            "@refid": "8",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::MouseButtonPressedEvent",
+                        "link": {
+                            "@refid": "classKinai_1_1MouseButtonPressedEvent"
+                        }
+                    },
+                    {
+                        "@id": "10",
+                        "childnode": {
+                            "@refid": "8",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::MouseButtonReleasedEvent",
+                        "link": {
+                            "@refid": "classKinai_1_1MouseButtonReleasedEvent"
+                        }
+                    },
+                    {
+                        "@id": "11",
+                        "childnode": {
+                            "@refid": "1",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::MouseMotionEvent",
+                        "link": {
+                            "@refid": "classKinai_1_1MouseMotionEvent"
+                        }
+                    },
+                    {
+                        "@id": "12",
+                        "childnode": {
+                            "@refid": "1",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::MouseWheelEvent",
+                        "link": {
+                            "@refid": "classKinai_1_1MouseWheelEvent"
+                        }
+                    },
+                    {
+                        "@id": "13",
+                        "childnode": {
+                            "@refid": "1",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::WindowCloseEvent",
+                        "link": {
+                            "@refid": "classKinai_1_1WindowCloseEvent"
+                        }
+                    },
+                    {
+                        "@id": "14",
+                        "childnode": {
+                            "@refid": "1",
+                            "@relation": "public-inheritance"
+                        },
+                        "label": "Kinai::WindowResizeEvent",
+                        "link": {
+                            "@refid": "classKinai_1_1WindowResizeEvent"
+                        }
+                    }
+                ]
+            },
+            "listofallmembers": {
+                "member": [
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Event_1a1f2e3dd6426fc209e7f157700816060a",
+                        "@virt": "pure-virtual",
+                        "name": "GetCategoryFlags",
+                        "scope": "Kinai::Event"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Event_1adbb5d2279374bf7a541badb7dd9389f4",
+                        "@virt": "pure-virtual",
+                        "name": "GetEventType",
+                        "scope": "Kinai::Event"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Event_1aa583e2927f7beda552435b2f8f184025",
+                        "@virt": "pure-virtual",
+                        "name": "GetName",
+                        "scope": "Kinai::Event"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Event_1a8f35ee9e4c3e69a83262c9a44afb4c0e",
+                        "@virt": "non-virtual",
+                        "name": "handled",
+                        "scope": "Kinai::Event"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Event_1a7ab92ccea10ad63144a84d5df06a501d",
+                        "@virt": "non-virtual",
+                        "name": "IsInCategory",
+                        "scope": "Kinai::Event"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Event_1a0ed0b864f47b05c5ba8f20f548beef29",
+                        "@virt": "virtual",
+                        "name": "ToString",
+                        "scope": "Kinai::Event"
+                    },
+                    {
+                        "@prot": "public",
+                        "@refid": "classKinai_1_1Event_1a61a9ecf4e7a96b855adaa9a681f5d58a",
+                        "@virt": "virtual",
+                        "name": "~Event",
+                        "scope": "Kinai::Event"
+                    }
+                ]
+            },
+            "location": {
+                "@bodyend": "54",
+                "@bodyfile": "include/Kinai/Events/Event.hpp",
+                "@bodystart": "39",
+                "@column": "1",
+                "@file": "include/Kinai/Events/Event.hpp",
+                "@line": "38"
+            },
+            "sectiondef": [
+                {
+                    "@kind": "public-attrib",
+                    "memberdef": {
+                        "@id": "classKinai_1_1Event_1a8f35ee9e4c3e69a83262c9a44afb4c0e",
+                        "@kind": "variable",
+                        "@mutable": "no",
+                        "@prot": "public",
+                        "@static": "no",
+                        "argsstring": null,
+                        "briefdescription": null,
+                        "definition": "bool Kinai::Event::handled",
+                        "detaileddescription": null,
+                        "inbodydescription": null,
+                        "initializer": "= false",
+                        "location": {
+                            "@bodyend": "-1",
+                            "@bodyfile": "include/Kinai/Events/Event.hpp",
+                            "@bodystart": "43",
+                            "@column": "6",
+                            "@file": "include/Kinai/Events/Event.hpp",
+                            "@line": "43"
+                        },
+                        "name": "handled",
+                        "qualifiedname": "Kinai::Event::handled",
+                        "type": "bool"
+                    }
+                },
+                {
+                    "@kind": "public-func",
+                    "memberdef": [
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Event_1a61a9ecf4e7a96b855adaa9a681f5d58a",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "virtual",
+                            "argsstring": "()=default",
+                            "briefdescription": null,
+                            "definition": "virtual Kinai::Event::~Event",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "9",
+                                "@file": "include/Kinai/Events/Event.hpp",
+                                "@line": "41"
+                            },
+                            "name": "~Event",
+                            "qualifiedname": "Kinai::Event::~Event",
+                            "type": null
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Event_1adbb5d2279374bf7a541badb7dd9389f4",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "() const =0",
+                            "briefdescription": null,
+                            "definition": "virtual EventType Kinai::Event::GetEventType",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "19",
+                                "@file": "include/Kinai/Events/Event.hpp",
+                                "@line": "45"
+                            },
+                            "name": "GetEventType",
+                            "qualifiedname": "Kinai::Event::GetEventType",
+                            "type": "EventType"
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Event_1aa583e2927f7beda552435b2f8f184025",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "() const =0",
+                            "briefdescription": null,
+                            "definition": "virtual const char * Kinai::Event::GetName",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "20",
+                                "@file": "include/Kinai/Events/Event.hpp",
+                                "@line": "46"
+                            },
+                            "name": "GetName",
+                            "qualifiedname": "Kinai::Event::GetName",
+                            "type": "const char *"
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Event_1a1f2e3dd6426fc209e7f157700816060a",
+                            "@inline": "no",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "pure-virtual",
+                            "argsstring": "() const =0",
+                            "briefdescription": null,
+                            "definition": "virtual int Kinai::Event::GetCategoryFlags",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@column": "13",
+                                "@file": "include/Kinai/Events/Event.hpp",
+                                "@line": "47"
+                            },
+                            "name": "GetCategoryFlags",
+                            "qualifiedname": "Kinai::Event::GetCategoryFlags",
+                            "type": "int"
+                        },
+                        {
+                            "@const": "yes",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Event_1a0ed0b864f47b05c5ba8f20f548beef29",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "virtual",
+                            "argsstring": "() const",
+                            "briefdescription": null,
+                            "definition": "virtual std::string Kinai::Event::ToString",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "48",
+                                "@bodyfile": "include/Kinai/Events/Event.hpp",
+                                "@bodystart": "48",
+                                "@column": "21",
+                                "@file": "include/Kinai/Events/Event.hpp",
+                                "@line": "48"
+                            },
+                            "name": "ToString",
+                            "qualifiedname": "Kinai::Event::ToString",
+                            "reimplementedby": [
+                                {
+                                    "#text": "ToString",
+                                    "@refid": "classKinai_1_1WindowResizeEvent_1a9c9a8e7f38fb7cff28278da2b9e3e1e9"
+                                },
+                                {
+                                    "#text": "ToString",
+                                    "@refid": "classKinai_1_1KeyPressedEvent_1ac1633f44467877b863601753d63b902b"
+                                },
+                                {
+                                    "#text": "ToString",
+                                    "@refid": "classKinai_1_1KeyReleasedEvent_1af0c7167c9fcfb0513e719f3fc385ca70"
+                                },
+                                {
+                                    "#text": "ToString",
+                                    "@refid": "classKinai_1_1MouseMotionEvent_1a4f9b76949956d3e6163f8e614e5cd201"
+                                },
+                                {
+                                    "#text": "ToString",
+                                    "@refid": "classKinai_1_1MouseWheelEvent_1a5b511145c9b770584aa2cf828c434041"
+                                },
+                                {
+                                    "#text": "ToString",
+                                    "@refid": "classKinai_1_1MouseButtonPressedEvent_1a7b5f5d9df0c575144fb50606fadf3634"
+                                },
+                                {
+                                    "#text": "ToString",
+                                    "@refid": "classKinai_1_1MouseButtonReleasedEvent_1abbee780a9871cb65005ee6d9fbc18efa"
+                                }
+                            ],
+                            "type": "std::string"
+                        },
+                        {
+                            "@const": "no",
+                            "@explicit": "no",
+                            "@id": "classKinai_1_1Event_1a7ab92ccea10ad63144a84d5df06a501d",
+                            "@inline": "yes",
+                            "@kind": "function",
+                            "@prot": "public",
+                            "@static": "no",
+                            "@virt": "non-virtual",
+                            "argsstring": "(EventCategory category)",
+                            "briefdescription": null,
+                            "definition": "bool Kinai::Event::IsInCategory",
+                            "detaileddescription": null,
+                            "inbodydescription": null,
+                            "location": {
+                                "@bodyend": "53",
+                                "@bodyfile": "include/Kinai/Events/Event.hpp",
+                                "@bodystart": "50",
+                                "@column": "6",
+                                "@file": "include/Kinai/Events/Event.hpp",
+                                "@line": "50"
+                            },
+                            "name": "IsInCategory",
+                            "param": {
+                                "declname": "category",
+                                "type": "EventCategory"
+                            },
+                            "qualifiedname": "Kinai::Event::IsInCategory",
+                            "type": "bool"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classKinai_1_1Event" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Kinai::Event</compoundname>
+    <derivedcompoundref refid="classKinai_1_1AppRenderEvent" prot="public" virt="non-virtual">Kinai::AppRenderEvent</derivedcompoundref>
+    <derivedcompoundref refid="classKinai_1_1AppTickEvent" prot="public" virt="non-virtual">Kinai::AppTickEvent</derivedcompoundref>
+    <derivedcompoundref refid="classKinai_1_1AppUpdateEvent" prot="public" virt="non-virtual">Kinai::AppUpdateEvent</derivedcompoundref>
+    <derivedcompoundref refid="classKinai_1_1KeyEvent" prot="public" virt="non-virtual">Kinai::KeyEvent</derivedcompoundref>
+    <derivedcompoundref refid="classKinai_1_1MouseButtonEvent" prot="public" virt="non-virtual">Kinai::MouseButtonEvent</derivedcompoundref>
+    <derivedcompoundref refid="classKinai_1_1MouseMotionEvent" prot="public" virt="non-virtual">Kinai::MouseMotionEvent</derivedcompoundref>
+    <derivedcompoundref refid="classKinai_1_1MouseWheelEvent" prot="public" virt="non-virtual">Kinai::MouseWheelEvent</derivedcompoundref>
+    <derivedcompoundref refid="classKinai_1_1WindowCloseEvent" prot="public" virt="non-virtual">Kinai::WindowCloseEvent</derivedcompoundref>
+    <derivedcompoundref refid="classKinai_1_1WindowResizeEvent" prot="public" virt="non-virtual">Kinai::WindowResizeEvent</derivedcompoundref>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classKinai_1_1Event_1a8f35ee9e4c3e69a83262c9a44afb4c0e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Kinai::Event::handled</definition>
+        <argsstring></argsstring>
+        <name>handled</name>
+        <qualifiedname>Kinai::Event::handled</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/Event.hpp" line="43" column="6" bodyfile="include/Kinai/Events/Event.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKinai_1_1Event_1a61a9ecf4e7a96b855adaa9a681f5d58a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Kinai::Event::~Event</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Event</name>
+        <qualifiedname>Kinai::Event::~Event</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/Event.hpp" line="41" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Event_1adbb5d2279374bf7a541badb7dd9389f4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>EventType</type>
+        <definition>virtual EventType Kinai::Event::GetEventType</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetEventType</name>
+        <qualifiedname>Kinai::Event::GetEventType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/Event.hpp" line="45" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Event_1aa583e2927f7beda552435b2f8f184025" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>const char *</type>
+        <definition>virtual const char * Kinai::Event::GetName</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetName</name>
+        <qualifiedname>Kinai::Event::GetName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/Event.hpp" line="46" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Event_1a1f2e3dd6426fc209e7f157700816060a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int Kinai::Event::GetCategoryFlags</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetCategoryFlags</name>
+        <qualifiedname>Kinai::Event::GetCategoryFlags</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/Event.hpp" line="47" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Event_1a0ed0b864f47b05c5ba8f20f548beef29" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>virtual std::string Kinai::Event::ToString</definition>
+        <argsstring>() const</argsstring>
+        <name>ToString</name>
+        <qualifiedname>Kinai::Event::ToString</qualifiedname>
+        <reimplementedby refid="classKinai_1_1WindowResizeEvent_1a9c9a8e7f38fb7cff28278da2b9e3e1e9">ToString</reimplementedby>
+        <reimplementedby refid="classKinai_1_1KeyPressedEvent_1ac1633f44467877b863601753d63b902b">ToString</reimplementedby>
+        <reimplementedby refid="classKinai_1_1KeyReleasedEvent_1af0c7167c9fcfb0513e719f3fc385ca70">ToString</reimplementedby>
+        <reimplementedby refid="classKinai_1_1MouseMotionEvent_1a4f9b76949956d3e6163f8e614e5cd201">ToString</reimplementedby>
+        <reimplementedby refid="classKinai_1_1MouseWheelEvent_1a5b511145c9b770584aa2cf828c434041">ToString</reimplementedby>
+        <reimplementedby refid="classKinai_1_1MouseButtonPressedEvent_1a7b5f5d9df0c575144fb50606fadf3634">ToString</reimplementedby>
+        <reimplementedby refid="classKinai_1_1MouseButtonReleasedEvent_1abbee780a9871cb65005ee6d9fbc18efa">ToString</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/Event.hpp" line="48" column="21" bodyfile="include/Kinai/Events/Event.hpp" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1Event_1a7ab92ccea10ad63144a84d5df06a501d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Kinai::Event::IsInCategory</definition>
+        <argsstring>(EventCategory category)</argsstring>
+        <name>IsInCategory</name>
+        <qualifiedname>Kinai::Event::IsInCategory</qualifiedname>
+        <param>
+          <type>EventCategory</type>
+          <declname>category</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/Event.hpp" line="50" column="6" bodyfile="include/Kinai/Events/Event.hpp" bodystart="50" bodyend="53"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Kinai::AppRenderEvent</label>
+        <link refid="classKinai_1_1AppRenderEvent"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Kinai::AppTickEvent</label>
+        <link refid="classKinai_1_1AppTickEvent"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Kinai::AppUpdateEvent</label>
+        <link refid="classKinai_1_1AppUpdateEvent"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Kinai::Event</label>
+        <link refid="classKinai_1_1Event"/>
+      </node>
+      <node id="5">
+        <label>Kinai::KeyEvent</label>
+        <link refid="classKinai_1_1KeyEvent"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Kinai::KeyPressedEvent</label>
+        <link refid="classKinai_1_1KeyPressedEvent"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Kinai::KeyReleasedEvent</label>
+        <link refid="classKinai_1_1KeyReleasedEvent"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Kinai::MouseButtonEvent</label>
+        <link refid="classKinai_1_1MouseButtonEvent"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Kinai::MouseButtonPressedEvent</label>
+        <link refid="classKinai_1_1MouseButtonPressedEvent"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Kinai::MouseButtonReleasedEvent</label>
+        <link refid="classKinai_1_1MouseButtonReleasedEvent"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Kinai::MouseMotionEvent</label>
+        <link refid="classKinai_1_1MouseMotionEvent"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Kinai::MouseWheelEvent</label>
+        <link refid="classKinai_1_1MouseWheelEvent"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Kinai::WindowCloseEvent</label>
+        <link refid="classKinai_1_1WindowCloseEvent"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Kinai::WindowResizeEvent</label>
+        <link refid="classKinai_1_1WindowResizeEvent"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="include/Kinai/Events/Event.hpp" line="38" column="1" bodyfile="include/Kinai/Events/Event.hpp" bodystart="39" bodyend="54"/>
+    <listofallmembers>
+      <member refid="classKinai_1_1Event_1a1f2e3dd6426fc209e7f157700816060a" prot="public" virt="pure-virtual"><scope>Kinai::Event</scope><name>GetCategoryFlags</name></member>
+      <member refid="classKinai_1_1Event_1adbb5d2279374bf7a541badb7dd9389f4" prot="public" virt="pure-virtual"><scope>Kinai::Event</scope><name>GetEventType</name></member>
+      <member refid="classKinai_1_1Event_1aa583e2927f7beda552435b2f8f184025" prot="public" virt="pure-virtual"><scope>Kinai::Event</scope><name>GetName</name></member>
+      <member refid="classKinai_1_1Event_1a8f35ee9e4c3e69a83262c9a44afb4c0e" prot="public" virt="non-virtual"><scope>Kinai::Event</scope><name>handled</name></member>
+      <member refid="classKinai_1_1Event_1a7ab92ccea10ad63144a84d5df06a501d" prot="public" virt="non-virtual"><scope>Kinai::Event</scope><name>IsInCategory</name></member>
+      <member refid="classKinai_1_1Event_1a0ed0b864f47b05c5ba8f20f548beef29" prot="public" virt="virtual"><scope>Kinai::Event</scope><name>ToString</name></member>
+      <member refid="classKinai_1_1Event_1a61a9ecf4e7a96b855adaa9a681f5d58a" prot="public" virt="virtual"><scope>Kinai::Event</scope><name>~Event</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="2D_2Shader_8hpp" kind="file" language="C++">
+    <compoundname>2D/Shader.hpp</compoundname>
+    <innerclass refid="structKinai_1_1Shader2D" prot="public">Kinai::Shader2D</innerclass>
+    <innernamespace refid="namespaceKinai">Kinai</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Renderer/2D/Shader.hpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Event_8hpp" kind="file" language="C++">
+    <compoundname>Event.hpp</compoundname>
+    <innerclass refid="classKinai_1_1Event" prot="public">Kinai::Event</innerclass>
+    <innerclass refid="classKinai_1_1EventDispatcher" prot="public">Kinai::EventDispatcher</innerclass>
+    <innernamespace refid="namespaceKinai">Kinai</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Events/Event.hpp"/>
+  </compounddef>
+</doxygen>

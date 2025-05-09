@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="PerspectiveCamera_8hpp" kind="file" language="C++">
+    <compoundname>PerspectiveCamera.hpp</compoundname>
+    <innerclass refid="classKinai_1_1PerspectiveCamera" prot="public">Kinai::PerspectiveCamera</innerclass>
+    <innerclass refid="structKinai_1_1PerspectiveCameraControllerConfig" prot="public">Kinai::PerspectiveCameraControllerConfig</innerclass>
+    <innerclass refid="classKinai_1_1PerspectiveCameraController" prot="public">Kinai::PerspectiveCameraController</innerclass>
+    <innernamespace refid="namespaceKinai">Kinai</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Renderer/PerspectiveCamera.hpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,70 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "Renderer2D_8hpp",
+            "@kind": "file",
+            "@language": "C++",
+            "briefdescription": null,
+            "compoundname": "Renderer2D.hpp",
+            "detaileddescription": null,
+            "innerclass": [
+                {
+                    "#text": "Kinai::CircleVertex",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1CircleVertex"
+                },
+                {
+                    "#text": "Kinai::LineVertex",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1LineVertex"
+                },
+                {
+                    "#text": "Kinai::QuadVertex",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1QuadVertex"
+                },
+                {
+                    "#text": "Kinai::Pipeline",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1Pipeline"
+                },
+                {
+                    "#text": "Kinai::Renderer2D",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Renderer2D"
+                },
+                {
+                    "#text": "Kinai::Renderer2D::Shader2D",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Renderer2D_1_1Shader2D"
+                },
+                {
+                    "#text": "Kinai::Renderer2D::Statistics",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Renderer2D_1_1Statistics"
+                },
+                {
+                    "#text": "Kinai::Renderer2D::CameraUniforms",
+                    "@prot": "private",
+                    "@refid": "structKinai_1_1Renderer2D_1_1CameraUniforms"
+                },
+                {
+                    "#text": "Kinai::Renderer2D::BuiltinUniforms",
+                    "@prot": "private",
+                    "@refid": "structKinai_1_1Renderer2D_1_1BuiltinUniforms"
+                }
+            ],
+            "innernamespace": {
+                "#text": "Kinai",
+                "@refid": "namespaceKinai"
+            },
+            "location": {
+                "@file": "include/Kinai/Renderer/2D/Renderer2D.hpp"
+            }
+        }
+    }
+}

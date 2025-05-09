@@ -1,0 +1,69 @@
+{
+    "doxygen": {
+        "@version": "1.9.8",
+        "@xml:lang": "en-US",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xsi:noNamespaceSchemaLocation": "compound.xsd",
+        "compounddef": {
+            "@id": "Application_8hpp",
+            "@kind": "file",
+            "@language": "C++",
+            "briefdescription": null,
+            "compoundname": "Application.hpp",
+            "detaileddescription": null,
+            "innerclass": [
+                {
+                    "#text": "Kinai::ApplicationConfig",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1ApplicationConfig"
+                },
+                {
+                    "#text": "Kinai::Time",
+                    "@prot": "public",
+                    "@refid": "structKinai_1_1Time"
+                },
+                {
+                    "#text": "Kinai::Application",
+                    "@prot": "public",
+                    "@refid": "classKinai_1_1Application"
+                }
+            ],
+            "innernamespace": {
+                "#text": "Kinai",
+                "@refid": "namespaceKinai"
+            },
+            "location": {
+                "@file": "include/Kinai/Core/Application.hpp"
+            },
+            "sectiondef": {
+                "@kind": "var",
+                "memberdef": {
+                    "@extern": "yes",
+                    "@id": "Application_8hpp_1a6e342dcb3235220bd9057586be109bdb",
+                    "@kind": "variable",
+                    "@mutable": "no",
+                    "@prot": "public",
+                    "@static": "no",
+                    "argsstring": null,
+                    "briefdescription": null,
+                    "definition": "bool g_KinaiApplicationRunning",
+                    "detaileddescription": null,
+                    "inbodydescription": null,
+                    "location": {
+                        "@bodyend": "-1",
+                        "@bodyfile": "include/Kinai/Core/EntryPoint.hpp",
+                        "@bodystart": "10",
+                        "@column": "12",
+                        "@declcolumn": "12",
+                        "@declfile": "include/Kinai/Core/Application.hpp",
+                        "@declline": "15",
+                        "@file": "include/Kinai/Core/Application.hpp",
+                        "@line": "15"
+                    },
+                    "name": "g_KinaiApplicationRunning",
+                    "type": "bool"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classKinai_1_1MouseWheelEvent" kind="class" language="C++" prot="public">
+    <compoundname>Kinai::MouseWheelEvent</compoundname>
+    <basecompoundref refid="classKinai_1_1Event" prot="public" virt="non-virtual">Kinai::Event</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classKinai_1_1MouseWheelEvent_1a25dfaa9166aef7a83e6c80dc6192710e" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Kinai::MouseWheelEvent::_wheel_x</definition>
+        <argsstring></argsstring>
+        <name>_wheel_x</name>
+        <qualifiedname>Kinai::MouseWheelEvent::_wheel_x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/MouseEvent.hpp" line="56" column="7" bodyfile="include/Kinai/Events/MouseEvent.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classKinai_1_1MouseWheelEvent_1a2a4d1de1c66315a2edf7ca5136acc94f" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Kinai::MouseWheelEvent::_wheel_y</definition>
+        <argsstring></argsstring>
+        <name>_wheel_y</name>
+        <qualifiedname>Kinai::MouseWheelEvent::_wheel_y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/MouseEvent.hpp" line="56" column="16" bodyfile="include/Kinai/Events/MouseEvent.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classKinai_1_1MouseWheelEvent_1a60e7c669e2cb7c04dc7f3ddc8e12c129" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::MouseWheelEvent::MouseWheelEvent</definition>
+        <argsstring>(const float x, const float y)</argsstring>
+        <name>MouseWheelEvent</name>
+        <qualifiedname>Kinai::MouseWheelEvent::MouseWheelEvent</qualifiedname>
+        <param>
+          <type>const float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/MouseEvent.hpp" line="39" column="1" bodyfile="include/Kinai/Events/MouseEvent.hpp" bodystart="39" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1MouseWheelEvent_1a4020646a75f8ff94e7033055aa33769e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Kinai::MouseWheelEvent::GetXOffset</definition>
+        <argsstring>() const</argsstring>
+        <name>GetXOffset</name>
+        <qualifiedname>Kinai::MouseWheelEvent::GetXOffset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/MouseEvent.hpp" line="42" column="6" bodyfile="include/Kinai/Events/MouseEvent.hpp" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1MouseWheelEvent_1aef996fa8779def264d23dd1883100417" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Kinai::MouseWheelEvent::GetYOffset</definition>
+        <argsstring>() const</argsstring>
+        <name>GetYOffset</name>
+        <qualifiedname>Kinai::MouseWheelEvent::GetYOffset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/MouseEvent.hpp" line="43" column="6" bodyfile="include/Kinai/Events/MouseEvent.hpp" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1MouseWheelEvent_1ad42f77d7361c6de350623f6619705094" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::MouseWheelEvent::EVENT_CLASS_TYPE</definition>
+        <argsstring>(SDL_EVENT_MOUSE_WHEEL)</argsstring>
+        <name>EVENT_CLASS_TYPE</name>
+        <qualifiedname>Kinai::MouseWheelEvent::EVENT_CLASS_TYPE</qualifiedname>
+        <param>
+          <type>SDL_EVENT_MOUSE_WHEEL</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/MouseEvent.hpp" line="45" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1MouseWheelEvent_1a17b5df43dc38b0747b459b3b938efc6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Kinai::MouseWheelEvent::EVENT_CLASS_CATEGORY</definition>
+        <argsstring>(EventCategoryMouse|EventCategoryInput)</argsstring>
+        <name>EVENT_CLASS_CATEGORY</name>
+        <qualifiedname>Kinai::MouseWheelEvent::EVENT_CLASS_CATEGORY</qualifiedname>
+        <param>
+          <type>EventCategoryMouse|</type>
+          <declname>EventCategoryInput</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/MouseEvent.hpp" line="46" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classKinai_1_1MouseWheelEvent_1a5b511145c9b770584aa2cf828c434041" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string Kinai::MouseWheelEvent::ToString</definition>
+        <argsstring>() const override</argsstring>
+        <name>ToString</name>
+        <qualifiedname>Kinai::MouseWheelEvent::ToString</qualifiedname>
+        <reimplements refid="classKinai_1_1Event_1a0ed0b864f47b05c5ba8f20f548beef29">ToString</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Kinai/Events/MouseEvent.hpp" line="48" column="12" bodyfile="include/Kinai/Events/MouseEvent.hpp" bodystart="48" bodyend="53"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Kinai::Event</label>
+        <link refid="classKinai_1_1Event"/>
+      </node>
+      <node id="1">
+        <label>Kinai::MouseWheelEvent</label>
+        <link refid="classKinai_1_1MouseWheelEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Kinai::Event</label>
+        <link refid="classKinai_1_1Event"/>
+      </node>
+      <node id="1">
+        <label>Kinai::MouseWheelEvent</label>
+        <link refid="classKinai_1_1MouseWheelEvent"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/Kinai/Events/MouseEvent.hpp" line="36" column="1" bodyfile="include/Kinai/Events/MouseEvent.hpp" bodystart="37" bodyend="57"/>
+    <listofallmembers>
+      <member refid="classKinai_1_1MouseWheelEvent_1a25dfaa9166aef7a83e6c80dc6192710e" prot="private" virt="non-virtual"><scope>Kinai::MouseWheelEvent</scope><name>_wheel_x</name></member>
+      <member refid="classKinai_1_1MouseWheelEvent_1a2a4d1de1c66315a2edf7ca5136acc94f" prot="private" virt="non-virtual"><scope>Kinai::MouseWheelEvent</scope><name>_wheel_y</name></member>
+      <member refid="classKinai_1_1MouseWheelEvent_1a17b5df43dc38b0747b459b3b938efc6d" prot="public" virt="non-virtual"><scope>Kinai::MouseWheelEvent</scope><name>EVENT_CLASS_CATEGORY</name></member>
+      <member refid="classKinai_1_1MouseWheelEvent_1ad42f77d7361c6de350623f6619705094" prot="public" virt="non-virtual"><scope>Kinai::MouseWheelEvent</scope><name>EVENT_CLASS_TYPE</name></member>
+      <member refid="classKinai_1_1Event_1a1f2e3dd6426fc209e7f157700816060a" prot="public" virt="pure-virtual"><scope>Kinai::MouseWheelEvent</scope><name>GetCategoryFlags</name></member>
+      <member refid="classKinai_1_1Event_1adbb5d2279374bf7a541badb7dd9389f4" prot="public" virt="pure-virtual"><scope>Kinai::MouseWheelEvent</scope><name>GetEventType</name></member>
+      <member refid="classKinai_1_1Event_1aa583e2927f7beda552435b2f8f184025" prot="public" virt="pure-virtual"><scope>Kinai::MouseWheelEvent</scope><name>GetName</name></member>
+      <member refid="classKinai_1_1MouseWheelEvent_1a4020646a75f8ff94e7033055aa33769e" prot="public" virt="non-virtual"><scope>Kinai::MouseWheelEvent</scope><name>GetXOffset</name></member>
+      <member refid="classKinai_1_1MouseWheelEvent_1aef996fa8779def264d23dd1883100417" prot="public" virt="non-virtual"><scope>Kinai::MouseWheelEvent</scope><name>GetYOffset</name></member>
+      <member refid="classKinai_1_1Event_1a8f35ee9e4c3e69a83262c9a44afb4c0e" prot="public" virt="non-virtual"><scope>Kinai::MouseWheelEvent</scope><name>handled</name></member>
+      <member refid="classKinai_1_1Event_1a7ab92ccea10ad63144a84d5df06a501d" prot="public" virt="non-virtual"><scope>Kinai::MouseWheelEvent</scope><name>IsInCategory</name></member>
+      <member refid="classKinai_1_1MouseWheelEvent_1a60e7c669e2cb7c04dc7f3ddc8e12c129" prot="public" virt="non-virtual"><scope>Kinai::MouseWheelEvent</scope><name>MouseWheelEvent</name></member>
+      <member refid="classKinai_1_1MouseWheelEvent_1a5b511145c9b770584aa2cf828c434041" prot="public" virt="virtual"><scope>Kinai::MouseWheelEvent</scope><name>ToString</name></member>
+      <member refid="classKinai_1_1Event_1a61a9ecf4e7a96b855adaa9a681f5d58a" prot="public" virt="virtual"><scope>Kinai::MouseWheelEvent</scope><name>~Event</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Renderer2D_8hpp" kind="file" language="C++">
+    <compoundname>Renderer2D.hpp</compoundname>
+    <innerclass refid="structKinai_1_1CircleVertex" prot="public">Kinai::CircleVertex</innerclass>
+    <innerclass refid="structKinai_1_1LineVertex" prot="public">Kinai::LineVertex</innerclass>
+    <innerclass refid="structKinai_1_1QuadVertex" prot="public">Kinai::QuadVertex</innerclass>
+    <innerclass refid="structKinai_1_1Pipeline" prot="public">Kinai::Pipeline</innerclass>
+    <innerclass refid="classKinai_1_1Renderer2D" prot="public">Kinai::Renderer2D</innerclass>
+    <innerclass refid="classKinai_1_1Renderer2D_1_1Shader2D" prot="public">Kinai::Renderer2D::Shader2D</innerclass>
+    <innerclass refid="classKinai_1_1Renderer2D_1_1Statistics" prot="public">Kinai::Renderer2D::Statistics</innerclass>
+    <innerclass refid="structKinai_1_1Renderer2D_1_1CameraUniforms" prot="private">Kinai::Renderer2D::CameraUniforms</innerclass>
+    <innerclass refid="structKinai_1_1Renderer2D_1_1BuiltinUniforms" prot="private">Kinai::Renderer2D::BuiltinUniforms</innerclass>
+    <innernamespace refid="namespaceKinai">Kinai</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Kinai/Renderer/2D/Renderer2D.hpp"/>
+  </compounddef>
+</doxygen>

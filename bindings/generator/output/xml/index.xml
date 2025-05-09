@@ -1,0 +1,1034 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.8" xml:lang="en-US">
+  <compound refid="classKinai_1_1Application" kind="class"><name>Kinai::Application</name>
+    <member refid="classKinai_1_1Application_1af238825f4043a2e9bbc6c3397024e3c6" kind="variable"><name>_window</name></member>
+    <member refid="classKinai_1_1Application_1a185c349de2657769a7350b44edf65905" kind="variable"><name>_config</name></member>
+    <member refid="classKinai_1_1Application_1a564941c4849408d2e005930125227adc" kind="variable"><name>_imgui_layer</name></member>
+    <member refid="classKinai_1_1Application_1aa346946ae353e97373bed20e257c397c" kind="variable"><name>_time</name></member>
+    <member refid="classKinai_1_1Application_1abc2acf4be01c9233847cdd3736503d94" kind="variable"><name>_layerstack</name></member>
+    <member refid="classKinai_1_1Application_1a2fad4e1253265d7fe6e92f6552c0ca8a" kind="variable"><name>_minimized</name></member>
+    <member refid="classKinai_1_1Application_1ae47cd65652362aeeedcbdaf78610646f" kind="variable"><name>_instance</name></member>
+    <member refid="classKinai_1_1Application_1a6e6ed0145a82da0ee502e2003d660d4e" kind="function"><name>Application</name></member>
+    <member refid="classKinai_1_1Application_1a99278555e31e5baf78af4747514015dc" kind="function"><name>~Application</name></member>
+    <member refid="classKinai_1_1Application_1aa79f96d744fcff879a36c72cb76a6120" kind="function"><name>PushLayer</name></member>
+    <member refid="classKinai_1_1Application_1acf34be4c469030b4c5ba20915de483d7" kind="function"><name>PushOverlay</name></member>
+    <member refid="classKinai_1_1Application_1adea958436e3b05c7e3ebafcd49f61121" kind="function"><name>Close</name></member>
+    <member refid="classKinai_1_1Application_1a1e486f7c712532448836d1f73cb27abf" kind="function"><name>GetWindow</name></member>
+    <member refid="classKinai_1_1Application_1ad12ad291745ed59c125a0aa1455ffd47" kind="function"><name>GetFPS</name></member>
+    <member refid="classKinai_1_1Application_1a3649bf1a96d5fcbdf5f5987e064d4345" kind="function"><name>GetDeltaTime</name></member>
+    <member refid="classKinai_1_1Application_1a1c0c136ce1611c72bb724f2359bcbf7f" kind="function"><name>GetImGuiLayer</name></member>
+    <member refid="classKinai_1_1Application_1a07a7860360f0c13cc32454db4926b555" kind="function"><name>Run</name></member>
+    <member refid="classKinai_1_1Application_1a9e89270ac50b756c19e624a6a07d392f" kind="function"><name>Get</name></member>
+    <member refid="classKinai_1_1Application_1a0658e2052a1cb95d14f16b3c990593b0" kind="function"><name>OnEvent</name></member>
+    <member refid="classKinai_1_1Application_1a6852385ea6f562ac4dc3d6a5e5a6b63e" kind="function"><name>OnWindowClose</name></member>
+    <member refid="classKinai_1_1Application_1a188fdf877007cd1de894f3a968d48046" kind="function"><name>OnWindowResize</name></member>
+    <member refid="classKinai_1_1Application_1a2e4ab429e2968cf4bc709e3c44f9dd9a" kind="friend"><name>Main</name></member>
+  </compound>
+  <compound refid="structKinai_1_1ApplicationConfig" kind="struct"><name>Kinai::ApplicationConfig</name>
+    <member refid="structKinai_1_1ApplicationConfig_1a99a66bce03a724d6c5af99e09e0db0b2" kind="variable"><name>name</name></member>
+    <member refid="structKinai_1_1ApplicationConfig_1a7a5b89ee24bdbffbd3fd92dba7294ddb" kind="variable"><name>window_width</name></member>
+    <member refid="structKinai_1_1ApplicationConfig_1a5fb3ba37f3f91dc77bcdd41d7cf52f63" kind="variable"><name>window_height</name></member>
+    <member refid="structKinai_1_1ApplicationConfig_1ad6978e040d26c0175161f067f69c9233" kind="variable"><name>fullscreen</name></member>
+    <member refid="structKinai_1_1ApplicationConfig_1a5b27b2915fe5d5d5034185ec003a5acd" kind="variable"><name>no_vsync</name></member>
+    <member refid="structKinai_1_1ApplicationConfig_1a6c2ce1b65500022ffcd92c47d12655c5" kind="variable"><name>enable_imgui</name></member>
+  </compound>
+  <compound refid="classKinai_1_1AppRenderEvent" kind="class"><name>Kinai::AppRenderEvent</name>
+    <member refid="classKinai_1_1AppRenderEvent_1a55331e48f2b91b2b2b1f96e678021d93" kind="function"><name>AppRenderEvent</name></member>
+  </compound>
+  <compound refid="classKinai_1_1AppTickEvent" kind="class"><name>Kinai::AppTickEvent</name>
+    <member refid="classKinai_1_1AppTickEvent_1ad77aba154400280cc8bc3c3a2d80cd2c" kind="function"><name>AppTickEvent</name></member>
+  </compound>
+  <compound refid="classKinai_1_1AppUpdateEvent" kind="class"><name>Kinai::AppUpdateEvent</name>
+    <member refid="classKinai_1_1AppUpdateEvent_1ab57b96b8ebb33cf54f798a58c7834658" kind="function"><name>AppUpdateEvent</name></member>
+  </compound>
+  <compound refid="structKinai_1_1BufferElement" kind="struct"><name>Kinai::BufferElement</name>
+    <member refid="structKinai_1_1BufferElement_1aebed148034f521d3b6701f31ced56947" kind="variable"><name>name</name></member>
+    <member refid="structKinai_1_1BufferElement_1ae9d2e8945ac0c1988294e5a057df47a6" kind="variable"><name>type</name></member>
+    <member refid="structKinai_1_1BufferElement_1ab0f18f4ba9a1af462a51012cc628d3f1" kind="variable"><name>size</name></member>
+    <member refid="structKinai_1_1BufferElement_1ab8a0deba62295da363d87918d27a40a3" kind="variable"><name>offset</name></member>
+    <member refid="structKinai_1_1BufferElement_1a0c22622363f5592839f485380f755c6d" kind="variable"><name>normalized</name></member>
+    <member refid="structKinai_1_1BufferElement_1abb799928dedae48cc0c344164d2fccc5" kind="function"><name>BufferElement</name></member>
+    <member refid="structKinai_1_1BufferElement_1a8be523486a6916d68bdfb9a5e285e6aa" kind="function"><name>BufferElement</name></member>
+    <member refid="structKinai_1_1BufferElement_1a91cfc6f60694d6ec6c8582920aa69fa7" kind="function"><name>GetComponentCount</name></member>
+  </compound>
+  <compound refid="classKinai_1_1BufferLayout" kind="class"><name>Kinai::BufferLayout</name>
+    <member refid="classKinai_1_1BufferLayout_1a2b8516ac4ecf210d9084b4f778dcb5a2" kind="variable"><name>_elements</name></member>
+    <member refid="classKinai_1_1BufferLayout_1aff5409353c4ec7e3c144dfc9ed47d05f" kind="variable"><name>stride</name></member>
+    <member refid="classKinai_1_1BufferLayout_1a8baea9656980aef850acf26ba21f3a3f" kind="function"><name>BufferLayout</name></member>
+    <member refid="classKinai_1_1BufferLayout_1a0aae2f776d5970b93170f6bb954c3134" kind="function"><name>BufferLayout</name></member>
+    <member refid="classKinai_1_1BufferLayout_1ab0e69528fa027fe68d66b8e756c8a91e" kind="function"><name>BufferLayout</name></member>
+    <member refid="classKinai_1_1BufferLayout_1a02f82aa691e24d0c9332fa6ddb0ac2ab" kind="function"><name>GetStride</name></member>
+    <member refid="classKinai_1_1BufferLayout_1a7125ea6f0e2dacf04ba508cc4d945a8c" kind="function"><name>GetElements</name></member>
+    <member refid="classKinai_1_1BufferLayout_1a35ca77026c78f0d2167fa9c4ad8c6c55" kind="function"><name>begin</name></member>
+    <member refid="classKinai_1_1BufferLayout_1ab76f83b1c531184d384d21a044f6036f" kind="function"><name>end</name></member>
+    <member refid="classKinai_1_1BufferLayout_1a9577d138bddfa826a2913521dd0860e9" kind="function"><name>begin</name></member>
+    <member refid="classKinai_1_1BufferLayout_1ad2b33beb959cb4d43fada54ade5b707d" kind="function"><name>end</name></member>
+    <member refid="classKinai_1_1BufferLayout_1a64e76a7fb878fc72ffdcbbe8d8ec092a" kind="function"><name>CalculateOffsetsAndStride</name></member>
+  </compound>
+  <compound refid="structKinai_1_1Renderer2D_1_1BuiltinUniforms" kind="struct"><name>Kinai::Renderer2D::BuiltinUniforms</name>
+    <member refid="structKinai_1_1Renderer2D_1_1BuiltinUniforms_1a93a0dcd69e5e440f491c9ce67f6cf9b7" kind="variable"><name>time</name></member>
+    <member refid="structKinai_1_1Renderer2D_1_1BuiltinUniforms_1a6f62eabc5fba1882eabafbc3d94716df" kind="variable"><name>pi</name></member>
+    <member refid="structKinai_1_1Renderer2D_1_1BuiltinUniforms_1affa86dcf34a637899eb39dada5a0318e" kind="variable"><name>tau</name></member>
+    <member refid="structKinai_1_1Renderer2D_1_1BuiltinUniforms_1a41f6c7cb195d5bf7e077922217394930" kind="variable"><name>e</name></member>
+  </compound>
+  <compound refid="classKinai_1_1Camera" kind="class"><name>Kinai::Camera</name>
+    <member refid="classKinai_1_1Camera_1a52f792b1fffeb20ef1e5c8f3624a76cf" kind="variable"><name>_projection_matrix</name></member>
+    <member refid="classKinai_1_1Camera_1a8aadb79e8fcf822ccfd45f55ac68915c" kind="function"><name>Camera</name></member>
+    <member refid="classKinai_1_1Camera_1a65d09d24338d2650aebfc18d966949e6" kind="function"><name>Camera</name></member>
+    <member refid="classKinai_1_1Camera_1a3f583e446932af14a312e756e7dbfc57" kind="function"><name>~Camera</name></member>
+    <member refid="classKinai_1_1Camera_1a9a4678b11595112c6c334abe5c41752b" kind="function"><name>GetProjectionMatrix</name></member>
+  </compound>
+  <compound refid="structKinai_1_1Renderer2D_1_1CameraUniforms" kind="struct"><name>Kinai::Renderer2D::CameraUniforms</name>
+    <member refid="structKinai_1_1Renderer2D_1_1CameraUniforms_1a1295f88bc65f46c4f06f50e2dda2fb08" kind="variable"><name>view_projection</name></member>
+  </compound>
+  <compound refid="structKinai_1_1CircleVertex" kind="struct"><name>Kinai::CircleVertex</name>
+    <member refid="structKinai_1_1CircleVertex_1a26e4c2c218d007bb56b1022f2e442b61" kind="variable"><name>world_position</name></member>
+    <member refid="structKinai_1_1CircleVertex_1ad64e6002e8b2ff2c75b3a547893c20f8" kind="variable"><name>local_position</name></member>
+    <member refid="structKinai_1_1CircleVertex_1af114148a5725c3a6452b15bf1f351efb" kind="variable"><name>color</name></member>
+    <member refid="structKinai_1_1CircleVertex_1a2a7d156740cd467cdd8b8f7b1bc74453" kind="variable"><name>thickness</name></member>
+    <member refid="structKinai_1_1CircleVertex_1a5f20f496c23028c6872a77f80d26cb01" kind="variable"><name>fade</name></member>
+  </compound>
+  <compound refid="classKinai_1_1Event" kind="class"><name>Kinai::Event</name>
+    <member refid="classKinai_1_1Event_1a8f35ee9e4c3e69a83262c9a44afb4c0e" kind="variable"><name>handled</name></member>
+    <member refid="classKinai_1_1Event_1a61a9ecf4e7a96b855adaa9a681f5d58a" kind="function"><name>~Event</name></member>
+    <member refid="classKinai_1_1Event_1adbb5d2279374bf7a541badb7dd9389f4" kind="function"><name>GetEventType</name></member>
+    <member refid="classKinai_1_1Event_1aa583e2927f7beda552435b2f8f184025" kind="function"><name>GetName</name></member>
+    <member refid="classKinai_1_1Event_1a1f2e3dd6426fc209e7f157700816060a" kind="function"><name>GetCategoryFlags</name></member>
+    <member refid="classKinai_1_1Event_1a0ed0b864f47b05c5ba8f20f548beef29" kind="function"><name>ToString</name></member>
+    <member refid="classKinai_1_1Event_1a7ab92ccea10ad63144a84d5df06a501d" kind="function"><name>IsInCategory</name></member>
+  </compound>
+  <compound refid="classKinai_1_1EventDispatcher" kind="class"><name>Kinai::EventDispatcher</name>
+    <member refid="classKinai_1_1EventDispatcher_1a648ce180f5c6f5b2fbde21ec096a7df4" kind="variable"><name>_event</name></member>
+    <member refid="classKinai_1_1EventDispatcher_1a30ef4e1005c4c95a46232521fb21cbe4" kind="function"><name>EventDispatcher</name></member>
+    <member refid="classKinai_1_1EventDispatcher_1ad5c9c8d169b09fe7c807a17fbc62ad61" kind="function"><name>Dispatch</name></member>
+  </compound>
+  <compound refid="classKinai_1_1Framebuffer" kind="class"><name>Kinai::Framebuffer</name>
+    <member refid="classKinai_1_1Framebuffer_1aabc06dfef75f6d398299ad6d81864a36" kind="function"><name>~Framebuffer</name></member>
+    <member refid="classKinai_1_1Framebuffer_1a2f1647d17a134acfe2dbc8b7e7d6685e" kind="function"><name>Bind</name></member>
+    <member refid="classKinai_1_1Framebuffer_1ae123139b376477f31af0ee771a22b4c1" kind="function"><name>Unbind</name></member>
+    <member refid="classKinai_1_1Framebuffer_1a0e894614145bf7a989581caabfbd87b2" kind="function"><name>Resize</name></member>
+    <member refid="classKinai_1_1Framebuffer_1ad65734708f5706e63f0023bb90461c29" kind="function"><name>ReadPixel</name></member>
+    <member refid="classKinai_1_1Framebuffer_1aecfc161e6242251a01d38736567de439" kind="function"><name>ClearAttachment</name></member>
+    <member refid="classKinai_1_1Framebuffer_1a5c14b294c116f2a49fe4682d49843070" kind="function"><name>GetColorAttachmentRendererID</name></member>
+    <member refid="classKinai_1_1Framebuffer_1a8470f8e4ceb35f93ba8724ecf23cf708" kind="function"><name>GetConfig</name></member>
+    <member refid="classKinai_1_1Framebuffer_1a4954a293a13843a1f949414de81e0e66" kind="function"><name>GetRendererID</name></member>
+    <member refid="classKinai_1_1Framebuffer_1aac00e75fd4ca5bbecbc8292027c8fa0b" kind="function"><name>Create</name></member>
+  </compound>
+  <compound refid="structKinai_1_1FramebufferAttachmentConfig" kind="struct"><name>Kinai::FramebufferAttachmentConfig</name>
+    <member refid="structKinai_1_1FramebufferAttachmentConfig_1a7c1a0e5d7e9b65e1c818d8665b960485" kind="variable"><name>attachments</name></member>
+    <member refid="structKinai_1_1FramebufferAttachmentConfig_1ab023e16cf467e640132738c039cebc75" kind="function"><name>FramebufferAttachmentConfig</name></member>
+    <member refid="structKinai_1_1FramebufferAttachmentConfig_1a4f3ac4755bf1ba5a911d5960bfd4b1d4" kind="function"><name>FramebufferAttachmentConfig</name></member>
+  </compound>
+  <compound refid="structKinai_1_1FramebufferConfig" kind="struct"><name>Kinai::FramebufferConfig</name>
+    <member refid="structKinai_1_1FramebufferConfig_1ac3af2a70d4e5b7874696eaf9938106f0" kind="variable"><name>width</name></member>
+    <member refid="structKinai_1_1FramebufferConfig_1af0784a38e4fff480219ae480195309b2" kind="variable"><name>height</name></member>
+    <member refid="structKinai_1_1FramebufferConfig_1a5942d3af3c2f8b7bcc316969cffefa94" kind="variable"><name>attachments</name></member>
+    <member refid="structKinai_1_1FramebufferConfig_1af74fa7998d68cc449d3994702f20b743" kind="variable"><name>samples</name></member>
+    <member refid="structKinai_1_1FramebufferConfig_1a060b36b7f969fb406fb2cb29a9f57721" kind="variable"><name>swapChainTarget</name></member>
+  </compound>
+  <compound refid="structKinai_1_1FramebufferTextureConfig" kind="struct"><name>Kinai::FramebufferTextureConfig</name>
+    <member refid="structKinai_1_1FramebufferTextureConfig_1ab8807b5d384f27cdfef4c2d4d1c73abe" kind="variable"><name>TextureFormat</name></member>
+    <member refid="structKinai_1_1FramebufferTextureConfig_1a5d7546332c330f16bb57545859cbd6f6" kind="function"><name>FramebufferTextureConfig</name></member>
+    <member refid="structKinai_1_1FramebufferTextureConfig_1afa70f7d7d7b49a72ad79a78107d6c7f2" kind="function"><name>FramebufferTextureConfig</name></member>
+  </compound>
+  <compound refid="classKinai_1_1ImGuiLayer" kind="class"><name>Kinai::ImGuiLayer</name>
+    <member refid="classKinai_1_1ImGuiLayer_1af801ecde3976318c94e170f5060bd1b8" kind="variable"><name>_block_events</name></member>
+    <member refid="classKinai_1_1ImGuiLayer_1a4ba22f95e70db0c8a4870fc50c7e18e3" kind="function"><name>ImGuiLayer</name></member>
+    <member refid="classKinai_1_1ImGuiLayer_1a5cf5210c772a5e0a4fcca6f43c53285d" kind="function"><name>~ImGuiLayer</name></member>
+    <member refid="classKinai_1_1ImGuiLayer_1aae89e7f3aab625049bb8e64f8067ceed" kind="function"><name>Begin</name></member>
+    <member refid="classKinai_1_1ImGuiLayer_1abccf029bf34df251ce759e0b613dd8b3" kind="function"><name>End</name></member>
+    <member refid="classKinai_1_1ImGuiLayer_1a8da8dae75e0edd72bf722b849252bac2" kind="function"><name>OnAttach</name></member>
+    <member refid="classKinai_1_1ImGuiLayer_1aaf5da0f84e7b937bf0440bbb306be674" kind="function"><name>OnDetach</name></member>
+    <member refid="classKinai_1_1ImGuiLayer_1aa4f232191d86506b8479a0b6f38dc6f9" kind="function"><name>OnEvent</name></member>
+    <member refid="classKinai_1_1ImGuiLayer_1a9c702a1a9d7fec0a238975feb67ca116" kind="function"><name>BlockEvents</name></member>
+  </compound>
+  <compound refid="classKinai_1_1IndexBuffer" kind="class"><name>Kinai::IndexBuffer</name>
+    <member refid="classKinai_1_1IndexBuffer_1a7271f9740775ccff4da7fce6a7b40407" kind="function"><name>~IndexBuffer</name></member>
+    <member refid="classKinai_1_1IndexBuffer_1afc1a3c38e33f44bc3305996f6ce557fb" kind="function"><name>Bind</name></member>
+    <member refid="classKinai_1_1IndexBuffer_1acce050419d5f300d315ffb5c364104fe" kind="function"><name>Unbind</name></member>
+    <member refid="classKinai_1_1IndexBuffer_1a2c45e37046c282b973d91982d9f4dd95" kind="function"><name>GetCount</name></member>
+    <member refid="classKinai_1_1IndexBuffer_1a3e1d0ab82a597cea16aab333ddfb11f2" kind="function"><name>Create</name></member>
+  </compound>
+  <compound refid="classKinai_1_1Input" kind="class"><name>Kinai::Input</name>
+    <member refid="classKinai_1_1Input_1a3e1e81c6803b13e6f6888c016abda5c0" kind="function"><name>IsKeyPressed</name></member>
+    <member refid="classKinai_1_1Input_1a3b8fed8f05ffa321fb21365fc8e8f6f3" kind="function"><name>IsMouseButtonPressed</name></member>
+    <member refid="classKinai_1_1Input_1acf6b7570ecba9d5711d2d08ef2e935d0" kind="function"><name>GetMousePosition</name></member>
+    <member refid="classKinai_1_1Input_1a0f4123bd0ac063a8ca5f378defa679bb" kind="function"><name>GetMouseX</name></member>
+    <member refid="classKinai_1_1Input_1a78bc0fd7352aee5ab7a363e54cd2cf0f" kind="function"><name>GetMouseY</name></member>
+  </compound>
+  <compound refid="structKinai_1_1is__token__type" kind="struct"><name>Kinai::is_token_type</name>
+  </compound>
+  <compound refid="classKinai_1_1KeyEvent" kind="class"><name>Kinai::KeyEvent</name>
+    <member refid="classKinai_1_1KeyEvent_1a4ce9157b1993ae66ec9337415a1279b4" kind="variable"><name>_key_code</name></member>
+    <member refid="classKinai_1_1KeyEvent_1a2389a7234c362c6a7ef230d9a4e40e57" kind="function"><name>GetKeyCode</name></member>
+    <member refid="classKinai_1_1KeyEvent_1ac6ffea67705ebdfc7365d82eea063ce1" kind="function"><name>EVENT_CLASS_CATEGORY</name></member>
+  </compound>
+  <compound refid="classKinai_1_1KeyPressedEvent" kind="class"><name>Kinai::KeyPressedEvent</name>
+    <member refid="classKinai_1_1KeyPressedEvent_1a5996d7401a527f7e07f106f378bdddc8" kind="function"><name>KeyPressedEvent</name></member>
+    <member refid="classKinai_1_1KeyPressedEvent_1a7680b8101c4df7e2de3a1cb39a502084" kind="function"><name>IsRepeat</name></member>
+    <member refid="classKinai_1_1KeyPressedEvent_1ac1633f44467877b863601753d63b902b" kind="function"><name>ToString</name></member>
+  </compound>
+  <compound refid="classKinai_1_1KeyReleasedEvent" kind="class"><name>Kinai::KeyReleasedEvent</name>
+    <member refid="classKinai_1_1KeyReleasedEvent_1aa1663d16af7918f71e8e54f539b460bb" kind="function"><name>KeyReleasedEvent</name></member>
+    <member refid="classKinai_1_1KeyReleasedEvent_1af0c7167c9fcfb0513e719f3fc385ca70" kind="function"><name>ToString</name></member>
+  </compound>
+  <compound refid="classKinai_1_1Layer" kind="class"><name>Kinai::Layer</name>
+    <member refid="classKinai_1_1Layer_1a4c52aff3c0dd2062864de794da550638" kind="variable"><name>_debug_name</name></member>
+    <member refid="classKinai_1_1Layer_1a398b18d2e10824bf0a9e292587d33c2c" kind="function"><name>Layer</name></member>
+    <member refid="classKinai_1_1Layer_1a229a1526155eae5204bb05f3a9620218" kind="function"><name>~Layer</name></member>
+    <member refid="classKinai_1_1Layer_1a520a89c2b970da74dac812b96c7efb21" kind="function"><name>OnAttach</name></member>
+    <member refid="classKinai_1_1Layer_1aca356ad003f9f9c3251a62481d8d3152" kind="function"><name>OnDetach</name></member>
+    <member refid="classKinai_1_1Layer_1a10c02fa847f8219c55cfb8e28d1a733a" kind="function"><name>OnUpdate</name></member>
+    <member refid="classKinai_1_1Layer_1abf530c17ec13961debc4ac73db537f3f" kind="function"><name>OnImGuiRender</name></member>
+    <member refid="classKinai_1_1Layer_1ab543b787da010b413883ef62c859a9e0" kind="function"><name>OnEvent</name></member>
+    <member refid="classKinai_1_1Layer_1af822136e2e0533a9093bf912e459fa90" kind="function"><name>GetName</name></member>
+  </compound>
+  <compound refid="classKinai_1_1LayerStack" kind="class"><name>Kinai::LayerStack</name>
+    <member refid="classKinai_1_1LayerStack_1acf383462277b850b4ddb4a0f15aabb9f" kind="variable"><name>_layers</name></member>
+    <member refid="classKinai_1_1LayerStack_1a45a1fe5fbe441a4e20a23021e3844a7f" kind="variable"><name>_layer_insert_index</name></member>
+    <member refid="classKinai_1_1LayerStack_1a6654998eab086298bee3f72cc21a51a9" kind="function"><name>LayerStack</name></member>
+    <member refid="classKinai_1_1LayerStack_1af3ff8cda09b397e143415eb355e1797a" kind="function"><name>~LayerStack</name></member>
+    <member refid="classKinai_1_1LayerStack_1ae008500e8e1a5004147ee9b8b1c7c571" kind="function"><name>PushLayer</name></member>
+    <member refid="classKinai_1_1LayerStack_1a82049d2bd081926b8cb94678b2b966ea" kind="function"><name>PopLayer</name></member>
+    <member refid="classKinai_1_1LayerStack_1a87a54b82c973333d3e03adff9b791aef" kind="function"><name>PushOverlay</name></member>
+    <member refid="classKinai_1_1LayerStack_1aec2bd1ba0a72e3ac5fa508895dc97ea0" kind="function"><name>PopOverlay</name></member>
+    <member refid="classKinai_1_1LayerStack_1af8bfca9d20574e88cf377ec19979138e" kind="function"><name>Clear</name></member>
+    <member refid="classKinai_1_1LayerStack_1acb535c9cd4b9c0c34b29c0cb46b13f88" kind="function"><name>begin</name></member>
+    <member refid="classKinai_1_1LayerStack_1a5b0418aaf0e5b12d38a827ff656b227f" kind="function"><name>begin</name></member>
+    <member refid="classKinai_1_1LayerStack_1a08da8da8f860dc0f48ababf15f9938ea" kind="function"><name>end</name></member>
+    <member refid="classKinai_1_1LayerStack_1a0f0da3ec431cbde2755a844f1b8387c2" kind="function"><name>end</name></member>
+    <member refid="classKinai_1_1LayerStack_1a4bf887a22e9c3c59a679701c45c2f919" kind="function"><name>rbegin</name></member>
+    <member refid="classKinai_1_1LayerStack_1a09aea6fb978b7cadad85bc9f543aeef3" kind="function"><name>rbegin</name></member>
+    <member refid="classKinai_1_1LayerStack_1a58a71e0611d0d9fc834b4fd4dd02190a" kind="function"><name>rend</name></member>
+    <member refid="classKinai_1_1LayerStack_1a72b83fc2c8998ab0fda111136e6a8bd2" kind="function"><name>rend</name></member>
+  </compound>
+  <compound refid="structKinai_1_1LineVertex" kind="struct"><name>Kinai::LineVertex</name>
+    <member refid="structKinai_1_1LineVertex_1aa7339d5f336bd4f96c4d17dcbc7da0b8" kind="variable"><name>position</name></member>
+    <member refid="structKinai_1_1LineVertex_1a4a4fe46a9bae9b08399161ed635d0081" kind="variable"><name>color</name></member>
+    <member refid="structKinai_1_1LineVertex_1af337ba7e9e2ae4afe62b4c76adec1bd7" kind="variable"><name>tex_coord</name></member>
+  </compound>
+  <compound refid="classKinai_1_1Log" kind="class"><name>Kinai::Log</name>
+    <member refid="classKinai_1_1Log_1a427110519bf5b19a78386a857251f89c" kind="variable"><name>_output_streams</name></member>
+    <member refid="classKinai_1_1Log_1a4e55e5af72223da974616f116e63c9fa" kind="variable"><name>_error_streams</name></member>
+    <member refid="classKinai_1_1Log_1a84ae542faf9df7a78f2989effab9d764" kind="function"><name>Init</name></member>
+    <member refid="classKinai_1_1Log_1ad198583d420d1df38f6d77d11ebe2600" kind="function"><name>Trace</name></member>
+    <member refid="classKinai_1_1Log_1a5d0fcb5f82618efe0e49345e1b3688f9" kind="function"><name>Info</name></member>
+    <member refid="classKinai_1_1Log_1aedd4882a482588e0fd047018d699a86a" kind="function"><name>Warn</name></member>
+    <member refid="classKinai_1_1Log_1a554688940cc2fb49d23aa30ab3961c88" kind="function"><name>Error</name></member>
+    <member refid="classKinai_1_1Log_1a0c77f4169589ee8ea56646432994243c" kind="function"><name>Critical</name></member>
+    <member refid="classKinai_1_1Log_1aa2c8e9cc88fe8f6a8d2da8232f99b121" kind="function"><name>Print</name></member>
+  </compound>
+  <compound refid="classKinai_1_1MouseButtonEvent" kind="class"><name>Kinai::MouseButtonEvent</name>
+    <member refid="classKinai_1_1MouseButtonEvent_1a8134747ee4f117576cd97a7fc2f9a634" kind="variable"><name>_button</name></member>
+    <member refid="classKinai_1_1MouseButtonEvent_1acacc5a0ecce6b6602d3738da4d6ca973" kind="function"><name>MouseButtonEvent</name></member>
+    <member refid="classKinai_1_1MouseButtonEvent_1a0346ce8832abe57ba6b886738a408309" kind="function"><name>GetButton</name></member>
+    <member refid="classKinai_1_1MouseButtonEvent_1a1327699a7921a80f5f08e4bf180d9a23" kind="function"><name>EVENT_CLASS_CATEGORY</name></member>
+    <member refid="classKinai_1_1MouseButtonEvent_1a4f9bd3ab2951cc1680a330d508109888" kind="function"><name>MouseButtonEvent</name></member>
+  </compound>
+  <compound refid="classKinai_1_1MouseButtonPressedEvent" kind="class"><name>Kinai::MouseButtonPressedEvent</name>
+    <member refid="classKinai_1_1MouseButtonPressedEvent_1a21ff7f3904b605c3161e45735012361b" kind="function"><name>MouseButtonPressedEvent</name></member>
+    <member refid="classKinai_1_1MouseButtonPressedEvent_1ab15bad8bbc7661967140ca9396bd475a" kind="function"><name>EVENT_CLASS_TYPE</name></member>
+    <member refid="classKinai_1_1MouseButtonPressedEvent_1a7b5f5d9df0c575144fb50606fadf3634" kind="function"><name>ToString</name></member>
+  </compound>
+  <compound refid="classKinai_1_1MouseButtonReleasedEvent" kind="class"><name>Kinai::MouseButtonReleasedEvent</name>
+    <member refid="classKinai_1_1MouseButtonReleasedEvent_1ad8c4dc54286d8b9110bbb81827eb3b77" kind="function"><name>MouseButtonReleasedEvent</name></member>
+    <member refid="classKinai_1_1MouseButtonReleasedEvent_1a17b57b26733d03490bd3a5c03e96bbef" kind="function"><name>EVENT_CLASS_TYPE</name></member>
+    <member refid="classKinai_1_1MouseButtonReleasedEvent_1abbee780a9871cb65005ee6d9fbc18efa" kind="function"><name>ToString</name></member>
+  </compound>
+  <compound refid="classKinai_1_1MouseMotionEvent" kind="class"><name>Kinai::MouseMotionEvent</name>
+    <member refid="classKinai_1_1MouseMotionEvent_1a992d2c23e1eeef9e7da6dc65264d07a7" kind="variable"><name>_mouse_x</name></member>
+    <member refid="classKinai_1_1MouseMotionEvent_1a58749093273903edafdcaaf5837bfa9d" kind="variable"><name>_mouse_y</name></member>
+    <member refid="classKinai_1_1MouseMotionEvent_1a8c6a2423814222a8c5cde447b91e143c" kind="variable"><name>_delta_x</name></member>
+    <member refid="classKinai_1_1MouseMotionEvent_1ac74e68f9c60ec6dec3ef7f874f575bf9" kind="variable"><name>_delta_y</name></member>
+    <member refid="classKinai_1_1MouseMotionEvent_1a2d3b4c8ec16ad8404f4bf2726648b4a7" kind="function"><name>MouseMotionEvent</name></member>
+    <member refid="classKinai_1_1MouseMotionEvent_1aee835ffa2d1e5cdd4edc298d5686eeac" kind="function"><name>GetX</name></member>
+    <member refid="classKinai_1_1MouseMotionEvent_1ae6297891315770bf484a1501d76fe040" kind="function"><name>GetY</name></member>
+    <member refid="classKinai_1_1MouseMotionEvent_1a529429c171f71877e090c2782c673320" kind="function"><name>GetXRelative</name></member>
+    <member refid="classKinai_1_1MouseMotionEvent_1aff6e3632b2ff94aae5a33dc446f10419" kind="function"><name>GetYRelative</name></member>
+    <member refid="classKinai_1_1MouseMotionEvent_1aa13b3158fd621ebb158d7a77d1e8f809" kind="function"><name>EVENT_CLASS_TYPE</name></member>
+    <member refid="classKinai_1_1MouseMotionEvent_1a6b4ebec735c05c09229432ed94356ede" kind="function"><name>EVENT_CLASS_CATEGORY</name></member>
+    <member refid="classKinai_1_1MouseMotionEvent_1a4f9b76949956d3e6163f8e614e5cd201" kind="function"><name>ToString</name></member>
+  </compound>
+  <compound refid="classKinai_1_1MouseWheelEvent" kind="class"><name>Kinai::MouseWheelEvent</name>
+    <member refid="classKinai_1_1MouseWheelEvent_1a25dfaa9166aef7a83e6c80dc6192710e" kind="variable"><name>_wheel_x</name></member>
+    <member refid="classKinai_1_1MouseWheelEvent_1a2a4d1de1c66315a2edf7ca5136acc94f" kind="variable"><name>_wheel_y</name></member>
+    <member refid="classKinai_1_1MouseWheelEvent_1a60e7c669e2cb7c04dc7f3ddc8e12c129" kind="function"><name>MouseWheelEvent</name></member>
+    <member refid="classKinai_1_1MouseWheelEvent_1a4020646a75f8ff94e7033055aa33769e" kind="function"><name>GetXOffset</name></member>
+    <member refid="classKinai_1_1MouseWheelEvent_1aef996fa8779def264d23dd1883100417" kind="function"><name>GetYOffset</name></member>
+    <member refid="classKinai_1_1MouseWheelEvent_1ad42f77d7361c6de350623f6619705094" kind="function"><name>EVENT_CLASS_TYPE</name></member>
+    <member refid="classKinai_1_1MouseWheelEvent_1a17b5df43dc38b0747b459b3b938efc6d" kind="function"><name>EVENT_CLASS_CATEGORY</name></member>
+    <member refid="classKinai_1_1MouseWheelEvent_1a5b511145c9b770584aa2cf828c434041" kind="function"><name>ToString</name></member>
+  </compound>
+  <compound refid="classKinai_1_1OrthographicCamera" kind="class"><name>Kinai::OrthographicCamera</name>
+    <member refid="classKinai_1_1OrthographicCamera_1aadf9ef4348e75b13c6bdd4bfdddca9d0" kind="variable"><name>_position</name></member>
+    <member refid="classKinai_1_1OrthographicCamera_1a77513acf13a0b8c5d7b7870c1aa97ac6" kind="variable"><name>_rotation</name></member>
+    <member refid="classKinai_1_1OrthographicCamera_1a309e23885a4e50ec7da2052e6128b665" kind="variable"><name>_projection_matrix</name></member>
+    <member refid="classKinai_1_1OrthographicCamera_1abf15d5b2283007ebacd43e2202024097" kind="variable"><name>_view_matrix</name></member>
+    <member refid="classKinai_1_1OrthographicCamera_1a3138cbe92cbfb298b0d628a36165a8fe" kind="variable"><name>_view_projection_matrix</name></member>
+    <member refid="classKinai_1_1OrthographicCamera_1a8b4ee6ec3be3ac10e0709a0d6298f4f8" kind="function"><name>OrthographicCamera</name></member>
+    <member refid="classKinai_1_1OrthographicCamera_1a14109876df1cd730682dd3946a4280db" kind="function"><name>~OrthographicCamera</name></member>
+    <member refid="classKinai_1_1OrthographicCamera_1a16d2ffd327a97aa9306fba3d3183dbfd" kind="function"><name>SetProjection</name></member>
+    <member refid="classKinai_1_1OrthographicCamera_1a7817cb9e61d33d95c45ff2025ffd7c3b" kind="function"><name>SetPosition</name></member>
+    <member refid="classKinai_1_1OrthographicCamera_1a6d83c7b13ee1c6c6354d45604ba2238e" kind="function"><name>SetRotation</name></member>
+    <member refid="classKinai_1_1OrthographicCamera_1a6b5d391320707f1d44a0573658379234" kind="function"><name>GetPosition</name></member>
+    <member refid="classKinai_1_1OrthographicCamera_1ac7a964b94a26fba9bfb85892e32b77c4" kind="function"><name>GetRotation</name></member>
+    <member refid="classKinai_1_1OrthographicCamera_1a9038bce0256b6f0beacf751c8305a1b1" kind="function"><name>GetProjectionMatrix</name></member>
+    <member refid="classKinai_1_1OrthographicCamera_1ad94280836674cd61d3b46da0e919ca5f" kind="function"><name>GetViewMatrix</name></member>
+    <member refid="classKinai_1_1OrthographicCamera_1ac2ccf61e8085166bd5e6fe08f2953711" kind="function"><name>GetViewProjectionMatrix</name></member>
+    <member refid="classKinai_1_1OrthographicCamera_1a369a666cde65320fd1c6d7120ac7d98c" kind="function"><name>UpdateView</name></member>
+  </compound>
+  <compound refid="classKinai_1_1OrthographicCameraController" kind="class"><name>Kinai::OrthographicCameraController</name>
+    <member refid="classKinai_1_1OrthographicCameraController_1aa5325b712d9912bdce0859164e1ca317" kind="variable"><name>_camera</name></member>
+    <member refid="classKinai_1_1OrthographicCameraController_1abc1c2e362194deadca5b5ab868360e4d" kind="variable"><name>_config</name></member>
+    <member refid="classKinai_1_1OrthographicCameraController_1a364194542cc02dac147d191054ce28b1" kind="function"><name>OrthographicCameraController</name></member>
+    <member refid="classKinai_1_1OrthographicCameraController_1adc80117d9423d3abac7b954dca5ee6c2" kind="function"><name>OnUpdate</name></member>
+    <member refid="classKinai_1_1OrthographicCameraController_1aa5ffed1e0072e2f942d8f934a9f2adf5" kind="function"><name>OnEvent</name></member>
+    <member refid="classKinai_1_1OrthographicCameraController_1ae70a84a491438356d3d2f67339e05a1b" kind="function"><name>OnResize</name></member>
+    <member refid="classKinai_1_1OrthographicCameraController_1aa3b0c1c5730e6def01e05bfb677e09f8" kind="function"><name>GetCamera</name></member>
+    <member refid="classKinai_1_1OrthographicCameraController_1aa9a8d6ac8b0a5ad7e5cf2ea1378b678c" kind="function"><name>GetCamera</name></member>
+    <member refid="classKinai_1_1OrthographicCameraController_1a1fe41228233c72eab57fa642342d3c6e" kind="function"><name>OnMouseWheel</name></member>
+    <member refid="classKinai_1_1OrthographicCameraController_1a166e922510d08ef9b027ef296611ed6e" kind="function"><name>OnWindowResize</name></member>
+  </compound>
+  <compound refid="structKinai_1_1OrthographicCameraControllerConfig" kind="struct"><name>Kinai::OrthographicCameraControllerConfig</name>
+    <member refid="structKinai_1_1OrthographicCameraControllerConfig_1a11a16047789ea122438b35f97b049b07" kind="variable"><name>aspect_ratio</name></member>
+    <member refid="structKinai_1_1OrthographicCameraControllerConfig_1a0baea2bab350848119b66f02b3dc49ee" kind="variable"><name>enable_rotation</name></member>
+    <member refid="structKinai_1_1OrthographicCameraControllerConfig_1a535a9a6d8a4f0d7402f697972bd01603" kind="variable"><name>enable_zoom</name></member>
+    <member refid="structKinai_1_1OrthographicCameraControllerConfig_1ae18371a0fd53b1938a6395c1ee4cf2e2" kind="variable"><name>translation_speed</name></member>
+    <member refid="structKinai_1_1OrthographicCameraControllerConfig_1ac7f201a28bd53459f94babef549bcf16" kind="variable"><name>rotation_speed</name></member>
+    <member refid="structKinai_1_1OrthographicCameraControllerConfig_1a6f335560b976d1a0ca8279b5cd3aabab" kind="variable"><name>position</name></member>
+    <member refid="structKinai_1_1OrthographicCameraControllerConfig_1ae37429e51b32ee738c51d775423843ac" kind="variable"><name>rotation</name></member>
+    <member refid="structKinai_1_1OrthographicCameraControllerConfig_1ad0930e3a40417687e4677a058fb9490f" kind="variable"><name>zoom_level</name></member>
+  </compound>
+  <compound refid="classKinai_1_1Parser" kind="class"><name>Kinai::Parser</name>
+    <member refid="classKinai_1_1Parser_1abf299e0d3b4f21f72ccf245957a03dbc" kind="typedef"><name>value_type</name></member>
+    <member refid="classKinai_1_1Parser_1a879306a78c8ffa1c19f1329f0fb49180" kind="typedef"><name>reference</name></member>
+    <member refid="classKinai_1_1Parser_1ad5241667411ff58c986051a49b041c54" kind="typedef"><name>const_reference</name></member>
+    <member refid="classKinai_1_1Parser_1a153956c53c196044f9db00c1038ab042" kind="typedef"><name>pointer</name></member>
+    <member refid="classKinai_1_1Parser_1a0144368d4498500b63d06d59509f6660" kind="typedef"><name>const_pointer</name></member>
+    <member refid="classKinai_1_1Parser_1a6e6ca1f4afa6391dfaf55783fcbdc78f" kind="typedef"><name>token_type</name></member>
+    <member refid="classKinai_1_1Parser_1a27f1ff9b4b6ad84a34c57726ec6ef973" kind="typedef"><name>size_type</name></member>
+    <member refid="classKinai_1_1Parser_1a038ffcc28cfe1e0170646b55d84729ae" kind="typedef"><name>difference_type</name></member>
+    <member refid="classKinai_1_1Parser_1ac98b97f1403b6033ac3c6f43520f087c" kind="typedef"><name>string_type</name></member>
+    <member refid="classKinai_1_1Parser_1a8809887c63a0d480c04bd3222dbff916" kind="typedef"><name>iterator</name></member>
+    <member refid="classKinai_1_1Parser_1a9d43a110c610d6583fa6aa4cd2ddb901" kind="typedef"><name>const_iterator</name></member>
+    <member refid="classKinai_1_1Parser_1a3a9150fa8d1e6a2e8afd47ff0f4b3dcd" kind="variable"><name>_filepath</name></member>
+    <member refid="classKinai_1_1Parser_1acbec47b439c8d3fb5bb5c6cda8b690d3" kind="variable"><name>_tokens</name></member>
+    <member refid="classKinai_1_1Parser_1abc6dc57274d3ef7f11ae8b73e01cc182" kind="function"><name>Parser</name></member>
+    <member refid="classKinai_1_1Parser_1a161ea06f60e949b40616f7cca9b5a280" kind="function"><name>YELLOW</name></member>
+    <member refid="classKinai_1_1Parser_1a6a6122460c960ce355447ce80673d64b" kind="function"><name>CYAN</name></member>
+    <member refid="classKinai_1_1Parser_1ae8dcc9268cce1b07cd3457fa3d8e2704" kind="function"><name>MAGENTA</name></member>
+    <member refid="classKinai_1_1Parser_1a0e2e0791ffb1a22eae92a3ad44e0f137" kind="function"><name>RED</name></member>
+    <member refid="classKinai_1_1Parser_1a0a5f4f307501c5ae7f0a244a4d1db983" kind="function"><name>WHITE</name></member>
+    <member refid="classKinai_1_1Parser_1a9fde5480c4bb61ef5167db6d30b79fe6" kind="function"><name>iterator_equals</name></member>
+    <member refid="classKinai_1_1Parser_1abc4b4dd0890051b73ef57f6d7185e593" kind="function"><name>iterator_equals</name></member>
+    <member refid="classKinai_1_1Parser_1a126e3e7ff30cce92e514310af51d46d8" kind="function"><name>_make_iter</name></member>
+    <member refid="classKinai_1_1Parser_1a31ee50011df6d0bdcd5ce23992f15365" kind="function"><name>_make_iter</name></member>
+    <member refid="classKinai_1_1Parser_1a50b561c38556dcff39443567c1664981" kind="function"><name>_make_iter</name></member>
+    <member refid="classKinai_1_1Parser_1ab573a776bcbe2224a162df7d34145b46" kind="function"><name>_make_iter</name></member>
+    <member refid="classKinai_1_1Parser_1af8517c5978c3184e84858e71909a3f6c" kind="function"><name>_is_token</name></member>
+    <member refid="classKinai_1_1Parser_1acee9082bd5e7e812548a5b40123bced0" kind="function"><name>_make_error_string</name></member>
+    <member refid="classKinai_1_1Parser_1a3f2e0226ffd453fb0f6323ba5fd03428" kind="function"><name>_make_error_string</name></member>
+    <member refid="classKinai_1_1Parser_1a1778534e75aaea02e1ba4ed722faeed0" kind="function"><name>_make_warning_string</name></member>
+    <member refid="classKinai_1_1Parser_1ac973d4e2e43da531d13208169470f9de" kind="function"><name>_make_warning_string</name></member>
+    <member refid="classKinai_1_1Parser_1a9a386f1559a323da3bcb6365378b97ae" kind="function"><name>_make_note_string</name></member>
+    <member refid="classKinai_1_1Parser_1a6d0fcddb65bcdbf7f3ca10378e0e92d9" kind="function"><name>_throw_invalid_argument</name></member>
+    <member refid="classKinai_1_1Parser_1ad44f5fefba4d39414b64f760626b12f8" kind="function"><name>_throw_parser</name></member>
+    <member refid="classKinai_1_1Parser_1a8a071d81f5429351d328fd0ed74504f6" kind="function"><name>_throw_parser</name></member>
+    <member refid="classKinai_1_1Parser_1a54753b1bfb909762d4f61c52d975a9c0" kind="function"><name>_throw_parser_with_note</name></member>
+    <member refid="classKinai_1_1Parser_1ac6a0a8b4985f1b2fecc0f42cdaf209c2" kind="function"><name>WHITE</name></member>
+    <member refid="classKinai_1_1Parser_1a8a7e10bbf5cc0c95febafe67dbbe02f3" kind="function"><name>WHITE</name></member>
+    <member refid="classKinai_1_1Parser_1a4012c50f32044c3a2aebe3b25c1b764a" kind="function"><name>WHITE</name></member>
+    <member refid="classKinai_1_1Parser_1af337314428a953a892a0f0377a233385" kind="function"><name>_make_log_string_impl</name></member>
+    <member refid="classKinai_1_1Parser_1a3b081b3fb6280e6233961e6ec4e76f38" kind="function"><name>_make_log_string_impl</name></member>
+  </compound>
+  <compound refid="classKinai_1_1PerspectiveCamera" kind="class"><name>Kinai::PerspectiveCamera</name>
+    <member refid="classKinai_1_1PerspectiveCamera_1aa1c7117fe0e375162160b78b1e8a3f94" kind="variable"><name>_fov</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1ab609cc0a5880be50b5aacf9e16fcef8d" kind="variable"><name>_aspect_ratio</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a9170805ac139eed52ffa9ffccd605949" kind="variable"><name>_near_clip</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1ab436f77680baa413e7e418b076e87d2d" kind="variable"><name>_far_clip</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a68a25376f1d289f7f4e5bb952ce3c419" kind="variable"><name>_view_matrix</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1af0a71fe4c3df90b7e1ca045ddcd22a3a" kind="variable"><name>_position</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1ace041d75dfba5c606b9577f8e8dd7adc" kind="variable"><name>_focal_point</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a9c175b08ae56e99b9166ea2151dc7bda" kind="variable"><name>_inital_mouse_position</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a8f119a9c2e1156a958ef78cc6f980ebc" kind="variable"><name>_distance</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1afb1d385337bfe6e7affc758d078e6634" kind="variable"><name>_pitch</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a5b1df55bb8f5f2f2b2df6c020c7a2cf3" kind="variable"><name>_yaw</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a554ee4aaa9ff4f211b34361ca34afb8a" kind="variable"><name>_viewport_width</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1ac6e9c874f9310eab459dc574e1ead823" kind="variable"><name>_viewport_height</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a2e763ca6bae6e055054833676f7c884d" kind="function"><name>PerspectiveCamera</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1ae81931e68dcab73bd1d5d9755fcea78c" kind="function"><name>PerspectiveCamera</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a80b29b03467c427f525e56661ba1007e" kind="function"><name>~PerspectiveCamera</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a301f4e13d88c13ca6f54f21aed924170" kind="function"><name>OnUpdate</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1adfcd40ecc4005d1a23b46a060ff53451" kind="function"><name>SetViewportSize</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1ad68d89cdf584fb6c89d83c9d576d40fa" kind="function"><name>SetDistance</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1ab811b85f3b89d695c9e7613b35965364" kind="function"><name>SetPosition</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a488b28f3af0a031ec03839a9be9c5580" kind="function"><name>GetDistance</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1ae81cf466367b5ebcc0100e99edb5ccaa" kind="function"><name>GetViewMatrix</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a56c842e597589e696a7a3167103a94b8" kind="function"><name>GetViewProjectionMatrix</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1ac9e475ca944060782e31aa8b6dc162a3" kind="function"><name>GetUpDirection</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a5e6402220764c10b840263dd85dcd40d" kind="function"><name>GetRightDirection</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1adcada5a96b7eb58f2d27abb2db771855" kind="function"><name>GetForwardDirection</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a7f586f4c4acc0e5a808565e85cfe28f1" kind="function"><name>GetOrientation</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a054ea88cb1fe5d9eb7fd1fde82318b53" kind="function"><name>GetPosition</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a905a1c2de4606c392ef7541574ef9058" kind="function"><name>GetPitch</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a4ae99e1cec4dc2ecf5225a8104330144" kind="function"><name>GetYaw</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a8324a45f18dc00b8529782052872cc31" kind="function"><name>OnMouseWheel</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a0f601d820825a0ee3d170c7e203c7b4f" kind="function"><name>OnMouseMotion</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1ad8207842ac12ae3944971f973ddf679b" kind="function"><name>UpdateProjection</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a96dd3719c5880044a3f4a96ca2bfda15" kind="function"><name>UpdateView</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a2c56a4ddc07c7dcbe8e72858e8ad7cd6" kind="function"><name>MousePan</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a36eda31a9f8914fd7ed02723b41434ad" kind="function"><name>MouseRotate</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1ad047d2f6e353bd70ea67af29b72dfee6" kind="function"><name>MouseZoom</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a79ff8ac8ef7982c67f94754d559a0778" kind="function"><name>CalculatePosition</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a53d24a5537d5b270ace0c66372dc3143" kind="function"><name>PanSpeed</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1ab4831302f1aebbd9cfbbc489eade1422" kind="function"><name>RotationSpeed</name></member>
+    <member refid="classKinai_1_1PerspectiveCamera_1a82c704ec75744886a72520752efef04a" kind="function"><name>ZoomSpeed</name></member>
+  </compound>
+  <compound refid="classKinai_1_1PerspectiveCameraController" kind="class"><name>Kinai::PerspectiveCameraController</name>
+    <member refid="classKinai_1_1PerspectiveCameraController_1a410cdc6dc8680dff07cfe1244ff713de" kind="variable"><name>_camera</name></member>
+    <member refid="classKinai_1_1PerspectiveCameraController_1aac0a6d02a124dc9bb53e0c0da8ff40d3" kind="variable"><name>_config</name></member>
+    <member refid="classKinai_1_1PerspectiveCameraController_1a7d10ad1301c3b4daef390e76b6616ba5" kind="function"><name>PerspectiveCameraController</name></member>
+    <member refid="classKinai_1_1PerspectiveCameraController_1a182c1a80fd866c251f9542ac22276259" kind="function"><name>OnUpdate</name></member>
+    <member refid="classKinai_1_1PerspectiveCameraController_1a205f59b0e31e2889b0e419f7c6d1fd8f" kind="function"><name>OnEvent</name></member>
+    <member refid="classKinai_1_1PerspectiveCameraController_1ac72581a8aebed18df426e90c56770c6d" kind="function"><name>OnResize</name></member>
+    <member refid="classKinai_1_1PerspectiveCameraController_1a1750256fed658bfa3e05b62775e3a25b" kind="function"><name>GetCamera</name></member>
+    <member refid="classKinai_1_1PerspectiveCameraController_1a4f3bd74c0e1a275f22ae5ab6a8e28823" kind="function"><name>GetCamera</name></member>
+    <member refid="classKinai_1_1PerspectiveCameraController_1acd037ec142d8c7026a7b5adfcb61b465" kind="function"><name>IsCursorLocked</name></member>
+    <member refid="classKinai_1_1PerspectiveCameraController_1a904c9612c54d1090377a3fc6f9c723a2" kind="function"><name>SetCursorLock</name></member>
+    <member refid="classKinai_1_1PerspectiveCameraController_1abfb3ceffd7d6d7cdff7c117a90d6aa60" kind="function"><name>IsRotationEnabled</name></member>
+    <member refid="classKinai_1_1PerspectiveCameraController_1a5340ec72d67586464603ef3b99dc0b14" kind="function"><name>SetRotationEnabled</name></member>
+    <member refid="classKinai_1_1PerspectiveCameraController_1a0e53e62984d6f5b555467e1c77680c07" kind="function"><name>OnMouseWheel</name></member>
+    <member refid="classKinai_1_1PerspectiveCameraController_1a2c4ddffc404b08d5f9a58302e15111fb" kind="function"><name>OnMouseMotion</name></member>
+    <member refid="classKinai_1_1PerspectiveCameraController_1a53841928e01023e3d33d563ea8b54ef3" kind="function"><name>OnWindowResize</name></member>
+  </compound>
+  <compound refid="structKinai_1_1PerspectiveCameraControllerConfig" kind="struct"><name>Kinai::PerspectiveCameraControllerConfig</name>
+    <member refid="structKinai_1_1PerspectiveCameraControllerConfig_1a0d6c892c8e1b89b15efaac13ca59c8e0" kind="variable"><name>viewport_width</name></member>
+    <member refid="structKinai_1_1PerspectiveCameraControllerConfig_1a729f010490f9f7304a7b4d81b0df7740" kind="variable"><name>viewport_height</name></member>
+    <member refid="structKinai_1_1PerspectiveCameraControllerConfig_1a01deeac6a38f60abce6accdb7fc7fc41" kind="variable"><name>fov</name></member>
+    <member refid="structKinai_1_1PerspectiveCameraControllerConfig_1a301bbe6f1c2eb9498756601d3a155890" kind="variable"><name>near_clip</name></member>
+    <member refid="structKinai_1_1PerspectiveCameraControllerConfig_1a0b46374b6ddf02449894c315c7c36744" kind="variable"><name>far_clip</name></member>
+    <member refid="structKinai_1_1PerspectiveCameraControllerConfig_1a49bd756617e2f9d40ccacc7c8888db85" kind="variable"><name>speed</name></member>
+    <member refid="structKinai_1_1PerspectiveCameraControllerConfig_1abd111f0f25f0e0ceaa95c247b704b12f" kind="variable"><name>position</name></member>
+    <member refid="structKinai_1_1PerspectiveCameraControllerConfig_1abbcdea9e27a9392bb554042455e6dff0" kind="variable"><name>no_rotation</name></member>
+    <member refid="structKinai_1_1PerspectiveCameraControllerConfig_1adb65dc129871c5c775739b1617fe7c76" kind="variable"><name>no_lock_cursor</name></member>
+    <member refid="structKinai_1_1PerspectiveCameraControllerConfig_1a1c028e9ca99740680f445ae21289507b" kind="variable"><name>no_lock_rotation</name></member>
+  </compound>
+  <compound refid="structKinai_1_1Pipeline" kind="struct"><name>Kinai::Pipeline</name>
+    <member refid="structKinai_1_1Pipeline_1acc92a15c08c0f3bab0b8eb77d0ff6422" kind="variable"><name>shader</name></member>
+    <member refid="structKinai_1_1Pipeline_1a480add19e4876859d552e3c3aa03ed6d" kind="variable"><name>vertex_array</name></member>
+    <member refid="structKinai_1_1Pipeline_1aa925b12f654482b69ddc08d5fe70353d" kind="variable"><name>vertex_buffer</name></member>
+    <member refid="structKinai_1_1Pipeline_1a25675e694fb8adc26ab75429128ffd86" kind="variable"><name>index</name></member>
+    <member refid="structKinai_1_1Pipeline_1a6efdfde8ce1722da6827bfbf18f3a4fc" kind="variable"><name>vertex_buffer_base</name></member>
+    <member refid="structKinai_1_1Pipeline_1a6e473e764f188af3eed02f326a3dc68c" kind="variable"><name>vertex_buffer_ptr</name></member>
+  </compound>
+  <compound refid="structKinai_1_1QuadVertex" kind="struct"><name>Kinai::QuadVertex</name>
+    <member refid="structKinai_1_1QuadVertex_1abc1e22be7e6ea6e955a9271f4b4dec64" kind="variable"><name>position</name></member>
+    <member refid="structKinai_1_1QuadVertex_1af2e8074fd48ee91dbb3b1a4878808615" kind="variable"><name>tex_coord</name></member>
+    <member refid="structKinai_1_1QuadVertex_1a81874dcffa05691c8cdc18d809ee98fd" kind="variable"><name>color</name></member>
+    <member refid="structKinai_1_1QuadVertex_1a6ce43c48260dfc9f77d112ce8a5ff2c5" kind="variable"><name>tex_index</name></member>
+  </compound>
+  <compound refid="classKinai_1_1RenderCommand" kind="class"><name>Kinai::RenderCommand</name>
+    <member refid="classKinai_1_1RenderCommand_1a7c6d2c79fac84bd0e28237727ef7d2eb" kind="variable"><name>_renderer_api</name></member>
+    <member refid="classKinai_1_1RenderCommand_1a376dd2a223a1ca33e82bc94412052585" kind="function"><name>Init</name></member>
+    <member refid="classKinai_1_1RenderCommand_1a26449c59205b0ba0226224b1a4a9c4ce" kind="function"><name>SetViewport</name></member>
+    <member refid="classKinai_1_1RenderCommand_1a8a8fa585aa6aadfdfcf4d5efa2b45225" kind="function"><name>SetClearColor</name></member>
+    <member refid="classKinai_1_1RenderCommand_1af09497bde16d8dc0e54ef1747ff9984d" kind="function"><name>SetClearColor</name></member>
+    <member refid="classKinai_1_1RenderCommand_1aecf9886e6851fb0c858d764aeb82bce4" kind="function"><name>SetClearColor</name></member>
+    <member refid="classKinai_1_1RenderCommand_1a3eb8cca3d15d86211fed94c410de4cf2" kind="function"><name>Clear</name></member>
+    <member refid="classKinai_1_1RenderCommand_1a7f3fad9c31b060546c139dbff1423ff6" kind="function"><name>DrawIndexed</name></member>
+    <member refid="classKinai_1_1RenderCommand_1a8e9e50ecbbf25ee23d5cd7bb7334a894" kind="function"><name>DrawLines</name></member>
+    <member refid="classKinai_1_1RenderCommand_1a0f6f55af29357f537764e10d56490e50" kind="function"><name>DrawTriangles</name></member>
+    <member refid="classKinai_1_1RenderCommand_1a437e722993d2e1d5a4d89d0a7c35ba29" kind="function"><name>SetLineWidth</name></member>
+  </compound>
+  <compound refid="classKinai_1_1Renderer" kind="class"><name>Kinai::Renderer</name>
+    <member refid="classKinai_1_1Renderer_1a5ab47b679790ee7162094c1a6a4731cb" kind="variable"><name>_view_proj</name></member>
+    <member refid="classKinai_1_1Renderer_1a1c2a20fb47222ebb46b3aa479ab81cd9" kind="function"><name>Init</name></member>
+    <member refid="classKinai_1_1Renderer_1a81c38924ae46bbb0644c798cade51a2a" kind="function"><name>Shutdown</name></member>
+    <member refid="classKinai_1_1Renderer_1a91ec663e5b1e555ea631a504b4808de8" kind="function"><name>BeginFrame</name></member>
+    <member refid="classKinai_1_1Renderer_1ab934b878d924079ceb620354a0710445" kind="function"><name>EndFrame</name></member>
+    <member refid="classKinai_1_1Renderer_1a12ad99c6065428f90e0956f52c79197d" kind="function"><name>OnWindowResize</name></member>
+    <member refid="classKinai_1_1Renderer_1ab63bfc117f745ffe3435f6c43b497352" kind="function"><name>Submit</name></member>
+    <member refid="classKinai_1_1Renderer_1a357df584c417b9b800cc5598d04fba4a" kind="function"><name>SubmitTriangles</name></member>
+  </compound>
+  <compound refid="classKinai_1_1Renderer2D" kind="class"><name>Kinai::Renderer2D</name>
+    <member refid="classKinai_1_1Renderer2D_1abcbe53791c9a67ae123b2723c207e6f5" kind="variable"><name>MAX_QUADS</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a342c1a1051f599e09e5156035eb05a21" kind="variable"><name>MAX_VERTICES</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a55ad81c59413e52427f677b3fcdc1e1c" kind="variable"><name>MAX_INDICES</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a89d8f322796949138331229da7b205c4" kind="variable"><name>MAX_TEXTURE_SLOTS</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a83a33af569a9b565b361d4352dcd10e4" kind="variable"><name>_shader_library</name></member>
+    <member refid="classKinai_1_1Renderer2D_1aa96adadf4a5edce87dd31f4a7a7e976d" kind="variable"><name>_pip_quad</name></member>
+    <member refid="classKinai_1_1Renderer2D_1ac56b980f21d2e9aac441c60e3ca27472" kind="variable"><name>_quad_vertex_positions</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a895b54d0f5fb72362b530a99ded99fd4" kind="variable"><name>_texture_slots</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a8d6366ec9902f92a9c6def54f7a2cc86" kind="variable"><name>_texture_slot_index</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a8a07476c34ebacc58ae86b9d29bbbe45" kind="variable"><name>_camera_uniforms</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a5944d0cb2fb44675ce7f4a9cacd9eef6" kind="variable"><name>_camera_uniforms_buffer</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a7f0eaba17ad695ffcc2b89d05d5355c5" kind="variable"><name>_builtin_uniforms</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a676e67ccfe0beb753793a725edcb12f1" kind="variable"><name>_builtin_uniforms_buffer</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a3e2ad23073214611844da5220abf2e7b" kind="variable"><name>_screen_framebuffer</name></member>
+    <member refid="classKinai_1_1Renderer2D_1aa4b7ef14cf20ea838793a3ccfdb412bd" kind="variable"><name>_stats</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a1a5a408469c93bb72bc57c60f9899b3b" kind="function"><name>BeginFrame</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a13add3ecc494294d44c97c93ee7eaccf" kind="function"><name>BeginFrame</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a505ca85aec8343a248895424a62cf299" kind="function"><name>BeginFrame</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a25432c43b2ee047e3e161b742b2e6dcb" kind="function"><name>Flush</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a6bd1898427d7a420d7c071cb4895c8a9" kind="function"><name>UpdateViewport</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a7e952226e89ed0556b674e5264d7b9d9" kind="function"><name>EndFrame</name></member>
+    <member refid="classKinai_1_1Renderer2D_1af7b5fbb3d9368952c910882e7d15576a" kind="function"><name>DrawCircle</name></member>
+    <member refid="classKinai_1_1Renderer2D_1acc6afe0b53610e358192967c57c1925b" kind="function"><name>DrawLine</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a657b3e1c44a75bf46210cb8b8182af9e" kind="function"><name>GetLineWidth</name></member>
+    <member refid="classKinai_1_1Renderer2D_1adecb4b0fc74a86b100f48d37c5f79ab7" kind="function"><name>SetLineWidth</name></member>
+    <member refid="classKinai_1_1Renderer2D_1ad87f29e0a8036b9b37a8f70fb96fa88b" kind="function"><name>DrawQuad</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a3b8cef68fd7cf14b008d33c60ac8be9a" kind="function"><name>DrawQuad</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a9f8002d13749f5c12ed6947c7e827f99" kind="function"><name>DrawQuad</name></member>
+    <member refid="classKinai_1_1Renderer2D_1add00edfd769bacf7a41e7bd98fee63dc" kind="function"><name>DrawQuad</name></member>
+    <member refid="classKinai_1_1Renderer2D_1af728c1a037f48a0dfdd25430bf5e5a19" kind="function"><name>DrawQuad</name></member>
+    <member refid="classKinai_1_1Renderer2D_1ac00a2f97e0232af5c0aa45687a823f91" kind="function"><name>DrawQuad</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a6d8464ba018bb2b496097d4713943102" kind="function"><name>DrawQuad</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a7beeac87a33b5d162da26fbbff97f77d" kind="function"><name>DrawQuad</name></member>
+    <member refid="classKinai_1_1Renderer2D_1ad949a367131ea777890897691f6825f5" kind="function"><name>DrawQuad</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a5e68082e6889225792377eebf6e20caf" kind="function"><name>DrawRotatedQuad</name></member>
+    <member refid="classKinai_1_1Renderer2D_1aa2bcd9c95e97d267458388cffcca08bc" kind="function"><name>DrawRotatedQuad</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a63dd327280174258d9545326236b9332" kind="function"><name>DrawRotatedQuad</name></member>
+    <member refid="classKinai_1_1Renderer2D_1aca9000b958e14efbf1a6da95e40e645f" kind="function"><name>DrawRotatedQuad</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a8cc0b42002b2f696b4fb58ed057bd479" kind="function"><name>DrawRect</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a6ba2314251ad1c9c341a617c2f05a7b4" kind="function"><name>DrawRect</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a1976aa1547c772f1c07654de93b6e040" kind="function"><name>MakeShader</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a4f960fb0eaebba8b6d20d647944cd49d" kind="function"><name>SetQuadShader</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a14596791bfcdaf340c648bf66a4f6e37" kind="function"><name>ResetQuadShader</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a98286d2cbdd1f3fd5a994562a1c5f847" kind="function"><name>Init</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a7f27efabb84aad84d7b18a8c4281e0db" kind="function"><name>Shutdown</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a4ed19d5044bfbb2a2cdbd2b9acc09e21" kind="function"><name>GetStats</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a65f33876a0e301a45c89599e261244b4" kind="function"><name>StartBatch</name></member>
+    <member refid="classKinai_1_1Renderer2D_1aec3af12285e0adb541c693241bcf6ebe" kind="function"><name>NextBatch</name></member>
+    <member refid="classKinai_1_1Renderer2D_1aef37012adbbf7c7c9044ff7fdf78f543" kind="function"><name>MakeCommonPipelines</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a496ddc43f8f47b83050ac41837e5533b" kind="function"><name>MakeQuadPipeline</name></member>
+    <member refid="classKinai_1_1Renderer2D_1ad15a612b9d451fb3f6f646f7cace39cb" kind="function"><name>FlushQuadPipeline</name></member>
+    <member refid="classKinai_1_1Renderer2D_1aeddf92340314c2cfd9b0b059cdde649c" kind="function"><name>FlushCirclePipeline</name></member>
+    <member refid="classKinai_1_1Renderer2D_1acbdb2b683ef2257e05cca036b25f53d0" kind="function"><name>FlushLinePipeline</name></member>
+    <member refid="classKinai_1_1Renderer2D_1ad45a51b619616d3b161f8426c13ab2c5" kind="function"><name>DestroyQuadPipeline</name></member>
+    <member refid="classKinai_1_1Renderer2D_1acf654cb5bfd39e3c4eaed0bb54da3e5a" kind="function"><name>MakeShaders</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a5174316fdd17323129a6703fe321240f" kind="function"><name>MakeScreenFramebuffers</name></member>
+    <member refid="classKinai_1_1Renderer2D_1a551a63576968886b5ea6a713e5a01b7b" kind="function"><name>CopyScreenToBackBuffer</name></member>
+  </compound>
+  <compound refid="classKinai_1_1RendererAPI" kind="class"><name>Kinai::RendererAPI</name>
+    <member refid="classKinai_1_1RendererAPI_1ad8094841f9ec6d8fb562118a213df322" kind="enum"><name>API</name></member>
+    <member refid="classKinai_1_1RendererAPI_1ad8094841f9ec6d8fb562118a213df322a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
+    <member refid="classKinai_1_1RendererAPI_1ad8094841f9ec6d8fb562118a213df322a760716b590ee7c0adc25f434f577d8be" kind="enumvalue"><name>OpenGL</name></member>
+    <member refid="classKinai_1_1RendererAPI_1a6b8c39dc94c4ba4070343f4088283b07" kind="function"><name>~RendererAPI</name></member>
+    <member refid="classKinai_1_1RendererAPI_1a017fa32aa972f75efb89fa12f69f067e" kind="function"><name>Init</name></member>
+    <member refid="classKinai_1_1RendererAPI_1ad57354380eab04d42203c1203eaf783a" kind="function"><name>SetViewport</name></member>
+    <member refid="classKinai_1_1RendererAPI_1a4bcb046e4245c55d507d484948f63424" kind="function"><name>SetClearColor</name></member>
+    <member refid="classKinai_1_1RendererAPI_1aa748ed7d13c05cefac00c12f1af961e6" kind="function"><name>Clear</name></member>
+    <member refid="classKinai_1_1RendererAPI_1a1896d1d62b1177699fc4f2ca8ce75ffa" kind="function"><name>DrawIndexed</name></member>
+    <member refid="classKinai_1_1RendererAPI_1a26de9ab55dda07fa79baf96a3de7dc93" kind="function"><name>DrawLines</name></member>
+    <member refid="classKinai_1_1RendererAPI_1a4e52e436c22605ba7a883fb8ec55e7ca" kind="function"><name>DrawTriangles</name></member>
+    <member refid="classKinai_1_1RendererAPI_1aa3cdba2e606b95417ea9973996299918" kind="function"><name>SetLineWidth</name></member>
+    <member refid="classKinai_1_1RendererAPI_1a5c518f04e00520454deae5b6dd9742d6" kind="function"><name>Create</name></member>
+  </compound>
+  <compound refid="classKinai_1_1Shader" kind="class"><name>Kinai::Shader</name>
+    <member refid="classKinai_1_1Shader_1acaa90859fc877a3f0e24b57bbc233d4b" kind="function"><name>~Shader</name></member>
+    <member refid="classKinai_1_1Shader_1a606b34d3eeb7a75ca82be75e2a2cdbfe" kind="function"><name>Bind</name></member>
+    <member refid="classKinai_1_1Shader_1a996e57d8f7fcb164ca7db1b26b14a8ab" kind="function"><name>Unbind</name></member>
+    <member refid="classKinai_1_1Shader_1a49cb359b8b688ff3e3f378d6919a2c23" kind="function"><name>SetInt</name></member>
+    <member refid="classKinai_1_1Shader_1a69367aac7b107cc1ddf23e06126ec853" kind="function"><name>SetIntArray</name></member>
+    <member refid="classKinai_1_1Shader_1a9b1653f006f17494cf8be65138e75a5f" kind="function"><name>SetFloat</name></member>
+    <member refid="classKinai_1_1Shader_1a400693a2fad5fd2f7354d5027df17bb8" kind="function"><name>SetFloat2</name></member>
+    <member refid="classKinai_1_1Shader_1a5b068ab0e0906dab8bbee65fc1843640" kind="function"><name>SetFloat3</name></member>
+    <member refid="classKinai_1_1Shader_1ac6214b078ca235aab97e34c4bb125ade" kind="function"><name>SetFloat4</name></member>
+    <member refid="classKinai_1_1Shader_1a802860e935bfd304459a9147791fded4" kind="function"><name>SetMat4</name></member>
+    <member refid="classKinai_1_1Shader_1ae591d83e94d05a934c6423291a63ecd1" kind="function"><name>GetName</name></member>
+    <member refid="classKinai_1_1Shader_1a5cdd787b70114ea5f7f9e7c989313cc8" kind="function"><name>Create</name></member>
+    <member refid="classKinai_1_1Shader_1a85f83d912605221514c2b1c012cecf7d" kind="function"><name>Create</name></member>
+  </compound>
+  <compound refid="classKinai_1_1Renderer2D_1_1Shader2D" kind="class"><name>Kinai::Renderer2D::Shader2D</name>
+    <member refid="classKinai_1_1Renderer2D_1_1Shader2D_1a92c6d4f90096b84ceea72ad25b0dd6d6" kind="variable"><name>_shader</name></member>
+    <member refid="classKinai_1_1Renderer2D_1_1Shader2D_1a5222bc319f9a1a80f91167670e26e8db" kind="friend"><name>Renderer2D</name></member>
+    <member refid="classKinai_1_1Renderer2D_1_1Shader2D_1a41566c71fea4bcc63afbfaf3184765e0" kind="function"><name>GetShader</name></member>
+    <member refid="classKinai_1_1Renderer2D_1_1Shader2D_1a2b34f5adee4bd815d8b9e7d8de6c683f" kind="function"><name>Shader2D</name></member>
+  </compound>
+  <compound refid="structKinai_1_1Shader2D" kind="struct"><name>Kinai::Shader2D</name>
+    <member refid="structKinai_1_1Shader2D_1a762c629623b830337e5a7331db25c54f" kind="variable"><name>shader</name></member>
+  </compound>
+  <compound refid="classKinai_1_1ShaderLibrary" kind="class"><name>Kinai::ShaderLibrary</name>
+    <member refid="classKinai_1_1ShaderLibrary_1a0bc316978cb63324e3042ddf9f74b96a" kind="variable"><name>_shaders</name></member>
+    <member refid="classKinai_1_1ShaderLibrary_1ac9cea627fca0516f19b4160ae7af3f85" kind="function"><name>Add</name></member>
+    <member refid="classKinai_1_1ShaderLibrary_1af322f8df35fea4c6e152c6c0aabbfffe" kind="function"><name>Add</name></member>
+    <member refid="classKinai_1_1ShaderLibrary_1ad8f32526579e83ad63cbbfa178613501" kind="function"><name>Load</name></member>
+    <member refid="classKinai_1_1ShaderLibrary_1a8ef75bbf9100ef20b284fcb142ef6d68" kind="function"><name>Load</name></member>
+    <member refid="classKinai_1_1ShaderLibrary_1aed3b5c77dab5db35ae6605246a915170" kind="function"><name>Get</name></member>
+    <member refid="classKinai_1_1ShaderLibrary_1a452f13041fd8e187a3a1b8919f48c861" kind="function"><name>Exists</name></member>
+  </compound>
+  <compound refid="classKinai_1_1Renderer2D_1_1Statistics" kind="class"><name>Kinai::Renderer2D::Statistics</name>
+    <member refid="classKinai_1_1Renderer2D_1_1Statistics_1a3ae30911086b91efac11335e4dbd328d" kind="variable"><name>_draw_calls</name></member>
+    <member refid="classKinai_1_1Renderer2D_1_1Statistics_1a3f796f54634fb7455a2a3021ec737495" kind="variable"><name>_quad_count</name></member>
+    <member refid="classKinai_1_1Renderer2D_1_1Statistics_1a5222bc319f9a1a80f91167670e26e8db" kind="friend"><name>Renderer2D</name></member>
+    <member refid="classKinai_1_1Renderer2D_1_1Statistics_1ac7a0c36ac9bb4a3027f7ed10cd325b90" kind="function"><name>GetTotalVertexCount</name></member>
+    <member refid="classKinai_1_1Renderer2D_1_1Statistics_1a4aae9d2cdc51fde3e476b3e83c083751" kind="function"><name>GetTotalIndexCount</name></member>
+    <member refid="classKinai_1_1Renderer2D_1_1Statistics_1a56fc28d48ac694361cbf23d85105a446" kind="function"><name>Reset</name></member>
+    <member refid="classKinai_1_1Renderer2D_1_1Statistics_1a501a635595095d2a657f7ed85437b026" kind="function"><name>GetDrawCalls</name></member>
+    <member refid="classKinai_1_1Renderer2D_1_1Statistics_1aefd716be5f9052d3b8d1bc6a9fa2726d" kind="function"><name>GetQuadCount</name></member>
+    <member refid="classKinai_1_1Renderer2D_1_1Statistics_1a8d338a77d4e3aa6a6924cfa15f4ac40e" kind="function"><name>Statistics</name></member>
+  </compound>
+  <compound refid="classKinai_1_1Texture" kind="class"><name>Kinai::Texture</name>
+    <member refid="classKinai_1_1Texture_1a37b594c338c0576c32f2c402e3a734fa" kind="function"><name>~Texture</name></member>
+    <member refid="classKinai_1_1Texture_1afcee9cc56051db80fe7f206b5b4c07e2" kind="function"><name>GetConfig</name></member>
+    <member refid="classKinai_1_1Texture_1a9697fd3e73613156fd8d08c8d863ac84" kind="function"><name>GetWidth</name></member>
+    <member refid="classKinai_1_1Texture_1aeb3d37e28a3158deebdfe5f66f4377cc" kind="function"><name>GetHeight</name></member>
+    <member refid="classKinai_1_1Texture_1a8f2fe0f42921597e2f3d298ff2d9ec65" kind="function"><name>GetRendererID</name></member>
+    <member refid="classKinai_1_1Texture_1a4aff807d90f02a0f8300016b93dd831f" kind="function"><name>GetPath</name></member>
+    <member refid="classKinai_1_1Texture_1a7822fb499d3d27712f59ce431d9aa797" kind="function"><name>SetData</name></member>
+    <member refid="classKinai_1_1Texture_1aa3091c01fe746b7fdf0b0731b5efd204" kind="function"><name>Bind</name></member>
+    <member refid="classKinai_1_1Texture_1abee10c9778efa64959997452b028a6e8" kind="function"><name>IsLoaded</name></member>
+    <member refid="classKinai_1_1Texture_1a3a3929b1e1fbb62925a24c8242c414f7" kind="function"><name>operator==</name></member>
+  </compound>
+  <compound refid="classKinai_1_1Texture2D" kind="class"><name>Kinai::Texture2D</name>
+    <member refid="classKinai_1_1Texture2D_1a94b6e33fe1be1fafc6da0eadad3ae9c5" kind="function"><name>Create</name></member>
+    <member refid="classKinai_1_1Texture2D_1aece37e2636ea57c590c57806be6675b2" kind="function"><name>Create</name></member>
+  </compound>
+  <compound refid="structKinai_1_1TextureConfig" kind="struct"><name>Kinai::TextureConfig</name>
+    <member refid="structKinai_1_1TextureConfig_1a298d762797a4f5e01fa2002f7fe63ce6" kind="variable"><name>width</name></member>
+    <member refid="structKinai_1_1TextureConfig_1ad6af37298b6428a118665f50bb3a0afc" kind="variable"><name>height</name></member>
+    <member refid="structKinai_1_1TextureConfig_1a10982c446f6c04f85cd495dd5c5df136" kind="variable"><name>format</name></member>
+    <member refid="structKinai_1_1TextureConfig_1a68a7c24546c97924822263934151ee23" kind="variable"><name>generate_mips</name></member>
+    <member refid="structKinai_1_1TextureConfig_1aa1882c78210079fa54e430e47b6acf24" kind="variable"><name>min_filter</name></member>
+    <member refid="structKinai_1_1TextureConfig_1a2b3e5f401bb7a2f261156aac155eaec7" kind="variable"><name>max_filter</name></member>
+  </compound>
+  <compound refid="structKinai_1_1Time" kind="struct"><name>Kinai::Time</name>
+    <member refid="structKinai_1_1Time_1af27f4ac99178ca402dc3ede75564e8e5" kind="variable"><name>fps</name></member>
+    <member refid="structKinai_1_1Time_1a4adc3fbab9732c413608a61e5ca1f66b" kind="variable"><name>frames</name></member>
+    <member refid="structKinai_1_1Time_1a723554efa069e70481889f0f7f3b40c9" kind="variable"><name>last</name></member>
+    <member refid="structKinai_1_1Time_1a65262a607946f5ce68f32a418d63da68" kind="variable"><name>last_second</name></member>
+    <member refid="structKinai_1_1Time_1a52d2e605fb61b77811ff85b60f41d00d" kind="variable"><name>frame_time</name></member>
+    <member refid="structKinai_1_1Time_1a985213de245267b2761d1feca38e07d7" kind="variable"><name>delta</name></member>
+  </compound>
+  <compound refid="classKinai_1_1Timer" kind="class"><name>Kinai::Timer</name>
+    <member refid="classKinai_1_1Timer_1a60043b22244c797bd5d15ed6837b883d" kind="variable"><name>_start</name></member>
+    <member refid="classKinai_1_1Timer_1a84a68257ca0a76d70be341d755a08bee" kind="function"><name>Timer</name></member>
+    <member refid="classKinai_1_1Timer_1a02e588b42fd3f27db72034aca024c985" kind="function"><name>Reset</name></member>
+    <member refid="classKinai_1_1Timer_1a6c73443a97dfde1f36c0235dc4baa0d9" kind="function"><name>ElapsedSeconds</name></member>
+    <member refid="classKinai_1_1Timer_1a5b7e29a66403dc3000e9070cb25a6485" kind="function"><name>ElapsedMS</name></member>
+  </compound>
+  <compound refid="structKinai_1_1TokenBase" kind="struct"><name>Kinai::TokenBase</name>
+    <member refid="structKinai_1_1TokenBase_1af51e8306403483991b53178b5019858b" kind="typedef"><name>token_type</name></member>
+    <member refid="structKinai_1_1TokenBase_1a5a19f2e71a0b1150dce1b4f7edf870fb" kind="typedef"><name>size_type</name></member>
+    <member refid="structKinai_1_1TokenBase_1a04c06923b98af7ccc6d7ae426ac80899" kind="typedef"><name>difference_type</name></member>
+    <member refid="structKinai_1_1TokenBase_1a334e399f837314f966b0c556cbb3ae93" kind="typedef"><name>string_type</name></member>
+    <member refid="structKinai_1_1TokenBase_1ac59763a32e9296bf67fffbcc12882cd7" kind="variable"><name>type</name></member>
+    <member refid="structKinai_1_1TokenBase_1a9b84962fda36da47449717e098432ed7" kind="variable"><name>text</name></member>
+    <member refid="structKinai_1_1TokenBase_1a3f61219408834ff61493ecccbc1c2372" kind="variable"><name>row</name></member>
+    <member refid="structKinai_1_1TokenBase_1aa5d84e5281415e8f9732b31eb93166ff" kind="variable"><name>col</name></member>
+    <member refid="structKinai_1_1TokenBase_1a84fe2a5e23ea76a191ac3eeaa19c0396" kind="function"><name>TokenBase</name></member>
+  </compound>
+  <compound refid="classKinai_1_1UniformBuffer" kind="class"><name>Kinai::UniformBuffer</name>
+    <member refid="classKinai_1_1UniformBuffer_1a15ccf66b2fd783c9ad2f37643f860603" kind="function"><name>~UniformBuffer</name></member>
+    <member refid="classKinai_1_1UniformBuffer_1a2ea463705c24c6d159395dd027e056ac" kind="function"><name>SetData</name></member>
+    <member refid="classKinai_1_1UniformBuffer_1a428ee531da39073035edfca408648e9e" kind="function"><name>Create</name></member>
+  </compound>
+  <compound refid="classKinai_1_1VertexArray" kind="class"><name>Kinai::VertexArray</name>
+    <member refid="classKinai_1_1VertexArray_1a59133ba1d5ed293abca57222eeaed5ee" kind="function"><name>~VertexArray</name></member>
+    <member refid="classKinai_1_1VertexArray_1a0185ecc79683f8387cc4528451aae2f1" kind="function"><name>Bind</name></member>
+    <member refid="classKinai_1_1VertexArray_1aede0285221420c1f59f00f4cea6279e7" kind="function"><name>Unbind</name></member>
+    <member refid="classKinai_1_1VertexArray_1ad22df6be1a0c5f40239f4d3cb1b13860" kind="function"><name>AddVertexBuffer</name></member>
+    <member refid="classKinai_1_1VertexArray_1a5839c106d466177feff7b713d92fdc9e" kind="function"><name>SetIndexBuffer</name></member>
+    <member refid="classKinai_1_1VertexArray_1ae047870c8c4e4a520c74bc606483b336" kind="function"><name>GetVertexBuffers</name></member>
+    <member refid="classKinai_1_1VertexArray_1a6ed49b9f5407f6581e458a769d252251" kind="function"><name>GetIndexBuffer</name></member>
+    <member refid="classKinai_1_1VertexArray_1a2adf283f6d6d6f82f531724389401384" kind="function"><name>Create</name></member>
+  </compound>
+  <compound refid="classKinai_1_1VertexBuffer" kind="class"><name>Kinai::VertexBuffer</name>
+    <member refid="classKinai_1_1VertexBuffer_1a896afc08819251737eb42c0f1a0ac63e" kind="function"><name>~VertexBuffer</name></member>
+    <member refid="classKinai_1_1VertexBuffer_1ad05115354d156cf47599c4f819ffdacb" kind="function"><name>Bind</name></member>
+    <member refid="classKinai_1_1VertexBuffer_1a0575c23799eecce3374a9548ad776e6f" kind="function"><name>Unbind</name></member>
+    <member refid="classKinai_1_1VertexBuffer_1ac213ffebb79a7e9dfebac4c58e9bcc05" kind="function"><name>SetData</name></member>
+    <member refid="classKinai_1_1VertexBuffer_1a660be3e4643be440418593e4808a13b1" kind="function"><name>SetLayout</name></member>
+    <member refid="classKinai_1_1VertexBuffer_1ab0b5b84092277cc309d70f936b7608fc" kind="function"><name>GetLayout</name></member>
+    <member refid="classKinai_1_1VertexBuffer_1a00d88bb65d61111386f28a939b0ec3b0" kind="function"><name>Create</name></member>
+    <member refid="classKinai_1_1VertexBuffer_1a1c5f39ea3cc87a69d0965fab26b070d0" kind="function"><name>Create</name></member>
+  </compound>
+  <compound refid="classKinai_1_1Window" kind="class"><name>Kinai::Window</name>
+    <member refid="classKinai_1_1Window_1a591ef6dfdc969abf0e9db81fc9ae262f" kind="typedef"><name>EventCallback</name></member>
+    <member refid="classKinai_1_1Window_1ab7a6d2703cc8964531d7f1c75e0ba140" kind="function"><name>Window</name></member>
+    <member refid="classKinai_1_1Window_1a6df8f4ab5fceb9821bfe91d316aacc0d" kind="function"><name>~Window</name></member>
+    <member refid="classKinai_1_1Window_1a1daa136464232158bb0f3db005a4cb08" kind="function"><name>OnUpdate</name></member>
+    <member refid="classKinai_1_1Window_1ad35ca8dde3447db2df681955b7bfbab2" kind="function"><name>GetNativeWindow</name></member>
+    <member refid="classKinai_1_1Window_1a4eaefd315fbf83bad5ee4219fd1356b2" kind="function"><name>GetSize</name></member>
+    <member refid="classKinai_1_1Window_1abcb754c02e3047f630d67eca02a59b9c" kind="function"><name>GetWidth</name></member>
+    <member refid="classKinai_1_1Window_1a56078e089b2fd422d43c69f42d5e58bf" kind="function"><name>GetHeight</name></member>
+    <member refid="classKinai_1_1Window_1aab50b5a5ad4e5608d5e38fb721629262" kind="function"><name>GetRelativeMouseMode</name></member>
+    <member refid="classKinai_1_1Window_1ac0c2bdb2cff82171381e433408bc3b79" kind="function"><name>IsFocused</name></member>
+    <member refid="classKinai_1_1Window_1a1d563082ec2ebe01d31e9a067bcac1c8" kind="function"><name>IsHovered</name></member>
+    <member refid="classKinai_1_1Window_1a2257cc458f36ca4564ba4571f13cf01e" kind="function"><name>GetSokolEnvironment</name></member>
+    <member refid="classKinai_1_1Window_1a9c62c413650a7b895dd3e978814b8a3b" kind="function"><name>GetSokolSwapchain</name></member>
+    <member refid="classKinai_1_1Window_1a46321e0feb458f4f09b83c1d56d6b823" kind="function"><name>IsVSync</name></member>
+    <member refid="classKinai_1_1Window_1a65ecdcce9e2e7e90c1c1a98e17efec98" kind="function"><name>SetVSync</name></member>
+    <member refid="classKinai_1_1Window_1afd78c359621cd9d512ff6eb0193274fa" kind="function"><name>SetEventCallback</name></member>
+    <member refid="classKinai_1_1Window_1aac429f942456aa20bb507c1c9411fbe3" kind="function"><name>SetTitle</name></member>
+    <member refid="classKinai_1_1Window_1a196cff2fa06eb53ce8ff27559a65938b" kind="function"><name>SetRelativeMouseMode</name></member>
+    <member refid="classKinai_1_1Window_1a78b407764a37323d63370cf07d0dfc72" kind="function"><name>WarpMouse</name></member>
+    <member refid="classKinai_1_1Window_1a38d2ec46551c23fb32d6657967fc18a4" kind="function"><name>Create</name></member>
+  </compound>
+  <compound refid="classKinai_1_1WindowCloseEvent" kind="class"><name>Kinai::WindowCloseEvent</name>
+    <member refid="classKinai_1_1WindowCloseEvent_1ab4edfd242436926ba45de97293adfeee" kind="function"><name>WindowCloseEvent</name></member>
+    <member refid="classKinai_1_1WindowCloseEvent_1a564a14be58ca0a3aab5c69025bf961c6" kind="function"><name>EVENT_CLASS_TYPE</name></member>
+    <member refid="classKinai_1_1WindowCloseEvent_1aa9ff4d48f4003a9b4bfcf8050cd69686" kind="function"><name>EVENT_CLASS_CATEGORY</name></member>
+  </compound>
+  <compound refid="structKinai_1_1WindowProps" kind="struct"><name>Kinai::WindowProps</name>
+    <member refid="structKinai_1_1WindowProps_1a1f86af1b6ba0475392c986489eeffe21" kind="variable"><name>title</name></member>
+    <member refid="structKinai_1_1WindowProps_1a7ce1c8d3c7164c2453276ce2e1a893e3" kind="variable"><name>width</name></member>
+    <member refid="structKinai_1_1WindowProps_1a74498909ec874697ae8df5f8cfcaf789" kind="variable"><name>height</name></member>
+    <member refid="structKinai_1_1WindowProps_1ad8f91dc5b08c1b265e8bca8898354ee0" kind="variable"><name>fullscreen</name></member>
+    <member refid="structKinai_1_1WindowProps_1a4ed88300c2d36eabd62334af97ac5152" kind="variable"><name>no_vsync</name></member>
+    <member refid="structKinai_1_1WindowProps_1af2d53118f381305dc3f554fa782e1099" kind="function"><name>WindowProps</name></member>
+  </compound>
+  <compound refid="classKinai_1_1WindowResizeEvent" kind="class"><name>Kinai::WindowResizeEvent</name>
+    <member refid="classKinai_1_1WindowResizeEvent_1a55d22052cb238d67d822e5929baaf047" kind="variable"><name>_width</name></member>
+    <member refid="classKinai_1_1WindowResizeEvent_1ab870f12a48198087bc5205f52d55e801" kind="variable"><name>_height</name></member>
+    <member refid="classKinai_1_1WindowResizeEvent_1afb37385dca6dbae8f725b95801baba49" kind="function"><name>WindowResizeEvent</name></member>
+    <member refid="classKinai_1_1WindowResizeEvent_1af148eed3d8ad0edeed5ceb8943594c1b" kind="function"><name>GetWidth</name></member>
+    <member refid="classKinai_1_1WindowResizeEvent_1aed246f326bb3d25e1ec5d8b9954e331b" kind="function"><name>GetHeight</name></member>
+    <member refid="classKinai_1_1WindowResizeEvent_1a9c9a8e7f38fb7cff28278da2b9e3e1e9" kind="function"><name>ToString</name></member>
+    <member refid="classKinai_1_1WindowResizeEvent_1ae034d02d60639357500e30d5e0bf098d" kind="function"><name>EVENT_CLASS_TYPE</name></member>
+    <member refid="classKinai_1_1WindowResizeEvent_1ae3ee24447a3fd50b716a775f127792c5" kind="function"><name>EVENT_CLASS_CATEGORY</name></member>
+  </compound>
+  <compound refid="namespaceKinai" kind="namespace"><name>Kinai</name>
+    <member refid="Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4" kind="enum"><name>EventCategory</name></member>
+    <member refid="Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4a2b7e3d2a181c16bf8de0c3d3e3b7db6f" kind="enumvalue"><name>EventCategoryNone</name></member>
+    <member refid="Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4ae391003b17af85efc1c45a4bc242723e" kind="enumvalue"><name>EventCategoryApplication</name></member>
+    <member refid="Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4a9691e9c72fbde6cb64788b69e2a6b377" kind="enumvalue"><name>EventCategoryInput</name></member>
+    <member refid="Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4a0d5c9b1695442f9eb462fcb7e63df61a" kind="enumvalue"><name>EventCategoryKeyboard</name></member>
+    <member refid="Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4a5ee72b59ce507eb7e8c63095adf7a27f" kind="enumvalue"><name>EventCategoryMouse</name></member>
+    <member refid="Event_8hpp_1abc8326bc38d18df3c7ca4303944eefd4a62949d90569686b6123bc22a85518cd2" kind="enumvalue"><name>EventCategoryMouseButton</name></member>
+    <member refid="Event_8hpp_1a5be7edc6d3ce21ade177d85e143719e1" kind="enum"><name>KN_CustomEventType</name></member>
+    <member refid="Event_8hpp_1a5be7edc6d3ce21ade177d85e143719e1ae2370da3c96355b875f31dedca8e1e4a" kind="enumvalue"><name>KN_EVENT_WINDOW_TICK</name></member>
+    <member refid="Event_8hpp_1a5be7edc6d3ce21ade177d85e143719e1a13b0c1a8a9613a099d5deba71ea79b10" kind="enumvalue"><name>KN_EVENT_WINDOW_UPDATE</name></member>
+    <member refid="Event_8hpp_1a5be7edc6d3ce21ade177d85e143719e1a5b968b9efa7ca29ebf7eb3ec255d9793" kind="enumvalue"><name>KN_EVENT_WINDOW_RENDER</name></member>
+    <member refid="Event_8hpp_1a5be7edc6d3ce21ade177d85e143719e1a0f1f282bada973b9ca2b8a6fa8a643a7" kind="enumvalue"><name>KN_EVENT_LAST</name></member>
+    <member refid="Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3e" kind="enum"><name>FramebufferTextureFormat</name></member>
+    <member refid="Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3ea6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
+    <member refid="Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3eab4b279046a02077466fa26cabb00c642" kind="enumvalue"><name>RGBA8</name></member>
+    <member refid="Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3ea2849effb989cbdcfb4b9eb143fd826aa" kind="enumvalue"><name>RED_INTEGER</name></member>
+    <member refid="Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3ea7ca3e26e4e5c35e4408bd49c1e32e9a3" kind="enumvalue"><name>DEPTH24STENCIL8</name></member>
+    <member refid="Framebuffer_8hpp_1a9754d250e336871624b5dcb1f6c26c3ea675056ad1441b6375b2c5abd48c27ef1" kind="enumvalue"><name>Depth</name></member>
+    <member refid="Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445" kind="enum"><name>ImageFormat</name></member>
+    <member refid="Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
+    <member refid="Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445acfff813d86d447fa2a9c858650ebbb90" kind="enumvalue"><name>R8</name></member>
+    <member refid="Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445a165c6379d01617e12de274a3952efa63" kind="enumvalue"><name>RGB8</name></member>
+    <member refid="Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445ab4b279046a02077466fa26cabb00c642" kind="enumvalue"><name>RGBA8</name></member>
+    <member refid="Texture_8hpp_1a22e9d584f08b71f43cb5feb6052b4445a703a7a81e586669c930e3dcaf3e8c428" kind="enumvalue"><name>RGBA32F</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5" kind="enum"><name>ShaderDataType</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a22ae0e2b89e5e3d477f988cc36d3272b" kind="enumvalue"><name>Float</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a6694430a2b471b5d2de071f2ef1fdc57" kind="enumvalue"><name>Float2</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a8a8a1d211464d4bdee46db3c75bfa121" kind="enumvalue"><name>Float3</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a33116adc6690289da9b82ea736864eeb" kind="enumvalue"><name>Float4</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a2495a7d9c1fab19af6441abbfed823e1" kind="enumvalue"><name>Mat3</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a80f7408b0a5b5d78c26adae9f6f420f9" kind="enumvalue"><name>Mat4</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a1686a6c336b71b36d77354cea19a8b52" kind="enumvalue"><name>Int</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a4c6bc90f2bbdf35523e29c414a57bad3" kind="enumvalue"><name>Int2</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a56bf1b0e694b442bf4145a04b82ea943" kind="enumvalue"><name>Int3</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a1a44f12c3427b3e11c171d09632bad8d" kind="enumvalue"><name>Int4</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5ac26f15e86e3de4c398a8273272aba034" kind="enumvalue"><name>Bool</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a4b4ba765b750d5836bfeb2213cc3caea" kind="enumvalue"><name>UByte</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a40fc2bf671581b7ec5615a3f2701bddb" kind="enumvalue"><name>UByte2</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a37b413f28bc153b93708eba7c1cba8f5" kind="enumvalue"><name>UByte3</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a262bbd5c6b4d6c534f97b5e76a8cefa9" kind="enumvalue"><name>UByte4</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a0b1291eded63143ac04709711274785a" kind="enumvalue"><name>UInt</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a003b50e47c23c2f841dd2b21452f7ec4" kind="enumvalue"><name>UInt2</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a424aaa556a2950e0b98713136b7e6439" kind="enumvalue"><name>UInt3</name></member>
+    <member refid="BufferElement_8hpp_1a2adff3686aee9232c5033e450136d2e5a146988b242dbb9ed1e323e309789115a" kind="enumvalue"><name>UInt4</name></member>
+    <member refid="Core_8hpp_1a897cb7e44c5be57fcb323cc92b60258d" kind="typedef"><name>Scope</name></member>
+    <member refid="Core_8hpp_1acd3a3ecbdeb61505e4223af16650c3b8" kind="typedef"><name>Ref</name></member>
+    <member refid="KeyCode_8hpp_1abbf0dffb898ee42dbc2425a612e45faf" kind="typedef"><name>KeyCode</name></member>
+    <member refid="MouseButton_8hpp_1ac16381472a18fad6c99e588e7f68ecd8" kind="typedef"><name>MouseButton</name></member>
+    <member refid="Event_8hpp_1ac9f33f1492ef129be29ece907d6818bc" kind="typedef"><name>EventType</name></member>
+    <member refid="Log_8hpp_1af9b005438446c9e41977e2632a19bf98" kind="variable"><name>KN_COLOR_DEFAULT</name></member>
+    <member refid="Log_8hpp_1abdad8c328c68f96b326a57b9507c3a2c" kind="variable"><name>KN_COLOR_RED</name></member>
+    <member refid="Log_8hpp_1a31744114506b22460901c21ca55ecff0" kind="variable"><name>KN_COLOR_GREEN</name></member>
+    <member refid="Log_8hpp_1af98df997edc1a2fa6d8bfd22d6f613d0" kind="variable"><name>KN_COLOR_YELLOW</name></member>
+    <member refid="Log_8hpp_1afcacec3c92e81248a5c39b6977b7d9b5" kind="variable"><name>KN_COLOR_BLUE</name></member>
+    <member refid="Log_8hpp_1a413ffeaa1cf1140074e14ea1fec6b475" kind="variable"><name>KN_COLOR_MAGENTA</name></member>
+    <member refid="Log_8hpp_1a04f7798e4d7d45810f271d5376974a93" kind="variable"><name>KN_COLOR_CYAN</name></member>
+    <member refid="Log_8hpp_1aaeee61777e7ef7abafe7d697ff51b1fb" kind="variable"><name>KN_COLOR_WHITE</name></member>
+    <member refid="Application_8hpp_1a59ab58b901a05b7a8a90602a8e3a19dc" kind="function"><name>CreateApplication</name></member>
+    <member refid="Core_8hpp_1a077be009fb3337df27e2a48e5ae6adea" kind="function"><name>CreateScope</name></member>
+    <member refid="Core_8hpp_1ac427ab4991e31480a92c5e9ab673b68a" kind="function"><name>CreateRef</name></member>
+    <member refid="Core_2EntryPoint_8hpp_1af1498e0f8bc6ab82dc90b6defce35ab8" kind="function"><name>Main</name></member>
+    <member refid="Log_8hpp_1a070fb75b6c0a50efa10f31c68b8a18dc" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="Log_8hpp_1a9211aa3dd1722db9987ebd0ff38e7b2f" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="Log_8hpp_1a41c51dd132795c284718505d7e55f7f4" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="Parser_8hpp_1a3e6ae9862c0902534de7a82d4da3a247" kind="function"><name>ltrim</name></member>
+    <member refid="Parser_8hpp_1aa3fe52a4c89522a447d76b6d1053d2f7" kind="function"><name>rtrim</name></member>
+    <member refid="Parser_8hpp_1a6725030b5b497c41560c427289d93bb7" kind="function"><name>trim</name></member>
+    <member refid="Parser_8hpp_1aefe17741e82ff24a181eda7aa15cc297" kind="function"><name>str_toupper</name></member>
+    <member refid="Event_8hpp_1a48b53ddf544bf4ff78a48a8a00490650" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="BufferElement_8hpp_1afeb2663bb6983cbc9fb4208d7b545672" kind="function"><name>ShaderDataTypeSize</name></member>
+  </compound>
+  <compound refid="namespaceKinai_1_1Key" kind="namespace"><name>Kinai::Key</name>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675" kind="enum"><name></name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a8b5259f9459d5c4748b540857b87ba77" kind="enumvalue"><name>None</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae2e9cf2421526411a4771d6cca209664" kind="enumvalue"><name>A</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ab03ad5f7811d35190823db54dde061d9" kind="enumvalue"><name>B</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aba5fcc45350e31ccc17620ed492f4afa" kind="enumvalue"><name>C</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ab23fef458062ed1846e68fa69772b24f" kind="enumvalue"><name>D</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ad8c046c65613328aa71d0db847176a4e" kind="enumvalue"><name>E</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675acdd014527ea311f7aeeb24e1671b33ab" kind="enumvalue"><name>F</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a8d651c7988b136e17cd77ee25399d551" kind="enumvalue"><name>G</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a86a070fe00d4424fb60e7d7e52fc37d1" kind="enumvalue"><name>H</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a1178eb3290e8efe5b96401e8af51509d" kind="enumvalue"><name>I</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ad6309e071c8bcbbdf2d1fe776c013820" kind="enumvalue"><name>J</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a515bdf0d92a56fafef74e67158514a92" kind="enumvalue"><name>K</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aeb11181d018504161562d0678d95dd27" kind="enumvalue"><name>L</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a31f1fff589b2d9054d271ba4cdb1156b" kind="enumvalue"><name>M</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675adc5475e36033eea4b52b0ae3ce8cfcf9" kind="enumvalue"><name>N</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675af1dc078cee4326412739d731b7456e31" kind="enumvalue"><name>O</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a7f1ba35bf3507fb721b257643b5fa831" kind="enumvalue"><name>P</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ad657d05bd5bfc5b4dc687378e1881547" kind="enumvalue"><name>Q</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a5b0f708880be4c18b43353dabf727989" kind="enumvalue"><name>R</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a6bda629c9a2ec004b038c4f90939a1f8" kind="enumvalue"><name>S</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a9003621535e9a318498e9c39faf46509" kind="enumvalue"><name>T</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a3d5a2230316113b2223e4531489676ec" kind="enumvalue"><name>U</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac29c1ea7f5d4bfad7f1b0abdb63041f5" kind="enumvalue"><name>V</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a09b0d5b7d92113e52ee649b73995152e" kind="enumvalue"><name>W</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aa9dd53a15f1aca4137aa0bbdb49ebb35" kind="enumvalue"><name>X</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac637782e4ddd80296d082c85358b6ef0" kind="enumvalue"><name>Y</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675af89b9c4e286659c2e57c202617b3dd92" kind="enumvalue"><name>Z</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a5a71fdf06b6adb98520391b45394ad38" kind="enumvalue"><name>D1</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac86edc32bcf484a4e55d83083b9e0107" kind="enumvalue"><name>D2</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aaf5f6fb50f688150c23dce51eb6052f6" kind="enumvalue"><name>D3</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a575e7f87a0b7f958aab11951eacda946" kind="enumvalue"><name>D4</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a88cec52dc6727ec8e9dd4127e99efb34" kind="enumvalue"><name>D5</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a01199698dfd3592c470aae4ca0bf1270" kind="enumvalue"><name>D6</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a74a7da46d67a94e6a78022fafc49afad" kind="enumvalue"><name>D7</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac1db65425ee6173a67ae4ff21969418b" kind="enumvalue"><name>D8</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a3a7cc4f97a0374f9bf6f7b513c87c2e2" kind="enumvalue"><name>D9</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a1ce9be52bfc6c72eb7536af5aadeebc7" kind="enumvalue"><name>D0</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675af3caa4e0b06ed9760b2b173017724b34" kind="enumvalue"><name>Return</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a658530692a054646bbf3637ffe33343d" kind="enumvalue"><name>Escape</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae9b8069798c070bbae95fa458a080f06" kind="enumvalue"><name>Backspace</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aba75091c262336855a45a4e40804fcdc" kind="enumvalue"><name>Tab</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a876a7e0b7fd124ee02c570bcb08efae2" kind="enumvalue"><name>Space</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae13a5570e1bdc3fe3afd36ae085c71ce" kind="enumvalue"><name>Minus</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a5d9421e69f4ed50c5ca9869f2dd0d30d" kind="enumvalue"><name>Equals</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a5b9b8dd81ecc4b202688552a86811c71" kind="enumvalue"><name>LeftBracket</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac62aab20e3494044e6987b27dabf7e30" kind="enumvalue"><name>RightBracket</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675afee60f2f9449123d738df60bfdf4b525" kind="enumvalue"><name>Backslash</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a30e4dd16f8b7efed5373adc228c1eb2e" kind="enumvalue"><name>NonUsHash</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a58673b731030664ef67331531e8aaad9" kind="enumvalue"><name>Semicolon</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675adf63b35d5f6ab4bb73ca00795491c53f" kind="enumvalue"><name>Apostrophe</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675acc314aba22c0a4bb45e3fce184b441a4" kind="enumvalue"><name>GraveAccent</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a4e5a5ba259d7f9fdd9a20e1a913ff648" kind="enumvalue"><name>Comma</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae4cbcc8e0daa9dee50a5ee590c18a933" kind="enumvalue"><name>Period</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a39db7e4f51478cc7b6878c10c8bc6018" kind="enumvalue"><name>Slash</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aefbbb6c78e5fb381a6fb53444eacde99" kind="enumvalue"><name>CapsLock</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a6e8c01304a56798c0ca831baaf926e2c" kind="enumvalue"><name>F1</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a4e843d6664457e2381aaa37b1bdf777c" kind="enumvalue"><name>F2</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a52cfa8d8288149544fc45b665458c082" kind="enumvalue"><name>F3</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a49a1349c8bf64161f02ae74d23913bf5" kind="enumvalue"><name>F4</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a13cf32849348ba1fe464db23d16b9ea4" kind="enumvalue"><name>F5</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a2e7c449a5724c749955b5a2b6a403e59" kind="enumvalue"><name>F6</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a28517dc0751b36b449de94c2e0708d6c" kind="enumvalue"><name>F7</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a0acc4d9b563b381b7694b8adaf9e9141" kind="enumvalue"><name>F8</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a588e296f931132d34020b2167edbd3ab" kind="enumvalue"><name>F9</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aab50f120873001ee14e15a45f3be1fc5" kind="enumvalue"><name>F10</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae74ec91d9463734ff96d2cf7d33f0b68" kind="enumvalue"><name>F11</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a65c802213a355047467975a045f84e76" kind="enumvalue"><name>F12</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a2e9022133d83bedb9154234e609c7a12" kind="enumvalue"><name>PrintScreen</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a5b369f62335c9da7308f73f3df59f187" kind="enumvalue"><name>ScrollLock</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a766441bd92ea2b700a9daf7c9722a4b2" kind="enumvalue"><name>Pause</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a08215225a3e4b697bdde85ca9e6454ba" kind="enumvalue"><name>Insert</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675adf2636125f41d492ea18d1c3a51bda35" kind="enumvalue"><name>Home</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a9ed44e002fd114ab25f051fc7874ddda" kind="enumvalue"><name>PageUp</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a53b81e448d78f5091d04aefd8e01eff1" kind="enumvalue"><name>Delete</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675acd4d7f7b408126845011c6458ee45288" kind="enumvalue"><name>End</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae18ebfb2922500b205133eed35dfb5ac" kind="enumvalue"><name>PageDown</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a7ade1378b1f595d498e4ac3c67a138fa" kind="enumvalue"><name>Right</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675abd4de5d01050dbb6d601d47e6d262164" kind="enumvalue"><name>Left</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae82fe22e9874c743a96f9ea942d1c728" kind="enumvalue"><name>Down</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a3579250575e3fd5cceb522e9f8102926" kind="enumvalue"><name>Up</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a1e066a5e320828200235d78814a6a2ea" kind="enumvalue"><name>NumLockClear</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675abf83145c377f6bda40033904d2ee8544" kind="enumvalue"><name>KPDivide</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a48016ebd3ccee27d784bcc2b6cff85f1" kind="enumvalue"><name>KPMultiply</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a21963bf5bffc7494a5d1a8c4e5ee6b4f" kind="enumvalue"><name>KPSubtract</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a2938681d9a19863831f8bcf368bc6de2" kind="enumvalue"><name>KPAdd</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aead6ca5a35c647760b28e8add5f9654b" kind="enumvalue"><name>KPEnter</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ad66c1f2e689389b0725a794972c79c60" kind="enumvalue"><name>KP1</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ab4c6dcf857f5dd0980c49f4b89029c1d" kind="enumvalue"><name>KP2</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a4216e16535c376fb48ddfd6ffda37bff" kind="enumvalue"><name>KP3</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a57591e027b8a7b89fd2a271fa974552d" kind="enumvalue"><name>KP4</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675adb4323809e830217e729528b31b7157d" kind="enumvalue"><name>KP5</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a45398a62a3f5fa51d822b721431219ea" kind="enumvalue"><name>KP6</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a1d83478477d4ac75b947e2b0bb6da55b" kind="enumvalue"><name>KP7</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675acb2990b2f3e0154aaf3a6949078ed289" kind="enumvalue"><name>KP8</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a5a1c784732622b649ea0af6af1391d36" kind="enumvalue"><name>KP9</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a8168dff41583a8879c1881cda570857f" kind="enumvalue"><name>KP0</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a47c1b0709d06cad560ffed7828823b30" kind="enumvalue"><name>KPPeriod</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a76c117b8493b8633ced32d023daa5775" kind="enumvalue"><name>NonUsBackslash</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675abaf8cf72e5ab5c987210e6b7835cbc6b" kind="enumvalue"><name>Application</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae2d91e1c4757c6ce99dbdeffb84e4077" kind="enumvalue"><name>Power</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae9f6f55f1e9f342dbc2e7592742c8a08" kind="enumvalue"><name>KPEquals</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac4b821a2d39745c0db53dfe054bd4b6f" kind="enumvalue"><name>F13</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac39ac89e781132bf6de5eff4d0669af7" kind="enumvalue"><name>F14</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a2885e846c71078456e788216c068bb89" kind="enumvalue"><name>F15</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a0fb833240e66a20c34d7db380cf98462" kind="enumvalue"><name>F16</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aa6f3a8ca9ccd6adf9726183ad4927c2b" kind="enumvalue"><name>F17</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac853bcc00cc39db892d54a8c4d61f01b" kind="enumvalue"><name>F18</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a1a7cc8e2ac72ecc1d6b1096bca9d43d1" kind="enumvalue"><name>F19</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a055c72d0bbc25d629ba84962aefce5f1" kind="enumvalue"><name>F20</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a628a332a80fa7e9f09b801a2908b573b" kind="enumvalue"><name>F21</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a5502aaf66bfc458a7fd136a2a1d55f8f" kind="enumvalue"><name>F22</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675acbcc667b7eca1e65aabc5ac6231cebc0" kind="enumvalue"><name>F23</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a2a67209ff841092a244f9b3b6e60fea1" kind="enumvalue"><name>F24</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a6d1d11a1f27fc830c27e4d3efcaa1ed6" kind="enumvalue"><name>Execute</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a76bfe2ac7111124878990ce3bf02f166" kind="enumvalue"><name>Help</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a59209ae32fd12f7a3352455b712f52f8" kind="enumvalue"><name>Menu</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675afc1220b4e6f8c124f3cfd575c50ea42b" kind="enumvalue"><name>Select</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ad327c19bc3e29f974284c308b7f4303e" kind="enumvalue"><name>Stop</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a77f436250e8bd1873ef61935b70b878a" kind="enumvalue"><name>Again</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a9a81eaa5fff66cbe5c9c29c3b8102d23" kind="enumvalue"><name>Undo</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a57ec11772b1dcbab25abf591f61fc3d3" kind="enumvalue"><name>Cut</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a9ee7f4d937026e74ee65f29355a9fd94" kind="enumvalue"><name>Copy</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ad32ad41f0908959ecac681f7561f71a1" kind="enumvalue"><name>Paste</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a5cf35bf5de2fd48e02759313b1584cef" kind="enumvalue"><name>Find</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675af6488b80fe86448dd392b91577d6dad3" kind="enumvalue"><name>Mute</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a41ac5feeb10a414ad528ba1d2a706a4a" kind="enumvalue"><name>VolumeUp</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675af2dc373865320336805213a1dbe90cce" kind="enumvalue"><name>VolumeDown</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ac39379528f647311a95cbc0393dbbedf" kind="enumvalue"><name>KPComma</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675addcc580acdc8d8434554d33108aa6531" kind="enumvalue"><name>KPEqualsAs400</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae2ca2da7e1c7213af2effd02003b564c" kind="enumvalue"><name>Alterase</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aa7658fb1135848ff8c9451c0bbdc2043" kind="enumvalue"><name>SysReq</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae2dbad42e7eae7f90f97cf01fe6e1e87" kind="enumvalue"><name>Cancel</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a2ada92cb47a86493da6b1af0302d77a2" kind="enumvalue"><name>Clear</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae766208227366a548622fd5e3b9f0fde" kind="enumvalue"><name>Prior</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a27f945a6b7885ee88deb57c970004454" kind="enumvalue"><name>Return2</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a02f6a946b6d8473b156376e733f488f3" kind="enumvalue"><name>Separator</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ab5927c1e60d505b3a6d8393b557c9096" kind="enumvalue"><name>Out</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a938c98e4a675e46a4aa04734b58d0cd7" kind="enumvalue"><name>Oper</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a4715b9327fc9843c2c019a3d47c2fb60" kind="enumvalue"><name>ClearAgain</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a6d1ec5273ad5a6d96f359a0a7159b51d" kind="enumvalue"><name>CrSel</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675af52ba8bc45a8b65152dae89f0a264fbe" kind="enumvalue"><name>ExSel</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a22b5dbb42ee35684659f4dceb0461254" kind="enumvalue"><name>LeftCtrl</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a39fd55920b8b9a92233e6aeddf541439" kind="enumvalue"><name>LeftShift</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a52fe2c5a649d5e51776631c23deddd16" kind="enumvalue"><name>LeftAlt</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a0c8fe37ca5741c12b74b60250a1dbbe0" kind="enumvalue"><name>LeftSuper</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675aa55271f169be31ce6279e74c8373a4a6" kind="enumvalue"><name>RightCtrl</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae32fe7d0895c6970151d5b1e5c38f473" kind="enumvalue"><name>RightShift</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675a8cec57742c786e4b09aa47acb5e02722" kind="enumvalue"><name>RightAlt</name></member>
+    <member refid="KeyCode_8hpp_1aa50a7f9da716de9ba7fefc41f1e60675ae28bbd692e9cf10d08e388f759dbe0d3" kind="enumvalue"><name>RightSuper</name></member>
+  </compound>
+  <compound refid="namespaceKinai_1_1Mouse" kind="namespace"><name>Kinai::Mouse</name>
+    <member refid="MouseButton_8hpp_1abcc204888987298a23542b62446f34de" kind="enum"><name></name></member>
+    <member refid="MouseButton_8hpp_1abcc204888987298a23542b62446f34dea8a487a92022091a72fdd58b671c677c9" kind="enumvalue"><name>Button0</name></member>
+    <member refid="MouseButton_8hpp_1abcc204888987298a23542b62446f34dea2751d2dca5367e8cefd558144ce5aeba" kind="enumvalue"><name>Button1</name></member>
+    <member refid="MouseButton_8hpp_1abcc204888987298a23542b62446f34deacd9665d1387a3327360f520a413799e2" kind="enumvalue"><name>Button2</name></member>
+    <member refid="MouseButton_8hpp_1abcc204888987298a23542b62446f34dea2ee0e2d8d68f0ec1ac77169a7fdb6803" kind="enumvalue"><name>Button3</name></member>
+    <member refid="MouseButton_8hpp_1abcc204888987298a23542b62446f34deaa80165dff283e8513f8492aec68c6988" kind="enumvalue"><name>Button4</name></member>
+    <member refid="MouseButton_8hpp_1abcc204888987298a23542b62446f34dea236721d819814d3bc98e16199c1a3d7d" kind="enumvalue"><name>Button5</name></member>
+    <member refid="MouseButton_8hpp_1abcc204888987298a23542b62446f34deaf37e9a2f08b25b3828f60ee17d71fd00" kind="enumvalue"><name>Button6</name></member>
+    <member refid="MouseButton_8hpp_1abcc204888987298a23542b62446f34deaf97c3526164d93e741b27658ee2650c4" kind="enumvalue"><name>Button7</name></member>
+    <member refid="MouseButton_8hpp_1abcc204888987298a23542b62446f34dea1d1998d95131aca548fb6dfdea7db1c4" kind="enumvalue"><name>ButtonLast</name></member>
+    <member refid="MouseButton_8hpp_1abcc204888987298a23542b62446f34dea91eb0a2194e16fb5f7eaebb8cd9ca07a" kind="enumvalue"><name>ButtonLeft</name></member>
+    <member refid="MouseButton_8hpp_1abcc204888987298a23542b62446f34dea559e580c22c866accf9852ed0770e130" kind="enumvalue"><name>ButtonMiddle</name></member>
+    <member refid="MouseButton_8hpp_1abcc204888987298a23542b62446f34dea3b637b5b81706e8d0cfa62746ef5d118" kind="enumvalue"><name>ButtonRight</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="Application_8hpp" kind="file"><name>Application.hpp</name>
+    <member refid="Application_8hpp_1a6e342dcb3235220bd9057586be109bdb" kind="variable"><name>g_KinaiApplicationRunning</name></member>
+  </compound>
+  <compound refid="Assert_8hpp" kind="file"><name>Assert.hpp</name>
+  </compound>
+  <compound refid="Core_8hpp" kind="file"><name>Core.hpp</name>
+  </compound>
+  <compound refid="Input_8hpp" kind="file"><name>Input.hpp</name>
+  </compound>
+  <compound refid="KeyCode_8hpp" kind="file"><name>KeyCode.hpp</name>
+  </compound>
+  <compound refid="Layer_8hpp" kind="file"><name>Layer.hpp</name>
+  </compound>
+  <compound refid="LayerStack_8hpp" kind="file"><name>LayerStack.hpp</name>
+  </compound>
+  <compound refid="Log_8hpp" kind="file"><name>Log.hpp</name>
+  </compound>
+  <compound refid="MouseButton_8hpp" kind="file"><name>MouseButton.hpp</name>
+  </compound>
+  <compound refid="Parser_8hpp" kind="file"><name>Parser.hpp</name>
+  </compound>
+  <compound refid="Timer_8hpp" kind="file"><name>Timer.hpp</name>
+  </compound>
+  <compound refid="Window_8hpp" kind="file"><name>Window.hpp</name>
+    <member refid="Window_8hpp_1a01bb89928a9413e37eefff7d9c3f0694" kind="variable"><name>KN_DEFAULT_WINDOW_WIDTH</name></member>
+    <member refid="Window_8hpp_1aebf07355db990eac4f3107b28da554a7" kind="variable"><name>KN_DEFAULT_WINDOW_HEIGHT</name></member>
+  </compound>
+  <compound refid="Core_2EntryPoint_8hpp" kind="file"><name>Core/EntryPoint.hpp</name>
+    <member refid="Core_2EntryPoint_8hpp_1a6e342dcb3235220bd9057586be109bdb" kind="variable"><name>g_KinaiApplicationRunning</name></member>
+    <member refid="Core_2EntryPoint_8hpp_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="EntryPoint_8hpp" kind="file"><name>EntryPoint.hpp</name>
+  </compound>
+  <compound refid="ApplicationEvent_8hpp" kind="file"><name>ApplicationEvent.hpp</name>
+  </compound>
+  <compound refid="Event_8hpp" kind="file"><name>Event.hpp</name>
+  </compound>
+  <compound refid="KeyEvent_8hpp" kind="file"><name>KeyEvent.hpp</name>
+  </compound>
+  <compound refid="MouseEvent_8hpp" kind="file"><name>MouseEvent.hpp</name>
+  </compound>
+  <compound refid="ImGuiLayer_8hpp" kind="file"><name>ImGuiLayer.hpp</name>
+  </compound>
+  <compound refid="Kinai_8hpp" kind="file"><name>Kinai.hpp</name>
+  </compound>
+  <compound refid="Platform_8hpp" kind="file"><name>Platform.hpp</name>
+  </compound>
+  <compound refid="Renderer2D_8hpp" kind="file"><name>Renderer2D.hpp</name>
+  </compound>
+  <compound refid="Buffer_8hpp" kind="file"><name>Buffer.hpp</name>
+  </compound>
+  <compound refid="BufferElement_8hpp" kind="file"><name>BufferElement.hpp</name>
+  </compound>
+  <compound refid="BufferLayout_8hpp" kind="file"><name>BufferLayout.hpp</name>
+  </compound>
+  <compound refid="IndexBuffer_8hpp" kind="file"><name>IndexBuffer.hpp</name>
+  </compound>
+  <compound refid="VertexBuffer_8hpp" kind="file"><name>VertexBuffer.hpp</name>
+  </compound>
+  <compound refid="Camera_8hpp" kind="file"><name>Camera.hpp</name>
+  </compound>
+  <compound refid="Framebuffer_8hpp" kind="file"><name>Framebuffer.hpp</name>
+  </compound>
+  <compound refid="OrthographicCamera_8hpp" kind="file"><name>OrthographicCamera.hpp</name>
+  </compound>
+  <compound refid="PerspectiveCamera_8hpp" kind="file"><name>PerspectiveCamera.hpp</name>
+  </compound>
+  <compound refid="RenderCommand_8hpp" kind="file"><name>RenderCommand.hpp</name>
+  </compound>
+  <compound refid="Renderer_8hpp" kind="file"><name>Renderer.hpp</name>
+  </compound>
+  <compound refid="RendererAPI_8hpp" kind="file"><name>RendererAPI.hpp</name>
+  </compound>
+  <compound refid="2D_2Shader_8hpp" kind="file"><name>2D/Shader.hpp</name>
+  </compound>
+  <compound refid="Shader_8hpp" kind="file"><name>Shader.hpp</name>
+  </compound>
+  <compound refid="Texture_8hpp" kind="file"><name>Texture.hpp</name>
+  </compound>
+  <compound refid="UniformBuffer_8hpp" kind="file"><name>UniformBuffer.hpp</name>
+  </compound>
+  <compound refid="VertexArray_8hpp" kind="file"><name>VertexArray.hpp</name>
+  </compound>
+  <compound refid="dir_e7ac7b722f822fb0d5e834db27abe331" kind="dir"><name>2D</name>
+  </compound>
+  <compound refid="dir_9d2164fe67c908d616d9305615ca1bdf" kind="dir"><name>Buffer</name>
+  </compound>
+  <compound refid="dir_fe86284f01105c695ed3f35446b17d8c" kind="dir"><name>Core</name>
+  </compound>
+  <compound refid="dir_72522746b5367e81aae70c04962e01c2" kind="dir"><name>Events</name>
+  </compound>
+  <compound refid="dir_2a4431228de4b6dd89b179ec97ce567e" kind="dir"><name>ImGui</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
+  </compound>
+  <compound refid="dir_b48b7b2876bf0f47d47112cddec52d6b" kind="dir"><name>Kinai</name>
+  </compound>
+  <compound refid="dir_70d0cd76473f5dd45ed36138246182c8" kind="dir"><name>Platform</name>
+  </compound>
+  <compound refid="dir_c73ecd4420e731df50a04bddc05aa931" kind="dir"><name>Renderer</name>
+  </compound>
+</doxygenindex>
