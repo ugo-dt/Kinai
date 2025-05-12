@@ -24,4 +24,6 @@ class KnFunction(_KnMember):
 		name = self.name.replace('::', '_').replace('~', 'Destroy').replace('operator==', 'equals')
 		args = [arg.__c__() for arg in self.args]
 
+		print(prefix)
+
 		return f'{self.type.__c__()} {prefix}{name}{suffix}({", ".join(args)});'

@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import xmltodict, json, sys, os
 from pathlib import Path
 

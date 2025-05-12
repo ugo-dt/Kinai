@@ -1513,10 +1513,10 @@
                 "value": "NO"
             },
             {
-                "@default": "yes",
+                "@default": "no",
                 "@id": "MACRO_EXPANSION",
                 "@type": "bool",
-                "value": "NO"
+                "value": "YES"
             },
             {
                 "@default": "yes",

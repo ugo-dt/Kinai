@@ -15,7 +15,7 @@ class KnClass:
 		self.__refid: str = compound.get('@refid')
 		self.__members: list[dict] = KnGetAttribute(compound, 'member')
 		self.name: str = compound.get('name')
-
+		
 		self.functions: list[KnFunction] = []
 		self.variables: list[_KnMember] = []
 
@@ -38,7 +38,7 @@ class KnClass:
 						self.functions.append(new_f)
 
 	def __c__(self) -> str:
-		prefix = f'{self.name.replace('Kinai::', 'Kn')}_'
+		prefix = f'{self.name.replace('Kinai::', 'Kn').replace('::', '_')}_'
 		c: list[str] = []
 
 		appended_functions: list[str] = []
