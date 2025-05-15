@@ -42,7 +42,6 @@ public:
 
 	bool	OnKeyPressed(Kinai::KeyPressedEvent &event)
 	{
-		Kinai::Log::Info("Pressed key {}", event.GetKeyCode());
 		switch (event.GetKeyCode())
 		{
 			// Close the window with the Escape key
@@ -57,7 +56,6 @@ public:
 
 	bool	OnMouseButtonPressed(Kinai::MouseButtonPressedEvent &event)
 	{
-		Kinai::Log::Info("Pressed mouse button {}", event.GetButton());
 		return true;
 	}
 };
