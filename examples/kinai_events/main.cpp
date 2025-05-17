@@ -33,8 +33,6 @@ public:
 	{
 		Kinai::EventDispatcher dispatcher(event);
 
-		std::cout << event.ToString() << std::endl;
-
 		// Send specific events to the appropriate function
 		dispatcher.Dispatch<Kinai::KeyPressedEvent>(KN_BIND_EVENT_FN(OnKeyPressed));
 		dispatcher.Dispatch<Kinai::MouseButtonPressedEvent>(KN_BIND_EVENT_FN(OnMouseButtonPressed));
@@ -42,6 +40,7 @@ public:
 
 	bool	OnKeyPressed(Kinai::KeyPressedEvent &event)
 	{
+		std::cout << event.ToString() << std::endl;
 		switch (event.GetKeyCode())
 		{
 			// Close the window with the Escape key
@@ -56,6 +55,7 @@ public:
 
 	bool	OnMouseButtonPressed(Kinai::MouseButtonPressedEvent &event)
 	{
+		std::cout << event.ToString() << std::endl;
 		return true;
 	}
 };

@@ -1,7 +1,5 @@
 #pragma once
 
-#pragma once
-
 // Platform detection using predefined macros
 #if defined(_WIN32)
 	/* Windows x64/x86 */
