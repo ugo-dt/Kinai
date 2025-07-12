@@ -83,6 +83,8 @@ else ifeq ($(target),$(__LINUX__))
   LDFLAGS	+= -lm -lGL
 else ifeq ($(target),$(__MACOS__))
   EXE		= .out
+  CC    = clang
+  CXX   = clang++
   INCLUDE	+= -I /opt/homebrew/include
   LDFLAGS	+= -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo -lncurses
 else ifeq ($(target),$(__EMSCRIPTEN__))
