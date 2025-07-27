@@ -230,12 +230,12 @@ void	Renderer2D::FlushQuadPipeline()
 	{
 		uint32_t dataSize = (uint32_t)((uint8_t*)_pip_quad.vertex_buffer_ptr - (uint8_t*)_pip_quad.vertex_buffer_base);
 		_pip_quad.vertex_buffer->SetData(_pip_quad.vertex_buffer_base, dataSize);
-
+		
 		_pip_quad.shader->Bind();
 
 		// Bind textures
-		for (uint32_t i = 0; i < _texture_slot_index; i++)
-			_texture_slots[i]->Bind(i);
+		// for (uint32_t i = 0; i < _texture_slot_index; i++)
+		// 	_texture_slots[i]->Bind(i);
 
 		_pip_quad.shader->SetFloat2("VIEWPORT", glm::vec2(Application::Get().GetWindow().GetSize()));
 

@@ -13,18 +13,21 @@ KINAI_SRC = $(wildcard					\
 	$(KINAI_PATH)/src/ImGui/*.cpp		\
 	$(KINAI_PATH)/src/Renderer/*.cpp	\
 	$(KINAI_PATH)/src/Renderer/2D/*.cpp	\
-	$(KINAI_PATH)/src/Sokol/*.cpp		\
 )
 
 ifeq ($(target),$(__EMSCRIPTEN__))
   KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/Emscripten/*.cpp)
 endif
 
-ifeq ($(backend),OpenGL)
+ifdef __kinai_backend_opengl
   KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/OpenGL/*.cpp)
   KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/SDL/*.cpp)
-else ifeq ($(backend),Headless)
+else ifdef __kinai_backend_headless
   KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/Headless/*.cpp)
+endif
+
+ifdef __kinai_backend_sokol
+  KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Sokol/*.cpp)
 endif
 
 KINAI_OBJS = $(patsubst $(KINAI_PATH)/src/%.cpp,$(__kinai_objs_dir)/%.o,$(KINAI_SRC))

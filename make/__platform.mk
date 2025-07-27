@@ -106,7 +106,7 @@ ifdef KINAI_BACKEND
 endif
 
 ifeq ($(backend),)
-  $(info Please select a backend with OpenGL or Headless.)
+  $(info Please select a backend between OpenGL, Sokol or Headless.)
   $(error No rendering backend selected)
 endif
 
@@ -115,20 +115,30 @@ __lc_backend = $(shell echo $(backend) | tr '[:upper:]' '[:lower:]')
 
 ifeq ($(__lc_backend),opengl) # OpenGL
   override backend = OpenGL
+  __kinai_backend_opengl = 1
   CXXFLAGS += -DKINAI_OPENGL
 else ifeq ($(__lc_backend),gl)
   override backend = OpenGL
+  __kinai_backend_opengl = 1
   CXXFLAGS += -DKINAI_OPENGL
+else ifeq ($(__lc_backend),sokol)
+  override backend = Sokol
+  __kinai_backend_opengl = 1
+  __kinai_backend_sokol = 1
+  CXXFLAGS += -DKINAI_OPENGL -DKINAI_SOKOL
 else ifeq ($(__lc_backend),null) # Headless
   override backend = Headless
+  __kinai_backend_headless = 1
   CXXFLAGS += -DKINAI_HEADLESS
 else ifeq ($(__lc_backend),none)
   override backend = Headless
+  __kinai_backend_headless = 1
   CXXFLAGS += -DKINAI_HEADLESS
 else ifeq ($(__lc_backend),headless)
   override backend = Headless
+  __kinai_backend_headless = 1
   CXXFLAGS += -DKINAI_HEADLESS
-else ifeq (,$(filter $(__lc_target),$(__WIN32__) $(__LINUX__) $(__MACOS__) $(__EMSCRIPTEN__)))
+else ifeq (,$(filter $(__lc_backend),$(__WIN32__) $(__LINUX__) $(__MACOS__) $(__EMSCRIPTEN__)))
   $(error Unknown backend '$(backend)')
 endif
 

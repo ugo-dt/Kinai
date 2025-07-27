@@ -22,15 +22,8 @@ public:
 	static void	Init();
 	static void	Shutdown();
 
-	static void	BeginFrame();
-	static void	EndFrame();
-
-	static sg_pass_action&	GetPassAction();
 	static sg_environment	GetEnvironment();
 	static sg_swapchain		GetSwapchain();
-
-private:
-	static sg_pass_action	_pass_action;
 };
 
 } // Kinai

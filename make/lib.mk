@@ -59,7 +59,7 @@ __lib_include		=	-I $(__default_lib_path)	\
 INCLUDE				+= $(__lib_include)
 LIB_OBJS			= $(__glad_objs) $(__imgui_objs) $(__stb_image_objs) $(__sokol_objs)
 
-ifeq ($(backend),OpenGL)
+ifdef __kinai_backend_opengl
 	ifeq ($(target),$(__MACOS__))
 		LDFLAGS += $(shell pkg-config --libs SDL3)
 	else ifeq ($(target),$(__WIN32__))

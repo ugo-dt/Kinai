@@ -5,8 +5,6 @@
 namespace Kinai
 {
 
-sg_pass_action Sokol::_pass_action;
-
 void	Sokol::Init()
 {
 	KN_PRINT_FUNC();
@@ -16,10 +14,6 @@ void	Sokol::Init()
 	desc.environment = GetEnvironment(),
 	desc.logger.func = slog_func,
 	sg_setup(desc);
-
-	Sokol::_pass_action = {};
-	Sokol::_pass_action.colors[0].load_action = SG_LOADACTION_CLEAR;
-	Sokol::_pass_action.colors[0].clear_value = {0.12f, 0.12f, 0.12f, 1.0f};
 	KN_ASSERT(sg_isvalid());
 }
 
@@ -28,13 +22,6 @@ void	Sokol::Shutdown()
 	KN_PRINT_FUNC();
 
 	sg_shutdown();
-}
-
-sg_pass_action&	Sokol::GetPassAction()
-{
-	KN_PRINT_FUNC();
-
-	return Sokol::_pass_action;
 }
 
 sg_environment	Sokol::GetEnvironment()

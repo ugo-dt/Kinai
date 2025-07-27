@@ -45,7 +45,7 @@ void	Renderer2D::Init()
 
 	MakeCommonPipelines();
 	MakeShaders();
-	MakeScreenFramebuffers();
+	// MakeScreenFramebuffers();
 
 	// Create a white texture
 	_texture_slots[0] = Texture2D::Create(TextureConfig());
@@ -100,6 +100,9 @@ void	Renderer2D::BeginFrame(const OrthographicCamera& camera)
 
 	_camera_uniforms.view_projection = camera.GetViewProjectionMatrix();
 	_camera_uniforms_buffer->SetData(&_camera_uniforms, sizeof(CameraUniforms));
+
+	_pip_quad.shader->Bind();
+	_pip_quad.shader->SetMat4("CANVAS_MATRIX", _camera_uniforms.view_projection);
 	
 	StartBatch();
 }
@@ -111,7 +114,7 @@ void	Renderer2D::Flush()
 	FlushQuadPipeline();
 	FlushCirclePipeline();
 	FlushLinePipeline();
-	CopyScreenToBackBuffer();
+	// CopyScreenToBackBuffer();
 }
 
 void	Renderer2D::UpdateViewport()
@@ -146,7 +149,7 @@ void	Renderer2D::StartBatch()
 	// _line_vertex_count = 0;
 	// _line_vertex_buffer_ptr = _line_vertex_buffer_base;	
 
-	_texture_slot_index = 2;
+	// _texture_slot_index = 2;
 }
 
 void	Renderer2D::NextBatch()

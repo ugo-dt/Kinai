@@ -45,7 +45,7 @@ OpenGLTexture2D::OpenGLTexture2D(const TextureConfig& config)
 	_internal_format = ImageFormatToGLInternalFormat(_config.format);
 	_data_format = ImageFormatToGLDataFormat(_config.format);
 
-#ifdef KN_PLATFORM_DESKTOP
+#if defined(KN_PLATFORM_DESKTOP) && !defined(__APPLE__)
 	glCreateTextures(GL_TEXTURE_2D, 1, &_renderer_id);
 	glTextureStorage2D(_renderer_id, 1, _internal_format, _width, _height);
 
@@ -103,7 +103,7 @@ OpenGLTexture2D::OpenGLTexture2D(const std::string& path, GLenum min_filter, GLe
 
 		KN_ASSERT(internalFormat & dataFormat, "format not supported!");
 
-#ifdef KN_PLATFORM_DESKTOP
+#if defined(KN_PLATFORM_DESKTOP) && !defined(__APPLE__)
 		glCreateTextures(GL_TEXTURE_2D, 1, &_renderer_id);
 		glTextureStorage2D(_renderer_id, 1, internalFormat, _width, _height);
 
@@ -147,7 +147,7 @@ void OpenGLTexture2D::SetData(void* data, uint32_t size)
 #else
 #endif
 
-#ifdef KN_PLATFORM_DESKTOP
+#if defined(KN_PLATFORM_DESKTOP) && !defined(__APPLE__)
 	glTextureSubImage2D(_renderer_id, 0, 0, 0, _width, _height, _data_format, GL_UNSIGNED_BYTE, data);
 #else
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, _width, _height, 0, _data_format, _internal_format, data);

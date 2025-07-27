@@ -76,7 +76,7 @@ const char *FRAGMENT_VARIABLES_SOURCE = R"(
 	int  TEX_INDEX;
 	vec2 SCREEN_UV;
 
-	layout (binding = 0) uniform sampler2D TEXTURE_SLOTS[32];
+	layout (binding = 0) uniform sampler2D TEXTURE_SLOTS[16];
 	#define TEXTURE                       (TEXTURE_SLOTS[TEX_INDEX])
 	#define SCREEN_TEXTURE                (TEXTURE_SLOTS[1])
 
@@ -117,19 +117,19 @@ Renderer2D::Shader2D	Renderer2D::MakeShader(const std::string& program_name, con
 	std::string	vs;
 	std::string	fs;
 
-	vs.append(GLOBAL_VARIABLES_SOURCE);
-	vs.append(VERTEX_VARIABLES_SOURCE);
+	// vs.append(GLOBAL_VARIABLES_SOURCE);
+	// vs.append(VERTEX_VARIABLES_SOURCE);
 	vs.append(vertexSrc);
-	vs.append(VERTEX_MAIN_SOURCE);
+	// vs.append(VERTEX_MAIN_SOURCE);
 
-	fs.append(GLOBAL_VARIABLES_SOURCE);
-	fs.append(FRAGMENT_VARIABLES_SOURCE);
+	// fs.append(GLOBAL_VARIABLES_SOURCE);
+	// fs.append(FRAGMENT_VARIABLES_SOURCE);
 	fs.append(fragmentSrc);
-	fs.append(FRAGMENT_MAIN_SOURCE);;
+	// fs.append(FRAGMENT_MAIN_SOURCE);;
 
-	std::cout << vs << std::endl;
-	std::cout << "---" << std::endl;
-	std::cout << fs << std::endl;
+	// std::cout << vs << std::endl;
+	// std::cout << "---" << std::endl;
+	// std::cout << fs << std::endl;
 
 	return Shader2D(_shader_library.Load(program_name, vs, fs));
 }

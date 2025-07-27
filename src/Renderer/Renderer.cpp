@@ -13,7 +13,7 @@ void	Renderer::Init()
 	KN_PRINT_FUNC();
 
 	RenderCommand::Init();
-	// Renderer2D::Init();
+	Renderer2D::Init();
 }
 
 void	Renderer::Shutdown()

@@ -52,3 +52,6 @@ hello_kinai:
 
 kinai_cube:
 	$(SILENT)$(MAKE) example 1=kinai_cube
+
+kinai_2d:
+	$(SILENT)$(MAKE) example 1=kinai_2d
