@@ -26,8 +26,6 @@ public:
 	static void	EndFrame();
 
 	static sg_pass_action&	GetPassAction();
-
-private:
 	static sg_environment	GetEnvironment();
 	static sg_swapchain		GetSwapchain();
 

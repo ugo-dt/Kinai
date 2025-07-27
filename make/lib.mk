@@ -31,18 +31,18 @@ __imgui_objs		= $(patsubst $(__imgui_path)/%.cpp,$(__lib_obj_dir)/imgui/%.o,$(__
 # SDL3
 __sdl3_path			= $(__default_lib_path)/SDL3
 
-# # Sokol
-# __sokol_path		= $(__default_lib_path)/sokol
-# __sokol_src			= $(wildcard $(__sokol_path)/*.c)
-# ifeq ($(target),$(__EMSCRIPTEN__))
-#   CFLAGS			+= -DSOKOL_GLES3
-#   CXXFLAGS			+= -DSOKOL_GLES3
-#   __sokol_src		+= $(wildcard $(__sokol_path)/wgpu/*.c)
-# else
-#   CFLAGS			+= -DSOKOL_GLCORE -DSOKOL_EXTERNAL_GL_LOADER
-#   CXXFLAGS			+= -DSOKOL_GLCORE -DSOKOL_EXTERNAL_GL_LOADER
-# endif
-# __sokol_objs		= $(patsubst $(__sokol_path)/%.c,$(__lib_obj_dir)/sokol/%.o,$(__sokol_src))
+# Sokol
+__sokol_path		= $(__default_lib_path)/sokol
+__sokol_src			= $(wildcard $(__sokol_path)/*.c)
+ifeq ($(target),$(__EMSCRIPTEN__))
+  CFLAGS			+= -DSOKOL_GLES3
+  CXXFLAGS			+= -DSOKOL_GLES3
+  __sokol_src		+= $(wildcard $(__sokol_path)/wgpu/*.c)
+else
+  CFLAGS			+= -DSOKOL_GLCORE -DSOKOL_EXTERNAL_GL_LOADER
+  CXXFLAGS			+= -DSOKOL_GLCORE -DSOKOL_EXTERNAL_GL_LOADER
+endif
+__sokol_objs		= $(patsubst $(__sokol_path)/%.c,$(__lib_obj_dir)/sokol/%.o,$(__sokol_src))
 
 # stb_image
 __stb_image_path	= $(__default_lib_path)/stb
@@ -57,7 +57,7 @@ __lib_include		=	-I $(__default_lib_path)	\
 						-I $(__sdl3_path)/include
 
 INCLUDE				+= $(__lib_include)
-LIB_OBJS			= $(__glad_objs) $(__imgui_objs) $(__stb_image_objs)
+LIB_OBJS			= $(__glad_objs) $(__imgui_objs) $(__stb_image_objs) $(__sokol_objs)
 
 ifeq ($(backend),OpenGL)
 	ifeq ($(target),$(__MACOS__))

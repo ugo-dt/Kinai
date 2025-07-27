@@ -34,7 +34,7 @@ void	OpenGLRendererAPI::Init()
 {
 	KN_PRINT_FUNC();
 
-#if defined(KN_DEV) && defined(KN_PLATFORM_DESKTOP)
+#if defined(KINAI_DEV) && defined(KN_PLATFORM_DESKTOP)
 	glEnable(GL_DEBUG_OUTPUT);
 	glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
 	glDebugMessageCallback(OpenGLMessageCallback, nullptr);

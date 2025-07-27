@@ -11,6 +11,8 @@
 	#endif
 #endif
 
+#define KN_USE_SOKOL 1
+
 namespace Kinai
 {
 

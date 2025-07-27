@@ -32,7 +32,11 @@ Application::Application(const ApplicationConfig &config)
 	_window->SetEventCallback(KN_BIND_EVENT_FN(Application::OnEvent));
 	std::memset(&_time, 0, sizeof(Time));
 
+#ifdef KINAI_SOKOL
+	Sokol::Init();
+#else
 	Renderer::Init();
+#endif
 
 	if (_config.enable_imgui)
 	{
@@ -51,7 +55,12 @@ Application::~Application()
 	KN_PRINT_FUNC();
 
 	_layerstack.Clear();
+
+#ifdef KINAI_SOKOL
+	Sokol::Shutdown();
+#else
 	Renderer::Shutdown();
+#endif
 }
 
 void	Application::OnEvent(Event& event)

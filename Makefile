@@ -13,6 +13,7 @@ KINAI_SRC = $(wildcard					\
 	$(KINAI_PATH)/src/ImGui/*.cpp		\
 	$(KINAI_PATH)/src/Renderer/*.cpp	\
 	$(KINAI_PATH)/src/Renderer/2D/*.cpp	\
+	$(KINAI_PATH)/src/Sokol/*.cpp		\
 )
 
 ifeq ($(target),$(__EMSCRIPTEN__))
@@ -36,9 +37,6 @@ $(info Target: $(target))
 $(info Rendering backend: $(backend))
 
 all: $(KINAI)
-
-# Examples
-include $(KINAI_PATH)/make/examples.mk
 
 $(KINAI): $(LIB_OBJS) $(KINAI_OBJS)
 	$(SILENT)mkdir -p $(dir $@)

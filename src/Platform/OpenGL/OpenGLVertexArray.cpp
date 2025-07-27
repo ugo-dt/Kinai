@@ -37,7 +37,11 @@ OpenGLVertexArray::OpenGLVertexArray()
 {
 	KN_PRINT_FUNC();
 
+#ifdef __APPLE__
+	glGenVertexArrays(1, &_renderer_id);
+#else
 	glCreateVertexArrays(1, &_renderer_id);
+#endif
 }
 
 OpenGLVertexArray::~OpenGLVertexArray()

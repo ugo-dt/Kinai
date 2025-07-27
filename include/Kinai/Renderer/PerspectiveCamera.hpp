@@ -68,7 +68,7 @@ struct PerspectiveCameraControllerConfig
 	float		viewport_height = KN_DEFAULT_WINDOW_HEIGHT;
 	float		fov = 45.0f;
 	float		near_clip = 0.1f;
-	float		far_clip = 1000.0f;
+	float		far_clip = 100.0f;
 	float		speed = 5.0f;
 	glm::vec3	position = {0.0f, 0.0f, 2.0f};
 	bool		no_rotation = false;

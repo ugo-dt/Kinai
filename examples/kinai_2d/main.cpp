@@ -78,7 +78,7 @@ public:
 		Kinai::RenderCommand::Clear();
 
 		Kinai::Renderer2D::BeginFrame(_camera.GetCamera());
-		Kinai::Renderer2D::DrawQuad(glm::vec2(0.f),    glm::vec2(1.f), _cobblestone);
+		Kinai::Renderer2D::DrawQuad(glm::vec2(0.f), glm::vec2(1.f), _cobblestone);
 
 		Kinai::Renderer2D::SetQuadShader(_shader);
 		_shader.GetShader()->Bind();
@@ -111,7 +111,7 @@ public:
 		ImGui::Text("Quads: %d", stats.GetQuadCount());
 		ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
 		ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
-		ImGui::Text("FPS: %zu", app.GetFPS());
+		ImGui::Text("FPS: %zu", (size_t)app.GetFPS());
 		stats.Reset();
 
 		ImGui::SameLine();

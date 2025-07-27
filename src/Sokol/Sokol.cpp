@@ -30,24 +30,6 @@ void	Sokol::Shutdown()
 	sg_shutdown();
 }
 
-void	Sokol::BeginFrame()
-{
-	KN_PRINT_FUNC();
-	sg_pass	pass = {};
-	pass.action = Sokol::_pass_action;
-
-	pass.swapchain = GetSwapchain(),
-	sg_begin_pass(pass);
-}
-
-void	Sokol::EndFrame()
-{
-	KN_PRINT_FUNC();
-
-	sg_end_pass();
-	sg_commit();
-}
-
 sg_pass_action&	Sokol::GetPassAction()
 {
 	KN_PRINT_FUNC();
