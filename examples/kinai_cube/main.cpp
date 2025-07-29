@@ -68,20 +68,11 @@ public:
 		_vertex_array->AddVertexBuffer(vertex_buffer);
 		auto index_buffer = Kinai::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 		_vertex_array->SetIndexBuffer(index_buffer);
+
+		glFrontFace(GL_CW);
 	}
 
 	~AppLayer() = default;
-
-	void	OnAttach()
-	{
-		glFrontFace(GL_CW);
-		Kinai::Log::Info("AppLayer::OnAttach()");
-	}
-
-	void	OnDetach()
-	{
-		Kinai::Log::Info("AppLayer::OnDetach()");
-	}
 
 	void	OnUpdate(float delta)
 	{

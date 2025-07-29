@@ -55,3 +55,6 @@ kinai_cube:
 
 kinai_2d:
 	$(SILENT)$(MAKE) example 1=kinai_2d
+
+kinai_sokol:
+	$(SILENT)$(MAKE) example 1=kinai_sokol

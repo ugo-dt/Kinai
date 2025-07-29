@@ -8,14 +8,14 @@ class KnType:
 		self.type: str | dict = _type
 
 		if self.compound:
-			self.text: str | None = _type.get('#text')
+			self.text: str | None = _type.get('#text') # type: ignore
 			if self.text is not None:
 				self.const = self.text.strip().startswith('const')
 
-			ref: dict = _type.get('ref')
-			self.ref_text = ref.get('#text')
-			self.__kindref: str = ref.get('@kindref')
-			self.__refid: str = ref.get('@refid')
+			ref: dict = _type.get('ref', {}) # type: ignore
+			self.ref_text = ref.get('#text', '')
+			self.__kindref: str = ref.get('@kindref', '')
+			self.__refid: str = ref.get('@refid', '')
 			
 	def __c__(self) -> str:
 		if self.compound:
@@ -24,7 +24,7 @@ class KnType:
 			if self.type is None:
 				return 'void'
 
-			__type: str = self.type.strip()
+			__type: str = self.type.strip() # type: ignore
 
 			# c++ std types
 			if 'std::' in __type or '<' in __type or '>' in __type:

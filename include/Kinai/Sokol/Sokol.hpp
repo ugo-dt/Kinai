@@ -3,15 +3,15 @@
 #include "Kinai/Core/Core.hpp"
 #include "Kinai/Sokol/Types.hpp"
 
-#ifdef __clang__
-	#pragma clang diagnostic ignored "-Wc99-designator"
-	#pragma clang diagnostic ignored "-Wmissing-field-initializers"
-	#pragma clang diagnostic ignored "-Wreorder-init-list"
-#endif
+// #ifdef __clang__
+// 	#pragma clang diagnostic ignored "-Wc99-designator"
+// 	#pragma clang diagnostic ignored "-Wmissing-field-initializers"
+// 	#pragma clang diagnostic ignored "-Wreorder-init-list"
+// #endif
 
-#ifdef __GNUC__
-	#pragma GCC diagnostic ignored "-Wmissing-field-initializers"
-#endif
+// #ifdef __GNUC__
+// 	#pragma GCC diagnostic ignored "-Wmissing-field-initializers"
+// #endif
 
 namespace Kinai
 {

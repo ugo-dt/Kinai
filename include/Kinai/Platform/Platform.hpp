@@ -41,10 +41,6 @@
 #if defined(KN_PLATFORM_WINDOWS) || defined(KN_PLATFORM_LINUX) || defined(KN_PLATFORM_MACOS)
 	#define KN_PLATFORM_DESKTOP
 	#include <glad/glad.h>
-	#if defined(KINAI_OPENGL)
-		#include <imgui/backends/imgui_impl_sdl3.h>
-		#include <imgui/backends/imgui_impl_opengl3.h>
-	#endif
 	#if defined(_WIN32)
 		#define WIN32_MEAN_AND_LEAN
 		#include <windows.h>
@@ -65,6 +61,11 @@
 	#define glCreateBuffers			glGenBuffers
 	#define glCreateVertexArrays	glGenVertexArrays
 	#define glCreateTextures		glGenTextures
+#endif
+
+#if defined(KINAI_OPENGL)
+	#include <imgui/backends/imgui_impl_sdl3.h>
+	#include <imgui/backends/imgui_impl_opengl3.h>
 #endif
 
 #if !defined(KINAI_OPENGL) && !defined(KINAI_HEADLESS)

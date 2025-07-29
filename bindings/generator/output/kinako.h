@@ -170,51 +170,51 @@ typedef enum KnEventCategory
 typedef enum KnKN_CustomEventType
 {
 	KN_EVENT_WINDOW_TICK = SDL_EVENT_USER,
-	KN_EVENT_WINDOW_UPDATE,
-	KN_EVENT_WINDOW_RENDER,
-	KN_EVENT_LAST
+	KN_EVENT_WINDOW_UPDATE ,
+	KN_EVENT_WINDOW_RENDER ,
+	KN_EVENT_LAST 
 } KnKN_CustomEventType;
 
 typedef enum KnFramebufferTextureFormat
 {
 	None = 0,
-	RGBA8,
-	RED_INTEGER,
-	DEPTH24STENCIL8,
+	RGBA8 ,
+	RED_INTEGER ,
+	DEPTH24STENCIL8 ,
 	Depth = DEPTH24STENCIL8
 } KnFramebufferTextureFormat;
 
 typedef enum KnImageFormat
 {
 	None = 0,
-	R8,
-	RGB8,
-	RGBA8,
-	RGBA32F
+	R8 ,
+	RGB8 ,
+	RGBA8 ,
+	RGBA32F 
 } KnImageFormat;
 
 typedef enum KnShaderDataType
 {
 	None = 0,
-	Float,
-	Float2,
-	Float3,
-	Float4,
-	Mat3,
-	Mat4,
-	Int,
-	Int2,
-	Int3,
-	Int4,
-	Bool,
-	UByte,
-	UByte2,
-	UByte3,
-	UByte4,
-	UInt,
-	UInt2,
-	UInt3,
-	UInt4
+	Float ,
+	Float2 ,
+	Float3 ,
+	Float4 ,
+	Mat3 ,
+	Mat4 ,
+	Int ,
+	Int2 ,
+	Int3 ,
+	Int4 ,
+	Bool ,
+	UByte ,
+	UByte2 ,
+	UByte3 ,
+	UByte4 ,
+	UInt ,
+	UInt2 ,
+	UInt3 ,
+	UInt4 
 } KnShaderDataType;
 
 typedef void* KnScope;
@@ -341,23 +341,23 @@ void KnMouseButtonEvent_MouseButtonEvent();
 KnMouseButton KnMouseButtonEvent_GetButton();
 void KnMouseButtonEvent_EVENT_CLASS_CATEGORY(EventCategoryMouse|EventCategoryInput| EventCategoryMouseButton);
 void KnMouseButtonPressedEvent_MouseButtonPressedEvent(const KnMouseButton button);
-void KnMouseButtonPressedEvent_EVENT_CLASS_TYPE(SDL_EVENT_MOUSE_BUTTON_DOWN None);
+void KnMouseButtonPressedEvent_EVENT_CLASS_TYPE(SDL_EVENT_MOUSE_BUTTON_DOWN );
 void* KnMouseButtonPressedEvent_ToString();
 void KnMouseButtonReleasedEvent_MouseButtonReleasedEvent(const KnMouseButton button);
-void KnMouseButtonReleasedEvent_EVENT_CLASS_TYPE(SDL_EVENT_MOUSE_BUTTON_UP None);
+void KnMouseButtonReleasedEvent_EVENT_CLASS_TYPE(SDL_EVENT_MOUSE_BUTTON_UP );
 void* KnMouseButtonReleasedEvent_ToString();
 void KnMouseMotionEvent_MouseMotionEvent(const float x, const float y, const float rel_x, const float rel_y);
 float KnMouseMotionEvent_GetX();
 float KnMouseMotionEvent_GetY();
 float KnMouseMotionEvent_GetXRelative();
 float KnMouseMotionEvent_GetYRelative();
-void KnMouseMotionEvent_EVENT_CLASS_TYPE(SDL_EVENT_MOUSE_MOTION None);
+void KnMouseMotionEvent_EVENT_CLASS_TYPE(SDL_EVENT_MOUSE_MOTION );
 void KnMouseMotionEvent_EVENT_CLASS_CATEGORY(EventCategoryMouse| EventCategoryInput);
 void* KnMouseMotionEvent_ToString();
 void KnMouseWheelEvent_MouseWheelEvent(const float x, const float y);
 float KnMouseWheelEvent_GetXOffset();
 float KnMouseWheelEvent_GetYOffset();
-void KnMouseWheelEvent_EVENT_CLASS_TYPE(SDL_EVENT_MOUSE_WHEEL None);
+void KnMouseWheelEvent_EVENT_CLASS_TYPE(SDL_EVENT_MOUSE_WHEEL );
 void KnMouseWheelEvent_EVENT_CLASS_CATEGORY(EventCategoryMouse| EventCategoryInput);
 void* KnMouseWheelEvent_ToString();
 void KnOrthographicCamera_OrthographicCamera(float left, float right, float bottom, float top);
@@ -558,12 +558,12 @@ void KnWindow_SetRelativeMouseMode(bool enabled);
 void KnWindow_WarpMouse(float x, float y);
 KnWindow* KnWindow_Create(const KnWindowProps* props);
 void KnWindowCloseEvent_WindowCloseEvent();
-void KnWindowCloseEvent_EVENT_CLASS_TYPE(SDL_EVENT_WINDOW_CLOSE_REQUESTED None);
-void KnWindowCloseEvent_EVENT_CLASS_CATEGORY(EventCategoryApplication None);
+void KnWindowCloseEvent_EVENT_CLASS_TYPE(SDL_EVENT_WINDOW_CLOSE_REQUESTED );
+void KnWindowCloseEvent_EVENT_CLASS_CATEGORY(EventCategoryApplication );
 void KnWindowProps_WindowProps(void* title, uint32_t width, uint32_t height, bool fullscreen, bool no_vsync);
 void KnWindowResizeEvent_WindowResizeEvent(uint32_t width, uint32_t height);
 uint32_t KnWindowResizeEvent_GetWidth();
 uint32_t KnWindowResizeEvent_GetHeight();
 void* KnWindowResizeEvent_ToString();
-void KnWindowResizeEvent_EVENT_CLASS_TYPE(SDL_EVENT_WINDOW_RESIZED None);
-void KnWindowResizeEvent_EVENT_CLASS_CATEGORY(EventCategoryApplication None);
+void KnWindowResizeEvent_EVENT_CLASS_TYPE(SDL_EVENT_WINDOW_RESIZED );
+void KnWindowResizeEvent_EVENT_CLASS_CATEGORY(EventCategoryApplication );

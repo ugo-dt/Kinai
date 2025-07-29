@@ -36,7 +36,7 @@ class KnEnum(_KnMember):
 
 		if self.enumvalue is not None:
 			for enum in self.enumvalue:
-				self.values.append(KnEnumValue(enum.get('name'), enum.get('initializer')))
+				self.values.append(KnEnumValue(enum.get('name', ''), enum.get('initializer', '')))
 
 		# print(self.__c__())
 
@@ -66,7 +66,7 @@ class KnNamespace:
 	def __init__(self, compound: dict):
 		self.__kind = compound.get('@kind')
 		self.__refid = compound.get('@refid')
-		self.__members: list[dict] = KnGetAttribute(compound, 'member')
+		self.__members: list[dict] = KnGetAttribute(compound, 'member') or []
 		self.name = compound.get('name')
 
 		self.enums: list[KnEnum] = []
@@ -78,23 +78,26 @@ class KnNamespace:
 			compounddef: dict = json_data['doxygen']['compounddef']
 			if compounddef is None:
 				return 
-			sectiondef: list[dict] = KnGetAttribute(compounddef, 'sectiondef')
+			sectiondef: list[dict] = KnGetAttribute(compounddef, 'sectiondef') or []
 			if sectiondef is None:
 				return 
 			
 			for section in sectiondef:
 				section_kind = section.get('@kind')
-				memberdef: list[dict] = KnGetAttribute(section, 'memberdef')
+				memberdef: list[dict] = KnGetAttribute(section, 'memberdef') or []
 				if section_kind == 'enum':
 					for member in memberdef:
 						self.enums.append(KnEnum(member))
 				elif section_kind == 'typedef':
 					for member in memberdef:
-						self.enums.append(KnTypedef(member))
+						self.typedefs.append(KnTypedef(member))
 
 	def __c__(self) -> str:
 		c: list[str] = []
 		for enum in self.enums:
 			if enum.name is not None:
 				c.append(f'{enum.__c__()}')
+		for typedef in self.typedefs:
+			if typedef.name is not None:
+				c.append(f'{typedef.__c__()}')
 		return '\n'.join(c)

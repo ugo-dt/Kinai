@@ -1,6 +1,5 @@
 #include "Kinai/Sokol/Sokol.hpp"
 #include "Kinai/Core/Application.hpp"
-#include <utility>
 
 namespace Kinai
 {

@@ -234,8 +234,8 @@ void	Renderer2D::FlushQuadPipeline()
 		_pip_quad.shader->Bind();
 
 		// Bind textures
-		// for (uint32_t i = 0; i < _texture_slot_index; i++)
-		// 	_texture_slots[i]->Bind(i);
+		for (uint32_t i = 0; i < _texture_slot_index; i++)
+			_texture_slots[i]->Bind(i);
 
 		_pip_quad.shader->SetFloat2("VIEWPORT", glm::vec2(Application::Get().GetWindow().GetSize()));
 
