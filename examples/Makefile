@@ -1,9 +1,10 @@
 KINAI_PATH = ..
-KINAI_BACKEND = OpenGL
 include $(KINAI_PATH)/Makefile
 
 EXAMPLES_DIR = $(KINAI_PATH)/examples
 EXAMPLES = $(filter-out $(EXAMPLES_DIR)/assets,$(wildcard $(EXAMPLES_DIR)/*))
+
+INCLUDE += -I $(KINAI_PATH)/examples/assets
 
 define __make_example_rule =
 .PHONY: $(EXAMPLES_DIR)/$(1)
@@ -58,3 +59,6 @@ kinai_2d:
 
 kinai_sokol:
 	$(SILENT)$(MAKE) example 1=kinai_sokol
+
+kinai_sokol_gp:
+	$(SILENT)$(MAKE) example 1=kinai_sokol_gp

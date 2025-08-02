@@ -38,9 +38,11 @@ ifeq ($(target),$(__EMSCRIPTEN__))
   CFLAGS			+= -DSOKOL_GLES3
   CXXFLAGS			+= -DSOKOL_GLES3
   __sokol_src		+= $(wildcard $(__sokol_path)/wgpu/*.c)
+  SOKOL_SLANG		= glsl300es
 else
   CFLAGS			+= -DSOKOL_GLCORE -DSOKOL_EXTERNAL_GL_LOADER
   CXXFLAGS			+= -DSOKOL_GLCORE -DSOKOL_EXTERNAL_GL_LOADER
+  SOKOL_SLANG		= glsl410
 endif
 __sokol_objs		= $(patsubst $(__sokol_path)/%.c,$(__lib_obj_dir)/sokol/%.o,$(__sokol_src))
 

@@ -378,7 +378,7 @@ MIT, see LICENSE file or the end of `sokol_gp.h` file.
 Increase this value if you need to use shader with many uniforms.
 */
 #ifndef SGP_UNIFORM_CONTENT_SLOTS
-#define SGP_UNIFORM_CONTENT_SLOTS 16
+#define SGP_UNIFORM_CONTENT_SLOTS 32
 #endif
 
 /* Number of texture slots that can be bound in a pipeline. */
@@ -651,6 +651,15 @@ SOKOL_GP_API_DECL sgp_desc sgp_query_desc(void);    /* Returns description of th
 
 #ifdef __cplusplus
 } // extern "C"
+
+// reference-based equivalents for c++
+
+inline void sgp_setup(const sgp_desc& desc) { return sgp_setup(&desc); }
+inline sg_pipeline sgp_make_pipeline(const sgp_pipeline_desc& desc) { return sgp_make_pipeline(&desc); }
+
+template <class T, class U>
+inline void sgp_set_uniform(const T& vs_data, uint32_t vs_size, const U& fs_data, uint32_t fs_size) { return sgp_set_uniform((const void *)&vs_data, vs_size, (const void *)&fs_data, fs_size); }
+
 #endif
 
 #endif // SOKOL_GP_INCLUDED
