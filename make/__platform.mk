@@ -78,15 +78,18 @@ ifeq ($(target),$(__WIN32__))
   CXX		= $(__arch)-w64-mingw32-c++
   AR		= $(__arch)-w64-mingw32-ar
   LDFLAGS	+= -lmingw32 -lopengl32 -lglu32 -static
+  __kinai_target_win32 = 1
 else ifeq ($(target),$(__LINUX__))
   EXE 		= .out
   LDFLAGS	+= -lm -lGL
+  __kinai_target_linux = 1
 else ifeq ($(target),$(__MACOS__))
   EXE		= .out
   CC    = clang
   CXX   = clang++
   INCLUDE	+= -I /opt/homebrew/include
   LDFLAGS	+= -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo -lncurses
+  __kinai_target_macos = 1
 else ifeq ($(target),$(__EMSCRIPTEN__))
   EXE		= .html
   CC		= emcc
@@ -94,6 +97,7 @@ else ifeq ($(target),$(__EMSCRIPTEN__))
   AR		= emar
   CXXFLAGS	+= -DIMGUI_IMPL_OPENGL_ES3
   LDFLAGS	+= -sFULL_ES3=1 -sALLOW_MEMORY_GROWTH
+  __kinai_target_web = 1
 endif
 
 # Rendering backend.
