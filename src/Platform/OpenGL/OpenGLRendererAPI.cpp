@@ -34,7 +34,7 @@ void	OpenGLRendererAPI::Init()
 {
 	KN_PRINT_FUNC();
 
-#if defined(KINAI_DEV) && defined(KN_PLATFORM_DESKTOP)
+#if defined(KINAI_DEV) && KN_OPENGL_VERSION_MAJOR >= 4
 	glEnable(GL_DEBUG_OUTPUT);
 	glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
 	glDebugMessageCallback(OpenGLMessageCallback, nullptr);
@@ -47,12 +47,11 @@ void	OpenGLRendererAPI::Init()
 	glDisable(GL_BLEND);
 	glDisable(GL_STENCIL_TEST);
 
-	glEnable(GL_CULL_FACE);
-	glCullFace(GL_BACK);
-
 #ifdef KN_PLATFORM_DESKTOP
 	glEnable(GL_LINE_SMOOTH);
 #endif
+
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLRendererAPI::SetViewport(uint32_t x, uint32_t y, uint32_t width, uint32_t height)

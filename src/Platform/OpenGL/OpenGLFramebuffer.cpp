@@ -3,18 +3,26 @@
 namespace Kinai
 {
 
-#ifdef KN_PLATFORM_DESKTOP
-
 constexpr uint32_t MAX_FRAME_BUFFER_SIZE = 8192;
 
 static GLenum	TextureTarget(bool multisampled)
 {
+#if KINAI_OPENGL_VERSION_MAJOR >= 4
 	return multisampled ? GL_TEXTURE_2D_MULTISAMPLE : GL_TEXTURE_2D;
+#else
+	(void)multisampled;
+	return GL_TEXTURE_2D;
+#endif
 }
 
 static void	CreateTextures(bool multisampled, uint32_t* outID, uint32_t count)
 {
+#if KINAI_OPENGL_VERSION_MAJOR >= 4
 	glCreateTextures(TextureTarget(multisampled), count, outID);
+#else
+	(void)multisampled;
+	glGenTextures(count, outID);
+#endif
 }
 
 static void	BindTexture(bool multisampled, uint32_t id)
@@ -25,14 +33,15 @@ static void	BindTexture(bool multisampled, uint32_t id)
 static void	AttachColorTexture(uint32_t id, int samples, GLenum internalFormat, GLenum format, uint32_t width, uint32_t height, int index)
 {
 	bool multisampled = samples > 1;
+#if KINAI_OPENGL_VERSION_MAJOR >= 4
 	if (multisampled)
 	{
 		glTexImage2DMultisample(GL_TEXTURE_2D_MULTISAMPLE, samples, internalFormat, width, height, GL_FALSE);
 	}
 	else
+#endif
 	{
 		glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, width, height, 0, format, GL_UNSIGNED_BYTE, nullptr);
-
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_R, GL_REPEAT);
@@ -46,19 +55,23 @@ static void	AttachColorTexture(uint32_t id, int samples, GLenum internalFormat, 
 static void	AttachDepthTexture(uint32_t id, int samples, GLenum format, GLenum attachmentType, uint32_t width, uint32_t height)
 {
 	bool multisampled = samples > 1;
+#if KINAI_OPENGL_VERSION_MAJOR >= 4
 	if (multisampled)
 	{
 		glTexImage2DMultisample(GL_TEXTURE_2D_MULTISAMPLE, samples, format, width, height, GL_FALSE);
 	}
 	else
+#endif
 	{
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, 1024, 768, 0, GL_DEPTH_COMPONENT, GL_FLOAT, 0);
 		glTexStorage2D(GL_TEXTURE_2D, 1, format, width, height);
-
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_R, GL_REPEAT);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_FUNC, GL_LEQUAL);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_NONE);
 	}
 
 	glFramebufferTexture2D(GL_FRAMEBUFFER, attachmentType, TextureTarget(multisampled), id, 0);
@@ -121,7 +134,11 @@ void	OpenGLFramebuffer::Invalidate()
 		_depth_attachment = 0;
 	}
 
+#if KINAI_OPENGL_VERSION_MAJOR >= 4
 	glCreateFramebuffers(1, &_renderer_id);
+#else
+	glGenFramebuffers(1, &_renderer_id);
+#endif
 	glBindFramebuffer(GL_FRAMEBUFFER, _renderer_id);
 
 	bool multisample = _config.samples > 1;
@@ -172,12 +189,17 @@ void	OpenGLFramebuffer::Invalidate()
 	else if (_color_attachments.empty())
 	{
 		// Only depth-pass
+	#ifdef KN_PLATFORM_WEB
+		glDrawBuffers(1, (GLenum[]){ GL_NONE });
+	#else
 		glDrawBuffer(GL_NONE);
+	#endif
 	}
 
 	KN_ASSERT(glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE, "Framebuffer is incomplete!");
 
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLFramebuffer::Bind()
@@ -225,13 +247,19 @@ void	OpenGLFramebuffer::CopyTextureData(Ref<Texture2D>& dest)
 
 void	OpenGLFramebuffer::ClearAttachment(uint32_t attachmentIndex, int value)
 {
+#if KINAI_OPENGL_VERSION_MAJOR >= 4
 	KN_ASSERT(attachmentIndex < _color_attachments.size());
 
 	auto& spec = _color_attachment_configs[attachmentIndex];
 	glClearTexImage(_color_attachments[attachmentIndex], 0,
 		FBTextureFormatToGL(spec.TextureFormat), GL_INT, &value);
+#else
+	(void)attachmentIndex;
+	(void)value;
+	(void)FBTextureFormatToGL;
+	Log::Warn("glClearTexImage was introduced in OpenGL 4.4, current version is {}.{}",
+		KINAI_OPENGL_VERSION_MAJOR, KINAI_OPENGL_VERSION_MINOR);
+#endif
 }
-
-#endif // KN_PLATFORM_DESKTOP
 
 } // Kinai

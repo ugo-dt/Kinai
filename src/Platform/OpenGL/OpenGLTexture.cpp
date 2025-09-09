@@ -15,7 +15,7 @@ static GLenum ImageFormatToGLDataFormat(ImageFormat format)
 		default: break;
 	}
 
-	KN_ASSERT(false);
+	KN_ASSERT(false, "ImageFormatToGLDataFormat");
 	return 0;
 }
 
@@ -30,7 +30,7 @@ static GLenum ImageFormatToGLInternalFormat(ImageFormat format)
 		default: break;
 	}
 
-	KN_ASSERT(false);
+	KN_ASSERT(false, "ImageFormatToGLInternalFormat");
 	return 0;
 }
 
@@ -45,7 +45,7 @@ OpenGLTexture2D::OpenGLTexture2D(const TextureConfig& config)
 	_internal_format = ImageFormatToGLInternalFormat(_config.format);
 	_data_format = ImageFormatToGLDataFormat(_config.format);
 
-#if defined(KN_PLATFORM_DESKTOP) && !defined(__APPLE__)
+#if defined(KN_PLATFORM_DESKTOP) && !defined(KN_PLATFORM_MACOS)
 	glCreateTextures(GL_TEXTURE_2D, 1, &_renderer_id);
 	glTextureStorage2D(_renderer_id, 1, _internal_format, _width, _height);
 
@@ -58,11 +58,12 @@ OpenGLTexture2D::OpenGLTexture2D(const TextureConfig& config)
 	glGenTextures(1, &_renderer_id);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, _renderer_id);
-	glTexParameteri(_renderer_id, GL_TEXTURE_MIN_FILTER, config.min_filter);
-	glTexParameteri(_renderer_id, GL_TEXTURE_MAG_FILTER, config.max_filter);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, config.min_filter);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, config.max_filter);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 #endif
+	_KN_GL_CHECK_ERROR();
 }
 
 OpenGLTexture2D::OpenGLTexture2D(const std::string& path, GLenum min_filter, GLenum max_filter)
@@ -103,7 +104,7 @@ OpenGLTexture2D::OpenGLTexture2D(const std::string& path, GLenum min_filter, GLe
 
 		KN_ASSERT(internalFormat & dataFormat, "format not supported!");
 
-#if defined(KN_PLATFORM_DESKTOP) && !defined(__APPLE__)
+	#if defined(KN_PLATFORM_DESKTOP) && !defined(KN_PLATFORM_MACOS)
 		glCreateTextures(GL_TEXTURE_2D, 1, &_renderer_id);
 		glTextureStorage2D(_renderer_id, 1, internalFormat, _width, _height);
 
@@ -114,20 +115,20 @@ OpenGLTexture2D::OpenGLTexture2D(const std::string& path, GLenum min_filter, GLe
 		glTextureParameteri(_renderer_id, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
 		glTextureSubImage2D(_renderer_id, 0, 0, 0, _width, _height, dataFormat, GL_UNSIGNED_BYTE, data);
-
-#else
+	#else
 		glGenTextures(1, &_renderer_id);
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, _renderer_id);
-		glTexParameteri(_renderer_id, GL_TEXTURE_MIN_FILTER, min_filter);
-		glTexParameteri(_renderer_id, GL_TEXTURE_MAG_FILTER, max_filter);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, min_filter);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, max_filter);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, _width, _height, 0, dataFormat, internalFormat, data);
+		glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, _width, _height, 0, dataFormat, GL_UNSIGNED_BYTE, data);
 		glGenerateMipmap(GL_TEXTURE_2D);
-#endif
+	#endif
 		stbi_image_free(data);
 	}
+	_KN_GL_CHECK_ERROR();
 }
 
 OpenGLTexture2D::~OpenGLTexture2D()
@@ -135,6 +136,7 @@ OpenGLTexture2D::~OpenGLTexture2D()
 	KN_PRINT_FUNC();
 
 	glDeleteTextures(1, &_renderer_id);
+	_KN_GL_CHECK_ERROR();
 }
 
 void OpenGLTexture2D::SetData(void* data, uint32_t size)
@@ -144,25 +146,28 @@ void OpenGLTexture2D::SetData(void* data, uint32_t size)
 #ifdef KN_ENABLE_ASSERTS
 	uint32_t bpp = _data_format == GL_RGBA ? 4 : 3;
 	KN_ASSERT(size == _width * _height * bpp, "Data must be entire texture!");
-#else
 #endif
 
-#if defined(KN_PLATFORM_DESKTOP) && !defined(__APPLE__)
+#if defined(KN_PLATFORM_DESKTOP) && !defined(KN_PLATFORM_MACOS)
 	glTextureSubImage2D(_renderer_id, 0, 0, 0, _width, _height, _data_format, GL_UNSIGNED_BYTE, data);
 #else
+	glBindTexture(GL_TEXTURE_2D, _renderer_id);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, _width, _height, 0, _data_format, _internal_format, data);
 #endif
+	_KN_GL_CHECK_ERROR();
 }
 
 void OpenGLTexture2D::Bind(uint32_t slot) const
 {
 	KN_PRINT_FUNC();
 
-#ifdef KN_PLATFORM_DESKTOP
+#if defined(KN_PLATFORM_DESKTOP) && !defined(KN_PLATFORM_MACOS)
 	glBindTextureUnit(slot, _renderer_id);
 #else
-	glBindTexture(slot, _renderer_id);
+	(void)slot;
+	glBindTexture(GL_TEXTURE_2D, _renderer_id);
 #endif
+	_KN_GL_CHECK_ERROR();
 }
 
 } // Kinai

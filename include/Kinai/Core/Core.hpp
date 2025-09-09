@@ -43,7 +43,7 @@
 	#define KN_PRINT_FUNC()
 #endif
 
-#if defined(KN_DEBUG) || defined(KN_DEV)
+#if defined(KINAI_DEBUG) || defined(KINAI_DEV)
 	#define KN_ENABLE_ASSERTS
 #endif
 
@@ -86,3 +86,4 @@ constexpr Ref<T> CreateRef(Args&& ... args)
 
 #include "Kinai/Core/Log.hpp"
 #include "Kinai/Core/Assert.hpp"
+

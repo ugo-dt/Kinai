@@ -28,6 +28,9 @@ public:
 		return _color_attachments[index];
 	}
 	uint32_t	GetRendererID() const override { return _renderer_id; }
+	uint32_t	GetWidth() const { return _config.width; }
+	uint32_t	GetHeight() const { return _config.height; }
+	uint32_t	GetDepthAttachmentRendererID() const override { return _depth_attachment; }
 
 	const FramebufferConfig&	GetConfig() const override { return _config; }
 

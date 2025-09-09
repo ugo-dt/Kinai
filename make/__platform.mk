@@ -95,9 +95,8 @@ else ifeq ($(target),$(__EMSCRIPTEN__))
   CC		= emcc
   CXX		= em++
   AR		= emar
-  CXXFLAGS	+= -DIMGUI_IMPL_OPENGL_ES3
-  LDFLAGS	+= -sFULL_ES3=1 -sALLOW_MEMORY_GROWTH
-  __kinai_target_web = 1
+  CXXFLAGS	+= -DIMGUI_IMPL_OPENGL_ES3 -sUSE_SDL=3 -Wno-experimental
+  LDFLAGS	+= -sUSE_SDL=3 -sALLOW_MEMORY_GROWTH -sWASM=1 -sUSE_WEBGL2=1 -sMIN_WEBGL_VERSION=2 -sMAXIMUM_MEMORY=1gb
 endif
 
 # Rendering backend.

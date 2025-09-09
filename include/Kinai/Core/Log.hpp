@@ -37,6 +37,9 @@ public:
 	template <class... Args>
 	static void	Critical(std::string_view fmt, Args&&... args);
 
+	template <class... Args>
+	static void	Validate(bool condition, std::string_view fmt, Args&&... args);
+
 private:
 	template <typename OStream>
 	static void	Print(OStream& stream, const char* color, const char *log_name, std::string_view fmt, std::format_args args, const std::string_view& end = "\n");
@@ -80,7 +83,7 @@ Log::Print(OStream& stream, const char* color, const char *log_name, std::string
 
 	if (tty)
 		stream << color;
-	stream << "[" << log_name << "] ";
+	stream << "[Kinai]" << "[" << log_name << "] ";
 	if (tty)
 		stream << KN_COLOR_DEFAULT;
 	stream << std::vformat(fmt, args) << end;
@@ -124,6 +127,16 @@ Log::Critical(std::string_view fmt, Args&&... args)
 {
 	for (auto stream : _error_streams)
 		Log::Print(*stream, KN_COLOR_RED, "CRITICAL", fmt, std::make_format_args(args...));
+	// it would be undefined behavior to continue after a critical error
+	std::abort();
+}
+
+template <class... Args>
+inline void
+Log::Validate(bool condition, std::string_view fmt, Args&&... args)
+{
+	if (!condition)
+		Log::Critical(fmt, std::forward<Args>(args)...);
 }
 
 } // Kinai

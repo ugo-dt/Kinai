@@ -39,11 +39,25 @@ Ref<Shader> Shader::Create(const std::string& name, const std::string& vertexSrc
 	return nullptr;
 }
 
+Ref<Shader> Shader::Create(const std::string& name, const char* vertexSrc, const char* fragmentSrc)
+{
+	KN_PRINT_FUNC();
+
+#if defined(KINAI_HEADLESS)
+	return CreateRef<HeadlessShader>(name, vertexSrc, fragmentSrc);
+#elif defined(KINAI_OPENGL)
+	return CreateRef<OpenGLShader>(name, vertexSrc, fragmentSrc);
+#endif
+
+	KN_ASSERT(false, "Unknown RendererAPI!");
+	return nullptr;
+}
+
 void ShaderLibrary::Add(const std::string& name, const Ref<Shader>& shader)
 {
 	KN_PRINT_FUNC();
 
-	KN_ASSERT(!Exists(name) && "Shader already exists!");
+	KN_ASSERT(!Exists(name), "Shader {} already exists!", name);
 	_shaders[name] = shader;
 }
 

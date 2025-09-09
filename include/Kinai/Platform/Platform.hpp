@@ -10,6 +10,8 @@
 		/* Windows x86 */
 		#error "x86 Builds are not supported!"
 	#endif
+#elif defined(__EMSCRIPTEN__)
+	#define KN_PLATFORM_WEB
 #elif defined(__APPLE__) || defined(__MACH__)
 	#include <TargetConditionals.h>
 	/* TARGET_OS_MAC exists on all the platforms
@@ -26,13 +28,11 @@
 	#else
 		#error "Unknown Apple platform!"
 	#endif
+#elif defined(__linux__)
+	#define KN_PLATFORM_LINUX
 #elif defined(__ANDROID__)
 	#define KN_PLATFORM_ANDROID
 	#error "Android is not supported!"
-#elif defined(__EMSCRIPTEN__)
-	#define KN_PLATFORM_WEB
-#elif defined(__linux__)
-	#define KN_PLATFORM_LINUX
 #else
 	/* Unknown compiler/platform */
 	#error "Unknown platform!"
@@ -64,6 +64,20 @@
 #endif
 
 #if defined(KINAI_OPENGL)
+	#ifndef KINAI_OPENGL_VERSION_MAJOR
+		#if defined(KN_PLATFORM_WEB) || defined(KN_PLATFORM_MACOS)
+			#define KINAI_OPENGL_VERSION_MAJOR 3
+		#else
+			#define KINAI_OPENGL_VERSION_MAJOR 4
+		#endif
+	#endif
+	#ifndef KINAI_OPENGL_VERSION_MINOR
+		#if defined(KN_PLATFORM_WEB) || defined(KN_PLATFORM_MACOS)
+			#define KINAI_OPENGL_VERSION_MINOR 0
+		#else
+			#define KINAI_OPENGL_VERSION_MINOR 3
+		#endif
+	#endif
 	#include <imgui/backends/imgui_impl_sdl3.h>
 	#include <imgui/backends/imgui_impl_opengl3.h>
 #endif

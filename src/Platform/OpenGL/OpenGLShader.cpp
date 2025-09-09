@@ -491,25 +491,29 @@ void	OpenGLShader::CreateProgram(const char *vertex, const char *fragment)
 	glShaderSource(vertex_id, 1, &vertex, NULL);
 	glCompileShader(vertex_id);
 	glGetShaderiv(vertex_id, GL_COMPILE_STATUS, &status);
-	KN_ASSERT(status == GL_TRUE, "{}: Vertex shader: {}", _name, get_shader_info_log(vertex_id, glGetShaderInfoLog));
+	Log::Validate(status == GL_TRUE, "{}: vertex shader: {}", _name, get_shader_info_log(vertex_id, glGetShaderInfoLog));
+	_KN_GL_CHECK_ERROR();
 
 	int fragment_id = glCreateShader(GL_FRAGMENT_SHADER);
 	glShaderSource(fragment_id, 1, &fragment, NULL);
 	glCompileShader(fragment_id);
 	glGetShaderiv(fragment_id, GL_COMPILE_STATUS, &status);
-	KN_ASSERT(status == GL_TRUE, "{}: Fragment shader: {}", _name, get_shader_info_log(fragment_id, glGetShaderInfoLog));
+	Log::Validate(status == GL_TRUE, "{}: fragment shader: {}", _name, get_shader_info_log(fragment_id, glGetShaderInfoLog));
+	_KN_GL_CHECK_ERROR();
 
 	int id = glCreateProgram();
 	glAttachShader(id, vertex_id);
 	glAttachShader(id, fragment_id);
 	glLinkProgram(id);
 	glGetProgramiv(id, GL_LINK_STATUS, &status);
-	KN_ASSERT(status == GL_TRUE, "glLinkProgram(): {}", get_shader_info_log(id, glGetProgramInfoLog));
+	Log::Validate(status == GL_TRUE, "glLinkProgram(): {}", get_shader_info_log(id, glGetProgramInfoLog));
+	_KN_GL_CHECK_ERROR();
 
 	glDeleteShader(vertex_id);
 	glDeleteShader(fragment_id);
 
 	_renderer_id = id;
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLShader::Bind() const
@@ -517,6 +521,7 @@ void	OpenGLShader::Bind() const
 	KN_PRINT_FUNC();
 
 	glUseProgram(_renderer_id);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLShader::Unbind() const
@@ -524,6 +529,7 @@ void	OpenGLShader::Unbind() const
 	KN_PRINT_FUNC();
 
 	glUseProgram(0);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLShader::SetInt(const std::string& name, int value)
@@ -577,48 +583,56 @@ void	OpenGLShader::UploadUniformInt(const std::string& name, int value)
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
 	glUniform1i(location, value);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLShader::UploadUniformIntArray(const std::string& name, int* values, uint32_t count)
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
 	glUniform1iv(location, count, values);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLShader::UploadUniformFloat(const std::string& name, float value)
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
 	glUniform1f(location, value);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLShader::UploadUniformFloat2(const std::string& name, const glm::vec2& value)
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
 	glUniform2f(location, value.x, value.y);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLShader::UploadUniformFloat3(const std::string& name, const glm::vec3& value)
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
 	glUniform3f(location, value.x, value.y, value.z);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLShader::UploadUniformFloat4(const std::string& name, const glm::vec4& value)
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
 	glUniform4f(location, value.x, value.y, value.z, value.w);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLShader::UploadUniformMat3(const std::string& name, const glm::mat3& matrix)
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
 	glUniformMatrix3fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLShader::UploadUniformMat4(const std::string& name, const glm::mat4& matrix)
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
 	glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
+	_KN_GL_CHECK_ERROR();
 }
 
 } // Kinai

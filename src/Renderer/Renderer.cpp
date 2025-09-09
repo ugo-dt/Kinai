@@ -13,7 +13,8 @@ void	Renderer::Init()
 	KN_PRINT_FUNC();
 
 	RenderCommand::Init();
-	Renderer2D::Init();
+	// Renderer2D::Init();
+	_KN_GL_CHECK_ERROR();
 }
 
 void	Renderer::Shutdown()
@@ -27,6 +28,8 @@ void	Renderer::BeginFrame(const PerspectiveCamera& camera)
 {
 	KN_PRINT_FUNC();
 
+	glm::ivec2 size = Kinai::Application::Get().GetWindow().GetSize();
+	RenderCommand::SetViewport(0, 0, size.x, size.y);
 	_view_proj = camera.GetViewProjectionMatrix();
 }
 

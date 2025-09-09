@@ -21,6 +21,9 @@ void	ImGuiLayer::OnAttach()
 #if defined(KINAI_OPENGL)
 	ImGui_ImplSDL3_InitForOpenGL(SDL_GL_GetCurrentWindow(), SDL_GL_GetCurrentContext());
 	ImGui_ImplOpenGL3_Init();
+	while (glGetError())
+		;
+	_KN_GL_CHECK_ERROR();
 #elif defined(KINAI_HEADLESS)
 	unsigned char* tex_pixels = nullptr;
     int tex_w, tex_h;

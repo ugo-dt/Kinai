@@ -39,14 +39,14 @@ ifndef build
 endif
 
 ifeq ($(build),$(__build_debug)) # Debug
-  CFLAGS	+= -DKN_DEBUG -g
-  CXXFLAGS	+= -DKN_DEBUG -g
+  CFLAGS	+= -DKINAI_DEBUG -g
+  CXXFLAGS	+= -DKINAI_DEBUG -g
 else ifeq ($(build),$(__build_dev)) # Dev
-  CFLAGS	+= -DKN_DEV -g
-  CXXFLAGS	+= -DKN_DEV -g
+  CFLAGS	+= -DKINAI_DEV -g
+  CXXFLAGS	+= -DKINAI_DEV -g
 else ifeq ($(build),$(__build_release)) # Release
-  CFLAGS	+= -DKN_RELEASE -O3
-  CXXFLAGS	+= -DKN_RELEASE -O3
+  CFLAGS	+= -DKINAI_RELEASE -O3
+  CXXFLAGS	+= -DKINAI_RELEASE -O3
 else ifeq ($(build),)
   $(error Empty build)
 else

@@ -3,11 +3,11 @@
 namespace Kinai
 {
 
-#if defined(KN_PLATFORM_DESKTOP) && !defined(__APPLE__)
+#if defined(KN_PLATFORM_DESKTOP) && !defined(KN_PLATFORM_MACOS)
 
 OpenGLUniformBuffer::OpenGLUniformBuffer(uint32_t size, uint32_t binding)
 {
-#ifdef __APPLE__
+#ifdef KN_PLATFORM_MACOS
 	glGenBuffers(1, &_renderer_id);
 	glBindBuffer(GL_UNIFORM_BUFFER, _renderer_id);
 	glBufferData(GL_UNIFORM_BUFFER, size, nullptr, GL_DYNAMIC_DRAW);

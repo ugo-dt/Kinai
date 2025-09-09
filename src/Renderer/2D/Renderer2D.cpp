@@ -51,8 +51,10 @@ void	Renderer2D::Init()
 	_texture_slots[0] = Texture2D::Create(TextureConfig());
 	uint32_t white_texture = 0xffffffff;
 	_texture_slots[0]->SetData(&white_texture, sizeof(uint32_t));
+	_KN_GL_CHECK_ERROR();
 	_texture_slot_index = 1;
 
+	_KN_GL_CHECK_ERROR();
 	_quad_vertex_positions[0] = glm::vec4(-0.5f, -0.5f, 0.0f, 1.0f);
 	_quad_vertex_positions[1] = glm::vec4( 0.5f, -0.5f, 0.0f, 1.0f);
 	_quad_vertex_positions[2] = glm::vec4( 0.5f,  0.5f, 0.0f, 1.0f);
@@ -62,8 +64,9 @@ void	Renderer2D::Init()
 	_builtin_uniforms.pi = glm::pi<float>();
 	_builtin_uniforms.tau = glm::tau<float>();
 	_builtin_uniforms.e = glm::e<float>();
-	_builtin_uniforms_buffer = UniformBuffer::Create(sizeof(BuiltinUniforms), 0);
 
+	_KN_GL_CHECK_ERROR();
+	_builtin_uniforms_buffer = UniformBuffer::Create(sizeof(BuiltinUniforms), 0);
 	_camera_uniforms_buffer = UniformBuffer::Create(sizeof(CameraUniforms), 1);
 }
 

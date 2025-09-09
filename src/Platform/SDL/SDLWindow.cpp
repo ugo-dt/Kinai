@@ -5,14 +5,12 @@
 namespace Kinai
 {
 
-#define SDL_DEF(val, def) (((val) == 0) ? (def) : (val))
+#define KINAI_DEF(val, def) (((val) == 0) ? (def) : (val))
 
 struct Kinai_Sokol_SDL_Desc {
 	uint32_t		width, height;
 	int				sample_count;
 	bool			no_depth_buffer;
-    int				version_major;
-    int				version_minor;
 	const char*		title;
 	bool			fullscreen;
 	bool			no_vsync;
@@ -27,35 +25,25 @@ SDLWindow::SDLWindow(const WindowProps &props)
 		.height = props.height,
 		.sample_count = 1,
 		.no_depth_buffer = false,
-		.version_major = 4,
-		.version_minor = 1,
 		.title = props.title.c_str(),
 		.fullscreen = props.fullscreen,
 		.no_vsync = props.no_vsync,
 	};
 
-    int				status;
 	SDL_WindowFlags flags;
 
 	Kinai_Sokol_SDL_Desc desc_def = desc;
-	desc_def.sample_count = SDL_DEF(desc_def.sample_count, 1);
-    desc_def.version_major = SDL_DEF(desc_def.version_major, 4);
-    desc_def.version_minor = SDL_DEF(desc_def.version_minor, 1);
-
-	#ifdef __APPLE__
-		desc_def.version_major = 3;
-		desc_def.version_minor = 3;
-	#endif
+	desc_def.sample_count = KINAI_DEF(desc_def.sample_count, 1);
 
 	_data.sample_count = desc_def.sample_count;
 	_data.no_depth_buffer = desc_def.no_depth_buffer;
 
-	KN_NOTUSED(status);
-	status = SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS);
-	KN_ASSERT(status == true && "Failed to init SDL");
+	Log::Validate(
+		SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS) == true,
+		"Failed to init SDL! {}", SDL_GetError()
+	);
 
-	Log::Trace("CORE - Initialized SDL.");
-
+	Log::Trace("Initialized SDL.");
 	if (desc_def.no_depth_buffer)
 	{
 		SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 0);
@@ -68,13 +56,16 @@ SDLWindow::SDLWindow(const WindowProps &props)
 	}
 
 	SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, (desc_def.sample_count == 1) ? 0 : desc_def.sample_count);
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, desc_def.version_major);
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, desc_def.version_major);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, KINAI_OPENGL_VERSION_MAJOR);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, KINAI_OPENGL_VERSION_MINOR);
 
-	// SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_COMPATIBILITY);
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+	#ifdef KN_PLATFORM_WEB
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);
+	#else
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+	#endif
 
-	#ifdef KN_DEV
+	#if defined(KINAI_DEV) && defined(KN_PLATFORM_DESKTOP)
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_DEBUG_FLAG);
 	#endif
 
@@ -82,22 +73,26 @@ SDLWindow::SDLWindow(const WindowProps &props)
 	if (desc_def.fullscreen)
 		flags |= SDL_WINDOW_FULLSCREEN;
 	_handle = SDL_CreateWindow(desc_def.title, desc_def.width, desc_def.height, flags);
-	KN_ASSERT(_handle, "{}", SDL_GetError());
+	Log::Validate(_handle != nullptr, "Can't create a window! {}", SDL_GetError());
+
 	_gl_context = SDL_GL_CreateContext(_handle);
-	KN_ASSERT(_gl_context, "{}", SDL_GetError());
+	Log::Validate(_gl_context != nullptr, "Can't create an OpenGL context! {}", SDL_GetError());
 
 	SDL_GL_MakeCurrent(_handle, _gl_context);
 	SDL_GL_SetSwapInterval(!desc_def.no_vsync);
 
 	#ifdef KN_PLATFORM_DESKTOP
-		status = gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress);
-		KN_ASSERT(status != 0);
+		Log::Validate(
+			gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress) != 0,
+			"Failed to load GLAD!"
+		);
 	#endif
-
-	Log::Info("CORE - OpenGL info:");
+	
+	Log::Info("OpenGL info:");
 	Log::Info("  Vendor: {}", (const char *)glGetString(GL_VENDOR));
 	Log::Info("  Renderer: {}", (const char *)glGetString(GL_RENDERER));
 	Log::Info("  Version: {}", (const char *)glGetString(GL_VERSION));
+	Log::Info("  GLSL Version: {}", (const char *)glGetString(GL_SHADING_LANGUAGE_VERSION));
 
 	_data.title = props.title;
 	SDL_WarpMouseInWindow(_handle, (props.width / 2), (props.height / 2));
@@ -154,7 +149,7 @@ SDLWindow::SDLWindow(const WindowProps &props)
 		MouseMotionEvent event(mouse_x, mouse_y, rel_x, rel_y);
 		window._data.eventCallback(event);
 	};
-	Log::Trace("CORE - Created SDLWindow '{}' ({}, {}).", props.title, props.width, props.height);
+	Log::Trace("Created window (SDL) '{}' ({}, {}).", props.title, props.width, props.height);
 }
 
 SDLWindow::~SDLWindow()
@@ -164,7 +159,7 @@ SDLWindow::~SDLWindow()
 	SDL_DestroyWindow(_handle);
 	_handle = NULL;
 	SDL_Quit();
-	Log::Trace("CORE - Destroyed SDLWindow '{}'.", _data.title);
+	Log::Trace("Destroyed window (SDL) '{}'.", _data.title);
 }
 
 void	SDLWindow::_handle_window_events(SDL_WindowEvent *_window_event)

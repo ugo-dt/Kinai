@@ -24,15 +24,15 @@ Application::Application(const ApplicationConfig &config)
 			config.fullscreen, config.no_vsync
 		)
 	);
-
-#ifdef KINAI_OPENGL
+	
+#if defined(KINAI_OPENGL) || defined(KINAI_SOKOL)
 	SDL_RegisterEvents(KN_CUSTOM_EVENT_TYPE_COUNT);
 #endif
-
+	
 	_window->SetEventCallback(KN_BIND_EVENT_FN(Application::OnEvent));
 	std::memset(&_time, 0, sizeof(Time));
 
-#ifdef KINAI_SOKOL
+#if defined(KINAI_SOKOL)
 	Sokol::Init();
 #else
 	Renderer::Init();

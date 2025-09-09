@@ -37,11 +37,12 @@ OpenGLVertexArray::OpenGLVertexArray()
 {
 	KN_PRINT_FUNC();
 
-#ifdef __APPLE__
-	glGenVertexArrays(1, &_renderer_id);
-#else
+#if KINAI_OPENGL_VERSION_MAJOR >= 4
 	glCreateVertexArrays(1, &_renderer_id);
+#else
+	glGenVertexArrays(1, &_renderer_id);
 #endif
+	_KN_GL_CHECK_ERROR();
 }
 
 OpenGLVertexArray::~OpenGLVertexArray()
@@ -49,6 +50,7 @@ OpenGLVertexArray::~OpenGLVertexArray()
 	KN_PRINT_FUNC();
 
 	glDeleteVertexArrays(1, &_renderer_id);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLVertexArray::Bind() const
@@ -56,6 +58,7 @@ void	OpenGLVertexArray::Bind() const
 	KN_PRINT_FUNC();
 
 	glBindVertexArray(_renderer_id);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLVertexArray::Unbind() const
@@ -63,6 +66,7 @@ void	OpenGLVertexArray::Unbind() const
 	KN_PRINT_FUNC();
 
 	glBindVertexArray(0);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLVertexArray::AddVertexBuffer(const Ref<VertexBuffer>& vertexBuffer)
@@ -142,6 +146,7 @@ void	OpenGLVertexArray::AddVertexBuffer(const Ref<VertexBuffer>& vertexBuffer)
 	}
 
 	_vertex_buffers.push_back(vertexBuffer);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLVertexArray::SetIndexBuffer(const Ref<IndexBuffer>& indexBuffer)
@@ -152,6 +157,7 @@ void	OpenGLVertexArray::SetIndexBuffer(const Ref<IndexBuffer>& indexBuffer)
 	indexBuffer->Bind();
 
 	_index_buffer = indexBuffer;
+	_KN_GL_CHECK_ERROR();
 }
 
 } // Kinai

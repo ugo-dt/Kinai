@@ -7,6 +7,8 @@
 		{ if(!(expression)) { \
 			::Kinai::Log::Error("Assertion failed: {0}:{1}: {2}", __FILE__, __LINE__, #expression); \
 			::Kinai::Log::Error("" __VA_ARGS__); exit(1); }}
+	#define _KN_GL_CHECK_ERROR() { KN_ASSERT(glGetError() == GL_NO_ERROR); }
 #else
 	#define KN_ASSERT(expression, ...)
+	#define _KN_GL_CHECK_ERROR()
 #endif
