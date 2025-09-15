@@ -90,6 +90,7 @@ public:
 
 	OpenGLShader(const std::string& filepath, const std::string& program_name);
 	OpenGLShader(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc);
+	OpenGLShader(const ShaderConfig& config);
 	~OpenGLShader();
 
 	void	Bind() const override;
@@ -105,16 +106,21 @@ public:
 
 	const std::string&	GetName() const override { return _name; }
 
-	void	UploadUniformInt(const std::string& name, int value);
-	void	UploadUniformIntArray(const std::string& name, int* values, uint32_t count);
+	void SetLayout(const BufferLayout& layout) override { _layout = layout; }
+	const BufferLayout& GetLayout() const override { return _layout; }
 
-	void	UploadUniformFloat(const std::string& name, float value);
-	void	UploadUniformFloat2(const std::string& name, const glm::vec2& value);
-	void	UploadUniformFloat3(const std::string& name, const glm::vec3& value);
-	void	UploadUniformFloat4(const std::string& name, const glm::vec4& value);
+	void ApplyUniforms(const void* params, size_t size) override;
 
-	void	UploadUniformMat3(const std::string& name, const glm::mat3& matrix);
-	void	UploadUniformMat4(const std::string& name, const glm::mat4& matrix);
+	void UploadUniformInt(const std::string& name, int value);
+	void UploadUniformIntArray(const std::string& name, int* values, uint32_t count);
+
+	void UploadUniformFloat(const std::string& name, float value);
+	void UploadUniformFloat2(const std::string& name, const glm::vec2& value);
+	void UploadUniformFloat3(const std::string& name, const glm::vec3& value);
+	void UploadUniformFloat4(const std::string& name, const glm::vec4& value);
+
+	void UploadUniformMat3(const std::string& name, const glm::mat3& matrix);
+	void UploadUniformMat4(const std::string& name, const glm::mat4& matrix);
 
 public:
 	static void	GenerateHeaderFromShader(const std::string& filepath, const std::string& program_name, const std::string& vs, const std::string fs);
@@ -127,6 +133,12 @@ private:
 	std::string	_name;
 	uint32_t	_renderer_id;
 	std::string	_filepath;
+
+	struct OpenGLShaderUniform : public ShaderUniform
+	{
+		size_t offset;
+	};
+	std::vector<OpenGLShaderUniform> _uniforms;
 };
 
 } // Kinai

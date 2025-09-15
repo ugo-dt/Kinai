@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Kinai/Core/Core.hpp"
-
+#include "Kinai/Renderer/Buffer/VertexBuffer.hpp"
 #include "Kinai/Renderer/Framebuffer.hpp"
 #include "Kinai/Renderer/OrthographicCamera.hpp"
 #include "Kinai/Renderer/PerspectiveCamera.hpp"
@@ -37,7 +37,7 @@ struct QuadVertex
 };
 
 template <class Tp>
-struct Pipeline
+struct Pipeline2D
 {
 	Ref<Shader> shader = nullptr;
 	Ref<VertexArray> vertex_array = nullptr;
@@ -166,7 +166,7 @@ private:
 private:
 	static ShaderLibrary _shader_library;
 
-	static Pipeline<QuadVertex>	_pip_quad;
+	static Pipeline2D<QuadVertex>	_pip_quad;
 	static glm::vec4 _quad_vertex_positions[4];
 
 	static std::array<Ref<Texture2D>, MAX_TEXTURE_SLOTS> _texture_slots;

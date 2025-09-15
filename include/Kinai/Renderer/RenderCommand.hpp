@@ -38,19 +38,14 @@ public:
 		_renderer_api->Clear();
 	}
 
-	static void	DrawIndexed(const Ref<VertexArray>& vertex_array, uint32_t index_count = 0)
+	static void	DrawIndexed(const Ref<VertexArray>& vertex_array, PrimitiveType type, uint32_t index_count = 0)
 	{
-		_renderer_api->DrawIndexed(vertex_array, index_count);
+		_renderer_api->DrawIndexed(vertex_array, type, index_count);
 	}
 
-	static void	DrawLines(const Ref<VertexArray>& vertex_array, uint32_t vertex_count)
+	static void	Draw(const Ref<VertexArray>& vertex_array, PrimitiveType type, uint32_t vertex_count)
 	{
-		_renderer_api->DrawLines(vertex_array, vertex_count);
-	}
-
-	static void	DrawTriangles(const Ref<VertexArray>& vertex_array, uint32_t vertex_count)
-	{
-		_renderer_api->DrawTriangles(vertex_array, vertex_count);
+		_renderer_api->Draw(vertex_array, type, vertex_count);
 	}
 
 	static void	SetLineWidth(float width)

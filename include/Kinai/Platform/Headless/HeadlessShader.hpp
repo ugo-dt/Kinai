@@ -12,7 +12,7 @@ public:
 	HeadlessShader() = delete;
 
 	HeadlessShader(const std::string& filepath, const std::string& program_name);
-	HeadlessShader(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc);
+	HeadlessShader(const ShaderConfig& config);
 	~HeadlessShader();
 
 	void	Bind() const override;

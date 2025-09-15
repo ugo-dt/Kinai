@@ -241,6 +241,8 @@ uint32_t	SDLWindow::GetHeight() const
 	return GetSize().y;
 }
 
+#ifdef KINAI_SOKOL
+
 sg_environment	SDLWindow::GetSokolEnvironment() const
 {
 	sg_environment env = {};
@@ -265,6 +267,8 @@ sg_swapchain	SDLWindow::GetSokolSwapchain() const
 	swapchain.gl.framebuffer = 0;
 	return swapchain;
 }
+
+#endif // KINAI_SOKOL
 
 bool	SDLWindow::IsVSync() const
 {

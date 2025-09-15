@@ -1,7 +1,23 @@
 #include "Kinai/Platform/OpenGL/OpenGLRendererAPI.hpp"
+#include "Kinai/Renderer/Pipeline.hpp"
 
 namespace Kinai
 {
+
+static GLenum	GetOpenGLPrimitiveType(PrimitiveType type)
+{
+	switch (type)
+	{
+		case PrimitiveType::Points:        return GL_POINTS;
+		case PrimitiveType::Lines:         return GL_LINES;
+		case PrimitiveType::LineStrip:     return GL_LINE_STRIP;
+		case PrimitiveType::Triangles:     return GL_TRIANGLES;
+		case PrimitiveType::TriangleStrip: return GL_TRIANGLE_STRIP;
+	}
+
+	KN_ASSERT(false, "Unknown PrimitiveType!");
+	return 0;
+}
 
 #ifdef KN_PLATFORM_DESKTOP
 void	OpenGLMessageCallback(
@@ -69,23 +85,20 @@ void	OpenGLRendererAPI::Clear()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void	OpenGLRendererAPI::DrawIndexed(const Ref<VertexArray>& vertexArray, uint32_t indexCount)
+void	OpenGLRendererAPI::DrawIndexed(const Ref<VertexArray>& vertexArray, PrimitiveType type, uint32_t indexCount)
 {
+	GLenum glType = GetOpenGLPrimitiveType(type);
+
 	vertexArray->Bind();
-	uint32_t count = indexCount ? indexCount : vertexArray->GetIndexBuffer()->GetCount();
-	glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_INT, nullptr);
+	glDrawElements(glType, indexCount, GL_UNSIGNED_INT, nullptr);
 }
 
-void	OpenGLRendererAPI::DrawLines(const Ref<VertexArray>& vertexArray, uint32_t vertexCount)
+void	OpenGLRendererAPI::Draw(const Ref<VertexArray>& vertexArray, PrimitiveType type, uint32_t vertexCount)
 {
-	vertexArray->Bind();
-	glDrawArrays(GL_LINES, 0, vertexCount);
-}
+	GLenum glType = GetOpenGLPrimitiveType(type);
 
-void	OpenGLRendererAPI::DrawTriangles(const Ref<VertexArray>& vertexArray, uint32_t vertexCount)
-{
 	vertexArray->Bind();
-	glDrawArrays(GL_TRIANGLES, 0, vertexCount);
+	glDrawArrays(glType, 0, vertexCount);
 }
 
 void	OpenGLRendererAPI::SetLineWidth(float width)

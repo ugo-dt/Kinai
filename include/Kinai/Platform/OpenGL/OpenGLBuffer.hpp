@@ -13,17 +13,13 @@ public:
 	OpenGLVertexBuffer(const void* vertices, uint32_t size);
 	~OpenGLVertexBuffer();
 
-	void	Bind() const override;
-	void	Unbind() const override;
+	void Bind() const override;
+	void Unbind() const override;
 	
-	void	SetData(const void* data, uint32_t size) override;
-
-	void	SetLayout(const BufferLayout& layout) override { _layout = layout; }
-	const	BufferLayout& GetLayout() const override { return _layout; }
+	void SetData(const void* data, uint32_t size) override;
 
 private:
-	uint32_t		_renderer_id;
-	BufferLayout	_layout;
+	uint32_t _renderer_id;
 };
 
 class OpenGLIndexBuffer : public IndexBuffer
@@ -32,14 +28,14 @@ public:
 	OpenGLIndexBuffer(const uint32_t* indices, uint32_t count);
 	~OpenGLIndexBuffer();
 
-	void	Bind() const override;
-	void	Unbind() const override;
+	void Bind() const override;
+	void Unbind() const override;
 
-	uint32_t	GetCount() const override { return _count; }
+	uint32_t GetCount() const override { return _count; }
 
 private:
-	uint32_t	_renderer_id;
-	uint32_t	_count;
+	uint32_t _renderer_id;
+	uint32_t _count;
 };
 
 } // Kinai

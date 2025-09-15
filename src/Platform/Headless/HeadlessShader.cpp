@@ -11,12 +11,12 @@ HeadlessShader::HeadlessShader(const std::string& filepath, const std::string& p
 	KN_NOTUSED(filepath);
 }
 
-HeadlessShader::HeadlessShader(const std::string& name, const std::string& vs, const std::string& fs)
-	: _name(name)
+HeadlessShader::HeadlessShader(const ShaderConfig& config)
+	: _name(config.name)
 {
 	KN_PRINT_FUNC();
 
-	std::cout << "--- Vertex Shader ---\n" << vs << "\n--- Fragment Shader ---\n" << fs << std::endl;
+	std::cout << "--- Vertex Shader ---\n" << config.vs_source< "\n--- Fragment Shader ---\n" << config.fs_source << std::endl;
 }
 
 HeadlessShader::~HeadlessShader()

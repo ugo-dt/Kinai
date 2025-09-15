@@ -1,6 +1,8 @@
 #include "Kinai/Sokol/Sokol.hpp"
 #include "Kinai/Core/Application.hpp"
 
+#ifdef KINAI_SOKOL
+
 namespace Kinai
 {
 
@@ -36,5 +38,7 @@ sg_swapchain	Sokol::GetSwapchain()
 
 	return Application::Get().GetWindow().GetSokolSwapchain();
 }
+
+#endif // KINAI_SOKOL
 
 } // Kinai

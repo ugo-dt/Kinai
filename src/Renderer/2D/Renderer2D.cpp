@@ -7,7 +7,7 @@
 namespace Kinai
 {
 
-Pipeline<QuadVertex>				Renderer2D::_pip_quad;
+Pipeline2D<QuadVertex>				Renderer2D::_pip_quad;
 glm::vec4							Renderer2D::_quad_vertex_positions[4];
 std::array<Ref<Texture2D>,
 	Renderer2D::MAX_TEXTURE_SLOTS>	Renderer2D::_texture_slots;

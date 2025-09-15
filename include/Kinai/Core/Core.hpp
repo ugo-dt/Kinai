@@ -13,9 +13,11 @@
 
 #include <imgui/imgui.h>
 
-#include <sokol/sokol_gfx.h>
-#include <sokol/sokol_gp.h>
-#include <sokol/sokol_log.h>
+#ifdef KINAI_SOKOL
+	#include <sokol/sokol_gfx.h>
+	#include <sokol/sokol_gp.h>
+	#include <sokol/sokol_log.h>
+#endif
 
 #include <algorithm>
 #include <cassert>

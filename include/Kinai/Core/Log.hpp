@@ -35,7 +35,7 @@ public:
 	static void	Error(std::string_view fmt, Args&&... args);
 
 	template <class... Args>
-	static void	Critical(std::string_view fmt, Args&&... args);
+	KN_NORETURN static void	Critical(std::string_view fmt, Args&&... args);
 
 	template <class... Args>
 	static void	Validate(bool condition, std::string_view fmt, Args&&... args);

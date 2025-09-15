@@ -11,13 +11,12 @@ void	Renderer2D::MakeQuadPipeline()
 	_pip_quad.vertex_array = VertexArray::Create();
 
 	_pip_quad.vertex_buffer = VertexBuffer::Create(Renderer2D::MAX_VERTICES * sizeof(QuadVertex));
-	_pip_quad.vertex_buffer->SetLayout({
-		{ ShaderDataType::Float2, "a_VERTEX"    },
-		{ ShaderDataType::Float2, "a_UV"        },
-		{ ShaderDataType::Float4, "a_COLOR"     },
-		{ ShaderDataType::Int,    "a_TEX_INDEX" },
-	});
-	_pip_quad.vertex_array->AddVertexBuffer(_pip_quad.vertex_buffer);
+	// _pip_quad.vertex_buffer->SetLayout({
+	// 	{ ShaderDataType::Float2, "a_VERTEX"    },
+	// 	{ ShaderDataType::Float2, "a_UV"        },
+	// 	{ ShaderDataType::Float4, "a_COLOR"     },
+	// 	{ ShaderDataType::Int,    "a_TEX_INDEX" },
+	// });
 
 	_pip_quad.vertex_buffer_base = new QuadVertex[Renderer2D::MAX_VERTICES];
 
@@ -38,7 +37,6 @@ void	Renderer2D::MakeQuadPipeline()
 	}
 
 	Ref<IndexBuffer>	ib = IndexBuffer::Create(indices, Renderer2D::MAX_INDICES);
-	_pip_quad.vertex_array->SetIndexBuffer(ib);
 	delete[] indices;
 }
 
@@ -239,7 +237,7 @@ void	Renderer2D::FlushQuadPipeline()
 
 		_pip_quad.shader->SetFloat2("VIEWPORT", glm::vec2(Application::Get().GetWindow().GetSize()));
 
-		RenderCommand::DrawIndexed(_pip_quad.vertex_array, _pip_quad.index);
+		// RenderCommand::DrawIndexed(_pip_quad.vertex_array, _pip_quad.index);
 		_stats._draw_calls++;
 	}
 }

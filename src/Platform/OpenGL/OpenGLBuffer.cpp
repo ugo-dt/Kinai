@@ -76,15 +76,17 @@ OpenGLIndexBuffer::OpenGLIndexBuffer(const uint32_t* indices, uint32_t count)
 #else
 	glGenBuffers(1, &_renderer_id);
 #endif
+
+	size_t typeSize = sizeof(uint32_t);
 	
 	// GL_ELEMENT_ARRAY_BUFFER is not valid without an actively bound VAO
 	// Binding with GL_ARRAY_BUFFER allows the data to be loaded regardless of VAO state. 
 #ifdef KN_PLATFORM_DESKTOP
 	glBindBuffer(GL_ARRAY_BUFFER, _renderer_id);
-	glBufferData(GL_ARRAY_BUFFER, count * sizeof(uint32_t), indices, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, count * typeSize, indices, GL_STATIC_DRAW);
 #else
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _renderer_id);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(uint32_t), indices, GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * typeSize, indices, GL_STATIC_DRAW);
 #endif
 	_KN_GL_CHECK_ERROR();
 }

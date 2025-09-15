@@ -47,7 +47,6 @@ HeadlessIndexBuffer::HeadlessIndexBuffer(const uint32_t* indices, uint32_t count
 	KN_PRINT_FUNC();
 	
 	KN_NOTUSED(indices);
-	KN_NOTUSED(count);
 }
 
 HeadlessIndexBuffer::~HeadlessIndexBuffer()

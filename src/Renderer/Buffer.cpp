@@ -4,9 +4,9 @@
 #include "Kinai/Renderer/Renderer.hpp"
 
 #if defined(KINAI_HEADLESS)
-#include "Kinai/Platform/Headless/HeadlessBuffer.hpp"
+	#include "Kinai/Platform/Headless/HeadlessBuffer.hpp"
 #elif defined(KINAI_OPENGL)
-#include "Kinai/Platform/OpenGL/OpenGLBuffer.hpp"
+	#include "Kinai/Platform/OpenGL/OpenGLBuffer.hpp"
 #endif
 
 namespace Kinai

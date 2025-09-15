@@ -1,9 +1,40 @@
 #pragma once
 
 #include "Kinai/Core/Core.hpp"
+#include "Kinai/Renderer/Buffer/BufferLayout.hpp"
 
 namespace Kinai
 {
+
+enum ShaderConstants : int
+{
+	MaxVertexAttributes = 16,
+	MaxUniformSlots = 8,
+};
+
+enum ShaderStage : int
+{
+	None = 0,
+	Vertex,
+	Fragment,
+};
+
+struct ShaderUniform
+{
+	const char* glsl_name;
+	ShaderStage stage;
+	ShaderDataType type;
+	uint16_t array_count;
+};
+
+struct ShaderConfig
+{
+	const char* name;
+	const char* vs_source;
+	const char* fs_source;
+	BufferLayout layout;
+	ShaderUniform uniforms[ShaderConstants::MaxUniformSlots];
+};
 
 class Shader
 {
@@ -22,10 +53,17 @@ public:
 	virtual void	SetMat4(const std::string& name, const glm::mat4& value) = 0;
 
 	virtual const std::string&	GetName() const = 0;
+	virtual void SetLayout(const BufferLayout& layout) = 0; 
+	virtual const BufferLayout& GetLayout() const = 0;
+	
+	virtual void ApplyUniforms(const void* params, size_t size) = 0;
 
 	static Ref<Shader>	Create(const std::string& filepath, const std::string& program_name);
 	static Ref<Shader>	Create(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc);
-	static Ref<Shader>	Create(const std::string& name, const char* vertexSrc, const char* fragmentSrc);
+	static Ref<Shader>	Create(const ShaderConfig& config);
+
+protected:
+	BufferLayout _layout;
 };
 
 class ShaderLibrary
@@ -42,6 +80,7 @@ public:
 
 private:
 	std::unordered_map<std::string, Ref<Shader>> _shaders;
+
 };
 
 } // Kinai

@@ -462,9 +462,30 @@ OpenGLShader::OpenGLShader(const std::string& filepath, const std::string& progr
 OpenGLShader::OpenGLShader(const std::string& name, const std::string& vs, const std::string& fs)
 	: _name(name)
 {
-	_name = name;
-
 	CreateProgram(vs.c_str(), fs.c_str());
+	Log::Trace("Created shader program '{}'", _name);
+}
+
+OpenGLShader::OpenGLShader(const ShaderConfig& config)
+	: _name(config.name)
+{
+	CreateProgram(config.vs_source, config.fs_source);
+	SetLayout(config.layout);
+
+	_uniforms.reserve(ShaderConstants::MaxUniformSlots);
+	size_t offset = 0;
+	for (int i = 0; i < ShaderConstants::MaxUniformSlots; i++)
+	{
+		OpenGLShaderUniform u;
+		u.glsl_name = config.uniforms[i].glsl_name,
+		u.stage = config.uniforms[i].stage,
+		u.type = config.uniforms[i].type,
+		u.array_count = config.uniforms[i].array_count,
+		u.offset = offset;
+		_uniforms.push_back(u);
+		offset += ShaderDataTypeSize(config.uniforms[i].type);
+	}
+
 	Log::Trace("Created shader program '{}'", _name);
 }
 
@@ -473,9 +494,36 @@ OpenGLShader::~OpenGLShader()
 	glDeleteProgram(_renderer_id);
 }
 
+void	OpenGLShader::ApplyUniforms(const void* params, size_t size)
+{
+	Bind();
+	for (const auto& uniform : _uniforms)
+	{
+		if (uniform.glsl_name == nullptr || uniform.type == ShaderDataType::None)
+			continue ;
+
+		KN_ASSERT(uniform.offset < size,
+			"Invalid offset {} for uniform {}. Got 'params' of size {}", uniform.offset, uniform.glsl_name, size);
+
+		const void* ptr = (const uint8_t*)params + uniform.offset;
+		switch (uniform.type)
+		{
+			case ShaderDataType::Float: SetFloat(uniform.glsl_name, *(float *)(ptr)); break;
+			case ShaderDataType::Float2: SetFloat2(uniform.glsl_name, *(glm::vec2 *)(ptr)); break;
+			case ShaderDataType::Float3: SetFloat3(uniform.glsl_name, *(glm::vec3 *)(ptr)); break;
+			case ShaderDataType::Float4: SetFloat4(uniform.glsl_name, *(glm::vec4 *)(ptr)); break;
+			case ShaderDataType::Mat4: SetMat4(uniform.glsl_name, *(glm::mat4 *)(ptr)); break;
+			case ShaderDataType::Int: SetInt(uniform.glsl_name, *(int *)(ptr)); break;
+			default:
+				KN_ASSERT(false, "OpenGLShader::ApplyUniforms(): unknown uniform type");
+				break;
+		}
+	}
+}
+
 static KN_INLINE std::string	get_shader_info_log(GLuint shader, void (*f)(GLuint, GLsizei, GLsizei *, GLchar *))
 {
-	char	info[1024];
+	char info[1024];
 	f(shader, 1024, nullptr, info);
 	std::string s(info);
 	if (!s.empty())

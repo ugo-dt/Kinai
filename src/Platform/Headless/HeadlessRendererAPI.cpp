@@ -30,27 +30,21 @@ void	HeadlessRendererAPI::Clear()
 	KN_PRINT_FUNC();
 }
 
-void	HeadlessRendererAPI::DrawIndexed(const Ref<VertexArray>& vertexArray, uint32_t indexCount)
+void	HeadlessRendererAPI::DrawIndexed(const Ref<VertexArray>& vertexArray, PrimitiveType type, uint32_t index_count)
 {
 	KN_PRINT_FUNC();
 
 	KN_NOTUSED(vertexArray);
-	KN_NOTUSED(indexCount);
+	KN_NOTUSED(type);
+	KN_NOTUSED(index_count);
 }
 
-void	HeadlessRendererAPI::DrawLines(const Ref<VertexArray>& vertexArray, uint32_t vertexCount)
+void	HeadlessRendererAPI::Draw(const Ref<VertexArray>& vertexArray, PrimitiveType type, uint32_t vertexCount)
 {
 	KN_PRINT_FUNC();
 
 	KN_NOTUSED(vertexArray);
-	KN_NOTUSED(vertexCount);
-}
-
-void	HeadlessRendererAPI::DrawTriangles(const Ref<VertexArray>& vertexArray, uint32_t vertexCount)
-{
-	KN_PRINT_FUNC();
-
-	KN_NOTUSED(vertexArray);
+	KN_NOTUSED(type);
 	KN_NOTUSED(vertexCount);
 }
 
