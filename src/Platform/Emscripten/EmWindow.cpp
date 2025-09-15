@@ -12,6 +12,8 @@ double					EmWindow::_width;
 double					EmWindow::_height;
 GLint					EmWindow::_framebuffer;
 Window::EventCallback	EmWindow::_eventCallback;
+bool					EmWindow::_keys[Key::KeyCode_NUM];
+EmWindow::EmMouse		EmWindow::_mouse;
 
 EmWindow::EmWindow(const WindowProps& props, int flags)
 {
@@ -23,7 +25,6 @@ EmWindow::EmWindow(const WindowProps& props, int flags)
 	_canvas_name = "#canvas";
 	emscripten_set_window_title(props.title.c_str());
 	emscripten_get_element_css_size(_canvas_name, &_width, &_height);
-	emscripten_set_canvas_element_size(_canvas_name, _width, _height);
 	emscripten_set_resize_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, 0, false, EmWindow::OnWindowResize);
 	EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx;
 	EmscriptenWebGLContextAttributes attrs;
@@ -60,6 +61,7 @@ EmWindow::EmWindow(const WindowProps& props, int flags)
 	// 	});
 	emscripten_set_mousemove_callback("canvas", this, true, EmWindow::OnMouseMotion);
 	emscripten_set_wheel_callback("canvas", this, true, EmWindow::OnMouseWheel);
+	emscripten_set_canvas_element_size(_canvas_name, _width, _height);
 }
 
 void	EmWindow::OnUpdate()
@@ -153,6 +155,24 @@ void	EmWindow::SetTitle(const std::string &title)
 	emscripten_set_window_title(title.c_str());
 }
 
+void	EmWindow::SetRelativeMouseMode(bool enabled)
+{
+	KN_PRINT_FUNC();
+
+	if (enabled)
+		emscripten_request_pointerlock("canvas", true);
+	else
+		emscripten_exit_pointerlock();
+}
+
+void	EmWindow::WarpMouse(float x, float y)
+{
+	KN_PRINT_FUNC();
+
+	KN_NOTUSED(x);
+	KN_NOTUSED(y);
+}
+
 bool	EmWindow::OnWindowResize(int, const EmscriptenUiEvent *, void *)
 {
 	KN_PRINT_FUNC();
@@ -172,6 +192,7 @@ bool	EmWindow::OnKeyPressed(int, const EmscriptenKeyboardEvent *e, void *)
 		KeyCode key = Em_KeyEventToKeyCode(e);
 		KeyPressedEvent event(key);
 		_eventCallback(event);
+		_keys[key] = true;
 	}
 
 	// Only forward alpha-numeric keys to browser
@@ -188,6 +209,7 @@ bool	EmWindow::OnKeyReleased(int, const EmscriptenKeyboardEvent *e, void *)
 		KeyCode key = Em_KeyEventToKeyCode(e);
 		KeyReleasedEvent event(key);
 		_eventCallback(event);
+		_keys[key] = false;
 	}
 	// Only forward alpha-numeric keys to browser
 	return e->keyCode < 32;
@@ -201,19 +223,20 @@ bool	EmWindow::OnChar(int, const EmscriptenKeyboardEvent *e, void *)
 
 bool	EmWindow::OnMouseButtonDown(int, const EmscriptenMouseEvent *e, void *)
 {
-	/**
-	 * Emscripten mouse buttons:
-	 * Left: 0, Middle: 1, Right: 2, X1: 3, X2: 4
-	 * 
-	 * ImGui mouse buttons:
-	 * Left: 0, Middle: 2, Right: 1, X1: 3, X2: 4
-	 */
+	/** Emscripten mouse buttons: Left: 0, Middle: 1, Right: 2
+	 * ImGui mouse buttons:      Left: 0, Middle: 2, Right: 1 */
 	switch (e->button)
 	{
 		case 0:
 		{
+			ImGui::GetIO().AddMouseButtonEvent(0, true);
+			MouseButtonPressedEvent event(Mouse::ButtonLeft);
+			_eventCallback(event);
+			break;
+		}
+		case 1:
+		{
 			ImGui::GetIO().AddMouseButtonEvent(2, true);
-
 			MouseButtonPressedEvent event(Mouse::ButtonMiddle);
 			_eventCallback(event);
 			break;
@@ -221,7 +244,6 @@ bool	EmWindow::OnMouseButtonDown(int, const EmscriptenMouseEvent *e, void *)
 		case 2:
 		{
 			ImGui::GetIO().AddMouseButtonEvent(1, true);
-
 			MouseButtonPressedEvent event(Mouse::ButtonRight);
 			_eventCallback(event);
 			break;
@@ -229,7 +251,6 @@ bool	EmWindow::OnMouseButtonDown(int, const EmscriptenMouseEvent *e, void *)
 		default:
 		{
 			ImGui::GetIO().AddMouseButtonEvent(e->button, true);
-
 			MouseButtonPressedEvent event(e->button);
 			_eventCallback(event);
 			break;
@@ -242,27 +263,31 @@ bool	EmWindow::OnMouseButtonUp(int, const EmscriptenMouseEvent *e, void *)
 {
 	switch (e->button)
 	{
+		case 0:
+		{
+			ImGui::GetIO().AddMouseButtonEvent(0, false);
+			MouseButtonPressedEvent event(Mouse::ButtonLeft);
+			_eventCallback(event);
+			break;
+		}
 		case 1:
 		{
 			ImGui::GetIO().AddMouseButtonEvent(2, false);
-
-			MouseButtonReleasedEvent event(Mouse::ButtonMiddle);
+			MouseButtonPressedEvent event(Mouse::ButtonMiddle);
 			_eventCallback(event);
 			break;
 		}
 		case 2:
 		{
 			ImGui::GetIO().AddMouseButtonEvent(1, false);
-
-			MouseButtonReleasedEvent event(Mouse::ButtonRight);
+			MouseButtonPressedEvent event(Mouse::ButtonRight);
 			_eventCallback(event);
 			break;
 		}
 		default:
 		{
 			ImGui::GetIO().AddMouseButtonEvent(e->button, false);
-
-			MouseButtonReleasedEvent event(e->button);
+			MouseButtonPressedEvent event(e->button);
 			_eventCallback(event);
 			break;
 		}
@@ -276,6 +301,7 @@ bool	EmWindow::OnMouseMotion(int, const EmscriptenMouseEvent *e, void *)
 
 	MouseMotionEvent event(e->targetX, e->targetY, e->movementX, e->movementY);
 	_eventCallback(event);
+	_mouse.pos = glm::vec2(e->targetX, e->targetY);
 	return true;
 }
 

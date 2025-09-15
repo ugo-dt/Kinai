@@ -10,7 +10,7 @@ static GLenum	TextureTarget(bool multisampled)
 #if KINAI_OPENGL_VERSION_MAJOR >= 4
 	return multisampled ? GL_TEXTURE_2D_MULTISAMPLE : GL_TEXTURE_2D;
 #else
-	(void)multisampled;
+	KN_NOTUSED(multisampled);
 	return GL_TEXTURE_2D;
 #endif
 }
@@ -20,7 +20,7 @@ static void	CreateTextures(bool multisampled, uint32_t* outID, uint32_t count)
 #if KINAI_OPENGL_VERSION_MAJOR >= 4
 	glCreateTextures(TextureTarget(multisampled), count, outID);
 #else
-	(void)multisampled;
+	KN_NOTUSED(multisampled);
 	glGenTextures(count, outID);
 #endif
 }
@@ -254,9 +254,9 @@ void	OpenGLFramebuffer::ClearAttachment(uint32_t attachmentIndex, int value)
 	glClearTexImage(_color_attachments[attachmentIndex], 0,
 		FBTextureFormatToGL(spec.TextureFormat), GL_INT, &value);
 #else
-	(void)attachmentIndex;
-	(void)value;
-	(void)FBTextureFormatToGL;
+	KN_NOTUSED(attachmentIndex);
+	KN_NOTUSED(value);
+	KN_NOTUSED(FBTextureFormatToGL);
 	Log::Warn("glClearTexImage was introduced in OpenGL 4.4, current version is {}.{}",
 		KINAI_OPENGL_VERSION_MAJOR, KINAI_OPENGL_VERSION_MINOR);
 #endif

@@ -1,6 +1,4 @@
 @vs vs
-#version 410 core
-
 layout (location = 0) in vec3 a_Position;
 layout (location = 1) in vec4 a_Color;
 
@@ -17,8 +15,6 @@ void	main()
 @end
 
 @fs fs
-#version 410 core
-
 layout (location = 0) out vec4 f_Color;
 
 in vec4 v_Color;

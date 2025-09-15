@@ -52,7 +52,7 @@
 	#define KN_NEVER_INLINE	__attribute__((__noinline__))
 	#define KN_NORETURN		__attribute__ ((noreturn))
 	#define KN_UNUSED		__attribute__ ((unused))
-	#define KN_NOTUSED(x)	((void)(x));
+	#define KN_NOTUSED(x)	((void)(x))
 	#define KN_NODISCARD	[[nodiscard]]
 #else
 	#define KN_INLINE		inline

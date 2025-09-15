@@ -58,9 +58,6 @@
 	#include <emscripten/html5.h>
 	#include <emscripten/key_codes.h>
 	#include <GLES3/gl3.h>
-	#define glCreateBuffers			glGenBuffers
-	#define glCreateVertexArrays	glGenVertexArrays
-	#define glCreateTextures		glGenTextures
 #endif
 
 #if defined(KINAI_OPENGL)

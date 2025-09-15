@@ -59,7 +59,7 @@ SDLWindow::SDLWindow(const WindowProps &props)
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, KINAI_OPENGL_VERSION_MAJOR);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, KINAI_OPENGL_VERSION_MINOR);
 
-	#ifdef KN_PLATFORM_WEB
+	#if defined(KN_PLATFORM_WEB)
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);
 	#else
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
@@ -81,7 +81,7 @@ SDLWindow::SDLWindow(const WindowProps &props)
 	SDL_GL_MakeCurrent(_handle, _gl_context);
 	SDL_GL_SetSwapInterval(!desc_def.no_vsync);
 
-	#ifdef KN_PLATFORM_DESKTOP
+	#if defined(KN_PLATFORM_DESKTOP)
 		Log::Validate(
 			gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress) != 0,
 			"Failed to load GLAD!"

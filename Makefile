@@ -15,13 +15,13 @@ KINAI_SRC = $(wildcard					\
 	$(KINAI_PATH)/src/Renderer/2D/*.cpp	\
 )
 
-ifeq ($(target),$(__EMSCRIPTEN__))
-  KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/Emscripten/*.cpp)
-endif
-
 ifdef __kinai_backend_opengl
   KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/OpenGL/*.cpp)
-  KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/SDL/*.cpp)
+  ifdef __kinai_target_emscripten
+    KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/Emscripten/*.cpp)
+  else
+    KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/SDL/*.cpp)
+  endif
 else ifdef __kinai_backend_headless
   KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/Headless/*.cpp)
 endif

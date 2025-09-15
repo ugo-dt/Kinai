@@ -93,4 +93,23 @@ void	OpenGLRendererAPI::SetLineWidth(float width)
 	glLineWidth(width);
 }
 
+void	OpenGLRendererAPI::SetPolygonMode(PolygonMode mode)
+{
+#if defined(KN_PLATFORM_DESKTOP)
+	GLenum	glMode;
+
+	switch (mode)
+	{
+		case PolygonMode::Fill:  glMode = GL_FILL; break;
+		case PolygonMode::Line:  glMode = GL_LINE; break;
+		case PolygonMode::Point: glMode = GL_POINT; break;
+	}
+	glPolygonMode(GL_FRONT_AND_BACK, glMode);
+	_KN_GL_CHECK_ERROR();
+#else
+	KN_NOTUSED(mode);
+	Log::Warn("glPolygonMode is not supported on OpenGL ES.");
+#endif
+}
+
 } // Kinai

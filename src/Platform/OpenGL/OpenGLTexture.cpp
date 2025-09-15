@@ -164,7 +164,7 @@ void OpenGLTexture2D::Bind(uint32_t slot) const
 #if defined(KN_PLATFORM_DESKTOP) && !defined(KN_PLATFORM_MACOS)
 	glBindTextureUnit(slot, _renderer_id);
 #else
-	(void)slot;
+	KN_NOTUSED(slot);
 	glBindTexture(GL_TEXTURE_2D, _renderer_id);
 #endif
 	_KN_GL_CHECK_ERROR();

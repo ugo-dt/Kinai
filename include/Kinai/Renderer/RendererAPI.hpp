@@ -6,6 +6,13 @@
 namespace Kinai
 {
 
+enum PolygonMode
+{
+	Fill,
+	Line,
+	Point,
+};
+
 class RendererAPI
 {
 public:
@@ -28,6 +35,7 @@ public:
 	virtual void	DrawTriangles(const Ref<VertexArray>& vertexArray, uint32_t vertexCount) = 0;
 
 	virtual void	SetLineWidth(float width) = 0;
+	virtual void	SetPolygonMode(PolygonMode mode) = 0;
 
 	static Scope<RendererAPI>	Create();
 };

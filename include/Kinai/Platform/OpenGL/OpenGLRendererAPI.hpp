@@ -19,6 +19,7 @@ public:
 	void	DrawTriangles(const Ref<VertexArray>& vertexArray, uint32_t vertexCount) override;
 	
 	void	SetLineWidth(float width) override;
+	void	SetPolygonMode(PolygonMode mode) override;
 };
 
 } // Kinai

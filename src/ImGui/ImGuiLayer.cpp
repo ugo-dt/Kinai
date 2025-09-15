@@ -57,9 +57,17 @@ void	ImGuiLayer::OnEvent(Event &e)
 
 void	ImGuiLayer::Begin()
 {
-#ifdef KINAI_OPENGL
+#if defined(KINAI_OPENGL)
 	ImGui_ImplOpenGL3_NewFrame();
-	ImGui_ImplSDL3_NewFrame();
+	#if defined(KN_PLATFORM_DESKTOP)
+		ImGui_ImplSDL3_NewFrame();
+	#endif
+	#if defined(KN_PLATFORM_WEB)
+		ImGuiIO& io = ImGui::GetIO();
+		const auto size = Application::Get().GetWindow().GetSize();
+		io.DisplaySize.x = size.x;
+		io.DisplaySize.y = size.y;
+	#endif
 #endif
 
 	ImGui::NewFrame();
@@ -69,7 +77,7 @@ void	ImGuiLayer::End()
 {
 	ImGui::Render();
 
-#ifdef KINAI_OPENGL
+#if defined(KINAI_OPENGL)
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
 	ImGuiIO& io = ImGui::GetIO();

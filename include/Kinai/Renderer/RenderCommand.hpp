@@ -58,6 +58,11 @@ public:
 		_renderer_api->SetLineWidth(width);
 	}
 
+	static void	SetPolygonMode(PolygonMode mode)
+	{
+		_renderer_api->SetPolygonMode(mode);
+	}
+
 private:
 	static Scope<RendererAPI>	_renderer_api;
 };

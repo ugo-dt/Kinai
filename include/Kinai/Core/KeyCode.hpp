@@ -173,6 +173,7 @@ enum : KeyCode
 	RightShift = 229,
 	RightAlt = 230, /**< alt gr, option */
 	RightSuper = 231, /**< windows, command (apple), meta */
+	KeyCode_NUM
 };
 
 }

@@ -24,6 +24,7 @@ enum : MouseButton
 	ButtonLeft   = Button1,
 	ButtonMiddle = Button2,
 	ButtonRight  = Button3,
+	MouseButton_NUM
 };
 
 }
