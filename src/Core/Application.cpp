@@ -40,8 +40,8 @@ Application::Application(const ApplicationConfig &config)
 
 	if (_config.enable_imgui)
 	{
-		// This gets deleted by LayerStack's destructor
-		_imgui_layer = static_cast<ImGuiLayer *>(PushOverlay(new ImGuiLayer()));
+		_imgui_layer = std::make_shared<ImGuiLayer>();
+		PushOverlay(_imgui_layer);
 	}
 
 #ifdef KINAI_HEADLESS
@@ -61,6 +61,7 @@ Application::~Application()
 #else
 	Renderer::Shutdown();
 #endif
+	_instance = nullptr;
 }
 
 void	Application::OnEvent(Event& event)
@@ -78,7 +79,7 @@ void	Application::OnEvent(Event& event)
 	}
 }
 
-Layer	*Application::PushLayer(Layer* layer)
+Ref<Layer>	Application::PushLayer(Ref<Layer> layer)
 {
 	KN_PRINT_FUNC();
 
@@ -87,7 +88,7 @@ Layer	*Application::PushLayer(Layer* layer)
 	return layer;
 }
 
-Layer	*Application::PushOverlay(Layer* layer)
+Ref<Layer>	Application::PushOverlay(Ref<Layer> layer)
 {
 	KN_PRINT_FUNC();
 
@@ -130,14 +131,18 @@ void	Application::Run()
 
 		if (!_minimized)
 		{
-			for (Layer* layer : _layerstack)
+			for (Ref<Layer>& layer : _layerstack)
 				layer->OnUpdate(_time.delta);
+
+			for (Ref<Layer>& layer : _layerstack)
+				layer->OnRender();
+
 			_time.frames++;
 
 			if (_config.enable_imgui)
 			{
 				_imgui_layer->Begin();
-				for (Layer* layer : _layerstack)
+				for (Ref<Layer>& layer : _layerstack)
 					layer->OnImGuiRender();
 				_imgui_layer->End();
 			}

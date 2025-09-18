@@ -1,10 +1,24 @@
 #pragma once
 
 #include "Kinai/Core/Core.hpp"
-#include "Kinai/Renderer/Renderer.hpp"
 
 namespace Kinai
 {
+
+enum class Filter
+{
+	None = 0,
+	Nearest,
+	Linear,
+};
+
+enum class Wrap
+{
+	None = 0,
+	Repeat,
+	ClampToEdge,
+	MirroredRepeat,
+};
 
 enum class ImageFormat
 {
@@ -15,14 +29,22 @@ enum class ImageFormat
 	RGBA32F
 };
 
+struct SamplerConfig
+{
+	Filter min_filter = Filter::Nearest;
+	Filter mag_filter = Filter::Nearest;
+	Wrap wrap_s = Wrap::Repeat;
+	Wrap wrap_t = Wrap::Repeat;
+	Wrap wrap_r = Wrap::Repeat;
+};
+
 struct TextureConfig
 {
-	uint32_t	width = 1;
-	uint32_t	height = 1;
-	ImageFormat	format = ImageFormat::RGBA8;
-	bool		generate_mips = true;
-	GLenum		min_filter = GL_LINEAR;
-	GLenum		max_filter = GL_LINEAR;
+	uint32_t width = 1;
+	uint32_t height = 1;
+	ImageFormat format = ImageFormat::RGBA8;
+	// bool generate_mips = true;
+	SamplerConfig sampler_config;
 };
 
 class Texture
@@ -51,7 +73,7 @@ class Texture2D : public Texture
 {
 public:
 	static Ref<Texture2D>	Create(const TextureConfig &config);
-	static Ref<Texture2D>	Create(const std::string &path, GLenum min_filter, GLenum max_filter);
+	static Ref<Texture2D>	Create(const std::string &path, const TextureConfig& config = TextureConfig());
 };
 
 }

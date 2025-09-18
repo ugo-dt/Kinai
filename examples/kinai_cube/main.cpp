@@ -1,6 +1,6 @@
 #include <Kinai/Kinai.hpp>
 #include <Kinai/EntryPoint.hpp>
-#include "quad.glsl.h"
+#include "quad.glsl.hpp"
 
 float	cube_vertices[] = {
 	-1.0, -1.0, -1.0,   1.0, 0.0, 0.0, 1.0,
@@ -54,35 +54,14 @@ uint32_t indices[] = {
     22, 20, 21,  23, 20, 22
 };
 
-float quad_vertices[] = {
-    // positions  // texture coords
-    -1.0f, -1.0f, 0.0f, 0.0f,  // bottom-left
-     1.0f, -1.0f, 1.0f, 0.0f,  // bottom-right
-     1.0f,  1.0f, 1.0f, 1.0f,  // top-right
-    -1.0f,  1.0f, 0.0f, 1.0f   // top-left
-};
-
-unsigned int quad_indices[] = {
-    0, 1, 2,
-    2, 3, 0
-};
-
-struct Mesh
-{
-	Kinai::Ref<Kinai::VertexArray> vao;
-	Kinai::Ref<Kinai::Shader> shader;
-	Kinai::Ref<Kinai::VertexBuffer> vbo;
-	Kinai::Ref<Kinai::IndexBuffer> ibo;
-};
-
-static struct : Mesh
+static struct
 {
 	bool rotation = true;
 	Kinai::PolygonMode mode = Kinai::PolygonMode::Fill;
-	GLenum front_face = GL_CCW;
-	GLenum cull_face = GL_BACK;
 	bool show_back_faces = false;
-} cube;
+	Kinai::Ref<Kinai::Pipeline>	pipeline;
+	Kinai::Ref<Kinai::Bindings>	bindings;
+}cube;
 
 class AppLayer : public Kinai::Layer
 {
@@ -96,51 +75,62 @@ public:
 				.position = {0.0f, 0.0f, 5.0f},
 			})
 	{
-		cube.vao = Kinai::VertexArray::Create();
-		cube.shader = Kinai::Shader::Create("quad", quad_vs_source_glsl410, quad_fs_source_glsl410);
-		cube.vbo = Kinai::VertexBuffer::Create(cube_vertices, sizeof(cube_vertices));
-		cube.vbo->SetLayout({
-			{ Kinai::ShaderDataType::Float3, "a_Position" },
-			{ Kinai::ShaderDataType::Float4, "a_Color" }
+		cube.bindings = Kinai::Bindings::Create();
+		cube.bindings->AddVertexBuffer(Kinai::VertexBuffer::Create(cube_vertices, sizeof(cube_vertices)));
+		cube.bindings->SetIndexBuffer(Kinai::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+
+		cube.pipeline = Kinai::Pipeline::Create(Kinai::PipelineConfig{
+			.vao = Kinai::VertexArray::Create(),
+			.shader = Kinai::Shader::Create(quadProgramShaderConfig()),
+			.layout = Kinai::BufferLayout{
+				{ Kinai::ShaderDataType::Float3, "a_Position" },
+				{ Kinai::ShaderDataType::Float4, "a_Color" }
+			},
+			.label = "Cube pipeline",
 		});
-		cube.vao->AddVertexBuffer(cube.vbo);
-		cube.ibo = Kinai::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
-		cube.vao->SetIndexBuffer(cube.ibo);
-		glFrontFace(GL_CCW);
-		glEnable(GL_CULL_FACE);
-		glEnable(GL_DEPTH_TEST);
 	}
 
 	void	OnUpdate(float delta)
 	{
 		_camera.OnUpdate(delta);
+	}
 
-		Kinai::Renderer::BeginFrame(_camera.GetCamera());
+	void	OnRender()
+	{
+		Kinai::Renderer::BeginPass();
 		{
 			Kinai::RenderCommand::SetClearColor(0.25f, 0.5f, 0.75f, 1.0f);
 			Kinai::RenderCommand::Clear();
-			cube.vao->SetIndexBuffer(cube.ibo);
+
+			Kinai::Renderer::ApplyPipeline(cube.pipeline);
+			Kinai::Renderer::ApplyBindings(cube.bindings);
+
 			glm::mat4 transform = glm::mat4(1.0f);
 			if (cube.rotation)
 			{
-				const float time = SDL_GetTicks() / 1000.0f;		
+				const float time = SDL_GetTicks() / 1000.0f;
 				glm::mat4 rxm = glm::rotate(time, glm::vec3(1.0f, 0.0f, 0.0f));
 				glm::mat4 rym = glm::rotate(2 * time, glm::vec3(0.0f, 1.0f, 0.0f));
 				transform = rxm * rym;
 			}
 
+			Kinai::Renderer::ApplyUniforms<quad_vs_params_t>({
+				.u_ViewProjection = _camera.GetCamera().GetViewProjectionMatrix(),
+				.u_Transform = transform,
+			});
+
 			if (cube.show_back_faces)
 			{
 				glCullFace(GL_FRONT);
 				Kinai::RenderCommand::SetPolygonMode(Kinai::PolygonMode::Line);
-				Kinai::Renderer::Submit(cube.shader, cube.vao, transform);
+				Kinai::Renderer::Submit();
 				
 				glCullFace(GL_BACK);
 				Kinai::RenderCommand::SetPolygonMode(Kinai::PolygonMode::Fill);
 			}
-			Kinai::Renderer::Submit(cube.shader, cube.vao, transform);
+			Kinai::Renderer::Submit();
 		}
-		Kinai::Renderer::EndFrame();
+		Kinai::Renderer::EndPass();
 	}
 
 	void	OnImGuiRender()
@@ -156,17 +146,20 @@ public:
 			cube.rotation = !cube.rotation;
 		if (ImGui::Button(app.GetWindow().IsVSync() ? "(F3) VSync ON" : "(F3) VSync OFF"))
 			app.GetWindow().SetVSync(!app.GetWindow().IsVSync());
-		if (ImGui::Button(cube.front_face == GL_CCW ? "(F4) glFrontFace(GL_CCW)" : "(F4) glFrontFace(GL_CW)"))
+		if (ImGui::Button(cube.pipeline->GetFaceWinding() == Kinai::FaceWinding::CCW
+			? "(F4) glFrontFace(GL_CCW)"
+			: "(F4) glFrontFace(GL_CW)")
+		)
 		{
-			cube.front_face = cube.front_face == GL_CCW ? GL_CW : GL_CCW;
-			glFrontFace(cube.front_face);
+			cube.pipeline->SetFaceWinding(
+				cube.pipeline->GetFaceWinding() == Kinai::FaceWinding::CCW
+				? Kinai::FaceWinding::CW : Kinai::FaceWinding::CCW
+			);
 		}
-		if (ImGui::Button(cube.show_back_faces ? "(F5) Hide back faces" : "(F4) Show back faces"))
+		if (ImGui::Button(cube.show_back_faces ? "(F5) Hide back faces" : "(F5) Show back faces"))
 		{
 			cube.show_back_faces = !cube.show_back_faces;
 			Kinai::RenderCommand::SetPolygonMode(cube.mode);
-			glFrontFace(cube.front_face);
-			glCullFace(cube.cull_face);
 		}
 		if (!cube.show_back_faces)
 		{
@@ -175,10 +168,12 @@ public:
 				cube.mode = cube.mode == Kinai::PolygonMode::Fill ? Kinai::PolygonMode::Line : Kinai::PolygonMode::Fill;
 				Kinai::RenderCommand::SetPolygonMode(cube.mode);
 			}
-			if (ImGui::Button(cube.cull_face == GL_BACK ? "glCullFace(GL_BACK)" : "glCullFace(GL_FRONT)"))
+			if (ImGui::Button(cube.pipeline->GetCullMode() == Kinai::CullMode::Back ? "glCullFace(GL_BACK)" : "glCullFace(GL_FRONT)"))
 			{
-				cube.cull_face = cube.cull_face == GL_BACK ? GL_FRONT : GL_BACK;
-				glCullFace(cube.cull_face);
+				cube.pipeline->SetCullMode(
+					cube.pipeline->GetCullMode() == Kinai::CullMode::Back
+					? Kinai::CullMode::Front : Kinai::CullMode::Back
+				);
 			}
 		}
 		ImGui::End();
@@ -223,7 +218,7 @@ public:
 			}
 		)
 	{
-		PushLayer(new AppLayer());
+		PushLayer(Kinai::CreateRef<AppLayer>());
 	}
 
 	~App() = default;

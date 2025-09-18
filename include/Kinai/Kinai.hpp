@@ -13,7 +13,7 @@
 
 #include "Kinai/ImGui/ImGuiLayer.hpp"
 
-#include "Kinai/Renderer/2D/Renderer2D.hpp"
+#include "Kinai/Renderer/2D/Painter.hpp"
 #include "Kinai/Renderer/Framebuffer.hpp"
 #include "Kinai/Renderer/PerspectiveCamera.hpp"
 #include "Kinai/Renderer/OrthographicCamera.hpp"

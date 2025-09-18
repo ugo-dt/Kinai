@@ -17,4 +17,11 @@ void	OpenGLBindings::SetIndexBuffer(const Ref<IndexBuffer>& indexBuffer)
 	_index_buffer = indexBuffer;
 }
 
+void	OpenGLBindings::AddTexture(const Ref<Texture>& texture)
+{
+	KN_PRINT_FUNC();
+
+	_textures.push_back(texture);
+}
+
 } // Kinai

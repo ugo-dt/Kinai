@@ -22,7 +22,7 @@ public:
 
 	float	ElapsedMS()
 	{
-		return ElapsedSeconds() * 0.001f;
+		return ElapsedSeconds() * 1000.0f;
 	}
 
 private:

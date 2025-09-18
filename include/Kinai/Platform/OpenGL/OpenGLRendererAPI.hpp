@@ -19,6 +19,8 @@ public:
 	
 	void	SetLineWidth(float width) override;
 	void	SetPolygonMode(PolygonMode mode) override;
+
+	void	BindTexture(uint32_t id, uint32_t slot = 0) override;
 };
 
 } // Kinai

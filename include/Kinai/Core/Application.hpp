@@ -43,39 +43,39 @@ public:
 	Application(const ApplicationConfig &config);
 	virtual ~Application();
 
-	Layer*		PushLayer(Layer* layer);
-	Layer*		PushOverlay(Layer* layer);
+	Ref<Layer> PushLayer(Ref<Layer> layer);
+	Ref<Layer> PushOverlay(Ref<Layer> layer);
 	
-	void		Close();
+	void Close();
 
-	Window&		GetWindow()     { return *_window; }
+	Window& GetWindow() { return *_window; }
 
-	uint64_t	GetFPS()        const { return _time.fps; }
-	float		GetDeltaTime()  const { return _time.delta; }
-	ImGuiLayer*	GetImGuiLayer() const { return _imgui_layer; }
+	uint64_t GetFPS() const { return _time.fps; }
+	float GetDeltaTime() const { return _time.delta; }
+	Ref<ImGuiLayer> GetImGuiLayer() const { return _imgui_layer; }
 
 	void		Run();
 public:
 	static Application& Get() { return *_instance; }
 
 private:
-	void	OnEvent(Event& event);
-	bool	OnWindowClose(WindowCloseEvent &event);
-	bool	OnWindowResize(WindowResizeEvent &event);
+	void OnEvent(Event& event);
+	bool OnWindowClose(WindowCloseEvent &event);
+	bool OnWindowResize(WindowResizeEvent &event);
 
 private:
-	Scope<Window>		_window;
-	ApplicationConfig	_config;
-	ImGuiLayer*			_imgui_layer;
-	Time				_time;
-	LayerStack			_layerstack;
-	bool				_minimized;
+	Scope<Window> _window;
+	ApplicationConfig _config;
+	Ref<ImGuiLayer> _imgui_layer;
+	Time _time;
+	LayerStack _layerstack;
+	bool _minimized;
 
 private:
 	static Application	*_instance;
 
 private:
-	friend int	Main(int argc, char **argv);
+	friend int Main(int argc, char **argv);
 };
 
 extern Application	*CreateApplication(int argc, char **argv);

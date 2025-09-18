@@ -470,7 +470,6 @@ OpenGLShader::OpenGLShader(const ShaderConfig& config)
 	: _name(config.name)
 {
 	CreateProgram(config.vs_source, config.fs_source);
-	SetLayout(config.layout);
 
 	_uniforms.reserve(ShaderConstants::MaxUniformSlots);
 	size_t offset = 0;
@@ -508,12 +507,33 @@ void	OpenGLShader::ApplyUniforms(const void* params, size_t size)
 		const void* ptr = (const uint8_t*)params + uniform.offset;
 		switch (uniform.type)
 		{
-			case ShaderDataType::Float: SetFloat(uniform.glsl_name, *(float *)(ptr)); break;
-			case ShaderDataType::Float2: SetFloat2(uniform.glsl_name, *(glm::vec2 *)(ptr)); break;
-			case ShaderDataType::Float3: SetFloat3(uniform.glsl_name, *(glm::vec3 *)(ptr)); break;
-			case ShaderDataType::Float4: SetFloat4(uniform.glsl_name, *(glm::vec4 *)(ptr)); break;
-			case ShaderDataType::Mat4: SetMat4(uniform.glsl_name, *(glm::mat4 *)(ptr)); break;
-			case ShaderDataType::Int: SetInt(uniform.glsl_name, *(int *)(ptr)); break;
+			case ShaderDataType::Float:
+				SetFloat(uniform.glsl_name, *static_cast<const float *>(ptr));
+				break;
+			case ShaderDataType::Float2:
+				SetFloat2(uniform.glsl_name, *static_cast<const glm::vec2 *>(ptr));
+				break;
+			case ShaderDataType::Float3:
+				SetFloat3(uniform.glsl_name, *static_cast<const glm::vec3 *>(ptr));
+				break;
+			case ShaderDataType::Float4:
+				SetFloat4(uniform.glsl_name, *static_cast<const glm::vec4 *>(ptr));
+				break;
+			case ShaderDataType::Mat4:
+				SetMat4(uniform.glsl_name, *static_cast<const glm::mat4 *>(ptr));
+				break;
+			case ShaderDataType::Int:
+				SetInt(uniform.glsl_name, *static_cast<const int *>(ptr));
+				break;
+			case ShaderDataType::Int2:
+				SetIntArray(uniform.glsl_name, static_cast<const int *>(ptr), 2);
+				break;
+			case ShaderDataType::Int3:
+				SetIntArray(uniform.glsl_name, static_cast<const int *>(ptr), 3);
+				break;
+			case ShaderDataType::Int4:
+				SetIntArray(uniform.glsl_name, static_cast<const int *>(ptr), 4);
+				break;
 			default:
 				KN_ASSERT(false, "OpenGLShader::ApplyUniforms(): unknown uniform type");
 				break;
@@ -587,7 +607,7 @@ void	OpenGLShader::SetInt(const std::string& name, int value)
 	UploadUniformInt(name, value);
 }
 
-void	OpenGLShader::SetIntArray(const std::string& name, int* values, uint32_t count)
+void	OpenGLShader::SetIntArray(const std::string& name, const int* values, uint32_t count)
 {
 	UploadUniformIntArray(name, values, count);
 }
@@ -634,7 +654,7 @@ void	OpenGLShader::UploadUniformInt(const std::string& name, int value)
 	_KN_GL_CHECK_ERROR();
 }
 
-void	OpenGLShader::UploadUniformIntArray(const std::string& name, int* values, uint32_t count)
+void	OpenGLShader::UploadUniformIntArray(const std::string& name, const int* values, uint32_t count)
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
 	glUniform1iv(location, count, values);
@@ -648,10 +668,24 @@ void	OpenGLShader::UploadUniformFloat(const std::string& name, float value)
 	_KN_GL_CHECK_ERROR();
 }
 
+void	OpenGLShader::UploadUniformFloatArray(const std::string& name, const float* values, uint32_t count)
+{
+	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
+	glUniform1fv(location, count, values);
+	_KN_GL_CHECK_ERROR();
+}
+
 void	OpenGLShader::UploadUniformFloat2(const std::string& name, const glm::vec2& value)
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
 	glUniform2f(location, value.x, value.y);
+	_KN_GL_CHECK_ERROR();
+}
+
+void	OpenGLShader::UploadUniformFloat2Array(const std::string& name, const float* values, uint32_t count)
+{
+	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
+	glUniform2fv(location, count, values);
 	_KN_GL_CHECK_ERROR();
 }
 
@@ -662,10 +696,24 @@ void	OpenGLShader::UploadUniformFloat3(const std::string& name, const glm::vec3&
 	_KN_GL_CHECK_ERROR();
 }
 
+void	OpenGLShader::UploadUniformFloat3Array(const std::string& name, const float* values, uint32_t count)
+{
+	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
+	glUniform3fv(location, count, values);
+	_KN_GL_CHECK_ERROR();
+}
+
 void	OpenGLShader::UploadUniformFloat4(const std::string& name, const glm::vec4& value)
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
 	glUniform4f(location, value.x, value.y, value.z, value.w);
+	_KN_GL_CHECK_ERROR();
+}
+
+void	OpenGLShader::UploadUniformFloat4Array(const std::string& name, const float* values, uint32_t count)
+{
+	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
+	glUniform4fv(location, count, values);
 	_KN_GL_CHECK_ERROR();
 }
 

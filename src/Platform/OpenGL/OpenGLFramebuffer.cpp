@@ -1,9 +1,10 @@
 #include "Kinai/Platform/OpenGL/OpenGLFramebuffer.hpp"
+#include "Kinai/Platform/OpenGL/OpenGLTexture.hpp"
 
 namespace Kinai
 {
 
-constexpr uint32_t MAX_FRAME_BUFFER_SIZE = 8192;
+constexpr int MAX_FRAME_BUFFER_SIZE = 8192;
 
 static GLenum	TextureTarget(bool multisampled)
 {
@@ -30,7 +31,20 @@ static void	BindTexture(bool multisampled, uint32_t id)
 	glBindTexture(TextureTarget(multisampled), id);
 }
 
-static void	AttachColorTexture(uint32_t id, int samples, GLenum internalFormat, GLenum format, uint32_t width, uint32_t height, int index)
+static void	AttachColorTexture(
+	uint32_t id,
+	int samples,
+	GLenum internalFormat,
+	GLenum format,
+	GLenum min_filter,
+	GLenum mag_filter,
+	GLenum wrap_s,
+	GLenum wrap_t,
+	GLenum wrap_r,
+	int width,
+	int height,
+	int index
+)
 {
 	bool multisampled = samples > 1;
 #if KINAI_OPENGL_VERSION_MAJOR >= 4
@@ -42,17 +56,29 @@ static void	AttachColorTexture(uint32_t id, int samples, GLenum internalFormat, 
 #endif
 	{
 		glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, width, height, 0, format, GL_UNSIGNED_BYTE, nullptr);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_R, GL_REPEAT);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, min_filter);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, mag_filter);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, wrap_s);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, wrap_t);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_R, wrap_r);
 	}
 
 	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + index, TextureTarget(multisampled), id, 0);
 }
 
-static void	AttachDepthTexture(uint32_t id, int samples, GLenum format, GLenum attachmentType, uint32_t width, uint32_t height)
+static void	AttachDepthTexture(
+	uint32_t id,
+	int samples,
+	GLenum format,
+	GLenum attachmentType,
+	GLenum min_filter,
+	GLenum mag_filter,
+	GLenum wrap_s,
+	GLenum wrap_t,
+	GLenum wrap_r,
+	int width,
+	int height
+)
 {
 	bool multisampled = samples > 1;
 #if KINAI_OPENGL_VERSION_MAJOR >= 4
@@ -65,11 +91,11 @@ static void	AttachDepthTexture(uint32_t id, int samples, GLenum format, GLenum a
 	{
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, 1024, 768, 0, GL_DEPTH_COMPONENT, GL_FLOAT, 0);
 		glTexStorage2D(GL_TEXTURE_2D, 1, format, width, height);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_R, GL_REPEAT);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, min_filter);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, mag_filter);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, wrap_s);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, wrap_t);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_R, wrap_r);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_FUNC, GL_LEQUAL);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_NONE);
 	}
@@ -155,10 +181,36 @@ void	OpenGLFramebuffer::Invalidate()
 			switch (_color_attachment_configs[i].TextureFormat)
 			{
 				case FramebufferTextureFormat::RGBA8:
-					AttachColorTexture(_color_attachments[i], _config.samples, GL_RGBA8, GL_RGBA, _config.width, _config.height, i);
+					AttachColorTexture(
+						_color_attachments[i],
+						_config.samples,
+						GL_RGBA8,
+						GL_RGBA,
+						OpenGLTexture2D::FilterToGLFilter(_color_attachment_configs[i].sampler_config.min_filter),
+						OpenGLTexture2D::FilterToGLFilter(_color_attachment_configs[i].sampler_config.mag_filter),
+						OpenGLTexture2D::WrapToGLWrap(_color_attachment_configs[i].sampler_config.wrap_s),
+						OpenGLTexture2D::WrapToGLWrap(_color_attachment_configs[i].sampler_config.wrap_t),
+						OpenGLTexture2D::WrapToGLWrap(_color_attachment_configs[i].sampler_config.wrap_r),
+						_config.width,
+						_config.height,
+						i
+					);
 					break;
 				case FramebufferTextureFormat::RED_INTEGER:
-					AttachColorTexture(_color_attachments[i], _config.samples, GL_R32I, GL_RED_INTEGER, _config.width, _config.height, i);
+					AttachColorTexture(
+						_color_attachments[i],
+						_config.samples,
+						GL_R32I,
+						GL_RED_INTEGER,
+						OpenGLTexture2D::FilterToGLFilter(_color_attachment_configs[i].sampler_config.min_filter),
+						OpenGLTexture2D::FilterToGLFilter(_color_attachment_configs[i].sampler_config.mag_filter),
+						OpenGLTexture2D::WrapToGLWrap(_color_attachment_configs[i].sampler_config.wrap_s),
+						OpenGLTexture2D::WrapToGLWrap(_color_attachment_configs[i].sampler_config.wrap_t),
+						OpenGLTexture2D::WrapToGLWrap(_color_attachment_configs[i].sampler_config.wrap_r),
+						_config.width,
+						_config.height,
+						i
+					);
 					break;
 				default:
 					break;
@@ -173,7 +225,17 @@ void	OpenGLFramebuffer::Invalidate()
 		switch (_depth_attachment_config.TextureFormat)
 		{
 			case FramebufferTextureFormat::DEPTH24STENCIL8:
-				AttachDepthTexture(_depth_attachment, _config.samples, GL_DEPTH24_STENCIL8, GL_DEPTH_STENCIL_ATTACHMENT, _config.width, _config.height);
+				AttachDepthTexture(
+					_depth_attachment,
+					_config.samples,
+					GL_DEPTH24_STENCIL8,
+					GL_DEPTH_STENCIL_ATTACHMENT,
+					OpenGLTexture2D::FilterToGLFilter(_depth_attachment_config.sampler_config.min_filter),
+					OpenGLTexture2D::FilterToGLFilter(_depth_attachment_config.sampler_config.mag_filter),
+					OpenGLTexture2D::WrapToGLWrap(_depth_attachment_config.sampler_config.wrap_s),
+					OpenGLTexture2D::WrapToGLWrap(_depth_attachment_config.sampler_config.wrap_t),
+					OpenGLTexture2D::WrapToGLWrap(_depth_attachment_config.sampler_config.wrap_r),
+					_config.width, _config.height);
 				break;
 			default:
 				break;
@@ -213,7 +275,7 @@ void	OpenGLFramebuffer::Unbind()
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
-void	OpenGLFramebuffer::Resize(uint32_t width, uint32_t height)
+void	OpenGLFramebuffer::Resize(int width, int height)
 {
 	if (width == 0 || height == 0 || width > MAX_FRAME_BUFFER_SIZE || height > MAX_FRAME_BUFFER_SIZE)
 	{

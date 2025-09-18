@@ -10,7 +10,7 @@ class OpenGLPipeline : public Pipeline
 {
 public:
 	OpenGLPipeline(const PipelineConfig& config);
-	~OpenGLPipeline();
+	~OpenGLPipeline() = default;
 };
 
 } // Kinai

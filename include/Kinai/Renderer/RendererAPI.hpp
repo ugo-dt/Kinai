@@ -37,6 +37,8 @@ public:
 	virtual void	SetLineWidth(float width) = 0;
 	virtual void	SetPolygonMode(PolygonMode mode) = 0;
 
+	virtual void	BindTexture(uint32_t id, uint32_t slot = 0) = 0;
+	
 	static Scope<RendererAPI>	Create();
 };
 

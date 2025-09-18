@@ -1,11 +1,10 @@
 #include "Kinai/Renderer/Shader.hpp"
 #include "Kinai/Renderer/Renderer.hpp"
-#include "Kinai/Platform/OpenGL/OpenGLShader.hpp"
 
 #if defined(KINAI_HEADLESS)
-#include "Kinai/Platform/Headless/HeadlessShader.hpp"
+	#include "Kinai/Platform/Headless/HeadlessShader.hpp"
 #elif defined(KINAI_OPENGL)
-#include "Kinai/Platform/OpenGL/OpenGLShader.hpp"
+	#include "Kinai/Platform/OpenGL/OpenGLShader.hpp"
 #endif
 
 namespace Kinai

@@ -17,6 +17,7 @@ public:
 	virtual void	OnAttach() {};
 	virtual void	OnDetach() {};
 	virtual void	OnUpdate(float delta) { KN_NOTUSED(delta); };
+	virtual void	OnRender() {};
 	virtual void	OnImGuiRender() {}
 	virtual void	OnEvent(Event& event) { KN_NOTUSED(event); };
 

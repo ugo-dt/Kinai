@@ -1,7 +1,7 @@
 #include "Kinai/Core/Application.hpp"
 #include "Kinai/Renderer/Renderer.hpp"
-#include "Kinai/Renderer/2D/Renderer2D.hpp"
 #include "Kinai/Renderer/RenderCommand.hpp"
+#include "Kinai/Renderer/2D/Painter.hpp"
 
 namespace Kinai
 {
@@ -15,7 +15,7 @@ void	Renderer::Init()
 	KN_PRINT_FUNC();
 
 	RenderCommand::Init();
-	// Renderer2D::Init();
+	Painter::Init();
 	_KN_GL_CHECK_ERROR();
 }
 
@@ -23,7 +23,7 @@ void	Renderer::Shutdown()
 {
 	KN_PRINT_FUNC();
 
-	// Renderer2D::Shutdown();
+	Painter::Shutdown();
 }
 
 void	Renderer::BeginPass()
@@ -36,10 +36,12 @@ void	Renderer::BeginPass()
 
 void	Renderer::ApplyPipeline(const Ref<Pipeline>& pipeline)
 {
+	KN_ASSERT(pipeline != nullptr);
 	if (pipeline != _current_pipeline)
 	{
 		_current_pipeline = pipeline;
 		_current_pipeline->GetVertexArray()->Bind();
+		_current_pipeline->GetShader()->Bind();
 
 		switch (pipeline->GetCullMode())
 		{
@@ -88,16 +90,22 @@ static GLenum	ShaderDataTypeToOpenGLBaseType(ShaderDataType type)
 
 void	Renderer::ApplyBindings(const Ref<Bindings>& bindings)
 {
+	KN_ASSERT(_current_pipeline != nullptr, "No current pipeline!");
+	KN_ASSERT(bindings != nullptr);
+
+	vb_index = 0;
 	if (_current_bindings != bindings)
 	{
 		_current_bindings = bindings;
-		const auto& vb = _current_bindings->GetVertexBuffer();
-		const auto& shd = _current_pipeline->GetShader();
 		
-		KN_ASSERT(shd->GetLayout().GetElements().size() && "Shader has no layout!");
+		const auto& layout = _current_pipeline->GetLayout();
+		KN_ASSERT(layout.GetElements().size(), "{} has no layout!", _current_pipeline->GetLabel());
+		
+		for (const auto& texture : _current_bindings->GetTextures())
+			texture->Bind();
 
+		const auto& vb = _current_bindings->GetVertexBuffer();
 		vb->Bind();
-		const auto& layout = _current_pipeline->GetShader()->GetLayout();
 		for (const auto& element : layout)
 		{
 			switch (element.type)
@@ -164,14 +172,27 @@ void	Renderer::ApplyBindings(const Ref<Bindings>& bindings)
 			}
 		}
 	}
-	_current_bindings->GetIndexBuffer()->Bind();
 }
 
 void	Renderer::EndPass()
 {
 	KN_PRINT_FUNC();
-	
-	_current_pipeline.reset();
+
+	if (_current_pipeline)
+	{
+		if (_current_pipeline->GetShader())
+			_current_pipeline->GetShader()->Unbind();
+		_current_pipeline->GetVertexArray()->Unbind();
+		_current_pipeline.reset();
+	}
+
+	if (_current_bindings)
+	{
+		if (_current_bindings->GetIndexBuffer())
+			_current_bindings->GetIndexBuffer()->Unbind();
+		_current_bindings.reset();
+	}
+	vb_index = 0;
 }
 
 void	Renderer::OnWindowResize(uint32_t width, uint32_t height)
@@ -186,11 +207,25 @@ void	Renderer::Submit(uint32_t vertexCount)
 {
 	KN_PRINT_FUNC();
 
-	Log::Validate(_current_pipeline != nullptr, "Renderer::Submit(): no current rendering pipeline!");
+	Log::Validate(_current_pipeline != nullptr, "no current rendering pipeline!");
+	Log::Validate(_current_bindings != nullptr, "no current bindings!");
 
 	Ref<VertexArray> vao = _current_pipeline->GetVertexArray();
 	if (_current_pipeline->GetIndexType() != IndexType::None)
 	{
+		KN_ASSERT(_current_bindings->GetVertexBuffer() != nullptr, "No vertex buffer set in bindings!");
+		KN_ASSERT(_current_bindings->GetIndexBuffer() != nullptr, "No index buffer set in bindings!");
+		KN_ASSERT(_current_bindings->GetIndexBuffer()->GetCount() > 0, "Index buffer has no indices!");
+		#ifdef KN_ENABLE_ASSERTS
+			static bool warned = false;
+			if (vertexCount && !warned)
+			{
+				warned = true;
+				Log::Warn("Renderer::Submit(): 'vertexCount' ({}) is unused because an index buffer was provided. This warning is only shown once.", vertexCount);
+			}
+		#endif
+
+		_current_bindings->GetIndexBuffer()->Bind();
 		RenderCommand::DrawIndexed(
 			_current_pipeline->GetVertexArray(),
 			_current_pipeline->GetPrimitiveType(),

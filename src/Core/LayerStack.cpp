@@ -22,28 +22,25 @@ void	LayerStack::Clear()
 
 	if (_layers.empty())
 		return ;
-	for (Layer* layer : _layers)
-	{
+	for (Ref<Layer>& layer : _layers)
 		layer->OnDetach();
-		delete layer;
-	}
 	_layers.clear();
 }
 
-void LayerStack::PushLayer(Layer* layer)
+void LayerStack::PushLayer(Ref<Layer> layer)
 {
 	KN_PRINT_FUNC();
 	_layers.emplace(_layers.begin() + _layer_insert_index, layer);
 	_layer_insert_index++;
 }
 
-void LayerStack::PushOverlay(Layer* overlay)
+void LayerStack::PushOverlay(Ref<Layer> overlay)
 {
 	KN_PRINT_FUNC();
 	_layers.emplace_back(overlay);
 }
 
-void LayerStack::PopLayer(Layer* layer)
+void LayerStack::PopLayer(Ref<Layer> layer)
 {
 	KN_PRINT_FUNC();
 	auto it = std::find(_layers.begin(), _layers.begin() + _layer_insert_index, layer);
@@ -55,7 +52,7 @@ void LayerStack::PopLayer(Layer* layer)
 	}
 }
 
-void LayerStack::PopOverlay(Layer* overlay)
+void LayerStack::PopOverlay(Ref<Layer> overlay)
 {
 	KN_PRINT_FUNC();
 	auto it = std::find(_layers.begin() + _layer_insert_index, _layers.end(), overlay);

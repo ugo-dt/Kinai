@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Kinai/Core/Core.hpp"
+#include "Kinai/Renderer/Buffer/BufferLayout.hpp"
 #include "Kinai/Renderer/Shader.hpp"
 #include "Kinai/Renderer/VertexArray.hpp"
 
@@ -41,8 +42,9 @@ struct PipelineConfig
 {
 	Ref<VertexArray> vao = nullptr;
 	Ref<Shader> shader = nullptr;
+	BufferLayout layout;
 	PrimitiveType primitive_type = PrimitiveType::Triangles;
-	IndexType index_type = IndexType::None;
+	IndexType index_type = IndexType::Uint32;
 	CullMode cull_mode = CullMode::Back;
 	FaceWinding face_winding = FaceWinding::CCW;
 	std::string label = "Rendering pipeline";
@@ -55,6 +57,7 @@ public:
 
 	void SetVertexArray(const Ref<VertexArray>& vao) { _vao = vao; }
 	void SetShader(const Ref<Shader>& shader) { _shader = shader; }
+	void SetLayout(const BufferLayout& layout) { _layout = layout; }
 	void SetPrimitiveType(const PrimitiveType& primitive_type) { _primitive_type = primitive_type; }
 	void SetIndexType(const IndexType& index_type) { _index_type = index_type; }
 	void SetCullMode(const CullMode& cull_mode) { _cull_mode = cull_mode; }
@@ -63,6 +66,7 @@ public:
 
 	Ref<VertexArray> GetVertexArray() const { return _vao; }
 	Ref<Shader> GetShader() const { return _shader; }
+	BufferLayout GetLayout() const { return _layout; }
 	PrimitiveType GetPrimitiveType() const { return _primitive_type; }
 	IndexType GetIndexType() const { return _index_type; }
 	CullMode GetCullMode() const { return _cull_mode; }
@@ -74,6 +78,7 @@ public:
 protected:
 	Ref<VertexArray> _vao;
 	Ref<Shader> _shader;
+	BufferLayout _layout;
 	PrimitiveType _primitive_type;
 	IndexType _index_type;
 	CullMode _cull_mode;

@@ -43,7 +43,6 @@ SDLWindow::SDLWindow(const WindowProps &props)
 		"Failed to init SDL! {}", SDL_GetError()
 	);
 
-	Log::Trace("Initialized SDL.");
 	if (desc_def.no_depth_buffer)
 	{
 		SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 0);
@@ -69,7 +68,7 @@ SDLWindow::SDLWindow(const WindowProps &props)
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_DEBUG_FLAG);
 	#endif
 
-	flags = SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE | SDL_WINDOW_INPUT_FOCUS;
+	flags = SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE | SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_HIGH_PIXEL_DENSITY;
 	if (desc_def.fullscreen)
 		flags |= SDL_WINDOW_FULLSCREEN;
 	_handle = SDL_CreateWindow(desc_def.title, desc_def.width, desc_def.height, flags);

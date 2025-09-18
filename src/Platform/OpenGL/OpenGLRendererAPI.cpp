@@ -91,6 +91,7 @@ void	OpenGLRendererAPI::DrawIndexed(const Ref<VertexArray>& vertexArray, Primiti
 
 	vertexArray->Bind();
 	glDrawElements(glType, indexCount, GL_UNSIGNED_INT, nullptr);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLRendererAPI::Draw(const Ref<VertexArray>& vertexArray, PrimitiveType type, uint32_t vertexCount)
@@ -99,6 +100,7 @@ void	OpenGLRendererAPI::Draw(const Ref<VertexArray>& vertexArray, PrimitiveType 
 
 	vertexArray->Bind();
 	glDrawArrays(glType, 0, vertexCount);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLRendererAPI::SetLineWidth(float width)
@@ -123,6 +125,17 @@ void	OpenGLRendererAPI::SetPolygonMode(PolygonMode mode)
 	KN_NOTUSED(mode);
 	Log::Warn("glPolygonMode is not supported on OpenGL ES.");
 #endif
+}
+
+void	OpenGLRendererAPI::BindTexture(uint32_t id, uint32_t slot)
+{
+#if defined(KN_PLATFORM_DESKTOP) && !defined(KN_PLATFORM_MACOS)
+	glBindTextureUnit(slot, id);
+#else
+	KN_NOTUSED(slot);
+	glBindTexture(GL_TEXTURE_2D, id);
+#endif
+	_KN_GL_CHECK_ERROR();
 }
 
 } // Kinai

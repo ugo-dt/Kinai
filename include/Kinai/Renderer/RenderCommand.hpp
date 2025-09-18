@@ -58,6 +58,11 @@ public:
 		_renderer_api->SetPolygonMode(mode);
 	}
 
+	static void	BindTexture(uint32_t renderer_id, uint32_t slot = 0)
+	{
+		_renderer_api->BindTexture(renderer_id, slot);
+	}
+
 private:
 	static Scope<RendererAPI>	_renderer_api;
 };

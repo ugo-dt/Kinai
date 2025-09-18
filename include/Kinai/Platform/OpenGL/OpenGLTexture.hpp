@@ -8,8 +8,8 @@ namespace Kinai
 class OpenGLTexture2D : public Texture2D
 {
 public:
-	OpenGLTexture2D(const TextureConfig& specification);
-	OpenGLTexture2D(const std::string& path, GLenum min_filter, GLenum max_filter);
+	OpenGLTexture2D(const TextureConfig& config);
+	OpenGLTexture2D(const std::string& path, const TextureConfig& config);
 	~OpenGLTexture2D();
 
 	const TextureConfig& GetConfig() const override { return _config; }
@@ -30,6 +30,10 @@ public:
 	{
 		return _renderer_id == other.GetRendererID();
 	}
+
+public:
+	static GLenum FilterToGLFilter(Filter filter);
+	static GLenum WrapToGLWrap(Wrap wrap);
 
 private:
 	TextureConfig	_config;

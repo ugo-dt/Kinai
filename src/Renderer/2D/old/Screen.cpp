@@ -41,29 +41,6 @@ void	Renderer2D::MakeScreenFramebuffers()
 {
 	KN_PRINT_FUNC();
 
-// FIXME: Abstract this with Kinai::Framebuffer
-# ifdef KINAI_OPENGL
-	glm::ivec2 winsize = Application::Get().GetWindow().GetSize();
-
-	glGenFramebuffers(1, &_screen_framebuffer);
-	glBindFramebuffer(GL_FRAMEBUFFER, _screen_framebuffer);
-
-	TextureConfig tex_config = {
-		.width = (uint32_t)winsize.x,
-		.height = (uint32_t)winsize.y,
-		.format = ImageFormat::RGBA8,
-		.generate_mips = true,
-		.min_filter = GL_NEAREST,
-		.max_filter = GL_NEAREST,
-	};
-	_texture_slots[1] = Texture2D::Create(tex_config);
-	_texture_slots[1]->Bind();
-	_texture_slot_index = 2;
-	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, _texture_slots[1]->GetRendererID(), 0);
-
-	KN_ASSERT(glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE, "Framebuffer is not complete!");
-	glBindFramebuffer(GL_FRAMEBUFFER, 0);
-#endif
 }
 
 void	Renderer2D::CopyScreenToBackBuffer()
