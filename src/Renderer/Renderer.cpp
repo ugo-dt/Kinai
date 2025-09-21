@@ -10,6 +10,10 @@ static size_t vb_index = 0;
 Ref<Pipeline>	Renderer::_current_pipeline = nullptr;
 Ref<Bindings>	Renderer::_current_bindings = nullptr;
 
+#if defined(KINAI_DEBUG) || defined(KINAI_DEV)
+Renderer::Stats	Renderer::_stats;
+#endif
+
 void	Renderer::Init()
 {
 	KN_PRINT_FUNC();
@@ -239,7 +243,10 @@ void	Renderer::Submit(uint32_t vertexCount)
 			_current_pipeline->GetPrimitiveType(),
 			vertexCount
 		);
+		_stats._vertexCount += vertexCount;
 	}
+	_stats._drawCalls++;
+	_stats._totalDrawCalls++;
 }
 
 }

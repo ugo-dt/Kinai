@@ -59,7 +59,11 @@ public:
 	static Application& Get() { return *_instance; }
 
 private:
-	void OnEvent(Event& event);
+
+	template <class EventType>
+	requires(std::is_base_of_v<Event, EventType>)
+	void OnEvent(EventType& event);
+
 	bool OnWindowClose(WindowCloseEvent &event);
 	bool OnWindowResize(WindowResizeEvent &event);
 
@@ -77,6 +81,23 @@ private:
 private:
 	friend int Main(int argc, char **argv);
 };
+
+template <class EventType>
+requires(std::is_base_of_v<Event, EventType>)
+void	Application::OnEvent(EventType& event)
+{
+	KN_PRINT_FUNC();
+	EventDispatcher	dispatcher(event);
+
+	dispatcher.Dispatch<WindowCloseEvent>(KN_BIND_EVENT_FN(Application::OnWindowClose));
+	dispatcher.Dispatch<WindowResizeEvent>(KN_BIND_EVENT_FN(Application::OnWindowResize));
+	for (auto it = _layerstack.rbegin(); it != _layerstack.rend(); it++)
+	{
+		(*it)->OnEvent(event);
+		if (event.handled)
+			break;
+	}
+}
 
 extern Application	*CreateApplication(int argc, char **argv);
 

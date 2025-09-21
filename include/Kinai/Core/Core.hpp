@@ -39,7 +39,7 @@
 #define KN_STRINGIFY(x) #x
 #define KN_BIND_EVENT_FN(fn) [this](auto&&... args) -> decltype(auto) { return this->fn(std::forward<decltype(args)>(args)...); }
 
-#if defined(KN_DEBUG)
+#if defined(KINAI_DEBUG)
 	#define KN_PRINT_FUNC() printf("%s at '%s:%d'\n", __PRETTY_FUNCTION__, __FILE__, __LINE__);
 #else
 	#define KN_PRINT_FUNC()

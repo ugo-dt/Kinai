@@ -122,8 +122,13 @@ void	OpenGLRendererAPI::SetPolygonMode(PolygonMode mode)
 	glPolygonMode(GL_FRONT_AND_BACK, glMode);
 	_KN_GL_CHECK_ERROR();
 #else
+	static bool warned = false;
+	if (!warned)
+	{
+		Log::Warn("glPolygonMode is not supported on OpenGL ES.");
+		warned = true;
+	}
 	KN_NOTUSED(mode);
-	Log::Warn("glPolygonMode is not supported on OpenGL ES.");
 #endif
 }
 

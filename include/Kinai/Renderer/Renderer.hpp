@@ -28,9 +28,25 @@ public:
 
 	static void Submit(uint32_t vertexCount = 0);
 
+	#if defined(KINAI_DEBUG) || defined(KINAI_DEV)
+		class Stats
+		{
+		public:
+			static void Reset() { _stats._drawCalls = 0; _stats._vertexCount = 0; }
+			static uint64_t GetDrawCalls() { return _stats._drawCalls; }
+			static uint64_t GetTotalDrawCalls() { return _stats._totalDrawCalls; }
+			static uint64_t GetVertexCount() { return _stats._vertexCount; }
+		private:
+			friend class Renderer;
+			uint64_t _drawCalls = 0;
+			uint64_t _totalDrawCalls = 0;
+			uint64_t _vertexCount = 0;
+		};
+	#endif
 private:
 	static Ref<Pipeline> _current_pipeline;
 	static Ref<Bindings> _current_bindings;
+	static Stats _stats;
 };
 
 template <class Tp>

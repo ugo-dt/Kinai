@@ -24,11 +24,13 @@ static void	CreateTextures(bool multisampled, uint32_t* outID, uint32_t count)
 	KN_NOTUSED(multisampled);
 	glGenTextures(count, outID);
 #endif
+	_KN_GL_CHECK_ERROR();
 }
 
 static void	BindTexture(bool multisampled, uint32_t id)
 {
 	glBindTexture(TextureTarget(multisampled), id);
+	_KN_GL_CHECK_ERROR();
 }
 
 static void	AttachColorTexture(
@@ -64,6 +66,7 @@ static void	AttachColorTexture(
 	}
 
 	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + index, TextureTarget(multisampled), id, 0);
+	_KN_GL_CHECK_ERROR();
 }
 
 static void	AttachDepthTexture(
@@ -89,7 +92,8 @@ static void	AttachDepthTexture(
 	else
 #endif
 	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, 1024, 768, 0, GL_DEPTH_COMPONENT, GL_FLOAT, 0);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH24_STENCIL8, width, height, 0, GL_DEPTH_STENCIL, GL_UNSIGNED_INT_24_8, nullptr);
+		_KN_GL_CHECK_ERROR();
 		glTexStorage2D(GL_TEXTURE_2D, 1, format, width, height);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, min_filter);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, mag_filter);
@@ -101,6 +105,7 @@ static void	AttachDepthTexture(
 	}
 
 	glFramebufferTexture2D(GL_FRAMEBUFFER, attachmentType, TextureTarget(multisampled), id, 0);
+	_KN_GL_CHECK_ERROR();
 }
 
 static bool	IsDepthFormat(FramebufferTextureFormat format)
@@ -146,6 +151,7 @@ OpenGLFramebuffer::~OpenGLFramebuffer()
 	glDeleteFramebuffers(1, &_renderer_id);
 	glDeleteTextures(_color_attachments.size(), _color_attachments.data());
 	glDeleteTextures(1, &_depth_attachment);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLFramebuffer::Invalidate()
@@ -166,6 +172,7 @@ void	OpenGLFramebuffer::Invalidate()
 	glGenFramebuffers(1, &_renderer_id);
 #endif
 	glBindFramebuffer(GL_FRAMEBUFFER, _renderer_id);
+	_KN_GL_CHECK_ERROR();
 
 	bool multisample = _config.samples > 1;
 
@@ -259,7 +266,6 @@ void	OpenGLFramebuffer::Invalidate()
 	}
 
 	KN_ASSERT(glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE, "Framebuffer is incomplete!");
-
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	_KN_GL_CHECK_ERROR();
 }
@@ -268,11 +274,13 @@ void	OpenGLFramebuffer::Bind()
 {
 	glBindFramebuffer(GL_FRAMEBUFFER, _renderer_id);
 	glViewport(0, 0, _config.width, _config.height);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLFramebuffer::Unbind()
 {
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLFramebuffer::Resize(int width, int height)
@@ -295,6 +303,7 @@ int OpenGLFramebuffer::ReadPixel(uint32_t attachmentIndex, int x, int y)
 	glReadBuffer(GL_COLOR_ATTACHMENT0 + attachmentIndex);
 	int pixelData;
 	glReadPixels(x, y, 1, 1, GL_RED_INTEGER, GL_INT, &pixelData);
+	_KN_GL_CHECK_ERROR();
 	return pixelData;
 }
 
@@ -305,6 +314,7 @@ void	OpenGLFramebuffer::CopyTextureData(Ref<Texture2D>& dest)
 
 	dest->SetData(data, _config.width * _config.height * 4);
 	delete[] data;
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLFramebuffer::ClearAttachment(uint32_t attachmentIndex, int value)
@@ -322,6 +332,7 @@ void	OpenGLFramebuffer::ClearAttachment(uint32_t attachmentIndex, int value)
 	Log::Warn("glClearTexImage was introduced in OpenGL 4.4, current version is {}.{}",
 		KINAI_OPENGL_VERSION_MAJOR, KINAI_OPENGL_VERSION_MINOR);
 #endif
+	_KN_GL_CHECK_ERROR();
 }
 
 } // Kinai

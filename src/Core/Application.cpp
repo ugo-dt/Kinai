@@ -14,7 +14,7 @@ Application::Application(const ApplicationConfig &config)
 {
 	KN_PRINT_FUNC();
 
-	KN_ASSERT(!_instance, "Application already exists!");
+	Log::Validate(!_instance, "Application already exists!");
 	_instance = this;
 
 	_window = Window::Create(
@@ -62,21 +62,6 @@ Application::~Application()
 	Renderer::Shutdown();
 #endif
 	_instance = nullptr;
-}
-
-void	Application::OnEvent(Event& event)
-{
-	KN_PRINT_FUNC();
-	EventDispatcher	dispatcher(event);
-
-	dispatcher.Dispatch<WindowCloseEvent>(KN_BIND_EVENT_FN(Application::OnWindowClose));
-	dispatcher.Dispatch<WindowResizeEvent>(KN_BIND_EVENT_FN(Application::OnWindowResize));
-	for (auto it = _layerstack.rbegin(); it != _layerstack.rend(); it++)
-	{
-		(*it)->OnEvent(event);
-		if (event.handled)
-			break;
-	}
 }
 
 Ref<Layer>	Application::PushLayer(Ref<Layer> layer)
@@ -133,10 +118,8 @@ void	Application::Run()
 		{
 			for (Ref<Layer>& layer : _layerstack)
 				layer->OnUpdate(_time.delta);
-
 			for (Ref<Layer>& layer : _layerstack)
 				layer->OnRender();
-
 			_time.frames++;
 
 			if (_config.enable_imgui)

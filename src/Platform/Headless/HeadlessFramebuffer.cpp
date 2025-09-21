@@ -30,7 +30,7 @@ namespace Kinai
 // 	KN_NOTUSED(id);
 // }
 
-// static void	AttachColorTexture(uint32_t id, int samples, GLenum internalFormat, GLenum format, uint32_t width, uint32_t height, int index)
+// static void	AttachColorTexture(uint32_t id, int samples, GLenum internalFormat, GLenum format, int width, int height, int index)
 // {
 // 	KN_PRINT_FUNC();
 
@@ -43,7 +43,7 @@ namespace Kinai
 // 	KN_NOTUSED(index);
 // }
 
-// static void	AttachDepthTexture(uint32_t id, int samples, GLenum format, GLenum attachmentType, uint32_t width, uint32_t height)
+// static void	AttachDepthTexture(uint32_t id, int samples, GLenum format, GLenum attachmentType, int width, int height)
 // {
 // 	KN_PRINT_FUNC();
 
@@ -97,7 +97,7 @@ void	HeadlessFramebuffer::Unbind()
 	KN_PRINT_FUNC();
 }
 
-void	HeadlessFramebuffer::Resize(uint32_t width, uint32_t height)
+void	HeadlessFramebuffer::Resize(int width, int height)
 {
 	KN_PRINT_FUNC();
 

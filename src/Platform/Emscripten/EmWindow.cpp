@@ -95,6 +95,7 @@ uint32_t	EmWindow::GetHeight() const
 	return _height;
 }
 
+#ifdef KINAI_SOKOL
 sg_environment	EmWindow::GetSokolEnvironment() const
 {
 	KN_PRINT_FUNC();
@@ -121,6 +122,7 @@ sg_swapchain	EmWindow::GetSokolSwapchain() const
 	swapchain.gl.framebuffer = (uint32_t)_framebuffer;
 	return swapchain;
 }
+#endif
 
 bool	EmWindow::IsVSync() const
 {
