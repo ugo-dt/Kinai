@@ -41,7 +41,7 @@ void	HeadlessVertexBuffer::SetData(const void* data, uint32_t size)
 
 /** Index buffer */
 
-HeadlessIndexBuffer::HeadlessIndexBuffer(const uint32_t* indices, uint32_t count)
+HeadlessIndexBuffer::HeadlessIndexBuffer(const void* indices, uint32_t count)
 	: _count(count)
 {
 	KN_PRINT_FUNC();

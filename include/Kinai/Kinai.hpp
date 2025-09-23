@@ -21,4 +21,5 @@
 #include "Kinai/Renderer/RenderCommand.hpp"
 #include "Kinai/Renderer/Shader.hpp"
 #include "Kinai/Renderer/Texture.hpp"
+#include "Kinai/Renderer/UniformBuffer.hpp"
 #include "Kinai/Renderer/VertexArray.hpp"

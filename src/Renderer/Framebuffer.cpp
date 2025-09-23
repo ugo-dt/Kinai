@@ -16,7 +16,7 @@ Ref<Framebuffer> Framebuffer::Create(const FramebufferConfig& config)
 	return CreateScope<OpenGLFramebuffer>(config);
 #endif
 
-	KN_ASSERT(false, "Unknown RendererAPI");
+	Log::Critical("Unknown RendererAPI");
 	return nullptr;
 }
 

@@ -19,7 +19,7 @@ Ref<Texture2D> Texture2D::Create(const TextureConfig& config)
 	return CreateRef<OpenGLTexture2D>(config);
 #endif
 
-	KN_ASSERT(false, "Unknown RendererAPI!");
+	Log::Critical("Unknown RendererAPI!");
 	return nullptr;
 }
 
@@ -35,7 +35,7 @@ Ref<Texture2D> Texture2D::Create(const std::string& path, const TextureConfig& c
 	return CreateRef<OpenGLTexture2D>(path, config);
 #endif
 
-	KN_ASSERT(false, "Unknown RendererAPI!");
+	Log::Critical("Unknown RendererAPI!");
 	return nullptr;
 }
 

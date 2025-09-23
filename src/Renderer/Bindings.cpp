@@ -19,7 +19,7 @@ Ref<Bindings> Bindings::Create()
 	return CreateRef<OpenGLBindings>();
 #endif
 
-	KN_ASSERT(false, "Unknown RendererAPI");
+	Log::Critical("Unknown RendererAPI");
 	return nullptr;
 }
 

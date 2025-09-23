@@ -36,7 +36,7 @@ uint32_t	ShaderDataTypeSize(ShaderDataType type)
 		case ShaderDataType::UInt4:		return sizeof(unsigned int) * 4;
 	}
 
-	KN_ASSERT(false, "Unknown ShaderDataType");
+	Log::Critical("Unknown ShaderDataType");
 	return 0;
 }
 
@@ -50,7 +50,7 @@ Ref<Shader> Shader::Create(const std::string& filepath, const std::string& progr
 	return CreateRef<OpenGLShader>(filepath, program_name);
 #endif
 
-	KN_ASSERT(false, "Unknown RendererAPI!");
+	Log::Critical("Unknown RendererAPI!");
 	return nullptr;
 }
 
@@ -64,7 +64,7 @@ Ref<Shader> Shader::Create(const std::string& name, const std::string& vertexSrc
 	return CreateRef<OpenGLShader>(name, vertexSrc, fragmentSrc);
 #endif
 
-	KN_ASSERT(false, "Unknown RendererAPI!");
+	Log::Critical("Unknown RendererAPI!");
 	return nullptr;
 }
 
@@ -78,7 +78,7 @@ Ref<Shader> Shader::Create(const ShaderConfig& config)
 	return CreateRef<OpenGLShader>(config);
 #endif
 
-	KN_ASSERT(false, "Unknown RendererAPI!");
+	Log::Critical("Unknown RendererAPI!");
 	return nullptr;
 }
 

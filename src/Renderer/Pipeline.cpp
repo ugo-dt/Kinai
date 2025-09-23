@@ -22,7 +22,7 @@ Ref<Pipeline>	Pipeline::Create(const PipelineConfig& config)
 	return CreateRef<OpenGLPipeline>(config);
 #endif
 
-	KN_ASSERT(false, "Unknown RendererAPI");
+	Log::Critical("Unknown RendererAPI");
 	return nullptr;
 }
 

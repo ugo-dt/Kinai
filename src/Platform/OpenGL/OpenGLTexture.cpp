@@ -15,7 +15,7 @@ static GLenum ImageFormatToGLDataFormat(ImageFormat format)
 		default: break;
 	}
 
-	KN_ASSERT(false, "ImageFormatToGLDataFormat");
+	Log::Critical("ImageFormatToGLDataFormat");
 	return 0;
 }
 
@@ -30,7 +30,7 @@ static GLenum ImageFormatToGLInternalFormat(ImageFormat format)
 		default: break;
 	}
 
-	KN_ASSERT(false, "invalid image format");
+	Log::Critical("invalid image format");
 	return 0;
 }
 
@@ -43,7 +43,7 @@ GLenum OpenGLTexture2D::FilterToGLFilter(Filter filter)
 		default: break;
 	}
 
-	KN_ASSERT(false, "invalid texture filter");
+	Log::Critical("invalid texture filter");
 	return 0;
 }
 
@@ -57,7 +57,7 @@ GLenum OpenGLTexture2D::WrapToGLWrap(Wrap wrap)
 		default: break;
 	}
 
-	KN_ASSERT(false, "invalid texture wrap");
+	Log::Critical("invalid texture wrap");
 	return 0;
 }
 

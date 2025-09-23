@@ -16,6 +16,10 @@ public:
 
 	virtual void	SetData(const void* data, uint32_t size) = 0;
 
+	#ifdef KN_DEBUG_STATS
+		virtual uint32_t GetSize() const = 0;
+	#endif
+
 	static Ref<VertexBuffer>	Create(uint32_t size);
 	static Ref<VertexBuffer>	Create(const void* vertices, uint32_t size);
 };

@@ -17,7 +17,7 @@ Ref<VertexArray>	VertexArray::Create()
 	return CreateRef<OpenGLVertexArray>();
 #endif
 
-	KN_ASSERT(false, "Unknown RendererAPI");
+	Log::Critical("Unknown RendererAPI");
 	return nullptr;
 }
 

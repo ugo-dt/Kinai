@@ -47,6 +47,7 @@
 
 #if defined(KINAI_DEBUG) || defined(KINAI_DEV)
 	#define KN_ENABLE_ASSERTS
+	#define KN_DEBUG_STATS
 #endif
 
 #if defined(__clang__) || defined(__GNUC__)

@@ -22,7 +22,7 @@ Ref<VertexBuffer> VertexBuffer::Create(uint32_t size)
 	return CreateRef<OpenGLVertexBuffer>(size);
 #endif
 
-	KN_ASSERT(false, "Unknown RendererAPI");
+	Log::Critical("Unknown RendererAPI");
 	return nullptr;
 }
 
@@ -36,22 +36,31 @@ Ref<VertexBuffer> VertexBuffer::Create(const void* vertices, uint32_t size)
 	return CreateRef<OpenGLVertexBuffer>(vertices, size);
 #endif
 
-	KN_ASSERT(false, "Unknown RendererAPI");
+	Log::Critical("Unknown RendererAPI");
 	return nullptr;
 }
 
-Ref<IndexBuffer> IndexBuffer::Create(const uint32_t* indices, uint32_t count)
+Ref<IndexBuffer> IndexBuffer::Create(const void* indices, uint32_t count, IndexType type)
 {
 	KN_PRINT_FUNC();
 
 #if defined(KINAI_HEADLESS)
-	return CreateRef<HeadlessIndexBuffer>(indices, count);
+	return CreateRef<HeadlessIndexBuffer>(indices, count, type);
 #elif defined(KINAI_OPENGL)
-	return CreateRef<OpenGLIndexBuffer>(indices, count);
+	return CreateRef<OpenGLIndexBuffer>(indices, count, type);
 #endif
 
-	KN_ASSERT(false, "Unknown RendererAPI");
+	Log::Critical("Unknown RendererAPI");
 	return nullptr;
+}
+
+Ref<IndexBuffer> IndexBuffer::Create(const uint16_t* indices, uint32_t count, IndexType type)
+{
+	return Create(static_cast<const void*>(indices), count, type);
+}
+Ref<IndexBuffer> IndexBuffer::Create(const uint32_t* indices, uint32_t count, IndexType type)
+{
+	return Create(static_cast<const void*>(indices), count, type);
 }
 
 } // Kinai

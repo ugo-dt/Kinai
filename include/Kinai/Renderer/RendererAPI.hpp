@@ -14,6 +14,15 @@ enum PolygonMode
 	Point,
 };
 
+enum class IndexType
+{
+	None = 0,
+	Uint16,
+	Uint32,
+};
+
+size_t	IndexTypeSize(IndexType type);
+
 class RendererAPI
 {
 public:
@@ -31,8 +40,8 @@ public:
 	virtual void	SetClearColor(const glm::vec4& color) = 0;
 	virtual void	Clear() = 0;
 	
-	virtual void	DrawIndexed(const Ref<VertexArray>& vertexArray, PrimitiveType type, uint32_t index_count) = 0;
-	virtual void	Draw(const Ref<VertexArray>& vertexArray, PrimitiveType type, uint32_t vertexCount) = 0;
+	virtual void	DrawIndexed(const Ref<VertexArray>& vertexArray, PrimitiveType mode, IndexType type, uint32_t index_count) = 0;
+	virtual void	Draw(const Ref<VertexArray>& vertexArray, PrimitiveType mode, uint32_t vertexCount) = 0;
 
 	virtual void	SetLineWidth(float width) = 0;
 	virtual void	SetPolygonMode(PolygonMode mode) = 0;

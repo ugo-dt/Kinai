@@ -16,7 +16,7 @@ Ref<UniformBuffer>	UniformBuffer::Create(uint32_t size, uint32_t binding)
 	return CreateRef<OpenGLUniformBuffer>(size, binding);
 #endif
 
-	KN_ASSERT(false, "Unknown RendererAPI");
+	Log::Critical("Unknown RendererAPI");
 	return nullptr;
 }
 

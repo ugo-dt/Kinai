@@ -15,7 +15,20 @@ static GLenum	GetOpenGLPrimitiveType(PrimitiveType type)
 		case PrimitiveType::TriangleStrip: return GL_TRIANGLE_STRIP;
 	}
 
-	KN_ASSERT(false, "Unknown PrimitiveType!");
+	Log::Critical("Unknown PrimitiveType!");
+	return 0;
+}
+
+GLenum	IndexTypeToGLenum(IndexType type)
+{
+	switch (type)
+	{
+		case IndexType::None:   return 0;
+		case IndexType::Uint16: return GL_UNSIGNED_SHORT;
+		case IndexType::Uint32: return GL_UNSIGNED_INT;
+	}
+
+	Log::Critical("Unknown IndexType");
 	return 0;
 }
 
@@ -42,7 +55,7 @@ void	OpenGLMessageCallback(
 		case GL_DEBUG_SEVERITY_NOTIFICATION: Log::Info("{}", message); return;
 	}
 
-	KN_ASSERT(false, "Unknown severity level!");
+	Log::Critical("Unknown severity level!");
 }
 #endif
 
@@ -85,21 +98,22 @@ void	OpenGLRendererAPI::Clear()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void	OpenGLRendererAPI::DrawIndexed(const Ref<VertexArray>& vertexArray, PrimitiveType type, uint32_t indexCount)
+void	OpenGLRendererAPI::DrawIndexed(const Ref<VertexArray>& vertexArray, PrimitiveType mode, IndexType type, uint32_t indexCount)
 {
-	GLenum glType = GetOpenGLPrimitiveType(type);
+	GLenum glMode = GetOpenGLPrimitiveType(mode);
+	GLenum glType = IndexTypeToGLenum(type);
 
 	vertexArray->Bind();
-	glDrawElements(glType, indexCount, GL_UNSIGNED_INT, nullptr);
+	glDrawElements(glMode, indexCount, glType, nullptr);
 	_KN_GL_CHECK_ERROR();
 }
 
-void	OpenGLRendererAPI::Draw(const Ref<VertexArray>& vertexArray, PrimitiveType type, uint32_t vertexCount)
+void	OpenGLRendererAPI::Draw(const Ref<VertexArray>& vertexArray, PrimitiveType mode, uint32_t vertexCount)
 {
-	GLenum glType = GetOpenGLPrimitiveType(type);
+	GLenum glMode = GetOpenGLPrimitiveType(mode);
 
 	vertexArray->Bind();
-	glDrawArrays(glType, 0, vertexCount);
+	glDrawArrays(glMode, 0, vertexCount);
 	_KN_GL_CHECK_ERROR();
 }
 

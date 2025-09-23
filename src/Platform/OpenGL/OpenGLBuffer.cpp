@@ -1,4 +1,5 @@
 #include "Kinai/Platform/OpenGL/OpenGLBuffer.hpp"
+#include "Kinai/Platform/OpenGL/OpenGLRendererAPI.hpp"
 
 namespace Kinai
 {
@@ -15,6 +16,10 @@ OpenGLVertexBuffer::OpenGLVertexBuffer(uint32_t size)
 	glBindBuffer(GL_ARRAY_BUFFER, _renderer_id);
 	glBufferData(GL_ARRAY_BUFFER, size, nullptr, GL_DYNAMIC_DRAW);
 	_KN_GL_CHECK_ERROR();
+
+	#ifdef KN_DEBUG_STATS
+		_size = size;
+	#endif
 }
 
 OpenGLVertexBuffer::OpenGLVertexBuffer(const void* vertices, uint32_t size)
@@ -29,6 +34,10 @@ OpenGLVertexBuffer::OpenGLVertexBuffer(const void* vertices, uint32_t size)
 	glBindBuffer(GL_ARRAY_BUFFER, _renderer_id);
 	glBufferData(GL_ARRAY_BUFFER, size, vertices, GL_STATIC_DRAW);
 	_KN_GL_CHECK_ERROR();
+
+	#ifdef KN_DEBUG_STATS
+		_size = size;
+	#endif
 }
 
 OpenGLVertexBuffer::~OpenGLVertexBuffer()
@@ -66,8 +75,9 @@ void	OpenGLVertexBuffer::SetData(const void* data, uint32_t size)
 
 /** Index buffer */
 
-OpenGLIndexBuffer::OpenGLIndexBuffer(const uint32_t* indices, uint32_t count)
-	: _count(count)
+OpenGLIndexBuffer::OpenGLIndexBuffer(const void* indices, uint32_t count, IndexType type)
+	: _count(count),
+	  _index_type(type)
 {
 	KN_PRINT_FUNC();
 
@@ -77,7 +87,7 @@ OpenGLIndexBuffer::OpenGLIndexBuffer(const uint32_t* indices, uint32_t count)
 	glGenBuffers(1, &_renderer_id);
 #endif
 
-	size_t typeSize = sizeof(uint32_t);
+	size_t typeSize = IndexTypeSize(type);
 	
 	// GL_ELEMENT_ARRAY_BUFFER is not valid without an actively bound VAO
 	// Binding with GL_ARRAY_BUFFER allows the data to be loaded regardless of VAO state. 

@@ -375,7 +375,7 @@ void	OpenGLShaderParser::MakeShader(const std::string& program_name, std::string
 	std::ifstream file(_filepath, std::ios::binary);
 	if (!file)
 	{
-		KN_ASSERT(false, "OpenGLShaderParser: Cannot open file '{}'", _filepath);
+		Log::Critical("OpenGLShaderParser: Cannot open file '{}'", _filepath);
 		return ;
 	}
 
@@ -535,7 +535,7 @@ void	OpenGLShader::ApplyUniforms(const void* params, size_t size)
 				SetIntArray(uniform.glsl_name, static_cast<const int *>(ptr), 4);
 				break;
 			default:
-				KN_ASSERT(false, "OpenGLShader::ApplyUniforms(): unknown uniform type");
+				Log::Critical("OpenGLShader::ApplyUniforms(): unknown uniform type");
 				break;
 		}
 	}

@@ -28,7 +28,7 @@ public:
 
 	static void Submit(uint32_t vertexCount = 0);
 
-	#if defined(KINAI_DEBUG) || defined(KINAI_DEV)
+	#if defined(KN_DEBUG_STATS)
 		class Stats
 		{
 		public:
@@ -46,7 +46,9 @@ public:
 private:
 	static Ref<Pipeline> _current_pipeline;
 	static Ref<Bindings> _current_bindings;
-	static Stats _stats;
+	#if defined(KN_DEBUG_STATS)
+		static Stats _stats;
+	#endif
 };
 
 template <class Tp>

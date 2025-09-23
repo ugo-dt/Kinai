@@ -5,6 +5,8 @@
 namespace Kinai
 {
 
+GLenum	IndexTypeToGLenum(IndexType type);
+
 class OpenGLRendererAPI : public RendererAPI
 {
 public:
@@ -14,8 +16,8 @@ public:
 	void	SetClearColor(const glm::vec4& color) override;
 	void	Clear() override;
 
-	void	DrawIndexed(const Ref<VertexArray>& vertexArray, PrimitiveType type, uint32_t indexCount = 0) override;
-	void	Draw(const Ref<VertexArray>& vertexArray, PrimitiveType type, uint32_t vertexCount) override;
+	void	DrawIndexed(const Ref<VertexArray>& vertexArray, PrimitiveType mode, IndexType type, uint32_t indexCount = 0) override;
+	void	Draw(const Ref<VertexArray>& vertexArray, PrimitiveType mode, uint32_t vertexCount) override;
 	
 	void	SetLineWidth(float width) override;
 	void	SetPolygonMode(PolygonMode mode) override;

@@ -28,7 +28,7 @@ Scope<Window>	Window::Create(const WindowProps &props)
 	#endif
 #endif
 
-	KN_ASSERT(false, "Unknown RendererAPI!");
+	Log::Critical("Unknown RendererAPI!");
 	return nullptr;
 }
 

@@ -58,7 +58,7 @@ struct BufferElement
 			case ShaderDataType::UInt4:		return 4;
 		}
 
-		KN_ASSERT(false && "Unknown ShaderDataType");
+		Log::Critical("Unknown ShaderDataType!");
 		return 0;
 	}
 };

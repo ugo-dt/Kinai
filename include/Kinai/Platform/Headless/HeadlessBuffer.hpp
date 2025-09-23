@@ -22,7 +22,7 @@ public:
 class HeadlessIndexBuffer : public IndexBuffer
 {
 public:
-	HeadlessIndexBuffer(const uint32_t* indices, uint32_t count);
+	HeadlessIndexBuffer(const void* indices, uint32_t count);
 	~HeadlessIndexBuffer();
 
 	void Bind() const override;

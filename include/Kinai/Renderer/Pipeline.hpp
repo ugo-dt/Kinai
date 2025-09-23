@@ -17,13 +17,6 @@ enum class PrimitiveType
 	TriangleStrip,
 };
 
-enum class IndexType
-{
-	None = 0,
-	Uint16,
-	Uint32,
-};
-
 enum class CullMode
 {
 	None,
@@ -44,7 +37,6 @@ struct PipelineConfig
 	Ref<Shader> shader = nullptr;
 	BufferLayout layout;
 	PrimitiveType primitive_type = PrimitiveType::Triangles;
-	IndexType index_type = IndexType::Uint32;
 	CullMode cull_mode = CullMode::Back;
 	FaceWinding face_winding = FaceWinding::CCW;
 	std::string label = "Rendering pipeline";
@@ -59,7 +51,6 @@ public:
 	void SetShader(const Ref<Shader>& shader) { _shader = shader; }
 	void SetLayout(const BufferLayout& layout) { _layout = layout; }
 	void SetPrimitiveType(const PrimitiveType& primitive_type) { _primitive_type = primitive_type; }
-	void SetIndexType(const IndexType& index_type) { _index_type = index_type; }
 	void SetCullMode(const CullMode& cull_mode) { _cull_mode = cull_mode; }
 	void SetFaceWinding(const FaceWinding& face_winding) { _face_winding = face_winding; }
 	void SetLabel(const std::string& label) { _label = label; }
@@ -68,7 +59,6 @@ public:
 	Ref<Shader> GetShader() const { return _shader; }
 	BufferLayout GetLayout() const { return _layout; }
 	PrimitiveType GetPrimitiveType() const { return _primitive_type; }
-	IndexType GetIndexType() const { return _index_type; }
 	CullMode GetCullMode() const { return _cull_mode; }
 	FaceWinding GetFaceWinding() const { return _face_winding; }
 	const std::string& GetLabel() const { return _label; }
@@ -80,7 +70,6 @@ protected:
 	Ref<Shader> _shader;
 	BufferLayout _layout;
 	PrimitiveType _primitive_type;
-	IndexType _index_type;
 	CullMode _cull_mode;
 	FaceWinding _face_winding;
 	std::string _label;

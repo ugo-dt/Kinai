@@ -11,7 +11,6 @@ OpenGLPipeline::OpenGLPipeline(const PipelineConfig& config)
 	this->_shader = config.shader;
 	this->_layout = config.layout;
 	this->_primitive_type = config.primitive_type;
-	this->_index_type = config.index_type;
 	this->_cull_mode = config.cull_mode;
 	this->_face_winding = config.face_winding;
 	this->_label = config.label;
