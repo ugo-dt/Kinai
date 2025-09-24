@@ -34,9 +34,10 @@ public:
 	virtual void SetClearColor(const glm::vec4& color) = 0;
 	virtual void Clear() = 0;
 
-	virtual void DrawIndexed(const Ref<VertexArray>& vertexArray, PrimitiveType mode, IndexType type, uint32_t index_count) = 0;
-	virtual void DrawIndexedInstanced(const Ref<VertexArray>& vertexArray, PrimitiveType mode, IndexType type, uint32_t indexCount, uint32_t instanceCount) = 0;
 	virtual void Draw(const Ref<VertexArray>& vertexArray, PrimitiveType mode, uint32_t vertexCount) = 0;
+	virtual void DrawIndexed(const Ref<VertexArray>& vertexArray, PrimitiveType mode, IndexType type, uint32_t index_count) = 0;
+	virtual void DrawInstanced(const Ref<VertexArray>& vertexArray, PrimitiveType mode, uint32_t vertexCount, uint32_t instanceCount) = 0;
+	virtual void DrawIndexedInstanced(const Ref<VertexArray>& vertexArray, PrimitiveType mode, IndexType type, uint32_t indexCount, uint32_t instanceCount) = 0;
 
 	virtual void SetLineWidth(float width) = 0;
 	virtual void SetPolygonMode(PolygonMode mode) = 0;
@@ -49,7 +50,8 @@ public:
 	virtual void ApplyBindings(const Ref<Bindings>& bindings) = 0;
 	virtual void ApplyUniforms(const void* params, size_t size) = 0;
 
-	void	Submit(uint32_t vertexCount);
+	void Submit(uint32_t vertexCount);
+	void SubmitInstanced(uint32_t instanceCount, uint32_t vertexCount);
 
 	static Scope<RendererAPI>	Create();
 

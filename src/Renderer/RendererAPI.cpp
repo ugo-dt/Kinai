@@ -54,6 +54,8 @@ void	RendererAPI::Submit(uint32_t vertexCount)
 {
 	KN_PROFILE_FUNC();
 
+	KN_ASSERT(_current_pipeline != nullptr, "No current pipeline set!");
+
 	Ref<VertexArray> vao = _current_pipeline->GetVertexArray();
 	if (_current_bindings->GetIndexBuffer())
 	{
@@ -90,6 +92,56 @@ void	RendererAPI::Submit(uint32_t vertexCount)
 		);
 		#if defined(KN_DEBUG_STATS)
 			_stats._vertexCount += vertexCount;
+			_stats._drawCalls++;
+			_stats._totalDrawCalls++;
+		#endif
+	}
+}
+
+void	RendererAPI::SubmitInstanced(uint32_t vertexCount, uint32_t instanceCount)
+{
+	KN_PROFILE_FUNC();
+
+	KN_ASSERT(_current_pipeline != nullptr, "No current pipeline set!");
+
+	Ref<VertexArray> vao = _current_pipeline->GetVertexArray();
+	if (_current_bindings->GetIndexBuffer())
+	{
+		Log::Validate(_current_bindings->GetVertexBuffer() != nullptr, "No vertex buffer set in bindings!");
+		Log::Validate(_current_bindings->GetIndexBuffer()->GetCount() > 0, "Index buffer has no indices!");
+		#ifdef KN_ENABLE_ASSERTS
+			static bool warned = false;
+			if (vertexCount && !warned)
+			{
+				warned = true;
+				Log::Warn("SubmitInstanced: vertexCount ({}) is unused because an index buffer was provided. This warning is only shown once.", vertexCount);
+			}
+		#endif
+
+		_current_bindings->GetIndexBuffer()->Bind();
+		DrawIndexedInstanced(
+			_current_pipeline->GetVertexArray(),
+			_current_pipeline->GetPrimitiveType(),
+			_current_bindings->GetIndexBuffer()->GetIndexType(),
+			_current_bindings->GetIndexBuffer()->GetCount(),
+			instanceCount
+		);
+		#if defined(KN_DEBUG_STATS)
+			_stats._vertexCount += _current_bindings->GetVertexBuffer()->GetSize();
+			_stats._drawCalls++;
+			_stats._totalDrawCalls++;
+		#endif
+	}
+	else if (vertexCount > 0)
+	{
+		DrawInstanced(
+			_current_pipeline->GetVertexArray(),
+			_current_pipeline->GetPrimitiveType(),
+			vertexCount,
+			instanceCount
+		);
+		#if defined(KN_DEBUG_STATS)
+			_stats._vertexCount += vertexCount * instanceCount;
 			_stats._drawCalls++;
 			_stats._totalDrawCalls++;
 		#endif

@@ -39,19 +39,24 @@ public:
 		_renderer_api->Clear();
 	}
 
+	static void	Draw(const Ref<VertexArray>& vertexArray, PrimitiveType mode, uint32_t vertex_count)
+	{
+		_renderer_api->Draw(vertexArray, mode, vertex_count);
+	}
+
 	static void	DrawIndexed(const Ref<VertexArray>& vertexArray, PrimitiveType mode, IndexType type, uint32_t indexCount = 0)
 	{
 		_renderer_api->DrawIndexed(vertexArray, mode, type, indexCount);
 	}
 
+	static void DrawInstanced(const Ref<VertexArray>& vertexArray, PrimitiveType mode, uint32_t vertexCount, uint32_t instanceCount)
+	{
+		_renderer_api->DrawInstanced(vertexArray, mode, vertexCount, instanceCount);
+	}
+
 	static void	DrawIndexedInstanced(const Ref<VertexArray>& vertexArray, PrimitiveType mode, IndexType type, uint32_t indexCount = 0, uint32_t instanceCount = 1)
 	{
 		_renderer_api->DrawIndexedInstanced(vertexArray, mode, type, indexCount, instanceCount);
-	}
-
-	static void	Draw(const Ref<VertexArray>& vertexArray, PrimitiveType mode, uint32_t vertex_count)
-	{
-		_renderer_api->Draw(vertexArray, mode, vertex_count);
 	}
 
 	static void	SetLineWidth(float width)
@@ -100,6 +105,11 @@ public:
 	static void Submit(uint32_t vertexCount = 0)
 	{
 		_renderer_api->Submit(vertexCount);
+	}
+
+	static void SubmitInstanced(uint32_t instanceCount, uint32_t vertexCount = 0)
+	{
+		_renderer_api->SubmitInstanced(instanceCount, vertexCount);
 	}
 
 private:

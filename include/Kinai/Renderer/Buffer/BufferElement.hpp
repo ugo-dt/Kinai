@@ -25,10 +25,11 @@ struct BufferElement
 	uint32_t		size;
 	size_t			offset;
 	bool			normalized;
+	uint32_t		divisor; // for instanced rendering
 
 	BufferElement() = default;
-	BufferElement(ShaderDataType type, const std::string& name, bool normalized = false)
-		: name(name), type(type), size(ShaderDataTypeSize(type)), offset(0), normalized(normalized)
+	BufferElement(ShaderDataType type, const std::string& name, bool normalized = false, uint32_t divisor = 0)
+		: name(name), type(type), size(ShaderDataTypeSize(type)), offset(0), normalized(normalized), divisor(divisor)
 	{
 	}
 
@@ -61,6 +62,8 @@ struct BufferElement
 		Log::Critical("Unknown ShaderDataType!");
 		return 0;
 	}
+	
+	uint32_t GetDivisor() const { return divisor; }
 };
 
 } // Kinai

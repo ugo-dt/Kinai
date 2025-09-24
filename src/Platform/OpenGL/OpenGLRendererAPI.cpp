@@ -159,6 +159,16 @@ void	OpenGLRendererAPI::DrawIndexedInstanced(const Ref<VertexArray>& vertexArray
 	_KN_GL_CHECK_ERROR();
 }
 
+void	OpenGLRendererAPI::DrawInstanced(const Ref<VertexArray>& vertexArray, PrimitiveType mode, uint32_t vertexCount, uint32_t instanceCount)
+{
+	KN_PROFILE_FUNC();
+	GLenum glMode = GetOpenGLPrimitiveType(mode);
+
+	vertexArray->Bind();
+	glDrawArraysInstanced(glMode, 0, vertexCount, instanceCount);
+	_KN_GL_CHECK_ERROR();
+}
+
 void	OpenGLRendererAPI::Draw(const Ref<VertexArray>& vertexArray, PrimitiveType mode, uint32_t vertexCount)
 {
 	KN_PROFILE_FUNC();
@@ -295,8 +305,10 @@ void	OpenGLRendererAPI::ApplyBindings(const Ref<Bindings>& bindings)
 
 		const auto& vb = _current_bindings->GetVertexBuffer();
 		vb->Bind();
+
 		for (const auto& element : layout)
 		{
+			uint32_t divisor = element.GetDivisor();
 			switch (element.type)
 			{
 				case ShaderDataType::None:
@@ -311,7 +323,10 @@ void	OpenGLRendererAPI::ApplyBindings(const Ref<Bindings>& bindings)
 						ShaderDataTypeToOpenGLBaseType(element.type),
 						element.normalized ? GL_TRUE : GL_FALSE,
 						layout.GetStride(),
-						(const void*)element.offset);
+						(const void*)element.offset
+					);
+					// set divisor (0 -> per-vertex, > 0 -> per-instance)
+					glVertexAttribDivisor(vb_index, divisor);
 					vb_index++;
 					break;
 				}
@@ -334,7 +349,9 @@ void	OpenGLRendererAPI::ApplyBindings(const Ref<Bindings>& bindings)
 						element.GetComponentCount(),
 						ShaderDataTypeToOpenGLBaseType(element.type),
 						layout.GetStride(),
-						(const void*)element.offset);
+						(const void*)element.offset
+					);
+            		glVertexAttribDivisor(vb_index, divisor);
 					vb_index++;
 					break;
 				}
@@ -351,7 +368,7 @@ void	OpenGLRendererAPI::ApplyBindings(const Ref<Bindings>& bindings)
 							element.normalized ? GL_TRUE : GL_FALSE,
 							layout.GetStride(),
 							(const void*)(element.offset + sizeof(float) * count * i));
-						glVertexAttribDivisor(vb_index, 1);
+						glVertexAttribDivisor(vb_index, divisor ? divisor : 1u);
 						vb_index++;
 					}
 					break;
