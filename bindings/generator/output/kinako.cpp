@@ -917,54 +917,54 @@ void KnPerspectiveCameraController_SetRotationEnabled(KnPerspectiveCameraControl
 
 
 
-void KnRenderCommand_Init(KnRenderCommand *self)
+void KnRenderer_Init(KnRenderer *self)
 {
-    return ((Kinai::RenderCommand*)self)->Init();
+    return ((Kinai::Renderer*)self)->Init();
 }
 
-void KnRenderCommand_SetViewport(KnRenderCommand *self, uint32_t x, uint32_t y, uint32_t width, uint32_t height)
+void KnRenderer_SetViewport(KnRenderer *self, uint32_t x, uint32_t y, uint32_t width, uint32_t height)
 {
-    return ((Kinai::RenderCommand*)self)->SetViewport(x, y, width, height);
+    return ((Kinai::Renderer*)self)->SetViewport(x, y, width, height);
 }
 
-void KnRenderCommand_SetClearColor(KnRenderCommand *self, const vec4s* color)
+void KnRenderer_SetClearColor(KnRenderer *self, const vec4s* color)
 {
-    return ((Kinai::RenderCommand*)self)->SetClearColor(*color);
+    return ((Kinai::Renderer*)self)->SetClearColor(*color);
 }
 
-void KnRenderCommand_SetClearColor2(KnRenderCommand *self, float r, float g, float b, float a)
+void KnRenderer_SetClearColor2(KnRenderer *self, float r, float g, float b, float a)
 {
-    return ((Kinai::RenderCommand*)self)->SetClearColor(r, g, b, a);
+    return ((Kinai::Renderer*)self)->SetClearColor(r, g, b, a);
 }
 
-void KnRenderCommand_SetClearColor3(KnRenderCommand *self, uint8_t r, uint8_t g, uint8_t b, uint8_t a)
+void KnRenderer_SetClearColor3(KnRenderer *self, uint8_t r, uint8_t g, uint8_t b, uint8_t a)
 {
-    return ((Kinai::RenderCommand*)self)->SetClearColor(r, g, b, a);
+    return ((Kinai::Renderer*)self)->SetClearColor(r, g, b, a);
 }
 
-void KnRenderCommand_Clear(KnRenderCommand *self)
+void KnRenderer_Clear(KnRenderer *self)
 {
-    return ((Kinai::RenderCommand*)self)->Clear();
+    return ((Kinai::Renderer*)self)->Clear();
 }
 
-void KnRenderCommand_DrawIndexed(KnRenderCommand *self, const KnVertexArray* vertex_array, uint32_t index_count)
+void KnRenderer_DrawIndexed(KnRenderer *self, const KnVertexArray* vertex_array, uint32_t index_count)
 {
-    return ((Kinai::RenderCommand*)self)->DrawIndexed(*vertex_array, index_count);
+    return ((Kinai::Renderer*)self)->DrawIndexed(*vertex_array, index_count);
 }
 
-void KnRenderCommand_DrawLines(KnRenderCommand *self, const KnVertexArray* vertex_array, uint32_t vertex_count)
+void KnRenderer_DrawLines(KnRenderer *self, const KnVertexArray* vertex_array, uint32_t vertex_count)
 {
-    return ((Kinai::RenderCommand*)self)->DrawLines(*vertex_array, vertex_count);
+    return ((Kinai::Renderer*)self)->DrawLines(*vertex_array, vertex_count);
 }
 
-void KnRenderCommand_DrawTriangles(KnRenderCommand *self, const KnVertexArray* vertex_array, uint32_t vertex_count)
+void KnRenderer_DrawTriangles(KnRenderer *self, const KnVertexArray* vertex_array, uint32_t vertex_count)
 {
-    return ((Kinai::RenderCommand*)self)->DrawTriangles(*vertex_array, vertex_count);
+    return ((Kinai::Renderer*)self)->DrawTriangles(*vertex_array, vertex_count);
 }
 
-void KnRenderCommand_SetLineWidth(KnRenderCommand *self, float width)
+void KnRenderer_SetLineWidth(KnRenderer *self, float width)
 {
-    return ((Kinai::RenderCommand*)self)->SetLineWidth(width);
+    return ((Kinai::Renderer*)self)->SetLineWidth(width);
 }
 
 void KnRenderer_Init(KnRenderer *self)

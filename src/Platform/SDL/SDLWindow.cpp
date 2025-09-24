@@ -18,7 +18,7 @@ struct Kinai_Sokol_SDL_Desc {
 
 SDLWindow::SDLWindow(const WindowProps &props)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	Kinai_Sokol_SDL_Desc	desc = {
 		.width = props.width,
@@ -86,12 +86,12 @@ SDLWindow::SDLWindow(const WindowProps &props)
 			"Failed to load GLAD!"
 		);
 	#endif
-	
-	Log::Info("OpenGL info:");
-	Log::Info("  Vendor: {}", (const char *)glGetString(GL_VENDOR));
-	Log::Info("  Renderer: {}", (const char *)glGetString(GL_RENDERER));
-	Log::Info("  Version: {}", (const char *)glGetString(GL_VERSION));
-	Log::Info("  GLSL Version: {}", (const char *)glGetString(GL_SHADING_LANGUAGE_VERSION));
+
+	Log::Trace("OpenGL info:");
+	Log::Trace("  Vendor: {}", (const char *)glGetString(GL_VENDOR));
+	Log::Trace("  Renderer: {}", (const char *)glGetString(GL_RENDERER));
+	Log::Trace("  Version: {}", (const char *)glGetString(GL_VERSION));
+	Log::Trace("  GLSL Version: {}", (const char *)glGetString(GL_SHADING_LANGUAGE_VERSION));
 
 	_data.title = props.title;
 	SDL_WarpMouseInWindow(_handle, (props.width / 2), (props.height / 2));

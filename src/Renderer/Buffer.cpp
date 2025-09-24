@@ -1,7 +1,6 @@
 #include "Kinai/Renderer/Buffer/BufferLayout.hpp"
 #include "Kinai/Renderer/Buffer/IndexBuffer.hpp"
 #include "Kinai/Renderer/Buffer/VertexBuffer.hpp"
-#include "Kinai/Renderer/Renderer.hpp"
 
 #if defined(KINAI_HEADLESS)
 	#include "Kinai/Platform/Headless/HeadlessBuffer.hpp"
@@ -14,7 +13,7 @@ namespace Kinai
 
 Ref<VertexBuffer> VertexBuffer::Create(uint32_t size)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #if defined(KINAI_HEADLESS)
 	return CreateRef<HeadlessVertexBuffer>(size);
@@ -28,7 +27,7 @@ Ref<VertexBuffer> VertexBuffer::Create(uint32_t size)
 
 Ref<VertexBuffer> VertexBuffer::Create(const void* vertices, uint32_t size)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #if defined(KINAI_HEADLESS)
 	return CreateRef<HeadlessVertexBuffer>(vertices, size);
@@ -42,7 +41,7 @@ Ref<VertexBuffer> VertexBuffer::Create(const void* vertices, uint32_t size)
 
 Ref<IndexBuffer> IndexBuffer::Create(const void* indices, uint32_t count, IndexType type)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #if defined(KINAI_HEADLESS)
 	return CreateRef<HeadlessIndexBuffer>(indices, count, type);

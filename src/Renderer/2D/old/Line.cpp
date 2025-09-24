@@ -28,7 +28,7 @@ namespace Kinai
 
 void	Renderer2D::FlushLinePipeline()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	// if (state.line_vertex_count)
 	// {
@@ -37,8 +37,8 @@ void	Renderer2D::FlushLinePipeline()
 
 	// 	state.line_shader->Bind();
 	// 	SetShaderUniforms(state.line_shader);
-	// 	RenderCommand::SetLineWidth(state.line_width);
-	// 	RenderCommand::DrawLines(state.line_vertex_array, state.line_vertex_count);
+	// 	Renderer::SetLineWidth(state.line_width);
+	// 	Renderer::DrawLines(state.line_vertex_array, state.line_vertex_count);
 	// 	state.stats.DrawCalls++;
 	// }
 }

@@ -26,7 +26,8 @@ enum class ImageFormat
 	R8,
 	RGB8,
 	RGBA8,
-	RGBA32F
+	RGBA32F,
+	SRGB_ALPHA,
 };
 
 struct SamplerConfig
@@ -40,11 +41,12 @@ struct SamplerConfig
 
 struct TextureConfig
 {
-	uint32_t width = 1;
-	uint32_t height = 1;
+	int width = 1;
+	int height = 1;
 	ImageFormat format = ImageFormat::RGBA8;
 	// bool generate_mips = true;
 	SamplerConfig sampler_config;
+	std::string label;
 };
 
 class Texture
@@ -54,8 +56,8 @@ public:
 
 	virtual const TextureConfig &GetConfig() const = 0;
 
-	virtual uint32_t GetWidth() const = 0;
-	virtual uint32_t GetHeight() const = 0;
+	virtual int GetWidth() const = 0;
+	virtual int GetHeight() const = 0;
 	virtual uint32_t GetRendererID() const = 0;
 
 	virtual const std::string &GetPath() const = 0;
@@ -74,6 +76,12 @@ class Texture2D : public Texture
 public:
 	static Ref<Texture2D>	Create(const TextureConfig &config);
 	static Ref<Texture2D>	Create(const std::string &path, const TextureConfig& config = TextureConfig());
+};
+
+class TextureCubeMap : public Texture
+{
+public:
+	static Ref<TextureCubeMap>	Create(const std::array<std::string, 6> &paths, const TextureConfig& config = TextureConfig());
 };
 
 }

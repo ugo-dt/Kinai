@@ -17,7 +17,7 @@ EmWindow::EmMouse		EmWindow::_mouse;
 
 EmWindow::EmWindow(const WindowProps& props, int flags)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	KN_ASSERT(!_instance, "EmWindow already exists!");
 	_instance = this;
@@ -66,7 +66,7 @@ EmWindow::EmWindow(const WindowProps& props, int flags)
 
 void	EmWindow::OnUpdate()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 }
 
 void*	EmWindow::GetNativeWindow() const
@@ -76,21 +76,21 @@ void*	EmWindow::GetNativeWindow() const
 
 glm::ivec2		EmWindow::GetSize() const
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	return glm::ivec2(GetWidth(), GetHeight());
 }
 
 uint32_t	EmWindow::GetWidth() const
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	return _width;
 }
 
 uint32_t	EmWindow::GetHeight() const
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	return _height;
 }
@@ -98,7 +98,7 @@ uint32_t	EmWindow::GetHeight() const
 #ifdef KINAI_SOKOL
 sg_environment	EmWindow::GetSokolEnvironment() const
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	sg_environment env = {};
 
@@ -110,7 +110,7 @@ sg_environment	EmWindow::GetSokolEnvironment() const
 
 sg_swapchain	EmWindow::GetSokolSwapchain() const
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	sg_swapchain swapchain = {};
 
@@ -126,7 +126,7 @@ sg_swapchain	EmWindow::GetSokolSwapchain() const
 
 bool	EmWindow::IsVSync() const
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	int mode;
 	emscripten_get_main_loop_timing(&mode, nullptr);
@@ -135,7 +135,7 @@ bool	EmWindow::IsVSync() const
 
 void	EmWindow::SetVSync(bool enabled)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	if (enabled)
 		emscripten_set_main_loop_timing(EM_TIMING_RAF, 1);
@@ -145,21 +145,21 @@ void	EmWindow::SetVSync(bool enabled)
 
 void	EmWindow::SetEventCallback(const EventCallback &callback)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	_eventCallback = callback;
 }
 
 void	EmWindow::SetTitle(const std::string &title)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	emscripten_set_window_title(title.c_str());
 }
 
 void	EmWindow::SetRelativeMouseMode(bool enabled)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	if (enabled)
 		emscripten_request_pointerlock("canvas", true);
@@ -169,7 +169,7 @@ void	EmWindow::SetRelativeMouseMode(bool enabled)
 
 void	EmWindow::WarpMouse(float x, float y)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	KN_NOTUSED(x);
 	KN_NOTUSED(y);
@@ -177,7 +177,7 @@ void	EmWindow::WarpMouse(float x, float y)
 
 bool	EmWindow::OnWindowResize(int, const EmscriptenUiEvent *, void *)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	emscripten_get_element_css_size(_canvas_name, &_width, &_height);
 	emscripten_set_canvas_element_size(_canvas_name, _width, _height);

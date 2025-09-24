@@ -1,5 +1,5 @@
 #include "Kinai/Renderer/2D/Renderer2D.hpp"
-#include "Kinai/Renderer/RenderCommand.hpp"
+#include "Kinai/Renderer/Renderer.hpp"
 #include "Kinai/Renderer/UniformBuffer.hpp"
 #include "Kinai/Renderer/Framebuffer.hpp"
 #include "Kinai/Platform/OpenGL/OpenGLShader.hpp"
@@ -189,7 +189,7 @@ void	Renderer2D::CreateCommonPipelines()
 
 void	Renderer2D::Init()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	CreateCommonPipelines();
 
@@ -255,7 +255,7 @@ void	Renderer2D::Shutdown()
 
 void	Renderer2D::BeginFrame(const OrthographicCamera& camera)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	state.camera_buffer.view_projection = camera.GetViewProjectionMatrix();
 	state.camera_uniform_buffer->SetData(&state.camera_buffer, sizeof(Renderer2DState::CameraData));
@@ -265,7 +265,7 @@ void	Renderer2D::BeginFrame(const OrthographicCamera& camera)
 
 void	Renderer2D::BeginFrame(const PerspectiveCamera& camera)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	state.camera_buffer.view_projection = camera.GetViewProjectionMatrix();
 	state.camera_uniform_buffer->SetData(&state.camera_buffer, sizeof(Renderer2DState::CameraData));
@@ -275,7 +275,7 @@ void	Renderer2D::BeginFrame(const PerspectiveCamera& camera)
 
 void	Renderer2D::BeginFrame(const Camera& camera, const glm::mat4& transform)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	state.camera_buffer.view_projection = camera.GetProjectionMatrix() * glm::inverse(transform);
 	state.camera_uniform_buffer->SetData(&state.camera_buffer, sizeof(Renderer2DState::CameraData));
@@ -285,7 +285,7 @@ void	Renderer2D::BeginFrame(const Camera& camera, const glm::mat4& transform)
 
 void	Renderer2D::EndFrame()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	Flush();
 }
@@ -311,7 +311,7 @@ void	Renderer2D::Flush()
 
 		state.quad_shader->Bind();
 		SetShaderUniforms(state.quad_shader);
-		RenderCommand::DrawIndexed(state.quad_vertex_array, state.quad_index_count);
+		Renderer::DrawIndexed(state.quad_vertex_array, state.quad_index_count);
 		state.stats.DrawCalls++;
 	}
 
@@ -322,7 +322,7 @@ void	Renderer2D::Flush()
 
 		state.circle_shader->Bind();
 		SetShaderUniforms(state.circle_shader);
-		RenderCommand::DrawIndexed(state.circle_vertex_array, state.circle_index_count);
+		Renderer::DrawIndexed(state.circle_vertex_array, state.circle_index_count);
 		state.stats.DrawCalls++;
 	}
 
@@ -333,8 +333,8 @@ void	Renderer2D::Flush()
 
 		state.line_shader->Bind();
 		SetShaderUniforms(state.line_shader);
-		RenderCommand::SetLineWidth(state.line_width);
-		RenderCommand::DrawLines(state.line_vertex_array, state.line_vertex_count);
+		Renderer::SetLineWidth(state.line_width);
+		Renderer::DrawLines(state.line_vertex_array, state.line_vertex_count);
 		state.stats.DrawCalls++;
 	}
 }

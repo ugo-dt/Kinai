@@ -8,7 +8,7 @@ namespace Kinai
 
 Ref<UniformBuffer>	UniformBuffer::Create(uint32_t size, uint32_t binding)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #ifdef KINAI_HEADLESS
 	return CreateRef<HeadlessUniformBuffer>(size, binding);

@@ -1,4 +1,6 @@
 #include "Kinai/Core/Application.hpp"
+#include "Kinai/Renderer/Renderer.hpp"
+#include "Kinai/Renderer/2D/Painter.hpp"
 
 namespace Kinai
 {
@@ -12,7 +14,7 @@ Application::Application(const ApplicationConfig &config)
 	  _layerstack(),
 	  _minimized(false)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	Log::Validate(!_instance, "Application already exists!");
 	_instance = this;
@@ -36,6 +38,7 @@ Application::Application(const ApplicationConfig &config)
 	Sokol::Init();
 #else
 	Renderer::Init();
+	Painter::Init();
 #endif
 
 	if (_config.enable_imgui)
@@ -52,21 +55,21 @@ Application::Application(const ApplicationConfig &config)
 
 Application::~Application()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	_layerstack.Clear();
 
 #ifdef KINAI_SOKOL
 	Sokol::Shutdown();
 #else
-	Renderer::Shutdown();
+	Painter::Shutdown();
 #endif
 	_instance = nullptr;
 }
 
 Ref<Layer>	Application::PushLayer(Ref<Layer> layer)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	_layerstack.PushLayer(layer);
 	layer->OnAttach();
@@ -75,7 +78,7 @@ Ref<Layer>	Application::PushLayer(Ref<Layer> layer)
 
 Ref<Layer>	Application::PushOverlay(Ref<Layer> layer)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	_layerstack.PushOverlay(layer);
 	layer->OnAttach();
@@ -84,7 +87,7 @@ Ref<Layer>	Application::PushOverlay(Ref<Layer> layer)
 
 void	Application::Close()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #if defined(KN_PLATFORM_DESKTOP)
 	g_KinaiApplicationRunning = false;
@@ -95,7 +98,7 @@ void	Application::Close()
 
 void	Application::Run()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #ifdef KN_PLATFORM_DESKTOP
 	while (g_KinaiApplicationRunning)
@@ -137,7 +140,7 @@ void	Application::Run()
 
 bool	Application::OnWindowClose(WindowCloseEvent &event)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	KN_NOTUSED(event);
 	Close();
@@ -146,7 +149,7 @@ bool	Application::OnWindowClose(WindowCloseEvent &event)
 
 bool	Application::OnWindowResize(WindowResizeEvent &event)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	if (event.GetWidth() == 0 || event.GetHeight() == 0)
 	{
@@ -156,7 +159,8 @@ bool	Application::OnWindowResize(WindowResizeEvent &event)
 
 	_minimized = false;
 	glm::ivec2 size = _window->GetSize();
-	Renderer::OnWindowResize(size.x, size.y);
+	Renderer::SetViewport(0, 0, size.x, size.y);
+	// Painter::UpdateViewport(size.x, size.y);
 
 	// Forward the event
 	return false;

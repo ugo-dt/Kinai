@@ -20,14 +20,14 @@ Renderer2D::Statistics				Renderer2D::_stats;
 
 void	Renderer2D::MakeCommonPipelines()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	MakeQuadPipeline();
 }
 
 void	Renderer2D::MakeShaders()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #ifndef KINAI_PATH
 	#define KINAI_PATH "./"
@@ -41,7 +41,7 @@ void	Renderer2D::MakeShaders()
 
 void	Renderer2D::Init()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	MakeCommonPipelines();
 	MakeShaders();
@@ -72,14 +72,14 @@ void	Renderer2D::Init()
 
 void	Renderer2D::Shutdown()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	DestroyQuadPipeline();
 }
 
 void	Renderer2D::BeginFrame(const Camera& camera, const glm::mat4& transform)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	_camera_uniforms.view_projection = camera.GetProjectionMatrix() * glm::inverse(transform);
 	_camera_uniforms_buffer->SetData(&_camera_uniforms, sizeof(CameraUniforms));
@@ -89,7 +89,7 @@ void	Renderer2D::BeginFrame(const Camera& camera, const glm::mat4& transform)
 
 void	Renderer2D::BeginFrame(const PerspectiveCamera& camera)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	_camera_uniforms.view_projection = camera.GetViewProjectionMatrix();
 	_camera_uniforms_buffer->SetData(&_camera_uniforms, sizeof(CameraUniforms));
@@ -99,7 +99,7 @@ void	Renderer2D::BeginFrame(const PerspectiveCamera& camera)
 
 void	Renderer2D::BeginFrame(const OrthographicCamera& camera)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	_camera_uniforms.view_projection = camera.GetViewProjectionMatrix();
 	_camera_uniforms_buffer->SetData(&_camera_uniforms, sizeof(CameraUniforms));
@@ -112,7 +112,7 @@ void	Renderer2D::BeginFrame(const OrthographicCamera& camera)
 
 void	Renderer2D::Flush()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	FlushQuadPipeline();
 	FlushCirclePipeline();
@@ -122,7 +122,7 @@ void	Renderer2D::Flush()
 
 void	Renderer2D::UpdateViewport()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	glDeleteFramebuffers(1, &_screen_framebuffer);
 	_texture_slots[1] = nullptr;
@@ -131,14 +131,14 @@ void	Renderer2D::UpdateViewport()
 
 void	Renderer2D::EndFrame()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	Flush();
 }
 
 void	Renderer2D::StartBatch()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	_builtin_uniforms.time = SDL_GetTicks() / 1000.0f;
 	_builtin_uniforms_buffer->SetData(&_builtin_uniforms, sizeof(BuiltinUniforms));
@@ -157,7 +157,7 @@ void	Renderer2D::StartBatch()
 
 void	Renderer2D::NextBatch()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	Flush();
 	StartBatch();

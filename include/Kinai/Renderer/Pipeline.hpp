@@ -31,6 +31,17 @@ enum class FaceWinding
 	CW,
 };
 
+enum class DepthState
+{
+	None = 0,
+	Less,
+	LessEqual,
+	Equal,
+	Greater,
+	GreaterEqual,
+	Always,
+};
+
 struct PipelineConfig
 {
 	Ref<VertexArray> vao = nullptr;
@@ -39,6 +50,7 @@ struct PipelineConfig
 	PrimitiveType primitive_type = PrimitiveType::Triangles;
 	CullMode cull_mode = CullMode::Back;
 	FaceWinding face_winding = FaceWinding::CCW;
+	DepthState depth_state = DepthState::Less;
 	std::string label = "Rendering pipeline";
 };
 
@@ -61,6 +73,7 @@ public:
 	PrimitiveType GetPrimitiveType() const { return _primitive_type; }
 	CullMode GetCullMode() const { return _cull_mode; }
 	FaceWinding GetFaceWinding() const { return _face_winding; }
+	DepthState GetDepthState() const { return _depth_state; }
 	const std::string& GetLabel() const { return _label; }
 
 	static Ref<Pipeline> Create(const PipelineConfig& config);
@@ -72,6 +85,7 @@ protected:
 	PrimitiveType _primitive_type;
 	CullMode _cull_mode;
 	FaceWinding _face_winding;
+	DepthState _depth_state;
 	std::string _label;
 };
 

@@ -29,8 +29,8 @@ public:
 		float r = glm::sin(time) * 0.5f + 0.5f,
 			g = glm::cos(time) * 0.5f + 0.5f;
 
-		Kinai::RenderCommand::SetClearColor(r, g, 0.3f, 1.0f);
-		Kinai::RenderCommand::Clear();
+		Kinai::Renderer::SetClearColor(r, g, 0.3f, 1.0f);
+		Kinai::Renderer::Clear();
 	}
 };
 

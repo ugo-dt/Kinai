@@ -1,5 +1,4 @@
 #include "Kinai/Renderer/VertexArray.hpp"
-#include "Kinai/Renderer/Renderer.hpp"
 
 #include "Kinai/Platform/Headless/HeadlessVertexArray.hpp"
 #include "Kinai/Platform/OpenGL/OpenGLVertexArray.hpp"
@@ -9,7 +8,7 @@ namespace Kinai
 
 Ref<VertexArray>	VertexArray::Create()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #ifdef KINAI_HEADLESS
 	return CreateRef<HeadlessVertexArray>();

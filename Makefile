@@ -38,6 +38,7 @@ CXXFLAGS	+= -DKINAI_PATH=\"$(KINAI_PATH)/\"
 
 $(info Target: $(target))
 $(info Rendering backend: $(backend))
+$(info Build: $(build))
 
 all: $(KINAI)
 

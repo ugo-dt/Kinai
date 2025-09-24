@@ -8,7 +8,7 @@ namespace Kinai
 
 void	Sokol::Init()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	sg_desc	desc = {};
 
@@ -20,21 +20,21 @@ void	Sokol::Init()
 
 void	Sokol::Shutdown()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	sg_shutdown();
 }
 
 sg_environment	Sokol::GetEnvironment()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	return Application::Get().GetWindow().GetSokolEnvironment();
 }
 
 sg_swapchain	Sokol::GetSwapchain()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	return Application::Get().GetWindow().GetSokolSwapchain();
 }

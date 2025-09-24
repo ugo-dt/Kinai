@@ -166,8 +166,8 @@ public:
 
 		_camera.OnUpdate(delta);
 
-		Kinai::RenderCommand::SetClearColor(0.12f, 0.12f, 0.12f, 1.0f);
-		Kinai::RenderCommand::Clear();
+		Kinai::Renderer::SetClearColor(0.12f, 0.12f, 0.12f, 1.0f);
+		Kinai::Renderer::Clear();
 
 		Kinai::Renderer2D::BeginFrame(_camera.GetCamera());
 		Kinai::Renderer2D::DrawQuad(glm::vec2(0.f), glm::vec2(1.f), _cobblestone);

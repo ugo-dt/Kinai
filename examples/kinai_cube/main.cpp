@@ -99,8 +99,8 @@ public:
 	{
 		Kinai::Renderer::BeginPass();
 		{
-			Kinai::RenderCommand::SetClearColor(0.25f, 0.5f, 0.75f, 1.0f);
-			Kinai::RenderCommand::Clear();
+			Kinai::Renderer::SetClearColor(0.25f, 0.5f, 0.75f, 1.0f);
+			Kinai::Renderer::Clear();
 
 			Kinai::Renderer::ApplyPipeline(cube.pipeline);
 			Kinai::Renderer::ApplyBindings(cube.bindings);
@@ -122,11 +122,11 @@ public:
 			if (cube.show_back_faces)
 			{
 				glCullFace(GL_FRONT);
-				Kinai::RenderCommand::SetPolygonMode(Kinai::PolygonMode::Line);
+				Kinai::Renderer::SetPolygonMode(Kinai::PolygonMode::Line);
 				Kinai::Renderer::Submit();
 				
 				glCullFace(GL_BACK);
-				Kinai::RenderCommand::SetPolygonMode(Kinai::PolygonMode::Fill);
+				Kinai::Renderer::SetPolygonMode(Kinai::PolygonMode::Fill);
 			}
 			Kinai::Renderer::Submit();
 		}
@@ -159,14 +159,14 @@ public:
 		if (ImGui::Button(cube.show_back_faces ? "(F5) Hide back faces" : "(F5) Show back faces"))
 		{
 			cube.show_back_faces = !cube.show_back_faces;
-			Kinai::RenderCommand::SetPolygonMode(cube.mode);
+			Kinai::Renderer::SetPolygonMode(cube.mode);
 		}
 		if (!cube.show_back_faces)
 		{
 			if (ImGui::Button(cube.mode == Kinai::PolygonMode::Line ? "Wireframe ON" : "Wireframe OFF"))
 			{
 				cube.mode = cube.mode == Kinai::PolygonMode::Fill ? Kinai::PolygonMode::Line : Kinai::PolygonMode::Fill;
-				Kinai::RenderCommand::SetPolygonMode(cube.mode);
+				Kinai::Renderer::SetPolygonMode(cube.mode);
 			}
 			if (ImGui::Button(cube.pipeline->GetCullMode() == Kinai::CullMode::Back ? "glCullFace(GL_BACK)" : "glCullFace(GL_FRONT)"))
 			{

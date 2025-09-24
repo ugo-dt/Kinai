@@ -6,7 +6,7 @@ namespace Kinai
 
 void	Renderer2D::MakeQuadPipeline()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	_pip_quad.vertex_array = VertexArray::Create();
 
@@ -42,21 +42,21 @@ void	Renderer2D::MakeQuadPipeline()
 
 void	Renderer2D::DestroyQuadPipeline()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	delete[] _pip_quad.vertex_buffer_base;
 }
 
 void	Renderer2D::DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	DrawQuad({ position.x, position.y, 0.0f }, size, color);
 }
 
 void	Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
 		* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
@@ -66,7 +66,7 @@ void	Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, cons
 
 void	Renderer2D::DrawQuad(const glm::vec2& position, const glm::vec2& size, const Ref<Texture2D>& texture, const glm::vec4& tintColor)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	DrawQuad({ position.x, position.y, 0.0f }, size, texture, tintColor);
 }
@@ -84,7 +84,7 @@ void	Renderer2D::DrawQuad(
 	const glm::vec2& uvEnd,
 	const glm::vec4& tintColor)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	DrawQuad( { position.x, position.y, 0.0f }, size, texture, uvStart, uvEnd, tintColor);
 }
@@ -97,7 +97,7 @@ void	Renderer2D::DrawQuad(
 	const glm::vec2& uvEnd,
 	const glm::vec4& tintColor)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
 		* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
@@ -107,7 +107,7 @@ void	Renderer2D::DrawQuad(
 
 void	Renderer2D::DrawQuad(const glm::mat4& transform, const glm::vec4& color)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	constexpr size_t quadVertexCount = 4;
 	constexpr glm::vec2 textureCoords[] = { { 0.0f, 0.0f }, { 1.0f, 0.0f }, { 1.0f, 1.0f }, { 0.0f, 1.0f } };
@@ -141,7 +141,7 @@ void	Renderer2D::DrawQuad(
 	const glm::vec2& uvEnd,
 	const glm::vec4& tintColor)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	constexpr size_t quadVertexCount = 4;
 	// constexpr glm::vec2 textureCoords[] = { { 0.0f, 0.0f }, { 1.0f, 0.0f }, { 1.0f, 1.0f }, { 0.0f, 1.0f } };
@@ -186,14 +186,14 @@ void	Renderer2D::DrawQuad(
 
 void	Renderer2D::DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const glm::vec4& color)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	DrawRotatedQuad({ position.x, position.y, 0.0f }, size, rotation, color);
 }
 
 void	Renderer2D::DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const glm::vec4& color)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
 		* glm::rotate(glm::mat4(1.0f), glm::radians(rotation), { 0.0f, 0.0f, 1.0f })
@@ -204,14 +204,14 @@ void	Renderer2D::DrawRotatedQuad(const glm::vec3& position, const glm::vec2& siz
 
 void	Renderer2D::DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const Ref<Texture2D>& texture, const glm::vec4& tintColor)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	DrawRotatedQuad({ position.x, position.y, 0.0f }, size, rotation, texture, tintColor);
 }
 
 void	Renderer2D::DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const Ref<Texture2D>& texture, const glm::vec4& tintColor)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
 		* glm::rotate(glm::mat4(1.0f), glm::radians(rotation), { 0.0f, 0.0f, 1.0f })
@@ -222,7 +222,7 @@ void	Renderer2D::DrawRotatedQuad(const glm::vec3& position, const glm::vec2& siz
 
 void	Renderer2D::FlushQuadPipeline()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	if (_pip_quad.index)
 	{
@@ -237,14 +237,14 @@ void	Renderer2D::FlushQuadPipeline()
 
 		_pip_quad.shader->SetFloat2("VIEWPORT", glm::vec2(Application::Get().GetWindow().GetSize()));
 
-		// RenderCommand::DrawIndexed(_pip_quad.vertex_array, _pip_quad.index);
+		// Renderer::DrawIndexed(_pip_quad.vertex_array, _pip_quad.index);
 		_stats._draw_calls++;
 	}
 }
 
 void	Renderer2D::SetQuadShader(Shader2D& shader)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	if (_shader_library.Exists(shader._shader->GetName()))
 	{
@@ -255,7 +255,7 @@ void	Renderer2D::SetQuadShader(Shader2D& shader)
 
 void	Renderer2D::ResetQuadShader()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	NextBatch();
 	_pip_quad.shader = _shader_library.Get("__kn2d_quad_program");

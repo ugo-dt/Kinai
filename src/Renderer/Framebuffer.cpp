@@ -8,7 +8,7 @@ namespace Kinai
 
 Ref<Framebuffer> Framebuffer::Create(const FramebufferConfig& config)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #if defined(KINAI_HEADLESS)
 	return CreateScope<HeadlessFramebuffer>(config);

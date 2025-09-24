@@ -6,7 +6,7 @@ namespace Kinai
 
 OpenGLVertexBuffer::OpenGLVertexBuffer(uint32_t size)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #if KINAI_OPENGL_VERSION_MAJOR >= 4
 	glCreateBuffers(1, &_renderer_id);
@@ -24,7 +24,7 @@ OpenGLVertexBuffer::OpenGLVertexBuffer(uint32_t size)
 
 OpenGLVertexBuffer::OpenGLVertexBuffer(const void* vertices, uint32_t size)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #if KINAI_OPENGL_VERSION_MAJOR >= 4
 	glCreateBuffers(1, &_renderer_id);
@@ -42,7 +42,7 @@ OpenGLVertexBuffer::OpenGLVertexBuffer(const void* vertices, uint32_t size)
 
 OpenGLVertexBuffer::~OpenGLVertexBuffer()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	glDeleteBuffers(1, &_renderer_id);
 	_KN_GL_CHECK_ERROR();
@@ -50,7 +50,7 @@ OpenGLVertexBuffer::~OpenGLVertexBuffer()
 
 void	OpenGLVertexBuffer::Bind() const
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	glBindBuffer(GL_ARRAY_BUFFER, _renderer_id);
 	_KN_GL_CHECK_ERROR();
@@ -58,7 +58,7 @@ void	OpenGLVertexBuffer::Bind() const
 
 void	OpenGLVertexBuffer::Unbind() const
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	_KN_GL_CHECK_ERROR();
@@ -66,7 +66,7 @@ void	OpenGLVertexBuffer::Unbind() const
 
 void	OpenGLVertexBuffer::SetData(const void* data, uint32_t size)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	glBindBuffer(GL_ARRAY_BUFFER, _renderer_id);
 	glBufferSubData(GL_ARRAY_BUFFER, 0, size, data);
@@ -79,7 +79,7 @@ OpenGLIndexBuffer::OpenGLIndexBuffer(const void* indices, uint32_t count, IndexT
 	: _count(count),
 	  _index_type(type)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #if KINAI_OPENGL_VERSION_MAJOR >= 4
 	glCreateBuffers(1, &_renderer_id);
@@ -103,7 +103,7 @@ OpenGLIndexBuffer::OpenGLIndexBuffer(const void* indices, uint32_t count, IndexT
 
 OpenGLIndexBuffer::~OpenGLIndexBuffer()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	glDeleteBuffers(1, &_renderer_id);
 	_KN_GL_CHECK_ERROR();
@@ -111,7 +111,7 @@ OpenGLIndexBuffer::~OpenGLIndexBuffer()
 
 void	OpenGLIndexBuffer::Bind() const
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _renderer_id);
 	_KN_GL_CHECK_ERROR();
@@ -119,7 +119,7 @@ void	OpenGLIndexBuffer::Bind() const
 
 void	OpenGLIndexBuffer::Unbind() const
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	_KN_GL_CHECK_ERROR();

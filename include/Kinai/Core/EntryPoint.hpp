@@ -16,8 +16,9 @@ namespace Kinai
 
 int	Main(int argc, char **argv)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
+	Kinai::Log::Init();
 	while (g_KinaiApplicationRunning)
 	{
 		Kinai::Application	*app = ::Kinai::CreateApplication(argc, argv);
@@ -31,12 +32,13 @@ int	Main(int argc, char **argv)
 
 int	Main(int argc, char **argv)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
+	Kinai::Log::Init();
     emscripten_request_animation_frame_loop(
 		[](double, void*)
 		{
-			KN_PRINT_FUNC();
+			KN_PROFILE_FUNC();
 			Application::Get().Run();
 			return g_KinaiApplicationRunning;
 		}, 0);
@@ -50,8 +52,7 @@ int	Main(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
-	Kinai::Log::Init();
 	return Kinai::Main(argc, argv);
 }

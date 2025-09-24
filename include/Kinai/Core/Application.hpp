@@ -10,7 +10,6 @@
 #include "Kinai/Events/KeyEvent.hpp"
 #include "Kinai/Events/MouseEvent.hpp"
 #include "Kinai/ImGui/ImGuiLayer.hpp"
-#include "Kinai/Renderer/Renderer.hpp"
 
 extern bool	g_KinaiApplicationRunning;
 
@@ -19,22 +18,22 @@ namespace Kinai
 
 struct ApplicationConfig
 {
-	std::string	name = "Kinai Application";
-	uint32_t	window_width = KN_DEFAULT_WINDOW_WIDTH;
-	uint32_t	window_height = KN_DEFAULT_WINDOW_HEIGHT;
-	bool		fullscreen = false;
-	bool		no_vsync = false;
-	bool		enable_imgui = false;
+	std::string name = "Kinai Application";
+	uint32_t window_width = KN_DEFAULT_WINDOW_WIDTH;
+	uint32_t window_height = KN_DEFAULT_WINDOW_HEIGHT;
+	bool fullscreen = false;
+	bool no_vsync = false;
+	bool enable_imgui = false;
 };
 
 struct Time
 {
-	uint64_t	fps;
-	uint64_t	frames;
-	uint64_t	last;
-	uint64_t	last_second;
-	float		frame_time;
-	float		delta;
+	uint64_t fps;
+	uint64_t frames;
+	uint64_t last;
+	uint64_t last_second;
+	float frame_time;
+	float delta;
 };
 
 class Application
@@ -86,7 +85,7 @@ template <class EventType>
 requires(std::is_base_of_v<Event, EventType>)
 void	Application::OnEvent(EventType& event)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 	EventDispatcher	dispatcher(event);
 
 	dispatcher.Dispatch<WindowCloseEvent>(KN_BIND_EVENT_FN(Application::OnWindowClose));

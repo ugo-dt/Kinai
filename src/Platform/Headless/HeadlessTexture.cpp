@@ -10,26 +10,26 @@ HeadlessTexture2D::HeadlessTexture2D(const TextureConfig& config)
 	  _width(_config.width),
 	  _height(_config.height)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 }
 
 HeadlessTexture2D::HeadlessTexture2D(const std::string& path)
 	: _path(path),
 	  _is_loaded(false)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	KN_NOTUSED(path);
 }
 
 HeadlessTexture2D::~HeadlessTexture2D()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 }
 
 void HeadlessTexture2D::SetData(void* data, uint32_t size)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	KN_NOTUSED(data);
 	KN_NOTUSED(size);
@@ -37,7 +37,7 @@ void HeadlessTexture2D::SetData(void* data, uint32_t size)
 
 void HeadlessTexture2D::Bind(uint32_t slot) const
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	KN_NOTUSED(slot);
 }

@@ -1,5 +1,4 @@
 #include "Kinai/Core/Window.hpp"
-#include "Kinai/Renderer/Renderer.hpp"
 
 #if defined(KINAI_HEADLESS)
 	#include "Kinai/Platform/Headless/HeadlessWindow.hpp"
@@ -16,7 +15,7 @@ namespace Kinai
 
 Scope<Window>	Window::Create(const WindowProps &props)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #if defined(KINAI_HEADLESS)
 	return CreateScope<HeadlessWindow>(props);

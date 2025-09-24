@@ -112,7 +112,7 @@ const char *FRAGMENT_MAIN_SOURCE = R"(
 
 Renderer2D::Shader2D	Renderer2D::MakeShader(const std::string& program_name, const std::string& vertexSrc, const std::string& fragmentSrc)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	std::string	vs;
 	std::string	fs;

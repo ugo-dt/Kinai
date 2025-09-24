@@ -12,6 +12,7 @@ static GLenum ImageFormatToGLDataFormat(ImageFormat format)
 		case ImageFormat::RGB8:		return GL_RGB;
 		case ImageFormat::RGBA8:	return GL_RGBA;
 		case ImageFormat::RGBA32F:	return GL_RGBA;
+		case ImageFormat::SRGB_ALPHA: return GL_SRGB_ALPHA;
 		default: break;
 	}
 
@@ -34,7 +35,7 @@ static GLenum ImageFormatToGLInternalFormat(ImageFormat format)
 	return 0;
 }
 
-GLenum OpenGLTexture2D::FilterToGLFilter(Filter filter)
+GLenum FilterToGLFilter(Filter filter)
 {
 	switch (filter)
 	{
@@ -47,7 +48,7 @@ GLenum OpenGLTexture2D::FilterToGLFilter(Filter filter)
 	return 0;
 }
 
-GLenum OpenGLTexture2D::WrapToGLWrap(Wrap wrap)
+GLenum WrapToGLWrap(Wrap wrap)
 {
 	switch (wrap)
 	{
@@ -67,7 +68,7 @@ OpenGLTexture2D::OpenGLTexture2D(const TextureConfig& config)
 	  _width(_config.width),
 	  _height(_config.height)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	_internal_format = ImageFormatToGLInternalFormat(_config.format);
 	_data_format = ImageFormatToGLDataFormat(_config.format);
@@ -100,18 +101,15 @@ OpenGLTexture2D::OpenGLTexture2D(const std::string& path, const TextureConfig& c
 	  _path(path),
 	  _is_loaded(false)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	int width, height, channels;
 	stbi_set_flip_vertically_on_load(1);
-	stbi_uc* data = nullptr;
-	{
-		Log::Trace("stbi_load - OpenGLTexture2D::OpenGLTexture2D(const std::string&)");
-		data = stbi_load(path.c_str(), &width, &height, &channels, 0);
-	}
-		
+
+	stbi_uc* data = stbi_load(path.c_str(), &width, &height, &channels, 0);
 	if (data)
 	{
+		Log::Trace("Loaded texture '{}'", path);
 		_is_loaded = true;
 
 		_width = width;
@@ -163,7 +161,7 @@ OpenGLTexture2D::OpenGLTexture2D(const std::string& path, const TextureConfig& c
 
 OpenGLTexture2D::~OpenGLTexture2D()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	glDeleteTextures(1, &_renderer_id);
 	_KN_GL_CHECK_ERROR();
@@ -171,7 +169,7 @@ OpenGLTexture2D::~OpenGLTexture2D()
 
 void OpenGLTexture2D::SetData(void* data, uint32_t size)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #ifdef KN_ENABLE_ASSERTS
 	uint32_t bpp = _data_format == GL_RGBA ? 4 : 3;
@@ -189,13 +187,111 @@ void OpenGLTexture2D::SetData(void* data, uint32_t size)
 
 void OpenGLTexture2D::Bind(uint32_t slot) const
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #if KINAI_OPENGL_VERSION_MAJOR >= 4
 	glBindTextureUnit(slot, _renderer_id);
 #else
 	KN_NOTUSED(slot);
 	glBindTexture(GL_TEXTURE_2D, _renderer_id);
+#endif
+	_KN_GL_CHECK_ERROR();
+}
+
+OpenGLTextureCubeMap::OpenGLTextureCubeMap(const std::array<std::string, 6> &paths, const TextureConfig& config)
+	: _config(config),
+	  _paths(paths),
+	  _is_loaded(false),
+	  _width(0),
+	  _height(0)
+{
+	KN_PROFILE_FUNC();
+
+	_internal_format = ImageFormatToGLInternalFormat(_config.format);
+	_data_format = ImageFormatToGLDataFormat(_config.format);
+
+	glGenTextures(1, &_renderer_id);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_CUBE_MAP, _renderer_id);
+
+	stbi_set_flip_vertically_on_load(0);
+
+	for (size_t i = 0; i < paths.size(); i++)
+	{
+		int width, height, channels;
+		stbi_uc* data = stbi_load(paths[i].c_str(), &width, &height, &channels, 0);
+
+		if (data)
+		{
+			Log::Trace("Loaded cubemap texture '{}'", paths[i]);
+			if (!_is_loaded)
+			{
+				_is_loaded = true;
+				_width = width;
+				_height = height;
+			}
+			else
+			{
+				KN_ASSERT(width == _width && height == _height, "Cubemap textures must have the same dimensions!");
+			}
+
+			GLenum internalFormat = 0, dataFormat = 0;
+			if (channels == 4)
+			{
+				internalFormat = GL_RGBA8;
+				dataFormat = GL_RGBA;
+			}
+			else if (channels == 3)
+			{
+				internalFormat = GL_RGB8;
+				dataFormat = GL_RGB;
+			}
+
+			KN_ASSERT(internalFormat & dataFormat, "format not supported!");
+
+			glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, internalFormat, width, height, 0, dataFormat, GL_UNSIGNED_BYTE, data);
+			stbi_image_free(data);
+		}
+		else
+			Log::Error("Failed to load cubemap texture at path: {}", paths[i]);
+	}
+
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, FilterToGLFilter(_config.sampler_config.min_filter));
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, FilterToGLFilter(_config.sampler_config.mag_filter));
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, WrapToGLWrap(_config.sampler_config.wrap_s));
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, WrapToGLWrap(_config.sampler_config.wrap_t));
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, WrapToGLWrap(_config.sampler_config.wrap_r));
+	Log::Trace("Created cubemap texture '{}'", _config.label);
+	_KN_GL_CHECK_ERROR();
+}
+
+OpenGLTextureCubeMap::~OpenGLTextureCubeMap()
+{
+	KN_PROFILE_FUNC();
+
+	glDeleteTextures(1, &_renderer_id);
+	Log::Trace("Deleted cubemap texture '{}'", _config.label);
+	_KN_GL_CHECK_ERROR();
+}
+
+void	OpenGLTextureCubeMap::SetData(void* data, uint32_t size)
+{
+	KN_PROFILE_FUNC();
+	KN_NOTUSED(data);
+	KN_NOTUSED(size);
+
+	Log::Warn("Can't set data for cubemap textures!");
+}
+
+void	OpenGLTextureCubeMap::Bind(uint32_t slot) const
+{
+	KN_PROFILE_FUNC();
+
+#if KINAI_OPENGL_VERSION_MAJOR >= 4
+	glBindTextureUnit(slot, _renderer_id);
+#else
+	KN_NOTUSED(slot);
+	glBindTexture(GL_TEXTURE_CUBE_MAP, _renderer_id);
 #endif
 	_KN_GL_CHECK_ERROR();
 }

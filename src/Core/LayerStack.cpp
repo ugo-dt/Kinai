@@ -6,19 +6,19 @@ namespace Kinai
 LayerStack::LayerStack()
 	: _layers(), _layer_insert_index(0)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 }
 
 LayerStack::~LayerStack()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	Clear();
 }
 
 void	LayerStack::Clear()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	if (_layers.empty())
 		return ;
@@ -29,20 +29,20 @@ void	LayerStack::Clear()
 
 void LayerStack::PushLayer(Ref<Layer> layer)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 	_layers.emplace(_layers.begin() + _layer_insert_index, layer);
 	_layer_insert_index++;
 }
 
 void LayerStack::PushOverlay(Ref<Layer> overlay)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 	_layers.emplace_back(overlay);
 }
 
 void LayerStack::PopLayer(Ref<Layer> layer)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 	auto it = std::find(_layers.begin(), _layers.begin() + _layer_insert_index, layer);
 	if (it != _layers.begin() + _layer_insert_index)
 	{
@@ -54,7 +54,7 @@ void LayerStack::PopLayer(Ref<Layer> layer)
 
 void LayerStack::PopOverlay(Ref<Layer> overlay)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 	auto it = std::find(_layers.begin() + _layer_insert_index, _layers.end(), overlay);
 	if (it != _layers.end())
 	{

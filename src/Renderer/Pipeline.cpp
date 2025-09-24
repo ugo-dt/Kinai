@@ -11,7 +11,7 @@ namespace Kinai
 
 Ref<Pipeline>	Pipeline::Create(const PipelineConfig& config)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	Log::Validate(config.vao != nullptr, "Pipeline requires a valid VertexArray");
 	Log::Validate(config.shader != nullptr, "Pipeline requires a valid Shader");

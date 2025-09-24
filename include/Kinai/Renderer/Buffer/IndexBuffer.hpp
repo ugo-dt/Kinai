@@ -1,10 +1,16 @@
 #pragma once
 
 #include "Kinai/Core/Core.hpp"
-#include "Kinai/Renderer/RendererAPI.hpp"
 
 namespace Kinai
 {
+
+enum class IndexType
+{
+	None = 0,
+	Uint16,
+	Uint32,
+};
 
 class IndexBuffer
 {

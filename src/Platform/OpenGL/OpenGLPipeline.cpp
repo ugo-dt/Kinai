@@ -5,7 +5,7 @@ namespace Kinai
 
 OpenGLPipeline::OpenGLPipeline(const PipelineConfig& config)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	this->_vao = config.vao;
 	this->_shader = config.shader;
@@ -13,6 +13,7 @@ OpenGLPipeline::OpenGLPipeline(const PipelineConfig& config)
 	this->_primitive_type = config.primitive_type;
 	this->_cull_mode = config.cull_mode;
 	this->_face_winding = config.face_winding;
+	this->_depth_state = config.depth_state;
 	this->_label = config.label;
 }
 

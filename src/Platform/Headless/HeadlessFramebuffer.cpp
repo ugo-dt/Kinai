@@ -7,7 +7,7 @@ namespace Kinai
 
 // static GLenum	TextureTarget(bool multisampled)
 // {
-// 	KN_PRINT_FUNC();
+// 	KN_PROFILE_FUNC();
 
 // 	KN_NOTUSED(multisampled);
 // 	return 0;
@@ -15,7 +15,7 @@ namespace Kinai
 
 // static void	CreateTextures(bool multisampled, uint32_t* outID, uint32_t count)
 // {
-// 	KN_PRINT_FUNC();
+// 	KN_PROFILE_FUNC();
 
 // 	KN_NOTUSED(multisampled);
 // 	KN_NOTUSED(outID);
@@ -24,7 +24,7 @@ namespace Kinai
 
 // static void	BindTexture(bool multisampled, uint32_t id)
 // {
-// 	KN_PRINT_FUNC();
+// 	KN_PROFILE_FUNC();
 
 // 	KN_NOTUSED(multisampled);
 // 	KN_NOTUSED(id);
@@ -32,7 +32,7 @@ namespace Kinai
 
 // static void	AttachColorTexture(uint32_t id, int samples, GLenum internalFormat, GLenum format, int width, int height, int index)
 // {
-// 	KN_PRINT_FUNC();
+// 	KN_PROFILE_FUNC();
 
 // 	KN_NOTUSED(id);
 // 	KN_NOTUSED(samples);
@@ -45,7 +45,7 @@ namespace Kinai
 
 // static void	AttachDepthTexture(uint32_t id, int samples, GLenum format, GLenum attachmentType, int width, int height)
 // {
-// 	KN_PRINT_FUNC();
+// 	KN_PROFILE_FUNC();
 
 // 	KN_NOTUSED(id);
 // 	KN_NOTUSED(samples);
@@ -57,7 +57,7 @@ namespace Kinai
 
 // static bool	IsDepthFormat(FramebufferTextureFormat format)
 // {
-// 	KN_PRINT_FUNC();
+// 	KN_PROFILE_FUNC();
 
 // 	switch (format)
 // 	{
@@ -72,34 +72,34 @@ namespace Kinai
 HeadlessFramebuffer::HeadlessFramebuffer(const FramebufferConfig& spec)
 	: _config(spec)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	KN_NOTUSED(spec);
 }
 
 HeadlessFramebuffer::~HeadlessFramebuffer()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 }
 
 void	HeadlessFramebuffer::Invalidate()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 }
 
 void	HeadlessFramebuffer::Bind()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 }
 
 void	HeadlessFramebuffer::Unbind()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 }
 
 void	HeadlessFramebuffer::Resize(int width, int height)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	KN_NOTUSED(width);
 	KN_NOTUSED(height);
@@ -107,7 +107,7 @@ void	HeadlessFramebuffer::Resize(int width, int height)
 
 int	HeadlessFramebuffer::ReadPixel(uint32_t attachmentIndex, int x, int y)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	KN_NOTUSED(attachmentIndex);
 	KN_NOTUSED(x);
@@ -118,7 +118,7 @@ int	HeadlessFramebuffer::ReadPixel(uint32_t attachmentIndex, int x, int y)
 
 void	HeadlessFramebuffer::ClearAttachment(uint32_t attachmentIndex, int value)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	KN_NOTUSED(attachmentIndex);
 	KN_NOTUSED(value);

@@ -5,7 +5,7 @@ namespace Kinai
 
 // void	Renderer2D::DrawCircle(const glm::mat4& transform, const glm::vec4& color, float thickness /*= 1.0f*/, float fade /*= 0.005f*/)
 // {
-// 	KN_PRINT_FUNC();
+// 	KN_PROFILE_FUNC();
 
 // 	// TODO: implement for circles
 // 	// if (state.quad_index_count >= Renderer2DState::MAX_INDICES)
@@ -28,7 +28,7 @@ namespace Kinai
 
 void	Renderer2D::FlushCirclePipeline()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	// if (state.circle_index_count)
 	// {
@@ -37,7 +37,7 @@ void	Renderer2D::FlushCirclePipeline()
 
 	// 	state.circle_shader->Bind();
 	// 	SetShaderUniforms(state.circle_shader);
-	// 	RenderCommand::DrawIndexed(state.circle_vertex_array, state.circle_index_count);
+	// 	Renderer::DrawIndexed(state.circle_vertex_array, state.circle_index_count);
 	// 	state.stats.DrawCalls++;
 	// }
 }

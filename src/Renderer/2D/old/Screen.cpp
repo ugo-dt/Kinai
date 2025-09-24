@@ -39,13 +39,13 @@ const char *SCREEN_SHADER_FRAGMENT = R"(
 
 void	Renderer2D::MakeScreenFramebuffers()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 }
 
 void	Renderer2D::CopyScreenToBackBuffer()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 // FIXME: Abstract this with Kinai::Framebuffer
 # ifdef KINAI_OPENGL

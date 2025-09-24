@@ -491,6 +491,8 @@ OpenGLShader::OpenGLShader(const ShaderConfig& config)
 OpenGLShader::~OpenGLShader()
 {
 	glDeleteProgram(_renderer_id);
+	_KN_GL_CHECK_ERROR();
+	Log::Trace("Deleted shader program '{}'", _name);
 }
 
 void	OpenGLShader::ApplyUniforms(const void* params, size_t size)
@@ -586,7 +588,7 @@ void	OpenGLShader::CreateProgram(const char *vertex, const char *fragment)
 
 void	OpenGLShader::Bind() const
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	glUseProgram(_renderer_id);
 	_KN_GL_CHECK_ERROR();
@@ -594,7 +596,7 @@ void	OpenGLShader::Bind() const
 
 void	OpenGLShader::Unbind() const
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	glUseProgram(0);
 	_KN_GL_CHECK_ERROR();
@@ -602,7 +604,7 @@ void	OpenGLShader::Unbind() const
 
 void	OpenGLShader::SetInt(const std::string& name, int value)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	UploadUniformInt(name, value);
 }
@@ -614,35 +616,35 @@ void	OpenGLShader::SetIntArray(const std::string& name, const int* values, uint3
 
 void	OpenGLShader::SetFloat(const std::string& name, float value)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	UploadUniformFloat(name, value);
 }
 
 void	OpenGLShader::SetFloat2(const std::string& name, const glm::vec2& value)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	UploadUniformFloat2(name, value);
 }
 
 void	OpenGLShader::SetFloat3(const std::string& name, const glm::vec3& value)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	UploadUniformFloat3(name, value);
 }
 
 void	OpenGLShader::SetFloat4(const std::string& name, const glm::vec4& value)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	UploadUniformFloat4(name, value);
 }
 
 void	OpenGLShader::SetMat4(const std::string& name, const glm::mat4& value)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	UploadUniformMat4(name, value);
 }

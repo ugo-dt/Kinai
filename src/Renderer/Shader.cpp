@@ -1,5 +1,4 @@
 #include "Kinai/Renderer/Shader.hpp"
-#include "Kinai/Renderer/Renderer.hpp"
 
 #if defined(KINAI_HEADLESS)
 	#include "Kinai/Platform/Headless/HeadlessShader.hpp"
@@ -42,7 +41,7 @@ uint32_t	ShaderDataTypeSize(ShaderDataType type)
 
 Ref<Shader> Shader::Create(const std::string& filepath, const std::string& program_name)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #if defined(KINAI_HEADLESS)
 	return CreateRef<HeadlessShader>(filepath, program_name);
@@ -56,7 +55,7 @@ Ref<Shader> Shader::Create(const std::string& filepath, const std::string& progr
 
 Ref<Shader> Shader::Create(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #if defined(KINAI_HEADLESS)
 	return CreateRef<HeadlessShader>(name, vertexSrc, fragmentSrc);
@@ -70,7 +69,7 @@ Ref<Shader> Shader::Create(const std::string& name, const std::string& vertexSrc
 
 Ref<Shader> Shader::Create(const ShaderConfig& config)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 #if defined(KINAI_HEADLESS)
 	return CreateRef<HeadlessShader>(config);
@@ -84,7 +83,7 @@ Ref<Shader> Shader::Create(const ShaderConfig& config)
 
 void ShaderLibrary::Add(const std::string& name, const Ref<Shader>& shader)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	KN_ASSERT(!Exists(name), "Shader {} already exists!", name);
 	_shaders[name] = shader;
@@ -92,7 +91,7 @@ void ShaderLibrary::Add(const std::string& name, const Ref<Shader>& shader)
 
 void ShaderLibrary::Add(const Ref<Shader>& shader)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	auto& name = shader->GetName();
 	Add(name, shader);
@@ -100,7 +99,7 @@ void ShaderLibrary::Add(const Ref<Shader>& shader)
 
 Ref<Shader> ShaderLibrary::Load(const std::string& filepath, const std::string& name)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	auto shader = Shader::Create(filepath, name);
 	Add(name, shader);
@@ -109,7 +108,7 @@ Ref<Shader> ShaderLibrary::Load(const std::string& filepath, const std::string& 
 
 Ref<Shader> ShaderLibrary::Load(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	auto shader = Shader::Create(name, vertexSrc, fragmentSrc);
 	Add(name, shader);
@@ -118,7 +117,7 @@ Ref<Shader> ShaderLibrary::Load(const std::string& name, const std::string& vert
 
 Ref<Shader> ShaderLibrary::Get(const std::string& name)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	KN_ASSERT(Exists(name) && "Shader not found!");
 	return _shaders[name];
@@ -126,7 +125,7 @@ Ref<Shader> ShaderLibrary::Get(const std::string& name)
 
 bool ShaderLibrary::Exists(const std::string& name) const
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	return _shaders.find(name) != _shaders.end();
 }

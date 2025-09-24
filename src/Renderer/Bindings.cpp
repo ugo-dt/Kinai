@@ -11,7 +11,7 @@ namespace Kinai
 
 Ref<Bindings> Bindings::Create()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 	
 #if defined(KINAI_HEADLESS)
 	return CreateRef<HeadlessBindings>();

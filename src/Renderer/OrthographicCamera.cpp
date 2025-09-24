@@ -11,12 +11,12 @@ OrthographicCamera::OrthographicCamera(float left, float right, float bottom, fl
 	  _view_matrix(1.0f),
 	  _view_projection_matrix(_projection_matrix * _view_matrix)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 }
 
 void	OrthographicCamera::SetProjection(float left, float right, float bottom, float top)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	_projection_matrix = glm::ortho(left, right, bottom, top);
 	_view_projection_matrix = _projection_matrix * _view_matrix;
@@ -24,7 +24,7 @@ void	OrthographicCamera::SetProjection(float left, float right, float bottom, fl
 
 void	OrthographicCamera::UpdateView()
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	glm::mat4 transform = glm::mat4(1.0f);
 
@@ -41,7 +41,7 @@ OrthographicCameraController::OrthographicCameraController(const OrthographicCam
 	: _camera(-config.aspect_ratio * config.zoom_level, config.aspect_ratio * config.zoom_level, -config.zoom_level, config.zoom_level),
 	  _config(config)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	_camera.SetPosition(_config.position);
 	_camera.SetRotation(_config.rotation);
@@ -49,7 +49,7 @@ OrthographicCameraController::OrthographicCameraController(const OrthographicCam
 
 void	OrthographicCameraController::OnUpdate(float delta)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	if (Input::IsKeyPressed(Key::W))
 	{
@@ -93,7 +93,7 @@ void	OrthographicCameraController::OnUpdate(float delta)
 
 void	OrthographicCameraController::OnEvent(Event& event)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	EventDispatcher	dispatcher(event);
 	dispatcher.Dispatch<MouseWheelEvent>(KN_BIND_EVENT_FN(OnMouseWheel));
@@ -102,7 +102,7 @@ void	OrthographicCameraController::OnEvent(Event& event)
 
 void	OrthographicCameraController::OnResize(float width, float height)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	_config.aspect_ratio = width / height;
 	_camera.SetProjection(-_config.aspect_ratio * _config.zoom_level, _config.aspect_ratio * _config.zoom_level, -_config.zoom_level, _config.zoom_level);
@@ -110,7 +110,7 @@ void	OrthographicCameraController::OnResize(float width, float height)
 
 bool	OrthographicCameraController::OnMouseWheel(MouseWheelEvent& event)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	if (_config.enable_zoom)
 	{
@@ -123,7 +123,7 @@ bool	OrthographicCameraController::OnMouseWheel(MouseWheelEvent& event)
 
 bool	OrthographicCameraController::OnWindowResize(WindowResizeEvent& event)
 {
-	KN_PRINT_FUNC();
+	KN_PROFILE_FUNC();
 
 	OnResize(event.GetWidth(), event.GetHeight());
 	return false;
