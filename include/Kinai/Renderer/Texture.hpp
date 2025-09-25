@@ -45,8 +45,8 @@ struct TextureConfig
 	int height = 1;
 	ImageFormat format = ImageFormat::RGBA8;
 	// bool generate_mips = true;
-	SamplerConfig sampler_config;
-	std::string label;
+	SamplerConfig sampler_config = SamplerConfig();
+	std::string label = "Texture";
 };
 
 class Texture

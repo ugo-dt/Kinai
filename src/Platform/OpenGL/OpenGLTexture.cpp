@@ -77,8 +77,8 @@ OpenGLTexture2D::OpenGLTexture2D(const TextureConfig& config)
 	glCreateTextures(GL_TEXTURE_2D, 1, &_renderer_id);
 	glTextureStorage2D(_renderer_id, 1, _internal_format, _width, _height);
 
-	glTextureParameteri(_renderer_id, GL_TEXTURE_MIN_FILTER, config.min_filter);
-	glTextureParameteri(_renderer_id, GL_TEXTURE_MAG_FILTER, config.max_filter);
+	glTextureParameteri(_renderer_id, GL_TEXTURE_MIN_FILTER, FilterToGLFilter(config.sampler_config.min_filter));
+	glTextureParameteri(_renderer_id, GL_TEXTURE_MAG_FILTER, FilterToGLFilter(config.sampler_config.mag_filter));
 
 	glTextureParameteri(_renderer_id, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTextureParameteri(_renderer_id, GL_TEXTURE_WRAP_T, GL_REPEAT);
