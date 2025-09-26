@@ -7,6 +7,8 @@
 #include "Kinai/Core/MouseButton.hpp"
 #include "Kinai/Core/Timer.hpp"
 
+#include "Kinai/Debug/Profiler.hpp"
+
 #include "Kinai/Events/ApplicationEvent.hpp"
 #include "Kinai/Events/KeyEvent.hpp"
 #include "Kinai/Events/MouseEvent.hpp"

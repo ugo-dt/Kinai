@@ -497,6 +497,9 @@ OpenGLShader::~OpenGLShader()
 
 void	OpenGLShader::ApplyUniforms(const void* params, size_t size)
 {
+#ifndef KINAI_DEBUG
+	KN_NOTUSED(size);
+#endif
 	Bind();
 	for (const auto& uniform : _uniforms)
 	{

@@ -11,17 +11,34 @@ HeadlessShader::HeadlessShader(const std::string& filepath, const std::string& p
 	KN_NOTUSED(filepath);
 }
 
+HeadlessShader::HeadlessShader(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc)
+	: _name(name)
+{
+	KN_PROFILE_FUNC();
+
+	KN_NOTUSED(vertexSrc);
+	KN_NOTUSED(fragmentSrc);
+}
+
 HeadlessShader::HeadlessShader(const ShaderConfig& config)
 	: _name(config.name)
 {
 	KN_PROFILE_FUNC();
 
-	std::cout << "--- Vertex Shader ---\n" << config.vs_source< "\n--- Fragment Shader ---\n" << config.fs_source << std::endl;
+	KN_NOTUSED(config);
 }
 
 HeadlessShader::~HeadlessShader()
 {
 	KN_PROFILE_FUNC();
+}
+
+void	HeadlessShader::ApplyUniforms(const void* params, size_t size)
+{
+	KN_PROFILE_FUNC();
+
+	KN_NOTUSED(params);
+	KN_NOTUSED(size);
 }
 
 void	HeadlessShader::CreateProgram(const char *vertex, const char *fragment)
@@ -50,7 +67,7 @@ void	HeadlessShader::SetInt(const std::string& name, int value)
 	KN_NOTUSED(value);
 }
 
-void	HeadlessShader::SetIntArray(const std::string& name, int* values, uint32_t count)
+void	HeadlessShader::SetIntArray(const std::string& name, const int* values, uint32_t count)
 {
 	KN_PROFILE_FUNC();
 	
@@ -107,7 +124,7 @@ void	HeadlessShader::UploadUniformInt(const std::string& name, int value)
 	KN_NOTUSED(value);
 }
 
-void	HeadlessShader::UploadUniformIntArray(const std::string& name, int* values, uint32_t count)
+void	HeadlessShader::UploadUniformIntArray(const std::string& name, const int* values, uint32_t count)
 {
 	KN_PROFILE_FUNC();
 	

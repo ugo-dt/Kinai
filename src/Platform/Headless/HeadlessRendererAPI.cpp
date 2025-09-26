@@ -1,4 +1,5 @@
 #include "Kinai/Platform/Headless/HeadlessRendererAPI.hpp"
+#include "Kinai/Renderer/Pipeline.hpp"
 
 namespace Kinai
 {
@@ -30,14 +31,35 @@ void	HeadlessRendererAPI::Clear()
 	KN_PROFILE_FUNC();
 }
 
-void	HeadlessRendererAPI::DrawIndexed(const Ref<VertexArray>& vertexArray, PrimitiveType mode, IndexType type, uint32_t index_count)
+void	HeadlessRendererAPI::DrawIndexed(const Ref<VertexArray>& vertexArray, PrimitiveType mode, IndexType type, uint32_t indexCount)
 {
 	KN_PROFILE_FUNC();
 
 	KN_NOTUSED(vertexArray);
 	KN_NOTUSED(mode);
 	KN_NOTUSED(type);
-	KN_NOTUSED(index_count);
+	KN_NOTUSED(indexCount);
+}
+
+void	HeadlessRendererAPI::DrawIndexedInstanced(const Ref<VertexArray>& vertexArray, PrimitiveType mode, IndexType type, uint32_t indexCount, uint32_t instanceCount)
+{
+	KN_PROFILE_FUNC();
+
+	KN_NOTUSED(vertexArray);
+	KN_NOTUSED(mode);
+	KN_NOTUSED(type);
+	KN_NOTUSED(indexCount);
+	KN_NOTUSED(instanceCount);
+}
+
+void	HeadlessRendererAPI::DrawInstanced(const Ref<VertexArray>& vertexArray, PrimitiveType mode, uint32_t vertexCount, uint32_t instanceCount)
+{
+	KN_PROFILE_FUNC();
+
+	KN_NOTUSED(vertexArray);
+	KN_NOTUSED(mode);
+	KN_NOTUSED(vertexCount);
+	KN_NOTUSED(instanceCount);
 }
 
 void	HeadlessRendererAPI::Draw(const Ref<VertexArray>& vertexArray, PrimitiveType mode, uint32_t vertexCount)
@@ -54,6 +76,57 @@ void	HeadlessRendererAPI::SetLineWidth(float width)
 	KN_PROFILE_FUNC();
 
 	KN_NOTUSED(width);
+}
+
+void	HeadlessRendererAPI::SetPolygonMode(PolygonMode mode)
+{
+	KN_PROFILE_FUNC();
+
+	KN_NOTUSED(mode);
+}
+
+void	HeadlessRendererAPI::BindTexture(uint32_t id, uint32_t slot)
+{
+	KN_PROFILE_FUNC();
+
+	KN_NOTUSED(id);
+	KN_NOTUSED(slot);
+}
+
+void HeadlessRendererAPI::BeginPass()
+{
+	KN_PROFILE_FUNC();
+}
+
+void	HeadlessRendererAPI::EndPass()
+{
+	KN_PROFILE_FUNC();
+
+	_current_bindings.reset();
+	_current_pipeline.reset();
+}
+
+void	HeadlessRendererAPI::ApplyPipeline(const Ref<Pipeline>& pipeline)
+{
+	KN_PROFILE_FUNC();
+
+	KN_ASSERT(pipeline != nullptr);
+	_current_pipeline = pipeline;
+}
+
+void	HeadlessRendererAPI::ApplyBindings(const Ref<Bindings>& bindings)
+{
+	KN_PROFILE_FUNC();
+
+	KN_ASSERT(bindings != nullptr);
+	_current_bindings = bindings;
+}
+
+void	HeadlessRendererAPI::ApplyUniforms(const void* params, size_t size)
+{
+	KN_PROFILE_FUNC();
+	KN_NOTUSED(params);
+	KN_NOTUSED(size);
 }
 
 } // Kinai

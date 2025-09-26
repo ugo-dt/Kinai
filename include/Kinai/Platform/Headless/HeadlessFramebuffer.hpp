@@ -27,6 +27,7 @@ public:
 		return _color_attachments[index];
 	}
 	uint32_t	GetRendererID() const override { return _renderer_id; }
+	uint32_t	GetDepthAttachmentRendererID() const override { return _depth_attachment; }
 
 	const FramebufferConfig&	GetConfig() const override { return _config; }
 
@@ -38,7 +39,7 @@ private:
 	FramebufferTextureConfig _depth_attachment_config;
 
 	std::vector<uint32_t> _color_attachments;
-	// uint32_t _depth_attachment = 0;
+	uint32_t _depth_attachment = 0;
 };
 
 }

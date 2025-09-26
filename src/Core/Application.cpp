@@ -1,4 +1,5 @@
 #include "Kinai/Core/Application.hpp"
+#include "Kinai/Debug/Profiler.hpp"
 #include "Kinai/Renderer/Renderer.hpp"
 #include "Kinai/Renderer/2D/Painter.hpp"
 
@@ -16,8 +17,17 @@ Application::Application(const ApplicationConfig &config)
 {
 	KN_PROFILE_FUNC();
 
+	#ifdef KINAI_PROFILER
+		Kinai::Profiler::Start(config.name);
+	#endif
+
 	Log::Validate(!_instance, "Application already exists!");
 	_instance = this;
+
+	#ifdef KINAI_HEADLESS
+		void SigIntHandler(int signum);
+		std::signal(SIGINT, SigIntHandler);
+	#endif
 
 	_window = Window::Create(
 		WindowProps(
@@ -27,30 +37,25 @@ Application::Application(const ApplicationConfig &config)
 		)
 	);
 	
-#if defined(KINAI_OPENGL) || defined(KINAI_SOKOL)
-	SDL_RegisterEvents(KN_CUSTOM_EVENT_TYPE_COUNT);
-#endif
+	#if defined(KINAI_OPENGL) || defined(KINAI_SOKOL)
+		SDL_RegisterEvents(KN_CUSTOM_EVENT_TYPE_COUNT);
+	#endif
 	
 	_window->SetEventCallback(KN_BIND_EVENT_FN(Application::OnEvent));
 	std::memset(&_time, 0, sizeof(Time));
 
-#if defined(KINAI_SOKOL)
-	Sokol::Init();
-#else
-	Renderer::Init();
-	Painter::Init();
-#endif
+	#if defined(KINAI_SOKOL)
+		Sokol::Init();
+	#else
+		Renderer::Init();
+		Painter::Init();
+	#endif
 
 	if (_config.enable_imgui)
 	{
 		_imgui_layer = std::make_shared<ImGuiLayer>();
 		PushOverlay(_imgui_layer);
 	}
-
-#ifdef KINAI_HEADLESS
-	void SigIntHandler(int signum);
-	std::signal(SIGINT, SigIntHandler);
-#endif
 }
 
 Application::~Application()
@@ -65,6 +70,10 @@ Application::~Application()
 	Painter::Shutdown();
 #endif
 	_instance = nullptr;
+
+	#ifdef KINAI_PROFILER
+		Kinai::Profiler::End();
+	#endif
 }
 
 Ref<Layer>	Application::PushLayer(Ref<Layer> layer)
@@ -104,6 +113,7 @@ void	Application::Run()
 	while (g_KinaiApplicationRunning)
 #endif
 	{
+	#ifndef KINAI_HEADLESS
 		const uint64_t	perf_counter = SDL_GetPerformanceCounter();
 
 		_time.delta = (double)(perf_counter - _time.last) / (double)SDL_GetPerformanceFrequency();
@@ -116,6 +126,7 @@ void	Application::Run()
 			_time.frames = 0;
 			_time.last_second = perf_counter;
 		}
+	#endif
 
 		if (!_minimized)
 		{

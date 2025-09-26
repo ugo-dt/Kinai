@@ -174,6 +174,8 @@ void OpenGLTexture2D::SetData(void* data, uint32_t size)
 #ifdef KN_ENABLE_ASSERTS
 	uint32_t bpp = _data_format == GL_RGBA ? 4 : 3;
 	KN_ASSERT(size == _width * _height * bpp, "Data must be entire texture!");
+#else
+	KN_NOTUSED(size);
 #endif
 
 #if KINAI_OPENGL_VERSION_MAJOR >= 4

@@ -28,8 +28,6 @@ Ref<Texture2D> Texture2D::Create(const std::string& path, const TextureConfig& c
 	KN_PROFILE_FUNC();
 
 #if defined(KINAI_HEADLESS)
-	KN_NOTUSED(min_filter);
-	KN_NOTUSED(max_filter);
 	return CreateRef<HeadlessTexture2D>(path, config);
 #elif defined(KINAI_OPENGL)
 	return CreateRef<OpenGLTexture2D>(path, config);

@@ -41,8 +41,9 @@ void	HeadlessVertexBuffer::SetData(const void* data, uint32_t size)
 
 /** Index buffer */
 
-HeadlessIndexBuffer::HeadlessIndexBuffer(const void* indices, uint32_t count)
-	: _count(count)
+HeadlessIndexBuffer::HeadlessIndexBuffer(const void* indices, uint32_t count, IndexType type)
+	: _count(count),
+	  _index_type(type)
 {
 	KN_PROFILE_FUNC();
 	

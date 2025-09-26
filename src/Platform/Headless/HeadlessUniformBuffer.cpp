@@ -5,7 +5,7 @@ namespace Kinai
 
 HeadlessUniformBuffer::HeadlessUniformBuffer(uint32_t size, uint32_t binding)
 {
-	KN_NOTUSED(size)
+	KN_NOTUSED(size);
 	KN_NOTUSED(binding);
 }
 
