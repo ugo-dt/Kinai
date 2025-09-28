@@ -309,6 +309,12 @@ void	SDLWindow::WarpMouse(float x, float y)
 	SDL_WarpMouseInWindow(_handle, x, y);
 }
 
+void SDLWindow::ToggleFullscreen()
+{
+	Uint32 flags = SDL_GetWindowFlags(_handle);
+	SDL_SetWindowFullscreen(_handle, !(flags & SDL_WINDOW_FULLSCREEN));
+}
+
 bool	SDLWindow::IsFocused() const
 {
 	return SDL_GetWindowFlags(_handle) & SDL_WINDOW_INPUT_FOCUS;

@@ -41,27 +41,28 @@ protected:
 public:
 	virtual ~Window() = default;
 
-	virtual void			OnUpdate() = 0;
+	virtual void OnUpdate() = 0;
 
-	virtual void*			GetNativeWindow() const = 0;
-	virtual glm::ivec2		GetSize() const = 0;
-	virtual uint32_t		GetWidth() const = 0;
-	virtual uint32_t		GetHeight() const = 0;
-	virtual bool			GetRelativeMouseMode() const = 0;
-	virtual bool			IsFocused() const = 0;
-	virtual bool			IsHovered() const = 0;
+	virtual void* GetNativeWindow() const = 0;
+	virtual glm::ivec2 GetSize() const = 0;
+	virtual uint32_t GetWidth() const = 0;
+	virtual uint32_t GetHeight() const = 0;
+	virtual bool GetRelativeMouseMode() const = 0;
+	virtual bool IsFocused() const = 0;
+	virtual bool IsHovered() const = 0;
 	
 #ifdef KINAI_SOKOL
-	virtual sg_environment	GetSokolEnvironment() const = 0;
-	virtual sg_swapchain	GetSokolSwapchain() const = 0;
+	virtual sg_environment GetSokolEnvironment() const = 0;
+	virtual sg_swapchain GetSokolSwapchain() const = 0;
 #endif
 
-	virtual bool			IsVSync() const = 0;
-	virtual void			SetVSync(bool enabled) = 0;
-	virtual void			SetEventCallback(const EventCallback &callback) = 0;
-	virtual void			SetTitle(const std::string &title) = 0;
-	virtual void			SetRelativeMouseMode(bool enabled) = 0;
-	virtual void			WarpMouse(float x, float y) = 0;
+	virtual bool IsVSync() const = 0;
+	virtual void SetVSync(bool enabled) = 0;
+	virtual void SetEventCallback(const EventCallback &callback) = 0;
+	virtual void SetTitle(const std::string &title) = 0;
+	virtual void SetRelativeMouseMode(bool enabled) = 0;
+	virtual void WarpMouse(float x, float y) = 0;
+	virtual void ToggleFullscreen() = 0;
 
 	static Scope<Window>	Create(const WindowProps &props);
 };
