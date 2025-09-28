@@ -232,6 +232,7 @@ void	OpenGLRendererAPI::SetPolygonMode(PolygonMode mode)
 		case PolygonMode::Fill:  glMode = GL_FILL; break;
 		case PolygonMode::Line:  glMode = GL_LINE; break;
 		case PolygonMode::Point: glMode = GL_POINT; break;
+		default: Log::Critical("Unknown PolygonMode!"); return;
 	}
 	glPolygonMode(GL_FRONT_AND_BACK, glMode);
 #else

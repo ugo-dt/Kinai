@@ -77,7 +77,6 @@ void	PerspectiveCamera::MouseRotate(const glm::vec2& delta)
 	_yaw += yaw_sign * delta.x * RotationSpeed();
 	_pitch += delta.y * RotationSpeed();
 
-	//?
 	if (_pitch > glm::radians(89.f))
 		_pitch =  glm::radians(89.f);
 	if (_pitch < glm::radians(-89.f))
@@ -130,6 +129,7 @@ PerspectiveCameraController::PerspectiveCameraController(const PerspectiveCamera
 {
 	SetRotationEnabled(!config.no_rotation);
 	SetCursorLock(!config.no_lock_cursor);
+	_camera.SetPosition(_config.position);
 }
 
 void	PerspectiveCameraController::OnUpdate(float delta)
