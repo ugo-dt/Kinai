@@ -42,15 +42,51 @@ enum class DepthState
 	Always,
 };
 
+enum class BlendFactor
+{
+	Zero,
+	One,
+	SrcColor,
+	OneMinusSrcColor,
+	DstColor,
+	OneMinusDstColor,
+	SrcAlpha,
+	OneMinusSrcAlpha,
+	DstAlpha,
+	OneMinusDstAlpha,
+	SrcAlphaSaturated,
+};
+
+enum class BlendOp
+{
+	Add,
+	Subtract,
+	ReverseSubtract,
+	Min,
+	Max,
+};
+
+struct BlendState
+{
+	bool enabled;
+    BlendFactor src_factor_rgb = BlendFactor::One;
+    BlendFactor dst_factor_rgb = BlendFactor::Zero;
+    BlendOp op_rgb = BlendOp::Add;
+    BlendFactor src_factor_alpha = BlendFactor::One;
+    BlendFactor dst_factor_alpha = BlendFactor::Zero;
+    BlendOp op_alpha = BlendOp::Add;
+};
+
 struct PipelineConfig
 {
-	Ref<VertexArray> vao = nullptr;
-	Ref<Shader> shader = nullptr;
+	Ref<VertexArray> vao;
+	Ref<Shader> shader;
 	BufferLayout layout;
 	PrimitiveType primitive_type = PrimitiveType::Triangles;
 	CullMode cull_mode = CullMode::Back;
 	FaceWinding face_winding = FaceWinding::CCW;
 	DepthState depth_state = DepthState::Less;
+	BlendState blend_state = BlendState();
 	std::string label = "Rendering pipeline";
 };
 
@@ -74,6 +110,7 @@ public:
 	CullMode GetCullMode() const { return _cull_mode; }
 	FaceWinding GetFaceWinding() const { return _face_winding; }
 	DepthState GetDepthState() const { return _depth_state; }
+	BlendState GetBlendState() const { return _blend_state; }
 	const std::string& GetLabel() const { return _label; }
 
 	static Ref<Pipeline> Create(const PipelineConfig& config);
@@ -86,6 +123,7 @@ protected:
 	CullMode _cull_mode;
 	FaceWinding _face_winding;
 	DepthState _depth_state;
+	BlendState _blend_state;
 	std::string _label;
 };
 

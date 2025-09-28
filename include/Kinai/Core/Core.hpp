@@ -50,6 +50,7 @@
 	#define KN_DEBUG_STATS
 #endif
 
+#define KN_PRAGMA(x) _Pragma(#x)
 #if defined(__clang__) || defined(__GNUC__)
 	#define KN_INLINE		inline __attribute__((__always_inline__))
 	#define KN_NEVER_INLINE	__attribute__((__noinline__))
@@ -64,7 +65,14 @@
 	#define KN_UNUSED
 	#define KN_NOTUSED(x)
 	#define KN_NODISCARD
+	#define KN_UNROLL(n)
 #endif // defined(__clang__) || defined(__GNUC__)
+
+#if defined(__clang__)
+	#define KN_UNROLL(n) KN_PRAGMA(clang loop unroll_count(n))
+#elif defined(__GNUC__)
+	#define KN_UNROLL(n) KN_PRAGMA(GCC unroll n)
+#endif
 
 namespace Kinai
 {

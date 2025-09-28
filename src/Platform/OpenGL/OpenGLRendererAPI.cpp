@@ -65,6 +65,42 @@ GLenum	IndexTypeToGLenum(IndexType type)
 	return 0;
 }
 
+GLenum BlendFactorToGLenum(BlendFactor factor)
+{
+	switch (factor)
+	{
+		case BlendFactor::Zero:                return GL_ZERO;
+		case BlendFactor::One:                 return GL_ONE;
+		case BlendFactor::SrcColor:            return GL_SRC_COLOR;
+		case BlendFactor::OneMinusSrcColor:    return GL_ONE_MINUS_SRC_COLOR;
+		case BlendFactor::DstColor:            return GL_DST_COLOR;
+		case BlendFactor::OneMinusDstColor:    return GL_ONE_MINUS_DST_COLOR;
+		case BlendFactor::SrcAlpha:            return GL_SRC_ALPHA;
+		case BlendFactor::OneMinusSrcAlpha:    return GL_ONE_MINUS_SRC_ALPHA;
+		case BlendFactor::DstAlpha:            return GL_DST_ALPHA;
+		case BlendFactor::OneMinusDstAlpha:    return GL_ONE_MINUS_DST_ALPHA;
+		case BlendFactor::SrcAlphaSaturated:   return GL_SRC_ALPHA_SATURATE;
+	}
+
+	Log::Critical("Unknown BlendFactor");
+	return 0;
+}
+
+GLenum BlendOpToGLenum(BlendOp op)
+{
+	switch (op)
+	{
+		case BlendOp::Add:              return GL_FUNC_ADD;
+		case BlendOp::Subtract:         return GL_FUNC_SUBTRACT;
+		case BlendOp::ReverseSubtract:  return GL_FUNC_REVERSE_SUBTRACT;
+		case BlendOp::Min:              return GL_MIN;
+		case BlendOp::Max:              return GL_MAX;
+	}
+
+	Log::Critical("Unknown BlendOp");
+	return 0;
+}
+
 #ifdef KN_PLATFORM_DESKTOP
 void	OpenGLMessageCallback(
 	unsigned source,
@@ -282,6 +318,14 @@ void	OpenGLRendererAPI::ApplyPipeline(const Ref<Pipeline>& pipeline)
 			case DepthState::GreaterEqual: glEnable(GL_DEPTH_TEST); glDepthFunc(GL_GEQUAL); break;
 			case DepthState::Always:       glEnable(GL_DEPTH_TEST); glDepthFunc(GL_ALWAYS); break;
 		}
+		const BlendState& bs = pipeline->GetBlendState();
+		if (bs.enabled)
+			glEnable(GL_BLEND);
+		else
+			glDisable(GL_BLEND);
+		glBlendFuncSeparate(BlendFactorToGLenum(bs.src_factor_rgb), BlendFactorToGLenum(bs.dst_factor_rgb),
+			BlendFactorToGLenum(bs.src_factor_alpha), BlendFactorToGLenum(bs.dst_factor_alpha));
+		glBlendEquationSeparate(BlendOpToGLenum(bs.op_rgb), BlendOpToGLenum(bs.op_alpha));
 	}
 }
 

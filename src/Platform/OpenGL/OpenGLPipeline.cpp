@@ -14,6 +14,7 @@ OpenGLPipeline::OpenGLPipeline(const PipelineConfig& config)
 	this->_cull_mode = config.cull_mode;
 	this->_face_winding = config.face_winding;
 	this->_depth_state = config.depth_state;
+	this->_blend_state = config.blend_state;
 	this->_label = config.label;
 }
 
