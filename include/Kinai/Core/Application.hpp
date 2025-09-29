@@ -48,7 +48,7 @@ public:
 	void Close();
 
 	Window& GetWindow() { return *_window; }
-
+	const Window& GetWindow() const { return *_window; }
 	uint64_t GetFPS() const { return _time.fps; }
 	float GetDeltaTime() const { return _time.delta; }
 	Ref<ImGuiLayer> GetImGuiLayer() const { return _imgui_layer; }

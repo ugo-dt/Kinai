@@ -34,6 +34,20 @@ public:
 	bool	OnMouseWheel(MouseWheelEvent& e);
 	bool	OnMouseMotion(MouseMotionEvent& event);
 
+	glm::mat4 GetOrthographicProjectionMatrix(float aspect_ratio, float zoom_level = 1.0f) const
+	{
+		float left = -aspect_ratio * zoom_level;
+		float right = aspect_ratio * zoom_level;
+		float bottom = -zoom_level;
+		float top = zoom_level;
+		return glm::ortho(left, right, bottom, top, _near_clip, _far_clip);
+	}
+
+	glm::mat4 GetOrthographicViewProjectionMatrix(float aspect_ratio, float zoom_level = 1.0f) const
+	{
+		return GetOrthographicProjectionMatrix(aspect_ratio, zoom_level) * _view_matrix;
+	}
+
 private:
 	void	UpdateProjection();
 	void	UpdateView();
