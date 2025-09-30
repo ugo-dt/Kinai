@@ -39,7 +39,8 @@
 #endif // End of platform detection
 
 #if defined(KN_PLATFORM_WINDOWS) || defined(KN_PLATFORM_LINUX) || defined(KN_PLATFORM_MACOS)
-	#define KN_PLATFORM_DESKTOP
+	#define KN_PLATFORM_DESKTOP 
+	#define KINAI_HAS_THREADS 1
 	#include <glad/glad.h>
 	#if defined(_WIN32)
 		#define WIN32_MEAN_AND_LEAN

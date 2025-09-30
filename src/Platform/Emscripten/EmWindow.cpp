@@ -61,6 +61,7 @@ EmWindow::EmWindow(const WindowProps& props, int flags)
 	// 	});
 	emscripten_set_mousemove_callback("canvas", this, true, EmWindow::OnMouseMotion);
 	emscripten_set_wheel_callback("canvas", this, true, EmWindow::OnMouseWheel);
+	emscripten_set_fullscreenchange_callback("canvas", this, true, EmWindow::OnFullscreenChange);
 	emscripten_set_canvas_element_size(_canvas_name, _width, _height);
 }
 
@@ -175,12 +176,21 @@ void	EmWindow::WarpMouse(float x, float y)
 	KN_NOTUSED(y);
 }
 
+void	EmWindow::ToggleFullscreen()
+{
+	KN_PROFILE_FUNC();
+
+	emscripten_request_fullscreen(_canvas_name, false);
+}
+
 bool	EmWindow::OnWindowResize(int, const EmscriptenUiEvent *, void *)
 {
 	KN_PROFILE_FUNC();
 
 	emscripten_get_element_css_size(_canvas_name, &_width, &_height);
 	emscripten_set_canvas_element_size(_canvas_name, _width, _height);
+	WindowResizeEvent event(_width, _height);
+	_eventCallback(event);
 	return true;
 }
 
@@ -315,5 +325,15 @@ bool	EmWindow::OnMouseWheel(int, const EmscriptenWheelEvent *e, void *)
 	_eventCallback(event);
 	return true;
 }
+
+bool	EmWindow::OnFullscreenChange(int, const EmscriptenFullscreenChangeEvent *e, void *)
+{
+	KN_PROFILE_FUNC();
+
+	WindowResizeEvent event(e->elementWidth, e->elementHeight);
+	_eventCallback(event);
+	return true;
+}
+
 
 } // Kinai

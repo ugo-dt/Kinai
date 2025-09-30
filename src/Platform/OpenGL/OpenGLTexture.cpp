@@ -12,11 +12,13 @@ static GLenum ImageFormatToGLDataFormat(ImageFormat format)
 		case ImageFormat::RGB8:		return GL_RGB;
 		case ImageFormat::RGBA8:	return GL_RGBA;
 		case ImageFormat::RGBA32F:	return GL_RGBA;
+#if KINAI_OPENGL_VERSION_MAJOR >= 4
 		case ImageFormat::SRGB_ALPHA: return GL_SRGB_ALPHA;
+#endif
 		default: break;
 	}
 
-	Log::Critical("ImageFormatToGLDataFormat");
+	Log::Critical("invalid image format");
 	return 0;
 }
 

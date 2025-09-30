@@ -52,6 +52,8 @@ public:
 	void SetRelativeMouseMode(bool enabled) override;
 	void WarpMouse(float x, float y) override;
 
+	void ToggleFullscreen() override;
+
 	static bool IsKeyPressed(KeyCode key) { return _keys[key]; }
 	static bool IsMouseButtonPressed(MouseButton button) { return _mouse.buttons[button]; }
 	static glm::vec2 GetMousePosition() { return _mouse.pos; }
@@ -68,6 +70,7 @@ private:
 	static bool OnMouseButtonUp(int type, const EmscriptenMouseEvent *event, void *data);
 	static bool OnMouseMotion(int type, const EmscriptenMouseEvent *event, void *data);
 	static bool OnMouseWheel(int type, const EmscriptenWheelEvent *event, void *data);
+	static bool OnFullscreenChange(int type, const EmscriptenFullscreenChangeEvent *event, void *data);
 
 private:
 	static EmWindow* _instance;
