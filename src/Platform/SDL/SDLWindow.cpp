@@ -210,7 +210,7 @@ void	SDLWindow::OnUpdate()
 
 	while (SDL_PollEvent(&event))
 	{
-		if (Application::Get().GetImGuiLayer())
+		if (Application::Get().GetLayer<ImGuiLayer>())
 			ImGui_ImplSDL3_ProcessEvent(&event);
 		_handle_event(event);
 	}

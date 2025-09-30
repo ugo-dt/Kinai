@@ -7,10 +7,6 @@ namespace Kinai
 ImGuiLayer::ImGuiLayer()
 	: _block_events(false)
 {
-}
-
-void	ImGuiLayer::OnAttach()
-{
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO();
@@ -36,13 +32,12 @@ void	ImGuiLayer::OnAttach()
 #endif
 }
 
-void	ImGuiLayer::OnDetach()
+ImGuiLayer::~ImGuiLayer()
 {
 #ifdef KINAI_OPENGL
 	ImGui_ImplOpenGL3_Shutdown();
 	ImGui_ImplSDL3_Shutdown();
 #endif
-
 	ImGui::DestroyContext();
 }
 

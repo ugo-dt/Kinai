@@ -9,19 +9,31 @@ namespace Kinai
 class Layer
 {
 protected:
-	Layer(const std::string name = "DefaultLayer"): _debug_name(name) {}
+	Layer(const std::string name = "DefaultLayer");
 
 public:
 	virtual ~Layer() = default;
 
-	virtual void	OnAttach() {};
-	virtual void	OnDetach() {};
 	virtual void	OnUpdate(float delta) { KN_NOTUSED(delta); };
 	virtual void	OnRender() {};
 	virtual void	OnImGuiRender() {}
 	virtual void	OnEvent(Event& event) { KN_NOTUSED(event); };
 
 	const std::string&	GetName() const { return _debug_name; }
+
+	template <std::derived_from<Layer> T, typename... Args>
+	void TransitionTo(Args&&... args)
+	{
+		QueueTransition(std::move(std::make_unique<T>(std::forward<Args>(args)...)));
+	}
+
+private:
+	void QueueTransition(std::unique_ptr<Layer> layer);
+
+private:
+	friend class Application;
+	static std::vector<std::tuple<Layer*, std::unique_ptr<Layer>>>	_pendingTransitions;
+	void DoTransition(std::unique_ptr<Layer> to);
 
 private:
 	std::string	_debug_name;

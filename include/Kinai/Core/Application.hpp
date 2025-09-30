@@ -42,9 +42,24 @@ public:
 	Application(const ApplicationConfig &config);
 	virtual ~Application();
 
-	Ref<Layer> PushLayer(Ref<Layer> layer);
-	void PopLayer();
-	void RemoveLayer(Ref<Layer> layer);
+	template <typename T, typename... Args>
+	requires(std::is_base_of_v<Layer, T>)
+	void PushLayer(Args&&... args)
+	{
+		_layerStack.push_back(std::make_unique<T>(std::forward<Args>(args)...));
+	}
+
+	template <typename T>
+	requires(std::is_base_of_v<Layer, T>)
+	T* GetLayer()
+	{
+		for (const auto& layer : _layerStack)
+		{
+			if (auto casted = dynamic_cast<T*>(layer.get()))
+				return casted;
+		}
+		return nullptr;
+	}
 
 	void Close();
 
@@ -52,7 +67,6 @@ public:
 	const Window& GetWindow() const { return *_window; }
 	uint64_t GetFPS() const { return _time.fps; }
 	float GetDeltaTime() const { return _time.delta; }
-	Ref<ImGuiLayer> GetImGuiLayer() const { return _imgui_layer; }
 
 public:
 	static Application& Get() { return *_instance; }
@@ -70,9 +84,11 @@ private:
 private:
 	Scope<Window> _window;
 	ApplicationConfig _config;
-	Ref<ImGuiLayer> _imgui_layer;
 	Time _time;
-	LayerStack _layerstack;
+	ImGuiLayer* _imgui_layer;
+public:
+	std::vector<std::unique_ptr<Layer>> _layerStack;
+private:
 	bool _minimized;
 
 private:
@@ -91,7 +107,7 @@ void	Application::OnEvent(EventType& event)
 
 	dispatcher.Dispatch<WindowCloseEvent>(KN_BIND_EVENT_FN(Application::OnWindowClose));
 	dispatcher.Dispatch<WindowResizeEvent>(KN_BIND_EVENT_FN(Application::OnWindowResize));
-	for (auto it = _layerstack.rbegin(); it != _layerstack.rend(); it++)
+	for (auto it = _layerStack.rbegin(); it != _layerStack.rend(); it++)
 	{
 		(*it)->OnEvent(event);
 		if (event.handled)

@@ -10,19 +10,17 @@ class ImGuiLayer final : public Layer
 {
 public:
 	ImGuiLayer();
-	~ImGuiLayer() = default;
+	~ImGuiLayer();
 
-	void	Begin();
-	void	End();
+	void Begin();
+	void End();
 
-	virtual void	OnAttach() override;
-	virtual void	OnDetach() override;
-	virtual void	OnEvent(Event& event) override;
+	void OnEvent(Event& event) override;
 
-	void	BlockEvents(bool block) { _block_events = block; }
+	void BlockEvents(bool block) { _block_events = block; }
 
 private:
-	bool		_block_events;
+	bool _block_events;
 };
 
 } // Kinai

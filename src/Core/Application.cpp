@@ -12,7 +12,7 @@ Application::Application(const ApplicationConfig &config)
 	: _window(nullptr),
 	  _config(config),
 	  _imgui_layer(nullptr),
-	  _layerstack(),
+	  _layerStack(),
 	  _minimized(false)
 {
 	KN_PROFILE_FUNC();
@@ -53,8 +53,8 @@ Application::Application(const ApplicationConfig &config)
 
 	if (_config.enable_imgui)
 	{
-		_imgui_layer = std::make_shared<ImGuiLayer>();
-		PushLayer(_imgui_layer);
+		PushLayer<ImGuiLayer>();
+		_imgui_layer = GetLayer<ImGuiLayer>();
 	}
 }
 
@@ -62,7 +62,7 @@ Application::~Application()
 {
 	KN_PROFILE_FUNC();
 
-	_layerstack.Clear();
+	_layerStack.clear();
 
 #ifdef KINAI_SOKOL
 	Sokol::Shutdown();
@@ -74,25 +74,6 @@ Application::~Application()
 	#ifdef KINAI_PROFILER
 		Kinai::Profiler::End();
 	#endif
-}
-
-Ref<Layer>	Application::PushLayer(Ref<Layer> layer)
-{
-	KN_PROFILE_FUNC();
-
-	_layerstack.PushLayer(layer);
-	layer->OnAttach();
-	return layer;
-}
-
-void	Application::PopLayer()
-{
-	_layerstack.PopLayer();
-}
-
-void	Application::RemoveLayer(Ref<Layer> layer)
-{
-	_layerstack.RemoveLayer(layer); 
 }
 
 void	Application::Close()
@@ -131,22 +112,30 @@ void	Application::Run()
 
 		if (!_minimized)
 		{
-			for (Ref<Layer>& layer : _layerstack)
+			for (auto& layer : _layerStack)
 				layer->OnUpdate(_time.delta);
-			for (Ref<Layer>& layer : _layerstack)
+			for (auto& layer : _layerStack)
 				layer->OnRender();
 			_time.frames++;
 
 			if (_config.enable_imgui)
 			{
 				_imgui_layer->Begin();
-				for (Ref<Layer>& layer : _layerstack)
+				for (auto& layer : _layerStack)
 					layer->OnImGuiRender();
 				_imgui_layer->End();
 			}
 		}
 
 		_window->OnUpdate();
+
+		// Handle layer transitions
+		for (auto& pending : Layer::_pendingTransitions)
+		{
+			auto& [from, layer] = pending;
+			from->DoTransition(std::move(layer));
+		}
+		Layer::_pendingTransitions.clear();
 	}
 }
 
