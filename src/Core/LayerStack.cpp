@@ -4,7 +4,7 @@ namespace Kinai
 {
 
 LayerStack::LayerStack()
-	: _layers(), _layer_insert_index(0)
+	: _layers()
 {
 	KN_PROFILE_FUNC();
 }
@@ -30,35 +30,16 @@ void	LayerStack::Clear()
 void LayerStack::PushLayer(Ref<Layer> layer)
 {
 	KN_PROFILE_FUNC();
-	_layers.emplace(_layers.begin() + _layer_insert_index, layer);
-	_layer_insert_index++;
+	_layers.emplace_back(layer);
 }
 
-void LayerStack::PushOverlay(Ref<Layer> overlay)
+void LayerStack::RemoveLayer(Ref<Layer> layer)
 {
 	KN_PROFILE_FUNC();
-	_layers.emplace_back(overlay);
-}
-
-void LayerStack::PopLayer(Ref<Layer> layer)
-{
-	KN_PROFILE_FUNC();
-	auto it = std::find(_layers.begin(), _layers.begin() + _layer_insert_index, layer);
-	if (it != _layers.begin() + _layer_insert_index)
-	{
-		layer->OnDetach();
-		_layers.erase(it);
-		_layer_insert_index--;
-	}
-}
-
-void LayerStack::PopOverlay(Ref<Layer> overlay)
-{
-	KN_PROFILE_FUNC();
-	auto it = std::find(_layers.begin() + _layer_insert_index, _layers.end(), overlay);
+	auto it = std::find(_layers.begin(), _layers.end(), layer);
 	if (it != _layers.end())
 	{
-		overlay->OnDetach();
+		layer->OnDetach();
 		_layers.erase(it);
 	}
 }

@@ -62,6 +62,9 @@ void Profiler::End()
 		return a.avg_time > b.avg_time; // longest avg first
 	});
 
+	if (entries.empty())
+		return;
+
 	printf("=== Profiling results for '%s' (total %.3f ms) ===\n", _name.c_str(), total_time);
 	for (const auto& entry : entries)
 	{

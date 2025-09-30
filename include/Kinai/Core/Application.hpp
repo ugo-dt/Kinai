@@ -43,8 +43,9 @@ public:
 	virtual ~Application();
 
 	Ref<Layer> PushLayer(Ref<Layer> layer);
-	Ref<Layer> PushOverlay(Ref<Layer> layer);
-	
+	void PopLayer();
+	void RemoveLayer(Ref<Layer> layer);
+
 	void Close();
 
 	Window& GetWindow() { return *_window; }
@@ -53,11 +54,11 @@ public:
 	float GetDeltaTime() const { return _time.delta; }
 	Ref<ImGuiLayer> GetImGuiLayer() const { return _imgui_layer; }
 
-	void		Run();
 public:
 	static Application& Get() { return *_instance; }
 
 private:
+	void Run();
 
 	template <class EventType>
 	requires(std::is_base_of_v<Event, EventType>)

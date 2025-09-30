@@ -54,7 +54,7 @@ Application::Application(const ApplicationConfig &config)
 	if (_config.enable_imgui)
 	{
 		_imgui_layer = std::make_shared<ImGuiLayer>();
-		PushOverlay(_imgui_layer);
+		PushLayer(_imgui_layer);
 	}
 }
 
@@ -85,13 +85,14 @@ Ref<Layer>	Application::PushLayer(Ref<Layer> layer)
 	return layer;
 }
 
-Ref<Layer>	Application::PushOverlay(Ref<Layer> layer)
+void	Application::PopLayer()
 {
-	KN_PROFILE_FUNC();
+	_layerstack.PopLayer();
+}
 
-	_layerstack.PushOverlay(layer);
-	layer->OnAttach();
-	return layer;
+void	Application::RemoveLayer(Ref<Layer> layer)
+{
+	_layerstack.RemoveLayer(layer); 
 }
 
 void	Application::Close()
