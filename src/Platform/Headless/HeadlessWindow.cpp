@@ -19,6 +19,12 @@ HeadlessWindow::HeadlessWindow(const WindowProps& props)
 	KN_PROFILE_FUNC();
 
 	Log::Info("[Kinai] Headless --- {}", props.title);
+	_fullscreen = props.fullscreen;
+	_title = props.title;
+	_size = { (int)props.width, (int)props.height };
+	_vsync = !props.no_vsync;
+	_relativeMouseMode = false;
+	_mousePosition = { 0.f, 0.f };
 }
 
 HeadlessWindow::~HeadlessWindow()
@@ -137,6 +143,12 @@ void	HeadlessWindow::WarpMouse(float x, float y)
 
 	_mousePosition.x = x;
 	_mousePosition.y = y;
+}
+
+void	HeadlessWindow::ToggleFullscreen()
+{
+	KN_PROFILE_FUNC();
+	_fullscreen = !_fullscreen;
 }
 
 } // Kinai

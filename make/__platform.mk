@@ -146,4 +146,6 @@ else ifeq (,$(filter $(__lc_backend),$(__WIN32__) $(__LINUX__) $(__MACOS__) $(__
   $(error Unknown backend '$(backend)')
 endif
 
+OBJS_DIR := $(OBJS_DIR)/$(backend)
+
 endif # __PLATFORM_MK

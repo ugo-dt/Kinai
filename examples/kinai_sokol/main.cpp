@@ -1,5 +1,8 @@
 // Make sure to compile Kinai with the Sokol backend
 
+#ifndef KINAI_SOKOL
+#define KINAI_SOKOL
+#endif
 #include <Kinai/Kinai.hpp>
 #include <Kinai/EntryPoint.hpp>
 
@@ -140,7 +143,7 @@ public:
 	App()
 		: Kinai::Application(Kinai::ApplicationConfig{ .name = "Kinai Sokol", .enable_imgui = true })
 	{
-		PushLayer(new Layer());
+		PushLayer<Layer>();
 	}
 
 	~App() = default;

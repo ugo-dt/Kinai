@@ -54,10 +54,8 @@ public:
 	T* GetLayer()
 	{
 		for (const auto& layer : _layerStack)
-		{
-			if (auto casted = dynamic_cast<T*>(layer.get()))
-				return casted;
-		}
+			if (layer->GetType() == typeid(T))
+				return static_cast<T*>(layer.get());
 		return nullptr;
 	}
 

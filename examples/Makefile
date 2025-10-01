@@ -1,4 +1,7 @@
 KINAI_PATH = ..
+backend = Headless
+target = web
+verbose = 1
 include $(KINAI_PATH)/Makefile
 
 EXAMPLES_DIR = $(KINAI_PATH)/examples
@@ -53,6 +56,9 @@ hello_kinai:
 
 kinai_cube:
 	$(SILENT)$(MAKE) example 1=kinai_cube
+
+kinai_events:
+	$(SILENT)$(MAKE) example 1=kinai_events
 
 kinai_2d:
 	$(SILENT)$(MAKE) example 1=kinai_2d

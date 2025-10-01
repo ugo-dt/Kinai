@@ -674,28 +674,6 @@ static sg_shader _sgp_make_common_shader(void) {
     desc.attrs[SGP_VS_ATTR_COLOR].glsl_name = "color";
     desc.image_sampler_pairs[0].glsl_name = "iTexChannel0_iSmpChannel0";
 
-    // D3D11 only
-    desc.attrs[SGP_VS_ATTR_COORD].hlsl_sem_name = "TEXCOORD";
-    desc.attrs[SGP_VS_ATTR_COORD].hlsl_sem_index = 0;
-    desc.attrs[SGP_VS_ATTR_COLOR].hlsl_sem_name = "TEXCOORD";
-    desc.attrs[SGP_VS_ATTR_COLOR].hlsl_sem_index = 1;
-    desc.vertex_func.d3d11_target = "vs_4_0";
-    desc.fragment_func.d3d11_target = "ps_4_0";
-
-    // entry
-    switch (backend) {
-        case SG_BACKEND_METAL_MACOS:
-        case SG_BACKEND_METAL_IOS:
-        case SG_BACKEND_METAL_SIMULATOR:
-            desc.vertex_func.entry = "main0";
-            desc.fragment_func.entry = "main0";
-            break;
-        default:
-            desc.vertex_func.entry = "main";
-            desc.fragment_func.entry = "main";
-            break;
-    }
-
     // source
     switch (backend) {
         case SG_BACKEND_GLCORE:
@@ -705,27 +683,6 @@ static sg_shader _sgp_make_common_shader(void) {
         case SG_BACKEND_GLES3:
             desc.vertex_func.source = (const char*)sgp_vs_source_glsl300es;
             desc.fragment_func.source = (const char*)sgp_fs_source_glsl300es;
-            break;
-        case SG_BACKEND_D3D11:
-            desc.vertex_func.source = (const char*)sgp_vs_source_hlsl4;
-            desc.fragment_func.source = (const char*)sgp_fs_source_hlsl4;
-            break;
-        case SG_BACKEND_METAL_MACOS:
-            desc.vertex_func.source = (const char*)sgp_vs_source_metal_macos;
-            desc.fragment_func.source = (const char*)sgp_fs_source_metal_macos;
-            break;
-        case SG_BACKEND_METAL_IOS:
-        case SG_BACKEND_METAL_SIMULATOR:
-            desc.vertex_func.source = (const char*)sgp_vs_source_metal_ios;
-            desc.fragment_func.source = (const char*)sgp_fs_source_metal_ios;
-            break;
-        case SG_BACKEND_WGPU:
-            desc.vertex_func.source = (const char*)sgp_vs_source_wgsl;
-            desc.fragment_func.source = (const char*)sgp_fs_source_wgsl;
-            break;
-        case SG_BACKEND_DUMMY:
-            desc.vertex_func.source = "";
-            desc.fragment_func.source = "";
             break;
         default: {
             // Unsupported backend

@@ -108,7 +108,8 @@ public:
 			glm::mat4 transform = glm::mat4(1.0f);
 			if (cube.rotation)
 			{
-				const float time = SDL_GetTicks() / 1000.0f;
+				const float time = std::chrono::duration<float>(
+					std::chrono::high_resolution_clock::now().time_since_epoch()).count();
 				glm::mat4 rxm = glm::rotate(time, glm::vec3(1.0f, 0.0f, 0.0f));
 				glm::mat4 rym = glm::rotate(2 * time, glm::vec3(0.0f, 1.0f, 0.0f));
 				transform = rxm * rym;
@@ -198,7 +199,20 @@ public:
 				_camera.SetRotationEnabled(!_camera.IsRotationEnabled());
 				break;
 			case Kinai::Key::F2:
-				_camera.SetRotationEnabled(!_camera.IsRotationEnabled());
+				cube.rotation = !cube.rotation;
+				break;
+			case Kinai::Key::F3:
+				Kinai::Application::Get().GetWindow().SetVSync(!Kinai::Application::Get().GetWindow().IsVSync());
+				break;
+			case Kinai::Key::F4:
+				cube.pipeline->SetFaceWinding(
+					cube.pipeline->GetFaceWinding() == Kinai::FaceWinding::CCW
+					? Kinai::FaceWinding::CW : Kinai::FaceWinding::CCW
+				);
+				break;
+			case Kinai::Key::F5:
+				cube.show_back_faces = !cube.show_back_faces;
+				Kinai::Renderer::SetPolygonMode(cube.mode);
 				break;
 			default:
 				break;
@@ -218,7 +232,7 @@ public:
 			}
 		)
 	{
-		PushLayer(Kinai::CreateRef<AppLayer>());
+		PushLayer<AppLayer>();
 	}
 
 	~App() = default;

@@ -1,7 +1,11 @@
 // See also:
 // sample-rectangle.c by edubart
 // https://github.com/edubart/sokol_gp/blob/master/samples/sample-rectangle.c
+// Make sure to compile Kinai with the Sokol backend
 
+#ifndef KINAI_SOKOL
+#define KINAI_SOKOL
+#endif
 #include <Kinai/EntryPoint.hpp>
 #include <Kinai/Kinai.hpp>
 #include "stb/stb_image.h"
@@ -84,6 +88,7 @@ public:
 			Kinai::Log::Critical("failed to make custom pipeline");
 			exit(1);
 		}
+		glDisable(GL_CULL_FACE);
 	}
 
 	~Layer()
@@ -93,15 +98,6 @@ public:
 		sg_destroy_pipeline(pip);
 		sg_destroy_shader(shd);
 		sgp_shutdown();
-	}
-
-	void	OnAttach()
-	{
-		glDisable(GL_CULL_FACE);
-	}
-
-	void	OnDetach()
-	{
 	}
 
 	void	OnUpdate(float delta)
@@ -198,7 +194,7 @@ public:
 	GameApplication()
 		: Kinai::Application(Kinai::ApplicationConfig{ .name = "Kinai Sokol GP", .enable_imgui = true })
 	{
-		PushLayer(new Layer());
+		PushLayer<Layer>();
 	}
 
 	~GameApplication() = default;

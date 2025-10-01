@@ -14,12 +14,13 @@ protected:
 public:
 	virtual ~Layer() = default;
 
-	virtual void	OnUpdate(float delta) { KN_NOTUSED(delta); };
-	virtual void	OnRender() {};
-	virtual void	OnImGuiRender() {}
-	virtual void	OnEvent(Event& event) { KN_NOTUSED(event); };
+	virtual void OnUpdate(float delta) { KN_NOTUSED(delta); };
+	virtual void OnRender() {};
+	virtual void OnImGuiRender() {}
+	virtual void OnEvent(Event& event) { KN_NOTUSED(event); };
 
-	const std::string&	GetName() const { return _debug_name; }
+	const std::string& GetName() const { return _debug_name; }
+	std::type_index GetType() const { return typeid(*this); }
 
 	template <std::derived_from<Layer> T, typename... Args>
 	void TransitionTo(Args&&... args)

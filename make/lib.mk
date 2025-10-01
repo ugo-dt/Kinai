@@ -23,9 +23,14 @@ __glm_path			= $(__default_lib_path)/glm
 
 # ImGui
 __imgui_path		= $(__default_lib_path)/imgui
-__imgui_backend		= opengl3
-__imgui_platform	= sdl3
-__imgui_src			= $(wildcard $(__imgui_path)/*.cpp) $(__imgui_path)/backends/imgui_impl_$(__imgui_backend).cpp  $(__imgui_path)/backends/imgui_impl_$(__imgui_platform).cpp
+
+ifdef __kinai_backend_headless
+  __imgui_src		= $(wildcard $(__imgui_path)/*.cpp)
+else
+  __imgui_backend	= opengl3
+  __imgui_platform	= sdl3
+  __imgui_src		= $(wildcard $(__imgui_path)/*.cpp) $(__imgui_path)/backends/imgui_impl_$(__imgui_backend).cpp  $(__imgui_path)/backends/imgui_impl_$(__imgui_platform).cpp
+endif
 __imgui_objs		= $(patsubst $(__imgui_path)/%.cpp,$(__lib_obj_dir)/imgui/%.o,$(__imgui_src))
 
 # SDL3

@@ -28,7 +28,6 @@ ImGuiLayer::ImGuiLayer()
 
 	io.DisplaySize = ImVec2(KN_DEFAULT_WINDOW_WIDTH, KN_DEFAULT_WINDOW_HEIGHT);
 	io.DeltaTime = 1.0f / 60.0f;
-	
 #endif
 }
 
