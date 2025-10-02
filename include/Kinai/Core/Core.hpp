@@ -47,6 +47,16 @@
 	#define KN_PROFILE_FUNC()
 #endif
 
+#if defined(KINAI_DEBUG)
+	#define KINAI_BUILD "Debug"
+#elif defined(KINAI_DEV)
+	#define KINAI_BUILD "Dev"
+#elif defined(KINAI_RELEASE)
+	#define KINAI_BUILD "Release"
+#else
+	#warning "Unknown build! Define KINAI_DEBUG, KINAI_DEV or KINAI_RELEASE"
+#endif
+
 #if defined(KINAI_DEBUG) || defined(KINAI_DEV)
 	#define KN_ENABLE_ASSERTS
 	#define KN_DEBUG_STATS

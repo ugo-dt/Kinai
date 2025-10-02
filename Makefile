@@ -7,7 +7,7 @@ endif
 
 include $(KINAI_PATH)/make/lib.mk
 
-KINAI = $(KINAI_PATH)/bin/$(target)/$(backend)/libKinai.a
+KINAI = $(KINAI_PATH)/bin/$(target)/$(backend)/$(build)/libKinai.a
 KINAI_SRC = $(wildcard					\
 	$(KINAI_PATH)/src/Core/*.cpp		\
 	$(KINAI_PATH)/src/Debug/*.cpp		\
@@ -46,7 +46,7 @@ all: $(KINAI)
 $(KINAI): $(LIB_OBJS) $(KINAI_OBJS)
 	$(SILENT)mkdir -p $(dir $@)
 	$(SILENT)$(AR) rcs $(KINAI) $(KINAI_OBJS) $(LIB_OBJS)
-	@echo "$(COLOR_GREEN)Successfully built $(notdir $(KINAI)) ($(backend) - $(target)) $(COLOR_DEFAULT)"
+	@echo "$(COLOR_GREEN)Successfully built $(notdir $(KINAI)) ($(backend) - $(target) - $(build)) $(COLOR_DEFAULT)"
 
 $(__kinai_objs_dir)/%.o: $(KINAI_PATH)/src/%.cpp
 	@echo "$(COLOR_GREY)Compiling $<...$(COLOR_DEFAULT)"
