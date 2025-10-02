@@ -54,13 +54,11 @@
 		#include <GL/gl.h>
 		#include <GL/glu.h>
 	#endif
-	#define KINAI_SHADER_SOURCE_VERSION(__name) __name##_glsl410
 #elif defined(KN_PLATFORM_WEB)
 	#include <emscripten/emscripten.h>
 	#include <emscripten/html5.h>
 	#include <emscripten/key_codes.h>
 	#include <GLES3/gl3.h>
-	#define KINAI_SHADER_SOURCE_VERSION(__name) __name##_glsl300es
 #endif
 
 #if defined(KINAI_OPENGL)
