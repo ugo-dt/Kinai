@@ -131,7 +131,7 @@ private:
 	Kinai::OrthographicCameraController	_camera;
 	Kinai::Ref<Kinai::Texture2D>		_cobblestone;
 	Kinai::Ref<Kinai::Texture2D>		_noise;
-	Kinai::Renderer2D::Shader2D			_shader;
+	// Kinai::Renderer2D::Shader2D			_shader;
 	glm::vec2							_scroll1;
 	glm::vec2							_scroll2;
 	glm::vec1							_oscillation;
@@ -144,9 +144,9 @@ public:
 	  	  _camera(Kinai::OrthographicCameraControllerConfig{
 		  	.enable_zoom = true,
 	  	  }),
-	  	  _cobblestone(Kinai::Texture2D::Create("lib/Kinai/examples/assets/cobblestone.png", GL_NEAREST, GL_NEAREST)),
-	  	  _noise(Kinai::Texture2D::Create("lib/Kinai/examples/assets/seamless_noise.png", GL_NEAREST, GL_NEAREST)),
-	  	  _shader(Kinai::Renderer2D::MakeShader("customquad", custom_shader_vs, custom_shader_fs)),
+	  	  _cobblestone(Kinai::Texture2D::Create("assets/cobblestone.png")),
+	  	  _noise(Kinai::Texture2D::Create("assets/seamless_noise.png")),
+	  	//   _shader(Kinai::Renderer2D::MakeShader("customquad", custom_shader_vs, custom_shader_fs)),
 		  _scroll1(0.05f),
 		  _scroll2(-0.05f),
 		  _oscillation(1.0f),
@@ -154,10 +154,8 @@ public:
 		  _top_color(1.0f),
 		  _alpha(1.f)
 	{
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		glEnable(GL_BLEND);
-		glDisable(GL_DEPTH_TEST);
 	}
+
 	~AppLayer() = default;
 
 	void	OnUpdate(float delta)
@@ -169,42 +167,49 @@ public:
 		Kinai::Renderer::SetClearColor(0.12f, 0.12f, 0.12f, 1.0f);
 		Kinai::Renderer::Clear();
 
-		Kinai::Renderer2D::BeginFrame(_camera.GetCamera());
-		Kinai::Renderer2D::DrawQuad(glm::vec2(0.f), glm::vec2(1.f), _cobblestone);
+		Kinai::Renderer::BeginPass();
+		Kinai::Painter::BeginPass();
 
-		Kinai::Renderer2D::SetQuadShader(_shader);
-		_shader.GetShader()->Bind();
-		_shader.GetShader()->SetFloat2("scroll1", glm::vec2(_scroll1.x));
-		_shader.GetShader()->SetFloat2("scroll2", glm::vec2(_scroll2.x));
-		_shader.GetShader()->SetFloat("oscillation_speed", _oscillation.x);
-		_shader.GetShader()->SetFloat4("tone_color", _tone_color);
-		_shader.GetShader()->SetFloat4("top_color", _top_color);
-		_shader.GetShader()->SetFloat("alpha", _alpha.x);
-		Kinai::Renderer2D::DrawQuad(glm::vec2(0.f), glm::vec2(2.f), _noise);
-		Kinai::Renderer2D::ResetQuadShader();
+		// Kinai::Renderer2D::BeginFrame(_camera.GetCamera());
+		// Kinai::Renderer2D::DrawQuad(glm::vec2(0.f), glm::vec2(1.f), _cobblestone);
 
-		Kinai::Renderer2D::EndFrame();
+		// Kinai::Renderer2D::SetQuadShader(_shader);
+		// _shader.GetShader()->Bind();
+		// _shader.GetShader()->SetFloat2("scroll1", glm::vec2(_scroll1.x));
+		// _shader.GetShader()->SetFloat2("scroll2", glm::vec2(_scroll2.x));
+		// _shader.GetShader()->SetFloat("oscillation_speed", _oscillation.x);
+		// _shader.GetShader()->SetFloat4("tone_color", _tone_color);
+		// _shader.GetShader()->SetFloat4("top_color", _top_color);
+		// _shader.GetShader()->SetFloat("alpha", _alpha.x);
+		// Kinai::Renderer2D::DrawQuad(glm::vec2(0.f), glm::vec2(2.f), _noise);
+		// Kinai::Renderer2D::ResetQuadShader();
+
+		Kinai::Painter::DrawQuad(glm::vec2(0.f), glm::vec2(1.f), glm::vec4(1.0f));
+		Kinai::Painter::SetImage(_cobblestone);
+
+		Kinai::Painter::EndPass();
+		Kinai::Renderer::EndPass();
 	}
 
 	void	OnImGuiRender()
 	{
 		Kinai::Application& app = Kinai::Application::Get();
 
-		static uint32_t total_draw_calls = 0;	
-
 		ImGui::Begin("Debug");
+		
+		// static uint32_t total_draw_calls = 0;	
 
-		auto& stats = Kinai::Renderer2D::GetStats();
-		ImGui::Text("Renderer2D Stats:");
-		ImGui::Text("Current Draw Calls: %d", stats.GetDrawCalls());
-		ImGui::Text("Total Draw Calls: %d", total_draw_calls);
-		total_draw_calls += stats.GetDrawCalls();
+		// auto& stats = Kinai::Painter::GetStats();
+		// ImGui::Text("Renderer2D Stats:");
+		// ImGui::Text("Current Draw Calls: %d", stats.GetDrawCalls());
+		// ImGui::Text("Total Draw Calls: %d", total_draw_calls);
+		// total_draw_calls += stats.GetDrawCalls();
 
-		ImGui::Text("Quads: %d", stats.GetQuadCount());
-		ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
-		ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
-		ImGui::Text("FPS: %zu", (size_t)app.GetFPS());
-		stats.Reset();
+		// ImGui::Text("Quads: %d", stats.GetQuadCount());
+		// ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
+		// ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
+		// ImGui::Text("FPS: %zu", (size_t)app.GetFPS());
+		// stats.Reset();
 
 		ImGui::SameLine();
 		if (ImGui::Button(app.GetWindow().IsVSync() ? "VSync ON" : "VSync OFF"))
@@ -245,7 +250,7 @@ class App : public Kinai::Application
 public:
 	App(): Kinai::Application(Kinai::ApplicationConfig{ .enable_imgui = true })
 	{
-		PushLayer(new AppLayer());
+		PushLayer<AppLayer>();
 	}
 
 	~App() = default;

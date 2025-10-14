@@ -1,6 +1,5 @@
 KINAI_PATH = ..
-backend = Headless
-target = web
+backend = OpenGL
 verbose = 1
 include $(KINAI_PATH)/Makefile
 

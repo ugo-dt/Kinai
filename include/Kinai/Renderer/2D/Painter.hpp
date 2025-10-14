@@ -1,108 +1,64 @@
 #pragma once
 
 #include "Kinai/Core/Core.hpp"
+#include "Kinai/Renderer/Pipeline.hpp"
+#include "Kinai/Renderer/Bindings.hpp"
 #include "Kinai/Renderer/Texture.hpp"
+#include "Kinai/Renderer/Buffer/VertexBuffer.hpp"
 
-namespace Kinai::Painter
+namespace Kinai
 {
 
-enum Constants
+struct QuadVertex
 {
-	BatchOptimizerDepth = 8,
-	UniformContentSlots = 8,
-	TextureSlots = 4,
-	MaxVertices = 65536,
-	MaxCommands = 16384,
-	MaxMoveVertices = 96,
-	MaxStackDepth = 64,
+	glm::vec4 position;
+	glm::vec4 color;
 };
 
-enum BlendMode
+class Painter
 {
-	None = 0,
-	Blend,
-	BlendPremultiplied,
-	Add,
-	AddPremultiplied,
-	Mod,
-	Mul,
+public:
+	static void Init();
+	static void Shutdown();
+
+	static void BeginPass();
+	static void EndPass();
+
+	static void SetImage(const Ref<Texture2D>& texture) { _current_texture = texture; }
+
+	static void DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color);
+	static void DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color);
+	static void DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color = glm::vec4(1.0f));
+	static void DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color = glm::vec4(1.0f));
+	static void DrawQuad(const glm::mat4& transform);
+	static void DrawQuad(const glm::mat4& transform, const glm::vec4& color);
+	static void DrawQuad(const glm::mat4& transform, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color = glm::vec4(1.0f));
+
+private:
+	static constexpr uint32_t MAX_QUADS = 20000;
+	static constexpr uint32_t MAX_VERTICES = MAX_QUADS * 4;
+	static constexpr uint32_t MAX_INDICES = MAX_QUADS * 6;
+	static constexpr uint32_t MAX_TEXTURE_SLOTS = 31;
+
+private:
+	static void MakePipelines();
+	static void Flush();
+	static void StartBatch();
+	static void NextBatch();
+
+private:
+	static Ref<VertexArray> _vao;
+	static Ref<Shader> _shader;
+	static Ref<Texture2D> _white_texture, _current_texture;
+
+	static struct QuadPipeline {
+		Ref<Pipeline> pipeline;
+		Ref<Bindings> bindings;
+		BlendState blend_state;
+		uint32_t index;
+		QuadVertex* vertex_buffer_base = nullptr;
+		QuadVertex* vertex_buffer_ptr = nullptr;
+	} _quad;
 };
 
-enum VertexAttributeLocation
-{
-	AttrCoord = 0,
-	AttrColor = 1
-};
-
-enum UniformSlot
-{
-	Vertex = 0,
-	Fragment = 1
-};
-
-struct Size
-{
-	int w, h;
-};
-
-struct Rect
-{
-	float x, y, w, h;
-};
-
-struct IRect
-{
-	int x, y, w, h;
-};
-
-struct TexturedRect
-{
-	Rect dst, src;
-};
-
-using Point = glm::vec2;
-
-struct Line
-{
-	Point a, b;
-};
-
-struct Triangle
-{
-	Point a, b, c;
-};
-
-using Color = glm::vec4;
-using ColorUB4 = glm::u8vec4;
-
-struct Vertex
-{
-	Point position;
-	Point texcoord;
-	ColorUB4 color;
-};
-
-struct UniformData
-{
-	float floats[UniformContentSlots];
-	uint8_t bytes[UniformContentSlots * sizeof(float)];
-};
-
-struct Uniform
-{
-	uint32_t vs_size;
-	uint32_t fs_size;
-	UniformData data;
-};
-
-struct TexturesUniform
-{
-	uint32_t count;
-	Ref<Texture> images[TextureSlots];
-};
-
-void	Init();
-void	Shutdown();
-
-} // Kinai::Painter
-
+} // Kinai

@@ -68,7 +68,7 @@ enum class BlendOp
 
 struct BlendState
 {
-	bool enabled;
+	bool enabled = false;
     BlendFactor src_factor_rgb = BlendFactor::One;
     BlendFactor dst_factor_rgb = BlendFactor::Zero;
     BlendOp op_rgb = BlendOp::Add;
@@ -101,6 +101,8 @@ public:
 	void SetPrimitiveType(const PrimitiveType& primitive_type) { _primitive_type = primitive_type; }
 	void SetCullMode(const CullMode& cull_mode) { _cull_mode = cull_mode; }
 	void SetFaceWinding(const FaceWinding& face_winding) { _face_winding = face_winding; }
+	void SetDepthState(const DepthState& depth_state) { _depth_state = depth_state; }
+	void SetBlendState(const BlendState& blend_state) { _blend_state = blend_state; }
 	void SetLabel(const std::string& label) { _label = label; }
 
 	Ref<VertexArray> GetVertexArray() const { return _vao; }
