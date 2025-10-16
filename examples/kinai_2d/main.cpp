@@ -82,7 +82,7 @@ const char *custom_shader_fs = R"(
 
 	vec4 FRAGCOORD; // gl_FragCoord
 	vec2 SCREEN_PIXEL_SIZE; // TODO
-	
+
 	layout (location = 0) out vec4 out_COLOR;
 
 	uniform vec2 scroll1;
@@ -114,7 +114,7 @@ const char *custom_shader_fs = R"(
 		COLOR = v_COLOR;
 		TEX_INDEX = v_TEX_INDEX;
 		FRAGCOORD = gl_FragCoord;
-		// SCREEN_PIXEL_SIZE = 
+		// SCREEN_PIXEL_SIZE =
 		SCREEN_UV = gl_FragCoord.xy / VIEWPORT;
 
 		// Custom shader code
@@ -184,9 +184,10 @@ public:
 		// Kinai::Renderer2D::DrawQuad(glm::vec2(0.f), glm::vec2(2.f), _noise);
 		// Kinai::Renderer2D::ResetQuadShader();
 
-		Kinai::Painter::DrawQuad(glm::vec2(0.f), glm::vec2(1.f), glm::vec4(1.0f));
-		Kinai::Painter::SetImage(_cobblestone);
-
+		Kinai::Painter::SetImage(0, _cobblestone);
+		Kinai::Painter::DrawQuad(glm::vec2(0.5f), glm::vec2(0.5f), glm::vec4(1.0f));
+		Kinai::Painter::ResetImage();
+		// Kinai::Painter::DrawQuad(glm::vec2(-0.25f, 0.25f), glm::vec2(0.5f), glm::vec4(1.0f));
 		Kinai::Painter::EndPass();
 		Kinai::Renderer::EndPass();
 	}
@@ -196,8 +197,8 @@ public:
 		Kinai::Application& app = Kinai::Application::Get();
 
 		ImGui::Begin("Debug");
-		
-		// static uint32_t total_draw_calls = 0;	
+
+		// static uint32_t total_draw_calls = 0;
 
 		// auto& stats = Kinai::Painter::GetStats();
 		// ImGui::Text("Renderer2D Stats:");

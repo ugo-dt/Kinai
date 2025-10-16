@@ -8,7 +8,8 @@ namespace Kinai
 Ref<VertexArray> Painter::_vao = nullptr;
 Ref<Shader> Painter::_shader = nullptr;
 Ref<Texture2D> Painter::_white_texture = nullptr;
-Ref<Texture2D> Painter::_current_texture = nullptr;
+std::vector<Ref<Texture2D>> Painter::_texture_slots;
+OrthographicCameraController Painter::_camera;
 Painter::QuadPipeline Painter::_quad;
 
 void	Painter::Init()
@@ -24,10 +25,12 @@ void	Painter::Init()
 		.format = ImageFormat::RGBA8,
 		.label = "Kinai Painter - White Texture"
 	});
-	uint32_t pixels[4];
-	std::memset(pixels, 0xff, sizeof(pixels));
+	uint32_t pixels[4] = { 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF };
 	_white_texture->SetData(pixels, sizeof(pixels));
-	_current_texture = nullptr;
+
+	_texture_slots.reserve(Painter::MAX_TEXTURE_SLOTS);
+	for (uint32_t i = 0; i < Painter::MAX_TEXTURE_SLOTS; i++)
+		_texture_slots.push_back(_white_texture);
 
 	MakePipelines();
 }
@@ -37,6 +40,7 @@ void	Painter::Shutdown()
 	KN_PROFILE_FUNC();
 
 	delete[] _quad.vertex_buffer_base;
+	_quad.vertex_buffer_base = nullptr;
 }
 
 void	Painter::BeginPass()
@@ -65,15 +69,18 @@ void	Painter::Flush()
 
 		Renderer::ApplyPipeline(_quad.pipeline);
 		Renderer::ApplyBindings(_quad.bindings);
+		Renderer::ApplyUniforms<KinaiPainter_vs_params_t>({
+			.u_ViewProjection = _camera.GetCamera().GetViewProjectionMatrix(),
+			.u_Transform = glm::mat4(1.0f),
+		});
 
 		_shader->Bind();
-
-		if (_current_texture)
-			_current_texture->Bind(0);
-		else
-			_white_texture->Bind(0);
+		// for (uint32_t i = 0; i < Painter::MAX_TEXTURE_SLOTS; i++)
+		// 	if (_texture_slots[i])
+		// 		_texture_slots[i]->Bind(i);
+		_texture_slots[0]->Bind(0);
 		Renderer::Submit();
-		_quad.vertex_buffer_ptr = 0;
+		_quad.vertex_buffer_ptr = _quad.vertex_buffer_base;
 	}
 }
 
@@ -145,6 +152,7 @@ void	Painter::DrawQuad(const glm::vec3& position, const glm::vec2& size, const g
 
 	glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
 		* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
+
 	DrawQuad(transform, color);
 }
 
@@ -166,28 +174,7 @@ void	Painter::DrawQuad(const glm::vec3& position, const glm::vec2& size, const g
 
 void	Painter::DrawQuad(const glm::mat4& transform, const glm::vec4& color)
 {
-	KN_PROFILE_FUNC();
-	KN_ASSERT(_quad.vertex_buffer_ptr);
-
-	constexpr size_t quadVertexCount = 4;
-	constexpr glm::vec4 quad_vertex_positions[4] = {
-		glm::vec4(-0.5f, -0.5f, 0.0f, 0.0f),
-		glm::vec4( 0.5f, -0.5f, 1.0f, 0.0f),
-		glm::vec4( 0.5f,  0.5f, 1.0f, 1.0f),
-		glm::vec4(-0.5f,  0.5f, 0.0f, 1.0f),
-	};
-	
-	if (_quad.index >= Painter::MAX_INDICES)
-		NextBatch();
-
-	for (size_t i = 0; i < quadVertexCount; i++)
-	{
-		_quad.vertex_buffer_ptr->position = transform * quad_vertex_positions[i];
-		_quad.vertex_buffer_ptr->color = color;
-		_quad.vertex_buffer_ptr++;
-	}
-
-	_quad.index += 6;
+	DrawQuad(transform, glm::vec2(0.f), glm::vec2(1.f), color);
 }
 
 void	Painter::DrawQuad(const glm::mat4& transform)
@@ -203,21 +190,33 @@ void	Painter::DrawQuad(const glm::mat4& transform, const glm::vec2& uvStart, con
 
 	constexpr size_t quadVertexCount = 4;
 	const glm::vec4 quad_vertex_positions[4] = {
-		glm::vec4(-0.5f, -0.5f, uvStart.x, uvStart.y),
-		glm::vec4( 0.5f, -0.5f, uvEnd.x, uvStart.y),
-		glm::vec4( 0.5f,  0.5f, uvEnd.x, uvEnd.y),
-		glm::vec4(-0.5f,  0.5f, uvStart.x, uvEnd.y),
+		glm::vec4(-0.5f, -0.5f, 0.0f, 1.0f),
+		glm::vec4( 0.5f, -0.5f, 0.0f, 1.0f),
+		glm::vec4( 0.5f,  0.5f, 0.0f, 1.0f),
+		glm::vec4(-0.5f,  0.5f, 0.0f, 1.0f),
+	};
+	const glm::vec2 textureCoords[] = {
+		{ uvStart.x, uvStart.y },
+		{ uvEnd.x, uvStart.y },
+		{ uvEnd.x, uvEnd.y },
+		{ uvStart.x, uvEnd.y }
 	};
 
-	if (_quad.index >= MAX_INDICES) 
+	if (_quad.index >= Painter::MAX_INDICES) 
 		NextBatch();
 
 	for (size_t i = 0; i < quadVertexCount; i++)
 	{
-		_quad.vertex_buffer_ptr->position = transform * quad_vertex_positions[i];
+		const glm::vec2 pos = transform * quad_vertex_positions[i];
+		const glm::vec2& uv = textureCoords[i];
+
+		_quad.vertex_buffer_ptr->position = glm::vec4(pos.x, pos.y, uv.x, uv.y);
 		_quad.vertex_buffer_ptr->color = tint_color;
 		_quad.vertex_buffer_ptr++;
 	}
+
+	if (_quad.index + 6 > MAX_INDICES)
+		NextBatch();
 
 	_quad.index += 6;
 }

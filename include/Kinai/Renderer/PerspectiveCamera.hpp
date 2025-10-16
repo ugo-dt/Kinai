@@ -30,7 +30,7 @@ public:
 	const glm::vec3& GetPosition()      const { return _position; }
 	float GetPitch()                    const { return _pitch; }
 	float GetYaw()                      const { return _yaw; }
-	
+
 	bool	OnMouseWheel(MouseWheelEvent& e);
 	bool	OnMouseMotion(MouseMotionEvent& event);
 

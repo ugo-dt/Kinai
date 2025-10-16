@@ -5,6 +5,7 @@
 #include "Kinai/Renderer/Bindings.hpp"
 #include "Kinai/Renderer/Texture.hpp"
 #include "Kinai/Renderer/Buffer/VertexBuffer.hpp"
+#include "Kinai/Renderer/OrthographicCamera.hpp"
 
 namespace Kinai
 {
@@ -24,7 +25,16 @@ public:
 	static void BeginPass();
 	static void EndPass();
 
-	static void SetImage(const Ref<Texture2D>& texture) { _current_texture = texture; }
+	static void SetImage(int channel, const Ref<Texture2D>& texture)
+	{
+		NextBatch(); //fixme
+		_texture_slots[channel] = texture;
+	}
+	static void ResetImage(int channel = 0)
+	{
+		NextBatch(); //fixme
+		_texture_slots[channel] = _white_texture;
+	}
 
 	static void DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color);
 	static void DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color);
@@ -38,7 +48,7 @@ private:
 	static constexpr uint32_t MAX_QUADS = 20000;
 	static constexpr uint32_t MAX_VERTICES = MAX_QUADS * 4;
 	static constexpr uint32_t MAX_INDICES = MAX_QUADS * 6;
-	static constexpr uint32_t MAX_TEXTURE_SLOTS = 31;
+	static constexpr uint32_t MAX_TEXTURE_SLOTS = 4;
 
 private:
 	static void MakePipelines();
@@ -49,7 +59,9 @@ private:
 private:
 	static Ref<VertexArray> _vao;
 	static Ref<Shader> _shader;
-	static Ref<Texture2D> _white_texture, _current_texture;
+	static Ref<Texture2D> _white_texture;
+	static std::vector<Ref<Texture2D>> _texture_slots;
+	static OrthographicCameraController _camera;
 
 	static struct QuadPipeline {
 		Ref<Pipeline> pipeline;

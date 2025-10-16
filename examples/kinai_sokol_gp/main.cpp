@@ -143,6 +143,15 @@ public:
 		sgp_draw_filled_rects(&rect, 1);
 
 		sgp_reset_image(IMG_quad_iTexChannel0);
+
+		sgp_rect rect2 = {
+			.x = 0.75f,
+			.y = 0.75f,
+			.w = 0.5f,
+			.h = 0.5f,
+		};
+		sgp_draw_filled_rects(&rect2, 1);
+
 		sgp_reset_sampler(SMP_quad_iSmpChannel0);
 		sgp_reset_pipeline();
 
