@@ -15,6 +15,7 @@ enum class PrimitiveType
 	LineStrip,
 	Triangles,
 	TriangleStrip,
+	_PrimitiveType_NUM
 };
 
 enum class CullMode
