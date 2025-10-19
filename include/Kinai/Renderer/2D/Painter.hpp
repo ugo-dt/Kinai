@@ -33,7 +33,8 @@ void EndPass();
 
 void SetImage(int channel, const Ref<Texture2D>& texture);
 void ResetImage(int channel = 0);
-void SetShader(const Ref<Shader>& shader);
+void SetBlendMode(BlendMode mode);
+void ResetBlendMode();
 
 void DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color);
 void DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color);

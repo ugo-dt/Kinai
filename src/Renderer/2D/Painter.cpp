@@ -13,6 +13,7 @@ void Flush();
 void StartBatch();
 void NextBatch();
 Ref<Pipeline>&	LookupPipeline(PrimitiveType type, BlendMode mode);
+static BlendState BlendModeToBlendState(BlendMode blend_mode);
 
 constexpr uint32_t MAX_QUADS = 20000;
 constexpr uint32_t MAX_VERTICES = MAX_QUADS * 4;
@@ -111,12 +112,27 @@ void	ResetImage(int channel)
 	context.state.texture_slots[channel] = context.white_texture;
 }
 
+void	SetBlendMode(BlendMode mode)
+{
+	Painter::NextBatch(); //fixme
+	context.state.mode = mode;
+}
+
+void	ResetBlendMode()
+{
+	Painter::NextBatch(); //fixme
+	context.state.mode = BlendMode::None;
+}
+
 void	Flush()
 {
 	if (context.state.index)
 	{
 		uint32_t dataSize = (uint32_t)((uint8_t*)context.state.vertex_buffer_ptr - (uint8_t*)context.state.vertex_buffer_base);
 		context.state.bindings->GetVertexBuffer()->SetData(context.state.vertex_buffer_base, dataSize);
+
+		//fixme
+		context.state.pipeline->SetBlendState(BlendModeToBlendState(context.state.mode));
 
 		Renderer::ApplyPipeline(context.state.pipeline);
 		Renderer::ApplyBindings(context.state.bindings);
