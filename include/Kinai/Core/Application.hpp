@@ -9,7 +9,6 @@
 #include "Kinai/Events/ApplicationEvent.hpp"
 #include "Kinai/Events/KeyEvent.hpp"
 #include "Kinai/Events/MouseEvent.hpp"
-#include "Kinai/ImGui/ImGuiLayer.hpp"
 
 extern bool	g_KinaiApplicationRunning;
 
@@ -23,7 +22,6 @@ struct ApplicationConfig
 	uint32_t window_height = KN_DEFAULT_WINDOW_HEIGHT;
 	bool fullscreen = false;
 	bool no_vsync = false;
-	bool enable_imgui = false;
 };
 
 struct Time
@@ -83,7 +81,6 @@ private:
 	Scope<Window> _window;
 	ApplicationConfig _config;
 	Time _time;
-	ImGuiLayer* _imgui_layer;
 public:
 	std::vector<std::unique_ptr<Layer>> _layerStack;
 private:

@@ -1,5 +1,5 @@
 #include "Kinai/Platform/OpenGL/OpenGLTexture.hpp"
-#include "stb/stb_image.h"
+#include "Kinai/Core/BMP.hpp"
 
 namespace Kinai
 {
@@ -12,6 +12,8 @@ static GLenum ImageFormatToGLDataFormat(ImageFormat format)
 		case ImageFormat::RGB8:		return GL_RGB;
 		case ImageFormat::RGBA8:	return GL_RGBA;
 		case ImageFormat::RGBA32F:	return GL_RGBA;
+		case ImageFormat::BGR:		return GL_BGR;
+		case ImageFormat::BGRA:		return GL_BGRA;
 #if KINAI_OPENGL_VERSION_MAJOR >= 4
 		case ImageFormat::SRGB_ALPHA: return GL_SRGB_ALPHA;
 #endif
@@ -119,10 +121,12 @@ OpenGLTexture2D::OpenGLTexture2D(const std::string& path, const TextureConfig& c
 {
 	KN_PROFILE_FUNC();
 
-	int width, height, channels;
-	stbi_set_flip_vertically_on_load(1);
+	BMP bmp(path.c_str());
+	int width = bmp.width();
+	int height = bmp.height();
+	int channels = (bmp.format() == ImageFormat::BGRA) ? 4 : 3;
+	const uint8_t* data = bmp.data();
 
-	stbi_uc* data = stbi_load(path.c_str(), &width, &height, &channels, 0);
 	if (data)
 	{
 		Log::Trace("Loaded texture '{}'", path);
@@ -131,22 +135,16 @@ OpenGLTexture2D::OpenGLTexture2D(const std::string& path, const TextureConfig& c
 		_width = width;
 		_height = height;
 
-		GLenum internalFormat = 0, dataFormat = 0;
+		GLenum internalFormat = GL_NONE;
 		if (channels == 4)
-		{
 			internalFormat = GL_RGBA8;
-			dataFormat = GL_RGBA;
-		}
 		else if (channels == 3)
-		{
 			internalFormat = GL_RGB8;
-			dataFormat = GL_RGB;
-		}
 
 		_internal_format = internalFormat;
-		_data_format = dataFormat;
+		_data_format = ImageFormatToGLDataFormat(bmp.format());
 
-		KN_ASSERT(internalFormat & dataFormat, "format not supported!");
+		KN_ASSERT(internalFormat != GL_NONE, "format not supported!");
 
 	#if KINAI_OPENGL_VERSION_MAJOR >= 4
 		glCreateTextures(GL_TEXTURE_2D, 1, &_renderer_id);
@@ -167,10 +165,19 @@ OpenGLTexture2D::OpenGLTexture2D(const std::string& path, const TextureConfig& c
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, WrapToGLWrap(_config.sampler_config.wrap_s));
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, WrapToGLWrap(_config.sampler_config.wrap_t));
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_R, WrapToGLWrap(_config.sampler_config.wrap_r));
-		glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, _width, _height, 0, dataFormat, GL_UNSIGNED_BYTE, data);
+		glTexImage2D(
+			GL_TEXTURE_2D,
+			0,
+			internalFormat,
+			_width,
+			_height,
+			0,
+			_data_format,
+			GL_UNSIGNED_BYTE,
+			data
+		);
 		glGenerateMipmap(GL_TEXTURE_2D);
 	#endif
-		stbi_image_free(data);
 	}
 	_KN_GL_CHECK_ERROR();
 }
@@ -232,12 +239,13 @@ OpenGLTextureCubeMap::OpenGLTextureCubeMap(const std::array<std::string, 6> &pat
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_CUBE_MAP, _renderer_id);
 
-	stbi_set_flip_vertically_on_load(0);
-
 	for (size_t i = 0; i < paths.size(); i++)
 	{
-		int width, height, channels;
-		stbi_uc* data = stbi_load(paths[i].c_str(), &width, &height, &channels, 0);
+		BMP bmp(paths[i].c_str());
+		int width = bmp.width();
+		int height = bmp.height();
+		int channels = (bmp.format() == ImageFormat::BGRA) ? 4 : 3;
+		const uint8_t* data = bmp.data();
 
 		if (data)
 		{
@@ -268,7 +276,6 @@ OpenGLTextureCubeMap::OpenGLTextureCubeMap(const std::array<std::string, 6> &pat
 			KN_ASSERT(internalFormat & dataFormat, "format not supported!");
 
 			glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, internalFormat, width, height, 0, dataFormat, GL_UNSIGNED_BYTE, data);
-			stbi_image_free(data);
 		}
 		else
 			Log::Error("Failed to load cubemap texture at path: {}", paths[i]);

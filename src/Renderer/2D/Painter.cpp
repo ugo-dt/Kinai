@@ -22,14 +22,14 @@ constexpr uint32_t MAX_TEXTURE_SLOTS = 4;
 
 struct QuadVertex
 {
-	glm::vec4 position;
-	glm::vec4 color;
+	math::vec4 position;
+	math::vec4 color;
 };
 
 struct State
 {
 	OrthographicCameraController camera;
-	glm::vec4 color;
+	math::vec4 color;
 	BlendMode mode = BlendMode::None;
 	Ref<Pipeline> pipeline = nullptr;
 	std::vector<Ref<Texture2D>> texture_slots;
@@ -87,7 +87,7 @@ void	BeginPass()
 {
 	KN_PROFILE_FUNC();
 
-	glm::ivec2 size = Application::Get().GetWindow().GetSize();
+	math::ivec2 size = Application::Get().GetWindow().GetSize();
 	Renderer::SetViewport(0, 0, size.x, size.y);
 
 	StartBatch();
@@ -138,7 +138,7 @@ void	Flush()
 		Renderer::ApplyBindings(context.state.bindings);
 		Renderer::ApplyUniforms<KinaiShader_Painter_vs_params_t>({
 			.u_ViewProjection = context.state.camera.GetCamera().GetViewProjectionMatrix(),
-			.u_Transform = glm::mat4(1.0f),
+			.u_Transform = math::mat4(1.0f),
 		});
 
 		context.shader->Bind();
@@ -304,18 +304,18 @@ void	MakePipelines()
 	delete[] indices;
 }
 
-void	DrawQuad(const glm::mat4& transform, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color)
+void	DrawQuad(const math::mat4& transform, const math::vec2& uvStart, const math::vec2& uvEnd, const math::vec4& tint_color)
 {
 	KN_PROFILE_FUNC();
 
 	constexpr size_t quadVertexCount = 4;
-	const glm::vec4 quad_vertex_positions[4] = {
-		glm::vec4(-0.5f, -0.5f, 0.0f, 1.0f),
-		glm::vec4( 0.5f, -0.5f, 0.0f, 1.0f),
-		glm::vec4( 0.5f,  0.5f, 0.0f, 1.0f),
-		glm::vec4(-0.5f,  0.5f, 0.0f, 1.0f),
+	const math::vec4 quad_vertex_positions[4] = {
+		math::vec4(-0.5f, -0.5f, 0.0f, 1.0f),
+		math::vec4( 0.5f, -0.5f, 0.0f, 1.0f),
+		math::vec4( 0.5f,  0.5f, 0.0f, 1.0f),
+		math::vec4(-0.5f,  0.5f, 0.0f, 1.0f),
 	};
-	const glm::vec2 textureCoords[] = {
+	const math::vec2 textureCoords[] = {
 		{ uvStart.x, uvStart.y },
 		{ uvEnd.x, uvStart.y },
 		{ uvEnd.x, uvEnd.y },
@@ -327,10 +327,10 @@ void	DrawQuad(const glm::mat4& transform, const glm::vec2& uvStart, const glm::v
 
 	for (size_t i = 0; i < quadVertexCount; i++)
 	{
-		const glm::vec2 pos = transform * quad_vertex_positions[i];
-		const glm::vec2& uv = textureCoords[i];
+		const math::vec2 pos = math::vec2(transform * quad_vertex_positions[i]);
+		const math::vec2& uv = textureCoords[i];
 
-		context.state.vertex_buffer_ptr->position = glm::vec4(pos.x, pos.y, uv.x, uv.y);
+		context.state.vertex_buffer_ptr->position = math::vec4(pos.x, pos.y, uv.x, uv.y);
 		context.state.vertex_buffer_ptr->color = tint_color;
 		context.state.vertex_buffer_ptr++;
 	}

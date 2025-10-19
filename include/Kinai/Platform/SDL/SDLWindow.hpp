@@ -5,7 +5,6 @@
 #include "Kinai/Events/ApplicationEvent.hpp"
 #include "Kinai/Events/MouseEvent.hpp"
 #include "Kinai/Events/KeyEvent.hpp"
-#include "Kinai/Sokol/Sokol.hpp"
 
 namespace Kinai
 {
@@ -19,7 +18,7 @@ public:
 	void OnUpdate() override;
 
 	void* GetNativeWindow() const override;
-	glm::ivec2 GetSize() const override;
+	math::ivec2 GetSize() const override;
 	uint32_t GetWidth() const override;
 	uint32_t GetHeight() const override;
 	bool GetRelativeMouseMode() const override;

@@ -2,7 +2,6 @@
 
 #include "Kinai/Core/Core.hpp"
 #include "Kinai/Events/Event.hpp"
-#include "Kinai/Sokol/Sokol.hpp"
 
 static constexpr uint32_t KN_DEFAULT_WINDOW_WIDTH = 1280;
 static constexpr uint32_t KN_DEFAULT_WINDOW_HEIGHT = 720;
@@ -44,7 +43,7 @@ public:
 	virtual void OnUpdate() = 0;
 
 	virtual void* GetNativeWindow() const = 0;
-	virtual glm::ivec2 GetSize() const = 0;
+	virtual math::ivec2 GetSize() const = 0;
 	virtual uint32_t GetWidth() const = 0;
 	virtual uint32_t GetHeight() const = 0;
 	virtual bool GetRelativeMouseMode() const = 0;

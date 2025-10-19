@@ -132,22 +132,22 @@ class AppLayer : public Kinai::Layer
 private:
 	Kinai::OrthographicCameraController	_camera;
 	Kinai::Ref<Kinai::Texture2D>		_cobblestone;
-	Kinai::Ref<Kinai::Texture2D>		_noise;
+	// Kinai::Ref<Kinai::Texture2D>		_noise;
 	// Kinai::Renderer2D::Shader2D			_shader;
-	glm::vec2							_scroll1;
-	glm::vec2							_scroll2;
-	glm::vec1							_oscillation;
-	glm::vec4							_tone_color;
-	glm::vec4							_top_color;
-	glm::vec1							_alpha;
+	Kinai::math::vec2 _scroll1;
+	Kinai::math::vec2 _scroll2;
+	Kinai::math::vec1 _oscillation;
+	Kinai::math::vec4 _tone_color;
+	Kinai::math::vec4 _top_color;
+	Kinai::math::vec1 _alpha;
 public:
 	AppLayer()
 		: Kinai::Layer("App Layer"),
 	  	  _camera(Kinai::OrthographicCameraControllerConfig{
 		  	.enable_zoom = true,
 	  	  }),
-	  	  _cobblestone(Kinai::Texture2D::Create("assets/cobblestone.png")),
-	  	  _noise(Kinai::Texture2D::Create("assets/seamless_noise.png")),
+	  	  _cobblestone(Kinai::Texture2D::Create("assets/brick.bmp")),
+	  	//   _noise(Kinai::Texture2D::Create("assets/seamless_noise.png")),
 	  	//   _shader(Kinai::Renderer2D::MakeShader("customquad", custom_shader_vs, custom_shader_fs)),
 		  _scroll1(0.05f),
 		  _scroll2(-0.05f),
@@ -179,17 +179,17 @@ public:
 		// Kinai::Painter::BeginPass();
 
 		// Kinai::Renderer2D::BeginFrame(_camera.GetCamera());
-		// Kinai::Renderer2D::DrawQuad(glm::vec2(0.f), glm::vec2(1.f), _cobblestone);
+		// Kinai::Renderer2D::DrawQuad(math::vec2(0.f), math::vec2(1.f), _cobblestone);
 
 		// Kinai::Renderer2D::SetQuadShader(_shader);
 		// _shader.GetShader()->Bind();
-		// _shader.GetShader()->SetFloat2("scroll1", glm::vec2(_scroll1.x));
-		// _shader.GetShader()->SetFloat2("scroll2", glm::vec2(_scroll2.x));
+		// _shader.GetShader()->SetFloat2("scroll1", math::vec2(_scroll1.x));
+		// _shader.GetShader()->SetFloat2("scroll2", math::vec2(_scroll2.x));
 		// _shader.GetShader()->SetFloat("oscillation_speed", _oscillation.x);
 		// _shader.GetShader()->SetFloat4("tone_color", _tone_color);
 		// _shader.GetShader()->SetFloat4("top_color", _top_color);
 		// _shader.GetShader()->SetFloat("alpha", _alpha.x);
-		// Kinai::Renderer2D::DrawQuad(glm::vec2(0.f), glm::vec2(2.f), _noise);
+		// Kinai::Renderer2D::DrawQuad(math::vec2(0.f), math::vec2(2.f), _noise);
 		// Kinai::Renderer2D::ResetQuadShader();
 
 		// Kinai::Painter::SetImage(0, _cobblestone);
@@ -284,7 +284,7 @@ public:
 class App : public Kinai::Application
 {
 public:
-	App(): Kinai::Application(Kinai::ApplicationConfig{ .enable_imgui = true })
+	App(): Kinai::Application(Kinai::ApplicationConfig())
 	{
 		PushLayer<AppLayer>();
 	}

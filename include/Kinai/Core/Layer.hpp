@@ -16,7 +16,6 @@ public:
 
 	virtual void OnUpdate(float delta) { KN_NOTUSED(delta); };
 	virtual void OnRender() {};
-	virtual void OnImGuiRender() {}
 	virtual void OnEvent(Event& event) { KN_NOTUSED(event); };
 
 	const std::string& GetName() const { return _debug_name; }

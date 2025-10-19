@@ -3,7 +3,7 @@
 namespace Kinai
 {
 
-// void	Renderer2D::DrawCircle(const glm::mat4& transform, const glm::vec4& color, float thickness /*= 1.0f*/, float fade /*= 0.005f*/)
+// void	Renderer2D::DrawCircle(const math::mat4& transform, const math::vec4& color, float thickness /*= 1.0f*/, float fade /*= 0.005f*/)
 // {
 // 	KN_PROFILE_FUNC();
 

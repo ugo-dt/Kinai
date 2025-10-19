@@ -1,5 +1,4 @@
 #include "Kinai/Platform/Headless/HeadlessTexture.hpp"
-#include "stb/stb_image.h"
 
 namespace Kinai
 {

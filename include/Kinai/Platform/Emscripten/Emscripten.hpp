@@ -5,7 +5,6 @@
 #include "Kinai/Events/ApplicationEvent.hpp"
 #include "Kinai/Events/KeyEvent.hpp"
 #include "Kinai/Events/MouseEvent.hpp"
-#include "Kinai/ImGui/ImGuiLayer.hpp"
 #include "Kinai/Core/KeyCode.hpp"
 #include "Kinai/Core/MouseButton.hpp"
 
@@ -31,7 +30,7 @@ public:
 	void OnUpdate() override;
 
 	void* GetNativeWindow() const override;
-	glm::ivec2 GetSize() const override;
+	math::ivec2 GetSize() const override;
 	uint32_t GetWidth() const override;
 	uint32_t GetHeight() const override;
 
@@ -56,7 +55,7 @@ public:
 
 	static bool IsKeyPressed(KeyCode key) { return _keys[key]; }
 	static bool IsMouseButtonPressed(MouseButton button) { return _mouse.buttons[button]; }
-	static glm::vec2 GetMousePosition() { return _mouse.pos; }
+	static math::vec2 GetMousePosition() { return _mouse.pos; }
 
 public:
 	static EmWindow& Get() { return *_instance; }
@@ -84,11 +83,10 @@ private:
 	static struct EmMouse
 	{
 		bool buttons[Mouse::MouseButton_NUM];
-		glm::vec2 pos;
+		math::vec2 pos;
 	}_mouse;
 };
 
-ImGuiKey	Em_KeyEventToImGuiKey(const EmscriptenKeyboardEvent* e);
 KeyCode		Em_KeyEventToKeyCode(const EmscriptenKeyboardEvent* e);
 
 } // Kinai

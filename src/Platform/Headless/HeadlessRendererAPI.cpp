@@ -19,7 +19,7 @@ void	HeadlessRendererAPI::SetViewport(uint32_t x, uint32_t y, uint32_t width, ui
 	KN_NOTUSED(height);
 }
 
-void	HeadlessRendererAPI::SetClearColor(const glm::vec4& color)
+void	HeadlessRendererAPI::SetClearColor(const math::vec4& color)
 {
 	KN_PROFILE_FUNC();
 

@@ -1,5 +1,4 @@
 #include "Kinai/Platform/SDL/SDLWindow.hpp"
-#include "Kinai/ImGui/ImGuiLayer.hpp"
 #include "Kinai/Core/Application.hpp"
 
 namespace Kinai
@@ -210,8 +209,6 @@ void	SDLWindow::OnUpdate()
 
 	while (SDL_PollEvent(&event))
 	{
-		if (Application::Get().GetLayer<ImGuiLayer>())
-			ImGui_ImplSDL3_ProcessEvent(&event);
 		_handle_event(event);
 	}
 	SDL_GL_SwapWindow(_handle);
@@ -222,12 +219,12 @@ void	*SDLWindow::GetNativeWindow() const
 	return _handle;
 }
 
-glm::ivec2	SDLWindow::GetSize() const
+math::ivec2	SDLWindow::GetSize() const
 {
 	int w, h;
 
 	SDL_GetWindowSizeInPixels(_handle, &w, &h);
-	return glm::ivec2(w, h);
+	return math::ivec2(w, h);
 }
 
 uint32_t	SDLWindow::GetWidth() const

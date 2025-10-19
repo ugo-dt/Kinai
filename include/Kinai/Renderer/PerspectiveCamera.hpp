@@ -17,33 +17,33 @@ public:
 
 	void SetViewportSize(float width, float height) { _viewport_width = width; _viewport_height = height; UpdateProjection();}
 	inline void SetDistance(float distance)	{ _distance = distance; }
-	void SetPosition(const glm::vec3& position) { _position = position; UpdateView(); }
+	void SetPosition(const math::vec3& position) { _position = position; UpdateView(); }
 	void SetFarClip(float far_clip) { _far_clip = far_clip; UpdateProjection(); }
 
 	inline float GetDistance()          const { return _distance; }
-	const glm::mat4& GetViewMatrix()    const { return _view_matrix; }
-	glm::mat4 GetViewProjectionMatrix() const { return _projection_matrix * _view_matrix; }
-	glm::vec3 GetUpDirection()          const { return glm::rotate(GetOrientation(), glm::vec3(0.f, 1.f, 0.f)); }
-	glm::vec3 GetRightDirection()       const { return glm::rotate(GetOrientation(), glm::vec3(1.f, 0.f, 0.f)); }
-	glm::vec3 GetForwardDirection()     const { return glm::rotate(GetOrientation(), glm::vec3(0.f, 0.f, -1.f)); }
-	glm::quat GetOrientation()          const { return glm::quat(glm::vec3(-_pitch, -_yaw, 0.f)); }
-	const glm::vec3& GetPosition()      const { return _position; }
+	const math::mat4& GetViewMatrix()    const { return _view_matrix; }
+	math::mat4 GetViewProjectionMatrix() const { return _projection_matrix * _view_matrix; }
+	math::vec3 GetUpDirection()          const { return math::rotate(GetOrientation(), math::vec3(0.f, 1.f, 0.f)); }
+	math::vec3 GetRightDirection()       const { return math::rotate(GetOrientation(), math::vec3(1.f, 0.f, 0.f)); }
+	math::vec3 GetForwardDirection()     const { return math::rotate(GetOrientation(), math::vec3(0.f, 0.f, -1.f)); }
+	math::quat GetOrientation()          const { return math::quat(math::vec3(-_pitch, -_yaw, 0.f)); }
+	const math::vec3& GetPosition()      const { return _position; }
 	float GetPitch()                    const { return _pitch; }
 	float GetYaw()                      const { return _yaw; }
 
 	bool	OnMouseWheel(MouseWheelEvent& e);
 	bool	OnMouseMotion(MouseMotionEvent& event);
 
-	glm::mat4 GetOrthographicProjectionMatrix(float aspect_ratio, float zoom_level = 1.0f) const
+	math::mat4 GetOrthographicProjectionMatrix(float aspect_ratio, float zoom_level = 1.0f) const
 	{
 		float left = -aspect_ratio * zoom_level;
 		float right = aspect_ratio * zoom_level;
 		float bottom = -zoom_level;
 		float top = zoom_level;
-		return glm::ortho(left, right, bottom, top, _near_clip, _far_clip);
+		return math::ortho(left, right, bottom, top, _near_clip, _far_clip);
 	}
 
-	glm::mat4 GetOrthographicViewProjectionMatrix(float aspect_ratio, float zoom_level = 1.0f) const
+	math::mat4 GetOrthographicViewProjectionMatrix(float aspect_ratio, float zoom_level = 1.0f) const
 	{
 		return GetOrthographicProjectionMatrix(aspect_ratio, zoom_level) * _view_matrix;
 	}
@@ -52,22 +52,22 @@ private:
 	void	UpdateProjection();
 	void	UpdateView();
 
-	void	MousePan(const glm::vec2& delta);
-	void	MouseRotate(const glm::vec2& delta);
+	void	MousePan(const math::vec2& delta);
+	void	MouseRotate(const math::vec2& delta);
 	void	MouseZoom(const float delta);
 
-	glm::vec3	CalculatePosition() const;
+	math::vec3	CalculatePosition() const;
 
-	glm::vec2	PanSpeed() const;
+	math::vec2	PanSpeed() const;
 	float		RotationSpeed() const;
 	float		ZoomSpeed() const;
 
 private:
 	float		_fov, _aspect_ratio, _near_clip, _far_clip;
-	glm::mat4	_view_matrix;
-	glm::vec3	_position;
-	glm::vec3	_focal_point;
-	glm::vec2	_inital_mouse_position;
+	math::mat4	_view_matrix;
+	math::vec3	_position;
+	math::vec3	_focal_point;
+	math::vec2	_inital_mouse_position;
 	float		_distance;
 	float		_pitch, _yaw;
 	float		_viewport_width;
@@ -82,7 +82,7 @@ struct PerspectiveCameraControllerConfig
 	float		near_clip = 0.1f;
 	float		far_clip = 100.0f;
 	float		speed = 5.0f;
-	glm::vec3	position = {0.0f, 0.0f, 2.0f};
+	math::vec3	position = {0.0f, 0.0f, 2.0f};
 	bool		no_rotation = false;
 	bool		no_lock_cursor = false;
 	bool		no_lock_rotation = false; // When true, lock the cursor when rotation is enabled. Unlock it when disabled.
