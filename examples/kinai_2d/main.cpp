@@ -146,7 +146,7 @@ public:
 	  	  _camera(Kinai::OrthographicCameraControllerConfig{
 		  	.enable_zoom = true,
 	  	  }),
-	  	  _cobblestone(Kinai::Texture2D::Create("assets/brick.bmp")),
+	  	  _cobblestone(Kinai::Texture2D::Create("assets/cobblestone.bmp")),
 	  	//   _noise(Kinai::Texture2D::Create("assets/seamless_noise.png")),
 	  	//   _shader(Kinai::Renderer2D::MakeShader("customquad", custom_shader_vs, custom_shader_fs)),
 		  _scroll1(0.05f),
