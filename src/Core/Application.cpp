@@ -2,6 +2,7 @@
 #include "Kinai/Debug/Profiler.hpp"
 #include "Kinai/Renderer/Renderer.hpp"
 #include "Kinai/Renderer/2D/Painter.hpp"
+#include "Kinai/Debug/Text/Text.hpp"
 
 namespace Kinai
 {
@@ -11,6 +12,7 @@ Application*	Application::_instance;
 Application::Application(const ApplicationConfig &config)
 	: _window(nullptr),
 	  _config(config),
+	  _gui_layer(nullptr),
 	  _layerStack(),
 	  _minimized(false)
 {
@@ -48,7 +50,14 @@ Application::Application(const ApplicationConfig &config)
 	#else
 		Renderer::Init();
 		Painter::Init();
+		Kinai::DebugText::Init();
 	#endif
+
+	if (config.enable_gui)
+	{
+		PushLayer<GUILayer>();
+		_gui_layer = GetLayer<GUILayer>();
+	}
 }
 
 Application::~Application()
@@ -60,6 +69,7 @@ Application::~Application()
 #ifdef KINAI_SOKOL
 	Sokol::Shutdown();
 #else
+	Kinai::DebugText::Shutdown();
 	Painter::Shutdown();
 #endif
 	_instance = nullptr;
@@ -110,6 +120,14 @@ void	Application::Run()
 			for (auto& layer : _layerStack)
 				layer->OnRender();
 			_time.frames++;
+		}
+
+		if (_config.enable_gui)
+		{
+			_gui_layer->Begin();
+			for (auto& layer : _layerStack)
+				layer->OnGUIRender();
+			_gui_layer->End();
 		}
 
 		_window->OnUpdate();

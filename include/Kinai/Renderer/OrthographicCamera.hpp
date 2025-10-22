@@ -13,6 +13,7 @@ public:
 	virtual ~OrthographicCamera() = default;
 	
 	void SetProjection(float left, float right, float bottom, float top);
+	void SetProjection(float left, float right, float bottom, float top, float near, float far);
 	void SetPosition(const math::vec3& position) { _position = position; UpdateView(); }
 	void SetRotation(const math::vec3& rotation) { _rotation = rotation; }
 
@@ -58,13 +59,15 @@ public:
 	OrthographicCamera& GetCamera() { return _camera; }
 	const OrthographicCamera& GetCamera() const { return _camera; }
 
+	float GetZoomLevel() const { return _config.zoom_level; }
+
 private:
 	bool OnMouseWheel(MouseWheelEvent& event);
 	bool OnWindowResize(WindowResizeEvent& event);
 
 private:
-	OrthographicCamera					_camera;
-	OrthographicCameraControllerConfig	_config;
+	OrthographicCamera _camera;
+	OrthographicCameraControllerConfig _config;
 };
 
 } // Kinai

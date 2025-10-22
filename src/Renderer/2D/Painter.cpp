@@ -28,7 +28,7 @@ struct QuadVertex
 
 struct State
 {
-	OrthographicCameraController camera;
+	OrthographicCamera camera = OrthographicCamera(0.0f, 1.0f, 1.0f, 0.0f);
 	math::vec4 color;
 	BlendMode mode = BlendMode::None;
 	Ref<Pipeline> pipeline = nullptr;
@@ -73,6 +73,8 @@ void	Init()
 
 	MakePipelines();
 	context.state.pipeline = LookupPipeline(PrimitiveType::Triangles, BlendMode::None);
+	const math::ivec2 size = Application::Get().GetWindow().GetSize();
+	context.state.camera.SetProjection(0.0f, (float)size.x, (float)size.y, 0.0f);
 }
 
 void	Shutdown()
@@ -87,7 +89,7 @@ void	BeginPass()
 {
 	KN_PROFILE_FUNC();
 
-	math::ivec2 size = Application::Get().GetWindow().GetSize();
+	const math::ivec2 size = Application::Get().GetWindow().GetSize();
 	Renderer::SetViewport(0, 0, size.x, size.y);
 
 	StartBatch();
@@ -137,7 +139,7 @@ void	Flush()
 		Renderer::ApplyPipeline(context.state.pipeline);
 		Renderer::ApplyBindings(context.state.bindings);
 		Renderer::ApplyUniforms<KinaiShader_Painter_vs_params_t>({
-			.u_ViewProjection = context.state.camera.GetCamera().GetViewProjectionMatrix(),
+			.u_ViewProjection = context.state.camera.GetViewProjectionMatrix(),
 			.u_Transform = math::mat4(1.0f),
 		});
 
@@ -310,10 +312,10 @@ void	DrawQuad(const math::mat4& transform, const math::vec2& uvStart, const math
 
 	constexpr size_t quadVertexCount = 4;
 	const math::vec4 quad_vertex_positions[4] = {
-		math::vec4(-0.5f, -0.5f, 0.0f, 1.0f),
-		math::vec4( 0.5f, -0.5f, 0.0f, 1.0f),
-		math::vec4( 0.5f,  0.5f, 0.0f, 1.0f),
-		math::vec4(-0.5f,  0.5f, 0.0f, 1.0f),
+		math::vec4(0.0f, 0.0f, 0.0f, 1.0f),
+		math::vec4(1.0f, 0.0f, 0.0f, 1.0f),
+		math::vec4(1.0f, 1.0f, 0.0f, 1.0f),
+		math::vec4(0.0f, 1.0f, 0.0f, 1.0f),
 	};
 	const math::vec2 textureCoords[] = {
 		{ uvStart.x, uvStart.y },
@@ -341,9 +343,18 @@ void	DrawQuad(const math::mat4& transform, const math::vec2& uvStart, const math
 	context.state.index += 6;
 }
 
-void	SetContextCamera(const OrthographicCameraController& camera)
+void	DrawQuad(float x, float y, float width, float height, const math::vec4& color)
 {
-	context.state.camera = camera;
+    // Build transform in pixel space
+    math::mat4 transform =
+		math::translate(math::mat4(1.0f), math::vec3(x * 2.f, y * 2.f, 0.0f)) *
+		math::scale(math::mat4(1.0f), math::vec3(width * 2.f, height * 2.f, 1.0f));
+
+    // Full texture UVs (0..1)
+    math::vec2 uvStart = { 0.0f, 0.0f };
+    math::vec2 uvEnd = { 1.0f, 1.0f };
+
+    DrawQuad(transform, uvStart, uvEnd, color);
 }
 
 } // Painter

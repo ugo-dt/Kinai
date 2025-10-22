@@ -43,15 +43,12 @@ void DrawQuad(const math::vec3& position, const math::vec2& size, const math::ve
 void DrawQuad(const math::mat4& transform);
 void DrawQuad(const math::mat4& transform, const math::vec4& color);
 void DrawQuad(const math::mat4& transform, const math::vec2& uvStart, const math::vec2& uvEnd, const math::vec4& tint_color = math::vec4(1.0f));
+void DrawQuad(float x, float y, float width, float height, const math::vec4& color);
 
 void MakePipelines();
 void Flush();
 void StartBatch();
 void NextBatch();
-
-void SetContextCamera(const OrthographicCameraController& camera);
-
-void SetContextCamera(const OrthographicCameraController& camera);
 
 inline void DrawQuad(const math::vec2& position, const math::vec2& size, const math::vec4& color)
 {

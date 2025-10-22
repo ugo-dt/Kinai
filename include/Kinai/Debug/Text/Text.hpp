@@ -21,7 +21,7 @@ struct DebugTextContextConfig
 
 class DebugText
 {
-private:
+public:
 	struct Context;
 
 public:
@@ -29,7 +29,7 @@ public:
 	static void Shutdown();
 
 	// Context functions
-	static Ref<Context>	MakeContext(const DebugTextContextConfig& config);
+	static Ref<Context>	MakeContext(const DebugTextContextConfig& config = DebugTextContextConfig());
 	static void SetContext(Ref<Context> context);
 	static Ref<Context> GetContext();
 	static Ref<Context> GetDefaultContext();
@@ -120,25 +120,6 @@ private:
 		int layer_id;
 		int first_vertex;
 		int vertex_count;
-	};
-
-	struct Context
-	{
-		uint32_t frame_id;
-		uint32_t update_frame_id;
-		std::vector<TextVertex> vertices;
-		std::vector<TextCommand> commands;
-		size_t commands_cap;
-		Ref<VertexBuffer> vertex_buffer;
-		Ref<Pipeline> pipeline;
-		int cur_font;
-		int cur_layer_id;
-		math::vec2 canvas_size;
-		math::vec2 glyph_size;
-		math::vec2 origin;
-		math::vec2 pos;
-		float tab_width;
-		math::vec4 color;
 	};
 
 	static Ref<VertexArray> _vao;

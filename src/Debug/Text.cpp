@@ -17,6 +17,25 @@ uint8_t DebugText::_font_pixels[256 * 8 * 8 * MAX_FONTS];
 
 constexpr int DEFAULT_PRINTF_BUF_SIZE = 4096;
 
+struct DebugText::Context
+{
+	uint32_t frame_id;
+	uint32_t update_frame_id;
+	std::vector<TextVertex> vertices;
+	std::vector<TextCommand> commands;
+	size_t commands_cap;
+	Ref<VertexBuffer> vertex_buffer;
+	Ref<Pipeline> pipeline;
+	int cur_font;
+	int cur_layer_id;
+	math::vec2 canvas_size;
+	math::vec2 glyph_size;
+	math::vec2 origin;
+	math::vec2 pos;
+	float tab_width;
+	math::vec4 color;
+};
+
 void	DebugText::Rewind()
 {
 	KN_ASSERT(_current_context);

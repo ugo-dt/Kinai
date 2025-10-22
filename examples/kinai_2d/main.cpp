@@ -1,6 +1,8 @@
 #include <Kinai/Kinai.hpp>
 #include <Kinai/EntryPoint.hpp>
 
+namespace math = Kinai::math;
+
 class AppLayer : public Kinai::Layer
 {
 // Private members are at the top for convenience
@@ -31,7 +33,6 @@ public:
 		  _top_color(1.0f),
 		  _alpha(1.f)
 	{
-		Kinai::DebugText::Init();
 	}
 
 	~AppLayer() = default;
@@ -45,11 +46,7 @@ public:
 		Kinai::Renderer::SetClearColor(0.12f, 0.12f, 0.12f, 1.0f);
 		Kinai::Renderer::Clear();
 
-		Kinai::DebugText::Font(5); // ORIC
-		Kinai::DebugText::Put("Hello, Kinai!");
-
 		Kinai::Renderer::BeginPass();
-		Kinai::DebugText::Submit();
 
 		// Kinai::Painter::BeginPass();
 
@@ -67,11 +64,11 @@ public:
 		// Kinai::Renderer2D::DrawQuad(math::vec2(0.f), math::vec2(2.f), _noise);
 		// Kinai::Renderer2D::ResetQuadShader();
 
-		// Kinai::Painter::SetImage(0, _cobblestone);
-		// Kinai::Painter::DrawQuad(math::vec2(0.5f), math::vec2(0.5f), math::vec4(1.0f));
-		// Kinai::Painter::ResetImage();
-		// Kinai::Painter::DrawQuad(math::vec2(-0.25f, 0.25f), math::vec2(0.5f), math::vec4(1.0f));
-		// Kinai::Painter::EndPass();
+		Kinai::Painter::SetImage(0, _cobblestone);
+		Kinai::Painter::DrawQuad(math::vec2(0.5f), math::vec2(0.5f), math::vec4(1.0f));
+		Kinai::Painter::ResetImage();
+		Kinai::Painter::DrawQuad(math::vec2(-0.25f, 0.25f), math::vec2(0.5f), math::vec4(1.0f));
+		Kinai::Painter::EndPass();
 		Kinai::Renderer::EndPass();
 	}
 
@@ -95,12 +92,23 @@ public:
 		}
 		return true;
 	}
+
+	void	OnGUIRender()
+	{
+		Kinai::GUI::Begin("Test window");
+		Kinai::GUI::End();
+	}
 };
 
 class App : public Kinai::Application
 {
 public:
-	App(): Kinai::Application(Kinai::ApplicationConfig())
+	App(): Kinai::Application(
+		Kinai::ApplicationConfig{
+			.name = "Kinai 2D",
+			.enable_gui = true
+		}
+	)
 	{
 		PushLayer<AppLayer>();
 	}

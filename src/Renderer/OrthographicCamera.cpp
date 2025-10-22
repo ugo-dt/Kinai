@@ -22,6 +22,14 @@ void	OrthographicCamera::SetProjection(float left, float right, float bottom, fl
 	_view_projection_matrix = _projection_matrix * _view_matrix;
 }
 
+void	OrthographicCamera::SetProjection(float left, float right, float bottom, float top, float near, float far)
+{
+	KN_PROFILE_FUNC();
+
+	_projection_matrix = math::ortho(left, right, bottom, top, near, far);
+	_view_projection_matrix = _projection_matrix * _view_matrix;
+}
+
 void	OrthographicCamera::UpdateView()
 {
 	KN_PROFILE_FUNC();

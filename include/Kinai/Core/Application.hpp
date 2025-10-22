@@ -9,6 +9,7 @@
 #include "Kinai/Events/ApplicationEvent.hpp"
 #include "Kinai/Events/KeyEvent.hpp"
 #include "Kinai/Events/MouseEvent.hpp"
+#include "Kinai/GUI/GUILayer.hpp"
 
 extern bool	g_KinaiApplicationRunning;
 
@@ -22,6 +23,7 @@ struct ApplicationConfig
 	uint32_t window_height = KN_DEFAULT_WINDOW_HEIGHT;
 	bool fullscreen = false;
 	bool no_vsync = false;
+	bool enable_gui = false;
 };
 
 struct Time
@@ -81,6 +83,8 @@ private:
 	Scope<Window> _window;
 	ApplicationConfig _config;
 	Time _time;
+	GUILayer* _gui_layer;
+
 public:
 	std::vector<std::unique_ptr<Layer>> _layerStack;
 private:
@@ -102,8 +106,20 @@ void	Application::OnEvent(EventType& event)
 
 	dispatcher.Dispatch<WindowCloseEvent>(KN_BIND_EVENT_FN(Application::OnWindowClose));
 	dispatcher.Dispatch<WindowResizeEvent>(KN_BIND_EVENT_FN(Application::OnWindowResize));
+
+	auto* l = GetLayer<GUILayer>();
+	if (l)
+	{
+		l->OnEvent(event);
+		if (event.handled)
+			return;
+	}
+
 	for (auto it = _layerStack.rbegin(); it != _layerStack.rend(); it++)
 	{
+		if ((*it).get() == l)
+			continue;
+
 		(*it)->OnEvent(event);
 		if (event.handled)
 			break;
