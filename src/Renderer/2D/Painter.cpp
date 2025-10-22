@@ -75,7 +75,7 @@ void	Init()
 
 	MakePipelines();
 	context.state.pipeline = LookupPipeline(PrimitiveType::Triangles, BlendMode::None);
-	const glm::ivec2 size = Application::Get().GetWindow().GetSizeInPixels();
+	const math::ivec2 size = Application::Get().GetWindow().GetSizeInPixels();
 	context.state.camera.SetProjection(0.0f, (float)size.x, (float)size.y, 0.0f);
 }
 
@@ -335,7 +335,7 @@ void	DrawQuad(const math::mat4& transform, const math::vec2& uvStart, const math
 
 	for (size_t i = 0; i < quadVertexCount; i++)
 	{
-		const math::vec2 pos = glm::vec2(math::vec2(transform * quad_vertex_positions[i]));
+		const math::vec2 pos = math::vec2(math::vec2(transform * quad_vertex_positions[i]));
 		const math::vec2& uv = textureCoords[i];
 
 		context.state.vertex_buffer_ptr->position = math::vec4(pos.x, pos.y, uv.x, uv.y);
@@ -349,16 +349,16 @@ void	DrawQuad(const math::mat4& transform, const math::vec2& uvStart, const math
 	context.state.index += 6;
 }
 
-void	DrawQuad(float x, float y, float width, float height, const glm::vec4& color)
+void	DrawQuad(float x, float y, float width, float height, const math::vec4& color)
 {
     // Build transform in pixel space
-    glm::mat4 transform =
-		glm::translate(glm::mat4(1.0f), glm::vec3(x * 2.f, y * 2.f, 0.0f)) *
-		glm::scale(glm::mat4(1.0f), glm::vec3(width * 2.f, height * 2.f, 1.0f));
+    math::mat4 transform =
+		math::translate(math::mat4(1.0f), math::vec3(x * 2.f, y * 2.f, 0.0f)) *
+		math::scale(math::mat4(1.0f), math::vec3(width * 2.f, height * 2.f, 1.0f));
 
     // Full texture UVs (0..1)
-    glm::vec2 uvStart = { 0.0f, 0.0f };
-    glm::vec2 uvEnd = { 1.0f, 1.0f };
+    math::vec2 uvStart = { 0.0f, 0.0f };
+    math::vec2 uvEnd = { 1.0f, 1.0f };
 
     DrawQuad(transform, uvStart, uvEnd, color);
 }

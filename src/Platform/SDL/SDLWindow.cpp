@@ -1,5 +1,6 @@
 #include "Kinai/Platform/SDL/SDLWindow.hpp"
 #include "Kinai/Core/Application.hpp"
+#include "Kinai/GUI/GUILayer.hpp"
 
 namespace Kinai
 {

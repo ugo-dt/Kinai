@@ -5,6 +5,7 @@
 
 #include <SDL3/SDL.h>
 
+#include <array>
 #include <algorithm>
 #include <cassert>
 #include <cmath>
@@ -13,6 +14,7 @@
 #include <iostream>
 #include <filesystem>
 #include <fstream>
+#include <functional>
 #include <memory>
 #include <sstream>
 #include <string>
