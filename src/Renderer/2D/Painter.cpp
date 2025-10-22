@@ -56,7 +56,7 @@ void	Init()
 	KN_PROFILE_FUNC();
 	
 	context.vao = VertexArray::Create();
-	context.shader = Shader::Create(KinaiPainterProgramShaderConfig());
+	context.shader = Shader::Create(KinaiShader_PainterProgramShaderConfig());
 
 	context.white_texture = Texture2D::Create(TextureConfig{
 		.width = 2,
@@ -136,7 +136,7 @@ void	Flush()
 
 		Renderer::ApplyPipeline(context.state.pipeline);
 		Renderer::ApplyBindings(context.state.bindings);
-		Renderer::ApplyUniforms<KinaiPainter_vs_params_t>({
+		Renderer::ApplyUniforms<KinaiShader_Painter_vs_params_t>({
 			.u_ViewProjection = context.state.camera.GetCamera().GetViewProjectionMatrix(),
 			.u_Transform = glm::mat4(1.0f),
 		});
@@ -339,6 +339,11 @@ void	DrawQuad(const glm::mat4& transform, const glm::vec2& uvStart, const glm::v
 		NextBatch();
 
 	context.state.index += 6;
+}
+
+void	SetContextCamera(const OrthographicCameraController& camera)
+{
+	context.state.camera = camera;
 }
 
 } // Painter

@@ -10,11 +10,10 @@ void	Sokol::Init()
 {
 	KN_PROFILE_FUNC();
 
-	sg_desc	desc = {};
-
-	desc.environment = GetEnvironment(),
-	desc.logger.func = slog_func,
-	sg_setup(desc);
+	sg_setup(sg_desc{
+		.logger.func = slog_func,
+		.environment = GetEnvironment()
+	});
 	KN_ASSERT(sg_isvalid());
 }
 
@@ -39,6 +38,6 @@ sg_swapchain	Sokol::GetSwapchain()
 	return Application::Get().GetWindow().GetSokolSwapchain();
 }
 
-#endif // KINAI_SOKOL
-
 } // Kinai
+
+#endif // KINAI_SOKOL

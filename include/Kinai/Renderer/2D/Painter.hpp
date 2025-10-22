@@ -49,6 +49,8 @@ void Flush();
 void StartBatch();
 void NextBatch();
 
+void SetContextCamera(const OrthographicCameraController& camera);
+
 inline void DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color)
 {
 	KN_PROFILE_FUNC();

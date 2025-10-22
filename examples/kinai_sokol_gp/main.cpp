@@ -13,26 +13,55 @@
 
 static sg_pipeline pip;
 static sg_shader shd;
-static sg_image image;
-static sg_sampler nearest_sampler;
+static int font_index;
 
-static sg_image load_image(const char *filename)
+struct Texture
 {
-    int width, height, channels;
-    uint8_t* data = stbi_load(filename, &width, &height, &channels, 4);
-    sg_image img = {SG_INVALID_ID};
-    if (!data)
-	{
-        return img;
-    }
+	sg_image image = { SG_INVALID_ID };
+	sg_view view = { SG_INVALID_ID };
+	sg_sampler sampler = { SG_INVALID_ID };
+};
+
+static Texture texture;
+
+static void	DestroyTexture(Texture& texture)
+{
+	sg_destroy_sampler(texture.sampler);
+	sg_destroy_view(texture.view);
+	sg_destroy_image(texture.image);
+	texture = Texture();
+}
+
+static Texture LoadTexture(const char *filename)
+{
+	struct Texture texture = {};
     sg_image_desc image_desc = {};
+    int width, height, channels;
+    uint8_t* data;
+	
+	data = stbi_load(filename, &width, &height, &channels, 4);
+    if (!data)
+		return texture;
     image_desc.width = width;
     image_desc.height = height;
-    image_desc.data.subimage[0][0].ptr = data;
-    image_desc.data.subimage[0][0].size = (size_t)(width * height * 4);
-    img = sg_make_image(&image_desc);
+    image_desc.data.mip_levels[0] = sg_range{ 
+        .ptr = data, 
+        .size = (size_t)(width * height * 4)
+	};
+    texture.image = sg_make_image(&image_desc);
     stbi_image_free(data);
-    return img;
+	if (sg_query_image_state(texture.image) != SG_RESOURCESTATE_VALID)
+		Kinai::Log::Critical("Failed to load images");
+	texture.view = sgp_make_texture_view_from_image(texture.image, "view");
+	texture.sampler = sg_make_sampler(sg_sampler_desc{
+		.min_filter = SG_FILTER_NEAREST,
+		.mag_filter = SG_FILTER_NEAREST,
+		.wrap_u = SG_WRAP_REPEAT,
+		.wrap_v = SG_WRAP_REPEAT,
+	});
+	if (sg_query_sampler_state(texture.sampler) != SG_RESOURCESTATE_VALID)
+		Kinai::Log::Critical("failed to create linear sampler");
+    return texture;
 }
 
 class Layer : public Kinai::Layer
@@ -47,54 +76,38 @@ public:
 		})
 	{
 		sgp_desc sgpdesc = {};
+
 		sgp_setup(&sgpdesc);
 		if (!sgp_is_valid())
-		{
-			fprintf(stderr, "Failed to create Sokol GP context: %s\n", sgp_get_error_message(sgp_get_last_error()));
-			exit(1);
-		}
-
-		image = load_image("./assets/cobblestone.png");
-		if (sg_query_image_state(image) != SG_RESOURCESTATE_VALID)
-		{
-			Kinai::Log::Critical("Failed to load images");
-			exit(1);
-		}
-
-		nearest_sampler = sg_make_sampler(sg_sampler_desc{
-			.min_filter = SG_FILTER_NEAREST,
-			.mag_filter = SG_FILTER_NEAREST,
-			.wrap_u = SG_WRAP_REPEAT,
-			.wrap_v = SG_WRAP_REPEAT,
-		});
-		if (sg_query_sampler_state(nearest_sampler) != SG_RESOURCESTATE_VALID)
-		{
-			Kinai::Log::Critical("failed to create linear sampler");
-			exit(1);
-		}
-
+			Kinai::Log::Critical("Failed to create Sokol GP context: {}", sgp_get_error_message(sgp_get_last_error()));
+		texture = LoadTexture("./assets/cobblestone.png");
 		shd = sg_make_shader(quad_program_shader_desc(sg_query_backend()));
 		if (sg_query_shader_state(shd) != SG_RESOURCESTATE_VALID)
-		{
 			Kinai::Log::Critical("failed to make custom pipeline shader");
-			exit(1);
-		}
 		pip = sgp_make_pipeline(sgp_pipeline_desc{
 			.shader = shd,
 			.has_vs_color = true
 		});
 		if (sg_query_pipeline_state(pip) != SG_RESOURCESTATE_VALID)
-		{
 			Kinai::Log::Critical("failed to make custom pipeline");
-			exit(1);
-		}
 		glDisable(GL_CULL_FACE);
+
+		sdtx_setup(sdtx_desc_t{
+			.logger.func = slog_func,
+			.fonts = {
+				[0] = sdtx_font_kc853(),
+				[1] = sdtx_font_kc854(),
+				[2] = sdtx_font_z1013(),
+				[3] = sdtx_font_cpc(),
+				[4] = sdtx_font_c64(),
+				[5] = sdtx_font_oric()
+			}
+		});
 	}
 
 	~Layer()
 	{
-		sg_destroy_sampler(nearest_sampler);
-		sg_destroy_image(image);
+		DestroyTexture(texture);
 		sg_destroy_pipeline(pip);
 		sg_destroy_shader(shd);
 		sgp_shutdown();
@@ -131,8 +144,8 @@ public:
 			nullptr,
 			0
 		);
-		sgp_set_image(IMG_quad_iTexChannel0, image);
-		sgp_set_sampler(SMP_quad_iSmpChannel0, nearest_sampler);
+		sgp_set_view(IMG_quad_iTexChannel0, texture.view);
+		sgp_set_sampler(SMP_quad_iSmpChannel0, texture.sampler);
 
 		sgp_rect rect = {
 			.x = 0.25f,
@@ -141,8 +154,7 @@ public:
 			.h = 0.5f,
 		};
 		sgp_draw_filled_rects(&rect, 1);
-
-		sgp_reset_image(IMG_quad_iTexChannel0);
+		sgp_reset_view(IMG_quad_iTexChannel0);
 
 		sgp_rect rect2 = {
 			.x = 0.75f,
@@ -151,14 +163,20 @@ public:
 			.h = 0.5f,
 		};
 		sgp_draw_filled_rects(&rect2, 1);
-
 		sgp_reset_sampler(SMP_quad_iSmpChannel0);
+
 		sgp_reset_pipeline();
+
+		sdtx_canvas(1280, 720);
+		sdtx_color1i(0xFFFFFFFF);
+		sdtx_font(font_index);
+		sdtx_putc('A');
 
 		sg_pass pass = {.swapchain = Kinai::Sokol::GetSwapchain()};
 		sg_begin_pass(&pass);
 		sgp_flush();
 		sgp_end();
+		sdtx_draw();
 		sg_end_pass();
 		sg_commit();
 	}
@@ -167,11 +185,39 @@ public:
 	{
 		Kinai::Application& app = Kinai::Application::Get();
 
-		ImGui::Begin("Info", nullptr, ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoDocking | ImGuiWindowFlags_NoResize);
+		ImGui::Begin("Info", nullptr,
+			ImGuiWindowFlags_NoSavedSettings |
+			ImGuiWindowFlags_NoDocking | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize);
 		ImGui::Text("Move with WASD keys");
 		ImGui::Text("FPS: %zu", (size_t)app.GetFPS());
 		if (ImGui::Button(app.GetWindow().IsVSync() ? "VSync ON" : "VSync OFF"))
 			app.GetWindow().SetVSync(!app.GetWindow().IsVSync());
+		const char* items[] = {
+			"KC853",
+			"KC854",
+			"Z1013",
+			"CPC",
+			"C64",
+			"ORIC"
+		};
+
+        const char* combo_preview_value = items[font_index];
+		ImGui::Text("Font");
+		ImGui::SameLine();
+        if (ImGui::BeginCombo("##1", combo_preview_value, ImGuiComboFlags_WidthFitPreview))
+        {
+            for (int n = 0; n < IM_ARRAYSIZE(items); n++)
+            {
+                const bool is_selected = (font_index == n);
+                if (ImGui::Selectable(items[n], is_selected))
+                    font_index = n;
+
+                // Set the initial focus when opening the combo (scrolling + keyboard navigation focus)
+                if (is_selected)
+                    ImGui::SetItemDefaultFocus();
+            }
+            ImGui::EndCombo();
+        }
 		ImGui::End();
 	}
 

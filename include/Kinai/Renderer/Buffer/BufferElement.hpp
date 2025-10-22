@@ -14,6 +14,7 @@ enum class ShaderDataType
 	Bool,
 	UByte, UByte2, UByte3, UByte4,
 	UInt, UInt2, UInt3, UInt4,
+	UShort, UShort2, UShort3, UShort4,
 };
 
 uint32_t	ShaderDataTypeSize(ShaderDataType type);
@@ -57,6 +58,10 @@ struct BufferElement
 			case ShaderDataType::UInt2:		return 2;
 			case ShaderDataType::UInt3:		return 3;
 			case ShaderDataType::UInt4:		return 4;
+			case ShaderDataType::UShort:	return 1;
+			case ShaderDataType::UShort2:	return 2;
+			case ShaderDataType::UShort3:	return 3;
+			case ShaderDataType::UShort4:	return 4;
 		}
 
 		Log::Critical("Unknown ShaderDataType!");

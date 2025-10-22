@@ -32,6 +32,10 @@ static GLenum	ShaderDataTypeToOpenGLBaseType(ShaderDataType type)
 		case ShaderDataType::UInt2:		return GL_UNSIGNED_INT;
 		case ShaderDataType::UInt3:		return GL_UNSIGNED_INT;
 		case ShaderDataType::UInt4:		return GL_UNSIGNED_INT;
+		case ShaderDataType::UShort:	return GL_UNSIGNED_SHORT;
+		case ShaderDataType::UShort2:	return GL_UNSIGNED_SHORT;
+		case ShaderDataType::UShort3:	return GL_UNSIGNED_SHORT;
+		case ShaderDataType::UShort4:	return GL_UNSIGNED_SHORT;
 	}
 
 	Log::Critical("Unknown ShaderDataType!");
@@ -46,6 +50,7 @@ static GLenum	GetOpenGLPrimitiveType(PrimitiveType type)
 		case PrimitiveType::LineStrip:     return GL_LINE_STRIP;
 		case PrimitiveType::Triangles:     return GL_TRIANGLES;
 		case PrimitiveType::TriangleStrip: return GL_TRIANGLE_STRIP;
+		default: break;
 	}
 
 	Log::Critical("Unknown PrimitiveType!");
@@ -388,6 +393,10 @@ void	OpenGLRendererAPI::ApplyBindings(const Ref<Bindings>& bindings)
 				case ShaderDataType::UInt2:
 				case ShaderDataType::UInt3:
 				case ShaderDataType::UInt4:
+				case ShaderDataType::UShort:
+				case ShaderDataType::UShort2:
+				case ShaderDataType::UShort3:
+				case ShaderDataType::UShort4:
 				{
 					glEnableVertexAttribArray(vb_index);
 					glVertexAttribIPointer(vb_index,

@@ -34,4 +34,4 @@ void main()
 }
 @end
 
-@program KinaiPainter vs fs
+@program KinaiShader_Painter vs fs

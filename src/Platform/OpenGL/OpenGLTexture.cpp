@@ -37,6 +37,20 @@ static GLenum ImageFormatToGLInternalFormat(ImageFormat format)
 	return 0;
 }
 
+static uint32_t DataFormatToBPP(GLenum data_format)
+{
+	switch (data_format)
+	{
+		case GL_RED:  return 1;
+		case GL_RGB:  return 3;
+		case GL_RGBA: return 4;
+		default: break;
+	}
+
+	Log::Critical("invalid data format");
+	return 0;
+}
+
 GLenum FilterToGLFilter(Filter filter)
 {
 	switch (filter)
@@ -174,7 +188,7 @@ void OpenGLTexture2D::SetData(void* data, uint32_t size)
 	KN_PROFILE_FUNC();
 
 #ifdef KN_ENABLE_ASSERTS
-	uint32_t bpp = _data_format == GL_RGBA ? 4 : 3;
+	uint32_t bpp = DataFormatToBPP(_data_format);
 	KN_ASSERT(size == _width * _height * bpp, "Data must be entire texture!");
 #else
 	KN_NOTUSED(size);

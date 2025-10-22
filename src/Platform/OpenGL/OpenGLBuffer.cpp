@@ -71,6 +71,10 @@ void	OpenGLVertexBuffer::SetData(const void* data, uint32_t size)
 	glBindBuffer(GL_ARRAY_BUFFER, _renderer_id);
 	glBufferSubData(GL_ARRAY_BUFFER, 0, size, data);
 	_KN_GL_CHECK_ERROR();
+
+	#ifdef KN_DEBUG_STATS
+		_size = size;
+	#endif
 }
 
 /** Index buffer */

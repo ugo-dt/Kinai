@@ -17,6 +17,7 @@
 	#include <sokol/sokol_gfx.h>
 	#include <sokol/sokol_gp.h>
 	#include <sokol/sokol_log.h>
+	#include <sokol/sokol_debugtext.h>
 #endif
 
 #include <algorithm>
@@ -70,6 +71,7 @@
 	#define KN_UNUSED		__attribute__ ((unused))
 	#define KN_NOTUSED(x)	((void)(x))
 	#define KN_NODISCARD	[[nodiscard]]
+	#define KN_PRINTF_LIKE(fmt, arg) __attribute__((format(printf, fmt, arg)))
 #else
 	#define KN_INLINE		inline
 	#define KN_NEVER_INLINE

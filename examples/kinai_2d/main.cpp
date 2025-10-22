@@ -124,6 +124,8 @@ const char *custom_shader_fs = R"(
 	}
 )";
 
+static int font_index = 0;
+
 class AppLayer : public Kinai::Layer
 {
 // Private members are at the top for convenience
@@ -154,6 +156,7 @@ public:
 		  _top_color(1.0f),
 		  _alpha(1.f)
 	{
+		Kinai::DebugText::Init();
 	}
 
 	~AppLayer() = default;
@@ -167,8 +170,13 @@ public:
 		Kinai::Renderer::SetClearColor(0.12f, 0.12f, 0.12f, 1.0f);
 		Kinai::Renderer::Clear();
 
+		Kinai::DebugText::Font(font_index);
+		Kinai::DebugText::Put("Hello, Kinai!");
+
 		Kinai::Renderer::BeginPass();
-		Kinai::Painter::BeginPass();
+		Kinai::DebugText::Submit();
+
+		// Kinai::Painter::BeginPass();
 
 		// Kinai::Renderer2D::BeginFrame(_camera.GetCamera());
 		// Kinai::Renderer2D::DrawQuad(glm::vec2(0.f), glm::vec2(1.f), _cobblestone);
@@ -184,11 +192,11 @@ public:
 		// Kinai::Renderer2D::DrawQuad(glm::vec2(0.f), glm::vec2(2.f), _noise);
 		// Kinai::Renderer2D::ResetQuadShader();
 
-		Kinai::Painter::SetImage(0, _cobblestone);
-		Kinai::Painter::DrawQuad(glm::vec2(0.5f), glm::vec2(0.5f), glm::vec4(1.0f));
-		Kinai::Painter::ResetImage();
+		// Kinai::Painter::SetImage(0, _cobblestone);
+		// Kinai::Painter::DrawQuad(glm::vec2(0.5f), glm::vec2(0.5f), glm::vec4(1.0f));
+		// Kinai::Painter::ResetImage();
 		// Kinai::Painter::DrawQuad(glm::vec2(-0.25f, 0.25f), glm::vec2(0.5f), glm::vec4(1.0f));
-		Kinai::Painter::EndPass();
+		// Kinai::Painter::EndPass();
 		Kinai::Renderer::EndPass();
 	}
 
@@ -212,15 +220,42 @@ public:
 		// ImGui::Text("FPS: %zu", (size_t)app.GetFPS());
 		// stats.Reset();
 
-		ImGui::SameLine();
+		// ImGui::SameLine();
 		if (ImGui::Button(app.GetWindow().IsVSync() ? "VSync ON" : "VSync OFF"))
 			app.GetWindow().SetVSync(!app.GetWindow().IsVSync());
-		ImGui::SliderFloat("Scroll1", (float*)&_scroll1, -1.f, 1.f, nullptr);
-		ImGui::SliderFloat("Scroll2", (float*)&_scroll2, -1.f, 1.f, nullptr);
-		ImGui::SliderFloat("Oscillation", (float*)&_oscillation, 0.f, 4.f, nullptr);
-		ImGui::ColorEdit4("Tone color", (float*)&_tone_color);
-		ImGui::ColorEdit4("Top color", (float*)&_top_color);
-		ImGui::SliderFloat("Alpha cap", (float*)&_alpha, 0.0, 1.f, nullptr);
+		// ImGui::SliderFloat("Scroll1", (float*)&_scroll1, -1.f, 1.f, nullptr);
+		// ImGui::SliderFloat("Scroll2", (float*)&_scroll2, -1.f, 1.f, nullptr);
+		// ImGui::SliderFloat("Oscillation", (float*)&_oscillation, 0.f, 4.f, nullptr);
+		// ImGui::ColorEdit4("Tone color", (float*)&_tone_color);
+		// ImGui::ColorEdit4("Top color", (float*)&_top_color);
+		// ImGui::SliderFloat("Alpha cap", (float*)&_alpha, 0.0, 1.f, nullptr);
+
+		const char* items[] = {
+			"KC853",
+			"KC854",
+			"Z1013",
+			"CPC",
+			"C64",
+			"ORIC"
+		};
+
+        const char* combo_preview_value = items[font_index];
+		ImGui::Text("Font");
+		ImGui::SameLine();
+        if (ImGui::BeginCombo("##1", combo_preview_value, ImGuiComboFlags_WidthFitPreview))
+        {
+            for (int n = 0; n < IM_ARRAYSIZE(items); n++)
+            {
+                const bool is_selected = (font_index == n);
+                if (ImGui::Selectable(items[n], is_selected))
+                    font_index = n;
+
+                // Set the initial focus when opening the combo (scrolling + keyboard navigation focus)
+                if (is_selected)
+                    ImGui::SetItemDefaultFocus();
+            }
+            ImGui::EndCombo();
+        }
 		ImGui::End();
 	}
 

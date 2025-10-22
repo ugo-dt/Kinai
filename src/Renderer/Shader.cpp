@@ -33,6 +33,10 @@ uint32_t	ShaderDataTypeSize(ShaderDataType type)
 		case ShaderDataType::UInt2:		return sizeof(unsigned int) * 2;
 		case ShaderDataType::UInt3:		return sizeof(unsigned int) * 3;
 		case ShaderDataType::UInt4:		return sizeof(unsigned int) * 4;
+		case ShaderDataType::UShort:	return sizeof(unsigned short) * 1;
+		case ShaderDataType::UShort2:	return sizeof(unsigned short) * 2;
+		case ShaderDataType::UShort3:	return sizeof(unsigned short) * 3;
+		case ShaderDataType::UShort4:	return sizeof(unsigned short) * 4;
 	}
 
 	Log::Critical("Unknown ShaderDataType");

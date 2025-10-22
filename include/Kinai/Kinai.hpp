@@ -8,6 +8,7 @@
 #include "Kinai/Core/Timer.hpp"
 
 #include "Kinai/Debug/Profiler.hpp"
+#include "Kinai/Debug/Text/Text.hpp"
 
 #include "Kinai/Events/ApplicationEvent.hpp"
 #include "Kinai/Events/KeyEvent.hpp"
