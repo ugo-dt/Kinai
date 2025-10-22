@@ -32,7 +32,7 @@ KINAI_SHDC_ALIGN(16) typedef struct KinaiShader_Painter_vs_params_s
 {
 	Kinai::math::mat4 u_ViewProjection;
 	Kinai::math::mat4 u_Transform;
-}KinaiPainter_vs_params_t;
+}KinaiShader_Painter_vs_params_t;
 #pragma pack(pop)
 /*
 	#version 410
