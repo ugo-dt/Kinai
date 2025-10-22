@@ -63,8 +63,8 @@ public:
 	static void NewLine();
 
 	// Set the text color
-	static void SetColor(glm::vec3 color); // RGB 0.0f..1.0f, A=1.0f
-	static void SetColor(glm::vec4 color); // RGBA 0.0f..1.0f
+	static void SetColor(math::vec3 color); // RGB 0.0f..1.0f, A=1.0f
+	static void SetColor(math::vec4 color); // RGBA 0.0f..1.0f
 	static void SetColor(uint8_t r, uint8_t g, uint8_t b); // RGB 0..255, A=255
 	static void SetColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a); // RGBA 0..255
 
@@ -110,9 +110,9 @@ private:
 
 	struct TextVertex
 	{
-		glm::vec2 pos;
-		glm::vec2 uv;
-		glm::vec4 color;
+		math::vec2 pos;
+		math::vec2 uv;
+		math::vec4 color;
 	};
 
 	struct TextCommand
@@ -133,12 +133,12 @@ private:
 		Ref<Pipeline> pipeline;
 		int cur_font;
 		int cur_layer_id;
-		glm::vec2 canvas_size;
-		glm::vec2 glyph_size;
-		glm::vec2 origin;
-		glm::vec2 pos;
+		math::vec2 canvas_size;
+		math::vec2 glyph_size;
+		math::vec2 origin;
+		math::vec2 pos;
 		float tab_width;
-		glm::vec4 color;
+		math::vec4 color;
 	};
 
 	static Ref<VertexArray> _vao;
