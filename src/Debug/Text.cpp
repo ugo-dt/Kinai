@@ -96,6 +96,40 @@ void	DebugText::SetContext(Ref<Context> context)
 	_current_context = context;
 }
 
+Ref<DebugText::Context>	DebugText::GetContext()
+{
+	return _current_context;
+}
+
+Ref<DebugText::Context>	DebugText::GetDefaultContext()
+{
+	return _default_context;
+}
+
+math::vec2	DebugText::GetCanvasSize()
+{
+	KN_ASSERT(_current_context);
+	return math::vec2(_current_context->canvas_size.x, _current_context->canvas_size.y);
+}
+
+math::vec2	DebugText::GetGlyphSize()
+{
+	KN_ASSERT(_current_context);
+	return math::vec2(_current_context->glyph_size.x, _current_context->glyph_size.y);
+}
+
+int	DebugText::GetFontIndex()
+{
+	KN_ASSERT(_current_context);
+	return _current_context->cur_font;
+}
+
+DebugTextFont	DebugText::GetFont()
+{
+	KN_ASSERT(_current_context);
+	return static_cast<DebugTextFont>(_current_context->cur_font);
+}
+
 void	DebugText::InitContext(Ref<Context>& context, const DebugTextContextConfig& config)
 {
 	context->frame_id = 1;
@@ -213,6 +247,11 @@ void	DebugText::Font(int font_index)
 	KN_ASSERT(font_index >= 0 && font_index < MAX_FONTS);
 	if (_current_context)
 		_current_context->cur_font = font_index;
+}
+
+void	DebugText::Font(DebugTextFont font)
+{
+	Font(static_cast<int>(font));
 }
 
 void	DebugText::SetCanvasSize(float width, float height)
@@ -367,7 +406,7 @@ void	DebugText::RenderChar(Ref<Context> context, char c)
 	// write 6 vertices
 	vertex.pos.x = x0;
 	vertex.pos.y = y0;
-	vertex.uv.x = u0 / 65535.f;
+	vertex.uv.x = u0 / 65535.f; // normalize it to opengl coods
 	vertex.uv.y = v0 / 65535.f;
 	vertex.color = context->color;
 	context->vertices.push_back(vertex);

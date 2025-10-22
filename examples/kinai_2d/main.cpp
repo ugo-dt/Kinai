@@ -95,8 +95,24 @@ public:
 
 	void	OnGUIRender()
 	{
+		Kinai::Application& app = Kinai::Application::Get();
+
 		Kinai::GUI::Begin("Test window");
+		Kinai::GUI::Text("FPS: {}", Kinai::Application::Get().GetFPS());
+
+		if (Kinai::GUI::Button("This is a button"))
+			std::cout << "click 1" << std::endl;
+		if (Kinai::GUI::Button(app.GetWindow().IsVSync() ? "VSync ON" : "VSync OFF"))
+			app.GetWindow().SetVSync(!app.GetWindow().IsVSync());
+		if (Kinai::GUI::Button("This is a disabled button", Kinai::GUI::ButtonFlags_Disabled))
+			std::cout << "click 2" << std::endl;
 		Kinai::GUI::End();
+
+		// Kinai::GUI::Begin("Second window");
+		// Kinai::GUI::Text("Text in second window");
+		// if (Kinai::GUI::Button("This is a button"))
+		// 	std::cout << "click 1" << std::endl;
+		// Kinai::GUI::End();
 	}
 };
 

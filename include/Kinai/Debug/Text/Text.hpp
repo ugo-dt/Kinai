@@ -19,6 +19,16 @@ struct DebugTextContextConfig
 	int tab_width = 4;
 };
 
+enum class DebugTextFont
+{
+	KC853,
+	KC854,
+	Z1013,
+	CPC,
+	C64,
+	ORIC,
+};
+
 class DebugText
 {
 public:
@@ -33,6 +43,10 @@ public:
 	static void SetContext(Ref<Context> context);
 	static Ref<Context> GetContext();
 	static Ref<Context> GetDefaultContext();
+	static math::vec2 GetCanvasSize();
+	static math::vec2 GetGlyphSize();
+	static int GetFontIndex();
+	static DebugTextFont GetFont();
 
 	// Drawing functions (call inside a Kinai render pass)
 	static void Submit();
@@ -45,6 +59,7 @@ public:
 
 	// Switch to a different font
 	static void Font(int font_index);
+	static void Font(DebugTextFont font);
 
 	// Set a new virtual canvas size in screen pixels
 	static void SetCanvasSize(float width, float height);

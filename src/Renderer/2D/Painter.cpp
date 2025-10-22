@@ -1,6 +1,7 @@
 #include "Kinai/Renderer/2D/Painter.hpp"
 #include "Kinai/Renderer/2D/painter.glsl.hpp"
 #include "Kinai/Renderer/Renderer.hpp"
+#include "Kinai/Core/Application.hpp"
 
 namespace Kinai
 {

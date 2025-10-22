@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Kinai/Core/Core.hpp"
+#include "Kinai/Debug/Text/Text.hpp"
 #include "Kinai/Events/Event.hpp"
 #include "Kinai/Renderer/2D/Painter.hpp"
 
@@ -19,14 +20,19 @@ static KN_INLINE KN_UNUSED bool PointInRect(const Point& point, const Rect& rect
 			point.y >= rect.y && point.y <= rect.y + rect.h);
 }
 
+// Context
 void CreateContext();
 void DestroyContext();
 void NewFrame();
 void Render();
 bool OnEvent(Event& event);
 
-void Begin(const char* label, bool* is_open = nullptr);
-void End();
+// Input
+Point GetMousePosition();
+bool IsMouseHovering(const Rect&rect);
+bool IsMouseButtonPressed(MouseButton button);
+bool IsMouseButtonDown(MouseButton button);
+bool IsMouseButtonReleased(MouseButton button);
 
 } // GUI
 

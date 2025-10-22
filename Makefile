@@ -12,6 +12,7 @@ KINAI_SRC = $(wildcard					\
 	$(KINAI_PATH)/src/Core/*.cpp		\
 	$(KINAI_PATH)/src/Debug/*.cpp		\
 	$(KINAI_PATH)/src/GUI/*.cpp			\
+	$(KINAI_PATH)/src/GUI/Widgets/*.cpp	\
 	$(KINAI_PATH)/src/Renderer/*.cpp	\
 	$(KINAI_PATH)/src/Renderer/2D/*.cpp	\
 )
