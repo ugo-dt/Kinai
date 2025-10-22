@@ -142,6 +142,53 @@ public:
 		_camera.OnEvent(event);
 	}
 
+	void	OnGUIRender()
+	{
+		Kinai::Application& app = Kinai::Application::Get();
+
+		Kinai::GUI::SetNextWindowPos(Kinai::math::ivec2(10, 10));
+		Kinai::GUI::Begin("Info", nullptr, Kinai::GUI::WindowFlags_NoResize);
+		Kinai::GUI::Text("Move around with WASD keys");
+		Kinai::GUI::Text("FPS: {}", (size_t)app.GetFPS());
+		if (Kinai::GUI::Button(_camera.IsRotationEnabled() ? "(F1) Mouse Grab ON" : "(F1) Mouse Grab OFF"))
+			_camera.SetRotationEnabled(!_camera.IsRotationEnabled());
+		if (Kinai::GUI::Button(("(F2) Cube Rotation: " + std::string(cube.rotation ? "ON" : "OFF")).c_str()))
+			cube.rotation = !cube.rotation;
+		if (Kinai::GUI::Button(app.GetWindow().IsVSync() ? "(F3) VSync ON" : "(F3) VSync OFF"))
+			app.GetWindow().SetVSync(!app.GetWindow().IsVSync());
+		if (Kinai::GUI::Button(cube.pipeline->GetFaceWinding() == Kinai::FaceWinding::CCW
+			? "(F4) glFrontFace(GL_CCW)"
+			: "(F4) glFrontFace(GL_CW)")
+		)
+		{
+			cube.pipeline->SetFaceWinding(
+				cube.pipeline->GetFaceWinding() == Kinai::FaceWinding::CCW
+				? Kinai::FaceWinding::CW : Kinai::FaceWinding::CCW
+			);
+		}
+		if (Kinai::GUI::Button(cube.show_back_faces ? "(F5) Hide back faces" : "(F5) Show back faces"))
+		{
+			cube.show_back_faces = !cube.show_back_faces;
+			Kinai::Renderer::SetPolygonMode(cube.mode);
+		}
+		if (!cube.show_back_faces)
+		{
+			if (Kinai::GUI::Button(cube.mode == Kinai::PolygonMode::Line ? "Wireframe ON" : "Wireframe OFF"))
+			{
+				cube.mode = cube.mode == Kinai::PolygonMode::Fill ? Kinai::PolygonMode::Line : Kinai::PolygonMode::Fill;
+				Kinai::Renderer::SetPolygonMode(cube.mode);
+			}
+			if (Kinai::GUI::Button(cube.pipeline->GetCullMode() == Kinai::CullMode::Back ? "glCullFace(GL_BACK)" : "glCullFace(GL_FRONT)"))
+			{
+				cube.pipeline->SetCullMode(
+					cube.pipeline->GetCullMode() == Kinai::CullMode::Back
+					? Kinai::CullMode::Front : Kinai::CullMode::Back
+				);
+			}
+		}
+		Kinai::GUI::End();
+	}
+
 	bool	OnKeyPressed(Kinai::KeyPressedEvent &event)
 	{
 		switch (event.GetKeyCode())
@@ -182,6 +229,7 @@ public:
 		: Kinai::Application(
 			Kinai::ApplicationConfig{
 				.name = "Kinai Cube Example",
+				.enable_gui = true
 			}
 		)
 	{

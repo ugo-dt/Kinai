@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Kinai/Renderer/RendererAPI.hpp"
-#include "Kinai/Core/Application.hpp"
 
 namespace Kinai
 {
@@ -97,23 +96,18 @@ public:
 	}
 
 	template <class Tp>
-	static void ApplyUniforms(const Tp& params)
-	{
-		_renderer_api->ApplyUniforms(&params, sizeof(params));
-	}
-
-	static void Submit(uint32_t vertexCount = 0)
-	{
-		_renderer_api->Submit(vertexCount);
-	}
-
-	static void SubmitInstanced(uint32_t instanceCount, uint32_t vertexCount = 0)
-	{
-		_renderer_api->SubmitInstanced(instanceCount, vertexCount);
-	}
+	static void ApplyUniforms(const Tp& params);
+	static void Submit(uint32_t vertexCount = 0);
+	static void SubmitInstanced(uint32_t instanceCount, uint32_t vertexCount = 0);
 
 private:
 	static Scope<RendererAPI>	_renderer_api;
 };
+
+template <class Tp>
+void Renderer::ApplyUniforms(const Tp& params)
+{
+	_renderer_api->ApplyUniforms(&params, sizeof(params));
+}
 
 } // Kinai

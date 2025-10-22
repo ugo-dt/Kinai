@@ -14,6 +14,10 @@
 #include "Kinai/Events/KeyEvent.hpp"
 #include "Kinai/Events/MouseEvent.hpp"
 
+#include "Kinai/GUI/GUI.hpp"
+#include "Kinai/GUI/Window.hpp"
+#include "Kinai/GUI/Widgets/Widgets.hpp"
+
 #include "Kinai/Math/Math.hpp"
 
 #include "Kinai/Renderer/2D/Painter.hpp"
