@@ -65,9 +65,9 @@ public:
 		// Kinai::Renderer2D::ResetQuadShader();
 
 		Kinai::Painter::SetImage(0, _cobblestone);
-		Kinai::Painter::DrawQuad(math::vec2(0.5f), math::vec2(0.5f), math::vec4(1.0f));
+		Kinai::Painter::DrawQuad(math::vec2(50.f), math::vec2(500.f), math::vec4(1.0f));
+		Kinai::Painter::DrawQuad(50, 50, 100, 100, math::vec4(1.0f));
 		Kinai::Painter::ResetImage();
-		Kinai::Painter::DrawQuad(math::vec2(-0.25f, 0.25f), math::vec2(0.5f), math::vec4(1.0f));
 		Kinai::Painter::EndPass();
 		Kinai::Renderer::EndPass();
 	}
@@ -97,7 +97,7 @@ public:
 	{
 		Kinai::Application& app = Kinai::Application::Get();
 
-		Kinai::GUI::Begin("Test window");
+		Kinai::GUI::Begin("Test window", nullptr, Kinai::GUI::WindowFlags_AlwaysAutoResize);
 		Kinai::GUI::Text("FPS: {}", Kinai::Application::Get().GetFPS());
 
 		if (Kinai::GUI::Button("This is a button"))
@@ -107,12 +107,6 @@ public:
 		if (Kinai::GUI::Button("This is a disabled button", Kinai::GUI::ButtonFlags_Disabled))
 			std::cout << "click 2" << std::endl;
 		Kinai::GUI::End();
-
-		// Kinai::GUI::Begin("Second window");
-		// Kinai::GUI::Text("Text in second window");
-		// if (Kinai::GUI::Button("This is a button"))
-		// 	std::cout << "click 1" << std::endl;
-		// Kinai::GUI::End();
 	}
 };
 

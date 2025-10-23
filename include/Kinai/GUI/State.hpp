@@ -37,6 +37,7 @@ struct State
 	Ref<DebugText::Context> context;
 	std::unordered_map<uint32_t, Ref<GUI::Window>> windows;
 	Ref<GUI::Window> current_window = nullptr, active_window = nullptr;
+	bool begin_called = false;
 	uint32_t next_window_id = 1;
 	uint32_t next_widget_id = 1;
 	std::array<SDL_Cursor*, SDL_SYSTEM_CURSOR_COUNT> sdl_cursors = { nullptr };

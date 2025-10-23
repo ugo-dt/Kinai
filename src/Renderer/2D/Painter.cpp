@@ -38,6 +38,7 @@ struct State
 	QuadVertex *vertex_buffer_base = nullptr;
 	QuadVertex *vertex_buffer_ptr = nullptr;
 	uint32_t index = 0;
+	bool in_pass = false;
 };
 
 static struct Context
@@ -88,12 +89,14 @@ void	Shutdown()
 
 void	BeginPass()
 {
+	KN_ASSERT(!context.state.in_pass, "Painter is already in a pass!");
 	KN_PROFILE_FUNC();
 
 	const math::ivec2 size = Application::Get().GetWindow().GetSize();
 	Renderer::SetViewport(0, 0, size.x, size.y);
 
 	StartBatch();
+	context.state.in_pass = true;
 }
 
 void	EndPass()
@@ -101,6 +104,7 @@ void	EndPass()
 	KN_PROFILE_FUNC();
 
 	Flush();
+	context.state.in_pass = false;
 }
 
 void	SetImage(int channel, const Ref<Texture2D>& texture)

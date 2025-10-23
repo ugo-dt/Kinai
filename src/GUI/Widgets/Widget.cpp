@@ -12,7 +12,11 @@ template <typename WidgetType, typename... Args>
 static bool CreateWidget(Args&&... args)
 {
 	if (!state.current_window)
+	{
+		// Begin wasn't called yet
 		Begin("Debug", nullptr);
+		state.begin_called = false;
+	}
 	return state.current_window->AddWidget<WidgetType>(state.next_widget_id++, std::forward<Args>(args)...);
 }
 
