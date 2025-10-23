@@ -147,7 +147,7 @@ public:
 		Kinai::Application& app = Kinai::Application::Get();
 
 		Kinai::GUI::SetNextWindowPos(Kinai::math::ivec2(10, 10));
-		Kinai::GUI::Begin("Info", nullptr, Kinai::GUI::WindowFlags_NoResize);
+		Kinai::GUI::Begin("Info", nullptr, Kinai::GUI::WindowFlags_NoResize | Kinai::GUI::WindowFlags_AlwaysAutoResize);
 		Kinai::GUI::Text("Move around with WASD keys");
 		Kinai::GUI::Text("FPS: {}", (size_t)app.GetFPS());
 		if (Kinai::GUI::Button(_camera.IsRotationEnabled() ? "(F1) Mouse Grab ON" : "(F1) Mouse Grab OFF"))

@@ -105,6 +105,7 @@ void	End()
 {
 	KN_PROFILE_FUNC();
 
+	Flush();
 	context.state.in_pass = false;
 }
 

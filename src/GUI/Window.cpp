@@ -25,19 +25,24 @@ void	Window::CalculateWidgetPositions()
 	_widget_origin.x = _rect.x;
 	_widget_origin.y = _rect.y + ((_flags & WindowFlags_NoMenubar) ? 0.f : 20.f);
 
+	float max_widget_width = 0.f;
 	for (const auto& widget : _widgets)
 	{
 		widget->SetPosition(_widget_origin);
 
 		math::vec2 widget_size = widget->GetSize();
-		if (widget_size.x > _rect.w)
-			_rect.w = widget_size.x + 10.f;
-		if (widget_size.y > _rect.y)
-			_rect.h = widget_size.y + 10.f;
-
+		if (widget_size.x > max_widget_width)
+			max_widget_width = widget_size.x + 10.f;
 		_widget_origin.y += state.glyph_size.y * state.scale * 2.5f;
 	}
 
+	if (_flags & WindowFlags_AlwaysAutoResize)
+	{
+		_rect.w = max_widget_width;
+		_rect.h = _widget_origin.y - _rect.y;
+		if (_rect.w == 0.f) _rect.w = 50.f;
+		if (_rect.h == 0.f) _rect.h = 50.f;
+	}
 }
 
 void	Window::Update()

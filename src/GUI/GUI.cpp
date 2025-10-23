@@ -63,7 +63,6 @@ void	NewFrame()
 {
 	++state.frames;
 	ResetMouseCursor();
-	Painter::BeginPass();
 	state.next_window_id = 1;
 }
 
@@ -81,6 +80,14 @@ static void RenderWindow(const Ref<GUI::Window>& window)
 
 void	Render()
 {
+	if (state.current_window && !state.begin_called)
+	{
+		// User didn't call Begin(), we need to End() now
+		KN_ASSERT(state.current_window);
+		state.begin_called = true;
+		GUI::End();
+	}
+
 	for (const auto& [id, window] : state.windows)
 	{
 		if (state.active_window == window)
@@ -122,6 +129,7 @@ void	Begin(const char* label, bool* is_open, WindowFlags flags)
 	math::vec2 pos = (state.next_window_pos.x >= 0.f && state.next_window_pos.y >= 0.f)
 		? state.next_window_pos : math::vec2((state.next_window_id + 1) * 50.f, (state.next_window_id + 1) * 50.f);
 	
+	state.begin_called = true;
 	state.current_window = state.windows.contains(state.next_window_id)
 		? state.windows.at(state.next_window_id)
 		: CreateRef<GUI::Window>(
@@ -138,6 +146,8 @@ void	Begin(const char* label, bool* is_open, WindowFlags flags)
 void	End()
 {
 	KN_ASSERT(state.current_window, "GUI::End called without a matching GUI::Begin!");
+	KN_ASSERT(state.begin_called, "GUI::End called without a matching GUI::Begin!");
+	
 	state.windows.insert(std::make_pair(state.next_window_id++, state.current_window));
 	state.current_window = nullptr;
 }
