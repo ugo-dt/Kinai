@@ -1,10 +1,11 @@
 #include "Kinai/GUI/GUILayer.hpp"
+#include "Kinai/GUI/State.hpp"
 
 namespace Kinai
 {
 
 GUILayer::GUILayer()
-	: Layer("GUILayer"),
+	: Layer("GUI Layer"),
 	  _block_events(true)
 {
 	GUI::CreateContext();

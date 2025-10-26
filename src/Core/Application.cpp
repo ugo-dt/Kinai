@@ -3,6 +3,7 @@
 #include "Kinai/Renderer/Renderer.hpp"
 #include "Kinai/Renderer/2D/Painter.hpp"
 #include "Kinai/Debug/Text/Text.hpp"
+#include "Kinai/GUI/GUILayer.hpp"
 
 namespace Kinai
 {

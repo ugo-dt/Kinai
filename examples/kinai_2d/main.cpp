@@ -100,12 +100,14 @@ public:
 		Kinai::GUI::Begin("Test window", nullptr, Kinai::GUI::WindowFlags_AlwaysAutoResize);
 		Kinai::GUI::Text("FPS: {}", Kinai::Application::Get().GetFPS());
 
+		Kinai::GUI::SliderFloat("slider", &_scroll1.x, -1.f, 1.f);
+		Kinai::GUI::Text("FPS: {}", Kinai::Application::Get().GetFPS());
 		if (Kinai::GUI::Button("This is a button"))
 			std::cout << "click 1" << std::endl;
+		Kinai::GUI::SliderFloat("slider", &_scroll1.x, -1.f, 1.f);
 		if (Kinai::GUI::Button(app.GetWindow().IsVSync() ? "VSync ON" : "VSync OFF"))
 			app.GetWindow().SetVSync(!app.GetWindow().IsVSync());
-		if (Kinai::GUI::Button("This is a disabled button", Kinai::GUI::ButtonFlags_Disabled))
-			std::cout << "click 2" << std::endl;
+		Kinai::GUI::SliderFloat("slider", &_scroll1.x, -1.f, 1.f);
 		Kinai::GUI::End();
 	}
 };

@@ -1,8 +1,7 @@
 #pragma once
 
-#include "Kinai/Core/Core.hpp"
 #include "Kinai/Core/Layer.hpp"
-#include "Kinai/GUI/GUI.hpp"
+#include "Kinai/GUI/Core.hpp"
 
 namespace Kinai
 {

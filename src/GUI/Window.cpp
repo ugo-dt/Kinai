@@ -20,8 +20,26 @@ Window::Window(const char* label, uint32_t id, Rect rect, bool* is_open, WindowF
 		_widget_origin.y += 20.f;
 }
 
+bool Window::IsOpen() const
+{
+	return _is_open ? *_is_open : true;
+}
+
+bool Window::IsHovered() const
+{
+	return GUI::IsMouseHovering(_rect);
+}
+
+bool Window::IsActive() const
+{
+	State& g_GuiState = GetState();
+	return g_GuiState.active_window && g_GuiState.active_window->GetID() == _id;
+}
+
 void	Window::CalculateWidgetPositions()
 {
+	State& g_GuiState = GetState();
+
 	_widget_origin.x = _rect.x;
 	_widget_origin.y = _rect.y + ((_flags & WindowFlags_NoMenubar) ? 0.f : 20.f);
 
@@ -33,7 +51,7 @@ void	Window::CalculateWidgetPositions()
 		math::vec2 widget_size = widget->GetSize();
 		if (widget_size.x > max_widget_width)
 			max_widget_width = widget_size.x + 10.f;
-		_widget_origin.y += state.glyph_size.y * state.scale * 2.5f;
+		_widget_origin.y += g_GuiState.glyph_size.y * g_GuiState.scale * 2.5f;
 	}
 
 	if (_flags & WindowFlags_AlwaysAutoResize)
@@ -47,6 +65,8 @@ void	Window::CalculateWidgetPositions()
 
 void	Window::Update()
 {
+	State& g_GuiState = GetState();
+
 	if (!(_flags & WindowFlags_NoMove))
 	{
 		if (GUI::IsMouseButtonPressed(Kinai::Mouse::ButtonLeft))
@@ -54,7 +74,7 @@ void	Window::Update()
 			if (IsHovered())
 			{
 				GUI::SetActiveWindow(_id);
-				state.mouse.left.pressed_handled = true;
+				g_GuiState.mouse.left.pressed_handled = true;
 				_dragging = true;
 				Point mouse_pos = GUI::GetMousePosition();
 				_drag_offset.x = mouse_pos.x - _rect.x;

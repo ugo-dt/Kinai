@@ -22,7 +22,7 @@ bool	WidgetText::Update(const char* text)
 void	WidgetText::Render() const
 {
 	DebugText::Home();
-	RenderText(_text.c_str(), _position.x, _position.y + state.glyph_size.y);
+	RenderText(_text.c_str(), _position.x, _position.y + g_GuiState.glyph_size.y);
 }
 
 float	WidgetText::GetWidth() const

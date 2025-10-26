@@ -7,16 +7,20 @@ namespace Kinai
 namespace GUI
 {
 
-State state;
+State g_GuiState;
+Style g_GuiStyle;
+
+State& GetState() { return g_GuiState; }
+Style& GetStyle() { return g_GuiStyle; }
 
 static struct GUI::Button* GetMouseButton(MouseButton button)
 {
 	switch (button)
 	{
 		case Kinai::Mouse::ButtonLeft:
-			return &state.mouse.left;
+			return &g_GuiState.mouse.left;
 		case Kinai::Mouse::ButtonRight:
-			return &state.mouse.right;
+			return &g_GuiState.mouse.right;
 		default:
 			return nullptr;
 	}
@@ -57,60 +61,60 @@ void	UpdateMouseButtons()
 		btn.released_handled = false;
 	};
 
-	update_button(state.mouse.left);
-	update_button(state.mouse.right);
+	update_button(g_GuiState.mouse.left);
+	update_button(g_GuiState.mouse.right);
 }
 
 void	UpdateCanvasSize(float width, float height)
 {
-	KN_ASSERT(state.context);
-	DebugText::SetContext(state.context);
+	KN_ASSERT(g_GuiState.context);
+	DebugText::SetContext(g_GuiState.context);
 	DebugText::SetCanvasSize(width, height);
-	state.canvas_size.x = width;
-	state.canvas_size.y = height;
-	state.glyph_size = DebugText::GetGlyphSize() * state.canvas_size;
+	g_GuiState.canvas_size.x = width;
+	g_GuiState.canvas_size.y = height;
+	g_GuiState.glyph_size = DebugText::GetGlyphSize() * g_GuiState.canvas_size;
 }
 
 void	SetMouseCursor(SDL_SystemCursor cursor)
 {
 	KN_ASSERT(cursor >= SDL_SYSTEM_CURSOR_DEFAULT && cursor < SDL_SYSTEM_CURSOR_COUNT);
-	SDL_SetCursor(state.sdl_cursors[static_cast<int>(cursor)]);
+	SDL_SetCursor(g_GuiState.sdl_cursors[static_cast<int>(cursor)]);
 }
 
 void	ResetMouseCursor()
 {
-	SDL_SetCursor(state.sdl_cursors[SDL_SYSTEM_CURSOR_DEFAULT]);
+	SDL_SetCursor(g_GuiState.sdl_cursors[SDL_SYSTEM_CURSOR_DEFAULT]);
 }
 
 void	SetActiveWindow(uint32_t id)
 {
-	auto it = state.windows.find(id);
-	if (it != state.windows.end())
-		state.active_window = it->second;
+	auto it = g_GuiState.windows.find(id);
+	if (it != g_GuiState.windows.end())
+		g_GuiState.active_window = it->second;
 	else
-		state.active_window = nullptr;
+		g_GuiState.active_window = nullptr;
 }
 
 math::vec2	GetRenderTextSize(const char* str)
 {
-	KN_ASSERT(state.context);
+	KN_ASSERT(g_GuiState.context);
 
 	math::ivec2 size;
 	SDL_GetWindowSize((SDL_Window*)Application::Get().GetWindow().GetNativeWindow(), &size.x, &size.y);
-	math::vec2 factor = state.glyph_size * ((math::vec2)size / state.canvas_size);
+	math::vec2 factor = g_GuiState.glyph_size * ((math::vec2)size / g_GuiState.canvas_size);
 	return math::vec2(strlen(str) * factor.x, factor.y);
 }
 
 void	RenderText(const char* str, float x, float y)
 {
-	KN_ASSERT(state.context);
+	KN_ASSERT(g_GuiState.context);
 
-	DebugText::SetContext(state.context);
+	DebugText::SetContext(g_GuiState.context);
 
 	math::ivec2 size;
 	SDL_GetWindowSize((SDL_Window*)Application::Get().GetWindow().GetNativeWindow(), &size.x, &size.y);
 
-	math::vec2 factor = state.glyph_size * ((math::vec2)size / state.canvas_size);
+	math::vec2 factor = g_GuiState.glyph_size * ((math::vec2)size / g_GuiState.canvas_size);
 	DebugText::SetOrigin(x / factor.x, y / factor.y);
 	DebugText::Put(str);
 }

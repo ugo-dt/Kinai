@@ -28,7 +28,7 @@ bool WidgetButton::IsClicked() const
 {
 	bool clicked = !_pressed && IsHovered() && GUI::IsMouseButtonReleased(Kinai::Mouse::ButtonLeft);
 	if (clicked)
-		state.mouse.left.released_handled = true;
+		g_GuiState.mouse.left.released_handled = true;
 	return clicked;
 }
 
@@ -44,8 +44,8 @@ bool	WidgetButton::Update(const char* label, ButtonFlags flags)
 	if (_label != label)
 	{
 		_label = label;
-		_rect.w = state.glyph_size.x * _label.length() * state.scale;
-		_rect.h = state.glyph_size.y * state.scale * 2.f;
+		_rect.w = g_GuiState.glyph_size.x * _label.length() * g_GuiState.scale;
+		_rect.h = g_GuiState.glyph_size.y * g_GuiState.scale * 2.f;
 	}
 	_flags = flags;
 
@@ -57,14 +57,21 @@ bool	WidgetButton::Update(const char* label, ButtonFlags flags)
 		return false;
 	_pressed = hovered && GUI::IsMouseButtonPressed(Kinai::Mouse::ButtonLeft);
 	if (_pressed)
-		state.mouse.left.pressed_handled = true;
+		g_GuiState.mouse.left.pressed_handled = true;
 	return IsClicked();
 }
 
 void	WidgetButton::Render() const
 {
-	math::vec4 button_color = IsDisabled() ? math::vec4(0.3f, 0.3f, 0.3f, 1.0f)
-		: IsHovered() ? math::vec4(0.3f, 0.3f, 0.8f, 1.0f) : math::vec4(0.2f, 0.2f, 0.8f, 1.0f);
+	bool down = GUI::IsMouseButtonDown(Kinai::Mouse::ButtonLeft);
+	g_GuiState.mouse.left.down_handled = down;
+	math::vec4 button_color = IsDisabled()
+		? g_GuiStyle.widget.button.disabledBackgroundColor
+		: _pressed
+			? g_GuiStyle.widget.button.activeBackgroundColor
+			: IsHovered()
+				? g_GuiStyle.widget.button.hoverBackgroundColor
+				: g_GuiStyle.widget.button.backgroundColor;
 
 	Painter::DrawQuad(_rect.x, _rect.y, _rect.w, _rect.h, button_color);
 	DebugText::Home();

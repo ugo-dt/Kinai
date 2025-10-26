@@ -1,6 +1,8 @@
 #pragma once
 
-#include "Kinai/GUI/GUI.hpp"
+#include "Kinai/GUI/Core.hpp"
+#include "Kinai/GUI/Event.hpp"
+#include "Kinai/GUI/Style.hpp"
 
 namespace Kinai
 {
@@ -8,6 +10,7 @@ namespace Kinai
 namespace GUI
 {
 
+// Forward declaration
 class Window;
 
 struct Button
@@ -44,7 +47,25 @@ struct State
 	math::vec2 next_window_pos = { -1.0f, -1.0f };
 };
 
-extern State state;
+extern State g_GuiState;
+extern Style g_GuiStyle;
+
+State& GetState();
+Style& GetStyle();
+
+// Context
+void CreateContext();
+void DestroyContext();
+void NewFrame();
+void Render();
+bool OnEvent(Event& event);
+
+// Input
+Point GetMousePosition();
+bool IsMouseHovering(const Rect&rect);
+bool IsMouseButtonPressed(MouseButton button);
+bool IsMouseButtonDown(MouseButton button);
+bool IsMouseButtonReleased(MouseButton button);
 
 void SetMouseCursor(SDL_SystemCursor cursor);
 void ResetMouseCursor();

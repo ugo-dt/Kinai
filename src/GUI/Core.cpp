@@ -1,11 +1,8 @@
-#include "Kinai/GUI/GUI.hpp"
-#include "Kinai/GUI/Window.hpp"
-#include "Kinai/Core/Input.hpp"
 #include "Kinai/Core/Application.hpp"
-
+#include "Kinai/GUI/Core.hpp"
 #include "Kinai/GUI/Event.hpp"
-#include "Kinai/GUI/Window.hpp"
 #include "Kinai/GUI/State.hpp"
+#include "Kinai/GUI/Window.hpp"
 
 namespace Kinai
 {
@@ -17,15 +14,15 @@ Ref<DebugText::Context>	debug_context = nullptr;
 
 void	CreateContext()
 {
-	state.context = DebugText::MakeContext();
-	DebugText::SetContext(state.context);
+	g_GuiState.context = DebugText::MakeContext();
+	DebugText::SetContext(g_GuiState.context);
 	math::ivec2 size;
 	SDL_GetWindowSize((SDL_Window*)Application::Get().GetWindow().GetNativeWindow(), &size.x, &size.y);
 	UpdateCanvasSize((float)size.x / 1.3f, (float)size.y / 1.3f);
-	state.scale = 1.3f;
+	g_GuiState.scale = 1.3f;
 
 	for (int i = 0; i < SDL_SYSTEM_CURSOR_COUNT; ++i)
-		state.sdl_cursors[i] = SDL_CreateSystemCursor(static_cast<SDL_SystemCursor>(i));
+		g_GuiState.sdl_cursors[i] = SDL_CreateSystemCursor(static_cast<SDL_SystemCursor>(i));
 
 	// debug
 	debug_context = DebugText::MakeContext();
@@ -34,8 +31,8 @@ void	CreateContext()
 void	DestroyContext()
 {
 	for (int i = 0; i < SDL_SYSTEM_CURSOR_COUNT; ++i)
-		if (state.sdl_cursors[i])
-			SDL_DestroyCursor(state.sdl_cursors[i]);
+		if (g_GuiState.sdl_cursors[i])
+			SDL_DestroyCursor(g_GuiState.sdl_cursors[i]);
 }
 
 bool	OnEvent(Event& event)
@@ -51,7 +48,7 @@ bool	OnEvent(Event& event)
 
 Point	GetMousePosition()
 {
-	return Point{ state.mouse.x, state.mouse.y };
+	return Point{ g_GuiState.mouse.x, g_GuiState.mouse.y };
 }
 
 bool	IsMouseHovering(const Rect&rect)
@@ -61,49 +58,50 @@ bool	IsMouseHovering(const Rect&rect)
 
 void	NewFrame()
 {
-	++state.frames;
+	++g_GuiState.frames;
 	ResetMouseCursor();
-	state.next_window_id = 1;
+	g_GuiState.next_window_id = 1;
 }
 
 static void RenderWindow(const Ref<GUI::Window>& window)
 {
-	DebugText::SetContext(state.context);
+	DebugText::SetContext(g_GuiState.context);
 	DebugText::SetOrigin(0.f, 0.f);
 	DebugText::Home();
 	DebugText::Font(DebugTextFont::ORIC);
 	Painter::BeginPass();
 	window->Render();
 	Painter::EndPass();
-	DebugText::SubmitContext(state.context);
+	DebugText::SubmitContext(g_GuiState.context);
 }
 
 void	Render()
 {
-	if (state.current_window && !state.begin_called)
+	if (g_GuiState.current_window && !g_GuiState.begin_called)
 	{
 		// User didn't call Begin(), we need to End() now
-		KN_ASSERT(state.current_window);
-		state.begin_called = true;
+		KN_ASSERT(g_GuiState.current_window);
+		g_GuiState.begin_called = true;
 		GUI::End();
 	}
 
-	for (const auto& [id, window] : state.windows)
+	for (const auto& [id, window] : g_GuiState.windows)
 	{
-		if (state.active_window == window)
+		if (g_GuiState.active_window == window)
 			continue;
 		if (!window->IsOpen())
 			continue;
 		RenderWindow(window);
 	}
-	if (state.active_window && state.active_window->IsOpen())
-		RenderWindow(state.active_window);
+	if (g_GuiState.active_window && g_GuiState.active_window->IsOpen())
+		RenderWindow(g_GuiState.active_window);
 
-	for (const auto & [id, window] : state.windows)
+	for (const auto & [id, window] : g_GuiState.windows)
 			window->Update();
 
 	UpdateMouseButtons();
 
+	// debug
 	// math::ivec2 size;
 	// SDL_GetWindowSize((SDL_Window*)Application::Get().GetWindow().GetNativeWindow(), &size.x, &size.y);
 	// DebugText::SetContext(debug_context);
@@ -119,37 +117,37 @@ void	Render()
 void	SetNextWindowPos(const math::ivec2& pos)
 {
 	KN_ASSERT(pos.x >= 0.f && pos.y >= 0.f, "GUI: invalid window position");
-	state.next_window_pos = pos;
+	g_GuiState.next_window_pos = pos;
 }
 
 void	Begin(const char* label, bool* is_open, WindowFlags flags)
 {
-	KN_ASSERT(!state.current_window, "GUI::Begin called before GUI::End!");
+	KN_ASSERT(!g_GuiState.current_window, "GUI::Begin called before GUI::End!");
 
-	math::vec2 pos = (state.next_window_pos.x >= 0.f && state.next_window_pos.y >= 0.f)
-		? state.next_window_pos : math::vec2((state.next_window_id + 1) * 50.f, (state.next_window_id + 1) * 50.f);
+	math::vec2 pos = (g_GuiState.next_window_pos.x >= 0.f && g_GuiState.next_window_pos.y >= 0.f)
+		? g_GuiState.next_window_pos : math::vec2((g_GuiState.next_window_id + 1) * 50.f, (g_GuiState.next_window_id + 1) * 50.f);
 	
-	state.begin_called = true;
-	state.current_window = state.windows.contains(state.next_window_id)
-		? state.windows.at(state.next_window_id)
+	g_GuiState.begin_called = true;
+	g_GuiState.current_window = g_GuiState.windows.contains(g_GuiState.next_window_id)
+		? g_GuiState.windows.at(g_GuiState.next_window_id)
 		: CreateRef<GUI::Window>(
 			label,
-			state.next_window_id,
+			g_GuiState.next_window_id,
 			Rect{ pos.x, pos.y, 200.f, 200.f },
 			is_open,
 			flags
 		);
-	state.next_widget_id = 0;
-	state.next_window_pos = math::vec2(-1.f, -1.f); // reset to invalid values
+	g_GuiState.next_widget_id = 0;
+	g_GuiState.next_window_pos = math::vec2(-1.f, -1.f); // reset to invalid values
 }
 
 void	End()
 {
-	KN_ASSERT(state.current_window, "GUI::End called without a matching GUI::Begin!");
-	KN_ASSERT(state.begin_called, "GUI::End called without a matching GUI::Begin!");
+	KN_ASSERT(g_GuiState.current_window, "GUI::End called without a matching GUI::Begin!");
+	KN_ASSERT(g_GuiState.begin_called, "GUI::End called without a matching GUI::Begin!");
 	
-	state.windows.insert(std::make_pair(state.next_window_id++, state.current_window));
-	state.current_window = nullptr;
+	g_GuiState.windows.insert(std::make_pair(g_GuiState.next_window_id++, g_GuiState.current_window));
+	g_GuiState.current_window = nullptr;
 }
 
 } // GUI

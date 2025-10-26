@@ -15,8 +15,8 @@ bool	OnWindowResizeEvent(WindowResizeEvent &event)
 
 bool	OnMouseMotionEvent(MouseMotionEvent &event)
 {
-	state.mouse.x = floorf(event.GetX());
-	state.mouse.y = floorf(event.GetY());
+	g_GuiState.mouse.x = floorf(event.GetX());
+	g_GuiState.mouse.y = floorf(event.GetY());
 	return false;
 }
 
@@ -26,15 +26,15 @@ bool	OnMouseButtonPressedEvent(MouseButtonPressedEvent &event)
 
 	switch (event.GetButton())
 	{
-		case Kinai::Mouse::ButtonLeft: btn = &state.mouse.left; break;
-		case Kinai::Mouse::ButtonRight: btn = &state.mouse.right; break;
+		case Kinai::Mouse::ButtonLeft: btn = &g_GuiState.mouse.left; break;
+		case Kinai::Mouse::ButtonRight: btn = &g_GuiState.mouse.right; break;
 		default: break;
 	}
 	if (btn)
 	{
 		btn->pressed = !btn->down;
 		btn->down = true;
-		btn->pressed_frame = state.frames;
+		btn->pressed_frame = g_GuiState.frames;
 	}
 	return false;
 }
@@ -45,8 +45,8 @@ bool	OnMouseButtonReleasedEvent(MouseButtonReleasedEvent &event)
 
 	switch (event.GetButton())
 	{
-		case Kinai::Mouse::ButtonLeft: btn = &state.mouse.left; break;
-		case Kinai::Mouse::ButtonRight: btn = &state.mouse.right; break;
+		case Kinai::Mouse::ButtonLeft: btn = &g_GuiState.mouse.left; break;
+		case Kinai::Mouse::ButtonRight: btn = &g_GuiState.mouse.right; break;
 		default: break;
 	}
 	if (btn)
