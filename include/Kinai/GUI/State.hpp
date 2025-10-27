@@ -74,8 +74,16 @@ void UpdateMouseButtons();
 void UpdateCanvasSize(float width, float height);
 
 void SetActiveWindow(uint32_t id);
+
 math::vec2 GetRenderTextSize(const char* str);
 void RenderText(const char* str, float x, float y);
+
+template <class... Args>
+KN_INLINE void	RenderText(float x, float y, std::string_view fmt, Args&&... args)
+{
+	std::string str = std::vformat(fmt, std::make_format_args(args...));
+	RenderText(str.c_str(), x, y);	
+}
 
 } // GUI
 

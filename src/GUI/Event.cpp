@@ -61,5 +61,4 @@ bool	OnMouseButtonReleasedEvent(MouseButtonReleasedEvent &event)
 
 } // GUI
 
-
 } // Kinai

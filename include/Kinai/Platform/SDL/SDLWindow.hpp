@@ -28,11 +28,6 @@ public:
 	bool IsFocused() const override;
 	bool IsHovered() const override;
 
-#ifdef KINAI_SOKOL
-	sg_environment GetSokolEnvironment() const override;
-	sg_swapchain GetSokolSwapchain() const override;
-#endif
-
 	void SetVSync(bool enabled) override;
 	void SetEventCallback(const EventCallback &callback) override;
 	void SetTitle(const std::string &title) override;

@@ -29,7 +29,7 @@ struct WidgetStyle
 		math::vec4 disabledBackgroundColor = math::vec4(0.3f, 0.3f, 0.3f, 1.0f);
 		math::vec4 hoverBackgroundColor = math::vec4(0.3f, 0.3f, 0.8f, 1.0f);
 		math::vec4 activeBackgroundColor = math::vec4(0.1f, 0.1f, 0.8f, 1.0f);
-		math::vec4 borderColor = math::vec4(1.0f, 1.0f, 1.0f, 1.0f);
+		math::vec4 borderColor = math::vec4(0.7f, 0.7f, 1.0f, 1.0f);
 		math::vec4 textColor = math::vec4(1.0f, 1.0f, 1.0f, 1.0f);
 	}button;
 

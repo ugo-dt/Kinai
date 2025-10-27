@@ -20,19 +20,23 @@ Window::Window(const char* label, uint32_t id, Rect rect, bool* is_open, WindowF
 		_widget_origin.y += 20.f;
 }
 
-bool Window::IsOpen() const
+uint32_t	Window::GetID() const
+{
+	return _id;
+}
+
+bool	Window::IsOpen() const
 {
 	return _is_open ? *_is_open : true;
 }
 
-bool Window::IsHovered() const
+bool	Window::IsHovered() const
 {
 	return GUI::IsMouseHovering(_rect);
 }
 
-bool Window::IsActive() const
+bool	Window::IsActive() const
 {
-	State& g_GuiState = GetState();
 	return g_GuiState.active_window && g_GuiState.active_window->GetID() == _id;
 }
 
@@ -113,6 +117,11 @@ void	Window::Render() const
 
 	for (const auto& widget : _widgets)
 		widget->Render();
+}
+
+void	Window::OnEvent(Event& event)
+{
+	(void)event;
 }
 
 } // GUI

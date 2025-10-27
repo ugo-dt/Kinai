@@ -29,7 +29,7 @@ static_assert((uint32_t)KN_EVENT_LAST < (uint32_t)SDL_EVENT_LAST);
 
 #define KN_CUSTOM_EVENT_TYPE_COUNT	((uint32_t)KN_EVENT_LAST - (uint32_t)SDL_EVENT_USER)
 
-#define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return type; }\
+#define EVENT_CLASS_TYPE(type) constexpr static EventType GetStaticType() { return type; }\
 								virtual EventType GetEventType() const override { return GetStaticType(); }\
 								virtual const char* GetName() const override { return #type; }
 
@@ -40,7 +40,7 @@ class Event
 public:
 	virtual ~Event() = default;
 
-	bool 		handled = false;
+	bool handled = false;
 
 	virtual EventType GetEventType() const = 0;
 	virtual const char* GetName() const = 0;

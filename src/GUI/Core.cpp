@@ -43,6 +43,11 @@ bool	OnEvent(Event& event)
 	dispatcher.Dispatch<MouseMotionEvent>(GUI::OnMouseMotionEvent);
 	dispatcher.Dispatch<MouseButtonPressedEvent>(GUI::OnMouseButtonPressedEvent);
 	dispatcher.Dispatch<MouseButtonReleasedEvent>(GUI::OnMouseButtonReleasedEvent);
+
+	// for (const auto& [id, window] : g_GuiState.windows)
+	// 	if (window->IsOpen())
+	// 		window->OnEvent(event);
+
 	return false;
 }
 
@@ -67,6 +72,7 @@ static void RenderWindow(const Ref<GUI::Window>& window)
 {
 	DebugText::SetContext(g_GuiState.context);
 	DebugText::SetOrigin(0.f, 0.f);
+	DebugText::SetColor(255, 255, 255, 255);
 	DebugText::Home();
 	DebugText::Font(DebugTextFont::ORIC);
 	Painter::BeginPass();

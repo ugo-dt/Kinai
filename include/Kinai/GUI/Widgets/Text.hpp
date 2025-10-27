@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Kinai/GUI/Core.hpp"
 #include "Kinai/GUI/Widgets/Widget.hpp"
 
 namespace Kinai

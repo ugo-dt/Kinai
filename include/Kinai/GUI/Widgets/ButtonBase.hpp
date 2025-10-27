@@ -16,18 +16,15 @@ enum ButtonFlags_ : uint32_t
 
 using ButtonFlags = uint32_t;
 
-class WidgetButton : public Widget
+class WidgetButtonBase : public Widget
 {
 public:
-	WidgetButton(Point position, const char* label, ButtonFlags flags = 0);
-	~WidgetButton() = default;
-	
-	virtual void UpdatePosition();
-	virtual void UpdateSize();
+	WidgetButtonBase(Point position, const char* label, ButtonFlags flags = 0);
+	~WidgetButtonBase() = default;
 
 	using Widget::Update;
-	virtual bool Update(const char* label, ButtonFlags flags = 0);
-	virtual void Render() const override;
+	bool Update(const char* label, ButtonFlags flags = 0);
+	void Render() const override;
 
 	void SetLabel(const char* label) { _label = label; }
 
@@ -35,13 +32,12 @@ public:
 	bool IsClicked() const;
 	bool IsDisabled() const;
 
+	void SetWidth(float width) { _rect.w = width; }
+	void SetHeight(float height) { _rect.h = height; }
+
 	float GetWidth() const override { return _rect.w; }
 	float GetHeight() const override { return _rect.h; }
 	math::vec2 GetSize() const override { return math::vec2(_rect.w, _rect.h); }
-
-protected:
-	virtual void OnClick() {}
-	bool BaseUpdate(const char* label, ButtonFlags flags);
 
 protected:
 	std::string	_label;

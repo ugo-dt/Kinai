@@ -24,6 +24,11 @@ bool	Button(const char* label, ButtonFlags flags)
 	return CreateWidget<WidgetButton>(label, flags);
 }
 
+bool	RadioButton(const char* label, int* value, int button_value, ButtonFlags flags)
+{
+	return CreateWidget<WidgetRadioButton>(label, value, button_value, flags);
+}
+
 void	Text(const char* str)
 {
 	CreateWidget<WidgetText>(str);
@@ -54,7 +59,7 @@ bool	SliderShort(const char* label, short* value, short min_value, short max_val
 	return CreateWidget<WidgetSlider<short>>(label, value, min_value, max_value);
 }
 
-bool	SliderChar(const char* label, math::u8* value, math::u8 min_value, math::u8 max_value)
+bool	SliderChar(const char* label, char* value, char min_value, char max_value)
 {
 	return CreateWidget<WidgetSlider<char>>(label, value, min_value, max_value);
 }

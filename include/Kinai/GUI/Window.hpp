@@ -29,7 +29,7 @@ public:
 	Window(const char* label, uint32_t id, Rect rect, bool* is_open, WindowFlags flags = 0);
 	~Window() = default;
 
-	uint32_t GetID() const { return _id; }
+	uint32_t GetID() const;
 
 	bool IsOpen() const;
 	bool IsHovered() const;
@@ -37,6 +37,7 @@ public:
 
 	void Update();
 	void Render() const;
+	void OnEvent(Event& event);
 
 	template <typename WidgetType, typename... Args>
 	requires(std::is_base_of_v<Widget, WidgetType>)

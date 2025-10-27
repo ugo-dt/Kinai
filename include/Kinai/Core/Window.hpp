@@ -11,11 +11,11 @@ namespace Kinai
 
 struct WindowProps
 {
-	std::string	title;
-	uint32_t	width;
-	uint32_t	height;
-	bool		fullscreen;
-	bool		no_vsync;
+	std::string title;
+	uint32_t width;
+	uint32_t height;
+	bool fullscreen;
+	bool no_vsync;
 
 	WindowProps(
 		const std::string& title = "Kinai Window",
@@ -50,11 +50,6 @@ public:
 	virtual bool GetRelativeMouseMode() const = 0;
 	virtual bool IsFocused() const = 0;
 	virtual bool IsHovered() const = 0;
-	
-#ifdef KINAI_SOKOL
-	virtual sg_environment GetSokolEnvironment() const = 0;
-	virtual sg_swapchain GetSokolSwapchain() const = 0;
-#endif
 
 	virtual bool IsVSync() const = 0;
 	virtual void SetVSync(bool enabled) = 0;

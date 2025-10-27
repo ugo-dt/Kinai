@@ -13,6 +13,8 @@ bool OnMouseMotionEvent(MouseMotionEvent &event);
 bool OnMouseButtonPressedEvent(MouseButtonPressedEvent &event);
 bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent &event);
 
+bool PollEvent(Event** event);
+
 } // GUI
 
 } // Kinai

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Kinai/GUI/Core.hpp"
 #include "Kinai/GUI/State.hpp"
 #include "Kinai/GUI/Widgets/Widget.hpp"
 
@@ -68,7 +67,7 @@ WidgetSlider<Tp>::WidgetSlider(Point position, const char* label, Tp* value, Tp 
 	  _max_value(max_value),
 	  _dragging(false)
 {
-	Update();
+	Update(label, value, min_value, max_value);
 }
 
 template <typename Tp>
@@ -95,6 +94,7 @@ WidgetSlider<Tp>::Update(const char* label, Tp* value, Tp min_value, Tp max_valu
 		GUI::SetMouseCursor(SDL_SYSTEM_CURSOR_POINTER);
 	if (_dragging)
 	{
+		// g_GuiState.mouse.left.pressed_handled = true;
 		g_GuiState.mouse.left.down_handled = true;
 		Point mouse_pos = GUI::GetMousePosition();
 		float relative_x = mouse_pos.x - _rect.x;
@@ -128,9 +128,6 @@ WidgetSlider<Tp>::Render() const
 
 	Painter::DrawQuad(_slider.x - 1, _slider.y - 1, _slider.w + 2, _slider.h + 2, border_color);
 	Painter::DrawQuad(_slider.x, _slider.y, _slider.w, _slider.h, slider_color);
-
-	DebugText::Home();
-	RenderText("", _position.x, _position.y + _rect.h / 4.f);
 
 	DebugText::Home();
 	RenderText(_label.c_str(), _position.x + _rect.w, _position.y + _rect.h / 4.f);

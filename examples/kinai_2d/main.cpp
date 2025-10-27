@@ -3,6 +3,8 @@
 
 namespace math = Kinai::math;
 
+static int radio = 0;
+
 class AppLayer : public Kinai::Layer
 {
 // Private members are at the top for convenience
@@ -46,6 +48,11 @@ public:
 		Kinai::Renderer::SetClearColor(0.12f, 0.12f, 0.12f, 1.0f);
 		Kinai::Renderer::Clear();
 
+		Kinai::DebugText::Home();
+		Kinai::DebugText::SetOrigin(0.f, 0.f);
+		Kinai::DebugText::SetColor(255, 255, 0, 255);
+		Kinai::DebugText::Print("Radio button test value: {}", radio);
+
 		Kinai::Renderer::BeginPass();
 
 		// Kinai::Painter::BeginPass();
@@ -69,6 +76,8 @@ public:
 		Kinai::Painter::DrawQuad(50, 50, 100, 100, math::vec4(1.0f));
 		Kinai::Painter::ResetImage();
 		Kinai::Painter::EndPass();
+
+		Kinai::DebugText::Submit();
 		Kinai::Renderer::EndPass();
 	}
 
@@ -99,15 +108,14 @@ public:
 
 		Kinai::GUI::Begin("Test window", nullptr, Kinai::GUI::WindowFlags_AlwaysAutoResize);
 		Kinai::GUI::Text("FPS: {}", Kinai::Application::Get().GetFPS());
-
-		Kinai::GUI::SliderFloat("slider", &_scroll1.x, -1.f, 1.f);
-		Kinai::GUI::Text("FPS: {}", Kinai::Application::Get().GetFPS());
-		if (Kinai::GUI::Button("This is a button"))
-			std::cout << "click 1" << std::endl;
-		Kinai::GUI::SliderFloat("slider", &_scroll1.x, -1.f, 1.f);
 		if (Kinai::GUI::Button(app.GetWindow().IsVSync() ? "VSync ON" : "VSync OFF"))
 			app.GetWindow().SetVSync(!app.GetWindow().IsVSync());
+
 		Kinai::GUI::SliderFloat("slider", &_scroll1.x, -1.f, 1.f);
+		// Kinai::GUI::RadioButton("Option 0", (int*)&radio, 0, Kinai::GUI::ButtonFlags_Disabled);
+		Kinai::GUI::RadioButton("Option 1", (int*)&radio, 1);
+		// Kinai::GUI::RadioButton("Option 2", (int*)&radio, 2);
+		// Kinai::GUI::RadioButton("Option 3", (int*)&radio, 3);
 		Kinai::GUI::End();
 	}
 };
