@@ -154,6 +154,13 @@ void	EmWindow::SetTitle(const std::string &title)
 	emscripten_set_window_title(title.c_str());
 }
 
+void	EmWindow::SetWindowMouseGrab(bool enabled)
+{
+	KN_PROFILE_FUNC();
+
+	KN_UNUSED(enabled);
+}
+
 void	EmWindow::SetRelativeMouseMode(bool enabled)
 {
 	KN_PROFILE_FUNC();

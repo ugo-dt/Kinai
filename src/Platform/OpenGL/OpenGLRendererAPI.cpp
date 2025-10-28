@@ -146,6 +146,7 @@ void	OpenGLRendererAPI::Init()
 
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
+	glEnable(GL_SCISSOR_TEST);
 
 	glDisable(GL_BLEND);
 	glDisable(GL_STENCIL_TEST);
@@ -164,6 +165,13 @@ void	OpenGLRendererAPI::SetViewport(uint32_t x, uint32_t y, uint32_t width, uint
 	_KN_GL_CHECK_ERROR();
 }
 
+void	OpenGLRendererAPI::SetClipRect(uint32_t x, uint32_t y, uint32_t width, uint32_t height)
+{
+	KN_PROFILE_FUNC();
+	glScissor(x, y, width, height);
+	_KN_GL_CHECK_ERROR();
+}
+
 void	OpenGLRendererAPI::SetClearColor(const math::vec4& color)
 {
 	KN_PROFILE_FUNC();
@@ -174,6 +182,7 @@ void	OpenGLRendererAPI::SetClearColor(const math::vec4& color)
 void	OpenGLRendererAPI::Clear()
 {
 	KN_PROFILE_FUNC();
+	glDisable(GL_SCISSOR_TEST);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	_KN_GL_CHECK_ERROR();
 }
@@ -268,6 +277,7 @@ void	OpenGLRendererAPI::BindTexture(uint32_t id, uint32_t slot)
 void OpenGLRendererAPI::BeginPass()
 {
 	KN_PROFILE_FUNC();
+	glEnable(GL_SCISSOR_TEST);
 	_KN_GL_CHECK_ERROR();
 }
 

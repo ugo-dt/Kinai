@@ -75,15 +75,33 @@ void	UpdateCanvasSize(float width, float height)
 	g_GuiState.glyph_size = DebugText::GetGlyphSize() * g_GuiState.canvas_size;
 }
 
+void	LockCursor()
+{
+	auto& app = Application::Get();
+
+	app.GetWindow().SetWindowMouseGrab(true);
+	g_GuiState.locked_cursor = true;
+}
+
+void	UnlockCursor()
+{
+	auto& app = Application::Get();
+
+	app.GetWindow().SetWindowMouseGrab(g_GuiState.app_mouse_grab);
+	g_GuiState.locked_cursor = false;
+}
+
 void	SetMouseCursor(SDL_SystemCursor cursor)
 {
 	KN_ASSERT(cursor >= SDL_SYSTEM_CURSOR_DEFAULT && cursor < SDL_SYSTEM_CURSOR_COUNT);
 	SDL_SetCursor(g_GuiState.sdl_cursors[static_cast<int>(cursor)]);
 }
 
-void	ResetMouseCursor()
+void	MouseCursorNewFrame()
 {
 	SDL_SetCursor(g_GuiState.sdl_cursors[SDL_SYSTEM_CURSOR_DEFAULT]);
+	if (!g_GuiState.locked_cursor)
+		g_GuiState.app_mouse_grab = Application::Get().GetWindow().GetWindowMouseGrab();
 }
 
 void	SetActiveWindow(uint32_t id)

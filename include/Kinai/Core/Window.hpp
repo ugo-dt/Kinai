@@ -47,6 +47,7 @@ public:
 	virtual math::ivec2 GetSizeInPixels() const = 0;
 	virtual uint32_t GetWidth() const = 0;
 	virtual uint32_t GetHeight() const = 0;
+	virtual bool GetWindowMouseGrab() const = 0;
 	virtual bool GetRelativeMouseMode() const = 0;
 	virtual bool IsFocused() const = 0;
 	virtual bool IsHovered() const = 0;
@@ -55,6 +56,7 @@ public:
 	virtual void SetVSync(bool enabled) = 0;
 	virtual void SetEventCallback(const EventCallback &callback) = 0;
 	virtual void SetTitle(const std::string &title) = 0;
+	virtual void SetWindowMouseGrab(bool enabled) = 0;
 	virtual void SetRelativeMouseMode(bool enabled) = 0;
 	virtual void WarpMouse(float x, float y) = 0;
 	virtual void ToggleFullscreen() = 0;

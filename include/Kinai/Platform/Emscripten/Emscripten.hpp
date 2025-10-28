@@ -35,20 +35,17 @@ public:
 	uint32_t GetWidth() const override;
 	uint32_t GetHeight() const override;
 
-	#ifdef KINAI_SOKOL
-		sg_environment GetSokolEnvironment() const override;
-		sg_swapchain GetSokolSwapchain() const override;
-	#endif
-
 	bool IsVSync() const override;
 	void SetVSync(bool enabled) override;
 	void SetEventCallback(const EventCallback &callback) override;
 	void SetTitle(const std::string &title) override;
 
+	bool GetWindowMouseGrab() const override { return false; }
 	bool GetRelativeMouseMode() const override { return true; }
 	bool IsFocused() const override { return true; }
 	bool IsHovered() const override { return true; }
 	
+	void SetWindowMouseGrab(bool enabled) override;
 	void SetRelativeMouseMode(bool enabled) override;
 	void WarpMouse(float x, float y) override;
 

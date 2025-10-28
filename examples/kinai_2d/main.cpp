@@ -41,21 +41,7 @@ public:
 
 	void	OnUpdate(float delta)
 	{
-		KN_NOTUSED(delta);
-
-		_camera.OnUpdate(delta);
-
-		Kinai::Renderer::SetClearColor(0.12f, 0.12f, 0.12f, 1.0f);
-		Kinai::Renderer::Clear();
-
-		Kinai::DebugText::Home();
-		Kinai::DebugText::SetOrigin(0.f, 0.f);
-		Kinai::DebugText::SetColor(255, 255, 0, 255);
-		Kinai::DebugText::Print("Radio button test value: {}", radio);
-
-		Kinai::Renderer::BeginPass();
-
-		// Kinai::Painter::BeginPass();
+		// Kinai::Renderer::BeginPass();
 
 		// Kinai::Renderer2D::BeginFrame(_camera.GetCamera());
 		// Kinai::Renderer2D::DrawQuad(math::vec2(0.f), math::vec2(1.f), _cobblestone);
@@ -71,12 +57,27 @@ public:
 		// Kinai::Renderer2D::DrawQuad(math::vec2(0.f), math::vec2(2.f), _noise);
 		// Kinai::Renderer2D::ResetQuadShader();
 
+		KN_NOTUSED(delta);
+
+		_camera.OnUpdate(delta);
+
+		Kinai::Renderer::SetClearColor(0.12f, 0.12f, 0.12f, 1.0f);
+		Kinai::Renderer::Clear();
+
+		Kinai::DebugText::Home();
+		Kinai::DebugText::SetOrigin(0.f, 0.f);
+		Kinai::DebugText::SetColor(255, 255, 0, 255);
+		Kinai::DebugText::Print("Radio button test value: {}", radio);
+
+		Kinai::Painter::Begin();
 		Kinai::Painter::SetImage(0, _cobblestone);
 		Kinai::Painter::DrawQuad(math::vec2(50.f), math::vec2(500.f), math::vec4(1.0f));
 		Kinai::Painter::DrawQuad(50, 50, 100, 100, math::vec4(1.0f));
 		Kinai::Painter::ResetImage();
-		Kinai::Painter::EndPass();
-
+		
+		Kinai::Renderer::BeginPass();
+		Kinai::Painter::Flush();
+		Kinai::Painter::End();
 		Kinai::DebugText::Submit();
 		Kinai::Renderer::EndPass();
 	}
@@ -106,7 +107,7 @@ public:
 	{
 		Kinai::Application& app = Kinai::Application::Get();
 
-		Kinai::GUI::Begin("Test window", nullptr, Kinai::GUI::WindowFlags_AlwaysAutoResize);
+		Kinai::GUI::Begin("Test window", nullptr, 0);
 		Kinai::GUI::Text("FPS: {}", Kinai::Application::Get().GetFPS());
 		if (Kinai::GUI::Button(app.GetWindow().IsVSync() ? "VSync ON" : "VSync OFF"))
 			app.GetWindow().SetVSync(!app.GetWindow().IsVSync());

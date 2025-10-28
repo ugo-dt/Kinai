@@ -88,9 +88,13 @@ void	Window::Update()
 				GUI::SetActiveWindow(0);
 		}
 		if (!GUI::IsMouseButtonDown(Kinai::Mouse::ButtonLeft))
+		{
 			_dragging = false;
+			GUI::UnlockCursor();
+		}
 		if (_dragging)
 		{
+			GUI::LockCursor();
 			GUI::SetMouseCursor(SDL_SYSTEM_CURSOR_MOVE);
 			Point mouse_pos = GUI::GetMousePosition();
 			_rect.x = mouse_pos.x - _drag_offset.x;

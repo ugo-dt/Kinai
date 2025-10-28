@@ -22,6 +22,7 @@ public:
 	math::ivec2 GetSizeInPixels() const override;
 	uint32_t GetWidth() const override;
 	uint32_t GetHeight() const override;
+	bool GetWindowMouseGrab() const override;
 	bool GetRelativeMouseMode() const override;
 	
 	bool IsVSync() const override;
@@ -31,6 +32,7 @@ public:
 	void SetVSync(bool enabled) override;
 	void SetEventCallback(const EventCallback &callback) override;
 	void SetTitle(const std::string &title) override;
+	void SetWindowMouseGrab(bool enabled) override;
 	void SetRelativeMouseMode(bool enabled) override;
 	void WarpMouse(float x, float y) override;
 	void ToggleFullscreen() override;

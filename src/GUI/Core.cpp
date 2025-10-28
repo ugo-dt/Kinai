@@ -64,7 +64,7 @@ bool	IsMouseHovering(const Rect&rect)
 void	NewFrame()
 {
 	++g_GuiState.frames;
-	ResetMouseCursor();
+	MouseCursorNewFrame();
 	g_GuiState.next_window_id = 1;
 }
 
@@ -75,10 +75,22 @@ static void RenderWindow(const Ref<GUI::Window>& window)
 	DebugText::SetColor(255, 255, 255, 255);
 	DebugText::Home();
 	DebugText::Font(DebugTextFont::ORIC);
-	Painter::BeginPass();
+	// Rect scissor_rect = window->GetRect();
+	// Renderer::SetClipRect(
+	// 	static_cast<int>(scissor_rect.x),
+	// 	static_cast<int>(scissor_rect.y),
+	// 	static_cast<int>(scissor_rect.w),
+	// 	static_cast<int>(scissor_rect.h),
+	// 	true
+	// );
+	Painter::Begin();
 	window->Render();
-	Painter::EndPass();
+
+	Renderer::BeginPass();
+	Painter::Flush();
+	Painter::End();
 	DebugText::SubmitContext(g_GuiState.context);
+	Renderer::EndPass();
 }
 
 void	Render()
@@ -102,8 +114,9 @@ void	Render()
 	if (g_GuiState.active_window && g_GuiState.active_window->IsOpen())
 		RenderWindow(g_GuiState.active_window);
 
+
 	for (const auto & [id, window] : g_GuiState.windows)
-			window->Update();
+		window->Update();
 
 	UpdateMouseButtons();
 

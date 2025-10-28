@@ -300,6 +300,16 @@ void	SDLWindow::SetTitle(const std::string &title)
 	SDL_SetWindowTitle(_handle, title.c_str());
 }
 
+bool	SDLWindow::GetWindowMouseGrab() const
+{
+	return SDL_GetWindowMouseGrab(_handle);
+}
+
+void	SDLWindow::SetWindowMouseGrab(bool enabled)
+{
+	SDL_SetWindowMouseGrab(_handle, enabled);
+}
+
 bool	SDLWindow::GetRelativeMouseMode() const
 {
 	return SDL_GetWindowRelativeMouseMode(_handle);

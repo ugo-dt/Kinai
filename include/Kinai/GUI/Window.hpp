@@ -30,6 +30,7 @@ public:
 	~Window() = default;
 
 	uint32_t GetID() const;
+	Rect GetRect() const { return _rect; }
 
 	bool IsOpen() const;
 	bool IsHovered() const;

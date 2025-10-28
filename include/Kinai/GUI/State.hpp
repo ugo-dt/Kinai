@@ -45,6 +45,7 @@ struct State
 	uint32_t next_widget_id = 1;
 	std::array<SDL_Cursor*, SDL_SYSTEM_CURSOR_COUNT> sdl_cursors = { nullptr };
 	math::vec2 next_window_pos = { -1.0f, -1.0f };
+	bool app_mouse_grab, locked_cursor;
 };
 
 extern State g_GuiState;
@@ -67,8 +68,10 @@ bool IsMouseButtonPressed(MouseButton button);
 bool IsMouseButtonDown(MouseButton button);
 bool IsMouseButtonReleased(MouseButton button);
 
+void LockCursor();
+void UnlockCursor();
 void SetMouseCursor(SDL_SystemCursor cursor);
-void ResetMouseCursor();
+void MouseCursorNewFrame();
 
 void UpdateMouseButtons();
 void UpdateCanvasSize(float width, float height);

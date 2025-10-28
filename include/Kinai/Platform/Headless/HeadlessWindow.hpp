@@ -18,17 +18,16 @@ public:
 	math::ivec2 GetSizeInPixels() const override;
 	uint32_t GetWidth() const override;
 	uint32_t GetHeight() const override;
+	bool GetWindowMouseGrab() const override;
 	bool GetRelativeMouseMode() const override;
 	bool IsVSync() const override;
 	bool IsFocused() const override;
 	bool IsHovered() const override;
-#ifdef KINAI_SOKOL
-	sg_environment GetSokolEnvironment() const override;
-	sg_swapchain GetSokolSwapchain() const override;
-#endif
+
 	void SetVSync(bool enabled) override;
 	void SetEventCallback(const EventCallback &callback) override;
 	void SetTitle(const std::string &title) override;
+	void SetWindowMouseGrab(bool enabled) override;
 	void SetRelativeMouseMode(bool enabled) override;
 	void WarpMouse(float x, float y) override;
 	void ToggleFullscreen() override;
@@ -36,7 +35,7 @@ public:
 private:
 	EventCallback _eventCallback;
 	std::string _title;
-	bool _relativeMouseMode;
+	bool _mouseGrab, _relativeMouseMode;
 	math::vec2 _mousePosition;
 	bool _vsync;
 	bool _focused;

@@ -23,6 +23,7 @@ HeadlessWindow::HeadlessWindow(const WindowProps& props)
 	_title = props.title;
 	_size = { (int)props.width, (int)props.height };
 	_vsync = !props.no_vsync;
+	_mouseGrab = false;
 	_relativeMouseMode = false;
 	_mousePosition = { 0.f, 0.f };
 }
@@ -70,6 +71,13 @@ uint32_t	HeadlessWindow::GetHeight() const
 	KN_PROFILE_FUNC();
 
 	return _size.y;
+}
+
+bool	HeadlessWindow::GetWindowMouseGrab() const
+{
+	KN_PROFILE_FUNC();
+
+	return _mouseGrab;
 }
 
 bool	HeadlessWindow::GetRelativeMouseMode() const
@@ -135,6 +143,13 @@ void	HeadlessWindow::SetTitle(const std::string &title)
 	KN_PROFILE_FUNC();
 
 	_title = title;
+}
+
+void	HeadlessWindow::SetWindowMouseGrab(bool enabled)
+{
+	KN_PROFILE_FUNC();
+
+	_mouseGrab = enabled;
 }
 
 void	HeadlessWindow::SetRelativeMouseMode(bool enabled)
