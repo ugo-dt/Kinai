@@ -25,21 +25,15 @@ bool	WidgetRadioButton::Update(const char* label, int* value, int button_value, 
 {
     _value = value;
     _button_value = button_value;
-    return WidgetButton::Update(label, flags);
-}
-
-void	WidgetRadioButton::OnClick()
-{
-    if (_value)
+	bool value_changed = WidgetButton::Update(label, flags);
+	if (value_changed && _value)
         *_value = _button_value;
+	return value_changed;
 }
 
 void	WidgetRadioButton::Render() const
 {
 	KN_ASSERT(_value != nullptr);
-
-	bool hovered = IsHovered();
-	bool down = GUI::IsMouseButtonDown(Kinai::Mouse::ButtonLeft);
 
 	Painter::DrawQuad(_rect.x - 1, _rect.y - 1, _rect.w + 2, _rect.h + 2, g_GuiStyle.widget.button.borderColor);
 
@@ -55,9 +49,9 @@ void	WidgetRadioButton::Render() const
 			Painter::DrawQuad(_rect.x + halfw / 2.f, _rect.y + halfh / 2.f, halfw, halfh,
 				g_GuiStyle.widget.button.backgroundColor);
 		}
-		else if (hovered)
+		else if (_hovered)
 		{
-			if (down)
+			if (_down)
 				Painter::DrawQuad(_rect.x + halfw / 2.f, _rect.y + halfh / 2.f, halfw, halfh,
 					g_GuiStyle.widget.button.activeBackgroundColor);
 			else
@@ -68,7 +62,7 @@ void	WidgetRadioButton::Render() const
 			Painter::DrawQuad(_rect.x, _rect.y, _rect.w, _rect.h, g_GuiStyle.window.backgroundColor);
 	}
 	DebugText::Home();
-	RenderText(_label.c_str(), _position.x + _rect.w, _position.y + _rect.h / 4.f);
+	RenderText(_label.c_str(), _rect.x + _rect.w, _rect.y + _rect.h / 4.f);
 }
 
 } // GUI

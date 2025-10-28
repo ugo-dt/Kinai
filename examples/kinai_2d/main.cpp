@@ -4,6 +4,7 @@
 namespace math = Kinai::math;
 
 static int radio = 0;
+static float slider = 0.0f;
 
 class AppLayer : public Kinai::Layer
 {
@@ -67,7 +68,8 @@ public:
 		Kinai::DebugText::Home();
 		Kinai::DebugText::SetOrigin(0.f, 0.f);
 		Kinai::DebugText::SetColor(255, 255, 0, 255);
-		Kinai::DebugText::Print("Radio button test value: {}", radio);
+		Kinai::DebugText::Print("Radio button test value: {}\n", radio);
+		Kinai::DebugText::Print("Slider test value: {}\n", slider);
 
 		Kinai::Painter::Begin();
 		Kinai::Painter::SetImage(0, _cobblestone);
@@ -107,16 +109,22 @@ public:
 	{
 		Kinai::Application& app = Kinai::Application::Get();
 
-		Kinai::GUI::Begin("Test window", nullptr, 0);
+		Kinai::GUI::Begin("Test window", nullptr, Kinai::GUI::WindowFlags_AlwaysAutoResize);
 		Kinai::GUI::Text("FPS: {}", Kinai::Application::Get().GetFPS());
 		if (Kinai::GUI::Button(app.GetWindow().IsVSync() ? "VSync ON" : "VSync OFF"))
 			app.GetWindow().SetVSync(!app.GetWindow().IsVSync());
 
-		Kinai::GUI::SliderFloat("slider", &_scroll1.x, -1.f, 1.f);
-		// Kinai::GUI::RadioButton("Option 0", (int*)&radio, 0, Kinai::GUI::ButtonFlags_Disabled);
+		Kinai::GUI::SliderFloat("Float Slider", &slider, -1.f, 1.f);
+		Kinai::GUI::RadioButton("Option 0", (int*)&radio, 0, Kinai::GUI::ButtonFlags_Disabled);
 		Kinai::GUI::RadioButton("Option 1", (int*)&radio, 1);
-		// Kinai::GUI::RadioButton("Option 2", (int*)&radio, 2);
-		// Kinai::GUI::RadioButton("Option 3", (int*)&radio, 3);
+		Kinai::GUI::RadioButton("Option 2", (int*)&radio, 2);
+		Kinai::GUI::RadioButton("Option 3", (int*)&radio, 3);
+		Kinai::GUI::End();
+		
+		Kinai::GUI::Begin("Window", nullptr, Kinai::GUI::WindowFlags_AlwaysAutoResize);
+		Kinai::GUI::Text("FPS: {}", Kinai::Application::Get().GetFPS());
+		if (Kinai::GUI::Button(app.GetWindow().IsVSync() ? "VSync ON" : "VSync OFF"))
+			app.GetWindow().SetVSync(!app.GetWindow().IsVSync());
 		Kinai::GUI::End();
 	}
 };

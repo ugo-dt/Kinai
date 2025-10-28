@@ -8,13 +8,12 @@ namespace GUI
 {
 
 Window::Window(const char* label, uint32_t id, Rect rect, bool* is_open, WindowFlags flags)
-	: _id(id),
-	  _rect(rect),
+	: Entity(rect),
+	  _id(id),
 	  _label(label),
 	  _is_open(is_open),
 	  _flags(flags),
-	  _widget_origin(rect.x, rect.y),
-	  _dragging(false)
+	  _widget_origin(rect.x, rect.y)
 {
 	if (!(_flags & WindowFlags_NoMenubar))
 		_widget_origin.y += 20.f;
@@ -42,11 +41,9 @@ bool	Window::IsActive() const
 
 void	Window::CalculateWidgetPositions()
 {
-	State& g_GuiState = GetState();
-
-	_widget_origin.x = _rect.x;
+	_widget_origin.x = _rect.x + 5.f;
 	_widget_origin.y = _rect.y + ((_flags & WindowFlags_NoMenubar) ? 0.f : 20.f);
-
+	
 	float max_widget_width = 0.f;
 	for (const auto& widget : _widgets)
 	{
@@ -67,19 +64,15 @@ void	Window::CalculateWidgetPositions()
 	}
 }
 
-void	Window::Update()
+bool	Window::Update()
 {
-	State& g_GuiState = GetState();
-
 	if (!(_flags & WindowFlags_NoMove))
 	{
-		if (GUI::IsMouseButtonPressed(Kinai::Mouse::ButtonLeft))
+		if (_pressed)
 		{
-			if (IsHovered())
+			if (_hovered)
 			{
 				GUI::SetActiveWindow(_id);
-				g_GuiState.mouse.left.pressed_handled = true;
-				_dragging = true;
 				Point mouse_pos = GUI::GetMousePosition();
 				_drag_offset.x = mouse_pos.x - _rect.x;
 				_drag_offset.y = mouse_pos.y - _rect.y;
@@ -87,12 +80,7 @@ void	Window::Update()
 			else
 				GUI::SetActiveWindow(0);
 		}
-		if (!GUI::IsMouseButtonDown(Kinai::Mouse::ButtonLeft))
-		{
-			_dragging = false;
-			GUI::UnlockCursor();
-		}
-		if (_dragging)
+		if (_down)
 		{
 			GUI::LockCursor();
 			GUI::SetMouseCursor(SDL_SYSTEM_CURSOR_MOVE);
@@ -101,9 +89,11 @@ void	Window::Update()
 			_rect.y = mouse_pos.y - _drag_offset.y;
 			CalculateWidgetPositions();
 		}
+		else
+			GUI::UnlockCursor();
 	}
-	if (_flags & WindowFlags_AlwaysAutoResize)
-		CalculateWidgetPositions();
+	CalculateWidgetPositions();
+	return Entity::BaseUpdate();
 }
 
 void	Window::Render() const
@@ -125,7 +115,13 @@ void	Window::Render() const
 
 void	Window::OnEvent(Event& event)
 {
-	(void)event;
+	for (const auto& widget : _widgets)
+	{
+		widget->OnEvent(event);
+		if (event.handled)
+			return ;
+	}
+	Entity::OnEvent(event);
 }
 
 } // GUI

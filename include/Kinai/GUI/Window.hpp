@@ -23,7 +23,7 @@ enum WindowFlags_ : uint32_t
 
 using WindowFlags = uint32_t;
 
-class Window
+class Window : public Entity
 {
 public:
 	Window(const char* label, uint32_t id, Rect rect, bool* is_open, WindowFlags flags = 0);
@@ -36,7 +36,7 @@ public:
 	bool IsHovered() const;
 	bool IsActive() const;
 
-	void Update();
+	bool Update();
 	void Render() const;
 	void OnEvent(Event& event);
 
@@ -48,13 +48,11 @@ public:
 
 private:
 	uint32_t _id;
-	Rect _rect;
 	std::string _label;
 	bool* _is_open;
 	WindowFlags _flags;
 	std::vector<Ref<Widget>> _widgets;
 	Point _widget_origin;
-	bool _dragging;
 	Point _drag_offset;
 };
 

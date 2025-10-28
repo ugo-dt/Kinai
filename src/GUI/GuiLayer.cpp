@@ -18,11 +18,11 @@ GUILayer::~GUILayer()
 
 void	GUILayer::OnEvent(Event& e)
 {
-	bool handled = GUI::OnEvent(e);
+	GUI::OnEvent(e);
 	if (_block_events)
 	{
-		e.handled |= handled && e.IsInCategory(EventCategoryMouse);
-		e.handled |= handled && e.IsInCategory(EventCategoryKeyboard);
+		e.handled |= e.handled && e.IsInCategory(EventCategoryMouse);
+		e.handled |= e.handled && e.IsInCategory(EventCategoryKeyboard);
 	}
 }
 

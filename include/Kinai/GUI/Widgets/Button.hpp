@@ -22,32 +22,24 @@ public:
 	WidgetButton(Point position, const char* label, ButtonFlags flags = 0);
 	~WidgetButton() = default;
 	
-	virtual void UpdatePosition();
 	virtual void UpdateSize();
 
-	using Widget::Update;
+	using Entity::Update;
 	virtual bool Update(const char* label, ButtonFlags flags = 0);
 	virtual void Render() const override;
 
 	void SetLabel(const char* label) { _label = label; }
 
-	bool IsHovered() const;
-	bool IsClicked() const;
-	bool IsDisabled() const;
-
-	float GetWidth() const override { return _rect.w; }
-	float GetHeight() const override { return _rect.h; }
-	math::vec2 GetSize() const override { return math::vec2(_rect.w, _rect.h); }
+	bool IsHovered() const { return _hovered; }
+	bool IsClicked() const { return _released; }
+	bool IsDisabled() const { return _flags & ButtonFlags_Disabled; }
 
 protected:
 	virtual void OnClick() {}
-	bool BaseUpdate(const char* label, ButtonFlags flags);
 
 protected:
 	std::string	_label;
 	ButtonFlags _flags;
-	Rect _rect;
-	struct Button btn;
 };
 
 bool Button(const char* label, ButtonFlags flags = ButtonFlags_None);

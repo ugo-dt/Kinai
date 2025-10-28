@@ -35,20 +35,24 @@ void	DestroyContext()
 			SDL_DestroyCursor(g_GuiState.sdl_cursors[i]);
 }
 
-bool	OnEvent(Event& event)
+void	OnEvent(Event& event)
 {
 	EventDispatcher	dispatcher(event);
 
 	dispatcher.Dispatch<WindowResizeEvent>(GUI::OnWindowResizeEvent);
 	dispatcher.Dispatch<MouseMotionEvent>(GUI::OnMouseMotionEvent);
-	dispatcher.Dispatch<MouseButtonPressedEvent>(GUI::OnMouseButtonPressedEvent);
-	dispatcher.Dispatch<MouseButtonReleasedEvent>(GUI::OnMouseButtonReleasedEvent);
+	// dispatcher.Dispatch<MouseButtonPressedEvent>(GUI::OnMouseButtonPressedEvent);
+	// dispatcher.Dispatch<MouseButtonReleasedEvent>(GUI::OnMouseButtonReleasedEvent);
 
-	// for (const auto& [id, window] : g_GuiState.windows)
-	// 	if (window->IsOpen())
-	// 		window->OnEvent(event);
+	for (const auto& [id, window] : g_GuiState.windows)
+	{
+		if (!window->IsOpen())
+			continue;
 
-	return false;
+		window->OnEvent(event);
+		if (event.handled)
+			break;
+	}
 }
 
 Point	GetMousePosition()
@@ -75,20 +79,14 @@ static void RenderWindow(const Ref<GUI::Window>& window)
 	DebugText::SetColor(255, 255, 255, 255);
 	DebugText::Home();
 	DebugText::Font(DebugTextFont::ORIC);
-	// Rect scissor_rect = window->GetRect();
-	// Renderer::SetClipRect(
-	// 	static_cast<int>(scissor_rect.x),
-	// 	static_cast<int>(scissor_rect.y),
-	// 	static_cast<int>(scissor_rect.w),
-	// 	static_cast<int>(scissor_rect.h),
-	// 	true
-	// );
+
 	Painter::Begin();
 	window->Render();
 
 	Renderer::BeginPass();
 	Painter::Flush();
 	Painter::End();
+
 	DebugText::SubmitContext(g_GuiState.context);
 	Renderer::EndPass();
 }
@@ -113,7 +111,6 @@ void	Render()
 	}
 	if (g_GuiState.active_window && g_GuiState.active_window->IsOpen())
 		RenderWindow(g_GuiState.active_window);
-
 
 	for (const auto & [id, window] : g_GuiState.windows)
 		window->Update();

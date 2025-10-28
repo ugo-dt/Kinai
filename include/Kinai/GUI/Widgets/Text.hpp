@@ -14,7 +14,7 @@ public:
 	WidgetText(Point position, const char* text);
 	~WidgetText() = default;
 
-	using Widget::Update;
+	using Entity::Update;
 	bool Update(const char* text);
 	void Render() const override;
 

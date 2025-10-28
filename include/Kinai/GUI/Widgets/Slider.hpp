@@ -16,28 +16,15 @@ public:
 	WidgetSlider(Point position, const char* label, Tp* value, Tp min_value, Tp max_value);
 	~WidgetSlider() = default;
 
-	using Widget::Update;
-	bool Update(const char* label, Tp* value, Tp min_value, Tp max_value);
+	using Entity::Update;
+	virtual bool Update(const char* label, Tp* value, Tp min_value, Tp max_value);
 
 	void Render() const override;
 
-	bool IsHovered() const { return GUI::IsMouseHovering(_rect); }
-
-	float GetWidth() const override
-	{
-		return _rect.w + GetRenderTextSize(_label.c_str()).x;
-	}
-
-	float GetHeight() const override
-	{
-		return _rect.h;
-	}
-
-	math::vec2 GetSize() const override { return math::vec2(GetWidth(), GetHeight()); }
+	float GetWidth() const override { return _rect.w + GetRenderTextSize(_label.c_str()).x; }
 
 private:
 	std::string	_label;
-	Rect _rect;
 	Rect _slider;
 	Tp* _value;
 	Tp _min_value;
@@ -50,23 +37,19 @@ bool SliderInt(const char* label, int* value, int min_value, int max_value);
 bool SliderDouble(const char* label, double* value, double min_value, double max_value);
 bool SliderUInt(const char* label, unsigned int* value, unsigned int min_value, unsigned int max_value);
 bool SliderShort(const char* label, short* value, short min_value, short max_value);
-bool SliderChar(const char* label, math::u8* value, math::u8 min_value, math::u8 max_value);
+bool SliderChar(const char* label, char* value, char min_value, char max_value);
 
 template <typename Tp>
 WidgetSlider<Tp>::WidgetSlider(Point position, const char* label, Tp* value, Tp min_value, Tp max_value)
 	: Widget(position),
 	  _label(label),
-	  _rect{
-		position.x,
-		position.y,
-		0, 20.f
-	  },
 	  _slider{ 0, 0, 20.f, 20.f },
 	  _value(value),
 	  _min_value(min_value),
 	  _max_value(max_value),
 	  _dragging(false)
 {
+	SetSize(150.0f, 20.f);
 	Update(label, value, min_value, max_value);
 }
 
@@ -78,24 +61,17 @@ WidgetSlider<Tp>::Update(const char* label, Tp* value, Tp min_value, Tp max_valu
 
 	Tp old_value = *value;
 
-	_rect.x = _position.x;
-	_rect.y = _position.y;
-	_rect.w = 150.f;
 	_label = label;
 	_value = value;
 	_min_value = min_value;
 	_max_value = max_value;
 
-	bool down = GUI::IsMouseButtonDown(Kinai::Mouse::ButtonLeft);
-	bool hovered = IsHovered();
-	_dragging = _dragging ? down : down && hovered;
+	_dragging = _dragging ? _down : _down && _hovered;
 
-	if (hovered || _dragging)
+	if (_hovered || _dragging)
 		GUI::SetMouseCursor(SDL_SYSTEM_CURSOR_POINTER);
 	if (_dragging)
 	{
-		// g_GuiState.mouse.left.pressed_handled = true;
-		g_GuiState.mouse.left.down_handled = true;
 		Point mouse_pos = GUI::GetMousePosition();
 		float relative_x = mouse_pos.x - _rect.x;
 		if (relative_x < 0.f) relative_x = 0.f;
@@ -107,19 +83,19 @@ WidgetSlider<Tp>::Update(const char* label, Tp* value, Tp min_value, Tp max_valu
 	}
 	_slider.x = _rect.x + ((_rect.w - _slider.w) * ((*_value - _min_value) / (_max_value - _min_value)));
 	_slider.y = _rect.y;
-	return old_value != *value;
+	return Entity::BaseUpdate(old_value != *value);
 }
 
 template <typename Tp>
 void
 WidgetSlider<Tp>::Render() const
 {
-	math::vec4 bg_color = IsHovered() || _dragging ?
+	math::vec4 bg_color = _hovered || _dragging ?
 		g_GuiStyle.widget.slider.hoverBackgroundColor : g_GuiStyle.widget.slider.backgroundColor;
 	math::vec4 border_color = g_GuiStyle.widget.slider.borderColor;
 	math::vec4 slider_color =
 		_dragging ? g_GuiStyle.widget.slider.sliderActiveColor
-		          : IsHovered()
+		          : _hovered
 		              ? g_GuiStyle.widget.slider.sliderHoverColor
 		              : g_GuiStyle.widget.slider.sliderColor;
 
@@ -130,7 +106,7 @@ WidgetSlider<Tp>::Render() const
 	Painter::DrawQuad(_slider.x, _slider.y, _slider.w, _slider.h, slider_color);
 
 	DebugText::Home();
-	RenderText(_label.c_str(), _position.x + _rect.w, _position.y + _rect.h / 4.f);
+	RenderText(_label.c_str(), _rect.x + _rect.w, _rect.y + _rect.h / 4.f);
 }
 
 } // GUI

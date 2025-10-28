@@ -15,13 +15,11 @@ public:
 	WidgetRadioButton(Point position, const char* label, int* value, int button_value, ButtonFlags flags = 0);
 	~WidgetRadioButton() = default;
 
+	void UpdateSize() override;
+
 	using WidgetButton::Update;
 	bool Update(const char* label, int* value, int button_value, ButtonFlags flags = 0);
-	void UpdateSize() override;
 	void Render() const override;
-
-protected:
-	void OnClick() override;
 
 private:
 	int* _value;

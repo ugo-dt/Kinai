@@ -16,13 +16,13 @@ WidgetText::WidgetText(Point position, const char* text)
 bool	WidgetText::Update(const char* text)
 {
 	_text = text;
-	return false;
+	return Entity::BaseUpdate();
 }
 
 void	WidgetText::Render() const
 {
 	DebugText::Home();
-	RenderText(_text.c_str(), _position.x, _position.y + g_GuiState.glyph_size.y);
+	RenderText(_text.c_str(), _rect.x, _rect.y + g_GuiState.glyph_size.y);
 }
 
 float	WidgetText::GetWidth() const

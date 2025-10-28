@@ -59,7 +59,7 @@ void CreateContext();
 void DestroyContext();
 void NewFrame();
 void Render();
-bool OnEvent(Event& event);
+void OnEvent(Event& event);
 
 // Input
 Point GetMousePosition();
