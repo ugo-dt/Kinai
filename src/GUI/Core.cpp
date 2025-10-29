@@ -18,8 +18,8 @@ void	CreateContext()
 	DebugText::SetContext(g_GuiState.context);
 	math::ivec2 size;
 	SDL_GetWindowSize((SDL_Window*)Application::Get().GetWindow().GetNativeWindow(), &size.x, &size.y);
-	UpdateCanvasSize((float)size.x / 1.3f, (float)size.y / 1.3f);
-	g_GuiState.scale = 1.3f;
+	g_GuiState.scale = 1.f;
+	UpdateCanvasSize((float)size.x / g_GuiState.scale, (float)size.y / g_GuiState.scale);
 
 	for (int i = 0; i < SDL_SYSTEM_CURSOR_COUNT; ++i)
 		g_GuiState.sdl_cursors[i] = SDL_CreateSystemCursor(static_cast<SDL_SystemCursor>(i));
@@ -44,8 +44,17 @@ void	OnEvent(Event& event)
 	// dispatcher.Dispatch<MouseButtonPressedEvent>(GUI::OnMouseButtonPressedEvent);
 	// dispatcher.Dispatch<MouseButtonReleasedEvent>(GUI::OnMouseButtonReleasedEvent);
 
+	if (g_GuiState.active_window && g_GuiState.active_window->IsOpen())
+	{
+		g_GuiState.active_window->OnEvent(event);
+		if (event.handled)
+			return;
+	}
+
 	for (const auto& [id, window] : g_GuiState.windows)
 	{
+		if (g_GuiState.active_window && g_GuiState.active_window->GetID() == window->GetID())
+			continue;
 		if (!window->IsOpen())
 			continue;
 
@@ -103,7 +112,7 @@ void	Render()
 
 	for (const auto& [id, window] : g_GuiState.windows)
 	{
-		if (g_GuiState.active_window == window)
+		if (g_GuiState.active_window && g_GuiState.active_window->GetID() == window->GetID())
 			continue;
 		if (!window->IsOpen())
 			continue;

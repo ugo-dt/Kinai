@@ -24,6 +24,11 @@ bool	Button(const char* label, ButtonFlags flags)
 	return CreateWidget<WidgetButton>(label, flags);
 }
 
+bool	Checkbox(const char* label, bool* value, ButtonFlags flags)
+{
+	return CreateWidget<WidgetCheckbox>(label, value, flags);
+}
+
 bool	RadioButton(const char* label, int* value, int button_value, ButtonFlags flags)
 {
 	return CreateWidget<WidgetRadioButton>(label, value, button_value, flags);

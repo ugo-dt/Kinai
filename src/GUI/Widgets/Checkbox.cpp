@@ -1,4 +1,4 @@
-#include "Kinai/GUI/Widgets/RadioButton.hpp"
+#include "Kinai/GUI/Widgets/Checkbox.hpp"
 #include "Kinai/GUI/State.hpp"
 
 namespace Kinai
@@ -7,31 +7,29 @@ namespace Kinai
 namespace GUI
 {
 
-WidgetRadioButton::WidgetRadioButton(Point position, const char* label, int* value, int button_value, ButtonFlags flags)
+WidgetCheckbox::WidgetCheckbox(Point position, const char* label, bool* value, ButtonFlags flags)
 	: WidgetButton(position, label, flags),
-	  _value(value),
-	  _button_value(button_value)
+	  _value(value)
 {
-	Update(label, value, button_value, flags);
+	Update(label, value, flags);
 }
 
-void	WidgetRadioButton::UpdateSize()
+void	WidgetCheckbox::UpdateSize()
 {
     _rect.w = 20.f;
     _rect.h = 20.f;
 }
 
-bool	WidgetRadioButton::Update(const char* label, int* value, int button_value, ButtonFlags flags)
+bool	WidgetCheckbox::Update(const char* label, bool* value, ButtonFlags flags)
 {
     _value = value;
-    _button_value = button_value;
 	bool value_changed = WidgetButton::Update(label, flags);
 	if (value_changed && _value)
-        *_value = _button_value;
+        *_value = !*_value;
 	return value_changed;
 }
 
-void	WidgetRadioButton::Render() const
+void	WidgetCheckbox::Render() const
 {
 	KN_ASSERT(_value != nullptr);
 
@@ -44,7 +42,7 @@ void	WidgetRadioButton::Render() const
 		Painter::DrawQuad(_rect.x, _rect.y, _rect.w, _rect.h, g_GuiStyle.window.backgroundColor);
 		float halfw = _rect.w / 2.f;
 		float halfh = _rect.h / 2.f;
-		if (*_value == _button_value)
+		if (*_value == true)
 		{
 			Painter::DrawQuad(_rect.x + halfw / 2.f, _rect.y + halfh / 2.f, halfw, halfh,
 				g_GuiStyle.widget.button.backgroundColor);

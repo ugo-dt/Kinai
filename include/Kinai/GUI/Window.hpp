@@ -79,7 +79,7 @@ bool Window::AddWidget(uint32_t id, Args&&... args)
 	Ref<Widget>& w = _widgets.emplace_back(CreateRef<WidgetType>(
 		_widget_origin, std::forward<Args>(args)...
 	));
-	_widget_origin.y += state.glyph_size.y * state.scale * 2.5f;
+	_widget_origin.y += state.glyph_size.y * state.scale * 4.f;
 	return static_cast<WidgetType*>(w.get())->Update(std::forward<Args>(args)...);
 }
 

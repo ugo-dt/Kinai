@@ -21,7 +21,7 @@ public:
 
 	void Render() const override;
 
-	float GetWidth() const override { return _rect.w + GetRenderTextSize(_label.c_str()).x; }
+	float GetWidth() const override { return _rect.w + GetRenderTextSize(_label.c_str()).x + g_GuiState.scale; }
 
 private:
 	std::string	_label;
@@ -106,7 +106,7 @@ WidgetSlider<Tp>::Render() const
 	Painter::DrawQuad(_slider.x, _slider.y, _slider.w, _slider.h, slider_color);
 
 	DebugText::Home();
-	RenderText(_label.c_str(), _rect.x + _rect.w, _rect.y + _rect.h / 4.f);
+	RenderText(_label.c_str(), _rect.x + _rect.w + g_GuiState.scale, _rect.y + _rect.h / 4.f);
 }
 
 } // GUI

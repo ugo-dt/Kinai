@@ -5,6 +5,7 @@ namespace math = Kinai::math;
 
 static int radio = 0;
 static float slider = 0.0f;
+static bool checkbox = false;
 
 class AppLayer : public Kinai::Layer
 {
@@ -70,6 +71,7 @@ public:
 		Kinai::DebugText::SetColor(255, 255, 0, 255);
 		Kinai::DebugText::Print("Radio button test value: {}\n", radio);
 		Kinai::DebugText::Print("Slider test value: {}\n", slider);
+		Kinai::DebugText::Print("Checkbox test value: {}\n", checkbox ? "true" : "false");
 
 		Kinai::Painter::Begin();
 		Kinai::Painter::SetImage(0, _cobblestone);
@@ -119,6 +121,9 @@ public:
 		Kinai::GUI::RadioButton("Option 1", (int*)&radio, 1);
 		Kinai::GUI::RadioButton("Option 2", (int*)&radio, 2);
 		Kinai::GUI::RadioButton("Option 3", (int*)&radio, 3);
+
+		Kinai::GUI::Checkbox("Checkbox", &checkbox);
+		Kinai::GUI::Checkbox("Checkbox", &checkbox, Kinai::GUI::ButtonFlags_Disabled);
 		Kinai::GUI::End();
 		
 		Kinai::GUI::Begin("Window", nullptr, Kinai::GUI::WindowFlags_AlwaysAutoResize);

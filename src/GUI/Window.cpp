@@ -51,8 +51,8 @@ void	Window::CalculateWidgetPositions()
 
 		math::vec2 widget_size = widget->GetSize();
 		if (widget_size.x > max_widget_width)
-			max_widget_width = widget_size.x + 10.f;
-		_widget_origin.y += g_GuiState.glyph_size.y * g_GuiState.scale * 2.5f;
+			max_widget_width = widget_size.x + 20.f * g_GuiState.scale;
+		_widget_origin.y += 25.f * g_GuiState.scale;
 	}
 
 	if (_flags & WindowFlags_AlwaysAutoResize)
@@ -106,7 +106,7 @@ void	Window::Render() const
 		Painter::DrawQuad(_rect.x - 1, _rect.y - 1, _rect.w + 2, 18 + 2, math::vec4(1.0f, 1.0f, 1.0f, 1.0f));
 		Painter::DrawQuad(_rect.x, _rect.y, _rect.w, 18,
 			IsActive() ? math::vec4(0.1f, 0.3f, 1.0f, 1.0f) : math::vec4(0.1f, 0.2f, 0.3f, 1.0f) );
-		RenderText(_label.c_str(), _rect.x + 5.f, _rect.y + 3.f);
+		RenderText(_label.c_str(), _rect.x + 5.f, _rect.y + GetRenderTextSize(_label.c_str()).y / 2.f);
 	}
 
 	for (const auto& widget : _widgets)
