@@ -28,8 +28,8 @@ enum BlendMode
 void Init();
 void Shutdown();
 
-void BeginPass();
-void EndPass();
+void Begin();
+void End();
 
 void SetImage(int channel, const Ref<Texture2D>& texture);
 void ResetImage(int channel = 0);
@@ -43,13 +43,12 @@ void DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec2&
 void DrawQuad(const glm::mat4& transform);
 void DrawQuad(const glm::mat4& transform, const glm::vec4& color);
 void DrawQuad(const glm::mat4& transform, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color = glm::vec4(1.0f));
+void DrawQuad(float x, float y, float width, float height, const glm::vec4& color);
 
 void MakePipelines();
 void Flush();
 void StartBatch();
 void NextBatch();
-
-void SetContextCamera(const OrthographicCameraController& camera);
 
 inline void DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color)
 {

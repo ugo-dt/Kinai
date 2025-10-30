@@ -19,9 +19,19 @@ struct DebugTextContextConfig
 	int tab_width = 4;
 };
 
+enum class DebugTextFont
+{
+	KC853,
+	KC854,
+	Z1013,
+	CPC,
+	C64,
+	ORIC,
+};
+
 class DebugText
 {
-private:
+public:
 	struct Context;
 
 public:
@@ -29,10 +39,14 @@ public:
 	static void Shutdown();
 
 	// Context functions
-	static Ref<Context>	MakeContext(const DebugTextContextConfig& config);
+	static Ref<Context>	MakeContext(const DebugTextContextConfig& config = DebugTextContextConfig());
 	static void SetContext(Ref<Context> context);
 	static Ref<Context> GetContext();
 	static Ref<Context> GetDefaultContext();
+	static glm::vec2 GetCanvasSize();
+	static glm::vec2 GetGlyphSize();
+	static int GetFontIndex();
+	static DebugTextFont GetFont();
 
 	// Drawing functions (call inside a Kinai render pass)
 	static void Submit();
@@ -45,6 +59,7 @@ public:
 
 	// Switch to a different font
 	static void Font(int font_index);
+	static void Font(DebugTextFont font);
 
 	// Set a new virtual canvas size in screen pixels
 	static void SetCanvasSize(float width, float height);
@@ -120,25 +135,6 @@ private:
 		int layer_id;
 		int first_vertex;
 		int vertex_count;
-	};
-
-	struct Context
-	{
-		uint32_t frame_id;
-		uint32_t update_frame_id;
-		std::vector<TextVertex> vertices;
-		std::vector<TextCommand> commands;
-		size_t commands_cap;
-		Ref<VertexBuffer> vertex_buffer;
-		Ref<Pipeline> pipeline;
-		int cur_font;
-		int cur_layer_id;
-		glm::vec2 canvas_size;
-		glm::vec2 glyph_size;
-		glm::vec2 origin;
-		glm::vec2 pos;
-		float tab_width;
-		glm::vec4 color;
 	};
 
 	static Ref<VertexArray> _vao;

@@ -65,6 +65,7 @@ public:
 	const Window& GetWindow() const { return *_window; }
 	uint64_t GetFPS() const { return _time.fps; }
 	float GetDeltaTime() const { return _time.delta; }
+	uint64_t GetFrameCount() const { return _time.frames; }
 
 public:
 	static Application& Get() { return *_instance; }
