@@ -76,7 +76,7 @@ public:
 
 	static void BeginPass()
 	{
-		glm::ivec2 size = Application::Get().GetWindow().GetSize();
+		glm::ivec2 size = Application::Get().GetWindow().GetSizeInPixels();
 		_renderer_api->SetViewport(0, 0, size.x, size.y);
 		_renderer_api->BeginPass();
 	}

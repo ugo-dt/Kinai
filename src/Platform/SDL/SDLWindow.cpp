@@ -226,6 +226,14 @@ glm::ivec2	SDLWindow::GetSize() const
 {
 	int w, h;
 
+	SDL_GetWindowSize(_handle, &w, &h);
+	return glm::ivec2(w, h);
+}
+
+glm::ivec2	SDLWindow::GetSizeInPixels() const
+{
+	int w, h;
+
 	SDL_GetWindowSizeInPixels(_handle, &w, &h);
 	return glm::ivec2(w, h);
 }

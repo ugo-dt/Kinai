@@ -51,6 +51,13 @@ glm::ivec2	HeadlessWindow::GetSize() const
 	return _size;
 }
 
+glm::ivec2	HeadlessWindow::GetSizeInPixels() const
+{
+	KN_PROFILE_FUNC();
+
+	return GetSize();
+}
+
 uint32_t	HeadlessWindow::GetWidth() const
 {
 	KN_PROFILE_FUNC();

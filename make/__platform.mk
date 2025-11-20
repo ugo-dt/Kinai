@@ -84,9 +84,9 @@ else ifeq ($(target),$(__LINUX__))
   LDFLAGS	+= -lm -lGL
   __kinai_target_linux = 1
 else ifeq ($(target),$(__MACOS__))
-  EXE		= .out
-  CC    = clang
-  CXX   = clang++
+  EXE		=
+  CC    	= clang
+  CXX   	= clang++
   INCLUDE	+= -I /opt/homebrew/include
   LDFLAGS	+= -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo -lncurses
   __kinai_target_macos = 1

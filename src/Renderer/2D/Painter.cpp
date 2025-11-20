@@ -75,7 +75,7 @@ void	Init()
 
 	MakePipelines();
 	context.state.pipeline = LookupPipeline(PrimitiveType::Triangles, BlendMode::None);
-	const glm::ivec2 size = Application::Get().GetWindow().GetSize();
+	const glm::ivec2 size = Application::Get().GetWindow().GetSizeInPixels();
 	context.state.camera.SetProjection(0.0f, (float)size.x, (float)size.y, 0.0f);
 }
 
@@ -92,7 +92,7 @@ void	Begin()
 	KN_ASSERT(!context.state.in_pass, "Painter is already in a pass!");
 	KN_PROFILE_FUNC();
 
-	// const glm::ivec2 size = Application::Get().GetWindow().GetSize();
+	// const glm::ivec2 size = Application::Get().GetWindow().GetSizeInPixels();
 	// Renderer::SetViewport(0, 0, size.x, size.y);
 
 	StartBatch();

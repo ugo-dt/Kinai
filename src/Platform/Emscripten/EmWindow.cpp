@@ -75,11 +75,18 @@ void*	EmWindow::GetNativeWindow() const
 	return nullptr;
 }
 
-glm::ivec2		EmWindow::GetSize() const
+glm::ivec2	EmWindow::GetSize() const
 {
 	KN_PROFILE_FUNC();
 
 	return glm::ivec2(GetWidth(), GetHeight());
+}
+
+glm::ivec2	EmWindow::GetSizeInPixels() const
+{
+	KN_PROFILE_FUNC();
+
+	return GetSize();
 }
 
 uint32_t	EmWindow::GetWidth() const

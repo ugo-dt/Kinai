@@ -159,7 +159,7 @@ bool	Application::OnWindowResize(WindowResizeEvent &event)
 	}
 
 	_minimized = false;
-	glm::ivec2 size = _window->GetSize();
+	glm::ivec2 size = _window->GetSizeInPixels();
 	Renderer::SetViewport(0, 0, size.x, size.y);
 	// Painter::UpdateViewport(size.x, size.y);
 

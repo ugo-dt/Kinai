@@ -455,7 +455,6 @@ OpenGLShader::OpenGLShader(const std::string& filepath, const std::string& progr
 	CreateProgram(vs.c_str(), fs.c_str());
 	Log::Trace("Created shader program '{}' (file: '{}')", _name, filepath);
 
-	// TODO: make this into a real program
 	// GenerateHeaderFromShader(filepath, program_name, vs, fs);
 }
 

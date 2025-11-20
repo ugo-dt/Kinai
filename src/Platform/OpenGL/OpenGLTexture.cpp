@@ -37,20 +37,6 @@ static GLenum ImageFormatToGLInternalFormat(ImageFormat format)
 	return 0;
 }
 
-static uint32_t DataFormatToBPP(GLenum data_format)
-{
-	switch (data_format)
-	{
-		case GL_RED:  return 1;
-		case GL_RGB:  return 3;
-		case GL_RGBA: return 4;
-		default: break;
-	}
-
-	Log::Critical("invalid data format");
-	return 0;
-}
-
 GLenum FilterToGLFilter(Filter filter)
 {
 	switch (filter)
@@ -182,6 +168,22 @@ OpenGLTexture2D::~OpenGLTexture2D()
 	glDeleteTextures(1, &_renderer_id);
 	_KN_GL_CHECK_ERROR();
 }
+
+#ifdef KN_ENABLE_ASSERTS
+static uint32_t DataFormatToBPP(GLenum data_format)
+{
+	switch (data_format)
+	{
+		case GL_RED:  return 1;
+		case GL_RGB:  return 3;
+		case GL_RGBA: return 4;
+		default: break;
+	}
+
+	Log::Critical("invalid data format");
+	return 0;
+}
+#endif
 
 void OpenGLTexture2D::SetData(void* data, uint32_t size)
 {

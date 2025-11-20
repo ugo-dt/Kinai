@@ -235,7 +235,7 @@ void	Renderer2D::FlushQuadPipeline()
 		for (uint32_t i = 0; i < _texture_slot_index; i++)
 			_texture_slots[i]->Bind(i);
 
-		_pip_quad.shader->SetFloat2("VIEWPORT", glm::vec2(Application::Get().GetWindow().GetSize()));
+		_pip_quad.shader->SetFloat2("VIEWPORT", glm::vec2(Application::Get().GetWindow().GetSizeInPixels()));
 
 		// Renderer::DrawIndexed(_pip_quad.vertex_array, _pip_quad.index);
 		_stats._draw_calls++;
