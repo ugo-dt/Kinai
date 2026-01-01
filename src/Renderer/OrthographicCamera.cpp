@@ -4,10 +4,13 @@
 namespace Kinai
 {
 
+static constexpr float ORTHO_NEAR_CLIP = -2048.0f;
+static constexpr float ORTHO_FAR_CLIP = 2048.0f;
+
 OrthographicCamera::OrthographicCamera(float left, float right, float bottom, float top)
 	: _position(0.0f, 0.0f, 0.0f),
 	  _rotation(0.0f),
-	  _projection_matrix(glm::ortho(left, right, bottom, top, -1.0f, 1.0f)),
+	  _projection_matrix(glm::ortho(left, right, bottom, top, ORTHO_NEAR_CLIP, ORTHO_FAR_CLIP)),
 	  _view_matrix(1.0f),
 	  _view_projection_matrix(_projection_matrix * _view_matrix)
 {
@@ -18,7 +21,7 @@ void	OrthographicCamera::SetProjection(float left, float right, float bottom, fl
 {
 	KN_PROFILE_FUNC();
 
-	_projection_matrix = glm::ortho(left, right, bottom, top);
+	_projection_matrix = glm::ortho(left, right, bottom, top, ORTHO_NEAR_CLIP, ORTHO_FAR_CLIP);
 	_view_projection_matrix = _projection_matrix * _view_matrix;
 }
 

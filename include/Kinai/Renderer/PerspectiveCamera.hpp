@@ -18,6 +18,13 @@ public:
 	void SetViewportSize(float width, float height) { _viewport_width = width; _viewport_height = height; UpdateProjection();}
 	inline void SetDistance(float distance)	{ _distance = distance; }
 	void SetPosition(const glm::vec3& position) { _position = position; UpdateView(); }
+	void SetTransform(const glm::vec3& position, float pitch, float yaw)
+	{
+		_position = position;
+		_pitch = pitch;
+		_yaw = yaw;
+		UpdateView();
+	}
 	void SetFarClip(float far_clip) { _far_clip = far_clip; UpdateProjection(); }
 
 	inline float GetDistance()          const { return _distance; }
