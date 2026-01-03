@@ -224,6 +224,7 @@ void	OpenGLRendererAPI::SetLineWidth(float width)
 {
 	KN_PROFILE_FUNC();
 	glLineWidth(width);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLRendererAPI::SetPolygonMode(PolygonMode mode)
@@ -289,6 +290,7 @@ void	OpenGLRendererAPI::EndPass()
 		_current_bindings.reset();
 	}
 	vb_index = 0;
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLRendererAPI::ApplyPipeline(const Ref<Pipeline>& pipeline)
@@ -333,6 +335,7 @@ void	OpenGLRendererAPI::ApplyPipeline(const Ref<Pipeline>& pipeline)
 			BlendFactorToGLenum(bs.src_factor_alpha), BlendFactorToGLenum(bs.dst_factor_alpha));
 		glBlendEquationSeparate(BlendOpToGLenum(bs.op_rgb), BlendOpToGLenum(bs.op_alpha));
 	}
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLRendererAPI::ApplyBindings(const Ref<Bindings>& bindings)
@@ -432,6 +435,7 @@ void	OpenGLRendererAPI::ApplyBindings(const Ref<Bindings>& bindings)
 			}
 		}
 	}
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLRendererAPI::ApplyUniforms(const void* params, size_t size)
@@ -443,6 +447,7 @@ void	OpenGLRendererAPI::ApplyUniforms(const void* params, size_t size)
 
 	const auto& shd = _current_pipeline->GetShader();
 	shd->ApplyUniforms(params, size);
+	_KN_GL_CHECK_ERROR();
 }
 
 } // Kinai

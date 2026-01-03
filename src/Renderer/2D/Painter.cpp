@@ -85,6 +85,8 @@ void	Shutdown()
 
 	delete[] context.state.vertex_buffer_base;
 	context.state.vertex_buffer_base = nullptr;
+
+	context = Context{};
 }
 
 void	Begin()

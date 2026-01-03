@@ -18,16 +18,19 @@ OpenGLUniformBuffer::OpenGLUniformBuffer(uint32_t size, uint32_t binding)
 	glNamedBufferData(_renderer_id, size, nullptr, GL_DYNAMIC_DRAW);
 	glBindBufferBase(GL_UNIFORM_BUFFER, binding, _renderer_id);
 #endif
+	_KN_GL_CHECK_ERROR();
 }
 
 OpenGLUniformBuffer::~OpenGLUniformBuffer()
 {
 	glDeleteBuffers(1, &_renderer_id);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLUniformBuffer::SetData(const void *data, uint32_t size, uint32_t offset = 0)
 {
 	glNamedBufferSubData(_renderer_id, offset, size, data);
+	_KN_GL_CHECK_ERROR();
 }
 
 #else
@@ -39,11 +42,13 @@ OpenGLUniformBuffer::OpenGLUniformBuffer(uint32_t size, uint32_t binding)
 	glBufferData(GL_UNIFORM_BUFFER, size, nullptr, GL_DYNAMIC_DRAW);
 	glBindBufferBase(GL_UNIFORM_BUFFER, binding, _renderer_id);
 	glBindBuffer(GL_UNIFORM_BUFFER, 0);
+	_KN_GL_CHECK_ERROR();
 }
 
 OpenGLUniformBuffer::~OpenGLUniformBuffer()
 {
 	glDeleteBuffers(1, &_renderer_id);
+	_KN_GL_CHECK_ERROR();
 }
 
 void	OpenGLUniformBuffer::SetData(const void *data, uint32_t size, uint32_t offset)
@@ -51,6 +56,7 @@ void	OpenGLUniformBuffer::SetData(const void *data, uint32_t size, uint32_t offs
 	glBindBuffer(GL_UNIFORM_BUFFER, _renderer_id);
 	glBufferSubData(GL_UNIFORM_BUFFER, offset, size, data);
 	glBindBuffer(GL_UNIFORM_BUFFER, 0);
+	_KN_GL_CHECK_ERROR();
 }
 
 #endif // KN_PLATFORM_DESKTOP

@@ -294,6 +294,7 @@ void	OpenGLFramebuffer::Resize(int width, int height)
 	_config.height = height;
 	
 	Invalidate();
+	_KN_GL_CHECK_ERROR();
 }
 
 int OpenGLFramebuffer::ReadPixel(uint32_t attachmentIndex, int x, int y)

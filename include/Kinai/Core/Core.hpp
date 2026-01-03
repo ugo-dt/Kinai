@@ -22,6 +22,7 @@
 
 #include <algorithm>
 #include <cassert>
+#include <cmath>
 #include <csignal>
 #include <cstddef>
 #include <iostream>
@@ -42,20 +43,23 @@
 #define KN_STRINGIFY(x) #x
 #define KN_BIND_EVENT_FN(fn) [this](auto&&... args) -> decltype(auto) { return this->fn(std::forward<decltype(args)>(args)...); }
 
-#if defined(KINAI_PROFILER) && defined(KNI_DEBUG)
-	#define KN_PROFILE_FUNC() printf("%s at '%s:%d'\n", __PRETTY_FUNCTION__, __FILE__, __LINE__);
-#else
-	#define KN_PROFILE_FUNC()
-#endif
-
 #if defined(KINAI_DEBUG)
 	#define KINAI_BUILD "Debug"
+	#ifndef KINAI_PROFILER
+		#define KINAI_PROFILER 1
+	#endif
 #elif defined(KINAI_DEV)
 	#define KINAI_BUILD "Dev"
 #elif defined(KINAI_RELEASE)
 	#define KINAI_BUILD "Release"
 #else
 	#warning "Unknown build! Define KINAI_DEBUG, KINAI_DEV or KINAI_RELEASE"
+#endif
+
+#if defined(KINAI_PROFILER) && defined(KINAI_DEBUG)
+	#define KN_PROFILE_FUNC() printf("%s at '%s:%d'\n", __PRETTY_FUNCTION__, __FILE__, __LINE__);
+#else
+	#define KN_PROFILE_FUNC()
 #endif
 
 #if defined(KINAI_DEBUG) || defined(KINAI_DEV)

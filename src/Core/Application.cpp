@@ -71,9 +71,9 @@ Application::~Application()
 #endif
 	_instance = nullptr;
 
-	#ifdef KINAI_PROFILER
-		Kinai::Profiler::End();
-	#endif
+#ifdef KINAI_PROFILER
+	Kinai::Profiler::End();
+#endif
 }
 
 void	Application::Close()

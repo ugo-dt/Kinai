@@ -371,7 +371,7 @@ void	DebugText::CtrlChar(Ref<Context> context, char c)
 			context->pos.x = 0.0f;
 			break;
 		case '\t':
-			context->pos.x = (context->pos.x - std::fmodf(context->pos.x, context->tab_width)) + context->tab_width;
+			context->pos.x = (context->pos.x - std::fmod(context->pos.x, context->tab_width)) + context->tab_width;
 			break;
 		case ' ':
 			context->pos.x += 1.0f;
