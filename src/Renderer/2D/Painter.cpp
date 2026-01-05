@@ -94,8 +94,8 @@ void	Begin()
 	KN_ASSERT(!context.state.in_pass, "Painter is already in a pass!");
 	KN_PROFILE_FUNC();
 
-	// // const glm::ivec2 size = Application::Get().GetWindow().GetSizeInPixels();
-	// // Renderer::SetViewport(0, 0, size.x, size.y);
+	// const glm::ivec2 size = Application::Get().GetWindow().GetSizeInPixels();
+	// Renderer::SetViewport(0, 0, size.x, size.y);
 
 	StartBatch();
 	context.state.in_pass = true;

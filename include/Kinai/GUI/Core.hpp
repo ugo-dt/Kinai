@@ -5,6 +5,7 @@
 #include "Kinai/Debug/Text/Text.hpp"
 #include "Kinai/Events/Event.hpp"
 #include "Kinai/Renderer/2D/Painter.hpp"
+#include "Kinai/Renderer/Framebuffer.hpp"
 
 namespace Kinai
 {

@@ -12,7 +12,7 @@ protected:
 	Layer(const std::string name = "DefaultLayer");
 
 public:
-	virtual ~Layer() = default;
+	virtual ~Layer();
 
 	virtual void OnUpdate(float delta) { KN_NOTUSED(delta); }
 	virtual void OnRender() {}

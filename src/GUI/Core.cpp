@@ -3,6 +3,7 @@
 #include "Kinai/GUI/Event.hpp"
 #include "Kinai/GUI/State.hpp"
 #include "Kinai/GUI/Window.hpp"
+#include "Kinai/GUI/framebuffer.glsl.hpp"
 
 namespace Kinai
 {
@@ -10,33 +11,72 @@ namespace Kinai
 namespace GUI
 {
 
-// Ref<DebugText::Context>	debug_context = nullptr;
+const float framebuffer_vertices[] = {
+	-1.0f, -1.0f, 0.0f, 0.0f,
+	 1.0f, -1.0f, 1.0f, 0.0f,
+	 1.0f,  1.0f, 1.0f, 1.0f,
+	-1.0f,  1.0f, 0.0f, 1.0f
+};
+
+const uint32_t framebuffer_indices[] = {
+	0, 1, 2,
+	0, 2, 3
+};
+
+Ref<DebugText::Context>	debug_context = nullptr;
 
 void	CreateContext()
 {
 	g_GuiState.context = DebugText::MakeContext();
 	DebugText::SetContext(g_GuiState.context);
-	glm::ivec2 size;
-	SDL_GetWindowSize((SDL_Window*)Application::Get().GetWindow().GetNativeWindow(), &size.x, &size.y);
+	glm::ivec2 size = Application::Get().GetWindow().GetSize();
 	g_GuiState.scale = 1.f;
 	UpdateCanvasSize((float)size.x / g_GuiState.scale, (float)size.y / g_GuiState.scale);
 
 	for (int i = 0; i < SDL_SYSTEM_CURSOR_COUNT; ++i)
 		g_GuiState.sdl_cursors[i] = SDL_CreateSystemCursor(static_cast<SDL_SystemCursor>(i));
 
-	// // debug
-	// debug_context = DebugText::MakeContext();
+	g_GuiState.framebuffer = Framebuffer::Create(
+		FramebufferConfig{
+			.width = size.x,
+			.height = size.y,
+			.attachments = {
+				{ FramebufferTextureFormat::RGBA8, {} },
+				{ FramebufferTextureFormat::Depth, {} }
+			},
+		}
+	);
+	g_GuiState.framebuffer_pipeline = Pipeline::Create(
+		PipelineConfig{
+			.vao = VertexArray::Create(),
+			.shader = Shader::Create(framebufferProgramShaderConfig()),
+			.layout = BufferLayout{
+				{ ShaderDataType::Float2, "a_Position" },
+				{ ShaderDataType::Float2, "a_TexCoord" }
+			},
+			.label = "GUI framebuffer pipeline",
+		}
+	);
+	g_GuiState.framebuffer_bindings = Bindings::Create();
+	g_GuiState.framebuffer_bindings->AddVertexBuffer(VertexBuffer::Create(framebuffer_vertices, sizeof(framebuffer_vertices)));
+	g_GuiState.framebuffer_bindings->SetIndexBuffer(IndexBuffer::Create(framebuffer_indices, sizeof(framebuffer_indices) / sizeof(uint32_t)));
+
+	// debug
+	debug_context = DebugText::MakeContext();
 }
 
 void	DestroyContext()
 {
+	g_GuiState.framebuffer = nullptr;
+	g_GuiState.framebuffer_pipeline = nullptr;
+	g_GuiState.framebuffer_bindings = nullptr;
 	for (int i = 0; i < SDL_SYSTEM_CURSOR_COUNT; ++i)
 		if (g_GuiState.sdl_cursors[i])
 			SDL_DestroyCursor(g_GuiState.sdl_cursors[i]);
 	DebugText::SetContext(DebugText::GetDefaultContext());
 	g_GuiState.context = nullptr;
 
-	// debug_context = nullptr;
+	debug_context = nullptr;
 }
 
 void	OnEvent(Event& event)
@@ -84,6 +124,10 @@ void	NewFrame()
 	++g_GuiState.frames;
 	MouseCursorNewFrame();
 	g_GuiState.next_window_id = 1;
+
+	g_GuiState.framebuffer->Bind();
+	Renderer::SetClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+	Renderer::Clear();
 }
 
 static void RenderWindow(const Ref<GUI::Window>& window)
@@ -98,10 +142,10 @@ static void RenderWindow(const Ref<GUI::Window>& window)
 	window->Render();
 
 	Renderer::BeginPass();
-	Painter::Flush();
-	Painter::End();
+		Painter::Flush();
+		Painter::End();
 
-	DebugText::SubmitContext(g_GuiState.context);
+		DebugText::SubmitContext(g_GuiState.context);
 	Renderer::EndPass();
 }
 
@@ -109,7 +153,7 @@ void	Render()
 {
 	if (g_GuiState.current_window && !g_GuiState.begin_called)
 	{
-		// User didn't call Begin(), we need to End() now
+		// User didn't call Begin(), need to call End() now
 		KN_ASSERT(g_GuiState.current_window);
 		g_GuiState.begin_called = true;
 		GUI::End();
@@ -126,6 +170,17 @@ void	Render()
 	}
 	if (g_GuiState.active_window && g_GuiState.active_window->IsOpen())
 		RenderWindow(g_GuiState.active_window);
+	g_GuiState.framebuffer->Unbind();
+
+	Renderer::BeginPass();
+		Renderer::ApplyPipeline(g_GuiState.framebuffer_pipeline);
+		Renderer::ApplyBindings(g_GuiState.framebuffer_bindings);
+
+		glBindTexture(GL_TEXTURE_2D, g_GuiState.framebuffer->GetColorAttachmentRendererID());
+		Renderer::Submit();
+	Renderer::EndPass();
+
+	// update state
 
 	for (const auto & gui_window : g_GuiState.windows)
 		gui_window.second->Update();
@@ -140,8 +195,8 @@ void	Render()
 	// DebugText::Font(DebugTextFont::KC854);
 	// DebugText::SetColor(glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
 	// // debug text here
-	// DebugText::Print("Active Window ID: {}\n", state.active_window ? state.active_window->GetID() : 0);
-	// DebugText::Print("Total Windows: {}\n", state.windows.size());
+	// DebugText::Printf("Active Window ID: %d\n", g_GuiState.active_window ? g_GuiState.active_window->GetID() : 0);
+	// DebugText::Printf("Total Windows: %lld\n", g_GuiState.windows.size());
 	// DebugText::SubmitContext(debug_context);
 }
 

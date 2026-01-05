@@ -243,42 +243,57 @@ inline void Log::Print(FILE* stream, const char* color, const char* log_name, co
 
 inline void Log::Trace(const char* fmt, ...)
 {
-	va_list args;
-	va_start(args, fmt);
-	Log::Print(stdout, LOG_COLOR_BLUE, "TRACE", fmt, args);
-	va_end(args);
+	if (_level <= LogLevel::Trace)
+	{
+		va_list args;
+		va_start(args, fmt);
+		Log::Print(stdout, LOG_COLOR_BLUE, "TRACE", fmt, args);
+		va_end(args);
+	}
 }
 
 inline void Log::Info(const char* fmt, ...)
 {
-	va_list args;
-	va_start(args, fmt);
-	Log::Print(stdout, LOG_COLOR_WHITE, "INFO", fmt, args);
-	va_end(args);
+	if (_level <= LogLevel::Info)
+	{
+		va_list args;
+		va_start(args, fmt);
+		Log::Print(stdout, LOG_COLOR_WHITE, "INFO", fmt, args);
+		va_end(args);
+	}
 }
 
 inline void Log::Warn(const char* fmt, ...)
 {
-	va_list args;
-	va_start(args, fmt);
-	Log::Print(stderr, LOG_COLOR_YELLOW, "WARN", fmt, args);
-	va_end(args);
+	if (_level <= LogLevel::Warn)
+	{
+		va_list args;
+		va_start(args, fmt);
+		Log::Print(stderr, LOG_COLOR_YELLOW, "WARN", fmt, args);
+		va_end(args);
+	}
 }
 
 inline void Log::Error(const char* fmt, ...)
 {
-	va_list args;
-	va_start(args, fmt);
-	Log::Print(stderr, LOG_COLOR_RED, "ERROR", fmt, args);
-	va_end(args);
+	if (_level <= LogLevel::Error)
+	{
+		va_list args;
+		va_start(args, fmt);
+		Log::Print(stderr, LOG_COLOR_RED, "ERROR", fmt, args);
+		va_end(args);
+	}
 }
 
 KN_NORETURN inline void Log::Critical(const char* fmt, ...)
 {
-	va_list args;
-	va_start(args, fmt);
-	Log::Print(stderr, LOG_COLOR_RED, "CRITICAL", fmt, args);
-	va_end(args);
+	if (_level <= LogLevel::Critical)
+	{
+		va_list args;
+		va_start(args, fmt);
+		Log::Print(stderr, LOG_COLOR_RED, "CRITICAL", fmt, args);
+		va_end(args);
+	}
 	// it would be undefined behavior to continue after a critical error
 	std::exit(1);
 }
@@ -289,10 +304,14 @@ Log::Validate(bool condition, const char* fmt, ...)
 	if (!condition)
 	{
 		// Critical
-		va_list args;
-		va_start(args, fmt);
-		Log::Print(stderr, LOG_COLOR_RED, "CRITICAL", fmt, args);
-		va_end(args);
+		if (_level <= LogLevel::Critical)
+		{
+			va_list args;
+			va_start(args, fmt);
+			Log::Print(stderr, LOG_COLOR_RED, "CRITICAL", fmt, args);
+			va_end(args);
+		}
+		// it would be undefined behavior to continue after a critical error
 		std::exit(1);
 	}
 }

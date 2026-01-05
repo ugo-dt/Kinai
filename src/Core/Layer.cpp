@@ -1,5 +1,6 @@
 #include "Kinai/Core/Layer.hpp"
 #include "Kinai/Core/Application.hpp"
+#include "Kinai/GUI/State.hpp"
 
 namespace Kinai
 {
@@ -8,6 +9,11 @@ std::vector<std::tuple<Layer*, std::unique_ptr<Layer>>>	Layer::_pendingTransitio
 
 Layer::Layer(const std::string name)
 	: _debug_name(name)
+{
+	KN_PROFILE_FUNC();
+}
+
+Layer::~Layer()
 {
 	KN_PROFILE_FUNC();
 }

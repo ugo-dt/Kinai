@@ -46,6 +46,9 @@ struct State
 	std::array<SDL_Cursor*, SDL_SYSTEM_CURSOR_COUNT> sdl_cursors = { nullptr };
 	glm::vec2 next_window_pos = { -1.0f, -1.0f };
 	bool app_mouse_grab, locked_cursor;
+	Ref<Framebuffer> framebuffer = nullptr;
+	Ref<Pipeline> framebuffer_pipeline = nullptr;
+	Ref<Bindings> framebuffer_bindings = nullptr;
 };
 
 extern State g_GuiState;

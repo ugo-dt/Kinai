@@ -28,5 +28,3 @@
 #include "Kinai/Renderer/Texture.hpp"
 #include "Kinai/Renderer/UniformBuffer.hpp"
 #include "Kinai/Renderer/VertexArray.hpp"
-
-namespace math = Kinai::math;
