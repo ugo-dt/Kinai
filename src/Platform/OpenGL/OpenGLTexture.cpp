@@ -157,7 +157,7 @@ OpenGLTexture2D::OpenGLTexture2D(const std::string& path, const TextureConfig& c
 		glTextureParameteri(_renderer_id, GL_TEXTURE_WRAP_S, WrapToGLWrap(_config.sampler_config.wrap_s));
 		glTextureParameteri(_renderer_id, GL_TEXTURE_WRAP_T, WrapToGLWrap(_config.sampler_config.wrap_t));
 		glTextureParameteri(_renderer_id, GL_TEXTURE_WRAP_R, WrapToGLWrap(_config.sampler_config.wrap_r));
-		glTextureSubImage2D(_renderer_id, 0, 0, 0, _width, _height, _dataFormat, GL_UNSIGNED_BYTE, data);
+		glTextureSubImage2D(_renderer_id, 0, 0, 0, _width, _height, _data_format, GL_UNSIGNED_BYTE, data);
 	#else
 		glGenTextures(1, &_renderer_id);
 		glActiveTexture(GL_TEXTURE0);

@@ -136,7 +136,8 @@ void	Application::Run()
 		// Handle layer transitions
 		for (auto& pending : Layer::_pendingTransitions)
 		{
-			auto& [from, layer] = pending;
+			auto& from = std::get<0>(pending);
+			auto& layer = std::get<1>(pending);
 			from->DoTransition(std::move(layer));
 		}
 		Layer::_pendingTransitions.clear();

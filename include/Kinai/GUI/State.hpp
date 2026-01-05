@@ -81,11 +81,16 @@ void SetActiveWindow(uint32_t id);
 math::vec2 GetRenderTextSize(const char* str);
 void RenderText(const char* str, float x, float y);
 
-template <class... Args>
-KN_INLINE void	RenderText(float x, float y, std::string_view fmt, Args&&... args)
+KN_INLINE void	RenderText(float x, float y, const char* fmt, ...)
 {
-	std::string str = std::vformat(fmt, std::make_format_args(args...));
-	RenderText(str.c_str(), x, y);	
+	// std::string str = std::vformat(fmt, std::make_format_args(args...));
+	char str[4096];
+	va_list args;
+	va_start(args, fmt);
+	std::vsnprintf(const_cast<char*>(str), sizeof(str), fmt, args);
+	va_end(args);
+	str[sizeof(str) - 1] = '\0';
+	RenderText(str, x, y);	
 }
 
 } // GUI

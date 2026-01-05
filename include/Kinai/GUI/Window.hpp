@@ -41,7 +41,6 @@ public:
 	void OnEvent(Event& event);
 
 	template <typename WidgetType, typename... Args>
-	requires(std::is_base_of_v<Widget, WidgetType>)
 	bool AddWidget(uint32_t id, Args&&... args);
 
 	void CalculateWidgetPositions();
@@ -63,7 +62,6 @@ void SetNextWindowPos(const math::ivec2& pos);
 #include "Kinai/GUI/State.hpp"
 
 template <typename WidgetType, typename... Args>
-requires(std::is_base_of_v<Widget, WidgetType>)
 bool Window::AddWidget(uint32_t id, Args&&... args)
 {
 	State& state = GetState();
@@ -76,9 +74,10 @@ bool Window::AddWidget(uint32_t id, Args&&... args)
 		return _widgets[id]->Update();
 	}
 
-	Ref<Widget>& w = _widgets.emplace_back(CreateRef<WidgetType>(
+	_widgets.emplace_back(CreateRef<WidgetType>(
 		_widget_origin, std::forward<Args>(args)...
 	));
+	Ref<Widget>& w = _widgets.back();
 	_widget_origin.y += state.glyph_size.y * state.scale * 4.f;
 	return static_cast<WidgetType*>(w.get())->Update(std::forward<Args>(args)...);
 }

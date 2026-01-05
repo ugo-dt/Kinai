@@ -14,7 +14,7 @@ endif
 CC				= gcc-14
 CXX				= g++
 CFLAGS			= -Wall -Werror -Wextra
-CXXFLAGS		= -Wall -Werror -Wextra -std=c++20
+CXXFLAGS		= -Wall -Werror -Wextra -std=c++14
 AR				= ar
 ARFLAGS			= rcs
 

@@ -50,20 +50,20 @@ example:
 	$(SILENT)$(CXX) $(CXXFLAGS) -o bin/$(1)$(EXE) $(INCLUDE) $(wildcard $(EXAMPLES_DIR)/$(1)/*.cpp) $(KINAI) $(LDFLAGS)
 	@echo "$(COLOR_GREEN)Successfully built bin/$(notdir $(1)$(EXE)) $(COLOR_DEFAULT)"
 
-hello_kinai:
-	$(SILENT)$(MAKE) example 1=hello_kinai
+# hello_kinai:
+# 	$(SILENT)$(MAKE) example 1=hello_kinai
 
-kinai_cube:
-	$(SILENT)$(MAKE) example 1=kinai_cube
+# kinai_cube:
+# 	$(SILENT)$(MAKE) example 1=kinai_cube
 
-kinai_events:
-	$(SILENT)$(MAKE) example 1=kinai_events
+# kinai_events:
+# 	$(SILENT)$(MAKE) example 1=kinai_events
 
-kinai_2d:
-	$(SILENT)$(MAKE) example 1=kinai_2d
+# kinai_2d:
+# 	$(SILENT)$(MAKE) example 1=kinai_2d
 
-kinai_sokol:
-	$(SILENT)$(MAKE) example 1=kinai_sokol
+# kinai_sokol:
+# 	$(SILENT)$(MAKE) example 1=kinai_sokol
 
-kinai_sokol_gp:
-	$(SILENT)$(MAKE) example 1=kinai_sokol_gp
+# kinai_sokol_gp:
+# 	$(SILENT)$(MAKE) example 1=kinai_sokol_gp

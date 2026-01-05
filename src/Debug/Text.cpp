@@ -53,7 +53,8 @@ DebugText::TextCommand&	DebugText::NextCommand(Ref<Context>& context)
 {
 	if (context->commands.size() >= context->commands_cap)
 		Log::Critical("Command buffer full");
-	return context->commands.emplace_back(TextCommand{});
+	context->commands.emplace_back(TextCommand{});
+	return context->commands.back();
 }
 
 void	DebugText::SetLayer(Ref<Context>& context, int layer_id)

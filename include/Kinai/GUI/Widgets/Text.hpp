@@ -28,10 +28,15 @@ private:
 void Text(const char* str);
 
 template <class... Args>
-static void Text(std::string_view fmt, Args&&... args)
+static void Text(const char* fmt, ...)
 {
-	const std::string s = std::vformat(fmt, std::make_format_args(args...));
-	Text(s.c_str());
+	char s[4096];
+	va_list args;
+	va_start(args, fmt);
+	std::vsnprintf(const_cast<char*>(s), sizeof(s), fmt, args);
+	va_end(args);
+	s[sizeof(s) - 1] = '\0';
+	Text(s);
 }
 
 } // GUI

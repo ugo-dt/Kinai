@@ -1,3 +1,0 @@
-[submodule "bindings/cglm"]
-	path = bindings/cglm
-	url = https://github.com/recp/cglm.git

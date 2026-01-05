@@ -22,10 +22,10 @@ public:
 	const std::string& GetName() const { return _debug_name; }
 	std::type_index GetType() const { return typeid(*this); }
 
-	template <std::derived_from<Layer> T, typename... Args>
+	template <typename LayerT, typename... Args>
 	void TransitionTo(Args&&... args)
 	{
-		QueueTransition(std::move(std::make_unique<T>(std::forward<Args>(args)...)));
+		QueueTransition(std::move(std::make_unique<LayerT>(std::forward<Args>(args)...)));
 	}
 
 private:

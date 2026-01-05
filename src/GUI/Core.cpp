@@ -51,8 +51,9 @@ void	OnEvent(Event& event)
 			return;
 	}
 
-	for (const auto& [id, window] : g_GuiState.windows)
+	for (const auto& gui_window : g_GuiState.windows)
 	{
+		auto& window = gui_window.second;
 		if (g_GuiState.active_window && g_GuiState.active_window->GetID() == window->GetID())
 			continue;
 		if (!window->IsOpen())
@@ -110,8 +111,9 @@ void	Render()
 		GUI::End();
 	}
 
-	for (const auto& [id, window] : g_GuiState.windows)
+	for (const auto& gui_window : g_GuiState.windows)
 	{
+		auto& window = gui_window.second;
 		if (g_GuiState.active_window && g_GuiState.active_window->GetID() == window->GetID())
 			continue;
 		if (!window->IsOpen())
@@ -121,8 +123,8 @@ void	Render()
 	if (g_GuiState.active_window && g_GuiState.active_window->IsOpen())
 		RenderWindow(g_GuiState.active_window);
 
-	for (const auto & [id, window] : g_GuiState.windows)
-		window->Update();
+	for (const auto & gui_window : g_GuiState.windows)
+		gui_window.second->Update();
 
 	UpdateMouseButtons();
 
@@ -153,7 +155,7 @@ void	Begin(const char* label, bool* is_open, WindowFlags flags)
 		? g_GuiState.next_window_pos : math::vec2((g_GuiState.next_window_id + 1) * 50.f, (g_GuiState.next_window_id + 1) * 50.f);
 	
 	g_GuiState.begin_called = true;
-	g_GuiState.current_window = g_GuiState.windows.contains(g_GuiState.next_window_id)
+	g_GuiState.current_window = g_GuiState.windows.find(g_GuiState.next_window_id) != g_GuiState.windows.end()
 		? g_GuiState.windows.at(g_GuiState.next_window_id)
 		: CreateRef<GUI::Window>(
 			label,

@@ -13,7 +13,7 @@ public:
 	virtual ~OrthographicCamera() = default;
 	
 	void SetProjection(float left, float right, float bottom, float top);
-	void SetProjection(float left, float right, float bottom, float top, float near, float far);
+	void SetProjection(float left, float right, float bottom, float top, float nearPlane, float farPlane);
 	void SetPosition(const math::vec3& position) { _position = position; UpdateView(); }
 	void SetRotation(const math::vec3& rotation) { _rotation = rotation; }
 
