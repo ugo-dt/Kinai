@@ -30,8 +30,8 @@
 #pragma pack(push,1)
 KINAI_SHDC_ALIGN(16) typedef struct quad_vs_params_s
 {
-	Kinai::math::mat4 u_ViewProjection;
-	Kinai::math::mat4 u_Transform;
+	glm::mat4 u_ViewProjection;
+	glm::mat4 u_Transform;
 }quad_vs_params_t;
 #pragma pack(pop)
 /*

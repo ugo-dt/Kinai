@@ -113,14 +113,14 @@ void	SetActiveWindow(uint32_t id)
 		g_GuiState.active_window = nullptr;
 }
 
-math::vec2	GetRenderTextSize(const char* str)
+glm::vec2	GetRenderTextSize(const char* str)
 {
 	KN_ASSERT(g_GuiState.context);
 
-	math::ivec2 size;
+	glm::ivec2 size;
 	SDL_GetWindowSize((SDL_Window*)Application::Get().GetWindow().GetNativeWindow(), &size.x, &size.y);
-	math::vec2 factor = g_GuiState.glyph_size * ((math::vec2)size / g_GuiState.canvas_size);
-	return math::vec2(strlen(str) * factor.x, factor.y);
+	glm::vec2 factor = g_GuiState.glyph_size * ((glm::vec2)size / g_GuiState.canvas_size);
+	return glm::vec2(strlen(str) * factor.x, factor.y);
 }
 
 void	RenderText(const char* str, float x, float y)
@@ -129,10 +129,10 @@ void	RenderText(const char* str, float x, float y)
 
 	DebugText::SetContext(g_GuiState.context);
 
-	math::ivec2 size;
+	glm::ivec2 size;
 	SDL_GetWindowSize((SDL_Window*)Application::Get().GetWindow().GetNativeWindow(), &size.x, &size.y);
 
-	math::vec2 factor = g_GuiState.glyph_size * ((math::vec2)size / g_GuiState.canvas_size);
+	glm::vec2 factor = g_GuiState.glyph_size * ((glm::vec2)size / g_GuiState.canvas_size);
 	DebugText::SetOrigin(x / factor.x, y / factor.y);
 	DebugText::Put(str);
 }

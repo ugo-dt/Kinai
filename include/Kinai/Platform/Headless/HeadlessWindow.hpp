@@ -14,8 +14,8 @@ public:
 
 	void OnUpdate() override;
 	void* GetNativeWindow() const override;
-	math::ivec2 GetSize() const override;
-	math::ivec2 GetSizeInPixels() const override;
+	glm::ivec2 GetSize() const override;
+	glm::ivec2 GetSizeInPixels() const override;
 	uint32_t GetWidth() const override;
 	uint32_t GetHeight() const override;
 	bool GetWindowMouseGrab() const override;
@@ -36,12 +36,12 @@ private:
 	EventCallback _eventCallback;
 	std::string _title;
 	bool _mouseGrab, _relativeMouseMode;
-	math::vec2 _mousePosition;
+	glm::vec2 _mousePosition;
 	bool _vsync;
 	bool _focused;
 	bool _hovered;
 	bool _fullscreen;
-	math::ivec2 _size;
+	glm::ivec2 _size;
 };
 
 } // Kinai

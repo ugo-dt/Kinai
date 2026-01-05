@@ -35,7 +35,7 @@ bool	WidgetButton::Update(const char* label, ButtonFlags flags)
 
 void	WidgetButton::Render() const
 {
-	math::vec4 button_color = IsDisabled()
+	glm::vec4 button_color = IsDisabled()
 		? g_GuiStyle.widget.button.disabledBackgroundColor
 		: _down && _hovered
 			? g_GuiStyle.widget.button.activeBackgroundColor

@@ -18,8 +18,8 @@ public:
 	void OnUpdate() override;
 
 	void* GetNativeWindow() const override;
-	math::ivec2 GetSize() const override;
-	math::ivec2 GetSizeInPixels() const override;
+	glm::ivec2 GetSize() const override;
+	glm::ivec2 GetSizeInPixels() const override;
 	uint32_t GetWidth() const override;
 	uint32_t GetHeight() const override;
 	bool GetWindowMouseGrab() const override;

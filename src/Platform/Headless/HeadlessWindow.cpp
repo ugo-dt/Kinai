@@ -45,14 +45,14 @@ void*	HeadlessWindow::GetNativeWindow() const
 	return nullptr;
 }
 
-math::ivec2	HeadlessWindow::GetSize() const
+glm::ivec2	HeadlessWindow::GetSize() const
 {
 	KN_PROFILE_FUNC();
 
 	return _size;
 }
 
-math::ivec2	HeadlessWindow::GetSizeInPixels() const
+glm::ivec2	HeadlessWindow::GetSizeInPixels() const
 {
 	KN_PROFILE_FUNC();
 

@@ -49,7 +49,7 @@ void	Renderer2D::CopyScreenToBackBuffer()
 
 // FIXME: Abstract this with Kinai::Framebuffer
 # ifdef KINAI_OPENGL
-	math::ivec2 winsize = Application::Get().GetWindow().GetSize();
+	glm::ivec2 winsize = Application::Get().GetWindow().GetSize();
 
 	glBindFramebuffer(GL_READ_FRAMEBUFFER, 0);
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, _screen_framebuffer);

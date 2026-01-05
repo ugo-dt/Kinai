@@ -146,6 +146,22 @@ OpenGLTexture2D::OpenGLTexture2D(const std::string& path, const TextureConfig& c
 		_internal_format = internalFormat;
 		_data_format = ImageFormatToGLDataFormat(bmp.format());
 
+		// Optional vertical flip (useful if your UV origin doesn't match the loaded image origin).
+		std::vector<uint8_t> flipped;
+		const uint8_t* uploadData = data;
+		if (_config.flip_y_on_load)
+		{
+			const size_t rowBytes = static_cast<size_t>(_width) * static_cast<size_t>(channels);
+			flipped.resize(static_cast<size_t>(_width) * static_cast<size_t>(_height) * static_cast<size_t>(channels));
+			for (int y = 0; y < _height; ++y)
+			{
+				const uint8_t* srcRow = data + static_cast<size_t>(_height - 1 - y) * rowBytes;
+				uint8_t* dstRow = flipped.data() + static_cast<size_t>(y) * rowBytes;
+				memcpy(dstRow, srcRow, rowBytes);
+			}
+			uploadData = flipped.data();
+		}
+
 		KN_ASSERT(internalFormat != GL_NONE, "format not supported!");
 
 	#if KINAI_OPENGL_VERSION_MAJOR >= 4
@@ -157,7 +173,7 @@ OpenGLTexture2D::OpenGLTexture2D(const std::string& path, const TextureConfig& c
 		glTextureParameteri(_renderer_id, GL_TEXTURE_WRAP_S, WrapToGLWrap(_config.sampler_config.wrap_s));
 		glTextureParameteri(_renderer_id, GL_TEXTURE_WRAP_T, WrapToGLWrap(_config.sampler_config.wrap_t));
 		glTextureParameteri(_renderer_id, GL_TEXTURE_WRAP_R, WrapToGLWrap(_config.sampler_config.wrap_r));
-		glTextureSubImage2D(_renderer_id, 0, 0, 0, _width, _height, _data_format, GL_UNSIGNED_BYTE, data);
+		glTextureSubImage2D(_renderer_id, 0, 0, 0, _width, _height, _data_format, GL_UNSIGNED_BYTE, uploadData);
 	#else
 		glGenTextures(1, &_renderer_id);
 		glActiveTexture(GL_TEXTURE0);
@@ -176,7 +192,7 @@ OpenGLTexture2D::OpenGLTexture2D(const std::string& path, const TextureConfig& c
 			0,
 			_data_format,
 			GL_UNSIGNED_BYTE,
-			data
+			uploadData
 		);
 		glGenerateMipmap(GL_TEXTURE_2D);
 	#endif

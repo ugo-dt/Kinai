@@ -23,14 +23,14 @@ constexpr uint32_t MAX_TEXTURE_SLOTS = 4;
 
 struct QuadVertex
 {
-	math::vec4 position;
-	math::vec4 color;
+	glm::vec4 position;
+	glm::vec4 color;
 };
 
 struct State
 {
 	OrthographicCamera camera = OrthographicCamera(0.0f, 1.0f, 1.0f, 0.0f);
-	math::vec4 color;
+	glm::vec4 color;
 	BlendMode mode = BlendMode::None;
 	Ref<Pipeline> pipeline = nullptr;
 	std::vector<Ref<Texture2D>> texture_slots;
@@ -75,7 +75,7 @@ void	Init()
 
 	MakePipelines();
 	context.state.pipeline = LookupPipeline(PrimitiveType::Triangles, BlendMode::None);
-	const math::ivec2 size = Application::Get().GetWindow().GetSizeInPixels();
+	const glm::ivec2 size = Application::Get().GetWindow().GetSizeInPixels();
 	context.state.camera.SetProjection(0.0f, (float)size.x, (float)size.y, 0.0f);
 }
 
@@ -94,7 +94,7 @@ void	Begin()
 	KN_ASSERT(!context.state.in_pass, "Painter is already in a pass!");
 	KN_PROFILE_FUNC();
 
-	// // const math::ivec2 size = Application::Get().GetWindow().GetSizeInPixels();
+	// // const glm::ivec2 size = Application::Get().GetWindow().GetSizeInPixels();
 	// // Renderer::SetViewport(0, 0, size.x, size.y);
 
 	StartBatch();
@@ -146,7 +146,7 @@ void	Flush()
 		Renderer::ApplyBindings(context.state.bindings);
 		Renderer::ApplyUniforms<KinaiShader_Painter_vs_params_t>({
 			.u_ViewProjection = context.state.camera.GetViewProjectionMatrix(),
-			.u_Transform = math::mat4(1.0f),
+			.u_Transform = glm::mat4(1.0f),
 		});
 
 		context.shader->Bind();
@@ -312,18 +312,18 @@ void	MakePipelines()
 	delete[] indices;
 }
 
-void	DrawQuad(const math::mat4& transform, const math::vec2& uvStart, const math::vec2& uvEnd, const math::vec4& tint_color)
+void	DrawQuad(const glm::mat4& transform, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color)
 {
 	KN_PROFILE_FUNC();
 
 	constexpr size_t quadVertexCount = 4;
-	const math::vec4 quad_vertex_positions[4] = {
-		math::vec4(0.0f, 0.0f, 0.0f, 1.0f),
-		math::vec4(1.0f, 0.0f, 0.0f, 1.0f),
-		math::vec4(1.0f, 1.0f, 0.0f, 1.0f),
-		math::vec4(0.0f, 1.0f, 0.0f, 1.0f),
+	const glm::vec4 quad_vertex_positions[4] = {
+		glm::vec4(0.0f, 0.0f, 0.0f, 1.0f),
+		glm::vec4(1.0f, 0.0f, 0.0f, 1.0f),
+		glm::vec4(1.0f, 1.0f, 0.0f, 1.0f),
+		glm::vec4(0.0f, 1.0f, 0.0f, 1.0f),
 	};
-	const math::vec2 textureCoords[] = {
+	const glm::vec2 textureCoords[] = {
 		{ uvStart.x, uvStart.y },
 		{ uvEnd.x, uvStart.y },
 		{ uvEnd.x, uvEnd.y },
@@ -335,10 +335,10 @@ void	DrawQuad(const math::mat4& transform, const math::vec2& uvStart, const math
 
 	for (size_t i = 0; i < quadVertexCount; i++)
 	{
-		const math::vec2 pos = math::vec2(math::vec2(transform * quad_vertex_positions[i]));
-		const math::vec2& uv = textureCoords[i];
+		const glm::vec2 pos = glm::vec2(glm::vec2(transform * quad_vertex_positions[i]));
+		const glm::vec2& uv = textureCoords[i];
 
-		context.state.vertex_buffer_ptr->position = math::vec4(pos.x, pos.y, uv.x, uv.y);
+		context.state.vertex_buffer_ptr->position = glm::vec4(pos.x, pos.y, uv.x, uv.y);
 		context.state.vertex_buffer_ptr->color = tint_color;
 		context.state.vertex_buffer_ptr++;
 	}
@@ -349,16 +349,16 @@ void	DrawQuad(const math::mat4& transform, const math::vec2& uvStart, const math
 	context.state.index += 6;
 }
 
-void	DrawQuad(float x, float y, float width, float height, const math::vec4& color)
+void	DrawQuad(float x, float y, float width, float height, const glm::vec4& color)
 {
     // Build transform in pixel space
-    math::mat4 transform =
-		math::translate(math::mat4(1.0f), math::vec3(x * 2.f, y * 2.f, 0.0f)) *
-		math::scale(math::mat4(1.0f), math::vec3(width * 2.f, height * 2.f, 1.0f));
+    glm::mat4 transform =
+		glm::translate(glm::mat4(1.0f), glm::vec3(x * 2.f, y * 2.f, 0.0f)) *
+		glm::scale(glm::mat4(1.0f), glm::vec3(width * 2.f, height * 2.f, 1.0f));
 
     // Full texture UVs (0..1)
-    math::vec2 uvStart = { 0.0f, 0.0f };
-    math::vec2 uvEnd = { 1.0f, 1.0f };
+    glm::vec2 uvStart = { 0.0f, 0.0f };
+    glm::vec2 uvEnd = { 1.0f, 1.0f };
 
     DrawQuad(transform, uvStart, uvEnd, color);
 }

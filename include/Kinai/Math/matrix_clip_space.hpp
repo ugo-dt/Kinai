@@ -242,7 +242,7 @@ inline mat<4, 4, T> perspectiveFovRH_ZO(T fov, T width, T height, T zNear, T zFa
 	assert(fov > static_cast<T>(0));
 
 	T const rad = fov;
-	T const h = Kinai::math::cos(static_cast<T>(0.5) * rad) / Kinai::math::sin(static_cast<T>(0.5) * rad);
+	T const h = math::cos(static_cast<T>(0.5) * rad) / math::sin(static_cast<T>(0.5) * rad);
 	T const w = h * height / width; ///todo max(width , Height) / min(width , Height)?
 
 	mat<4, 4, T> Result(static_cast<T>(0));
@@ -262,7 +262,7 @@ inline mat<4, 4, T> perspectiveFovRH_NO(T fov, T width, T height, T zNear, T zFa
 	assert(fov > static_cast<T>(0));
 
 	T const rad = fov;
-	T const h = Kinai::math::cos(static_cast<T>(0.5) * rad) / Kinai::math::sin(static_cast<T>(0.5) * rad);
+	T const h = math::cos(static_cast<T>(0.5) * rad) / math::sin(static_cast<T>(0.5) * rad);
 	T const w = h * height / width; ///todo max(width , Height) / min(width , Height)?
 
 	mat<4, 4, T> Result(static_cast<T>(0));
@@ -282,7 +282,7 @@ inline mat<4, 4, T> perspectiveFovLH_ZO(T fov, T width, T height, T zNear, T zFa
 	assert(fov > static_cast<T>(0));
 
 	T const rad = fov;
-	T const h = Kinai::math::cos(static_cast<T>(0.5) * rad) / Kinai::math::sin(static_cast<T>(0.5) * rad);
+	T const h = math::cos(static_cast<T>(0.5) * rad) / math::sin(static_cast<T>(0.5) * rad);
 	T const w = h * height / width; ///todo max(width , Height) / min(width , Height)?
 
 	mat<4, 4, T> Result(static_cast<T>(0));
@@ -302,7 +302,7 @@ inline mat<4, 4, T> perspectiveFovLH_NO(T fov, T width, T height, T zNear, T zFa
 	assert(fov > static_cast<T>(0));
 
 	T const rad = fov;
-	T const h = Kinai::math::cos(static_cast<T>(0.5) * rad) / Kinai::math::sin(static_cast<T>(0.5) * rad);
+	T const h = math::cos(static_cast<T>(0.5) * rad) / math::sin(static_cast<T>(0.5) * rad);
 	T const w = h * height / width; ///todo max(width , Height) / min(width , Height)?
 
 	mat<4, 4, T> Result(static_cast<T>(0));

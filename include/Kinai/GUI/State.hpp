@@ -33,7 +33,7 @@ struct Mouse
 
 struct State
 {
-	math::vec2 canvas_size, glyph_size;
+	glm::vec2 canvas_size, glyph_size;
 	float scale = 1.0f;
 	uint64_t frames = 0;
 	GUI::Mouse mouse;
@@ -44,7 +44,7 @@ struct State
 	uint32_t next_window_id = 1;
 	uint32_t next_widget_id = 1;
 	std::array<SDL_Cursor*, SDL_SYSTEM_CURSOR_COUNT> sdl_cursors = { nullptr };
-	math::vec2 next_window_pos = { -1.0f, -1.0f };
+	glm::vec2 next_window_pos = { -1.0f, -1.0f };
 	bool app_mouse_grab, locked_cursor;
 };
 
@@ -78,7 +78,7 @@ void UpdateCanvasSize(float width, float height);
 
 void SetActiveWindow(uint32_t id);
 
-math::vec2 GetRenderTextSize(const char* str);
+glm::vec2 GetRenderTextSize(const char* str);
 void RenderText(const char* str, float x, float y);
 
 KN_INLINE void	RenderText(float x, float y, const char* fmt, ...)

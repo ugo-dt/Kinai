@@ -6,7 +6,7 @@ namespace Kinai
 {
 
 PerspectiveCamera::PerspectiveCamera(float viewport_width, float viewport_height, float fov, float near_clip, float far_clip)
-	: Camera(math::perspective(math::radians(fov), viewport_width / viewport_height, near_clip, far_clip)),
+	: Camera(glm::perspective(glm::radians(fov), viewport_width / viewport_height, near_clip, far_clip)),
 	  _fov(fov),
 	  _aspect_ratio(viewport_width / viewport_height),
 	  _near_clip(near_clip),
@@ -32,16 +32,16 @@ void	PerspectiveCamera::OnUpdate()
 void	PerspectiveCamera::UpdateProjection()
 {
 	_aspect_ratio = _viewport_width / _viewport_height;
-	_projection_matrix = math::perspective(math::radians(_fov), _viewport_width / _viewport_height, _near_clip, _far_clip);
+	_projection_matrix = glm::perspective(glm::radians(_fov), _viewport_width / _viewport_height, _near_clip, _far_clip);
 }
 
 void	PerspectiveCamera::UpdateView()
 {
 	// _position = CalculatePosition();
 
-	math::quat orientation = GetOrientation();
-	_view_matrix = math::translate(math::mat4(1.0f), _position) * math::toMat4(orientation);
-	_view_matrix = math::inverse(_view_matrix);
+	glm::quat orientation = GetOrientation();
+	_view_matrix = glm::translate(glm::mat4(1.0f), _position) * glm::toMat4(orientation);
+	_view_matrix = glm::inverse(_view_matrix);
 }
 
 bool	PerspectiveCamera::OnMouseWheel(MouseWheelEvent& event)
@@ -55,32 +55,32 @@ bool	PerspectiveCamera::OnMouseWheel(MouseWheelEvent& event)
 
 bool	PerspectiveCamera::OnMouseMotion(MouseMotionEvent& event)
 {
-	const math::vec2 delta = math::vec2(event.GetXRelative(), event.GetYRelative()) * .003f;
+	const glm::vec2 delta = glm::vec2(event.GetXRelative(), event.GetYRelative()) * .003f;
 
 	MouseRotate(delta);
 	UpdateView();
 	return false;
 }
 
-void	PerspectiveCamera::MousePan(const math::vec2& delta)
+void	PerspectiveCamera::MousePan(const glm::vec2& delta)
 {
-	math::vec2 speed = PanSpeed();
+	glm::vec2 speed = PanSpeed();
 
 	_focal_point += -GetRightDirection() * delta.x * speed.x * _distance;
 	_focal_point += GetUpDirection() * delta.y * speed.y * _distance;
 }
 
-void	PerspectiveCamera::MouseRotate(const math::vec2& delta)
+void	PerspectiveCamera::MouseRotate(const glm::vec2& delta)
 {
 	float yaw_sign = GetUpDirection().y < 0 ? -1.0f : 1.0f;
 
 	_yaw += yaw_sign * delta.x * RotationSpeed();
 	_pitch += delta.y * RotationSpeed();
 
-	if (_pitch > math::radians(89.f))
-		_pitch =  math::radians(89.f);
-	if (_pitch < math::radians(-89.f))
-		_pitch = math::radians(-89.f);
+	if (_pitch > glm::radians(89.f))
+		_pitch =  glm::radians(89.f);
+	if (_pitch < glm::radians(-89.f))
+		_pitch = glm::radians(-89.f);
 }
 
 void	PerspectiveCamera::MouseZoom(const float delta)
@@ -93,12 +93,12 @@ void	PerspectiveCamera::MouseZoom(const float delta)
 	}
 }
 
-math::vec3	PerspectiveCamera::CalculatePosition() const
+glm::vec3	PerspectiveCamera::CalculatePosition() const
 {
 	return _focal_point - GetForwardDirection() * _distance;
 }
 
-math::vec2	PerspectiveCamera::PanSpeed() const
+glm::vec2	PerspectiveCamera::PanSpeed() const
 {
 	float x = std::min(_viewport_width / 1000.0f, 2.4f); // max = 2.4f
 	float x_factor = 0.0366f * (x * x) - 0.1778f * x + 0.3021f;
@@ -106,7 +106,7 @@ math::vec2	PerspectiveCamera::PanSpeed() const
 	float y = std::min(_viewport_height / 1000.0f, 2.4f); // max = 2.4f
 	float y_factor = 0.0366f * (y * y) - 0.1778f * y + 0.3021f;
 
-	return math::vec2(x_factor, y_factor);
+	return glm::vec2(x_factor, y_factor);
 }
 
 float	PerspectiveCamera::RotationSpeed() const
@@ -137,21 +137,21 @@ void	PerspectiveCameraController::OnUpdate(float delta)
 	_camera.OnUpdate();
 
 	const float	speed = _config.speed * delta;
-	const math::vec3	orientation_xz = math::normalize(math::vec3(_camera.GetForwardDirection().x, 0.f, _camera.GetForwardDirection().z));
+	const glm::vec3	orientation_xz = glm::normalize(glm::vec3(_camera.GetForwardDirection().x, 0.f, _camera.GetForwardDirection().z));
 
 	if (Input::IsKeyPressed(Key::W))
 		_config.position += speed * orientation_xz;
 	if (Input::IsKeyPressed(Key::S))
 		_config.position -= speed * orientation_xz;
 	if (Input::IsKeyPressed(Key::A))
-		_config.position -= speed * math::normalize(math::cross(_camera.GetForwardDirection(), _camera.GetUpDirection()));
+		_config.position -= speed * glm::normalize(glm::cross(_camera.GetForwardDirection(), _camera.GetUpDirection()));
 	if (Input::IsKeyPressed(Key::D))
-		_config.position += speed * math::normalize(math::cross(_camera.GetForwardDirection(), _camera.GetUpDirection()));
+		_config.position += speed * glm::normalize(glm::cross(_camera.GetForwardDirection(), _camera.GetUpDirection()));
 
 	if (Input::IsKeyPressed(Key::Space))
-		_config.position += speed * math::vec3(0.0f, 1.0f, 0.0f);
+		_config.position += speed * glm::vec3(0.0f, 1.0f, 0.0f);
 	if (Input::IsKeyPressed(Key::LeftShift))
-		_config.position -= speed * math::vec3(0.0f, 1.0f, 0.0f);
+		_config.position -= speed * glm::vec3(0.0f, 1.0f, 0.0f);
 	
 	_camera.SetPosition(_config.position);
 

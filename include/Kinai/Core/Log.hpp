@@ -80,22 +80,22 @@ private:
 	static std::vector<std::ostream*>	_error_streams;
 };
 
-// template<typename OStream, math::length_t L, typename T, math::qualifier Q>
-// inline OStream& operator<<(OStream& os, const math::vec<L, T, Q>& vector)
+// template<typename OStream, glm::length_t L, typename T, glm::qualifier Q>
+// inline OStream& operator<<(OStream& os, const glm::vec<L, T, Q>& vector)
 // {
-// 	return os << math::to_string(vector);
+// 	return os << glm::to_string(vector);
 // }
 
-// template<typename OStream, math::length_t C, math::length_t R, typename T, math::qualifier Q>
-// inline OStream& operator<<(OStream& os, const math::mat<C, R, T, Q>& matrix)
+// template<typename OStream, glm::length_t C, glm::length_t R, typename T, glm::qualifier Q>
+// inline OStream& operator<<(OStream& os, const glm::mat<C, R, T, Q>& matrix)
 // {
-// 	return os << math::to_string(matrix);
+// 	return os << glm::to_string(matrix);
 // }
 
-// template<typename OStream, typename T, math::qualifier Q>
-// inline OStream& operator<<(OStream& os, math::qua<T, Q> quaternion)
+// template<typename OStream, typename T, glm::qualifier Q>
+// inline OStream& operator<<(OStream& os, glm::qua<T, Q> quaternion)
 // {
-// 	return os << math::to_string(quaternion);
+// 	return os << glm::to_string(quaternion);
 // }
 
 template <typename OStream>

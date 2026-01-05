@@ -19,6 +19,7 @@ enum WindowFlags_ : uint32_t
 	WindowFlags_NoCollapse = 1 << 3,
 	WindowFlags_NoBorder = 1 << 4,
 	WindowFlags_AlwaysAutoResize = 1 << 5,
+	WindowFlags_NoDecoration =  WindowFlags_NoResize | WindowFlags_NoMove | WindowFlags_NoCollapse | WindowFlags_NoBorder,
 };
 
 using WindowFlags = uint32_t;
@@ -57,7 +58,7 @@ private:
 
 void Begin(const char* label, bool* is_open = nullptr, WindowFlags flags = 0);
 void End();
-void SetNextWindowPos(const math::ivec2& pos);
+void SetNextWindowPos(const glm::ivec2& pos);
 
 #include "Kinai/GUI/State.hpp"
 

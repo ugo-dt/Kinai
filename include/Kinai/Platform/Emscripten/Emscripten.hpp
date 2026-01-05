@@ -30,8 +30,8 @@ public:
 	void OnUpdate() override;
 
 	void* GetNativeWindow() const override;
-	math::ivec2 GetSize() const override;
-	math::ivec2 GetSizeInPixels() const override;
+	glm::ivec2 GetSize() const override;
+	glm::ivec2 GetSizeInPixels() const override;
 	uint32_t GetWidth() const override;
 	uint32_t GetHeight() const override;
 
@@ -53,7 +53,7 @@ public:
 
 	static bool IsKeyPressed(KeyCode key) { return _keys[key]; }
 	static bool IsMouseButtonPressed(MouseButton button) { return _mouse.buttons[button]; }
-	static math::vec2 GetMousePosition() { return _mouse.pos; }
+	static glm::vec2 GetMousePosition() { return _mouse.pos; }
 
 public:
 	static EmWindow& Get() { return *_instance; }
@@ -81,7 +81,7 @@ private:
 	static struct EmMouse
 	{
 		bool buttons[Mouse::MouseButton_NUM];
-		math::vec2 pos;
+		glm::vec2 pos;
 	}_mouse;
 };
 

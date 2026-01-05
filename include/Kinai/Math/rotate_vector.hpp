@@ -42,7 +42,7 @@ inline vec<2, T> rotate(vec<2, T> const& v, T const& angle)
 template <typename T>
 inline vec<3, T> rotate(vec<3, T> const& v, T const& angle, vec<3, T> const& normal)
 {
-	return mat<3, 3, T>(Kinai::math::rotate(angle, normal)) * v;
+	return mat<3, 3, T>(math::rotate(angle, normal)) * v;
 }
 /*
 template <typename T>

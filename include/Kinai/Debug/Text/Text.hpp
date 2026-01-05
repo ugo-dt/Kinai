@@ -43,8 +43,8 @@ public:
 	static void SetContext(Ref<Context> context);
 	static Ref<Context> GetContext();
 	static Ref<Context> GetDefaultContext();
-	static math::vec2 GetCanvasSize();
-	static math::vec2 GetGlyphSize();
+	static glm::vec2 GetCanvasSize();
+	static glm::vec2 GetGlyphSize();
 	static int GetFontIndex();
 	static DebugTextFont GetFont();
 
@@ -78,8 +78,8 @@ public:
 	static void NewLine();
 
 	// Set the text color
-	static void SetColor(math::vec3 color); // RGB 0.0f..1.0f, A=1.0f
-	static void SetColor(math::vec4 color); // RGBA 0.0f..1.0f
+	static void SetColor(glm::vec3 color); // RGB 0.0f..1.0f, A=1.0f
+	static void SetColor(glm::vec4 color); // RGBA 0.0f..1.0f
 	static void SetColor(uint8_t r, uint8_t g, uint8_t b); // RGB 0..255, A=255
 	static void SetColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a); // RGBA 0..255
 
@@ -125,9 +125,9 @@ private:
 
 	struct TextVertex
 	{
-		math::vec2 pos;
-		math::vec2 uv;
-		math::vec4 color;
+		glm::vec2 pos;
+		glm::vec2 uv;
+		glm::vec4 color;
 	};
 
 	struct TextCommand

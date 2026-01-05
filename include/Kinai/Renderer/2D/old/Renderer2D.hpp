@@ -14,25 +14,25 @@ namespace Kinai
 
 struct CircleVertex
 {
-	math::vec3	world_position;
-	math::vec3	local_position;
-	math::vec4	color;
+	glm::vec3	world_position;
+	glm::vec3	local_position;
+	glm::vec4	color;
 	float		thickness;
 	float		fade;
 };
 
 struct LineVertex
 {
-	math::vec3	position;
-	math::vec4	color;
-	math::vec2	tex_coord;
+	glm::vec3	position;
+	glm::vec4	color;
+	glm::vec2	tex_coord;
 };
 
 struct QuadVertex
 {
-	math::vec2	position;
-	math::vec2	tex_coord;
-	math::vec4	color;
+	glm::vec2	position;
+	glm::vec2	tex_coord;
+	glm::vec4	color;
 	int			tex_index;
 };
 
@@ -57,7 +57,7 @@ struct Pipeline2D
 class Renderer2D
 {
 public:
-	static void	BeginFrame(const Camera& camera, const math::mat4& transform);
+	static void	BeginFrame(const Camera& camera, const glm::mat4& transform);
 	static void	BeginFrame(const OrthographicCamera& camera);
 	static void	BeginFrame(const PerspectiveCamera& camera);
 
@@ -67,30 +67,30 @@ public:
 	/** This function calls Renderer2D::Flush(). */
 	static void	EndFrame();
 	
-	static void	DrawCircle(const math::mat4& transform, const math::vec4& color, float thickness = 1.0f, float fade = 0.005f);
+	static void	DrawCircle(const glm::mat4& transform, const glm::vec4& color, float thickness = 1.0f, float fade = 0.005f);
 
-	static void	DrawLine(const math::vec3& p0, math::vec3& p1, const math::vec4& color);
+	static void	DrawLine(const glm::vec3& p0, glm::vec3& p1, const glm::vec4& color);
 
 	static float GetLineWidth();
 	static void	SetLineWidth(float width);
 
-	static void	DrawQuad(const math::vec2& position, const math::vec2& size, const math::vec4& color);
-	static void	DrawQuad(const math::vec3& position, const math::vec2& size, const math::vec4& color);
-	static void	DrawQuad(const math::vec2& position, const math::vec2& size, const Ref<Texture2D>& texture, const math::vec4& tint_color = math::vec4(1.0f));
-	static void	DrawQuad(const math::vec3& position, const math::vec2& size, const Ref<Texture2D>& texture, const math::vec4& tint_color = math::vec4(1.0f));
-	static void	DrawQuad(const math::vec2& position, const math::vec2& size, const Ref<Texture2D>& texture, const math::vec2& uvStart, const math::vec2& uvEnd, const math::vec4& tint_color = math::vec4(1.0f));
-	static void	DrawQuad(const math::vec3& position, const math::vec2& size, const Ref<Texture2D>& texture, const math::vec2& uvStart, const math::vec2& uvEnd, const math::vec4& tint_color = math::vec4(1.0f));
-	static void	DrawQuad(const math::mat4& transform, const math::vec4& color);
-	static void	DrawQuad(const math::mat4& transform, const Ref<Texture2D>& texture);
-	static void	DrawQuad(const math::mat4& transform, const Ref<Texture2D>& texture, const math::vec2& uvStart, const math::vec2& uvEnd, const math::vec4& tint_color = math::vec4(1.0f));
+	static void	DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color);
+	static void	DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color);
+	static void	DrawQuad(const glm::vec2& position, const glm::vec2& size, const Ref<Texture2D>& texture, const glm::vec4& tint_color = glm::vec4(1.0f));
+	static void	DrawQuad(const glm::vec3& position, const glm::vec2& size, const Ref<Texture2D>& texture, const glm::vec4& tint_color = glm::vec4(1.0f));
+	static void	DrawQuad(const glm::vec2& position, const glm::vec2& size, const Ref<Texture2D>& texture, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color = glm::vec4(1.0f));
+	static void	DrawQuad(const glm::vec3& position, const glm::vec2& size, const Ref<Texture2D>& texture, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color = glm::vec4(1.0f));
+	static void	DrawQuad(const glm::mat4& transform, const glm::vec4& color);
+	static void	DrawQuad(const glm::mat4& transform, const Ref<Texture2D>& texture);
+	static void	DrawQuad(const glm::mat4& transform, const Ref<Texture2D>& texture, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color = glm::vec4(1.0f));
 
-	static void	DrawRotatedQuad(const math::vec2& position, const math::vec2& size, float rotation, const math::vec4& color);
-	static void	DrawRotatedQuad(const math::vec3& position, const math::vec2& size, float rotation, const math::vec4& color);
-	static void	DrawRotatedQuad(const math::vec2& position, const math::vec2& size, float rotation, const Ref<Texture2D>& texture, const math::vec4& tintColor = math::vec4(1.0f));
-	static void	DrawRotatedQuad(const math::vec3& position, const math::vec2& size, float rotation, const Ref<Texture2D>& texture, const math::vec4& tintColor = math::vec4(1.0f));
+	static void	DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const glm::vec4& color);
+	static void	DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const glm::vec4& color);
+	static void	DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const Ref<Texture2D>& texture, const glm::vec4& tintColor = glm::vec4(1.0f));
+	static void	DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const Ref<Texture2D>& texture, const glm::vec4& tintColor = glm::vec4(1.0f));
 	
-	static void	DrawRect(const math::vec3& position, const math::vec2& size, const math::vec4& color);
-	static void	DrawRect(const math::mat4& transform, const math::vec4& color);
+	static void	DrawRect(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color);
+	static void	DrawRect(const glm::mat4& transform, const glm::vec4& color);
 
 public:
 	class Shader2D
@@ -167,14 +167,14 @@ private:
 	static ShaderLibrary _shader_library;
 
 	static Pipeline2D<QuadVertex>	_pip_quad;
-	static math::vec4 _quad_vertex_positions[4];
+	static glm::vec4 _quad_vertex_positions[4];
 
 	static std::array<Ref<Texture2D>, MAX_TEXTURE_SLOTS> _texture_slots;
 	static uint32_t _texture_slot_index;
 
 	struct CameraUniforms
 	{
-		math::mat4	view_projection;
+		glm::mat4	view_projection;
 	};
 	static CameraUniforms		_camera_uniforms;
 	static Ref<UniformBuffer>	_camera_uniforms_buffer;

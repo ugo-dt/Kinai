@@ -172,7 +172,7 @@ void	OpenGLRendererAPI::SetClipRect(uint32_t x, uint32_t y, uint32_t width, uint
 	_KN_GL_CHECK_ERROR();
 }
 
-void	OpenGLRendererAPI::SetClearColor(const math::vec4& color)
+void	OpenGLRendererAPI::SetClearColor(const glm::vec4& color)
 {
 	KN_PROFILE_FUNC();
 	glClearColor(color.r, color.g, color.b, color.a);

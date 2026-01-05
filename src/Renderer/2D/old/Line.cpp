@@ -3,7 +3,7 @@
 namespace Kinai
 {
 
-// void	Renderer2D::DrawLine(const math::vec3& p0, math::vec3& p1, const math::vec4& color)
+// void	Renderer2D::DrawLine(const glm::vec3& p0, glm::vec3& p1, const glm::vec4& color)
 // {
 // 	state.line_vertex_buffer_ptr->position = p0;
 // 	state.line_vertex_buffer_ptr->color = color;

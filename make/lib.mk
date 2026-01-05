@@ -19,7 +19,7 @@ __glad_src			= $(__glad_path)/src/glad.c
 __glad_objs			= $(patsubst $(__glad_path)/src/%.c,$(__lib_obj_dir)/glad/%.o,$(__glad_src))
 
 # GLM
-__glm_path			= $(__default_lib_path)/glm
+__glm_path			= $(__default_lib_path)/../../glm
 
 # SDL3
 __sdl3_path			= $(__default_lib_path)/SDL3

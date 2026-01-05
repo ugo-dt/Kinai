@@ -1,4 +1,4 @@
-@ctype mat4 Kinai::math::mat4
+@ctype mat4 glm::mat4
 
 @vs vs
 layout (location = 0) in vec3 a_Position;

@@ -46,6 +46,8 @@ struct TextureConfig
 	int width = 1;
 	int height = 1;
 	ImageFormat format = ImageFormat::RGBA8;
+	// If true, image rows are flipped vertically when loading from a file.
+	bool flip_y_on_load = false;
 	// bool generate_mips = true;
 	SamplerConfig sampler_config = SamplerConfig();
 	std::string label = "Texture";

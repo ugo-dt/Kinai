@@ -90,10 +90,10 @@ template <typename Tp>
 void
 WidgetSlider<Tp>::Render() const
 {
-	math::vec4 bg_color = _hovered || _dragging ?
+	glm::vec4 bg_color = _hovered || _dragging ?
 		g_GuiStyle.widget.slider.hoverBackgroundColor : g_GuiStyle.widget.slider.backgroundColor;
-	math::vec4 border_color = g_GuiStyle.widget.slider.borderColor;
-	math::vec4 slider_color =
+	glm::vec4 border_color = g_GuiStyle.widget.slider.borderColor;
+	glm::vec4 slider_color =
 		_dragging ? g_GuiStyle.widget.slider.sliderActiveColor
 		          : _hovered
 		              ? g_GuiStyle.widget.slider.sliderHoverColor

@@ -11,7 +11,7 @@ public:
 	static void	Init();
 	static void	SetViewport(uint32_t x, uint32_t y, uint32_t width, uint32_t height);
 	static void SetClipRect(uint32_t x, uint32_t y, uint32_t width, uint32_t height, bool origin_top_left = false);
-	static void	SetClearColor(const math::vec4& color);
+	static void	SetClearColor(const glm::vec4& color);
 	static void	SetClearColor(float r, float g, float b, float a);
 	static void	SetClearColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
 	static void	Clear();

@@ -16,7 +16,7 @@ public:
 	void SetViewport(uint32_t x, uint32_t y, uint32_t width, uint32_t height) override;
 	void SetClipRect(uint32_t x, uint32_t y, uint32_t width, uint32_t height) override;
 
-	void SetClearColor(const math::vec4& color) override;
+	void SetClearColor(const glm::vec4& color) override;
 	void Clear() override;
 
 	void Draw(const Ref<VertexArray>& vertexArray, PrimitiveType mode, uint32_t vertexCount) override;

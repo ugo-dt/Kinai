@@ -120,7 +120,7 @@ struct compute_sign
 {
 	inline static vec<L, T> call(vec<L, T> const& x)
 	{
-		return vec<L, T>(Kinai::math::lessThan(vec<L, T>(0), x)) - vec<L, T>(Kinai::math::lessThan(x, vec<L, T>(0)));
+		return vec<L, T>(math::lessThan(vec<L, T>(0), x)) - vec<L, T>(math::lessThan(x, vec<L, T>(0)));
 	}
 };
 
@@ -211,7 +211,7 @@ struct compute_step_vector
 {
 	inline static vec<L, T> call(vec<L, T> const& edge, vec<L, T> const& x)
 	{
-		return mix(vec<L, T>(1), vec<L, T>(0), Kinai::math::lessThan(x, edge));
+		return mix(vec<L, T>(1), vec<L, T>(0), math::lessThan(x, edge));
 	}
 };
 
@@ -543,7 +543,7 @@ inline vec<L, bool> isnan(vec<L, T> const& v)
 
 	vec<L, bool> Result;
 	for (length_t l = 0; l < v.length(); ++l)
-		Result[l] = Kinai::math::isnan(v[l]);
+		Result[l] = math::isnan(v[l]);
 	return Result;
 }
 
@@ -556,7 +556,7 @@ inline vec<L, bool> isinf(vec<L, T> const& v)
 
 	vec<L, bool> Result;
 	for (length_t l = 0; l < v.length(); ++l)
-		Result[l] = Kinai::math::isinf(v[l]);
+		Result[l] = math::isinf(v[l]);
 	return Result;
 }
 

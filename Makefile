@@ -33,7 +33,7 @@ ifdef __kinai_backend_sokol
 endif
 
 KINAI_OBJS = $(patsubst $(KINAI_PATH)/src/%.cpp,$(__kinai_objs_dir)/%.o,$(KINAI_SRC))
-INCLUDE += -I $(KINAI_PATH)/include -I $(KINAI_PATH)/include/Kinai -I $(KINAI_PATH)
+INCLUDE += -I $(KINAI_PATH)/include -I $(KINAI_PATH)/include/Kinai -I $(KINAI_PATH) -I $(KINAI_PATH)/../glm
 
 CFLAGS		+= -DKINAI_PATH=\"$(KINAI_PATH)/\"
 CXXFLAGS	+= -DKINAI_PATH=\"$(KINAI_PATH)/\"

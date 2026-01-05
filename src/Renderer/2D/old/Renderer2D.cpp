@@ -8,7 +8,7 @@ namespace Kinai
 {
 
 Pipeline2D<QuadVertex>				Renderer2D::_pip_quad;
-math::vec4							Renderer2D::_quad_vertex_positions[4];
+glm::vec4							Renderer2D::_quad_vertex_positions[4];
 std::array<Ref<Texture2D>,
 	Renderer2D::MAX_TEXTURE_SLOTS>	Renderer2D::_texture_slots;
 uint32_t 							Renderer2D::_texture_slot_index;
@@ -55,15 +55,15 @@ void	Renderer2D::Init()
 	_texture_slot_index = 1;
 
 	_KN_GL_CHECK_ERROR();
-	_quad_vertex_positions[0] = math::vec4(-0.5f, -0.5f, 0.0f, 1.0f);
-	_quad_vertex_positions[1] = math::vec4( 0.5f, -0.5f, 0.0f, 1.0f);
-	_quad_vertex_positions[2] = math::vec4( 0.5f,  0.5f, 0.0f, 1.0f);
-	_quad_vertex_positions[3] = math::vec4(-0.5f,  0.5f, 0.0f, 1.0f);
+	_quad_vertex_positions[0] = glm::vec4(-0.5f, -0.5f, 0.0f, 1.0f);
+	_quad_vertex_positions[1] = glm::vec4( 0.5f, -0.5f, 0.0f, 1.0f);
+	_quad_vertex_positions[2] = glm::vec4( 0.5f,  0.5f, 0.0f, 1.0f);
+	_quad_vertex_positions[3] = glm::vec4(-0.5f,  0.5f, 0.0f, 1.0f);
 
 	_builtin_uniforms.time = SDL_GetTicks() / 1000.0f;
-	_builtin_uniforms.pi = math::pi<float>();
-	_builtin_uniforms.tau = math::tau<float>();
-	_builtin_uniforms.e = math::e<float>();
+	_builtin_uniforms.pi = glm::pi<float>();
+	_builtin_uniforms.tau = glm::tau<float>();
+	_builtin_uniforms.e = glm::e<float>();
 
 	_KN_GL_CHECK_ERROR();
 	_builtin_uniforms_buffer = UniformBuffer::Create(sizeof(BuiltinUniforms), 0);
@@ -77,11 +77,11 @@ void	Renderer2D::Shutdown()
 	DestroyQuadPipeline();
 }
 
-void	Renderer2D::BeginFrame(const Camera& camera, const math::mat4& transform)
+void	Renderer2D::BeginFrame(const Camera& camera, const glm::mat4& transform)
 {
 	KN_PROFILE_FUNC();
 
-	_camera_uniforms.view_projection = camera.GetProjectionMatrix() * math::inverse(transform);
+	_camera_uniforms.view_projection = camera.GetProjectionMatrix() * glm::inverse(transform);
 	_camera_uniforms_buffer->SetData(&_camera_uniforms, sizeof(CameraUniforms));
 	
 	StartBatch();

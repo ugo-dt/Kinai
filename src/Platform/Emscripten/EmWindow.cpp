@@ -57,21 +57,21 @@ void*	EmWindow::GetNativeWindow() const
 	return nullptr;
 }
 
-math::ivec2	EmWindow::GetSize() const
+glm::ivec2	EmWindow::GetSize() const
 {
 	KN_PROFILE_FUNC();
 
-	return math::ivec2(GetWidth(), GetHeight());
+	return glm::ivec2(GetWidth(), GetHeight());
 }
 
-math::ivec2	EmWindow::GetSizeInPixels() const
+glm::ivec2	EmWindow::GetSizeInPixels() const
 {
 	KN_PROFILE_FUNC();
 
 	return GetSize();
 }
 
-math::ivec2	EmWindow::GetSizeInPixels() const
+glm::ivec2	EmWindow::GetSizeInPixels() const
 {
 	KN_PROFILE_FUNC();
 
@@ -298,7 +298,7 @@ bool	EmWindow::OnMouseMotion(int, const EmscriptenMouseEvent *e, void *)
 {
 	MouseMotionEvent event(e->targetX, e->targetY, e->movementX, e->movementY);
 	_eventCallback(event);
-	_mouse.pos = math::vec2(e->targetX, e->targetY);
+	_mouse.pos = glm::vec2(e->targetX, e->targetY);
 	return true;
 }
 

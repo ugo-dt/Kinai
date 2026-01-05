@@ -11,20 +11,20 @@ Entity::Entity(Rect rect): _rect(rect) {}
 
 float Entity::GetX() const { return _rect.x; }
 float Entity::GetY() const { return _rect.y; }
-math::vec2 Entity::GetPosition() const { return math::vec2(GetX(), GetY()); }
+glm::vec2 Entity::GetPosition() const { return glm::vec2(GetX(), GetY()); }
 
 float Entity::GetWidth() const { return _rect.w; }
 float Entity::GetHeight() const { return _rect.h; }
-math::vec2 Entity::GetSize() const { return math::vec2(GetWidth(), GetHeight()); }
+glm::vec2 Entity::GetSize() const { return glm::vec2(GetWidth(), GetHeight()); }
 Rect Entity::GetRect() const { return Rect{	GetX(), GetY(), GetWidth(), GetHeight() }; }
 
 void Entity::SetX(float x) { _rect.x = x; }
 void Entity::SetY(float y) { _rect.y = y; }
-void Entity::SetPosition(const math::vec2& position) { _rect.x = position.x; _rect.y = position.y; }
+void Entity::SetPosition(const glm::vec2& position) { _rect.x = position.x; _rect.y = position.y; }
 void Entity::SetWidth(float width) { _rect.w = width; }
 void Entity::SetHeight(float height) { _rect.h = height; }
 void Entity::SetSize(float w, float h) { _rect.w = w; _rect.h = h; }
-void Entity::SetSize(const math::vec2& size) { _rect.w = size.x; _rect.h = size.y; }
+void Entity::SetSize(const glm::vec2& size) { _rect.w = size.x; _rect.h = size.y; }
 void Entity::SetRect(const Rect& rect) { _rect = rect; }
 
 bool Entity::BaseUpdate(bool value_changed)

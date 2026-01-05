@@ -18,7 +18,7 @@ bool	Input::IsMouseButtonPressed(MouseButton button)
 	return false;
 }
 
-math::vec2	Input::GetMousePosition()
+glm::vec2	Input::GetMousePosition()
 {
 	return {0, 0};
 }

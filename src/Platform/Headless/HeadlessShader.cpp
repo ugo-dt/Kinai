@@ -84,7 +84,7 @@ void	HeadlessShader::SetFloat(const std::string& name, float value)
 	KN_NOTUSED(value);
 }
 
-void	HeadlessShader::SetFloat2(const std::string& name, const math::vec2& value)
+void	HeadlessShader::SetFloat2(const std::string& name, const glm::vec2& value)
 {
 	KN_PROFILE_FUNC();
 	
@@ -92,7 +92,7 @@ void	HeadlessShader::SetFloat2(const std::string& name, const math::vec2& value)
 	KN_NOTUSED(value);
 }
 
-void	HeadlessShader::SetFloat3(const std::string& name, const math::vec3& value)
+void	HeadlessShader::SetFloat3(const std::string& name, const glm::vec3& value)
 {
 	KN_PROFILE_FUNC();
 	
@@ -100,7 +100,7 @@ void	HeadlessShader::SetFloat3(const std::string& name, const math::vec3& value)
 	KN_NOTUSED(value);
 }
 
-void	HeadlessShader::SetFloat4(const std::string& name, const math::vec4& value)
+void	HeadlessShader::SetFloat4(const std::string& name, const glm::vec4& value)
 {
 	KN_PROFILE_FUNC();
 	
@@ -108,7 +108,7 @@ void	HeadlessShader::SetFloat4(const std::string& name, const math::vec4& value)
 	KN_NOTUSED(value);
 }
 
-void	HeadlessShader::SetMat4(const std::string& name, const math::mat4& value)
+void	HeadlessShader::SetMat4(const std::string& name, const glm::mat4& value)
 {
 	KN_PROFILE_FUNC();
 	
@@ -141,7 +141,7 @@ void	HeadlessShader::UploadUniformFloat(const std::string& name, float value)
 	KN_NOTUSED(value);
 }
 
-void	HeadlessShader::UploadUniformFloat2(const std::string& name, const math::vec2& value)
+void	HeadlessShader::UploadUniformFloat2(const std::string& name, const glm::vec2& value)
 {
 	KN_PROFILE_FUNC();
 	
@@ -149,7 +149,7 @@ void	HeadlessShader::UploadUniformFloat2(const std::string& name, const math::ve
 	KN_NOTUSED(value);
 }
 
-void	HeadlessShader::UploadUniformFloat3(const std::string& name, const math::vec3& value)
+void	HeadlessShader::UploadUniformFloat3(const std::string& name, const glm::vec3& value)
 {
 	KN_PROFILE_FUNC();
 	
@@ -157,7 +157,7 @@ void	HeadlessShader::UploadUniformFloat3(const std::string& name, const math::ve
 	KN_NOTUSED(value);
 }
 
-void	HeadlessShader::UploadUniformFloat4(const std::string& name, const math::vec4& value)
+void	HeadlessShader::UploadUniformFloat4(const std::string& name, const glm::vec4& value)
 {
 	KN_PROFILE_FUNC();
 	
@@ -165,7 +165,7 @@ void	HeadlessShader::UploadUniformFloat4(const std::string& name, const math::ve
 	KN_NOTUSED(value);
 }
 
-void	HeadlessShader::UploadUniformMat3(const std::string& name, const math::mat3& matrix)
+void	HeadlessShader::UploadUniformMat3(const std::string& name, const glm::mat3& matrix)
 {
 	KN_PROFILE_FUNC();
 	
@@ -173,7 +173,7 @@ void	HeadlessShader::UploadUniformMat3(const std::string& name, const math::mat3
 	KN_NOTUSED(matrix);
 }
 
-void	HeadlessShader::UploadUniformMat4(const std::string& name, const math::mat4& matrix)
+void	HeadlessShader::UploadUniformMat4(const std::string& name, const glm::mat4& matrix)
 {
 	KN_PROFILE_FUNC();
 	

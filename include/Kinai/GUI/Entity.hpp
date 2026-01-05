@@ -13,19 +13,19 @@ class Entity
 public:
 	virtual float GetX() const;
 	virtual float GetY() const;
-	virtual math::vec2 GetPosition() const;
+	virtual glm::vec2 GetPosition() const;
 	virtual float GetWidth() const;
 	virtual float GetHeight() const;
-	virtual math::vec2 GetSize() const;
+	virtual glm::vec2 GetSize() const;
 	virtual Rect GetRect() const;
 
 	virtual void SetX(float x);
 	virtual void SetY(float y);
-	virtual void SetPosition(const math::vec2& position);
+	virtual void SetPosition(const glm::vec2& position);
 	virtual void SetWidth(float width);
 	virtual void SetHeight(float height);
 	virtual void SetSize(float w, float h);
-	virtual void SetSize(const math::vec2& size);
+	virtual void SetSize(const glm::vec2& size);
 	virtual void SetRect(const Rect& rect);
 	
 	virtual void OnEvent(Event& event);

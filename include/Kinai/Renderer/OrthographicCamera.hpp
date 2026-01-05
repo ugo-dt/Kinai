@@ -14,25 +14,25 @@ public:
 	
 	void SetProjection(float left, float right, float bottom, float top);
 	void SetProjection(float left, float right, float bottom, float top, float nearPlane, float farPlane);
-	void SetPosition(const math::vec3& position) { _position = position; UpdateView(); }
-	void SetRotation(const math::vec3& rotation) { _rotation = rotation; }
+	void SetPosition(const glm::vec3& position) { _position = position; UpdateView(); }
+	void SetRotation(const glm::vec3& rotation) { _rotation = rotation; }
 
-	const math::vec3& GetPosition() const { return _position; }
-	const math::vec3& GetRotation() const { return _rotation; }
+	const glm::vec3& GetPosition() const { return _position; }
+	const glm::vec3& GetRotation() const { return _rotation; }
 
-	const math::mat4& GetProjectionMatrix() const { return _projection_matrix; }
-	const math::mat4& GetViewMatrix() const { return _view_matrix; }
-	const math::mat4& GetViewProjectionMatrix() const { return _view_projection_matrix; }
+	const glm::mat4& GetProjectionMatrix() const { return _projection_matrix; }
+	const glm::mat4& GetViewMatrix() const { return _view_matrix; }
+	const glm::mat4& GetViewProjectionMatrix() const { return _view_projection_matrix; }
 
 private:
 	void UpdateView();
 
 private:
-	math::vec3 _position;
-	math::vec3 _rotation;
-	math::mat4 _projection_matrix;
-	math::mat4 _view_matrix;
-	math::mat4 _view_projection_matrix;
+	glm::vec3 _position;
+	glm::vec3 _rotation;
+	glm::mat4 _projection_matrix;
+	glm::mat4 _view_matrix;
+	glm::mat4 _view_projection_matrix;
 };
 
 struct OrthographicCameraControllerConfig
@@ -42,8 +42,8 @@ struct OrthographicCameraControllerConfig
 	bool enable_zoom = false;
 	float translation_speed = 5.0f;
 	float rotation_speed = 180.0f;
-	math::vec3 position = math::vec3(0.0f);
-	math::vec3 rotation = math::vec3(0.0f);
+	glm::vec3 position = glm::vec3(0.0f);
+	glm::vec3 rotation = glm::vec3(0.0f);
 	float zoom_level = 1.0f;
 };
 

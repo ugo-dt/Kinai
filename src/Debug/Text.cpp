@@ -28,12 +28,12 @@ struct DebugText::Context
 	Ref<Pipeline> pipeline = nullptr;
 	int cur_font;
 	int cur_layer_id;
-	math::vec2 canvas_size;
-	math::vec2 glyph_size;
-	math::vec2 origin;
-	math::vec2 pos;
+	glm::vec2 canvas_size;
+	glm::vec2 glyph_size;
+	glm::vec2 origin;
+	glm::vec2 pos;
 	float tab_width;
-	math::vec4 color;
+	glm::vec4 color;
 };
 
 void	DebugText::Rewind()
@@ -108,19 +108,19 @@ Ref<DebugText::Context>	DebugText::GetDefaultContext()
 }
 
 
-math::vec2	DebugText::GetCanvasSize()
+glm::vec2	DebugText::GetCanvasSize()
 {
 	
 	KN_ASSERT(_current_context);
-	return math::vec2(_current_context->canvas_size.x, _current_context->canvas_size.y);
+	return glm::vec2(_current_context->canvas_size.x, _current_context->canvas_size.y);
 }
 
 
-math::vec2	DebugText::GetGlyphSize()
+glm::vec2	DebugText::GetGlyphSize()
 {
 	
 	KN_ASSERT(_current_context);
-	return math::vec2(_current_context->glyph_size.x, _current_context->glyph_size.y);
+	return glm::vec2(_current_context->glyph_size.x, _current_context->glyph_size.y);
 }
 
 int	DebugText::GetFontIndex()
@@ -173,7 +173,7 @@ void	DebugText::InitContext(Ref<Context>& context, const DebugTextContextConfig&
 	context->glyph_size.y = 8.0f / context->canvas_size.y;
 	
 	context->tab_width = static_cast<float>(config.tab_width);
-	context->color = math::vec4(1.0f, 1.0f, 1.0f, 1.0f);
+	context->color = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
 }
 
 void	DebugText::UnpackFont(const FontDesc& desc, uint8_t* out_pixels)
@@ -277,8 +277,8 @@ void	DebugText::SetCanvasSize(float width, float height)
 		_current_context->canvas_size.y = height;
 		_current_context->glyph_size.x = 8.0f / width;
 		_current_context->glyph_size.y = 8.0f / height;
-		_current_context->origin = math::vec2(0.0f, 0.0f);
-		_current_context->pos = math::vec2(0.0f, 0.0f);
+		_current_context->origin = glm::vec2(0.0f, 0.0f);
+		_current_context->pos = glm::vec2(0.0f, 0.0f);
 	}
 }
 
@@ -296,13 +296,13 @@ void	DebugText::Home()
 
 {
 	if (_current_context)
-		_current_context->pos = math::vec2(0.0f, 0.0f);
+		_current_context->pos = glm::vec2(0.0f, 0.0f);
 }
 
 void	DebugText::Pos(float x, float y)
 {
 	if (_current_context)
-		_current_context->pos = math::vec2(x, y);
+		_current_context->pos = glm::vec2(x, y);
 }
 
 void	DebugText::PosX(float x)
@@ -321,7 +321,7 @@ void	DebugText::PosY(float y)
 void	DebugText::Move(float dx, float dy)
 {
 	if (_current_context)
-		_current_context->pos += math::vec2(dx, dy);
+		_current_context->pos += glm::vec2(dx, dy);
 }
 
 void	DebugText::MoveX(float dx)
@@ -348,13 +348,13 @@ void	DebugText::NewLine()
 	
 }
 
-void	DebugText::SetColor(math::vec3 color)
+void	DebugText::SetColor(glm::vec3 color)
 {
 	if (_current_context)
-		_current_context->color = math::vec4(color.r, color.g, color.b, 1.0f);
+		_current_context->color = glm::vec4(color.r, color.g, color.b, 1.0f);
 }
 
-void	DebugText::SetColor(math::vec4 color)
+void	DebugText::SetColor(glm::vec4 color)
 
 {
 	if (_current_context)
@@ -364,7 +364,7 @@ void	DebugText::SetColor(math::vec4 color)
 void	DebugText::SetColor(uint8_t r, uint8_t g, uint8_t b)
 {
 	if (_current_context)
-		_current_context->color = math::vec4(
+		_current_context->color = glm::vec4(
 			static_cast<float>(r) / 255.0f,
 			
 			static_cast<float>(g) / 255.0f,
@@ -375,7 +375,7 @@ void	DebugText::SetColor(uint8_t r, uint8_t g, uint8_t b)
 void	DebugText::SetColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a)
 {
 	if (_current_context)
-		_current_context->color = math::vec4(
+		_current_context->color = glm::vec4(
 			static_cast<float>(r) / 255.0f,
 			static_cast<float>(g) / 255.0f,
 			static_cast<float>(b) / 255.0f,

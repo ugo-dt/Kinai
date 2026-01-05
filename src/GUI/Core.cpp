@@ -16,7 +16,7 @@ void	CreateContext()
 {
 	g_GuiState.context = DebugText::MakeContext();
 	DebugText::SetContext(g_GuiState.context);
-	math::ivec2 size;
+	glm::ivec2 size;
 	SDL_GetWindowSize((SDL_Window*)Application::Get().GetWindow().GetNativeWindow(), &size.x, &size.y);
 	g_GuiState.scale = 1.f;
 	UpdateCanvasSize((float)size.x / g_GuiState.scale, (float)size.y / g_GuiState.scale);
@@ -133,19 +133,19 @@ void	Render()
 	UpdateMouseButtons();
 
 	// debug
-	// math::ivec2 size;
+	// glm::ivec2 size;
 	// SDL_GetWindowSize((SDL_Window*)Application::Get().GetWindow().GetNativeWindow(), &size.x, &size.y);
 	// DebugText::SetContext(debug_context);
 	// DebugText::SetCanvasSize((float)size.x, (float)size.y);
 	// DebugText::Font(DebugTextFont::KC854);
-	// DebugText::SetColor(math::vec4(1.0f, 1.0f, 1.0f, 1.0f));
+	// DebugText::SetColor(glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
 	// // debug text here
 	// DebugText::Print("Active Window ID: {}\n", state.active_window ? state.active_window->GetID() : 0);
 	// DebugText::Print("Total Windows: {}\n", state.windows.size());
 	// DebugText::SubmitContext(debug_context);
 }
 
-void	SetNextWindowPos(const math::ivec2& pos)
+void	SetNextWindowPos(const glm::ivec2& pos)
 {
 	KN_ASSERT(pos.x >= 0.f && pos.y >= 0.f, "GUI: invalid window position");
 	g_GuiState.next_window_pos = pos;
@@ -155,8 +155,8 @@ void	Begin(const char* label, bool* is_open, WindowFlags flags)
 {
 	KN_ASSERT(!g_GuiState.current_window, "GUI::Begin called before GUI::End!");
 
-	math::vec2 pos = (g_GuiState.next_window_pos.x >= 0.f && g_GuiState.next_window_pos.y >= 0.f)
-		? g_GuiState.next_window_pos : math::vec2((g_GuiState.next_window_id + 1) * 50.f, (g_GuiState.next_window_id + 1) * 50.f);
+	glm::vec2 pos = (g_GuiState.next_window_pos.x >= 0.f && g_GuiState.next_window_pos.y >= 0.f)
+		? g_GuiState.next_window_pos : glm::vec2((g_GuiState.next_window_id + 1) * 50.f, (g_GuiState.next_window_id + 1) * 50.f);
 	
 	g_GuiState.begin_called = true;
 	g_GuiState.current_window = g_GuiState.windows.find(g_GuiState.next_window_id) != g_GuiState.windows.end()
@@ -169,7 +169,7 @@ void	Begin(const char* label, bool* is_open, WindowFlags flags)
 			flags
 		);
 	g_GuiState.next_widget_id = 0;
-	g_GuiState.next_window_pos = math::vec2(-1.f, -1.f); // reset to invalid values
+	g_GuiState.next_window_pos = glm::vec2(-1.f, -1.f); // reset to invalid values
 }
 
 void	End()

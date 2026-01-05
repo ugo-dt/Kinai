@@ -3,14 +3,14 @@
 namespace Kinai
 {
 
-void	Renderer2D::DrawRect(const math::vec3& position, const math::vec2& size, const math::vec4& color)
+void	Renderer2D::DrawRect(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color)
 {
 	KN_PROFILE_FUNC();
 
-	math::vec3 p0 = math::vec3(position.x - size.x * 0.5f, position.y - size.y * 0.5f, position.z);
-	math::vec3 p1 = math::vec3(position.x + size.x * 0.5f, position.y - size.y * 0.5f, position.z);
-	math::vec3 p2 = math::vec3(position.x + size.x * 0.5f, position.y + size.y * 0.5f, position.z);
-	math::vec3 p3 = math::vec3(position.x - size.x * 0.5f, position.y + size.y * 0.5f, position.z);
+	glm::vec3 p0 = glm::vec3(position.x - size.x * 0.5f, position.y - size.y * 0.5f, position.z);
+	glm::vec3 p1 = glm::vec3(position.x + size.x * 0.5f, position.y - size.y * 0.5f, position.z);
+	glm::vec3 p2 = glm::vec3(position.x + size.x * 0.5f, position.y + size.y * 0.5f, position.z);
+	glm::vec3 p3 = glm::vec3(position.x - size.x * 0.5f, position.y + size.y * 0.5f, position.z);
 
 	DrawLine(p0, p1, color);
 	DrawLine(p1, p2, color);
@@ -18,11 +18,11 @@ void	Renderer2D::DrawRect(const math::vec3& position, const math::vec2& size, co
 	DrawLine(p3, p0, color);
 }
 
-void	Renderer2D::DrawRect(const math::mat4& transform, const math::vec4& color)
+void	Renderer2D::DrawRect(const glm::mat4& transform, const glm::vec4& color)
 {
 	KN_PROFILE_FUNC();
 
-	math::vec3 lineVertices[4];
+	glm::vec3 lineVertices[4];
 	for (size_t i = 0; i < 4; i++)
 		lineVertices[i] = transform * _quad_vertex_positions[i];
 

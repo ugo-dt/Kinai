@@ -1,24 +1,27 @@
 #pragma once
 
-# include "type/vec1.hpp"
-# include "type/vec2.hpp"
-# include "type/vec3.hpp"
-# include "type/vec4.hpp"
-# include "type/mat3x3.hpp"
-# include "type/mat4x4.hpp"
-# include "type/quat.hpp"
+#include "type/vec1.hpp"
+#include "type/vec2.hpp"
+#include "type/vec3.hpp"
+#include "type/vec4.hpp"
+#include "type/mat3x3.hpp"
+#include "type/mat4x4.hpp"
+#include "type/quat.hpp"
 
-# include "matrix.hpp"
-# include "func_matrix.hpp"
-# include "matrix_clip_space.hpp"
-# include "matrix_transform.hpp"
+#include "epsilon.hpp"
+#include "matrix.hpp"
+#include "func_matrix.hpp"
+#include "matrix_clip_space.hpp"
+#include "matrix_transform.hpp"
 
-# include "trigonometric.hpp"
+#include "trigonometric.hpp"
 
-# include "rotate_vector.hpp"
-# include "vector_angle.hpp"
+#include "rotate_vector.hpp"
+#include "vector_angle.hpp"
 
 #include "quaternion.hpp"
+
+#include "optional.hpp"
 
 namespace Kinai
 {

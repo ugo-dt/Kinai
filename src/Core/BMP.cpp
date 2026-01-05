@@ -105,5 +105,4 @@ BMP::BMP(const char *filepath)
 		filepath, width, height, _infoHeader.bitCount, compression, isBottomUp, _hasColorHeader);
 }
 
-
 } // Kinai

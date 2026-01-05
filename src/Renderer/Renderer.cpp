@@ -22,7 +22,7 @@ void	Renderer::SetClipRect(uint32_t x, uint32_t y, uint32_t width, uint32_t heig
 	_renderer_api->SetClipRect(x, y, width, height);
 }
 
-void	Renderer::SetClearColor(const math::vec4& color)
+void	Renderer::SetClearColor(const glm::vec4& color)
 {
 	_renderer_api->SetClearColor(color);
 }
@@ -79,7 +79,7 @@ void	Renderer::BindTexture(uint32_t renderer_id, uint32_t slot)
 
 void	Renderer::BeginPass()
 {
-	math::ivec2 size = Application::Get().GetWindow().GetSize();
+	glm::ivec2 size = Application::Get().GetWindow().GetSize();
 	_renderer_api->SetViewport(0, 0, size.x, size.y);
 	_renderer_api->SetClipRect(0, 0, size.x, size.y);
 	_renderer_api->BeginPass();

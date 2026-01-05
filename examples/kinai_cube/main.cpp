@@ -111,12 +111,12 @@ public:
 			Kinai::Renderer::ApplyPipeline(cube.pipeline);
 			Kinai::Renderer::ApplyBindings(cube.bindings);
 
-			Kinai::math::mat4 transform = Kinai::math::mat4(1.0f);
+			glm::mat4 transform = glm::mat4(1.0f);
 			if (cube.rotation)
 			{
 				const float time = SDL_GetTicks() / 1000.0f;
-				Kinai::math::mat4 rxm = Kinai::math::rotate(time, Kinai::math::vec3(1.0f, 0.0f, 0.0f));
-				Kinai::math::mat4 rym = Kinai::math::rotate(2 * time, Kinai::math::vec3(0.0f, 1.0f, 0.0f));
+				glm::mat4 rxm = glm::rotate(time, glm::vec3(1.0f, 0.0f, 0.0f));
+				glm::mat4 rym = glm::rotate(2 * time, glm::vec3(0.0f, 1.0f, 0.0f));
 				transform = rxm * rym;
 			}
 
@@ -151,7 +151,7 @@ public:
 	{
 		Kinai::Application& app = Kinai::Application::Get();
 
-		Kinai::GUI::SetNextWindowPos(Kinai::math::ivec2(10, 10));
+		Kinai::GUI::SetNextWindowPos(glm::ivec2(10, 10));
 		Kinai::GUI::Begin("Info", nullptr, Kinai::GUI::WindowFlags_NoResize | Kinai::GUI::WindowFlags_AlwaysAutoResize);
 		Kinai::GUI::Text("Move around with WASD keys");
 		Kinai::GUI::Text("FPS: {}", (size_t)app.GetFPS());
