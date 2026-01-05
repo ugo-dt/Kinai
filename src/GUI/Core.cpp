@@ -10,7 +10,7 @@ namespace Kinai
 namespace GUI
 {
 
-Ref<DebugText::Context>	debug_context = nullptr;
+// Ref<DebugText::Context>	debug_context = nullptr;
 
 void	CreateContext()
 {
@@ -24,8 +24,8 @@ void	CreateContext()
 	for (int i = 0; i < SDL_SYSTEM_CURSOR_COUNT; ++i)
 		g_GuiState.sdl_cursors[i] = SDL_CreateSystemCursor(static_cast<SDL_SystemCursor>(i));
 
-	// debug
-	debug_context = DebugText::MakeContext();
+	// // debug
+	// debug_context = DebugText::MakeContext();
 }
 
 void	DestroyContext()
@@ -33,6 +33,10 @@ void	DestroyContext()
 	for (int i = 0; i < SDL_SYSTEM_CURSOR_COUNT; ++i)
 		if (g_GuiState.sdl_cursors[i])
 			SDL_DestroyCursor(g_GuiState.sdl_cursors[i]);
+	DebugText::SetContext(DebugText::GetDefaultContext());
+	g_GuiState.context = nullptr;
+
+	// debug_context = nullptr;
 }
 
 void	OnEvent(Event& event)

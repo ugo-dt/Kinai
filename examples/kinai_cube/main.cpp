@@ -90,6 +90,12 @@ public:
 		});
 	}
 
+	~AppLayer()
+	{
+		cube.bindings = nullptr;
+		cube.pipeline = nullptr;
+	}
+
 	void	OnUpdate(float delta)
 	{
 		_camera.OnUpdate(delta);
@@ -108,8 +114,7 @@ public:
 			Kinai::math::mat4 transform = Kinai::math::mat4(1.0f);
 			if (cube.rotation)
 			{
-				const float time = std::chrono::duration<float>(
-					std::chrono::high_resolution_clock::now().time_since_epoch()).count();
+				const float time = SDL_GetTicks() / 1000.0f;
 				Kinai::math::mat4 rxm = Kinai::math::rotate(time, Kinai::math::vec3(1.0f, 0.0f, 0.0f));
 				Kinai::math::mat4 rym = Kinai::math::rotate(2 * time, Kinai::math::vec3(0.0f, 1.0f, 0.0f));
 				transform = rxm * rym;

@@ -56,8 +56,6 @@ struct Style
 	WidgetStyle widget;
 };
 
-
 } // GUI
-
 
 } // Kinai

@@ -46,13 +46,9 @@ Application::Application(const ApplicationConfig &config)
 	_window->SetEventCallback(KN_BIND_EVENT_FN(Application::OnEvent));
 	std::memset(&_time, 0, sizeof(Time));
 
-	#if defined(KINAI_SOKOL)
-		Sokol::Init();
-	#else
-		Renderer::Init();
-		Painter::Init();
-		Kinai::DebugText::Init();
-	#endif
+	Renderer::Init();
+	Painter::Init();
+	Kinai::DebugText::Init();
 
 	if (config.enable_gui)
 	{

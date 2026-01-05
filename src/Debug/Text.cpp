@@ -24,8 +24,8 @@ struct DebugText::Context
 	std::vector<TextVertex> vertices;
 	std::vector<TextCommand> commands;
 	size_t commands_cap;
-	Ref<VertexBuffer> vertex_buffer;
-	Ref<Pipeline> pipeline;
+	Ref<VertexBuffer> vertex_buffer = nullptr;
+	Ref<Pipeline> pipeline = nullptr;
 	int cur_font;
 	int cur_layer_id;
 	math::vec2 canvas_size;
@@ -235,6 +235,13 @@ void	DebugText::Shutdown()
 {
 	delete[] _fmt_buf;
 	_fmt_buf = nullptr;
+
+	_vao = nullptr;
+	_shader = nullptr;
+	_font_texture = nullptr;
+	_current_context = nullptr;
+	_default_context = nullptr;
+	_contexts.clear();
 }
 
 void	DebugText::Layer(int layer_id)
