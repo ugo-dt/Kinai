@@ -21,18 +21,6 @@ __glad_objs			= $(patsubst $(__glad_path)/src/%.c,$(__lib_obj_dir)/glad/%.o,$(__
 # GLM
 __glm_path			= $(__default_lib_path)/glm
 
-# ImGui
-__imgui_path		= $(__default_lib_path)/imgui
-
-ifdef __kinai_backend_headless
-  __imgui_src		= $(wildcard $(__imgui_path)/*.cpp)
-else
-  __imgui_backend	= opengl3
-  __imgui_platform	= sdl3
-  __imgui_src		= $(wildcard $(__imgui_path)/*.cpp) $(__imgui_path)/backends/imgui_impl_$(__imgui_backend).cpp  $(__imgui_path)/backends/imgui_impl_$(__imgui_platform).cpp
-endif
-__imgui_objs		= $(patsubst $(__imgui_path)/%.cpp,$(__lib_obj_dir)/imgui/%.o,$(__imgui_src))
-
 # SDL3
 __sdl3_path			= $(__default_lib_path)/SDL3
 
@@ -51,20 +39,13 @@ else
 endif
 __sokol_objs		= $(patsubst $(__sokol_path)/%.c,$(__lib_obj_dir)/sokol/%.o,$(__sokol_src))
 
-# stb_image
-__stb_image_path	= $(__default_lib_path)/stb
-__stb_image_src		= $(__stb_image_path)/stb_image.c
-__stb_image_objs	= $(patsubst $(__stb_image_path)/%.c,$(__lib_obj_dir)/stb_image/%.o,$(__stb_image_src))
-
 __lib_include		=	-I $(__default_lib_path)	\
 						-I $(__glm_path)			\
 						-I $(__glad_path)/include	\
-						-I $(__imgui_path)			\
-						-I $(__imgui_path)/backends \
 						-I $(__sdl3_path)/include
 
 INCLUDE				+= $(__lib_include)
-LIB_OBJS			= $(__glad_objs) $(__imgui_objs) $(__stb_image_objs) $(__sokol_objs)
+LIB_OBJS			= $(__glad_objs) $(__sokol_objs)
 
 ifdef __kinai_backend_opengl
 	ifeq ($(target),$(__MACOS__))
@@ -81,17 +62,7 @@ $(__lib_obj_dir)/glad/%.o: $(__glad_path)/src/%.c
 	$(SILENT)mkdir -p $(dir $@)
 	$(SILENT)$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
-$(__lib_obj_dir)/imgui/%.o: $(__imgui_path)/%.cpp
-	@echo "$(COLOR_GREY)Compiling $<...$(COLOR_DEFAULT)"
-	$(SILENT)mkdir -p $(dir $@)
-	$(SILENT)$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
-
 $(__lib_obj_dir)/sokol/%.o: $(__sokol_path)/%.c
-	@echo "$(COLOR_GREY)Compiling $<...$(COLOR_DEFAULT)"
-	$(SILENT)mkdir -p $(dir $@)
-	$(SILENT)$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
-
-$(__lib_obj_dir)/stb_image/%.o: $(__stb_image_path)/%.c
 	@echo "$(COLOR_GREY)Compiling $<...$(COLOR_DEFAULT)"
 	$(SILENT)mkdir -p $(dir $@)
 	$(SILENT)$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@

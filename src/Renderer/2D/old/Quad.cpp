@@ -47,42 +47,42 @@ void	Renderer2D::DestroyQuadPipeline()
 	delete[] _pip_quad.vertex_buffer_base;
 }
 
-void	Renderer2D::DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color)
+void	Renderer2D::DrawQuad(const math::vec2& position, const math::vec2& size, const math::vec4& color)
 {
 	KN_PROFILE_FUNC();
 
 	DrawQuad({ position.x, position.y, 0.0f }, size, color);
 }
 
-void	Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color)
+void	Renderer2D::DrawQuad(const math::vec3& position, const math::vec2& size, const math::vec4& color)
 {
 	KN_PROFILE_FUNC();
 
-	glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
-		* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
+	math::mat4 transform = math::translate(math::mat4(1.0f), position)
+		* math::scale(math::mat4(1.0f), { size.x, size.y, 1.0f });
 	
 	DrawQuad(transform, color);
 }
 
-void	Renderer2D::DrawQuad(const glm::vec2& position, const glm::vec2& size, const Ref<Texture2D>& texture, const glm::vec4& tintColor)
+void	Renderer2D::DrawQuad(const math::vec2& position, const math::vec2& size, const Ref<Texture2D>& texture, const math::vec4& tintColor)
 {
 	KN_PROFILE_FUNC();
 
 	DrawQuad({ position.x, position.y, 0.0f }, size, texture, tintColor);
 }
 
-void	Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const Ref<Texture2D>& texture, const glm::vec4& tintColor)
+void	Renderer2D::DrawQuad(const math::vec3& position, const math::vec2& size, const Ref<Texture2D>& texture, const math::vec4& tintColor)
 {
-	DrawQuad(position, size, texture, glm::vec2(0.0f), glm::vec2(1.0f), tintColor);
+	DrawQuad(position, size, texture, math::vec2(0.0f), math::vec2(1.0f), tintColor);
 }
 
 void	Renderer2D::DrawQuad(
-	const glm::vec2& position,
-	const glm::vec2& size,
+	const math::vec2& position,
+	const math::vec2& size,
 	const Ref<Texture2D>& texture,
-	const glm::vec2& uvStart,
-	const glm::vec2& uvEnd,
-	const glm::vec4& tintColor)
+	const math::vec2& uvStart,
+	const math::vec2& uvEnd,
+	const math::vec4& tintColor)
 {
 	KN_PROFILE_FUNC();
 
@@ -90,27 +90,27 @@ void	Renderer2D::DrawQuad(
 }
 
 void	Renderer2D::DrawQuad(
-	const glm::vec3& position,
-	const glm::vec2& size,
+	const math::vec3& position,
+	const math::vec2& size,
 	const Ref<Texture2D>& texture,
-	const glm::vec2& uvStart,
-	const glm::vec2& uvEnd,
-	const glm::vec4& tintColor)
+	const math::vec2& uvStart,
+	const math::vec2& uvEnd,
+	const math::vec4& tintColor)
 {
 	KN_PROFILE_FUNC();
 
-	glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
-		* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
+	math::mat4 transform = math::translate(math::mat4(1.0f), position)
+		* math::scale(math::mat4(1.0f), { size.x, size.y, 1.0f });
 
 	DrawQuad(transform, texture, uvStart, uvEnd, tintColor);
 }
 
-void	Renderer2D::DrawQuad(const glm::mat4& transform, const glm::vec4& color)
+void	Renderer2D::DrawQuad(const math::mat4& transform, const math::vec4& color)
 {
 	KN_PROFILE_FUNC();
 
 	constexpr size_t quadVertexCount = 4;
-	constexpr glm::vec2 textureCoords[] = { { 0.0f, 0.0f }, { 1.0f, 0.0f }, { 1.0f, 1.0f }, { 0.0f, 1.0f } };
+	constexpr math::vec2 textureCoords[] = { { 0.0f, 0.0f }, { 1.0f, 0.0f }, { 1.0f, 1.0f }, { 0.0f, 1.0f } };
 
 	if (_pip_quad.index >= Renderer2D::MAX_INDICES)
 		NextBatch();
@@ -129,23 +129,23 @@ void	Renderer2D::DrawQuad(const glm::mat4& transform, const glm::vec4& color)
 	_stats._quad_count++;
 }
 
-void	Renderer2D::DrawQuad(const glm::mat4& transform, const Ref<Texture2D>& texture)
+void	Renderer2D::DrawQuad(const math::mat4& transform, const Ref<Texture2D>& texture)
 {
-	DrawQuad(transform, texture, glm::vec2(0.0f), glm::vec2(1.0f));
+	DrawQuad(transform, texture, math::vec2(0.0f), math::vec2(1.0f));
 }
 
 void	Renderer2D::DrawQuad(
-	const glm::mat4& transform,
+	const math::mat4& transform,
 	const Ref<Texture2D>& texture,
-	const glm::vec2& uvStart,
-	const glm::vec2& uvEnd,
-	const glm::vec4& tintColor)
+	const math::vec2& uvStart,
+	const math::vec2& uvEnd,
+	const math::vec4& tintColor)
 {
 	KN_PROFILE_FUNC();
 
 	constexpr size_t quadVertexCount = 4;
-	// constexpr glm::vec2 textureCoords[] = { { 0.0f, 0.0f }, { 1.0f, 0.0f }, { 1.0f, 1.0f }, { 0.0f, 1.0f } };
-    glm::vec2 textureCoords[] = { { uvStart.x, uvStart.y }, { uvEnd.x, uvStart.y }, { uvEnd.x, uvEnd.y }, { uvStart.x, uvEnd.y } };
+	// constexpr math::vec2 textureCoords[] = { { 0.0f, 0.0f }, { 1.0f, 0.0f }, { 1.0f, 1.0f }, { 0.0f, 1.0f } };
+    math::vec2 textureCoords[] = { { uvStart.x, uvStart.y }, { uvEnd.x, uvStart.y }, { uvEnd.x, uvEnd.y }, { uvStart.x, uvEnd.y } };
 
 	if (_pip_quad.index >= MAX_INDICES)
 		NextBatch();
@@ -184,40 +184,40 @@ void	Renderer2D::DrawQuad(
 	_stats._quad_count++;
 }
 
-void	Renderer2D::DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const glm::vec4& color)
+void	Renderer2D::DrawRotatedQuad(const math::vec2& position, const math::vec2& size, float rotation, const math::vec4& color)
 {
 	KN_PROFILE_FUNC();
 
 	DrawRotatedQuad({ position.x, position.y, 0.0f }, size, rotation, color);
 }
 
-void	Renderer2D::DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const glm::vec4& color)
+void	Renderer2D::DrawRotatedQuad(const math::vec3& position, const math::vec2& size, float rotation, const math::vec4& color)
 {
 	KN_PROFILE_FUNC();
 
-	glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
-		* glm::rotate(glm::mat4(1.0f), glm::radians(rotation), { 0.0f, 0.0f, 1.0f })
-		* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
+	math::mat4 transform = math::translate(math::mat4(1.0f), position)
+		* math::rotate(math::mat4(1.0f), math::radians(rotation), { 0.0f, 0.0f, 1.0f })
+		* math::scale(math::mat4(1.0f), { size.x, size.y, 1.0f });
 
 	DrawQuad(transform, color);
 }
 
-void	Renderer2D::DrawRotatedQuad(const glm::vec2& position, const glm::vec2& size, float rotation, const Ref<Texture2D>& texture, const glm::vec4& tintColor)
+void	Renderer2D::DrawRotatedQuad(const math::vec2& position, const math::vec2& size, float rotation, const Ref<Texture2D>& texture, const math::vec4& tintColor)
 {
 	KN_PROFILE_FUNC();
 
 	DrawRotatedQuad({ position.x, position.y, 0.0f }, size, rotation, texture, tintColor);
 }
 
-void	Renderer2D::DrawRotatedQuad(const glm::vec3& position, const glm::vec2& size, float rotation, const Ref<Texture2D>& texture, const glm::vec4& tintColor)
+void	Renderer2D::DrawRotatedQuad(const math::vec3& position, const math::vec2& size, float rotation, const Ref<Texture2D>& texture, const math::vec4& tintColor)
 {
 	KN_PROFILE_FUNC();
 
-	glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
-		* glm::rotate(glm::mat4(1.0f), glm::radians(rotation), { 0.0f, 0.0f, 1.0f })
-		* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
+	math::mat4 transform = math::translate(math::mat4(1.0f), position)
+		* math::rotate(math::mat4(1.0f), math::radians(rotation), { 0.0f, 0.0f, 1.0f })
+		* math::scale(math::mat4(1.0f), { size.x, size.y, 1.0f });
 
-	DrawQuad(transform, texture, glm::vec2(0.0f), glm::vec2(1.0f), tintColor);
+	DrawQuad(transform, texture, math::vec2(0.0f), math::vec2(1.0f), tintColor);
 }
 
 void	Renderer2D::FlushQuadPipeline()
@@ -235,7 +235,7 @@ void	Renderer2D::FlushQuadPipeline()
 		for (uint32_t i = 0; i < _texture_slot_index; i++)
 			_texture_slots[i]->Bind(i);
 
-		_pip_quad.shader->SetFloat2("VIEWPORT", glm::vec2(Application::Get().GetWindow().GetSizeInPixels()));
+		_pip_quad.shader->SetFloat2("VIEWPORT", math::vec2(Application::Get().GetWindow().GetSizeInPixels()));
 
 		// Renderer::DrawIndexed(_pip_quad.vertex_array, _pip_quad.index);
 		_stats._draw_calls++;

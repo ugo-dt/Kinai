@@ -105,13 +105,13 @@ public:
 			Kinai::Renderer::ApplyPipeline(cube.pipeline);
 			Kinai::Renderer::ApplyBindings(cube.bindings);
 
-			glm::mat4 transform = glm::mat4(1.0f);
+			Kinai::math::mat4 transform = Kinai::math::mat4(1.0f);
 			if (cube.rotation)
 			{
 				const float time = std::chrono::duration<float>(
 					std::chrono::high_resolution_clock::now().time_since_epoch()).count();
-				glm::mat4 rxm = glm::rotate(time, glm::vec3(1.0f, 0.0f, 0.0f));
-				glm::mat4 rym = glm::rotate(2 * time, glm::vec3(0.0f, 1.0f, 0.0f));
+				Kinai::math::mat4 rxm = Kinai::math::rotate(time, Kinai::math::vec3(1.0f, 0.0f, 0.0f));
+				Kinai::math::mat4 rym = Kinai::math::rotate(2 * time, Kinai::math::vec3(0.0f, 1.0f, 0.0f));
 				transform = rxm * rym;
 			}
 
@@ -132,52 +132,6 @@ public:
 			Kinai::Renderer::Submit();
 		}
 		Kinai::Renderer::EndPass();
-	}
-
-	void	OnImGuiRender()
-	{
-		Kinai::Application& app = Kinai::Application::Get();
-
-		ImGui::Begin("Info", nullptr, ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoDocking | ImGuiWindowFlags_NoResize);
-		ImGui::Text("Move around with WASD keys");
-		ImGui::Text("FPS: %zu", (size_t)app.GetFPS());
-		if (ImGui::Button(_camera.IsRotationEnabled() ? "(F1) Mouse Grab ON" : "(F1) Mouse Grab OFF"))
-			_camera.SetRotationEnabled(!_camera.IsRotationEnabled());
-		if (ImGui::Button(("(F2) Cube Rotation: " + std::string(cube.rotation ? "ON" : "OFF")).c_str()))
-			cube.rotation = !cube.rotation;
-		if (ImGui::Button(app.GetWindow().IsVSync() ? "(F3) VSync ON" : "(F3) VSync OFF"))
-			app.GetWindow().SetVSync(!app.GetWindow().IsVSync());
-		if (ImGui::Button(cube.pipeline->GetFaceWinding() == Kinai::FaceWinding::CCW
-			? "(F4) glFrontFace(GL_CCW)"
-			: "(F4) glFrontFace(GL_CW)")
-		)
-		{
-			cube.pipeline->SetFaceWinding(
-				cube.pipeline->GetFaceWinding() == Kinai::FaceWinding::CCW
-				? Kinai::FaceWinding::CW : Kinai::FaceWinding::CCW
-			);
-		}
-		if (ImGui::Button(cube.show_back_faces ? "(F5) Hide back faces" : "(F5) Show back faces"))
-		{
-			cube.show_back_faces = !cube.show_back_faces;
-			Kinai::Renderer::SetPolygonMode(cube.mode);
-		}
-		if (!cube.show_back_faces)
-		{
-			if (ImGui::Button(cube.mode == Kinai::PolygonMode::Line ? "Wireframe ON" : "Wireframe OFF"))
-			{
-				cube.mode = cube.mode == Kinai::PolygonMode::Fill ? Kinai::PolygonMode::Line : Kinai::PolygonMode::Fill;
-				Kinai::Renderer::SetPolygonMode(cube.mode);
-			}
-			if (ImGui::Button(cube.pipeline->GetCullMode() == Kinai::CullMode::Back ? "glCullFace(GL_BACK)" : "glCullFace(GL_FRONT)"))
-			{
-				cube.pipeline->SetCullMode(
-					cube.pipeline->GetCullMode() == Kinai::CullMode::Back
-					? Kinai::CullMode::Front : Kinai::CullMode::Back
-				);
-			}
-		}
-		ImGui::End();
 	}
 
 	void	OnEvent(Kinai::Event& event)
@@ -228,7 +182,6 @@ public:
 		: Kinai::Application(
 			Kinai::ApplicationConfig{
 				.name = "Kinai Cube Example",
-				.enable_imgui = true,
 			}
 		)
 	{

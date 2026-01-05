@@ -19,7 +19,7 @@ public:
 		_renderer_api->SetViewport(x, y, width, height);
 	}
 
-	static void	SetClearColor(const glm::vec4& color)
+	static void	SetClearColor(const math::vec4& color)
 	{
 		_renderer_api->SetClearColor(color);
 	}
@@ -76,7 +76,7 @@ public:
 
 	static void BeginPass()
 	{
-		glm::ivec2 size = Application::Get().GetWindow().GetSizeInPixels();
+		math::ivec2 size = Application::Get().GetWindow().GetSizeInPixels();
 		_renderer_api->SetViewport(0, 0, size.x, size.y);
 		_renderer_api->BeginPass();
 	}

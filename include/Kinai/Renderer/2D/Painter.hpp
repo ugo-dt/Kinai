@@ -36,63 +36,63 @@ void ResetImage(int channel = 0);
 void SetBlendMode(BlendMode mode);
 void ResetBlendMode();
 
-void DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color);
-void DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color);
-void DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color = glm::vec4(1.0f));
-void DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color = glm::vec4(1.0f));
-void DrawQuad(const glm::mat4& transform);
-void DrawQuad(const glm::mat4& transform, const glm::vec4& color);
-void DrawQuad(const glm::mat4& transform, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color = glm::vec4(1.0f));
-void DrawQuad(float x, float y, float width, float height, const glm::vec4& color);
+void DrawQuad(const math::vec2& position, const math::vec2& size, const math::vec4& color);
+void DrawQuad(const math::vec3& position, const math::vec2& size, const math::vec4& color);
+void DrawQuad(const math::vec2& position, const math::vec2& size, const math::vec2& uvStart, const math::vec2& uvEnd, const math::vec4& tint_color = math::vec4(1.0f));
+void DrawQuad(const math::vec3& position, const math::vec2& size, const math::vec2& uvStart, const math::vec2& uvEnd, const math::vec4& tint_color = math::vec4(1.0f));
+void DrawQuad(const math::mat4& transform);
+void DrawQuad(const math::mat4& transform, const math::vec4& color);
+void DrawQuad(const math::mat4& transform, const math::vec2& uvStart, const math::vec2& uvEnd, const math::vec4& tint_color = math::vec4(1.0f));
+void DrawQuad(float x, float y, float width, float height, const math::vec4& color);
 
 void MakePipelines();
 void Flush();
 void StartBatch();
 void NextBatch();
 
-inline void DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color)
+inline void DrawQuad(const math::vec2& position, const math::vec2& size, const math::vec4& color)
 {
 	KN_PROFILE_FUNC();
 
 	DrawQuad({ position.x, position.y, 0.0f }, size, color);
 }
 
-inline void DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color)
+inline void DrawQuad(const math::vec3& position, const math::vec2& size, const math::vec4& color)
 {
 	KN_PROFILE_FUNC();
 
-	glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
-		* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
+	math::mat4 transform = math::translate(math::mat4(1.0f), position)
+		* math::scale(math::mat4(1.0f), { size.x, size.y, 1.0f });
 
 	DrawQuad(transform, color);
 }
 
-inline void DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color)
+inline void DrawQuad(const math::vec2& position, const math::vec2& size, const math::vec2& uvStart, const math::vec2& uvEnd, const math::vec4& tint_color)
 {
 	KN_PROFILE_FUNC();
 
 	DrawQuad( { position.x, position.y, 0.0f }, size, uvStart, uvEnd, tint_color);
 }
 
-inline void DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color)
+inline void DrawQuad(const math::vec3& position, const math::vec2& size, const math::vec2& uvStart, const math::vec2& uvEnd, const math::vec4& tint_color)
 {
 	KN_PROFILE_FUNC();
 
-	glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
-		* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
+	math::mat4 transform = math::translate(math::mat4(1.0f), position)
+		* math::scale(math::mat4(1.0f), { size.x, size.y, 1.0f });
 	DrawQuad(transform, uvStart, uvEnd, tint_color);
 }
 
-inline void DrawQuad(const glm::mat4& transform, const glm::vec4& color)
+inline void DrawQuad(const math::mat4& transform, const math::vec4& color)
 {
-	DrawQuad(transform, glm::vec2(0.f), glm::vec2(1.f), color);
+	DrawQuad(transform, math::vec2(0.f), math::vec2(1.f), color);
 }
 
-inline void DrawQuad(const glm::mat4& transform)
+inline void DrawQuad(const math::mat4& transform)
 {
 	KN_PROFILE_FUNC();
 
-	DrawQuad(transform, glm::vec4(1.0f));
+	DrawQuad(transform, math::vec4(1.0f));
 }
 
 } // Painter

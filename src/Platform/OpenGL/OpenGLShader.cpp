@@ -515,16 +515,16 @@ void	OpenGLShader::ApplyUniforms(const void* params, size_t size)
 				SetFloat(uniform.glsl_name, *static_cast<const float *>(ptr));
 				break;
 			case ShaderDataType::Float2:
-				SetFloat2(uniform.glsl_name, *static_cast<const glm::vec2 *>(ptr));
+				SetFloat2(uniform.glsl_name, *static_cast<const math::vec2 *>(ptr));
 				break;
 			case ShaderDataType::Float3:
-				SetFloat3(uniform.glsl_name, *static_cast<const glm::vec3 *>(ptr));
+				SetFloat3(uniform.glsl_name, *static_cast<const math::vec3 *>(ptr));
 				break;
 			case ShaderDataType::Float4:
-				SetFloat4(uniform.glsl_name, *static_cast<const glm::vec4 *>(ptr));
+				SetFloat4(uniform.glsl_name, *static_cast<const math::vec4 *>(ptr));
 				break;
 			case ShaderDataType::Mat4:
-				SetMat4(uniform.glsl_name, *static_cast<const glm::mat4 *>(ptr));
+				SetMat4(uniform.glsl_name, *static_cast<const math::mat4 *>(ptr));
 				break;
 			case ShaderDataType::Int:
 				SetInt(uniform.glsl_name, *static_cast<const int *>(ptr));
@@ -623,28 +623,28 @@ void	OpenGLShader::SetFloat(const std::string& name, float value)
 	UploadUniformFloat(name, value);
 }
 
-void	OpenGLShader::SetFloat2(const std::string& name, const glm::vec2& value)
+void	OpenGLShader::SetFloat2(const std::string& name, const math::vec2& value)
 {
 	KN_PROFILE_FUNC();
 
 	UploadUniformFloat2(name, value);
 }
 
-void	OpenGLShader::SetFloat3(const std::string& name, const glm::vec3& value)
+void	OpenGLShader::SetFloat3(const std::string& name, const math::vec3& value)
 {
 	KN_PROFILE_FUNC();
 
 	UploadUniformFloat3(name, value);
 }
 
-void	OpenGLShader::SetFloat4(const std::string& name, const glm::vec4& value)
+void	OpenGLShader::SetFloat4(const std::string& name, const math::vec4& value)
 {
 	KN_PROFILE_FUNC();
 
 	UploadUniformFloat4(name, value);
 }
 
-void	OpenGLShader::SetMat4(const std::string& name, const glm::mat4& value)
+void	OpenGLShader::SetMat4(const std::string& name, const math::mat4& value)
 {
 	KN_PROFILE_FUNC();
 
@@ -679,7 +679,7 @@ void	OpenGLShader::UploadUniformFloatArray(const std::string& name, const float*
 	_KN_GL_CHECK_ERROR();
 }
 
-void	OpenGLShader::UploadUniformFloat2(const std::string& name, const glm::vec2& value)
+void	OpenGLShader::UploadUniformFloat2(const std::string& name, const math::vec2& value)
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
 	glUniform2f(location, value.x, value.y);
@@ -693,7 +693,7 @@ void	OpenGLShader::UploadUniformFloat2Array(const std::string& name, const float
 	_KN_GL_CHECK_ERROR();
 }
 
-void	OpenGLShader::UploadUniformFloat3(const std::string& name, const glm::vec3& value)
+void	OpenGLShader::UploadUniformFloat3(const std::string& name, const math::vec3& value)
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
 	glUniform3f(location, value.x, value.y, value.z);
@@ -707,7 +707,7 @@ void	OpenGLShader::UploadUniformFloat3Array(const std::string& name, const float
 	_KN_GL_CHECK_ERROR();
 }
 
-void	OpenGLShader::UploadUniformFloat4(const std::string& name, const glm::vec4& value)
+void	OpenGLShader::UploadUniformFloat4(const std::string& name, const math::vec4& value)
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
 	glUniform4f(location, value.x, value.y, value.z, value.w);
@@ -721,17 +721,17 @@ void	OpenGLShader::UploadUniformFloat4Array(const std::string& name, const float
 	_KN_GL_CHECK_ERROR();
 }
 
-void	OpenGLShader::UploadUniformMat3(const std::string& name, const glm::mat3& matrix)
+void	OpenGLShader::UploadUniformMat3(const std::string& name, const math::mat3& matrix)
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
-	glUniformMatrix3fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
+	glUniformMatrix3fv(location, 1, GL_FALSE, math::value_ptr(matrix));
 	_KN_GL_CHECK_ERROR();
 }
 
-void	OpenGLShader::UploadUniformMat4(const std::string& name, const glm::mat4& matrix)
+void	OpenGLShader::UploadUniformMat4(const std::string& name, const math::mat4& matrix)
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
-	glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
+	glUniformMatrix4fv(location, 1, GL_FALSE, math::value_ptr(matrix));
 	_KN_GL_CHECK_ERROR();
 }
 

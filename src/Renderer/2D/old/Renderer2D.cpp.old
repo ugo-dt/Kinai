@@ -46,11 +46,11 @@ struct Renderer2DState
 
 	// Ref<Texture2D>		font_atlas_texture;
 
-	// glm::vec4			quad_vertex_positions[4];
+	// math::vec4			quad_vertex_positions[4];
 
 	// struct CameraData
 	// {
-	// 	glm::mat4	view_projection;
+	// 	math::mat4	view_projection;
 	// };
 	// CameraData			camera_buffer;
 	// Ref<UniformBuffer>	camera_uniform_buffer;
@@ -62,9 +62,9 @@ struct Renderer2DState
 	// 	float	e;
 	// };
 	// GlobalBuiltins		global_builtins_buffer = {
-	// 	.pi = glm::pi<float>(),
-	// 	.tau = glm::tau<float>(),
-	// 	.e = glm::e<float>(),
+	// 	.pi = math::pi<float>(),
+	// 	.tau = math::tau<float>(),
+	// 	.e = math::e<float>(),
 	// };
 	// Ref<UniformBuffer>	global_builtins_uniform_buffer;
 
@@ -273,11 +273,11 @@ void	Renderer2D::BeginFrame(const PerspectiveCamera& camera)
 	StartBatch();
 }
 
-void	Renderer2D::BeginFrame(const Camera& camera, const glm::mat4& transform)
+void	Renderer2D::BeginFrame(const Camera& camera, const math::mat4& transform)
 {
 	KN_PROFILE_FUNC();
 
-	state.camera_buffer.view_projection = camera.GetProjectionMatrix() * glm::inverse(transform);
+	state.camera_buffer.view_projection = camera.GetProjectionMatrix() * math::inverse(transform);
 	state.camera_uniform_buffer->SetData(&state.camera_buffer, sizeof(Renderer2DState::CameraData));
 
 	StartBatch();

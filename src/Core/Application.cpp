@@ -11,7 +11,6 @@ Application*	Application::_instance;
 Application::Application(const ApplicationConfig &config)
 	: _window(nullptr),
 	  _config(config),
-	  _imgui_layer(nullptr),
 	  _layerStack(),
 	  _minimized(false)
 {
@@ -50,12 +49,6 @@ Application::Application(const ApplicationConfig &config)
 		Renderer::Init();
 		Painter::Init();
 	#endif
-
-	if (_config.enable_imgui)
-	{
-		PushLayer<ImGuiLayer>();
-		_imgui_layer = GetLayer<ImGuiLayer>();
-	}
 }
 
 Application::~Application()
@@ -117,14 +110,6 @@ void	Application::Run()
 			for (auto& layer : _layerStack)
 				layer->OnRender();
 			_time.frames++;
-
-			if (_config.enable_imgui)
-			{
-				_imgui_layer->Begin();
-				for (auto& layer : _layerStack)
-					layer->OnImGuiRender();
-				_imgui_layer->End();
-			}
 		}
 
 		_window->OnUpdate();
@@ -159,7 +144,7 @@ bool	Application::OnWindowResize(WindowResizeEvent &event)
 	}
 
 	_minimized = false;
-	glm::ivec2 size = _window->GetSizeInPixels();
+	math::ivec2 size = _window->GetSizeInPixels();
 	Renderer::SetViewport(0, 0, size.x, size.y);
 	// Painter::UpdateViewport(size.x, size.y);
 

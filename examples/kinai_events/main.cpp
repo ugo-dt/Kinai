@@ -15,8 +15,8 @@ public:
 	void	OnRender()
 	{
 		float time = SDL_GetTicks() / 1000.f;
-		float r = glm::sin(time) * 0.5f + 0.5f,
-			g = glm::cos(time) * 0.5f + 0.5f;
+		float r = Kinai::math::sin(time) * 0.5f + 0.5f,
+			g = Kinai::math::cos(time) * 0.5f + 0.5f;
 
 		Kinai::Renderer::SetClearColor(r, g, 0.3f, 1.0f);
 		Kinai::Renderer::Clear();

@@ -12,7 +12,7 @@ class Input
 public:
 	static bool IsKeyPressed(KeyCode key);
 	static bool IsMouseButtonPressed(MouseButton button);
-	static glm::vec2 GetMousePosition();
+	static math::vec2 GetMousePosition();
 	static float GetMouseX();
 	static float GetMouseY();
 };

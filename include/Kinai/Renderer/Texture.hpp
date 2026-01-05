@@ -28,6 +28,8 @@ enum class ImageFormat
 	RGBA8,
 	RGBA32F,
 	SRGB_ALPHA,
+	BGR,
+	BGRA,
 };
 
 struct SamplerConfig

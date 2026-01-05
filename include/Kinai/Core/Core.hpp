@@ -1,24 +1,9 @@
 #pragma once
 
 #include "Kinai/Platform/Platform.hpp"
+#include "Kinai/Math/Math.hpp"
 
 #include <SDL3/SDL.h>
-
-#define GLM_ENABLE_EXPERIMENTAL
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
-#include <glm/gtx/rotate_vector.hpp>
-#include <glm/gtx/vector_angle.hpp>
-
-#include <imgui/imgui.h>
-
-#ifdef KINAI_SOKOL
-	#include <sokol/sokol_gfx.h>
-	#include <sokol/sokol_gp.h>
-	#include <sokol/sokol_log.h>
-	#include <sokol/sokol_debugtext.h>
-#endif
 
 #include <algorithm>
 #include <cassert>
