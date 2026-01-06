@@ -36,11 +36,6 @@ public:
 	uint32_t GetWidth() const override;
 	uint32_t GetHeight() const override;
 
-	#ifdef KINAI_SOKOL
-		sg_environment GetSokolEnvironment() const override;
-		sg_swapchain GetSokolSwapchain() const override;
-	#endif
-
 	bool IsVSync() const override;
 	void SetVSync(bool enabled) override;
 	void SetEventCallback(const EventCallback &callback) override;

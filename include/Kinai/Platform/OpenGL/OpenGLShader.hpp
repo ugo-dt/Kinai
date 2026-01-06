@@ -6,89 +6,11 @@
 namespace Kinai
 {
 
-enum ShaderParserTokenType : char
-{
-	SHADER_TOKEN_AT			= '@',
-	SHADER_TOKEN_NEWLINE	= '\n',
-	SHADER_TOKEN_QUOTE		= '"',
-	SHADER_TOKEN_TEXT		= '\0',
-};
-
-template <> struct is_token_type<ShaderParserTokenType>	: std::true_type {};
-
-struct ShaderParserToken : TokenBase<ShaderParserTokenType>
-{
-	ShaderParserToken(ShaderParserTokenType t, std::string w, uint32_t r, uint32_t c)
-		: TokenBase<ShaderParserTokenType>(t, w, r, c) {}
-};
-
-class OpenGLShaderParser : public Parser<ShaderParserToken>
-{
-public:
-	OpenGLShaderParser(const std::string& filepath): Parser(filepath) {}
-
-	void	MakeShader(const std::string& program_name, std::string &vertex_out, std::string &fragment_out);
-
-private:
-	static inline constexpr const char *separators = "@\"";
-
-	enum Context { CONTEXT_NONE, CONTEXT_VERTEX_SHADER, CONTEXT_FRAGMENT_SHADER, CONTEXT_PROGRAM, CONTEXT_INCLUDE, CONTEXT_EXPORT };
-
-	struct ShaderContents
-	{
-		std::string	name;
-		std::string	contents;
-		Context		context;
-		iterator	token;
-	};
-
-	struct ExportContents
-	{
-		std::string	name;
-		std::string	contents;
-		bool		was_imported;
-	};
-
-	struct Program
-	{
-		std::string	name;
-		std::string	vs;
-		std::string	fs;
-		iterator	token;
-		iterator	context_token;
-		iterator 	vs_token;
-		iterator 	fs_token;
-	};
-
-private:
-	std::vector<ShaderContents>	_shaders;
-	std::vector<Program>		_programs;
-	iterator 					_context_token;
-	std::vector<std::string>	_included_files;
-	std::vector<ExportContents>	_exports;
-
-private:
-	bool				_is_separator(const char& c);
-	void				_throw_parser_with_context(const_iterator& error_it, const std::string &error, const std::string &note, std::string optional_declaration = std::string());
-	void				_print_warning_with_note(const_iterator& warning_it, const std::string &warning, const_iterator& note_it, const std::string &note, std::string optional_declaration = std::string());
-	void				_print_warning_with_context_note(const_iterator& warning_it, const std::string &warning, const std::string &note, std::string optional_declaration = std::string());
-	void 				_import(size_t &pos, std::string &contents);
-	void				_parse_shader_context(size_t &pos, const_iterator &end, Context &context);
-	void				_parse_program_context(size_t &pos, const_iterator &end);
-	void 				_include(size_t &pos);
-	void 				_export(size_t &pos, const_iterator &end);
-	void 				_tokenize(const std::string& data);
-	void				_parse_tokens(size_t first, size_t last, bool included);
-	const std::string&	_get_vertex_source(Program &program);
-	const std::string&	_get_fragment_source(Program &program);
-};
-
 class OpenGLShader : public Shader
 {
 public:
 	OpenGLShader() = delete;
 
-	OpenGLShader(const std::string& filepath, const std::string& program_name);
 	OpenGLShader(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc);
 	OpenGLShader(const ShaderConfig& config);
 	~OpenGLShader();

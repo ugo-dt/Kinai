@@ -100,22 +100,6 @@ bool	HeadlessWindow::IsHovered() const
 	return _hovered;
 }
 
-#ifdef KINAI_SOKOL
-sg_environment	HeadlessWindow::GetSokolEnvironment() const
-{
-	KN_PROFILE_FUNC();
-
-	return {};
-}
-
-sg_swapchain	HeadlessWindow::GetSokolSwapchain() const
-{
-	KN_PROFILE_FUNC();
-
-	return {};
-}
-#endif
-
 void	HeadlessWindow::SetVSync(bool enabled)
 {
 	KN_PROFILE_FUNC();

@@ -110,7 +110,7 @@ ifdef KINAI_BACKEND
 endif
 
 ifeq ($(backend),)
-  $(info Please select a backend between OpenGL, Sokol or Headless.)
+  $(info Please select a backend between OpenGL or Headless.)
   $(error No rendering backend selected)
 endif
 
@@ -125,11 +125,6 @@ else ifeq ($(__lc_backend),gl)
   override backend = OpenGL
   __kinai_backend_opengl = 1
   CXXFLAGS += -DKINAI_OPENGL
-else ifeq ($(__lc_backend),sokol)
-  override backend = Sokol
-  __kinai_backend_opengl = 1
-  __kinai_backend_sokol = 1
-  CXXFLAGS += -DKINAI_OPENGL -DKINAI_SOKOL
 else ifeq ($(__lc_backend),null) # Headless
   override backend = Headless
   __kinai_backend_headless = 1

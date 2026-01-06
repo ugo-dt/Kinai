@@ -7,6 +7,11 @@ LogLevel					Log::_level;
 std::vector<std::ostream*>	Log::_output_streams;
 std::vector<std::ostream*>	Log::_error_streams;
 
+#if __cplusplus >= 202002L
+#else
+std::mutex					Log::_mutex;
+#endif
+
 void	Log::Init(LogLevel level)
 {
 	_level = level;

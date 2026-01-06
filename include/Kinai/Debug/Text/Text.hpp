@@ -88,12 +88,12 @@ public:
 	static void Put(const char* str); // does not append newline
 	static void Put(const char* str , size_t len); // range. stops at len or null terminator
 	static int Printf(const char* fmt, ...) KN_PRINTF_LIKE(1, 2);
-	template <class... Args>
-	static void Print(std::string_view fmt, Args&&... args)
-	{
-		const std::string s = std::vformat(fmt, std::make_format_args(args...));
-		Put(s.c_str());
-	}
+	// template <class... Args>
+	// static void Print(std::string_view fmt, Args&&... args)
+	// {
+	// 	const std::string s = std::vformat(fmt, std::make_format_args(args...));
+	// 	Put(s.c_str());
+	// }
 
 private:
 	struct TextCommand;

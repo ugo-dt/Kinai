@@ -57,7 +57,6 @@ class EventDispatcher
 {
 public:
 	template <class EventType>
-	requires(std::is_base_of_v<Event, EventType>)
 	EventDispatcher(EventType& event)
 		: _event(event) {}
 	

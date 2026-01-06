@@ -53,7 +53,8 @@ DebugText::TextCommand&	DebugText::NextCommand(Ref<Context>& context)
 {
 	if (context->commands.size() >= context->commands_cap)
 		Log::Critical("Command buffer full");
-	return context->commands.emplace_back(TextCommand{});
+	context->commands.emplace_back(TextCommand{});
+	return context->commands.back();
 }
 
 void	DebugText::SetLayer(Ref<Context>& context, int layer_id)
@@ -234,6 +235,13 @@ void	DebugText::Shutdown()
 {
 	delete[] _fmt_buf;
 	_fmt_buf = nullptr;
+
+	_contexts.clear();
+	_current_context = nullptr;
+	_default_context = nullptr;
+	_font_texture = nullptr;
+	_shader = nullptr;
+	_vao = nullptr;
 }
 
 void	DebugText::Layer(int layer_id)

@@ -61,9 +61,3 @@ kinai_events:
 
 kinai_2d:
 	$(SILENT)$(MAKE) example 1=kinai_2d
-
-kinai_sokol:
-	$(SILENT)$(MAKE) example 1=kinai_sokol
-
-kinai_sokol_gp:
-	$(SILENT)$(MAKE) example 1=kinai_sokol_gp

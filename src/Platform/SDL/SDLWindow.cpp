@@ -7,7 +7,7 @@ namespace Kinai
 
 #define KINAI_DEF(val, def) (((val) == 0) ? (def) : (val))
 
-struct Kinai_Sokol_SDL_Desc {
+struct Kinai_SDL_Desc {
 	uint32_t		width, height;
 	int				sample_count;
 	bool			no_depth_buffer;
@@ -20,7 +20,7 @@ SDLWindow::SDLWindow(const WindowProps &props)
 {
 	KN_PROFILE_FUNC();
 
-	Kinai_Sokol_SDL_Desc	desc = {
+	Kinai_SDL_Desc	desc = {
 		.width = props.width,
 		.height = props.height,
 		.sample_count = 1,
@@ -32,7 +32,7 @@ SDLWindow::SDLWindow(const WindowProps &props)
 
 	SDL_WindowFlags flags;
 
-	Kinai_Sokol_SDL_Desc desc_def = desc;
+	Kinai_SDL_Desc desc_def = desc;
 	desc_def.sample_count = KINAI_DEF(desc_def.sample_count, 1);
 
 	_data.sample_count = desc_def.sample_count;
@@ -247,35 +247,6 @@ uint32_t	SDLWindow::GetHeight() const
 {
 	return GetSize().y;
 }
-
-#ifdef KINAI_SOKOL
-
-sg_environment	SDLWindow::GetSokolEnvironment() const
-{
-	sg_environment env = {};
-	env.defaults.color_format = SG_PIXELFORMAT_RGBA8,
-	env.defaults.depth_format = _data.no_depth_buffer ? SG_PIXELFORMAT_NONE : SG_PIXELFORMAT_DEPTH_STENCIL,
-	env.defaults.sample_count = _data.sample_count;
-	return env;
-}
-
-sg_swapchain	SDLWindow::GetSokolSwapchain() const
-{
-	int width, height;
-	SDL_GetWindowSizeInPixels(_handle, &width, &height);
-
-	sg_swapchain swapchain = {};
-	swapchain.width = width,
-	swapchain.height = height,
-	swapchain.sample_count = _data.sample_count,
-	swapchain.color_format = SG_PIXELFORMAT_RGBA8,
-	swapchain.depth_format = _data.no_depth_buffer ? SG_PIXELFORMAT_NONE : SG_PIXELFORMAT_DEPTH_STENCIL,
-	// we just assume here that the GL framebuffer is always 0
-	swapchain.gl.framebuffer = 0;
-	return swapchain;
-}
-
-#endif // KINAI_SOKOL
 
 bool	SDLWindow::IsVSync() const
 {

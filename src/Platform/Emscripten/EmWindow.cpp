@@ -103,35 +103,6 @@ uint32_t	EmWindow::GetHeight() const
 	return _height;
 }
 
-#ifdef KINAI_SOKOL
-sg_environment	EmWindow::GetSokolEnvironment() const
-{
-	KN_PROFILE_FUNC();
-
-	sg_environment env = {};
-
-	env.defaults.color_format = SG_PIXELFORMAT_RGBA8;
-	env.defaults.depth_format = SG_PIXELFORMAT_DEPTH_STENCIL;
-	env.defaults.sample_count = _sample_count;
-	return env;
-}
-
-sg_swapchain	EmWindow::GetSokolSwapchain() const
-{
-	KN_PROFILE_FUNC();
-
-	sg_swapchain swapchain = {};
-
-	swapchain.width = (int)_width;
-	swapchain.height = (int)_height;
-	swapchain.sample_count = _sample_count;
-	swapchain.color_format = SG_PIXELFORMAT_RGBA8;
-	swapchain.depth_format = SG_PIXELFORMAT_DEPTH_STENCIL;
-	swapchain.gl.framebuffer = (uint32_t)_framebuffer;
-	return swapchain;
-}
-#endif
-
 bool	EmWindow::IsVSync() const
 {
 	KN_PROFILE_FUNC();

@@ -2,7 +2,6 @@
 
 #include "Kinai/Core/Core.hpp"
 #include "Kinai/Events/Event.hpp"
-#include "Kinai/Sokol/Sokol.hpp"
 
 static constexpr uint32_t KN_DEFAULT_WINDOW_WIDTH = 1280;
 static constexpr uint32_t KN_DEFAULT_WINDOW_HEIGHT = 720;
@@ -52,11 +51,6 @@ public:
 	virtual bool IsFocused() const = 0;
 	virtual bool IsHovered() const = 0;
 	
-#ifdef KINAI_SOKOL
-	virtual sg_environment GetSokolEnvironment() const = 0;
-	virtual sg_swapchain GetSokolSwapchain() const = 0;
-#endif
-
 	virtual bool IsVSync() const = 0;
 	virtual void SetVSync(bool enabled) = 0;
 	virtual void SetEventCallback(const EventCallback &callback) = 0;

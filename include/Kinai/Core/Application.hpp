@@ -43,14 +43,12 @@ public:
 	virtual ~Application();
 
 	template <typename T, typename... Args>
-	requires(std::is_base_of_v<Layer, T>)
 	void PushLayer(Args&&... args)
 	{
 		_layerStack.push_back(std::make_unique<T>(std::forward<Args>(args)...));
 	}
 
 	template <typename T>
-	requires(std::is_base_of_v<Layer, T>)
 	T* GetLayer()
 	{
 		for (const auto& layer : _layerStack)
@@ -74,7 +72,6 @@ private:
 	void Run();
 
 	template <class EventType>
-	requires(std::is_base_of_v<Event, EventType>)
 	void OnEvent(EventType& event);
 
 	bool OnWindowClose(WindowCloseEvent &event);
@@ -98,7 +95,6 @@ private:
 };
 
 template <class EventType>
-requires(std::is_base_of_v<Event, EventType>)
 void	Application::OnEvent(EventType& event)
 {
 	KN_PROFILE_FUNC();

@@ -36,21 +36,6 @@ __imgui_objs		= $(patsubst $(__imgui_path)/%.cpp,$(__lib_obj_dir)/imgui/%.o,$(__
 # SDL3
 __sdl3_path			= $(__default_lib_path)/SDL3
 
-# Sokol
-__sokol_path		= $(__default_lib_path)/sokol
-__sokol_src			= $(wildcard $(__sokol_path)/*.c)
-ifeq ($(target),$(__EMSCRIPTEN__))
-  CFLAGS			+= -DSOKOL_GLES3
-  CXXFLAGS			+= -DSOKOL_GLES3
-  __sokol_src		+= $(wildcard $(__sokol_path)/wgpu/*.c)
-  SOKOL_SLANG		= glsl300es
-else
-  CFLAGS			+= -DSOKOL_GLCORE -DSOKOL_EXTERNAL_GL_LOADER
-  CXXFLAGS			+= -DSOKOL_GLCORE -DSOKOL_EXTERNAL_GL_LOADER
-  SOKOL_SLANG		= glsl410
-endif
-__sokol_objs		= $(patsubst $(__sokol_path)/%.c,$(__lib_obj_dir)/sokol/%.o,$(__sokol_src))
-
 # stb_image
 __stb_image_path	= $(__default_lib_path)/stb
 __stb_image_src		= $(__stb_image_path)/stb_image.c
@@ -64,7 +49,7 @@ __lib_include		=	-I $(__default_lib_path)	\
 						-I $(__sdl3_path)/include
 
 INCLUDE				+= $(__lib_include)
-LIB_OBJS			= $(__glad_objs) $(__imgui_objs) $(__stb_image_objs) $(__sokol_objs)
+LIB_OBJS			= $(__glad_objs) $(__imgui_objs) $(__stb_image_objs)
 
 ifdef __kinai_backend_opengl
 	ifeq ($(target),$(__MACOS__))
@@ -85,11 +70,6 @@ $(__lib_obj_dir)/imgui/%.o: $(__imgui_path)/%.cpp
 	@echo "$(COLOR_GREY)Compiling $<...$(COLOR_DEFAULT)"
 	$(SILENT)mkdir -p $(dir $@)
 	$(SILENT)$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
-
-$(__lib_obj_dir)/sokol/%.o: $(__sokol_path)/%.c
-	@echo "$(COLOR_GREY)Compiling $<...$(COLOR_DEFAULT)"
-	$(SILENT)mkdir -p $(dir $@)
-	$(SILENT)$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 $(__lib_obj_dir)/stb_image/%.o: $(__stb_image_path)/%.c
 	@echo "$(COLOR_GREY)Compiling $<...$(COLOR_DEFAULT)"

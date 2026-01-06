@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Kinai/Platform/Platform.hpp"
+#include "Kinai/Core/Optional.hpp"
 
 #include <SDL3/SDL.h>
 
@@ -13,14 +14,8 @@
 
 #include <imgui/imgui.h>
 
-#ifdef KINAI_SOKOL
-	#include <sokol/sokol_gfx.h>
-	#include <sokol/sokol_gp.h>
-	#include <sokol/sokol_log.h>
-	#include <sokol/sokol_debugtext.h>
-#endif
-
 #include <algorithm>
+#include <array>
 #include <cassert>
 #include <cmath>
 #include <csignal>
@@ -28,6 +23,7 @@
 #include <iostream>
 #include <filesystem>
 #include <fstream>
+#include <functional>
 #include <memory>
 #include <sstream>
 #include <string>
@@ -35,6 +31,7 @@
 #include <tuple>
 #include <typeindex>
 #include <type_traits>
+#include <unordered_map>
 #include <utility>
 #include <vector>
 

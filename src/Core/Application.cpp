@@ -2,6 +2,7 @@
 #include "Kinai/Debug/Profiler.hpp"
 #include "Kinai/Renderer/Renderer.hpp"
 #include "Kinai/Renderer/2D/Painter.hpp"
+#include "Kinai/Debug/Text/Text.hpp"
 
 namespace Kinai
 {
@@ -37,19 +38,16 @@ Application::Application(const ApplicationConfig &config)
 		)
 	);
 	
-	#if defined(KINAI_OPENGL) || defined(KINAI_SOKOL)
+	#if defined(KINAI_OPENGL)
 		SDL_RegisterEvents(KN_CUSTOM_EVENT_TYPE_COUNT);
 	#endif
 	
 	_window->SetEventCallback(KN_BIND_EVENT_FN(Application::OnEvent));
 	std::memset(&_time, 0, sizeof(Time));
 
-	#if defined(KINAI_SOKOL)
-		Sokol::Init();
-	#else
-		Renderer::Init();
-		Painter::Init();
-	#endif
+	Renderer::Init();
+	Painter::Init();
+	DebugText::Init();
 
 	if (_config.enable_imgui)
 	{
@@ -64,11 +62,8 @@ Application::~Application()
 
 	_layerStack.clear();
 
-#ifdef KINAI_SOKOL
-	Sokol::Shutdown();
-#else
+	DebugText::Shutdown();
 	Painter::Shutdown();
-#endif
 	_instance = nullptr;
 
 #ifdef KINAI_PROFILER
@@ -132,7 +127,8 @@ void	Application::Run()
 		// Handle layer transitions
 		for (auto& pending : Layer::_pendingTransitions)
 		{
-			auto& [from, layer] = pending;
+			auto& from = std::get<0>(pending);
+			auto& layer = std::get<1>(pending);
 			from->DoTransition(std::move(layer));
 		}
 		Layer::_pendingTransitions.clear();

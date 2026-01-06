@@ -5,7 +5,6 @@
 #include "Kinai/Events/ApplicationEvent.hpp"
 #include "Kinai/Events/MouseEvent.hpp"
 #include "Kinai/Events/KeyEvent.hpp"
-#include "Kinai/Sokol/Sokol.hpp"
 
 namespace Kinai
 {
@@ -28,11 +27,6 @@ public:
 	bool IsVSync() const override;
 	bool IsFocused() const override;
 	bool IsHovered() const override;
-
-#ifdef KINAI_SOKOL
-	sg_environment GetSokolEnvironment() const override;
-	sg_swapchain GetSokolSwapchain() const override;
-#endif
 
 	void SetVSync(bool enabled) override;
 	void SetEventCallback(const EventCallback &callback) override;

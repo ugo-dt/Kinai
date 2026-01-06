@@ -55,7 +55,6 @@ public:
 	
 	virtual void ApplyUniforms(const void* params, size_t size) = 0;
 
-	static Ref<Shader>	Create(const std::string& filepath, const std::string& program_name);
 	static Ref<Shader>	Create(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc);
 	static Ref<Shader>	Create(const ShaderConfig& config);
 };
@@ -65,7 +64,6 @@ class ShaderLibrary
 public:
 	void		Add(const std::string& name, const Ref<Shader>& shader);
 	void		Add(const Ref<Shader>& shader);
-	Ref<Shader>	Load(const std::string& filepath, const std::string& name);
 	Ref<Shader>	Load(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc);
 
 	Ref<Shader>	Get(const std::string& name);
