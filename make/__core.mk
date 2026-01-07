@@ -10,6 +10,8 @@ ifndef verbose
   NO_PRINT_DIRECTORY = --no-print-directory
 endif
 
+.DEFAULT_GOAL := all
+
 # CC
 CC				= gcc-14
 CXX				= g++

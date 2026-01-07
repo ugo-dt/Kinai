@@ -25,7 +25,7 @@ enum KN_CustomEventType : EventType
 	KN_EVENT_LAST,
 };
 
-static_assert((uint32_t)KN_EVENT_LAST < (uint32_t)SDL_EVENT_LAST);
+static_assert((uint32_t)KN_EVENT_LAST < (uint32_t)SDL_EVENT_LAST, "Custom event types exceed SDL_EVENT_LAST limit");
 
 #define KN_CUSTOM_EVENT_TYPE_COUNT	((uint32_t)KN_EVENT_LAST - (uint32_t)SDL_EVENT_USER)
 

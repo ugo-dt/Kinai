@@ -7,3 +7,6 @@
 [submodule "bindings/cglm"]
 	path = bindings/cglm
 	url = https://github.com/recp/cglm.git
+[submodule "lib/fmt"]
+	path = lib/fmt
+	url = https://github.com/fmtlib/fmt.git

@@ -39,7 +39,7 @@ $(info Build: $(build))
 
 all: $(KINAI)
 
-$(KINAI): $(LIB_OBJS) $(KINAI_OBJS)
+$(KINAI): $(__fmt) $(LIB_OBJS) $(KINAI_OBJS)
 	$(SILENT)mkdir -p $(dir $@)
 	$(SILENT)$(AR) rcs $(KINAI) $(KINAI_OBJS) $(LIB_OBJS)
 	@echo "$(COLOR_GREEN)Successfully built $(notdir $(KINAI)) ($(backend) - $(target) - $(build)) $(COLOR_DEFAULT)"
