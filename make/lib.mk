@@ -46,6 +46,7 @@ __fmt_path			= $(__default_lib_path)/fmt
 __fmt_build_dir		= $(__fmt_path)/build
 __fmt_makefile		= $(__fmt_build_dir)/Makefile
 __fmt				= $(__fmt_build_dir)/libfmt.a
+LDFLAGS += $(__fmt)
 
 __lib_include		=	-I $(__default_lib_path)	\
 						-I $(__glm_path)			\
