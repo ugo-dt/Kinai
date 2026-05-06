@@ -43,7 +43,7 @@ __stb_image_objs	= $(patsubst $(__stb_image_path)/%.c,$(__lib_obj_dir)/stb_image
 
 # fmt
 __fmt_path			= $(__default_lib_path)/fmt
-__fmt_build_dir		= $(__fmt_path)/build
+__fmt_build_dir		= $(__fmt_path)/build_$(target)_$(__arch)_$(build)
 __fmt_makefile		= $(__fmt_build_dir)/Makefile
 __fmt				= $(__fmt_build_dir)/libfmt.a
 LDFLAGS += $(__fmt)
@@ -88,7 +88,7 @@ $(__lib_obj_dir)/stb_image/%.o: $(__stb_image_path)/%.c
 $(__fmt_makefile): $(__fmt_path)/CMakeLists.txt
 	@echo "$(COLOR_GREY)Configuring fmt...$(COLOR_DEFAULT)"
 	$(SILENT)mkdir -p $(__fmt_build_dir)
-	$(SILENT)cmake -S $(__fmt_path) -B $(__fmt_build_dir)
+	$(SILENT)$(CMAKE) -S $(__fmt_path) -B $(__fmt_build_dir) -DFMT_TEST=OFF
 
 $(__fmt): $(__fmt_makefile)
 	@echo "$(COLOR_GREY)Building fmt...$(COLOR_DEFAULT)"

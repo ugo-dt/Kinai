@@ -9,7 +9,6 @@ include $(KINAI_PATH)/make/__core.mk
 
 # Available platforms
 __WIN32__		= win32
-__WIN32__		= win32
 __LINUX__		= linux
 __MACOS__		= darwin
 __EMSCRIPTEN__	= emscripten
@@ -95,9 +94,15 @@ else ifeq ($(target),$(__EMSCRIPTEN__))
   CC		= emcc
   CXX		= em++
   AR		= emar
-  CXXFLAGS	+= -DIMGUI_IMPL_OPENGL_ES3 -sUSE_SDL=3 -Wno-experimental
+  CMAKE = emcmake cmake
+  CXXFLAGS += -DIMGUI_IMPL_OPENGL_ES3 -sUSE_SDL=3 -Wno-experimental
   LDFLAGS	+= -sUSE_SDL=3 -sALLOW_MEMORY_GROWTH -sWASM=1 -sUSE_WEBGL2=1 -sMIN_WEBGL_VERSION=2 -sMAXIMUM_MEMORY=1gb --shell-file $(KINAI_PATH)/kinai-shell.html
   __kinai_target_emscripten = 1
+endif
+
+ifndef __kinai_target_emscripten
+  CFLAGS += -Werror
+  CXXFLAGS += -Werror
 endif
 
 # Rendering backend.

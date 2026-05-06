@@ -29,6 +29,7 @@ EmWindow::EmWindow(const WindowProps& props, int flags)
 	EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx;
 	EmscriptenWebGLContextAttributes attrs;
 	emscripten_webgl_init_context_attributes(&attrs);
+	attrs.premultipliedAlpha = false;
 	attrs.antialias = flags & EMSC_ANTIALIAS;
 	attrs.majorVersion = 2;
 	_sample_count = (flags & EMSC_ANTIALIAS) ? 4 : 1;
@@ -36,6 +37,7 @@ EmWindow::EmWindow(const WindowProps& props, int flags)
 	emscripten_webgl_make_context_current(ctx);
 	glGetIntegerv(GL_FRAMEBUFFER_BINDING, (GLint *)&_framebuffer);
 
+	
 	emscripten_set_keydown_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, this, true, EmWindow::OnKeyPressed);
 	emscripten_set_keyup_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, this, true, EmWindow::OnKeyReleased);
 	emscripten_set_keypress_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, this, true, EmWindow::OnChar);

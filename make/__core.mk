@@ -13,12 +13,13 @@ endif
 .DEFAULT_GOAL := all
 
 # CC
-CC				= gcc-14
-CXX				= g++
-CFLAGS			= -Wall -Werror -Wextra
-CXXFLAGS		= -Wall -Werror -Wextra -std=c++14
-AR				= ar
-ARFLAGS			= rcs
+CC = gcc-14
+CXX = g++
+CFLAGS = -Wall -Wextra
+CXXFLAGS = -Wall -Wextra -std=c++14
+AR = ar
+ARFLAGS = rcs
+CMAKE = cmake
 
 # Colors
 COLOR_DEFAULT	= \033[39m

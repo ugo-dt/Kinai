@@ -12,7 +12,7 @@ static GLenum ImageFormatToGLDataFormat(ImageFormat format)
 		case ImageFormat::RGB8:		return GL_RGB;
 		case ImageFormat::RGBA8:	return GL_RGBA;
 		case ImageFormat::RGBA32F:	return GL_RGBA;
-#if KINAI_OPENGL_VERSION_MAJOR >= 4
+#if KN_GL_HAS_DSA
 		case ImageFormat::SRGB_ALPHA: return GL_SRGB_ALPHA;
 #endif
 		default: break;
@@ -134,7 +134,7 @@ OpenGLTexture2D::OpenGLTexture2D(const std::string& path, const TextureConfig& c
 
 		KN_ASSERT(internalFormat & dataFormat, "format not supported!");
 
-	#if KINAI_OPENGL_VERSION_MAJOR >= 4
+	#if KN_GL_HAS_DSA
 		glCreateTextures(GL_TEXTURE_2D, 1, &_renderer_id);
 		glTextureStorage2D(_renderer_id, 1, internalFormat, _width, _height);
 
@@ -196,7 +196,7 @@ void OpenGLTexture2D::SetData(void* data, uint32_t size)
 	KN_NOTUSED(size);
 #endif
 
-#if KINAI_OPENGL_VERSION_MAJOR >= 4
+#if KN_GL_HAS_DSA
 	glTextureSubImage2D(_renderer_id, 0, 0, 0, _width, _height, _data_format, GL_UNSIGNED_BYTE, data);
 #else
 	glBindTexture(GL_TEXTURE_2D, _renderer_id);
@@ -209,7 +209,7 @@ void OpenGLTexture2D::Bind(uint32_t slot) const
 {
 	KN_PROFILE_FUNC();
 
-#if KINAI_OPENGL_VERSION_MAJOR >= 4
+#if KN_GL_HAS_DSA
 	glBindTextureUnit(slot, _renderer_id);
 #else
 	KN_NOTUSED(slot);
@@ -307,7 +307,7 @@ void	OpenGLTextureCubeMap::Bind(uint32_t slot) const
 {
 	KN_PROFILE_FUNC();
 
-#if KINAI_OPENGL_VERSION_MAJOR >= 4
+#if KN_GL_HAS_DSA
 	glBindTextureUnit(slot, _renderer_id);
 #else
 	KN_NOTUSED(slot);

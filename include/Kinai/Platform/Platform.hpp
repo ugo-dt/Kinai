@@ -63,18 +63,27 @@
 
 #if defined(KINAI_OPENGL)
 	#ifndef KINAI_OPENGL_VERSION_MAJOR
-		#if defined(KN_PLATFORM_WEB) || defined(KN_PLATFORM_MACOS)
+		#if defined(KN_PLATFORM_WEB)
 			#define KINAI_OPENGL_VERSION_MAJOR 3
+			#define KN_GL_VERSION 300
 		#else
 			#define KINAI_OPENGL_VERSION_MAJOR 4
+			#define KN_GL_VERSION 410
 		#endif
 	#endif
 	#ifndef KINAI_OPENGL_VERSION_MINOR
-		#if defined(KN_PLATFORM_WEB) || defined(KN_PLATFORM_MACOS)
+		#if defined(KN_PLATFORM_WEB)
 			#define KINAI_OPENGL_VERSION_MINOR 0
 		#else
-			#define KINAI_OPENGL_VERSION_MINOR 3
+			#define KINAI_OPENGL_VERSION_MINOR 1
 		#endif
+	#endif
+
+	// direct state access is only available in OpenGL 4.5 and above
+	#if KINAI_OPENGL_VERSION_MAJOR >= 4 && KINAI_OPENGL_VERSION_MINOR >= 5
+		#define KN_GL_HAS_DSA 1
+	#else
+		#define KN_GL_HAS_DSA 0
 	#endif
 	#include <imgui/backends/imgui_impl_sdl3.h>
 	#include <imgui/backends/imgui_impl_opengl3.h>

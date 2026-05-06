@@ -46,14 +46,15 @@ Application::Application(const ApplicationConfig &config)
 	std::memset(&_time, 0, sizeof(Time));
 
 	Renderer::Init();
-	Painter::Init();
-	DebugText::Init();
 
 	if (_config.enable_imgui)
 	{
 		PushLayer<ImGuiLayer>();
 		_imgui_layer = GetLayer<ImGuiLayer>();
 	}
+
+	Painter::Init();
+	DebugText::Init();
 }
 
 Application::~Application()

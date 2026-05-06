@@ -8,7 +8,7 @@ constexpr int MAX_FRAME_BUFFER_SIZE = 8192;
 
 static GLenum	TextureTarget(bool multisampled)
 {
-#if KINAI_OPENGL_VERSION_MAJOR >= 4
+#if KN_GL_HAS_DSA
 	return multisampled ? GL_TEXTURE_2D_MULTISAMPLE : GL_TEXTURE_2D;
 #else
 	KN_NOTUSED(multisampled);
@@ -18,7 +18,7 @@ static GLenum	TextureTarget(bool multisampled)
 
 static void	CreateTextures(bool multisampled, uint32_t* outID, uint32_t count)
 {
-#if KINAI_OPENGL_VERSION_MAJOR >= 4
+#if KN_GL_HAS_DSA
 	glCreateTextures(TextureTarget(multisampled), count, outID);
 #else
 	KN_NOTUSED(multisampled);
@@ -49,7 +49,7 @@ static void	AttachColorTexture(
 )
 {
 	bool multisampled = samples > 1;
-#if KINAI_OPENGL_VERSION_MAJOR >= 4
+#if KN_GL_HAS_DSA
 	if (multisampled)
 	{
 		glTexImage2DMultisample(GL_TEXTURE_2D_MULTISAMPLE, samples, internalFormat, width, height, GL_FALSE);
@@ -84,7 +84,7 @@ static void	AttachDepthTexture(
 )
 {
 	bool multisampled = samples > 1;
-#if KINAI_OPENGL_VERSION_MAJOR >= 4
+#if KN_GL_HAS_DSA
 	if (multisampled)
 	{
 		glTexImage2DMultisample(GL_TEXTURE_2D_MULTISAMPLE, samples, format, width, height, GL_FALSE);
@@ -166,7 +166,7 @@ void	OpenGLFramebuffer::Invalidate()
 		_depth_attachment = 0;
 	}
 
-#if KINAI_OPENGL_VERSION_MAJOR >= 4
+#if KN_GL_HAS_DSA
 	glCreateFramebuffers(1, &_renderer_id);
 #else
 	glGenFramebuffers(1, &_renderer_id);
@@ -320,7 +320,7 @@ void	OpenGLFramebuffer::CopyTextureData(Ref<Texture2D>& dest)
 
 void	OpenGLFramebuffer::ClearAttachment(uint32_t attachmentIndex, int value)
 {
-#if KINAI_OPENGL_VERSION_MAJOR >= 4
+#if KN_GL_HAS_DSA
 	KN_ASSERT(attachmentIndex < _color_attachments.size());
 
 	auto& spec = _color_attachment_configs[attachmentIndex];

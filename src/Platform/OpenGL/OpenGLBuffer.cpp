@@ -8,7 +8,7 @@ OpenGLVertexBuffer::OpenGLVertexBuffer(uint32_t size)
 {
 	KN_PROFILE_FUNC();
 
-#if KINAI_OPENGL_VERSION_MAJOR >= 4
+#if KN_GL_HAS_DSA
 	glCreateBuffers(1, &_renderer_id);
 #else
 	glGenBuffers(1, &_renderer_id);
@@ -26,7 +26,7 @@ OpenGLVertexBuffer::OpenGLVertexBuffer(const void* vertices, uint32_t size)
 {
 	KN_PROFILE_FUNC();
 
-#if KINAI_OPENGL_VERSION_MAJOR >= 4
+#if KN_GL_HAS_DSA
 	glCreateBuffers(1, &_renderer_id);
 #else
 	glGenBuffers(1, &_renderer_id);
@@ -85,7 +85,7 @@ OpenGLIndexBuffer::OpenGLIndexBuffer(const void* indices, uint32_t count, IndexT
 {
 	KN_PROFILE_FUNC();
 
-#if KINAI_OPENGL_VERSION_MAJOR >= 4
+#if KN_GL_HAS_DSA
 	glCreateBuffers(1, &_renderer_id);
 #else
 	glGenBuffers(1, &_renderer_id);

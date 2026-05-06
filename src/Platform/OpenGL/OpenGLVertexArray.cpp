@@ -7,7 +7,7 @@ OpenGLVertexArray::OpenGLVertexArray()
 {
 	KN_PROFILE_FUNC();
 
-#if KINAI_OPENGL_VERSION_MAJOR >= 4
+#if KN_GL_HAS_DSA
 	glCreateVertexArrays(1, &_renderer_id);
 #else
 	glGenVertexArrays(1, &_renderer_id);
