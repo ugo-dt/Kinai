@@ -45,8 +45,8 @@ ifeq ($(build),$(__build_debug)) # Debug
   CFLAGS	+= -DKINAI_DEBUG -g
   CXXFLAGS	+= -DKINAI_DEBUG -g
 else ifeq ($(build),$(__build_dev)) # Dev
-  CFLAGS	+= -DKINAI_DEV
-  CXXFLAGS	+= -DKINAI_DEV
+  CFLAGS	+= -DKINAI_DEV -O2
+  CXXFLAGS	+= -DKINAI_DEV -O2
 else ifeq ($(build),$(__build_release)) # Release
   CFLAGS	+= -DKINAI_RELEASE -O3
   CXXFLAGS	+= -DKINAI_RELEASE -O3

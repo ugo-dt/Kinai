@@ -74,8 +74,10 @@
 	#ifndef KINAI_OPENGL_VERSION_MINOR
 		#if defined(KN_PLATFORM_WEB)
 			#define KINAI_OPENGL_VERSION_MINOR 0
-		#else
+		#elif defined(KN_PLATFORM_MACOS)
 			#define KINAI_OPENGL_VERSION_MINOR 1
+		#else
+			#define KINAI_OPENGL_VERSION_MINOR 5
 		#endif
 	#endif
 
