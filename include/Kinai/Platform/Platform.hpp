@@ -76,6 +76,8 @@
 			#define KINAI_OPENGL_VERSION_MINOR 0
 		#elif defined(KN_PLATFORM_MACOS)
 			#define KINAI_OPENGL_VERSION_MINOR 1
+		#elif defined(KN_PLATFORM_LINUX)
+			#define KINAI_OPENGL_VERSION_MINOR 1
 		#else
 			#define KINAI_OPENGL_VERSION_MINOR 5
 		#endif
