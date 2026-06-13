@@ -26,6 +26,7 @@
 #include <fstream>
 #include <functional>
 #include <memory>
+#include <mutex>
 #include <sstream>
 #include <string>
 #include <string_view>
@@ -48,6 +49,9 @@
 	#endif
 #elif defined(KINAI_DEV)
 	#define KINAI_BUILD "Dev"
+	#ifndef KINAI_PROFILER
+		#define KINAI_PROFILER 1
+	#endif
 #elif defined(KINAI_RELEASE)
 	#define KINAI_BUILD "Release"
 #else

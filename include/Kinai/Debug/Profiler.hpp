@@ -36,6 +36,7 @@ private:
 private:
 	static std::string _name;
 	static std::vector<ScopedResults> _results;
+	static std::mutex _mutex;
 };
 
 } // Kinai

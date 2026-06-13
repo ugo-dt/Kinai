@@ -5,6 +5,7 @@ namespace Kinai
 
 std::string Profiler::_name;
 std::vector<Profiler::ScopedResults> Profiler::_results;
+std::mutex Profiler::_mutex;
 
 Profiler::Scoped::Scoped(const std::string& name)
 	: _name(name)
@@ -24,6 +25,7 @@ void	Profiler::Start(const std::string& name)
 
 void	Profiler::EndScoped(const std::string& name, float ms)
 {
+	std::lock_guard<std::mutex> lock(_mutex);
 	_results.push_back({name, ms});
 }
 

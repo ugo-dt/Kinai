@@ -73,9 +73,11 @@ OpenGLTexture2D::OpenGLTexture2D(const TextureConfig& config)
 	KN_PROFILE_FUNC();
 
 	_internal_format = ImageFormatToGLInternalFormat(_config.format);
+	_KN_GL_CHECK_ERROR();
 	_data_format = ImageFormatToGLDataFormat(_config.format);
+	_KN_GL_CHECK_ERROR();
 
-#if defined(KN_PLATFORM_DESKTOP) && !defined(KN_PLATFORM_MACOS)
+#if KN_GL_HAS_DSA
 	glCreateTextures(GL_TEXTURE_2D, 1, &_renderer_id);
 	glTextureStorage2D(_renderer_id, 1, _internal_format, _width, _height);
 
@@ -84,7 +86,7 @@ OpenGLTexture2D::OpenGLTexture2D(const TextureConfig& config)
 
 	glTextureParameteri(_renderer_id, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTextureParameteri(_renderer_id, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTextureParameteri(_renderer_id, GL_TEXTURE_WRAP_R, GL_REPEAT);
+	// glTextureParameteri(_renderer_id, GL_TEXTURE_WRAP_R, GL_REPEAT);
 #else
 	glGenTextures(1, &_renderer_id);
 	glActiveTexture(GL_TEXTURE0);
@@ -93,7 +95,7 @@ OpenGLTexture2D::OpenGLTexture2D(const TextureConfig& config)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, FilterToGLFilter(config.sampler_config.mag_filter));
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_R, GL_REPEAT);
+	// glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_R, GL_REPEAT);
 #endif
 	_KN_GL_CHECK_ERROR();
 }
@@ -142,7 +144,7 @@ OpenGLTexture2D::OpenGLTexture2D(const std::string& path, const TextureConfig& c
 		glTextureParameteri(_renderer_id, GL_TEXTURE_MAG_FILTER, FilterToGLFilter(_config.sampler_config.mag_filter));
 		glTextureParameteri(_renderer_id, GL_TEXTURE_WRAP_S, WrapToGLWrap(_config.sampler_config.wrap_s));
 		glTextureParameteri(_renderer_id, GL_TEXTURE_WRAP_T, WrapToGLWrap(_config.sampler_config.wrap_t));
-		glTextureParameteri(_renderer_id, GL_TEXTURE_WRAP_R, WrapToGLWrap(_config.sampler_config.wrap_r));
+		// glTextureParameteri(_renderer_id, GL_TEXTURE_WRAP_R, WrapToGLWrap(_config.sampler_config.wrap_r));
 		glTextureSubImage2D(_renderer_id, 0, 0, 0, _width, _height, dataFormat, GL_UNSIGNED_BYTE, data);
 	#else
 		glGenTextures(1, &_renderer_id);
@@ -152,7 +154,7 @@ OpenGLTexture2D::OpenGLTexture2D(const std::string& path, const TextureConfig& c
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, FilterToGLFilter(_config.sampler_config.mag_filter));
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, WrapToGLWrap(_config.sampler_config.wrap_s));
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, WrapToGLWrap(_config.sampler_config.wrap_t));
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_R, WrapToGLWrap(_config.sampler_config.wrap_r));
+		// glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_R, WrapToGLWrap(_config.sampler_config.wrap_r));
 		glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, _width, _height, 0, dataFormat, GL_UNSIGNED_BYTE, data);
 		glGenerateMipmap(GL_TEXTURE_2D);
 	#endif
@@ -195,11 +197,13 @@ void OpenGLTexture2D::SetData(void* data, uint32_t size)
 #else
 	KN_NOTUSED(size);
 #endif
+	_KN_GL_CHECK_ERROR();
 
 #if KN_GL_HAS_DSA
 	glTextureSubImage2D(_renderer_id, 0, 0, 0, _width, _height, _data_format, GL_UNSIGNED_BYTE, data);
 #else
 	glBindTexture(GL_TEXTURE_2D, _renderer_id);
+	_KN_GL_CHECK_ERROR();
 	glTexImage2D(GL_TEXTURE_2D, 0, _internal_format, _width, _height, 0, _data_format, GL_UNSIGNED_BYTE, data);
 #endif
 	_KN_GL_CHECK_ERROR();
