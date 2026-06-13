@@ -18,6 +18,11 @@ __glad_path			= $(__default_lib_path)/glad
 __glad_src			= $(__glad_path)/src/glad.c
 __glad_objs			= $(patsubst $(__glad_path)/src/%.c,$(__lib_obj_dir)/glad/%.o,$(__glad_src))
 
+$(__lib_obj_dir)/glad/%.o: $(__glad_path)/src/%.c
+	@echo "$(COLOR_GREY)Compiling $<...$(COLOR_DEFAULT)"
+	$(SILENT)mkdir -p $(dir $@)
+	$(SILENT)$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+
 # GLM
 __glm_path			= $(__default_lib_path)/glm
 
@@ -33,13 +38,44 @@ else
 endif
 __imgui_objs		= $(patsubst $(__imgui_path)/%.cpp,$(__lib_obj_dir)/imgui/%.o,$(__imgui_src))
 
+$(__lib_obj_dir)/imgui/%.o: $(__imgui_path)/%.cpp
+	@echo "$(COLOR_GREY)Compiling $<...$(COLOR_DEFAULT)"
+	$(SILENT)mkdir -p $(dir $@)
+	$(SILENT)$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
+
 # SDL3
 __sdl3_path			= $(__default_lib_path)/SDL3
+__sdl3_build_dir	= $(__sdl3_path)/build_$(target)_$(__arch)_$(build)
+
+ifdef __kinai_backend_opengl
+	ifeq ($(target),$(__MACOS__))
+        LDFLAGS += $(shell pkgconf --libs SDL3)
+	else ifeq ($(target),$(__WIN32__))
+        LDFLAGS += $(__sdl3_path)/bin/$(target)/libSDL3.dll.a
+	else
+        __sdl3 = $(__sdl3_build_dir)/libSDL3.so
+        LDFLAGS += -L $(__sdl3_build_dir) -lSDL3
+	endif
+endif
+
+$(__sdl3_build_dir): $(__sdl3_path)/CMakeLists.txt
+	@echo "$(COLOR_GREY)Configuring SDL3...$(COLOR_DEFAULT)"
+	$(SILENT)mkdir -p $(__sdl3_build_dir)
+	$(SILENT)$(CMAKE) -S $(__sdl3_path) -B $(__sdl3_build_dir)
+
+$(__sdl3): $(__sdl3_build_dir)
+	@echo "$(COLOR_GREY)Building SDL3...$(COLOR_DEFAULT)"
+	$(SILENT)$(CMAKE) --build $(__sdl3_build_dir)
 
 # stb_image
 __stb_image_path	= $(__default_lib_path)/stb
 __stb_image_src		= $(__stb_image_path)/stb_image.c
 __stb_image_objs	= $(patsubst $(__stb_image_path)/%.c,$(__lib_obj_dir)/stb_image/%.o,$(__stb_image_src))
+
+$(__lib_obj_dir)/stb_image/%.o: $(__stb_image_path)/%.c
+	@echo "$(COLOR_GREY)Compiling $<...$(COLOR_DEFAULT)"
+	$(SILENT)mkdir -p $(dir $@)
+	$(SILENT)$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 # fmt
 __fmt_path			= $(__default_lib_path)/fmt
@@ -47,43 +83,6 @@ __fmt_build_dir		= $(__fmt_path)/build_$(target)_$(__arch)_$(build)
 __fmt_makefile		= $(__fmt_build_dir)/Makefile
 __fmt				= $(__fmt_build_dir)/libfmt.a
 LDFLAGS += $(__fmt)
-
-__lib_include		=	-I $(__default_lib_path)	\
-						-I $(__glm_path)			\
-						-I $(__glad_path)/include	\
-						-I $(__imgui_path)			\
-						-I $(__imgui_path)/backends \
-						-I $(__sdl3_path)/include   \
-						-I $(__default_lib_path)/fmt/include
-
-
-INCLUDE				+= $(__lib_include)
-LIB_OBJS			= $(__glad_objs) $(__imgui_objs) $(__stb_image_objs)
-
-ifdef __kinai_backend_opengl
-	ifeq ($(target),$(__MACOS__))
-		LDFLAGS += $(shell pkgconf --libs SDL3)
-	else ifeq ($(target),$(__WIN32__))
-		LDFLAGS += $(__sdl3_path)/bin/$(target)/libSDL3.dll.a
-	else
-		LDFLAGS += -L $(__sdl3_path)/bin/$(target) -lSDL3
-	endif
-endif
-
-$(__lib_obj_dir)/glad/%.o: $(__glad_path)/src/%.c
-	@echo "$(COLOR_GREY)Compiling $<...$(COLOR_DEFAULT)"
-	$(SILENT)mkdir -p $(dir $@)
-	$(SILENT)$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
-
-$(__lib_obj_dir)/imgui/%.o: $(__imgui_path)/%.cpp
-	@echo "$(COLOR_GREY)Compiling $<...$(COLOR_DEFAULT)"
-	$(SILENT)mkdir -p $(dir $@)
-	$(SILENT)$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
-
-$(__lib_obj_dir)/stb_image/%.o: $(__stb_image_path)/%.c
-	@echo "$(COLOR_GREY)Compiling $<...$(COLOR_DEFAULT)"
-	$(SILENT)mkdir -p $(dir $@)
-	$(SILENT)$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 $(__fmt_makefile): $(__fmt_path)/CMakeLists.txt
 	@echo "$(COLOR_GREY)Configuring fmt...$(COLOR_DEFAULT)"
@@ -93,5 +92,16 @@ $(__fmt_makefile): $(__fmt_path)/CMakeLists.txt
 $(__fmt): $(__fmt_makefile)
 	@echo "$(COLOR_GREY)Building fmt...$(COLOR_DEFAULT)"
 	$(SILENT)$(MAKE) -C $(__fmt_build_dir)
+
+LIB_OBJS = $(__glad_objs) $(__imgui_objs) $(__stb_image_objs)
+
+__lib_include	=	-I $(__default_lib_path)	\
+					-I $(__glm_path)			\
+					-I $(__glad_path)/include	\
+					-I $(__imgui_path)			\
+					-I $(__imgui_path)/backends \
+					-I $(__sdl3_path)/include   \
+					-I $(__default_lib_path)/fmt/include
+INCLUDE				+= $(__lib_include)
 
 endif # __LIB_MK
