@@ -52,12 +52,13 @@ public:
 	virtual bool IsHovered() const = 0;
 	
 	virtual bool IsVSync() const = 0;
-	virtual void SetVSync(bool enabled) = 0;
-	virtual void SetEventCallback(const EventCallback &callback) = 0;
-	virtual void SetTitle(const std::string &title) = 0;
-	virtual void SetRelativeMouseMode(bool enabled) = 0;
+	virtual bool SetVSync(bool enabled) = 0;
+	virtual bool SetEventCallback(const EventCallback &callback) = 0;
+	virtual bool SetTitle(const std::string &title) = 0;
+	virtual bool SetIcon(const std::string &icon_path) = 0;
+	virtual bool SetRelativeMouseMode(bool enabled) = 0;
 	virtual void WarpMouse(float x, float y) = 0;
-	virtual void ToggleFullscreen() = 0;
+	virtual bool ToggleFullscreen() = 0;
 
 	static Scope<Window>	Create(const WindowProps &props);
 };

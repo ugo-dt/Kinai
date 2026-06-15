@@ -1,6 +1,7 @@
 KINAI_PATH = ..
-backend = OpenGL
-verbose = 1
+BUILD = release
+KINAI_VERBOSE = 1
+KINAI_REMOVE_PREFIX = 1
 include $(KINAI_PATH)/Makefile
 
 EXAMPLES_DIR = $(KINAI_PATH)/examples
@@ -12,25 +13,25 @@ define __make_example_rule =
 .PHONY: $(EXAMPLES_DIR)/$(1)
 $(EXAMPLES_DIR)/$(EXAMPLES_DIR)/$(1):
 	@echo "$(COLOR_GREY)Compiling $(1)...$(COLOR_DEFAULT)"
-	$(SILENT)$(CXX) $(CXXFLAGS) -o $(1)$(EXE) $(INCLUDE) $(wildcard $(EXAMPLES_DIR)/$(1)/*.cpp) $(KINAI) $(LDFLAGS)
+	$(Q)$(CXX) $(CXXFLAGS) -o $(1)$(EXE) $(INCLUDE) $(wildcard $(EXAMPLES_DIR)/$(1)/*.cpp) $(KINAI) $(LDFLAGS)
 	@echo "$(COLOR_GREEN)Successfully built $(notdir $(1)$(EXE)) $(COLOR_DEFAULT)"
 
 .PHONY: $(EXAMPLES_DIR)/$(1)/
 $(EXAMPLES_DIR)/$(1)/:
 	@echo "$(COLOR_GREY)Compiling $(1)...$(COLOR_DEFAULT)"
-	$(SILENT)$(CXX) $(CXXFLAGS) -o $(1)$(EXE) $(INCLUDE) $(wildcard $(EXAMPLES_DIR)/$(1)/*.cpp) $(KINAI) $(LDFLAGS)
+	$(Q)$(CXX) $(CXXFLAGS) -o $(1)$(EXE) $(INCLUDE) $(wildcard $(EXAMPLES_DIR)/$(1)/*.cpp) $(KINAI) $(LDFLAGS)
 	@echo "$(COLOR_GREEN)Successfully built $(notdir $(1)$(EXE)) $(COLOR_DEFAULT)"
 
 .PHONY: $(1)
 $(1):
 	@echo "$(COLOR_GREY)Compiling $(1)...$(COLOR_DEFAULT)"
-	$(SILENT)$(CXX) $(CXXFLAGS) -o $(1)$(EXE) $(INCLUDE) $(wildcard $(EXAMPLES_DIR)/$(1)/*.cpp) $(KINAI) $(LDFLAGS)
+	$(Q)$(CXX) $(CXXFLAGS) -o $(1)$(EXE) $(INCLUDE) $(wildcard $(EXAMPLES_DIR)/$(1)/*.cpp) $(KINAI) $(LDFLAGS)
 	@echo "$(COLOR_GREEN)Successfully built $(notdir $(1)$(EXE)) $(COLOR_DEFAULT)"
 
 .PHONY: $(1)/
 $(1)/:
 	@echo "$(COLOR_GREY)Compiling $(1)...$(COLOR_DEFAULT)"
-	$(SILENT)$(CXX) $(CXXFLAGS) -o $(1)$(EXE) $(INCLUDE) $(wildcard $(EXAMPLES_DIR)/$(1)/*.cpp) $(KINAI) $(LDFLAGS)
+	$(Q)$(CXX) $(CXXFLAGS) -o $(1)$(EXE) $(INCLUDE) $(wildcard $(EXAMPLES_DIR)/$(1)/*.cpp) $(KINAI) $(LDFLAGS)
 	@echo "$(COLOR_GREEN)Successfully built $(notdir $(1)$(EXE)) $(COLOR_DEFAULT)"
 
 endef
@@ -45,19 +46,19 @@ $(eval $(foreach example,$(EXAMPLES),$(call __make_example_rule,$(notdir $(examp
 
 .PHONY: $(foreach example,$(EXAMPLES),$(notdir $(example)))
 example:
-	$(SILENT)mkdir -p $(EXAMPLES_DIR)/bin
+	$(Q)mkdir -p $(EXAMPLES_DIR)/bin
 	@echo "$(COLOR_GREY)Compiling $(1)...$(COLOR_DEFAULT)"
-	$(SILENT)$(CXX) $(CXXFLAGS) -o bin/$(1)$(EXE) $(INCLUDE) $(wildcard $(EXAMPLES_DIR)/$(1)/*.cpp) $(KINAI) $(LDFLAGS)
+	$(Q)$(CXX) $(CXXFLAGS) -o bin/$(1)$(EXE) $(INCLUDE) $(wildcard $(EXAMPLES_DIR)/$(1)/*.cpp) $(KINAI) $(LDFLAGS)
 	@echo "$(COLOR_GREEN)Successfully built bin/$(notdir $(1)$(EXE)) $(COLOR_DEFAULT)"
 
 hello_kinai:
-	$(SILENT)$(MAKE) example 1=hello_kinai
+	$(Q)$(MAKE) example 1=hello_kinai
 
 kinai_cube:
-	$(SILENT)$(MAKE) example 1=kinai_cube
+	$(Q)$(MAKE) example 1=kinai_cube
 
 kinai_events:
-	$(SILENT)$(MAKE) example 1=kinai_events
+	$(Q)$(MAKE) example 1=kinai_events
 
 kinai_2d:
-	$(SILENT)$(MAKE) example 1=kinai_2d
+	$(Q)$(MAKE) example 1=kinai_2d

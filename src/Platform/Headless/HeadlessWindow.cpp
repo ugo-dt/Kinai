@@ -32,114 +32,120 @@ HeadlessWindow::~HeadlessWindow()
 	KN_PROFILE_FUNC();
 }
 
-void	HeadlessWindow::OnUpdate()
+void HeadlessWindow::OnUpdate()
 {
 	KN_PROFILE_FUNC();
 }
 
-void*	HeadlessWindow::GetNativeWindow() const
+void* HeadlessWindow::GetNativeWindow() const
 {
 	KN_PROFILE_FUNC();
 
 	return nullptr;
 }
 
-glm::ivec2	HeadlessWindow::GetSize() const
+glm::ivec2 HeadlessWindow::GetSize() const
 {
 	KN_PROFILE_FUNC();
 
 	return _size;
 }
 
-glm::ivec2	HeadlessWindow::GetSizeInPixels() const
+glm::ivec2 HeadlessWindow::GetSizeInPixels() const
 {
 	KN_PROFILE_FUNC();
 
 	return GetSize();
 }
 
-uint32_t	HeadlessWindow::GetWidth() const
+uint32_t HeadlessWindow::GetWidth() const
 {
 	KN_PROFILE_FUNC();
 
 	return _size.x;
 }
 
-uint32_t	HeadlessWindow::GetHeight() const
+uint32_t HeadlessWindow::GetHeight() const
 {
 	KN_PROFILE_FUNC();
 
 	return _size.y;
 }
 
-bool	HeadlessWindow::GetRelativeMouseMode() const
+bool HeadlessWindow::GetRelativeMouseMode() const
 {
 	KN_PROFILE_FUNC();
 
 	return _relativeMouseMode;
 }
 
-bool	HeadlessWindow::IsVSync() const
+bool HeadlessWindow::IsVSync() const
 {
 	KN_PROFILE_FUNC();
 
 	return _vsync;
 }
 
-bool	HeadlessWindow::IsFocused() const
+bool HeadlessWindow::IsFocused() const
 {
 	KN_PROFILE_FUNC();
 
 	return _focused;
 }
 
-bool	HeadlessWindow::IsHovered() const
+bool HeadlessWindow::IsHovered() const
 {
 	KN_PROFILE_FUNC();
 
 	return _hovered;
 }
 
-void	HeadlessWindow::SetVSync(bool enabled)
+bool HeadlessWindow::SetVSync(bool enabled)
 {
 	KN_PROFILE_FUNC();
 
 	_vsync = enabled;
+	return true;
 }
 
-void	HeadlessWindow::SetEventCallback(const EventCallback &callback)
+bool HeadlessWindow::SetEventCallback(const EventCallback &callback)
 {
 	KN_PROFILE_FUNC();
 
 	_eventCallback = callback;
+	return true;
 }
 
-void	HeadlessWindow::SetTitle(const std::string &title)
+bool HeadlessWindow::SetTitle(const std::string &title)
 {
 	KN_PROFILE_FUNC();
 
 	_title = title;
+	return true;
 }
 
-void	HeadlessWindow::SetRelativeMouseMode(bool enabled)
+bool HeadlessWindow::SetRelativeMouseMode(bool enabled)
 {
 	KN_PROFILE_FUNC();
 
 	_relativeMouseMode = enabled;
+	return true;
 }
 
-void	HeadlessWindow::WarpMouse(float x, float y)
+bool HeadlessWindow::WarpMouse(float x, float y)
 {
 	KN_PROFILE_FUNC();
 
 	_mousePosition.x = x;
 	_mousePosition.y = y;
+	return true;
 }
 
-void	HeadlessWindow::ToggleFullscreen()
+bool HeadlessWindow::ToggleFullscreen()
 {
 	KN_PROFILE_FUNC();
 	_fullscreen = !_fullscreen;
+	return true;
 }
 
 } // Kinai

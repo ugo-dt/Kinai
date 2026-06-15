@@ -170,33 +170,10 @@ public:
 		Kinai::Renderer::SetClearColor(0.12f, 0.12f, 0.12f, 1.0f);
 		Kinai::Renderer::Clear();
 
-		Kinai::DebugText::Font(font_index);
-		Kinai::DebugText::Put("Hello, Kinai!");
-
 		Kinai::Renderer::BeginPass();
-		Kinai::DebugText::Submit();
-
-		// Kinai::Painter::BeginPass();
-
-		// Kinai::Renderer2D::BeginFrame(_camera.GetCamera());
-		// Kinai::Renderer2D::DrawQuad(glm::vec2(0.f), glm::vec2(1.f), _cobblestone);
-
-		// Kinai::Renderer2D::SetQuadShader(_shader);
-		// _shader.GetShader()->Bind();
-		// _shader.GetShader()->SetFloat2("scroll1", glm::vec2(_scroll1.x));
-		// _shader.GetShader()->SetFloat2("scroll2", glm::vec2(_scroll2.x));
-		// _shader.GetShader()->SetFloat("oscillation_speed", _oscillation.x);
-		// _shader.GetShader()->SetFloat4("tone_color", _tone_color);
-		// _shader.GetShader()->SetFloat4("top_color", _top_color);
-		// _shader.GetShader()->SetFloat("alpha", _alpha.x);
-		// Kinai::Renderer2D::DrawQuad(glm::vec2(0.f), glm::vec2(2.f), _noise);
-		// Kinai::Renderer2D::ResetQuadShader();
-
-		// Kinai::Painter::SetImage(0, _cobblestone);
-		// Kinai::Painter::DrawQuad(glm::vec2(0.5f), glm::vec2(0.5f), glm::vec4(1.0f));
-		// Kinai::Painter::ResetImage();
-		// Kinai::Painter::DrawQuad(glm::vec2(-0.25f, 0.25f), glm::vec2(0.5f), glm::vec4(1.0f));
-		// Kinai::Painter::EndPass();
+		Kinai::Painter::Begin();
+		Kinai::Painter::DrawQuad(glm::vec2(0.5f), glm::vec2(0.5f), glm::vec4(1.0f));
+		Kinai::Painter::End();
 		Kinai::Renderer::EndPass();
 	}
 

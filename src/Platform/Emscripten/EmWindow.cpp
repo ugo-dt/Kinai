@@ -67,7 +67,7 @@ EmWindow::EmWindow(const WindowProps& props, int flags)
 	emscripten_set_canvas_element_size(_canvas_name, _width, _height);
 }
 
-void	EmWindow::OnUpdate()
+void EmWindow::OnUpdate()
 {
 	KN_PROFILE_FUNC();
 }
@@ -105,7 +105,7 @@ uint32_t	EmWindow::GetHeight() const
 	return _height;
 }
 
-bool	EmWindow::IsVSync() const
+bool EmWindow::IsVSync() const
 {
 	KN_PROFILE_FUNC();
 
@@ -114,7 +114,7 @@ bool	EmWindow::IsVSync() const
 	return mode == EM_TIMING_RAF;
 }
 
-void	EmWindow::SetVSync(bool enabled)
+bool EmWindow::SetVSync(bool enabled)
 {
 	KN_PROFILE_FUNC();
 
@@ -122,23 +122,26 @@ void	EmWindow::SetVSync(bool enabled)
 		emscripten_set_main_loop_timing(EM_TIMING_RAF, 1);
 	else
 		emscripten_set_main_loop_timing(EM_TIMING_SETTIMEOUT, 1);
+	return true;
 }
 
-void	EmWindow::SetEventCallback(const EventCallback &callback)
+bool EmWindow::SetEventCallback(const EventCallback &callback)
 {
 	KN_PROFILE_FUNC();
 
 	_eventCallback = callback;
+	return true;
 }
 
-void	EmWindow::SetTitle(const std::string &title)
+bool EmWindow::SetTitle(const std::string &title)
 {
 	KN_PROFILE_FUNC();
 
 	emscripten_set_window_title(title.c_str());
+	return true;
 }
 
-void	EmWindow::SetRelativeMouseMode(bool enabled)
+bool EmWindow::SetRelativeMouseMode(bool enabled)
 {
 	KN_PROFILE_FUNC();
 
@@ -146,9 +149,10 @@ void	EmWindow::SetRelativeMouseMode(bool enabled)
 		emscripten_request_pointerlock("canvas", true);
 	else
 		emscripten_exit_pointerlock();
+	return true;
 }
 
-void	EmWindow::WarpMouse(float x, float y)
+void EmWindow::WarpMouse(float x, float y)
 {
 	KN_PROFILE_FUNC();
 
@@ -156,14 +160,15 @@ void	EmWindow::WarpMouse(float x, float y)
 	KN_NOTUSED(y);
 }
 
-void	EmWindow::ToggleFullscreen()
+bool EmWindow::ToggleFullscreen()
 {
 	KN_PROFILE_FUNC();
 
 	emscripten_request_fullscreen(_canvas_name, false);
+	return true;
 }
 
-bool	EmWindow::OnWindowResize(int, const EmscriptenUiEvent *, void *)
+bool EmWindow::OnWindowResize(int, const EmscriptenUiEvent *, void *)
 {
 	KN_PROFILE_FUNC();
 
@@ -174,7 +179,7 @@ bool	EmWindow::OnWindowResize(int, const EmscriptenUiEvent *, void *)
 	return true;
 }
 
-bool	EmWindow::OnKeyPressed(int, const EmscriptenKeyboardEvent *e, void *)
+bool EmWindow::OnKeyPressed(int, const EmscriptenKeyboardEvent *e, void *)
 {
 	if (e->keyCode < 512)
 	{
@@ -191,7 +196,7 @@ bool	EmWindow::OnKeyPressed(int, const EmscriptenKeyboardEvent *e, void *)
 	return e->keyCode < 32;
 }
 
-bool	EmWindow::OnKeyReleased(int, const EmscriptenKeyboardEvent *e, void *)
+bool EmWindow::OnKeyReleased(int, const EmscriptenKeyboardEvent *e, void *)
 {
 	if (e->keyCode < 512)
 	{
@@ -207,13 +212,13 @@ bool	EmWindow::OnKeyReleased(int, const EmscriptenKeyboardEvent *e, void *)
 	return e->keyCode < 32;
 }
 
-bool	EmWindow::OnChar(int, const EmscriptenKeyboardEvent *e, void *)
+bool EmWindow::OnChar(int, const EmscriptenKeyboardEvent *e, void *)
 {
 	ImGui::GetIO().AddInputCharacter((ImWchar)e->charCode);
 	return true;
 }
 
-bool	EmWindow::OnMouseButtonDown(int, const EmscriptenMouseEvent *e, void *)
+bool EmWindow::OnMouseButtonDown(int, const EmscriptenMouseEvent *e, void *)
 {
 	/** Emscripten mouse buttons: Left: 0, Middle: 1, Right: 2
 	 * ImGui mouse buttons:      Left: 0, Middle: 2, Right: 1 */
@@ -251,7 +256,7 @@ bool	EmWindow::OnMouseButtonDown(int, const EmscriptenMouseEvent *e, void *)
 	return true;
 }
 
-bool	EmWindow::OnMouseButtonUp(int, const EmscriptenMouseEvent *e, void *)
+bool EmWindow::OnMouseButtonUp(int, const EmscriptenMouseEvent *e, void *)
 {
 	switch (e->button)
 	{
@@ -287,7 +292,7 @@ bool	EmWindow::OnMouseButtonUp(int, const EmscriptenMouseEvent *e, void *)
 	return true;
 }
 
-bool	EmWindow::OnMouseMotion(int, const EmscriptenMouseEvent *e, void *)
+bool EmWindow::OnMouseMotion(int, const EmscriptenMouseEvent *e, void *)
 {
 	ImGui::GetIO().AddMousePosEvent(e->targetX, e->targetY);
 
@@ -297,7 +302,7 @@ bool	EmWindow::OnMouseMotion(int, const EmscriptenMouseEvent *e, void *)
 	return true;
 }
 
-bool	EmWindow::OnMouseWheel(int, const EmscriptenWheelEvent *e, void *)
+bool EmWindow::OnMouseWheel(int, const EmscriptenWheelEvent *e, void *)
 {
 	ImGui::GetIO().AddMouseWheelEvent(e->deltaX, e->deltaY);
 
@@ -306,7 +311,7 @@ bool	EmWindow::OnMouseWheel(int, const EmscriptenWheelEvent *e, void *)
 	return true;
 }
 
-bool	EmWindow::OnFullscreenChange(int, const EmscriptenFullscreenChangeEvent *e, void *)
+bool EmWindow::OnFullscreenChange(int, const EmscriptenFullscreenChangeEvent *e, void *)
 {
 	KN_PROFILE_FUNC();
 

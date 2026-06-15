@@ -37,18 +37,18 @@ public:
 	uint32_t GetHeight() const override;
 
 	bool IsVSync() const override;
-	void SetVSync(bool enabled) override;
-	void SetEventCallback(const EventCallback &callback) override;
-	void SetTitle(const std::string &title) override;
+	bool SetVSync(bool enabled) override;
+	bool SetEventCallback(const EventCallback &callback) override;
+	bool SetTitle(const std::string &title) override;
 
 	bool GetRelativeMouseMode() const override { return true; }
 	bool IsFocused() const override { return true; }
 	bool IsHovered() const override { return true; }
 	
-	void SetRelativeMouseMode(bool enabled) override;
+	bool SetRelativeMouseMode(bool enabled) override;
 	void WarpMouse(float x, float y) override;
 
-	void ToggleFullscreen() override;
+	bool ToggleFullscreen() override;
 
 	static bool IsKeyPressed(KeyCode key) { return _keys[key]; }
 	static bool IsMouseButtonPressed(MouseButton button) { return _mouse.buttons[button]; }

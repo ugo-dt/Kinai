@@ -161,7 +161,7 @@ SDLWindow::~SDLWindow()
 	Log::Trace("Destroyed window (SDL) '{}'.", _data.title);
 }
 
-void	SDLWindow::_handle_window_events(SDL_WindowEvent *_window_event)
+void SDLWindow::_handle_window_events(SDL_WindowEvent *_window_event)
 {
 	switch (_window_event->type)
 	{
@@ -176,7 +176,7 @@ void	SDLWindow::_handle_window_events(SDL_WindowEvent *_window_event)
 	}
 }
 
-void	SDLWindow::_handle_event(SDL_Event &event)
+void SDLWindow::_handle_event(SDL_Event &event)
 {
 	switch (event.type)
 	{
@@ -204,7 +204,7 @@ void	SDLWindow::_handle_event(SDL_Event &event)
 	}
 }
 
-void	SDLWindow::OnUpdate()
+void SDLWindow::OnUpdate()
 {
 	SDL_Event	event;
 
@@ -248,58 +248,72 @@ uint32_t	SDLWindow::GetHeight() const
 	return GetSize().y;
 }
 
-bool	SDLWindow::IsVSync() const
+bool SDLWindow::IsVSync() const
 {
 	int	interval;
 	SDL_GL_GetSwapInterval(&interval);
 	return interval;
 }
 
-void	SDLWindow::SetVSync(bool enabled)
+bool SDLWindow::SetVSync(bool enabled)
 {
 	if (enabled)
-		SDL_GL_SetSwapInterval(1);
-	else
-		SDL_GL_SetSwapInterval(0);
+		return SDL_GL_SetSwapInterval(1);
+	return SDL_GL_SetSwapInterval(0);
 }
 
-void	SDLWindow::SetEventCallback(const EventCallback &callback)
+bool SDLWindow::SetEventCallback(const EventCallback &callback)
 {
 	_data.eventCallback = callback;
+	return true;
 }
 
-void	SDLWindow::SetTitle(const std::string &title)
+bool SDLWindow::SetTitle(const std::string &title)
 {
-	SDL_SetWindowTitle(_handle, title.c_str());
+	return SDL_SetWindowTitle(_handle, title.c_str());
 }
 
-bool	SDLWindow::GetRelativeMouseMode() const
+bool SDLWindow::SetIcon(const std::string &icon_path)
+{
+	KN_ASSERT(icon_path.ends_with(".png"), "expected .png file, got {}", icon_path);
+	SDL_Surface *icon = SDL_LoadPNG(icon_path.c_str());
+	if (icon)
+	{
+		bool status = SDL_SetWindowIcon(_handle, icon);
+		SDL_DestroySurface(icon);
+		return status;
+	}
+	Log::Error("Failed to load window icon from '{}': {}", icon_path, SDL_GetError());
+	return false;
+}
+
+bool SDLWindow::GetRelativeMouseMode() const
 {
 	return SDL_GetWindowRelativeMouseMode(_handle);
 }
 
-void	SDLWindow::SetRelativeMouseMode(bool enabled)
+bool SDLWindow::SetRelativeMouseMode(bool enabled)
 {
-	SDL_SetWindowRelativeMouseMode(_handle, enabled);
+	return SDL_SetWindowRelativeMouseMode(_handle, enabled);
 }
 
-void	SDLWindow::WarpMouse(float x, float y)
+void SDLWindow::WarpMouse(float x, float y)
 {
 	SDL_WarpMouseInWindow(_handle, x, y);
 }
 
-void SDLWindow::ToggleFullscreen()
+bool SDLWindow::ToggleFullscreen()
 {
 	Uint32 flags = SDL_GetWindowFlags(_handle);
-	SDL_SetWindowFullscreen(_handle, !(flags & SDL_WINDOW_FULLSCREEN));
+	return SDL_SetWindowFullscreen(_handle, !(flags & SDL_WINDOW_FULLSCREEN));
 }
 
-bool	SDLWindow::IsFocused() const
+bool SDLWindow::IsFocused() const
 {
 	return SDL_GetWindowFlags(_handle) & SDL_WINDOW_INPUT_FOCUS;
 }
 
-bool	SDLWindow::IsHovered() const
+bool SDLWindow::IsHovered() const
 {
 	return SDL_GetWindowFlags(_handle) & SDL_WINDOW_MOUSE_FOCUS;
 }

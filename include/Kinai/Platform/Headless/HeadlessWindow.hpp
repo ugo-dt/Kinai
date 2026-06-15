@@ -22,12 +22,12 @@ public:
 	bool IsVSync() const override;
 	bool IsFocused() const override;
 	bool IsHovered() const override;
-	void SetVSync(bool enabled) override;
-	void SetEventCallback(const EventCallback &callback) override;
-	void SetTitle(const std::string &title) override;
-	void SetRelativeMouseMode(bool enabled) override;
-	void WarpMouse(float x, float y) override;
-	void ToggleFullscreen() override;
+	bool SetVSync(bool enabled) override;
+	bool SetEventCallback(const EventCallback &callback) override;
+	bool SetTitle(const std::string &title) override;
+	bool SetRelativeMouseMode(bool enabled) override;
+	bool WarpMouse(float x, float y) override;
+	bool ToggleFullscreen() override;
 
 private:
 	EventCallback _eventCallback;

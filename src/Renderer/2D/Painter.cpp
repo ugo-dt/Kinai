@@ -150,9 +150,9 @@ void	Flush()
 		});
 
 		context.shader->Bind();
-		// for (uint32_t i = 0; i < MAX_TEXTURE_SLOTS; i++)
-		// 	if (context.state.texture_slots[i])
-		// 		context.state.texture_slots[i]->Bind(i);
+		for (uint32_t i = 0; i < MAX_TEXTURE_SLOTS; i++)
+			if (context.state.texture_slots[i])
+				context.state.texture_slots[i]->Bind(i);
 		context.state.texture_slots[0]->Bind(0);
 		Renderer::Submit();
 		context.state.vertex_buffer_ptr = context.state.vertex_buffer_base;
