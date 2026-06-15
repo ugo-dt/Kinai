@@ -160,6 +160,18 @@ void EmWindow::WarpMouse(float x, float y)
 	KN_NOTUSED(y);
 }
 
+bool EmWindow::Hide()
+{
+	KN_PROFILE_FUNC();
+	return true;
+}
+
+bool EmWindow::Show()
+{
+	KN_PROFILE_FUNC();
+	return true;
+}
+
 bool EmWindow::ToggleFullscreen()
 {
 	KN_PROFILE_FUNC();

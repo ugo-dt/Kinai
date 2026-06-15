@@ -12,7 +12,7 @@ class OpenGLTexture2D : public Texture2D
 {
 public:
 	OpenGLTexture2D(const TextureConfig& config);
-	OpenGLTexture2D(const std::string& path, const TextureConfig& config);
+	OpenGLTexture2D(const std::string& path, const TextureConfig& config, bool flip_vertically = true);
 	~OpenGLTexture2D();
 
 	const TextureConfig& GetConfig() const override { return _config; }

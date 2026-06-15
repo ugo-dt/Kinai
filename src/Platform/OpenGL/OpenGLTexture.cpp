@@ -100,7 +100,7 @@ OpenGLTexture2D::OpenGLTexture2D(const TextureConfig& config)
 	_KN_GL_CHECK_ERROR();
 }
 
-OpenGLTexture2D::OpenGLTexture2D(const std::string& path, const TextureConfig& config)
+OpenGLTexture2D::OpenGLTexture2D(const std::string& path, const TextureConfig& config, bool flip_vertically)
 	: _config(config),
 	  _path(path),
 	  _is_loaded(false)
@@ -108,7 +108,7 @@ OpenGLTexture2D::OpenGLTexture2D(const std::string& path, const TextureConfig& c
 	KN_PROFILE_FUNC();
 
 	int width, height, channels;
-	stbi_set_flip_vertically_on_load(1);
+	stbi_set_flip_vertically_on_load(flip_vertically);
 
 	stbi_uc* data = stbi_load(path.c_str(), &width, &height, &channels, 0);
 	if (data)

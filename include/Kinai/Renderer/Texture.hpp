@@ -47,6 +47,7 @@ struct TextureConfig
 	// bool generate_mips = true;
 	SamplerConfig sampler_config = SamplerConfig();
 	std::string label = "Texture";
+	bool flip_vertically = true;
 };
 
 class Texture
@@ -75,7 +76,7 @@ class Texture2D : public Texture
 {
 public:
 	static Ref<Texture2D>	Create(const TextureConfig &config);
-	static Ref<Texture2D>	Create(const std::string &path, const TextureConfig& config = TextureConfig());
+	static Ref<Texture2D>	Create(const std::string &path, const TextureConfig& config = TextureConfig(), bool flip_vertically = true);
 };
 
 class TextureCubeMap : public Texture

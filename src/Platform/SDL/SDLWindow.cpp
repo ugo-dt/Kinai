@@ -68,7 +68,7 @@ SDLWindow::SDLWindow(const WindowProps &props)
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_DEBUG_FLAG);
 	#endif
 
-	flags = SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE | SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_HIGH_PIXEL_DENSITY;
+	flags = SDL_WINDOW_HIDDEN | SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE | SDL_WINDOW_INPUT_FOCUS | SDL_WINDOW_HIGH_PIXEL_DENSITY;
 	if (desc_def.fullscreen)
 		flags |= SDL_WINDOW_FULLSCREEN;
 	_handle = SDL_CreateWindow(desc_def.title, desc_def.width, desc_def.height, flags);
@@ -275,7 +275,7 @@ bool SDLWindow::SetTitle(const std::string &title)
 
 bool SDLWindow::SetIcon(const std::string &icon_path)
 {
-	KN_ASSERT(icon_path.ends_with(".png"), "expected .png file, got {}", icon_path);
+	// KN_ASSERT(icon_path.ends_with(".png"), "expected .png file, got {}", icon_path);
 	SDL_Surface *icon = SDL_LoadPNG(icon_path.c_str());
 	if (icon)
 	{
@@ -306,6 +306,18 @@ bool SDLWindow::ToggleFullscreen()
 {
 	Uint32 flags = SDL_GetWindowFlags(_handle);
 	return SDL_SetWindowFullscreen(_handle, !(flags & SDL_WINDOW_FULLSCREEN));
+}
+
+bool SDLWindow::Hide()
+{
+	KN_PROFILE_FUNC();
+	return SDL_HideWindow(_handle);
+}
+
+bool SDLWindow::Show()
+{
+	KN_PROFILE_FUNC();
+	return SDL_ShowWindow(_handle);
 }
 
 bool SDLWindow::IsFocused() const

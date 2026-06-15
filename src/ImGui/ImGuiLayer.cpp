@@ -59,7 +59,7 @@ void	ImGuiLayer::Begin()
 	#endif
 	#if defined(KN_PLATFORM_WEB)
 		ImGuiIO& io = ImGui::GetIO();
-		const auto size = Application::Get().GetWindow().GetSize();
+		const auto size = Application::Get().GetWindow().GetSizeInPixels();
 		io.DisplaySize.x = size.x;
 		io.DisplaySize.y = size.y;
 	#endif

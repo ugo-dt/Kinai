@@ -1,5 +1,5 @@
 KINAI_PATH = ..
-BUILD = release
+BUILD = dev
 KINAI_VERBOSE = 1
 KINAI_REMOVE_PREFIX = 1
 include $(KINAI_PATH)/Makefile

@@ -126,6 +126,8 @@ const char *custom_shader_fs = R"(
 
 static int font_index = 0;
 
+static glm::vec2 pos;
+
 class AppLayer : public Kinai::Layer
 {
 // Private members are at the top for convenience
@@ -156,7 +158,6 @@ public:
 		  _top_color(1.0f),
 		  _alpha(1.f)
 	{
-		Kinai::DebugText::Init();
 	}
 
 	~AppLayer() = default;
@@ -171,9 +172,14 @@ public:
 		Kinai::Renderer::Clear();
 
 		Kinai::Renderer::BeginPass();
-		Kinai::Painter::Begin();
-		Kinai::Painter::DrawQuad(glm::vec2(0.5f), glm::vec2(0.5f), glm::vec4(1.0f));
-		Kinai::Painter::End();
+		Kinai::DebugText::Print("hello, world!");
+	
+		Kinai::Painter::BeginPass();
+		Kinai::Painter::SetImage(0, _cobblestone);
+		Kinai::Painter::DrawQuad(pos, glm::vec2(100.0f), glm::vec4(1.0f));
+		Kinai::Painter::DrawQuad(pos.x, pos.y, 100, 100, glm::vec4(1.0f));
+		Kinai::DebugText::Submit();
+		Kinai::Painter::EndPass();
 		Kinai::Renderer::EndPass();
 	}
 
@@ -206,6 +212,8 @@ public:
 		// ImGui::ColorEdit4("Tone color", (float*)&_tone_color);
 		// ImGui::ColorEdit4("Top color", (float*)&_top_color);
 		// ImGui::SliderFloat("Alpha cap", (float*)&_alpha, 0.0, 1.f, nullptr);
+
+		ImGui::SliderFloat2("Position", (float*)&pos, 0.f, 10000.f, "%.1f");
 
 		const char* items[] = {
 			"KC853",

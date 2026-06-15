@@ -28,8 +28,9 @@ enum BlendMode
 void Init();
 void Shutdown();
 
-void Begin();
-void End();
+void BeginPass();
+void EndPass();
+void SetViewport(int x, int y, int width, int height);
 
 void SetImage(int channel, const Ref<Texture2D>& texture);
 void ResetImage(int channel = 0);

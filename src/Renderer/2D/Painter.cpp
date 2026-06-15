@@ -85,26 +85,33 @@ void	Shutdown()
 
 	delete[] context.state.vertex_buffer_base;
 	context.state.vertex_buffer_base = nullptr;
-
-	context = Context{};
 }
 
-void	Begin()
+void	BeginPass()
 {
 	KN_ASSERT(!context.state.in_pass, "Painter is already in a pass!");
 	KN_PROFILE_FUNC();
 
-	// const glm::ivec2 size = Application::Get().GetWindow().GetSizeInPixels();
-	// Renderer::SetViewport(0, 0, size.x, size.y);
+	const glm::ivec2 size = Application::Get().GetWindow().GetSizeInPixels();
+	Renderer::SetViewport(0, 0, size.x, size.y);
 
 	StartBatch();
 	context.state.in_pass = true;
 }
 
-void	End()
+void SetViewport(int x, int y, int width, int height)
 {
 	KN_PROFILE_FUNC();
 
+	Renderer::SetViewport(x, y, width, height);
+	context.state.camera.SetProjection(0.0f, (float)width, (float)height, 0.0f);
+}
+
+void	EndPass()
+{
+	KN_PROFILE_FUNC();
+
+	Flush();
 	context.state.in_pass = false;
 }
 
@@ -150,9 +157,9 @@ void	Flush()
 		});
 
 		context.shader->Bind();
-		for (uint32_t i = 0; i < MAX_TEXTURE_SLOTS; i++)
-			if (context.state.texture_slots[i])
-				context.state.texture_slots[i]->Bind(i);
+		// for (uint32_t i = 0; i < MAX_TEXTURE_SLOTS; i++)
+		// 	if (context.state.texture_slots[i])
+		// 		context.state.texture_slots[i]->Bind(i);
 		context.state.texture_slots[0]->Bind(0);
 		Renderer::Submit();
 		context.state.vertex_buffer_ptr = context.state.vertex_buffer_base;
@@ -353,8 +360,8 @@ void	DrawQuad(float x, float y, float width, float height, const glm::vec4& colo
 {
     // Build transform in pixel space
     glm::mat4 transform =
-		glm::translate(glm::mat4(1.0f), glm::vec3(x * 2.f, y * 2.f, 0.0f)) *
-		glm::scale(glm::mat4(1.0f), glm::vec3(width * 2.f, height * 2.f, 1.0f));
+		glm::translate(glm::mat4(1.0f), glm::vec3(x, y, 0.0f)) *
+		glm::scale(glm::mat4(1.0f), glm::vec3(width, height, 1.0f));
 
     // Full texture UVs (0..1)
     glm::vec2 uvStart = { 0.0f, 0.0f };

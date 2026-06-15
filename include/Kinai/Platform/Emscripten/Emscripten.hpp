@@ -47,6 +47,8 @@ public:
 	
 	bool SetRelativeMouseMode(bool enabled) override;
 	void WarpMouse(float x, float y) override;
+	bool Hide() override;
+	bool Show() override;
 
 	bool ToggleFullscreen() override;
 

@@ -1,11 +1,11 @@
 @ctype mat4 glm::mat4
 
 @vs vs
-in vec4 a_Pos; // xy = pos, zw = uv
-in vec4 a_Color;
+layout(location = 0) in vec4 a_Pos; // xy = pos, zw = uv
+layout(location = 1) in vec4 a_Color;
 
-out vec2 v_TexCoord;
-out vec4 v_iColor;
+layout(location = 0) out vec2 v_TexCoord;
+layout(location = 1) out vec4 v_iColor;
 
 uniform mat4 u_ViewProjection;
 uniform mat4 u_Transform;
@@ -20,12 +20,12 @@ void main()
 @end
 
 @fs fs
-in vec2 v_TexCoord;
-in vec4 v_iColor;
-
-out vec4 f_Color;
-
 uniform sampler2D u_Texture;
+
+layout(location = 0) in vec2 v_TexCoord;
+layout(location = 1) in vec4 v_iColor;
+
+layout(location = 0) out vec4 f_Color;
 
 void main()
 {

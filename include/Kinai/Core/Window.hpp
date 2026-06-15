@@ -59,6 +59,8 @@ public:
 	virtual bool SetRelativeMouseMode(bool enabled) = 0;
 	virtual void WarpMouse(float x, float y) = 0;
 	virtual bool ToggleFullscreen() = 0;
+	virtual bool Hide() = 0;
+	virtual bool Show() = 0;
 
 	static Scope<Window>	Create(const WindowProps &props);
 };

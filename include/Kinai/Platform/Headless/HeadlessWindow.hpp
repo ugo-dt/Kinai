@@ -26,8 +26,10 @@ public:
 	bool SetEventCallback(const EventCallback &callback) override;
 	bool SetTitle(const std::string &title) override;
 	bool SetRelativeMouseMode(bool enabled) override;
-	bool WarpMouse(float x, float y) override;
+	void WarpMouse(float x, float y) override;
 	bool ToggleFullscreen() override;
+	bool Hide() override;
+	bool Show() override;
 
 private:
 	EventCallback _eventCallback;

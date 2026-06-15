@@ -132,19 +132,30 @@ bool HeadlessWindow::SetRelativeMouseMode(bool enabled)
 	return true;
 }
 
-bool HeadlessWindow::WarpMouse(float x, float y)
+void HeadlessWindow::WarpMouse(float x, float y)
 {
 	KN_PROFILE_FUNC();
 
 	_mousePosition.x = x;
 	_mousePosition.y = y;
-	return true;
 }
 
 bool HeadlessWindow::ToggleFullscreen()
 {
 	KN_PROFILE_FUNC();
 	_fullscreen = !_fullscreen;
+	return true;
+}
+
+bool HeadlessWindow::Hide()
+{
+	KN_PROFILE_FUNC();
+	return true;
+}
+
+bool HeadlessWindow::Show()
+{
+	KN_PROFILE_FUNC();
 	return true;
 }
 

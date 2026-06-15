@@ -23,14 +23,14 @@ Ref<Texture2D> Texture2D::Create(const TextureConfig& config)
 	return nullptr;
 }
 
-Ref<Texture2D> Texture2D::Create(const std::string& path, const TextureConfig& config)
+Ref<Texture2D> Texture2D::Create(const std::string& path, const TextureConfig& config, bool flip_vertically)
 {
 	KN_PROFILE_FUNC();
 
 #if defined(KINAI_HEADLESS)
-	return CreateRef<HeadlessTexture2D>(path, config);
+	return CreateRef<HeadlessTexture2D>(path, config, flip_vertically);
 #elif defined(KINAI_OPENGL)
-	return CreateRef<OpenGLTexture2D>(path, config);
+	return CreateRef<OpenGLTexture2D>(path, config, flip_vertically);
 #endif
 
 	Log::Critical("Unknown RendererAPI!");

@@ -35,6 +35,8 @@ public:
 	bool SetRelativeMouseMode(bool enabled) override;
 	void WarpMouse(float x, float y) override;
 	bool ToggleFullscreen() override;
+	bool Hide() override;
+	bool Show() override;
 
 private:
 	void _handle_window_events(SDL_WindowEvent *_window_event);

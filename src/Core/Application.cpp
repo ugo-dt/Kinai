@@ -87,6 +87,7 @@ void	Application::Run()
 {
 	KN_PROFILE_FUNC();
 
+	_window->Show();
 #ifdef KN_PLATFORM_DESKTOP
 	while (g_KinaiApplicationRunning)
 #endif
@@ -158,7 +159,7 @@ bool	Application::OnWindowResize(WindowResizeEvent &event)
 	_minimized = false;
 	glm::ivec2 size = _window->GetSizeInPixels();
 	Renderer::SetViewport(0, 0, size.x, size.y);
-	// Painter::UpdateViewport(size.x, size.y);
+	Painter::SetViewport(0, 0, size.x, size.y);
 
 	// Forward the event
 	return false;
