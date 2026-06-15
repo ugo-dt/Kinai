@@ -318,6 +318,14 @@ void	OpenGLFramebuffer::CopyTextureData(Ref<Texture2D>& dest)
 	_KN_GL_CHECK_ERROR();
 }
 
+void	OpenGLFramebuffer::BindAttachment(uint32_t attachmentIndex, uint32_t slot)
+{
+	KN_ASSERT(attachmentIndex < _color_attachments.size());
+	glActiveTexture(GL_TEXTURE0 + slot);
+	glBindTexture(GL_TEXTURE_2D, _color_attachments[attachmentIndex]);
+	_KN_GL_CHECK_ERROR();
+}
+
 void	OpenGLFramebuffer::ClearAttachment(uint32_t attachmentIndex, int value)
 {
 #if KN_GL_HAS_DSA

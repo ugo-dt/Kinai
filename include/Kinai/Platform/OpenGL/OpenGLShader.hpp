@@ -20,6 +20,14 @@ public:
 
 	void SetInt(const std::string& name, int value) override;
 	void SetIntArray(const std::string& name, const int* values, uint32_t count) override;
+	void SetUInt(const std::string& name, unsigned int value) override;
+	void SetUIntArray(const std::string& name, const unsigned int* values, uint32_t count) override;
+	void SetBool(const std::string& name, bool value) override;
+	void SetBoolArray(const std::string& name, const bool* values, uint32_t count) override;
+	void SetUByte(const std::string& name, unsigned char value) override;
+	void SetUByteArray(const std::string& name, const unsigned char* values, uint32_t count) override;
+	void SetUShort(const std::string& name, unsigned short value) override;
+	void SetUShortArray(const std::string& name, const unsigned short* values, uint32_t count) override;
 	void SetFloat(const std::string& name, float value) override;
 	void SetFloat2(const std::string& name, const glm::vec2& value) override;
 	void SetFloat3(const std::string& name, const glm::vec3& value) override;
@@ -32,7 +40,14 @@ public:
 
 	void UploadUniformInt(const std::string& name, int value);
 	void UploadUniformIntArray(const std::string& name, const int* values, uint32_t count);
-
+	void UploadUniformUInt(const std::string& name, unsigned int value);
+	void UploadUniformUIntArray(const std::string& name, const unsigned int* values, uint32_t count);
+	void UploadUniformBool(const std::string& name, bool value);
+	void UploadUniformBoolArray(const std::string& name, const bool* values, uint32_t count);
+	void UploadUniformUByte(const std::string& name, unsigned char value);
+	void UploadUniformUByteArray(const std::string& name, const unsigned char* values, uint32_t count);
+	void UploadUniformUShort(const std::string& name, unsigned short value);
+	void UploadUniformUShortArray(const std::string& name, const unsigned short* values, uint32_t count);
 	void UploadUniformFloat(const std::string& name, float value);
 	void UploadUniformFloatArray(const std::string& name, const float* values, uint32_t count);
 	void UploadUniformFloat2(const std::string& name, const glm::vec2& value);

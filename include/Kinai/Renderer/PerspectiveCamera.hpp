@@ -117,6 +117,7 @@ public:
 	void SetSpeed(float speed) { _config.speed = speed; }
 	void SetFarClip(float far_clip) { _camera.SetFarClip(far_clip); _config.far_clip = far_clip; }
 	void SetPosition(const glm::vec3& position) { _camera.SetPosition(position); _config.position = position; }
+	void MouseMotion(float x, float y) { Kinai::MouseMotionEvent event(0, 0, x, y); _camera.OnMouseMotion(event); }
 
 private:
 	bool	OnMouseWheel(MouseWheelEvent& event);

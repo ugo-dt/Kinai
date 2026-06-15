@@ -165,7 +165,7 @@ Log::Critical(fmt::string_view fmt, Args&&... args)
 		for (auto stream : _error_streams)
 			Log::Print(*stream, KN_COLOR_RED, "CRITICAL", fmt, fmt::make_format_args(args...));
 	// it would be undefined behavior to continue after a critical error
-	std::abort();
+	std::exit(1);
 }
 
 template <class... Args>

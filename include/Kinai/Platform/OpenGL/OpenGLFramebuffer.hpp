@@ -20,6 +20,7 @@ public:
 	void Resize(int width, int height) override;
 	int ReadPixel(uint32_t attachmentIndex, int x, int y) override;
 
+	void BindAttachment(uint32_t attachmentIndex, uint32_t slot = 0) override;
 	void ClearAttachment(uint32_t attachmentIndex, int value) override;
 
 	uint32_t	GetColorAttachmentRendererID(uint32_t index = 0) const override

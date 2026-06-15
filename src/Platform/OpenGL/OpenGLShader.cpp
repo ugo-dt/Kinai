@@ -83,6 +83,45 @@ void	OpenGLShader::ApplyUniforms(const void* params, size_t size)
 			case ShaderDataType::Int4:
 				SetIntArray(uniform.glsl_name, static_cast<const int *>(ptr), 4);
 				break;
+			case ShaderDataType::Bool:
+				SetInt(uniform.glsl_name, *static_cast<const bool *>(ptr) ? 1 : 0);
+				break;
+			case ShaderDataType::UByte:
+				SetInt(uniform.glsl_name, *static_cast<const unsigned char *>(ptr));
+				break;
+			case ShaderDataType::UByte2:
+				SetUByteArray(uniform.glsl_name, static_cast<const unsigned char *>(ptr), 2);
+				break;
+			case ShaderDataType::UByte3:
+				SetUByteArray(uniform.glsl_name, static_cast<const unsigned char *>(ptr), 3);
+				break;
+			case ShaderDataType::UByte4:
+				SetUByteArray(uniform.glsl_name, static_cast<const unsigned char *>(ptr), 4);
+				break;
+			case ShaderDataType::UInt:
+				SetInt(uniform.glsl_name, *static_cast<const unsigned int *>(ptr));
+				break;
+			case ShaderDataType::UInt2:
+				SetUIntArray(uniform.glsl_name, static_cast<const unsigned int *>(ptr), 2);
+				break;
+			case ShaderDataType::UInt3:
+				SetUIntArray(uniform.glsl_name, static_cast<const unsigned int *>(ptr), 3);
+				break;
+			case ShaderDataType::UInt4:
+				SetUIntArray(uniform.glsl_name, static_cast<const unsigned int *>(ptr), 4);
+				break;
+			case ShaderDataType::UShort:
+				SetUShort(uniform.glsl_name, *static_cast<const unsigned short *>(ptr));
+				break;
+			case ShaderDataType::UShort2:
+				SetUShortArray(uniform.glsl_name, static_cast<const unsigned short *>(ptr), 2);
+				break;
+			case ShaderDataType::UShort3:
+				SetUShortArray(uniform.glsl_name, static_cast<const unsigned short *>(ptr), 3);
+				break;
+			case ShaderDataType::UShort4:
+				SetUShortArray(uniform.glsl_name, static_cast<const unsigned short *>(ptr), 4);
+				break;
 			default:
 				Log::Critical("OpenGLShader::ApplyUniforms(): unknown uniform type");
 				break;
@@ -189,6 +228,62 @@ void	OpenGLShader::SetFloat4(const std::string& name, const glm::vec4& value)
 	UploadUniformFloat4(name, value);
 }
 
+void	OpenGLShader::SetUInt(const std::string& name, unsigned int value)
+{
+	KN_PROFILE_FUNC();
+
+	UploadUniformUInt(name, value);
+}
+
+void	OpenGLShader::SetUIntArray(const std::string& name, const unsigned int* values, uint32_t count)
+{
+	KN_PROFILE_FUNC();
+
+	UploadUniformUIntArray(name, values, count);
+}
+
+void	OpenGLShader::SetBool(const std::string& name, bool value)
+{
+	KN_PROFILE_FUNC();
+
+	UploadUniformBool(name, value);
+}
+
+void	OpenGLShader::SetBoolArray(const std::string& name, const bool* values, uint32_t count)
+{
+	KN_PROFILE_FUNC();
+
+	UploadUniformBoolArray(name, values, count);
+}
+
+void	OpenGLShader::SetUByte(const std::string& name, unsigned char value)
+{
+	KN_PROFILE_FUNC();
+
+	UploadUniformUByte(name, value);
+}
+
+void	OpenGLShader::SetUByteArray(const std::string& name, const unsigned char* values, uint32_t count)
+{
+	KN_PROFILE_FUNC();
+
+	UploadUniformUByteArray(name, values, count);
+}
+
+void	OpenGLShader::SetUShort(const std::string& name, unsigned short value)
+{
+	KN_PROFILE_FUNC();
+
+	UploadUniformUShort(name, value);
+}
+
+void	OpenGLShader::SetUShortArray(const std::string& name, const unsigned short* values, uint32_t count)
+{
+	KN_PROFILE_FUNC();
+
+	UploadUniformUShortArray(name, values, count);
+}
+
 void	OpenGLShader::SetMat4(const std::string& name, const glm::mat4& value)
 {
 	KN_PROFILE_FUNC();
@@ -207,6 +302,57 @@ void	OpenGLShader::UploadUniformIntArray(const std::string& name, const int* val
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
 	glUniform1iv(location, count, values);
+	_KN_GL_CHECK_ERROR();
+}
+
+void	OpenGLShader::UploadUniformBool(const std::string& name, bool value)
+{
+	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
+	glUniform1i(location, value ? 1 : 0);
+	_KN_GL_CHECK_ERROR();
+}
+
+void	OpenGLShader::UploadUniformBoolArray(const std::string& name, const bool* values, uint32_t count)
+{
+	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
+	std::vector<int> int_values(count);
+	for (uint32_t i = 0; i < count; ++i)
+		int_values[i] = values[i] ? 1 : 0;
+	glUniform1iv(location, count, int_values.data());
+	_KN_GL_CHECK_ERROR();
+}
+
+void	OpenGLShader::UploadUniformUByte(const std::string& name, unsigned char value)
+{
+	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
+	glUniform1i(location, static_cast<int>(value));
+	_KN_GL_CHECK_ERROR();
+}
+
+void	OpenGLShader::UploadUniformUByteArray(const std::string& name, const unsigned char* values, uint32_t count)
+{
+	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
+	std::vector<int> int_values(count);
+	for (uint32_t i = 0; i < count; ++i)
+		int_values[i] = static_cast<int>(values[i]);
+	glUniform1iv(location, count, int_values.data());
+	_KN_GL_CHECK_ERROR();
+}
+
+void	OpenGLShader::UploadUniformUShort(const std::string& name, unsigned short value)
+{
+	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
+	glUniform1i(location, static_cast<int>(value));
+	_KN_GL_CHECK_ERROR();
+}
+
+void	OpenGLShader::UploadUniformUShortArray(const std::string& name, const unsigned short* values, uint32_t count)
+{
+	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
+	std::vector<int> int_values(count);
+	for (uint32_t i = 0; i < count; ++i)
+		int_values[i] = static_cast<int>(values[i]);
+	glUniform1iv(location, count, int_values.data());
 	_KN_GL_CHECK_ERROR();
 }
 
@@ -263,6 +409,20 @@ void	OpenGLShader::UploadUniformFloat4Array(const std::string& name, const float
 {
 	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
 	glUniform4fv(location, count, values);
+	_KN_GL_CHECK_ERROR();
+}
+
+void	OpenGLShader::UploadUniformUInt(const std::string& name, unsigned int value)
+{
+	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
+	glUniform1ui(location, value);
+	_KN_GL_CHECK_ERROR();
+}
+
+void	OpenGLShader::UploadUniformUIntArray(const std::string& name, const unsigned int* values, uint32_t count)
+{
+	GLint location = glGetUniformLocation(_renderer_id, name.c_str());
+	glUniform1uiv(location, count, values);
 	_KN_GL_CHECK_ERROR();
 }
 

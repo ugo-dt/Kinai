@@ -123,8 +123,8 @@ endif
 # ==============================================================================
 # Build Configuration
 # ==============================================================================
-KINAI_CFLAGS   := -Wall -Wextra
-KINAI_CXXFLAGS := -Wall -Wextra -std=c++14
+KINAI_CFLAGS   := -Wall -Wextra -Werror
+KINAI_CXXFLAGS := -Wall -Wextra -Werror -std=c++14
 KINAI_LDFLAGS  :=
 
 ifeq ($(KINAI_BUILD),debug)
