@@ -128,8 +128,8 @@ KINAI_CXXFLAGS := -Wall -Wextra -Werror -std=c++14 -Wno-missing-field-initialize
 KINAI_LDFLAGS  :=
 
 ifeq ($(KINAI_BUILD),debug)
-    KINAI_CFLAGS   += -g -DKINAI_DEBUG
-    KINAI_CXXFLAGS += -g -DKINAI_DEBUG
+    KINAI_CFLAGS   += -DKINAI_DEBUG -ggdb -O0
+    KINAI_CXXFLAGS += -DKINAI_DEBUG -ggdb -O0
 else ifeq ($(KINAI_BUILD),dev)
     KINAI_CFLAGS   += -O2 -DKINAI_DEV
     KINAI_CXXFLAGS += -O2 -DKINAI_DEV
@@ -299,16 +299,16 @@ KINAI_LIB_OBJS += $(STB_IMAGE_OBJS)
 # fmt
 FMT_BUILD_DIR		= $(KINAI_FMT_DIR)/build_$(KINAI_TARGET)_$(KINAI_ARCH)_$(KINAI_BUILD)
 FMT_MAKEFILE		= $(FMT_BUILD_DIR)/Makefile
-# LIB_FMT				= -L $(FMT_BUILD_DIR)/libfmt.a
+LIB_FMT				= $(FMT_BUILD_DIR)/libfmt.a
 
 $(FMT_MAKEFILE): $(KINAI_FMT_DIR)/CMakeLists.txt
 	@echo "$(COLOR_GREY)Configuring fmt...$(COLOR_DEFAULT)"
 	$(KINAI_Q)mkdir -p $(FMT_BUILD_DIR)
 	$(KINAI_Q)$(CMAKE) -S $(KINAI_FMT_DIR) -B $(FMT_BUILD_DIR) -DFMT_TEST=OFF
 
-# $(LIB_FMT): $(FMT_MAKEFILE)
-# 	@echo "$(COLOR_GREY)Building fmt...$(COLOR_DEFAULT)"
-# 	$(KINAI_Q)$(MAKE) -C $(FMT_BUILD_DIR)
+$(LIB_FMT): $(FMT_MAKEFILE)
+	@echo "$(COLOR_GREY)Building fmt...$(COLOR_DEFAULT)"
+	$(KINAI_Q)$(MAKE) -C $(FMT_BUILD_DIR)
 KINAI_LDFLAGS += $(LIB_FMT)
 
 # ==============================================================================

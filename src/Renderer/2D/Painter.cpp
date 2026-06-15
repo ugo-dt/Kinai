@@ -83,8 +83,24 @@ void	Shutdown()
 {
 	KN_PROFILE_FUNC();
 
+	context.state.pipeline = nullptr;
+	for (auto& p: context.state.texture_slots)
+		p.reset();
+
+	context.state.bindings.reset();
+	context.state.vertex_buffer_ptr = nullptr;
+
 	delete[] context.state.vertex_buffer_base;
 	context.state.vertex_buffer_base = nullptr;
+
+	context.state.bindings.reset();
+
+    for (auto& p : context.pipelines)
+        p.reset();
+
+    context.white_texture.reset();
+    context.shader.reset();
+    context.vao.reset();
 }
 
 void	BeginPass()
