@@ -275,6 +275,11 @@ bool SDLWindow::SetTitle(const std::string &title)
 
 bool SDLWindow::SetIcon(const std::string &icon_path)
 {
+	if (!SDL_VERSION_ATLEAST(3, 4, 0))
+	{
+		Log::Warn("SDL version 3.4.0 or higher is required");
+		return false;
+	}
 	// KN_ASSERT(icon_path.ends_with(".png"), "expected .png file, got {}", icon_path);
 	SDL_Surface *icon = SDL_LoadPNG(icon_path.c_str());
 	if (icon)
