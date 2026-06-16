@@ -341,7 +341,7 @@ KINAI_OBJS = $(patsubst $(KINAI_PATH)/src/%.cpp,$(KINAI_OBJ_DIR)/%.o,$(KINAI_SRC
 # ==============================================================================
 # Build Rules
 # ==============================================================================
-ifdef KINAI_SHARED
+ifdef KINAI_BUILD_SHARED_LIB
 KINAI := $(KINAI_BIN_DIR)/libKinai$(DLL)
 
 # Pattern rule
