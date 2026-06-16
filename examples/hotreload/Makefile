@@ -1,18 +1,15 @@
 BUILD = release
 KINAI_PATH = ../..
-KINAI_VERBOSE = 1
+KINAI_VERBOSE = 0
 KINAI_REMOVE_PREFIX = 1
 KINAI_BUILD_SHARED_LIB = 1
 include $(KINAI_PATH)/Makefile
 
-ASSETS_DIR = $(GAME_DIR)/../assets
-CXXFLAGS += -DASSETS_DIR=\"$(ASSETS_DIR)\"
-
 # Game
 GAME_DIR = .
 BIN_DIR = $(GAME_DIR)/bin/$(TARGET)/$(ARCH)/$(BACKEND)/$(BUILD)
-GAME_NAME = libgame.0
-GAME = $(BIN_DIR)/$(GAME_NAME)_$(BUILD)$(DLL)
+GAME_NAME = libgame
+GAME = $(BIN_DIR)/$(GAME_NAME)_$(BUILD).0$(DLL)
 # ifeq ($(BUILD),release)
   GAME_LINK = $(GAME_DIR)/libgame$(DLL)
 # else
@@ -22,6 +19,8 @@ OBJ_DIR = $(GAME_DIR)/.obj/$(TARGET)/$(ARCH)/$(BACKEND)/$(BUILD)
 GAME_SRC = $(wildcard source/$(GAME_DIR)/*.cpp source/$(GAME_DIR)/*/*.cpp source/$(GAME_DIR)/*/*/*.cpp)
 GAME_OBJS = $(patsubst source/%.cpp,$(OBJ_DIR)/%.o,$(GAME_SRC))
 
+ASSETS_DIR = $(GAME_DIR)/../assets
+CXXFLAGS += -DASSETS_DIR=\"$(ASSETS_DIR)\" -DLIBRARY_NAME=\"$(GAME_LINK)\"
 INCLUDE += -I include/$(GAME_DIR) -I $(ASSETS_DIR)/shaders -I $(GAME_DIR)/source
 
 ifeq ($(TARGET),$(TARGET_EMSCRIPTEN))
@@ -35,8 +34,6 @@ RELOAD_OBJ = $(patsubst %.cpp,$(OBJ_DIR)/reload/%.o,$(RELOAD_SRC))
 RELOAD_LINK = $(GAME_DIR)/reload$(EXE)
 
 all: $(GAME) $(GAME_LINK) $(RELOAD) $(RELOAD_LINK)
-	rm $(GAME_LINK)
-	$(Q)ln -sf $(GAME) $(GAME_LINK)
 
 clean::
 	$(Q)rm -rf $(GAME_OBJS)
@@ -51,7 +48,6 @@ re::
 	$(Q)$(MAKE) $(NO_PRINT_DIRECTORY) all
 
 $(GAME): $(KINAI) $(GAME_OBJS)
-	rm $(GAME)
 	$(Q)mkdir -p $(dir $@)
 	@echo "[CXX] $(GAME)"
 	$(Q)$(CXX) -o $@ $(GAME_OBJS) $(LDFLAGS) $(SHARED) -L $(KINAI_BIN_DIR) -lKinai
@@ -74,7 +70,7 @@ $(OBJ_DIR)/reload/%.o: $(GAME_DIR)/%.cpp
 $(RELOAD): $(KINAI) $(GAME) $(GAME_LINK) $(RELOAD_OBJ)
 	$(Q)mkdir -p $(dir $@)
 	@echo "[CXX] $(RELOAD)"
-	$(Q)$(CXX) -o $@ $(RELOAD_OBJ) $(KINAI) $(LDFLAGS) -L $(BIN_DIR) -lgame_$(BUILD) -Wl,-rpath,$(GAME_DIR)
+	$(Q)$(CXX) -o $@ $(RELOAD_OBJ) $(KINAI) $(LDFLAGS) -L $(BIN_DIR) -lgame_$(BUILD).0 -Wl,-rpath,$(GAME_DIR)
 	@echo "$(COLOR_GREEN)Successfully built $(RELOAD)$(COLOR_DEFAULT)"
 
 $(RELOAD_LINK): $(RELOAD)

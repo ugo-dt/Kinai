@@ -2,6 +2,12 @@
 
 #include <Kinai/Kinai.hpp>
 
+enum class AppLayerType
+{
+	AppLayer,
+	EventsLayer,
+};
+
 struct AppState
 {
 	bool first_load;
@@ -12,6 +18,7 @@ struct AppState
 	float rotation;
 	bool rotate;
 	bool show_back_faces;
+	AppLayerType current_layer = AppLayerType::AppLayer;
 };
 
 class AppLayer : public Kinai::Layer

@@ -1,6 +1,65 @@
 #include "AppLayer.hpp"
 #include "quad.glsl.hpp"
 
+static AppState *g_state = nullptr;
+
+class EventsLayer : public Kinai::Layer
+{
+public:
+	EventsLayer(): Kinai::Layer("App Layer") {}
+	~EventsLayer() = default;
+
+	void	OnUpdate(float delta)
+	{
+		KN_NOTUSED(delta);
+	}
+
+	void	OnRender()
+	{
+		float time = SDL_GetTicks() / 1000.f;
+		float r = glm::sin(time) * 0.5f + 0.5f,
+			g = glm::cos(time) * 0.5f + 0.5f;
+
+		Kinai::Renderer::SetClearColor(r, g, 0.3f, 1.0f);
+		Kinai::Renderer::Clear();
+	}
+
+	void	OnEvent(Kinai::Event& event)
+	{
+		Kinai::EventDispatcher dispatcher(event);
+
+		std::cout << event.ToString() << std::endl;
+
+		// Send specific events to the appropriate function
+		dispatcher.Dispatch<Kinai::KeyPressedEvent>(KN_BIND_EVENT_FN(OnKeyPressed));
+		dispatcher.Dispatch<Kinai::MouseButtonPressedEvent>(KN_BIND_EVENT_FN(OnMouseButtonPressed));
+	}
+
+	bool	OnKeyPressed(Kinai::KeyPressedEvent &event)
+	{
+		switch (event.GetKeyCode())
+		{
+			case Kinai::Key::Escape:
+				Kinai::Quit();
+				break;
+			case Kinai::Key::Q:
+				g_state->current_layer = AppLayerType::AppLayer;
+				TransitionTo<AppLayer>(g_state);
+				break;
+			default:
+				break;
+		}
+		return true;
+	}
+
+	bool	OnMouseButtonPressed(Kinai::MouseButtonPressedEvent &event)
+	{
+		std::cout << event.ToString() << std::endl;
+		return true;
+	}
+};
+
+
 float	cube_vertices[] = {
 	-1.0, -1.0, -1.0,   1.0, 0.0, 0.0, 1.0,
 	 1.0, -1.0, -1.0,   1.0, 0.0, 0.0, 1.0,
@@ -57,6 +116,7 @@ AppLayer::AppLayer(AppState *state)
 	: Kinai::Layer("App Layer"),
 	  _state(state)
 {
+	g_state = state; // Store the state in a global variable for the EventsLayer
 	assert(state);
 	if (state->first_load)
 	{
@@ -91,12 +151,16 @@ AppLayer::~AppLayer()
 
 void AppLayer::OnUpdate(float delta)
 {
+	if (_state->current_layer == AppLayerType::EventsLayer)
+		TransitionTo<EventsLayer>();
 	_state->camera.OnUpdate(delta);
 	_state->rotation += delta;
 }
 
 void AppLayer::OnRender()
 {
+	if (_state->current_layer != AppLayerType::AppLayer)
+		return;
 	Kinai::Renderer::BeginPass();
 	{
 		Kinai::Renderer::SetClearColor(0.25f, 0.5f, 0.75f, 1.0f);
@@ -210,6 +274,10 @@ bool AppLayer::OnKeyPressed(Kinai::KeyPressedEvent &event)
 		case Kinai::Key::F5:
 			_state->show_back_faces = !_state->show_back_faces;
 			Kinai::Renderer::SetPolygonMode(_state->mode);
+			break;
+		case Kinai::Key::Q:
+			_state->current_layer = AppLayerType::EventsLayer;
+			TransitionTo<EventsLayer>();
 			break;
 		default:
 			break;

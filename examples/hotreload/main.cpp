@@ -1,6 +1,17 @@
 #include "AppLayer.hpp"
 #include <Kinai/EntryPoint.hpp>
 #include <dlfcn.h>
+#include <sys/stat.h>
+
+#ifndef LIBRARY_NAME
+#ifdef __APPLE__
+#define LIBRARY_NAME "libgame.dylib"
+#elif defined(_WIN32)
+#define LIBRARY_NAME "libgame.dll"
+#else
+#define LIBRARY_NAME "libgame.so"
+#endif
+#endif
 
 class ReloadLayer : public Kinai::Layer
 {
@@ -10,13 +21,32 @@ public:
 		  _state(nullptr),
 		  _lib_handle(nullptr),
 		  _app_layer(nullptr),
-		  _attach(true)
+		  _attach(true),
+		  _running(true)
 	{
 		_state = new AppState();
 		_state->first_load = true;
+
+		_thread = std::thread([this]()
+		{
+			while (_running)
+			{
+				(void)system("make > /dev/null"); // TODO: fork and exec
+				constexpr std::chrono::milliseconds interval(500);
+				std::this_thread::sleep_for(interval);
+			}
+		});
 	}
+
 	~ReloadLayer()
 	{
+		_running = false;
+		if (_thread.joinable())
+			_thread.join();
+
+		if (_app_layer)
+			Unload();
+
 		delete _state;
 		_state = nullptr;
 	}
@@ -24,32 +54,45 @@ public:
 	void Load()
 	{
 		assert(_state);
-		int result = system("make");
-		_lib_handle = dlopen("libgame.so", RTLD_NOW);
+
+		_lib_handle = dlopen(LIBRARY_NAME, RTLD_NOW);
 		if (!_lib_handle)
-			Kinai::Log::Critical("Failed to load libgame.so: {}", dlerror());
-		(void)result;
+		{
+			Kinai::Log::Critical("Failed to load {}: {}", LIBRARY_NAME, dlerror());
+			return;
+		}
+
 		using CreateAppLayerFunc = AppLayer* (*)(AppState*);
-		CreateAppLayerFunc CreateAppLayer_fn = (CreateAppLayerFunc)dlsym(_lib_handle, "CreateAppLayer");
+		auto CreateAppLayer_fn = (CreateAppLayerFunc)dlsym(_lib_handle, "CreateAppLayer");
+
 		if (!CreateAppLayer_fn)
 		{
 			dlclose(_lib_handle);
-			Kinai::Log::Critical("Failed to find CreateAppLayer symbol in libgame.so");
+			_lib_handle = nullptr;
+
+			Kinai::Log::Critical("Failed to find CreateAppLayer symbol in {}", LIBRARY_NAME);
+			return;
 		}
+
 		_app_layer = CreateAppLayer_fn(_state);
 		Kinai::Application::Get().PushLayer(_app_layer);
-		printf("load\n");
+		
+		stat(LIBRARY_NAME, &_last_stat);
 	}
 
 	void Unload()
 	{
-		assert(_app_layer);
+		if (!_app_layer)
+			return;
+
 		Kinai::Application::Get().PopLayer();
 		_app_layer = nullptr;
-		dlclose(_lib_handle);
-		_lib_handle = nullptr;
-		printf("unload\n");
-		usleep(50000);
+
+		if (_lib_handle)
+		{
+			dlclose(_lib_handle);
+			_lib_handle = nullptr;
+		}
 	}
 
 	void OnUpdate(KN_UNUSED float delta) override
@@ -59,31 +102,30 @@ public:
 			Load();
 			_attach = false;
 		}
-	}
 
-	void OnEvent(Kinai::Event& event) override
-	{
-		Kinai::EventDispatcher dispatcher(event);
-		dispatcher.Dispatch<Kinai::KeyPressedEvent>(KN_BIND_EVENT_FN(OnKeyPressed));
-	}
-
-	bool OnKeyPressed(Kinai::KeyPressedEvent &event)
-	{
-		if (event.IsRepeat())
-			return false;
-		if (event.GetKeyCode() == Kinai::Key::R)
+		struct stat current_stat;
+		if (stat(LIBRARY_NAME, &current_stat) == 0)
 		{
-			Unload();
-			Load();
+			if (current_stat.st_mtime != _last_stat.st_mtime)
+			{
+				Unload();
+				Load();
+			}
 		}
-		return true;
 	}
 
 private:
-	AppState *_state;
+	AppState* _state;
+
 	void* _lib_handle;
 	AppLayer* _app_layer;
+
 	bool _attach;
+
+	std::thread _thread;
+	std::atomic<bool> _running;
+
+	struct stat _last_stat;
 };
 
 class App : public Kinai::Application
