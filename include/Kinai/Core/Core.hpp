@@ -31,6 +31,7 @@
 #include <sstream>
 #include <string>
 #include <string_view>
+#include <thread>
 #include <tuple>
 #include <typeindex>
 #include <type_traits>
@@ -72,20 +73,21 @@
 
 #define KN_PRAGMA(x) _Pragma(#x)
 #if defined(__clang__) || defined(__GNUC__)
-	#define KN_INLINE		inline __attribute__((__always_inline__))
-	#define KN_NEVER_INLINE	__attribute__((__noinline__))
-	#define KN_NORETURN		__attribute__ ((noreturn))
-	#define KN_UNUSED		__attribute__ ((unused))
-	#define KN_NOTUSED(x)	((void)(x))
-	#define KN_NODISCARD	[[nodiscard]]
+	#define KN_NODISCARD             [[nodiscard]]
+	#define KN_NOTUSED(x)            ((void)(x))
+	#define KN_INLINE                inline __attribute__((__always_inline__))
+	#define KN_NEVER_INLINE          __attribute__((__noinline__))
+	#define KN_NORETURN              __attribute__ ((noreturn))
+	#define KN_UNUSED                __attribute__ ((unused))
 	#define KN_PRINTF_LIKE(fmt, arg) __attribute__((format(printf, fmt, arg)))
 #else
-	#define KN_INLINE		inline
+	#define KN_NODISCARD
+	#define KN_NOTUSED(x)
+	#define KN_INLINE inline
 	#define KN_NEVER_INLINE
 	#define KN_NORETURN
 	#define KN_UNUSED
-	#define KN_NOTUSED(x)
-	#define KN_NODISCARD
+	#define KN_PRINTF_LIKE(fmt, arg)
 	#define KN_UNROLL(n)
 #endif // defined(__clang__) || defined(__GNUC__)
 
