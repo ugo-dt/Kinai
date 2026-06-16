@@ -2,19 +2,6 @@
 
 #include <Kinai/Kinai.hpp>
 
-struct scope
-{
-	scope(const std::string& name): name(name)
-	{
-		printf("%s start\n", name.c_str());
-	}
-	~scope()
-	{
-		printf("%s end\n", name.c_str());
-	}
-	std::string name;
-};
-
 struct AppState
 {
 	bool first_load;
@@ -22,7 +9,8 @@ struct AppState
 	Kinai::Ref<Kinai::Pipeline>	pipeline;
 	Kinai::Ref<Kinai::Bindings>	bindings;
 	Kinai::PolygonMode mode = Kinai::PolygonMode::Fill;
-	bool rotation;
+	float rotation;
+	bool rotate;
 	bool show_back_faces;
 };
 
@@ -41,5 +29,3 @@ public:
 private:
 	AppState *_state;
 };
-
-// extern "C" AppLayer* CreateAppLayer(AppState *state);

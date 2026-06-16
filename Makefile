@@ -136,6 +136,11 @@ else
   $(error Unknown build '$(KINAI_BUILD)')
 endif
 
+ifdef KINAI_BUILD_SHARED_LIB
+  KINAI_CFLAGS += -fPIC
+  KINAI_CXXFLAGS += -fPIC
+endif
+
 # ==============================================================================
 # Backend
 # ==============================================================================
@@ -150,6 +155,14 @@ else ifneq ($(filter $(BACKEND_LC),headless null none),)
 else
   $(error Unknown backend '$(KINAI_BACKEND)')
 endif
+
+# ==============================================================================
+# Directories
+# ==============================================================================
+OBJ_ROOT          := $(KINAI_PATH)/.obj
+KINAI_OBJ_DIR     := $(OBJ_ROOT)/$(KINAI_TARGET)/$(KINAI_ARCH)/$(KINAI_BACKEND)/$(KINAI_BUILD)
+KINAI_LIB_OBJ_DIR := $(KINAI_OBJ_DIR)/lib
+KINAI_BIN_DIR     := $(KINAI_PATH)/bin/$(KINAI_TARGET)/$(KINAI_ARCH)/$(KINAI_BACKEND)/$(KINAI_BUILD)
 
 # ==============================================================================
 # Toolchain
@@ -177,7 +190,7 @@ ifeq ($(KINAI_TARGET),$(TARGET_WIN32))
 else ifeq ($(KINAI_TARGET),$(TARGET_LINUX))
   EXE := .out
   DLL := .so
-  KINAI_SHARED := -shared -fPIC
+  KINAI_SHARED := -shared -fPIC -Wl,-rpath,$(KINAI_BIN_DIR)
   KINAI_LDFLAGS += -lm -lGL
 else ifeq ($(KINAI_TARGET),$(TARGET_MACOS))
   CC  := clang
@@ -204,14 +217,6 @@ else ifeq ($(KINAI_TARGET),$(TARGET_EMSCRIPTEN))
     -sUSE_WEBGL2=1 \
     -sMIN_WEBGL_VERSION=2
 endif
-
-# ==============================================================================
-# Directories
-# ==============================================================================
-OBJ_ROOT          := $(KINAI_PATH)/.obj
-KINAI_OBJ_DIR     := $(OBJ_ROOT)/$(KINAI_TARGET)/$(KINAI_ARCH)/$(KINAI_BACKEND)/$(KINAI_BUILD)
-KINAI_LIB_OBJ_DIR := $(KINAI_OBJ_DIR)/lib
-KINAI_BIN_DIR     := $(KINAI_PATH)/bin/$(KINAI_TARGET)/$(KINAI_ARCH)/$(KINAI_BACKEND)/$(KINAI_BUILD)
 
 # ==============================================================================
 # Dependencies
@@ -298,19 +303,26 @@ $(KINAI_LIB_OBJ_DIR)/stb_image/%.o: $(KINAI_STB_DIR)/%.c
 KINAI_LIB_OBJS += $(STB_IMAGE_OBJS)
 
 # fmt
-FMT_BUILD_DIR = $(KINAI_FMT_DIR)/build_$(KINAI_TARGET)_$(KINAI_ARCH)_$(KINAI_BUILD)
+ifdef KINAI_BUILD_SHARED_LIB
+  FMT_BUILD_DIR = $(KINAI_FMT_DIR)/build_$(KINAI_TARGET)_$(KINAI_ARCH)_$(KINAI_BUILD)/shared
+  LIB_FMT = $(FMT_BUILD_DIR)/libfmt$(DLL)
+  LIB_FMT_FLAGS = -DBUILD_SHARED_LIBS=ON
+  KINAI_LDFLAGS += -L $(FMT_BUILD_DIR) -lfmt -Wl,-rpath,$(FMT_BUILD_DIR)
+else
+  FMT_BUILD_DIR = $(KINAI_FMT_DIR)/build_$(KINAI_TARGET)_$(KINAI_ARCH)_$(KINAI_BUILD)/static
+  LIB_FMT = $(FMT_BUILD_DIR)/libfmt.a
+  KINAI_LDFLAGS += $(LIB_FMT)
+endif
 FMT_MAKEFILE  = $(FMT_BUILD_DIR)/Makefile
-LIB_FMT       = $(FMT_BUILD_DIR)/libfmt.a
 
 $(FMT_MAKEFILE): $(KINAI_FMT_DIR)/CMakeLists.txt
 	@echo "$(COLOR_GREY)Configuring fmt...$(COLOR_DEFAULT)"
 	$(KINAI_Q)mkdir -p $(FMT_BUILD_DIR)
-	$(KINAI_Q)$(CMAKE) -S $(KINAI_FMT_DIR) -B $(FMT_BUILD_DIR) -DFMT_TEST=OFF
+	$(KINAI_Q)$(CMAKE) -S $(KINAI_FMT_DIR) -B $(FMT_BUILD_DIR) -DFMT_TEST=OFF $(LIB_FMT_FLAGS)
 
 $(LIB_FMT): $(FMT_MAKEFILE)
 	@echo "$(COLOR_GREY)Building fmt...$(COLOR_DEFAULT)"
 	$(KINAI_Q)$(MAKE) -C $(FMT_BUILD_DIR)
-KINAI_LDFLAGS += $(LIB_FMT)
 
 # ==============================================================================
 # Source Files
@@ -341,16 +353,15 @@ KINAI_OBJS = $(patsubst $(KINAI_PATH)/src/%.cpp,$(KINAI_OBJ_DIR)/%.o,$(KINAI_SRC
 # ==============================================================================
 # Build Rules
 # ==============================================================================
+# === Shared library ===
 ifdef KINAI_BUILD_SHARED_LIB
 KINAI := $(KINAI_BIN_DIR)/libKinai$(DLL)
 
-# Pattern rule
 $(KINAI_OBJ_DIR)/%.o: $(KINAI_PATH)/src/%.cpp
 	@echo "[CXX] $<"
 	$(KINAI_Q)mkdir -p $(dir $@)
-	$(KINAI_Q)$(CXX) $(KINAI_CXXFLAGS) $(KINAI_INCLUDE) -fPIC -c $< -o $@
+	$(KINAI_Q)$(CXX) $(KINAI_CXXFLAGS) $(KINAI_INCLUDE) -c $< -o $@
 
-# Library creation
 all: $(KINAI)
 
 $(KINAI): $(LIB_FMT) $(LIB_SDL3) $(KINAI_LIB_OBJS) $(KINAI_OBJS)
@@ -358,33 +369,15 @@ $(KINAI): $(LIB_FMT) $(LIB_SDL3) $(KINAI_LIB_OBJS) $(KINAI_OBJS)
 	$(KINAI_Q)mkdir -p $(dir $@)
 	$(KINAI_Q)$(CXX) -o $@ $(KINAI_OBJS) $(KINAI_LIB_OBJS) $(KINAI_LDFLAGS) $(KINAI_SHARED)
 	@echo "$(KINAI_COLOR_GREEN)Successfully built shared library '$(notdir $(KINAI))' ($(KINAI_BACKEND) - $(KINAI_TARGET) - $(KINAI_BUILD))$(KINAI_COLOR_DEFAULT)"
+# === Static library ===
 else
 KINAI := $(KINAI_BIN_DIR)/libKinai.a
 
-# ifdef KINAI_SHARED
-#   KINAI := $(KINAI_BIN_DIR)/libKinai$(DLL)
-# 	KINAI_LDFLAGS += $(KINAI_SHARED)
-# endif
-
-# define compile-c
-# 	@echo "[CC ] $<"
-# 	$(KINAI_Q)mkdir -p $(dir $@)
-# 	$(KINAI_Q)$(CC) $(KINAI_CFLAGS) $(KINAI_INCLUDE) -c $< -o $@
-# endef
-
-# define compile-cpp
-# 	@echo "[CXX] $<"
-# 	$(KINAI_Q)mkdir -p $(dir $@)
-# 	$(KINAI_Q)$(CXX) $(KINAI_CXXFLAGS) $(KINAI_INCLUDE) -c $< -o $@
-# endef
-
-# Pattern rule
 $(KINAI_OBJ_DIR)/%.o: $(KINAI_PATH)/src/%.cpp
 	@echo "[CXX] $<"
 	$(KINAI_Q)mkdir -p $(dir $@)
 	$(KINAI_Q)$(CXX) $(KINAI_CXXFLAGS) $(KINAI_INCLUDE) -c $< -o $@
 
-# Library creation
 all: $(KINAI)
 
 $(KINAI): $(LIB_FMT) $(LIB_SDL3) $(KINAI_LIB_OBJS) $(KINAI_OBJS)
@@ -403,6 +396,7 @@ $(info Target  | $(KINAI_TARGET))
 $(info Arch    | $(KINAI_ARCH))
 $(info Backend | $(KINAI_BACKEND))
 $(info Build   | $(KINAI_BUILD))
+$(info Shared  | $(KINAI_BUILD_SHARED_LIB))
 $(info KINAI_PATH     | $(KINAI_PATH))
 $(info KINAI_INCLUDE  | $(KINAI_INCLUDE))
 $(info KINAI_CFLAGS   | $(KINAI_CFLAGS))
@@ -434,7 +428,7 @@ ifdef KINAI_REMOVE_PREFIX
   INCLUDE := $(KINAI_INCLUDE)
   LDFLAGS := $(KINAI_LDFLAGS)
   CXXFLAGS := $(KINAI_CXXFLAGS)
-	SHARED := $(KINAI_SHARED)
+  SHARED := $(KINAI_SHARED)
   Q := $(KINAI_Q)
   COLOR_DEFAULT := $(KINAI_COLOR_DEFAULT)
   COLOR_GREEN := $(KINAI_COLOR_GREEN)

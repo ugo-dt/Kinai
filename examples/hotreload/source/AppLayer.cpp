@@ -57,7 +57,6 @@ AppLayer::AppLayer(AppState *state)
 	: Kinai::Layer("App Layer"),
 	  _state(state)
 {
-	scope("AppLayer::AppLayer");
 	assert(state);
 	if (state->first_load)
 	{
@@ -77,8 +76,9 @@ AppLayer::AppLayer(AppState *state)
 			}),
 			.bindings = Kinai::Bindings::Create(),
 			.mode = Kinai::PolygonMode::Fill,
-			.rotation = true,
-			.show_back_faces = false
+			.rotation = 0.0f,
+			.rotate = true,
+			.show_back_faces = false,
 		};
 	}
 	_state->bindings->AddVertexBuffer(Kinai::VertexBuffer::Create(cube_vertices, sizeof(cube_vertices)));
@@ -87,20 +87,16 @@ AppLayer::AppLayer(AppState *state)
 
 AppLayer::~AppLayer()
 {
-	scope("AppLayer::~AppLayer");
-	_state->bindings.reset();
-	_state->pipeline.reset();
 }
 
 void AppLayer::OnUpdate(float delta)
 {
-	scope("AppLayer::OnUpdate");
 	_state->camera.OnUpdate(delta);
+	_state->rotation += delta;
 }
 
 void AppLayer::OnRender()
 {
-	scope("AppLayer::OnRender");
 	Kinai::Renderer::BeginPass();
 	{
 		Kinai::Renderer::SetClearColor(0.25f, 0.5f, 0.75f, 1.0f);
@@ -110,12 +106,10 @@ void AppLayer::OnRender()
 		Kinai::Renderer::ApplyBindings(_state->bindings);
 
 		glm::mat4 transform = glm::mat4(1.0f);
-		if (_state->rotation)
+		if (_state->rotate)
 		{
-			const float time = std::chrono::duration<float>(
-				std::chrono::high_resolution_clock::now().time_since_epoch()).count();
-			glm::mat4 rxm = glm::rotate(time, glm::vec3(1.0f, 0.0f, 0.0f));
-			glm::mat4 rym = glm::rotate(2 * time, glm::vec3(0.0f, 1.0f, 0.0f));
+			glm::mat4 rxm = glm::rotate(_state->rotation, glm::vec3(1.0f, 0.0f, 0.0f));
+			glm::mat4 rym = glm::rotate(2 * _state->rotation, glm::vec3(0.0f, 1.0f, 0.0f));
 			transform = rxm * rym;
 		}
 
@@ -140,7 +134,6 @@ void AppLayer::OnRender()
 
 void AppLayer::OnImGuiRender()
 {
-	scope("AppLayer::OnImGuiRender");
 	Kinai::Application& app = Kinai::Application::Get();
 
 	ImGui::Begin("Info", nullptr, ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoDocking | ImGuiWindowFlags_NoResize);
@@ -167,27 +160,23 @@ void AppLayer::OnImGuiRender()
 		_state->show_back_faces = !_state->show_back_faces;
 		Kinai::Renderer::SetPolygonMode(_state->mode);
 	}
-	if (!_state->show_back_faces)
+	if (ImGui::Button(_state->mode == Kinai::PolygonMode::Line ? "Wireframe ON" : "Wireframe OFF"))
 	{
-		if (ImGui::Button(_state->mode == Kinai::PolygonMode::Line ? "Wireframe ON" : "Wireframe OFF"))
-		{
-			_state->mode = _state->mode == Kinai::PolygonMode::Fill ? Kinai::PolygonMode::Line : Kinai::PolygonMode::Fill;
-			Kinai::Renderer::SetPolygonMode(_state->mode);
-		}
-		if (ImGui::Button(_state->pipeline->GetCullMode() == Kinai::CullMode::Back ? "glCullFace(GL_BACK)" : "glCullFace(GL_FRONT)"))
-		{
-			_state->pipeline->SetCullMode(
-				_state->pipeline->GetCullMode() == Kinai::CullMode::Back
-				? Kinai::CullMode::Front : Kinai::CullMode::Back
-			);
-		}
+		_state->mode = _state->mode == Kinai::PolygonMode::Fill ? Kinai::PolygonMode::Line : Kinai::PolygonMode::Fill;
+		Kinai::Renderer::SetPolygonMode(_state->mode);
+	}
+	if (ImGui::Button(_state->pipeline->GetCullMode() == Kinai::CullMode::Back ? "glCullFace(GL_BACK)" : "glCullFace(GL_FRONT)"))
+	{
+		_state->pipeline->SetCullMode(
+			_state->pipeline->GetCullMode() == Kinai::CullMode::Back
+			? Kinai::CullMode::Front : Kinai::CullMode::Back
+		);
 	}
 	ImGui::End();
 }
 
 void AppLayer::OnEvent(Kinai::Event& event)
 {
-	scope("AppLayer::OnEvent");
 	Kinai::EventDispatcher dispatcher(event);
 
 	dispatcher.Dispatch<Kinai::KeyPressedEvent>(KN_BIND_EVENT_FN(OnKeyPressed));
@@ -196,7 +185,6 @@ void AppLayer::OnEvent(Kinai::Event& event)
 
 bool AppLayer::OnKeyPressed(Kinai::KeyPressedEvent &event)
 {
-	scope("AppLayer::OnKeyPressed");
 	switch (event.GetKeyCode())
 	{
 		case Kinai::Key::Escape:
@@ -208,7 +196,7 @@ bool AppLayer::OnKeyPressed(Kinai::KeyPressedEvent &event)
 			_state->camera.SetRotationEnabled(!_state->camera.IsRotationEnabled());
 			break;
 		case Kinai::Key::F2:
-			_state->rotation = !_state->rotation;
+			_state->rotate = !_state->rotate;
 			break;
 		case Kinai::Key::F3:
 			Kinai::Application::Get().GetWindow().SetVSync(!Kinai::Application::Get().GetWindow().IsVSync());
@@ -231,6 +219,5 @@ bool AppLayer::OnKeyPressed(Kinai::KeyPressedEvent &event)
 
 extern "C" AppLayer* CreateAppLayer(AppState *state)
 {
-	scope("CreateAppLayer");
 	return new AppLayer(state);
 }

@@ -8,45 +8,52 @@ public:
 	ReloadLayer()
 		: Kinai::Layer("Reload Layer"),
 		  _state(nullptr),
+		  _lib_handle(nullptr),
+		  _app_layer(nullptr),
 		  _attach(true)
 	{
-		scope("ReloadLayer::ReloadLayer");
 		_state = new AppState();
 		_state->first_load = true;
 	}
 	~ReloadLayer()
 	{
-		scope("ReloadLayer::~ReloadLayer");
 		delete _state;
+		_state = nullptr;
 	}
 
 	void Load()
 	{
-		scope("ReloadLayer::Load");
 		assert(_state);
+		int result = system("make");
+		_lib_handle = dlopen("libgame.so", RTLD_NOW);
+		if (!_lib_handle)
+			Kinai::Log::Critical("Failed to load libgame.so: {}", dlerror());
+		(void)result;
 		using CreateAppLayerFunc = AppLayer* (*)(AppState*);
-		void *handle = dlopen("libgame.dylib", RTLD_NOW);
-		if (!handle)
-			Kinai::Log::Critical("Failed to load libgame.dylib: {}", dlerror());
-		CreateAppLayerFunc CreateAppLayer_fn = (CreateAppLayerFunc)dlsym(handle, "CreateAppLayer");
+		CreateAppLayerFunc CreateAppLayer_fn = (CreateAppLayerFunc)dlsym(_lib_handle, "CreateAppLayer");
 		if (!CreateAppLayer_fn)
 		{
-			dlclose(handle);
-			Kinai::Log::Critical("Failed to find CreateAppLayer symbol in libgame.dylib");
+			dlclose(_lib_handle);
+			Kinai::Log::Critical("Failed to find CreateAppLayer symbol in libgame.so");
 		}
-		Kinai::Application::Get().PushLayer(CreateAppLayer_fn(_state));
-		dlclose(handle);
+		_app_layer = CreateAppLayer_fn(_state);
+		Kinai::Application::Get().PushLayer(_app_layer);
+		printf("load\n");
 	}
 
 	void Unload()
 	{
-		scope("ReloadLayer::Unload");
+		assert(_app_layer);
 		Kinai::Application::Get().PopLayer();
+		_app_layer = nullptr;
+		dlclose(_lib_handle);
+		_lib_handle = nullptr;
+		printf("unload\n");
+		usleep(50000);
 	}
 
 	void OnUpdate(KN_UNUSED float delta) override
 	{
-		scope("ReloadLayer::OnUpdate");
 		if (_attach)
 		{
 			Load();
@@ -56,14 +63,12 @@ public:
 
 	void OnEvent(Kinai::Event& event) override
 	{
-		scope("ReloadLayer::OnEvent");
 		Kinai::EventDispatcher dispatcher(event);
 		dispatcher.Dispatch<Kinai::KeyPressedEvent>(KN_BIND_EVENT_FN(OnKeyPressed));
 	}
 
 	bool OnKeyPressed(Kinai::KeyPressedEvent &event)
 	{
-		scope("ReloadLayer::OnKeyPressed");
 		if (event.IsRepeat())
 			return false;
 		if (event.GetKeyCode() == Kinai::Key::R)
@@ -76,6 +81,8 @@ public:
 
 private:
 	AppState *_state;
+	void* _lib_handle;
+	AppLayer* _app_layer;
 	bool _attach;
 };
 

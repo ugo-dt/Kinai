@@ -6,54 +6,11 @@
 namespace Kinai
 {
 
-namespace Painter
-{
+PainterContext Painter::context;
 
-void MakePipelines();
-void Flush();
-void StartBatch();
-void NextBatch();
-Ref<Pipeline>&	LookupPipeline(PrimitiveType type, BlendMode mode);
 static BlendState BlendModeToBlendState(BlendMode blend_mode);
 
-constexpr uint32_t MAX_QUADS = 20000;
-constexpr uint32_t MAX_VERTICES = MAX_QUADS * 4;
-constexpr uint32_t MAX_INDICES = MAX_QUADS * 6;
-constexpr uint32_t MAX_TEXTURE_SLOTS = 4;
-
-struct QuadVertex
-{
-	glm::vec4 position;
-	glm::vec4 color;
-};
-
-struct State
-{
-	OrthographicCamera camera = OrthographicCamera(0.0f, 1.0f, 1.0f, 0.0f);
-	glm::vec4 color;
-	BlendMode mode = BlendMode::None;
-	Ref<Pipeline> pipeline = nullptr;
-	std::vector<Ref<Texture2D>> texture_slots;
-	Ref<Bindings> bindings = nullptr;
-	QuadVertex *vertex_buffer_base = nullptr;
-	QuadVertex *vertex_buffer_ptr = nullptr;
-	uint32_t index = 0;
-	bool in_pass = false;
-};
-
-static struct Context
-{
-	State state;
-
-	Ref<VertexArray> vao = nullptr;
-	Ref<Shader> shader = nullptr;
-	Ref<VertexBuffer> vertex_buf = nullptr;
-	Ref<Texture2D> white_texture = nullptr;
-	std::array<Ref<Pipeline>,
-		(int)PrimitiveType::_PrimitiveType_NUM * (int)BlendMode::_BlendMode_NUM> pipelines;
-}context;
-
-void	Init()
+void Painter::Init()
 {
 	KN_PROFILE_FUNC();
 	
@@ -79,7 +36,7 @@ void	Init()
 	context.state.camera.SetProjection(0.0f, (float)size.x, (float)size.y, 0.0f);
 }
 
-void	Shutdown()
+void Painter::Shutdown()
 {
 	KN_PROFILE_FUNC();
 
@@ -87,23 +44,26 @@ void	Shutdown()
 	for (auto& p: context.state.texture_slots)
 		p.reset();
 
-	context.state.bindings.reset();
 	context.state.vertex_buffer_ptr = nullptr;
 
 	delete[] context.state.vertex_buffer_base;
 	context.state.vertex_buffer_base = nullptr;
 
 	context.state.bindings.reset();
+	context.state.pipeline.reset();
+	for (auto& t : context.state.texture_slots)
+		t.reset();
 
     for (auto& p : context.pipelines)
-        p.reset();
-
+		p.reset();
+	
+	context.vertex_buf.reset();
     context.white_texture.reset();
     context.shader.reset();
     context.vao.reset();
 }
 
-void	BeginPass()
+void Painter::BeginPass()
 {
 	KN_ASSERT(!context.state.in_pass, "Painter is already in a pass!");
 	KN_PROFILE_FUNC();
@@ -115,7 +75,7 @@ void	BeginPass()
 	context.state.in_pass = true;
 }
 
-void SetViewport(int x, int y, int width, int height)
+void Painter::SetViewport(int x, int y, int width, int height)
 {
 	KN_PROFILE_FUNC();
 
@@ -123,7 +83,7 @@ void SetViewport(int x, int y, int width, int height)
 	context.state.camera.SetProjection(0.0f, (float)width, (float)height, 0.0f);
 }
 
-void	EndPass()
+void Painter::EndPass()
 {
 	KN_PROFILE_FUNC();
 
@@ -131,31 +91,31 @@ void	EndPass()
 	context.state.in_pass = false;
 }
 
-void	SetImage(int channel, const Ref<Texture2D>& texture)
+void Painter::SetImage(int channel, const Ref<Texture2D>& texture)
 {
 	Painter::NextBatch(); //fixme
 	context.state.texture_slots[channel] = texture;
 }
 
-void	ResetImage(int channel)
+void Painter::ResetImage(int channel)
 {
 	Painter::NextBatch(); //fixme
 	context.state.texture_slots[channel] = context.white_texture;
 }
 
-void	SetBlendMode(BlendMode mode)
+void Painter::SetBlendMode(BlendMode mode)
 {
 	Painter::NextBatch(); //fixme
 	context.state.mode = mode;
 }
 
-void	ResetBlendMode()
+void Painter::ResetBlendMode()
 {
 	Painter::NextBatch(); //fixme
 	context.state.mode = BlendMode::None;
 }
 
-void	Flush()
+void Painter::Flush()
 {
 	if (context.state.index)
 	{
@@ -182,13 +142,13 @@ void	Flush()
 	}
 }
 
-void	StartBatch()
+void Painter::StartBatch()
 {
 	context.state.index = 0;
 	context.state.vertex_buffer_ptr = context.state.vertex_buffer_base;
 }
 
-void	NextBatch()
+void Painter::NextBatch()
 {
 	Flush();
 	StartBatch();
@@ -268,7 +228,7 @@ static BlendState BlendModeToBlendState(BlendMode blend_mode)
     return blend;
 }
 
-Ref<Pipeline>&	LookupPipeline(PrimitiveType type, BlendMode mode)
+Ref<Pipeline>& Painter::LookupPipeline(PrimitiveType type, BlendMode mode)
 {
 	KN_PROFILE_FUNC();
 
@@ -295,7 +255,7 @@ Ref<Pipeline>&	LookupPipeline(PrimitiveType type, BlendMode mode)
 	return context.pipelines[pip_index];
 }
 
-void	MakePipelines()
+void Painter::MakePipelines()
 {
 	KN_PROFILE_FUNC();
 
@@ -335,7 +295,7 @@ void	MakePipelines()
 	delete[] indices;
 }
 
-void	DrawQuad(const glm::mat4& transform, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color)
+void Painter::DrawQuad(const glm::mat4& transform, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color)
 {
 	KN_PROFILE_FUNC();
 
@@ -372,7 +332,7 @@ void	DrawQuad(const glm::mat4& transform, const glm::vec2& uvStart, const glm::v
 	context.state.index += 6;
 }
 
-void	DrawQuad(float x, float y, float width, float height, const glm::vec4& color)
+void Painter::DrawQuad(float x, float y, float width, float height, const glm::vec4& color)
 {
     // Build transform in pixel space
     glm::mat4 transform =
@@ -386,6 +346,49 @@ void	DrawQuad(float x, float y, float width, float height, const glm::vec4& colo
     DrawQuad(transform, uvStart, uvEnd, color);
 }
 
-} // Painter
+void Painter::DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color)
+{
+	KN_PROFILE_FUNC();
+
+	DrawQuad({ position.x, position.y, 0.0f }, size, color);
+}
+
+void Painter::DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color)
+{
+	KN_PROFILE_FUNC();
+
+	glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
+		* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
+
+	DrawQuad(transform, color);
+}
+
+void Painter::DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color)
+{
+	KN_PROFILE_FUNC();
+
+	DrawQuad( { position.x, position.y, 0.0f }, size, uvStart, uvEnd, tint_color);
+}
+
+void Painter::DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color)
+{
+	KN_PROFILE_FUNC();
+
+	glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
+		* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
+	DrawQuad(transform, uvStart, uvEnd, tint_color);
+}
+
+void Painter::DrawQuad(const glm::mat4& transform, const glm::vec4& color)
+{
+	DrawQuad(transform, glm::vec2(0.f), glm::vec2(1.f), color);
+}
+
+void Painter::DrawQuad(const glm::mat4& transform)
+{
+	KN_PROFILE_FUNC();
+
+	DrawQuad(transform, glm::vec4(1.0f));
+}
 
 } // Kinai

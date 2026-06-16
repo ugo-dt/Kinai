@@ -125,12 +125,8 @@ void Application::Run()
 
 		if (!_minimized)
 		{
-			printf("layer count %zu\n", _layerStack.size());
 			for (auto& layer : _layerStack)
-			{
 				layer->OnUpdate(_time.delta);
-				printf("layer %s onupdate\n", layer->GetName().c_str());
-			}
 			for (auto& layer : _layerStack)
 				layer->OnRender();
 			_time.frames++;

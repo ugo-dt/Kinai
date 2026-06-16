@@ -10,10 +10,7 @@
 namespace Kinai
 {
 
-namespace Painter
-{
-
-enum BlendMode
+enum class BlendMode
 {
 	None = 0,
 	Blend,
@@ -25,77 +22,78 @@ enum BlendMode
 	_BlendMode_NUM
 };
 
-void Init();
-void Shutdown();
+constexpr uint32_t MAX_QUADS = 20000;
+constexpr uint32_t MAX_VERTICES = MAX_QUADS * 4;
+constexpr uint32_t MAX_INDICES = MAX_QUADS * 6;
+constexpr uint32_t MAX_TEXTURE_SLOTS = 4;
 
-void BeginPass();
-void EndPass();
-void SetViewport(int x, int y, int width, int height);
-
-void SetImage(int channel, const Ref<Texture2D>& texture);
-void ResetImage(int channel = 0);
-void SetBlendMode(BlendMode mode);
-void ResetBlendMode();
-
-void DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color);
-void DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color);
-void DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color = glm::vec4(1.0f));
-void DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color = glm::vec4(1.0f));
-void DrawQuad(const glm::mat4& transform);
-void DrawQuad(const glm::mat4& transform, const glm::vec4& color);
-void DrawQuad(const glm::mat4& transform, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color = glm::vec4(1.0f));
-void DrawQuad(float x, float y, float width, float height, const glm::vec4& color);
-
-void MakePipelines();
-void Flush();
-void StartBatch();
-void NextBatch();
-
-inline void DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color)
+struct QuadVertex
 {
-	KN_PROFILE_FUNC();
+	glm::vec4 position;
+	glm::vec4 color;
+};
 
-	DrawQuad({ position.x, position.y, 0.0f }, size, color);
-}
-
-inline void DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color)
+struct State
 {
-	KN_PROFILE_FUNC();
+	OrthographicCamera camera = OrthographicCamera(0.0f, 1.0f, 1.0f, 0.0f);
+	glm::vec4 color;
+	BlendMode mode = BlendMode::None;
+	Ref<Pipeline> pipeline = nullptr;
+	std::vector<Ref<Texture2D>> texture_slots;
+	Ref<Bindings> bindings = nullptr;
+	QuadVertex *vertex_buffer_base = nullptr;
+	QuadVertex *vertex_buffer_ptr = nullptr;
+	uint32_t index = 0;
+	bool in_pass = false;
+};
 
-	glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
-		* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
-
-	DrawQuad(transform, color);
-}
-
-inline void DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color)
+struct PainterContext
 {
-	KN_PROFILE_FUNC();
+	State state;
 
-	DrawQuad( { position.x, position.y, 0.0f }, size, uvStart, uvEnd, tint_color);
-}
+	Ref<VertexArray> vao = nullptr;
+	Ref<Shader> shader = nullptr;
+	Ref<VertexBuffer> vertex_buf = nullptr;
+	Ref<Texture2D> white_texture = nullptr;
+	std::array<Ref<Pipeline>,
+		(int)PrimitiveType::_PrimitiveType_NUM * (int)BlendMode::_BlendMode_NUM> pipelines;
+};
 
-inline void DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color)
+class Painter
 {
-	KN_PROFILE_FUNC();
+public:
+	static void Init();
+	static void Shutdown();
 
-	glm::mat4 transform = glm::translate(glm::mat4(1.0f), position)
-		* glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
-	DrawQuad(transform, uvStart, uvEnd, tint_color);
-}
+	static void BeginPass();
+	static void EndPass();
+	static void SetViewport(int x, int y, int width, int height);
 
-inline void DrawQuad(const glm::mat4& transform, const glm::vec4& color)
-{
-	DrawQuad(transform, glm::vec2(0.f), glm::vec2(1.f), color);
-}
+	static void SetImage(int channel, const Ref<Texture2D>& texture);
+	static void ResetImage(int channel = 0);
+	static void SetBlendMode(BlendMode mode);
+	static void ResetBlendMode();
 
-inline void DrawQuad(const glm::mat4& transform)
-{
-	KN_PROFILE_FUNC();
+	static void DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color);
+	static void DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color);
+	static void DrawQuad(const glm::vec2& position, const glm::vec2& size, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color = glm::vec4(1.0f));
+	static void DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color = glm::vec4(1.0f));
+	static void DrawQuad(const glm::mat4& transform);
+	static void DrawQuad(const glm::mat4& transform, const glm::vec4& color);
+	static void DrawQuad(const glm::mat4& transform, const glm::vec2& uvStart, const glm::vec2& uvEnd, const glm::vec4& tint_color = glm::vec4(1.0f));
+	static void DrawQuad(float x, float y, float width, float height, const glm::vec4& color);
 
-	DrawQuad(transform, glm::vec4(1.0f));
-}
+	static void MakePipelines();
+	static void Flush();
+	static void StartBatch();
+	static void NextBatch();
 
-} // Painter
+private:
+	static Ref<Pipeline>& LookupPipeline(PrimitiveType type, BlendMode mode);
+
+private:
+	static PainterContext context;
+
+}; // Painter
 
 } // Kinai
