@@ -10,7 +10,7 @@ void	SigIntHandler(int signum)
 
 	KN_NOTUSED(signum);
 	Log::Info("[Kinai] Caught signal interrupt. Stopping.");
-	Application::Get().Close();
+	Kinai::Quit();
 }
 
 HeadlessWindow::HeadlessWindow(const WindowProps& props)

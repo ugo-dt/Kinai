@@ -10,3 +10,4 @@ bindings/output/json
 bindings/output/xml
 bindings/generator/Kinako/__pycache__/*.pyc
 examples/bin
+bin

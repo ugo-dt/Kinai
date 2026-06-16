@@ -39,9 +39,8 @@ void	AppLayer::OnUpdate(KN_UNUSED float delta)
 {
 	bool status;
 
-	// Close the window with the Escape key
 	if (Kinai::Input::IsKeyPressed(Kinai::Key::Escape))
-		Kinai::Application::Get().Close();
+		Kinai::Quit();
 
 	SDL_GPUCommandBuffer *cmdbuf = SDL_AcquireGPUCommandBuffer(_device);
 	KN_ASSERT(cmdbuf, "SDL_AcquireGPUCommandBuffer(): {}", SDL_GetError());
@@ -66,10 +65,8 @@ void	AppLayer::OnUpdate(KN_UNUSED float delta)
 // Condensed for brevity
 Kinai::Application*	Kinai::CreateApplication(KN_UNUSED int argc, KN_UNUSED char **argv)
 {
-	struct App : public Kinai::Application
-	{
-		App(): Kinai::Application({ .name = "Kinai SDL_gpu", }) { PushLayer(new AppLayer()); }
-		~App() = default;
+	struct App : public Kinai::Application {
+		App(): Kinai::Application({ .name = "Kinai SDL_gpu", }){ PushLayer<AppLayer>(); }
 	};
 	return new App();
 }

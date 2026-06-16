@@ -181,7 +181,7 @@ void SDLWindow::_handle_event(SDL_Event &event)
 	switch (event.type)
 	{
 	case SDL_EVENT_QUIT:
-		Application::Get().Close();
+		Kinai::Quit();
 		break;
 	case SDL_EVENT_KEY_DOWN:
 	case SDL_EVENT_KEY_UP:
@@ -206,6 +206,7 @@ void SDLWindow::_handle_event(SDL_Event &event)
 
 void SDLWindow::OnUpdate()
 {
+	KN_ASSERT(_handle, "invalid window handle!");
 	SDL_Event	event;
 
 	while (SDL_PollEvent(&event))
@@ -270,6 +271,7 @@ bool SDLWindow::SetEventCallback(const EventCallback &callback)
 
 bool SDLWindow::SetTitle(const std::string &title)
 {
+	KN_ASSERT(_handle, "invalid window handle!");
 	return SDL_SetWindowTitle(_handle, title.c_str());
 }
 
@@ -278,6 +280,7 @@ bool SDLWindow::SetIcon(const std::string &icon_path)
 	//TODO
 	// Log::Warn("SDL version 3.4.0 or higher is required");
 	return false;
+	KN_ASSERT(_handle, "invalid window handle!");
 	// KN_ASSERT(icon_path.ends_with(".png"), "expected .png file, got {}", icon_path);
 	SDL_Surface *icon = SDL_LoadPNG(icon_path.c_str());
 	if (icon)
@@ -292,44 +295,52 @@ bool SDLWindow::SetIcon(const std::string &icon_path)
 
 bool SDLWindow::GetRelativeMouseMode() const
 {
+	KN_ASSERT(_handle, "invalid window handle!");
 	return SDL_GetWindowRelativeMouseMode(_handle);
 }
 
 bool SDLWindow::SetRelativeMouseMode(bool enabled)
 {
+	KN_ASSERT(_handle, "invalid window handle!");
 	return SDL_SetWindowRelativeMouseMode(_handle, enabled);
 }
 
 void SDLWindow::WarpMouse(float x, float y)
 {
+	KN_ASSERT(_handle, "invalid window handle!");
 	SDL_WarpMouseInWindow(_handle, x, y);
 }
 
 bool SDLWindow::ToggleFullscreen()
 {
 	Uint32 flags = SDL_GetWindowFlags(_handle);
+	KN_ASSERT(_handle, "invalid window handle!");
 	return SDL_SetWindowFullscreen(_handle, !(flags & SDL_WINDOW_FULLSCREEN));
 }
 
 bool SDLWindow::Hide()
 {
 	KN_PROFILE_FUNC();
+	KN_ASSERT(_handle, "invalid window handle!");
 	return SDL_HideWindow(_handle);
 }
 
 bool SDLWindow::Show()
 {
 	KN_PROFILE_FUNC();
+	KN_ASSERT(_handle, "invalid window handle!");
 	return SDL_ShowWindow(_handle);
 }
 
 bool SDLWindow::IsFocused() const
 {
+	KN_ASSERT(_handle, "invalid window handle!");
 	return SDL_GetWindowFlags(_handle) & SDL_WINDOW_INPUT_FOCUS;
 }
 
 bool SDLWindow::IsHovered() const
 {
+	KN_ASSERT(_handle, "invalid window handle!");
 	return SDL_GetWindowFlags(_handle) & SDL_WINDOW_MOUSE_FOCUS;
 }
 

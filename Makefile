@@ -89,35 +89,31 @@ TARGET_LC := $(shell echo $(KINAI_TARGET) | tr '[:upper:]' '[:lower:]')
 
 # Windows
 ifneq ($(filter $(TARGET_LC),windows win win32 win64),)
-    KINAI_TARGET := $(TARGET_WIN32)
+  KINAI_TARGET := $(TARGET_WIN32)
 # Linux
 else ifneq ($(filter $(TARGET_LC),linux),)
-    KINAI_TARGET := $(TARGET_LINUX)
+  KINAI_TARGET := $(TARGET_LINUX)
 # MacOS
 else ifneq ($(filter $(TARGET_LC),mac macos osx darwin),)
-    KINAI_TARGET := $(TARGET_MACOS)
+  KINAI_TARGET := $(TARGET_MACOS)
 # Emscripten
 else ifneq ($(filter $(TARGET_LC),web wgpu emsc emscripten wasm),)
-    KINAI_TARGET := $(TARGET_EMSCRIPTEN)
+  KINAI_TARGET := $(TARGET_EMSCRIPTEN)
 
 else ifeq ($(KINAI_TARGET),auto)
-
-    ifeq ($(KINAI_HOST_PLATFORM),linux)
-
-        ifneq (,$(findstring microsoft-standard-WSL2,$(shell uname -r)))
-            KINAI_TARGET := $(TARGET_WIN32)
-        else
-            KINAI_TARGET := $(TARGET_LINUX)
-        endif
-
-    else ifeq ($(KINAI_HOST_PLATFORM),darwin)
-        KINAI_TARGET := $(TARGET_MACOS)
-
+  ifeq ($(KINAI_HOST_PLATFORM),linux)
+    ifneq (,$(findstring microsoft-standard-WSL2,$(shell uname -r)))
+      KINAI_TARGET := $(TARGET_WIN32)
     else
-        KINAI_TARGET := $(KINAI_HOST_PLATFORM)
+      KINAI_TARGET := $(TARGET_LINUX)
     endif
+  else ifeq ($(KINAI_HOST_PLATFORM),darwin)
+    KINAI_TARGET := $(TARGET_MACOS)
+  else
+    KINAI_TARGET := $(KINAI_HOST_PLATFORM)
+  endif
 else
-    $(error Unknown target '$(KINAI_TARGET)')
+  $(error Unknown target '$(KINAI_TARGET)')
 endif
 
 # ==============================================================================
@@ -131,13 +127,13 @@ ifeq ($(KINAI_BUILD),debug)
     KINAI_CFLAGS   += -DKINAI_DEBUG -ggdb -O0
     KINAI_CXXFLAGS += -DKINAI_DEBUG -ggdb -O0
 else ifeq ($(KINAI_BUILD),dev)
-    KINAI_CFLAGS   += -O2 -DKINAI_DEV
-    KINAI_CXXFLAGS += -O2 -DKINAI_DEV
+  KINAI_CFLAGS   += -O2 -DKINAI_DEV
+  KINAI_CXXFLAGS += -O2 -DKINAI_DEV
 else ifeq ($(KINAI_BUILD),release)
-    KINAI_CFLAGS   += -O3 -DKINAI_RELEASE
-    KINAI_CXXFLAGS += -O3 -DKINAI_RELEASE
+  KINAI_CFLAGS   += -O3 -DKINAI_RELEASE
+  KINAI_CXXFLAGS += -O3 -DKINAI_RELEASE
 else
-    $(error Unknown build '$(KINAI_BUILD)')
+  $(error Unknown build '$(KINAI_BUILD)')
 endif
 
 # ==============================================================================
@@ -146,13 +142,13 @@ endif
 BACKEND_LC := $(shell echo $(KINAI_BACKEND) | tr '[:upper:]' '[:lower:]')
 
 ifneq ($(filter $(BACKEND_LC),opengl gl),)
-    KINAI_BACKEND := OpenGL
-    KINAI_CXXFLAGS += -DKINAI_OPENGL
+ KINAI_BACKEND := OpenGL
+ KINAI_CXXFLAGS += -DKINAI_OPENGL
 else ifneq ($(filter $(BACKEND_LC),headless null none),)
-    KINAI_BACKEND := Headless
-    KINAI_CXXFLAGS += -DKINAI_HEADLESS
+  KINAI_BACKEND := Headless
+  KINAI_CXXFLAGS += -DKINAI_HEADLESS
 else
-    $(error Unknown backend '$(KINAI_BACKEND)')
+  $(error Unknown backend '$(KINAI_BACKEND)')
 endif
 
 # ==============================================================================
@@ -167,50 +163,55 @@ KINAI_INCLUDE := -I $(KINAI_PATH)/include -I $(KINAI_PATH)/include/Kinai -I $(KI
 
 # Platform overrides
 ifeq ($(KINAI_TARGET),$(TARGET_WIN32))
-    EXE := .exe
-    CC  := $(KINAI_ARCH)-w64-mingw32-gcc
-    CXX := $(KINAI_ARCH)-w64-mingw32-g++
-    AR  := $(KINAI_ARCH)-w64-mingw32-ar
-    KINAI_LDFLAGS += \
-	    -lmingw32 \
-	    -lopengl32 \
-	    -lglu32 \
-	    -static
+  EXE := .exe
+  DLL := .dll
+  KINAI_SHARED := -s -shared -Wl,--subsystem,windows,--out-implib,$(notdir $@).a
+  CC  := $(KINAI_ARCH)-w64-mingw32-gcc
+  CXX := $(KINAI_ARCH)-w64-mingw32-g++
+  AR  := $(KINAI_ARCH)-w64-mingw32-ar
+  KINAI_LDFLAGS += \
+    -lmingw32 \
+    -lopengl32 \
+    -lglu32 \
+    -static
 else ifeq ($(KINAI_TARGET),$(TARGET_LINUX))
-    EXE := .out
-    KINAI_LDFLAGS += -lm -lGL
+  EXE := .out
+  DLL := .so
+  KINAI_SHARED := -shared -fPIC
+  KINAI_LDFLAGS += -lm -lGL
 else ifeq ($(KINAI_TARGET),$(TARGET_MACOS))
-    CC  := clang
-    CXX := clang++
-    KINAI_INCLUDE += -I/opt/homebrew/include
-    KINAI_LDFLAGS += \
-        -framework OpenGL \
-        -framework Cocoa \
-        -framework IOKit \
-        -framework CoreVideo
+  CC  := clang
+  CXX := clang++
+  DLL := .dylib
+  KINAI_SHARED := -shared -fPIC
+  KINAI_INCLUDE += -I/opt/homebrew/include
+  KINAI_LDFLAGS += \
+    -framework OpenGL \
+    -framework Cocoa \
+    -framework IOKit \
+    -framework CoreVideo
 else ifeq ($(KINAI_TARGET),$(TARGET_EMSCRIPTEN))
-    EXE := .html
-    CC    := emcc
-    CXX   := em++
-    AR    := emar
-    CMAKE := emcmake cmake
-    KINAI_CXXFLAGS += -Wno-experimental -DIMGUI_IMPL_OPENGL_ES3
-    KINAI_LDFLAGS += \
-        -sUSE_SDL=3 \
-        -sALLOW_MEMORY_GROWTH \
-        -sWASM=1 \
-        -sUSE_WEBGL2=1 \
-        -sMIN_WEBGL_VERSION=2
+  EXE := .html
+  CC  := emcc
+  CXX   := em++
+  AR  := emar
+  CMAKE := emcmake cmake
+  KINAI_CXXFLAGS += -Wno-experimental -DIMGUI_IMPL_OPENGL_ES3
+  KINAI_LDFLAGS += \
+    -sUSE_SDL=3 \
+    -sALLOW_MEMORY_GROWTH \
+    -sWASM=1 \
+    -sUSE_WEBGL2=1 \
+    -sMIN_WEBGL_VERSION=2
 endif
 
 # ==============================================================================
 # Directories
 # ==============================================================================
-OBJ_ROOT := $(KINAI_PATH)/.obj
-KINAI_OBJ_DIR := $(OBJ_ROOT)/$(KINAI_TARGET)/$(KINAI_ARCH)/$(KINAI_BACKEND)/$(KINAI_BUILD)
+OBJ_ROOT          := $(KINAI_PATH)/.obj
+KINAI_OBJ_DIR     := $(OBJ_ROOT)/$(KINAI_TARGET)/$(KINAI_ARCH)/$(KINAI_BACKEND)/$(KINAI_BUILD)
 KINAI_LIB_OBJ_DIR := $(KINAI_OBJ_DIR)/lib
-KINAI_BIN_DIR := $(KINAI_PATH)/bin/$(KINAI_TARGET)/$(KINAI_ARCH)/$(KINAI_BACKEND)/$(KINAI_BUILD)
-KINAI := $(KINAI_BIN_DIR)/libKinai.a
+KINAI_BIN_DIR     := $(KINAI_PATH)/bin/$(KINAI_TARGET)/$(KINAI_ARCH)/$(KINAI_BACKEND)/$(KINAI_BUILD)
 
 # ==============================================================================
 # Dependencies
@@ -226,13 +227,13 @@ KINAI_GLM_DIR   := $(KINAI_LIB_DIR)/glm
 
 # Includes
 KINAI_INCLUDE += \
-    -I$(KINAI_LIB_DIR) \
-    -I$(KINAI_GLAD_DIR)/include \
-    -I$(KINAI_SDL3_DIR)/include \
-    -I$(KINAI_IMGUI_DIR) \
-    -I$(KINAI_IMGUI_DIR)/backends \
-    -I$(KINAI_FMT_DIR)/include \
-    -I$(KINAI_GLM_DIR)
+  -I$(KINAI_LIB_DIR) \
+  -I$(KINAI_GLAD_DIR)/include \
+  -I$(KINAI_SDL3_DIR)/include \
+  -I$(KINAI_IMGUI_DIR) \
+  -I$(KINAI_IMGUI_DIR)/backends \
+  -I$(KINAI_FMT_DIR)/include \
+  -I$(KINAI_GLM_DIR)
 
 # Compile the libs in a separate 'lib' folder to avoid recompiling
 KINAI_LIB_OBJ_DIR := $(KINAI_OBJ_DIR)/lib
@@ -268,12 +269,12 @@ SDL3_BUILD_DIR = $(KINAI_SDL3_DIR)/build_$(KINAI_TARGET)_$(KINAI_ARCH)_$(KINAI_B
 
 ifeq ($(KINAI_BACKEND),OpenGL)
 	ifeq ($(KINAI_TARGET),$(TARGET_MACOS))
-        KINAI_LDFLAGS += $(shell pkgconf --libs SDL3)
+    KINAI_LDFLAGS += $(shell pkgconf --libs SDL3)
 	else ifeq ($(KINAI_TARGET),$(TARGET_WIN32))
-        KINAI_LDFLAGS += $(KINAI_SDL3_DIR)/bin/$(KINAI_TARGET)/libSDL3.dll.a
+    KINAI_LDFLAGS += $(KINAI_SDL3_DIR)/bin/$(KINAI_TARGET)/libSDL3.dll.a
 	else ifeq ($(KINAI_TARGET),$(TARGET_LINUX))
-        LIB_SDL3 = $(SDL3_BUILD_DIR)/libSDL3.so
-        KINAI_LDFLAGS += -L $(SDL3_BUILD_DIR) -lSDL3
+    LIB_SDL3 = $(SDL3_BUILD_DIR)/libSDL3.so
+    KINAI_LDFLAGS += -L $(SDL3_BUILD_DIR) -lSDL3
 	endif
 endif
 
@@ -297,9 +298,9 @@ $(KINAI_LIB_OBJ_DIR)/stb_image/%.o: $(KINAI_STB_DIR)/%.c
 KINAI_LIB_OBJS += $(STB_IMAGE_OBJS)
 
 # fmt
-FMT_BUILD_DIR		= $(KINAI_FMT_DIR)/build_$(KINAI_TARGET)_$(KINAI_ARCH)_$(KINAI_BUILD)
-FMT_MAKEFILE		= $(FMT_BUILD_DIR)/Makefile
-LIB_FMT				= $(FMT_BUILD_DIR)/libfmt.a
+FMT_BUILD_DIR = $(KINAI_FMT_DIR)/build_$(KINAI_TARGET)_$(KINAI_ARCH)_$(KINAI_BUILD)
+FMT_MAKEFILE  = $(FMT_BUILD_DIR)/Makefile
+LIB_FMT       = $(FMT_BUILD_DIR)/libfmt.a
 
 $(FMT_MAKEFILE): $(KINAI_FMT_DIR)/CMakeLists.txt
 	@echo "$(COLOR_GREY)Configuring fmt...$(COLOR_DEFAULT)"
@@ -324,14 +325,14 @@ KINAI_SRC = $(wildcard					\
 
 # Backend-specific additions
 ifeq ($(KINAI_BACKEND),OpenGL)
-    KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/OpenGL/*.cpp)
-    ifeq ($(KINAI_TARGET),$(TARGET_EMSCRIPTEN))
-        KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/Emscripten/*.cpp)
-    else
-        KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/SDL/*.cpp)
-    endif
-else # Not OpenGL
-    KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/Headless/*.cpp)
+  KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/OpenGL/*.cpp)
+  ifeq ($(KINAI_TARGET),$(TARGET_EMSCRIPTEN))
+    KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/Emscripten/*.cpp)
+  else
+    KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/SDL/*.cpp)
+  endif
+else ifeq ($(KINAI_BACKEND),Headless)
+  KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/Headless/*.cpp)
 endif
 
 # Object generation	
@@ -340,6 +341,31 @@ KINAI_OBJS = $(patsubst $(KINAI_PATH)/src/%.cpp,$(KINAI_OBJ_DIR)/%.o,$(KINAI_SRC
 # ==============================================================================
 # Build Rules
 # ==============================================================================
+ifdef KINAI_SHARED
+KINAI := $(KINAI_BIN_DIR)/libKinai$(DLL)
+
+# Pattern rule
+$(KINAI_OBJ_DIR)/%.o: $(KINAI_PATH)/src/%.cpp
+	@echo "[CXX] $<"
+	$(KINAI_Q)mkdir -p $(dir $@)
+	$(KINAI_Q)$(CXX) $(KINAI_CXXFLAGS) $(KINAI_INCLUDE) -fPIC -c $< -o $@
+
+# Library creation
+all: $(KINAI)
+
+$(KINAI): $(LIB_FMT) $(LIB_SDL3) $(KINAI_LIB_OBJS) $(KINAI_OBJS)
+	@echo "[ LD] $@"
+	$(KINAI_Q)mkdir -p $(dir $@)
+	$(KINAI_Q)$(CXX) -o $@ $(KINAI_OBJS) $(KINAI_LIB_OBJS) $(KINAI_LDFLAGS) $(KINAI_SHARED)
+	@echo "$(KINAI_COLOR_GREEN)Successfully built shared library '$(notdir $(KINAI))' ($(KINAI_BACKEND) - $(KINAI_TARGET) - $(KINAI_BUILD))$(KINAI_COLOR_DEFAULT)"
+else
+KINAI := $(KINAI_BIN_DIR)/libKinai.a
+
+# ifdef KINAI_SHARED
+#   KINAI := $(KINAI_BIN_DIR)/libKinai$(DLL)
+# 	KINAI_LDFLAGS += $(KINAI_SHARED)
+# endif
+
 # define compile-c
 # 	@echo "[CC ] $<"
 # 	$(KINAI_Q)mkdir -p $(dir $@)
@@ -366,6 +392,7 @@ $(KINAI): $(LIB_FMT) $(LIB_SDL3) $(KINAI_LIB_OBJS) $(KINAI_OBJS)
 	$(KINAI_Q)mkdir -p $(dir $@)
 	$(KINAI_Q)$(AR) $(ARFLAGS) $(KINAI) $(KINAI_OBJS) $(KINAI_LIB_OBJS)
 	@echo "$(KINAI_COLOR_GREEN)Successfully built $(notdir $(KINAI)) ($(KINAI_BACKEND) - $(KINAI_TARGET) - $(KINAI_BUILD))$(KINAI_COLOR_DEFAULT)"
+endif
 
 # ==============================================================================
 # Utility
@@ -407,6 +434,7 @@ ifdef KINAI_REMOVE_PREFIX
   INCLUDE := $(KINAI_INCLUDE)
   LDFLAGS := $(KINAI_LDFLAGS)
   CXXFLAGS := $(KINAI_CXXFLAGS)
+	SHARED := $(KINAI_SHARED)
   Q := $(KINAI_Q)
   COLOR_DEFAULT := $(KINAI_COLOR_DEFAULT)
   COLOR_GREEN := $(KINAI_COLOR_GREEN)

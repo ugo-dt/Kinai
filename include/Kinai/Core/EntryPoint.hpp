@@ -1,4 +1,7 @@
-#pragma once
+#ifdef KINAI_ENTRYPOINT_INCLUDED
+#error "Kinai/Core/EntryPoint.hpp should only be included once"
+#endif
+#define KINAI_ENTRYPOINT_INCLUDED (1)
 
 #include "Kinai/Core/Application.hpp"
 #include "Kinai/Core/Core.hpp"
@@ -7,10 +10,10 @@
 	#include "Kinai/Platform/Emscripten/Emscripten.hpp"
 #endif
 
-bool	g_KinaiApplicationRunning = true;
-
 namespace Kinai
 {
+
+bool IsRunning();
 	
 #if defined(KN_PLATFORM_DESKTOP)
 
@@ -18,10 +21,10 @@ int	Main(int argc, char **argv)
 {
 	KN_PROFILE_FUNC();
 
-	Kinai::Log::Init();
-	while (g_KinaiApplicationRunning)
+	Log::Init();
+	while (Kinai::IsRunning())
 	{
-		Kinai::Application	*app = ::Kinai::CreateApplication(argc, argv);
+		Application	*app = ::Kinai::CreateApplication(argc, argv);
 		app->Run();
 		delete app;
 	}
@@ -40,7 +43,7 @@ int	Main(int argc, char **argv)
 		{
 			KN_PROFILE_FUNC();
 			Application::Get().Run();
-			return g_KinaiApplicationRunning;
+			return Kinai::IsRunning();
 		}, 0);
 	Kinai::CreateApplication(argc, argv);
 	return EXIT_SUCCESS;

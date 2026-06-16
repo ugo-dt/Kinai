@@ -11,7 +11,7 @@
 #include "Kinai/Events/MouseEvent.hpp"
 #include "Kinai/ImGui/ImGuiLayer.hpp"
 
-extern bool	g_KinaiApplicationRunning;
+// extern bool	g_KinaiApplicationRunning;
 
 namespace Kinai
 {
@@ -46,6 +46,16 @@ public:
 	void PushLayer(Args&&... args)
 	{
 		_layerStack.push_back(std::make_unique<T>(std::forward<Args>(args)...));
+	}
+
+	void PushLayer(Layer *layer)
+	{
+		_layerStack.push_back(std::unique_ptr<Layer>(layer));
+	}
+
+	void PopLayer()
+	{
+		_layerStack.pop_back();
 	}
 
 	template <typename T>
@@ -109,6 +119,9 @@ void	Application::OnEvent(EventType& event)
 			break;
 	}
 }
+
+bool IsRunning();
+void Quit();
 
 extern Application	*CreateApplication(int argc, char **argv);
 

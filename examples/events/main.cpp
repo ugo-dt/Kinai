@@ -38,7 +38,7 @@ public:
 		switch (event.GetKeyCode())
 		{
 			case Kinai::Key::Escape:
-				Kinai::Application::Get().Close();
+				Kinai::Quit();
 				break;
 			default:
 				break;

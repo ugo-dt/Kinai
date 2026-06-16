@@ -4,8 +4,23 @@
 #include "Kinai/Renderer/2D/Painter.hpp"
 #include "Kinai/Debug/Text/Text.hpp"
 
+bool g_KinaiApplicationRunning = true;
+bool g_KinaiRunning = true;
+
 namespace Kinai
 {
+
+bool IsRunning()
+{
+	return g_KinaiRunning;
+}
+
+void Quit()
+{
+	if (g_KinaiApplicationRunning)
+		Application::Get().Close();
+	g_KinaiRunning = false;
+}
 
 Application*	Application::_instance;
 
@@ -17,6 +32,7 @@ Application::Application(const ApplicationConfig &config)
 	  _minimized(false)
 {
 	KN_PROFILE_FUNC();
+	g_KinaiApplicationRunning = true;
 
 	#ifdef KINAI_PROFILER
 		Kinai::Profiler::Start(config.name);
@@ -72,7 +88,7 @@ Application::~Application()
 #endif
 }
 
-void	Application::Close()
+void Application::Close()
 {
 	KN_PROFILE_FUNC();
 
@@ -83,7 +99,7 @@ void	Application::Close()
 #endif
 }
 
-void	Application::Run()
+void Application::Run()
 {
 	KN_PROFILE_FUNC();
 
@@ -109,8 +125,12 @@ void	Application::Run()
 
 		if (!_minimized)
 		{
+			printf("layer count %zu\n", _layerStack.size());
 			for (auto& layer : _layerStack)
+			{
 				layer->OnUpdate(_time.delta);
+				printf("layer %s onupdate\n", layer->GetName().c_str());
+			}
 			for (auto& layer : _layerStack)
 				layer->OnRender();
 			_time.frames++;

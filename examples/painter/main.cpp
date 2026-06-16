@@ -148,8 +148,8 @@ public:
 	  	  _camera(Kinai::OrthographicCameraControllerConfig{
 		  	.enable_zoom = true,
 	  	  }),
-	  	  _cobblestone(Kinai::Texture2D::Create("assets/cobblestone.png")),
-	  	  _noise(Kinai::Texture2D::Create("assets/seamless_noise.png")),
+	  	  _cobblestone(Kinai::Texture2D::Create(ASSETS_DIR "/textures/cobblestone.png")),
+	  	  _noise(Kinai::Texture2D::Create(ASSETS_DIR "/textures/seamless_noise.png")),
 	  	//   _shader(Kinai::Renderer2D::MakeShader("customquad", custom_shader_vs, custom_shader_fs)),
 		  _scroll1(0.05f),
 		  _scroll2(-0.05f),
@@ -213,7 +213,7 @@ public:
 		// ImGui::ColorEdit4("Top color", (float*)&_top_color);
 		// ImGui::SliderFloat("Alpha cap", (float*)&_alpha, 0.0, 1.f, nullptr);
 
-		ImGui::SliderFloat2("Position", (float*)&pos, 0.f, 10000.f, "%.1f");
+		ImGui::SliderFloat2("Position", (float*)&pos, 0.f, 2000.f, "%.1f");
 
 		const char* items[] = {
 			"KC853",
@@ -257,7 +257,7 @@ public:
 		switch (event.GetKeyCode())
 		{
 			case Kinai::Key::Escape:
-				Kinai::Application::Get().Close();
+				Kinai::Quit();
 				break;
 			default:
 				break;

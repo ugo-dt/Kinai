@@ -7,6 +7,8 @@ include $(KINAI_PATH)/Makefile
 EXAMPLES_DIR = $(KINAI_PATH)/examples
 EXAMPLES = $(filter-out $(EXAMPLES_DIR)/assets,$(wildcard $(EXAMPLES_DIR)/*))
 
+$(info [Kinai] Examples: $(EXAMPLES))
+
 INCLUDE += -I $(KINAI_PATH)/examples/assets
 
 define __make_example_rule =
@@ -54,11 +56,11 @@ example:
 hello_kinai:
 	$(Q)$(MAKE) example 1=hello_kinai
 
-kinai_cube:
-	$(Q)$(MAKE) example 1=kinai_cube
+cube:
+	$(Q)$(MAKE) example 1=cube
 
-kinai_events:
-	$(Q)$(MAKE) example 1=kinai_events
+events:
+	$(Q)$(MAKE) example 1=events
 
-kinai_2d:
-	$(Q)$(MAKE) example 1=kinai_2d
+painter:
+	$(Q)$(MAKE) example 1=painter

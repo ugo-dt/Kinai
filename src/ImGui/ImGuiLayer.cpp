@@ -5,7 +5,7 @@ namespace Kinai
 {
 
 ImGuiLayer::ImGuiLayer()
-	: _block_events(false)
+	: Layer("Kinai ImGuiLayer"), _block_events(false)
 {
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
