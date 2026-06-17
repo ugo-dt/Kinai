@@ -13,3 +13,6 @@
 [submodule "lib/SDL3"]
 	path = lib/SDL3
 	url = https://github.com/libsdl-org/SDL
+[submodule "tools/shdc"]
+	path = tools/shdc
+	url = https://github.com/ugo-dt/shdc.git

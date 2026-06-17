@@ -116,7 +116,15 @@ int	HeadlessFramebuffer::ReadPixel(uint32_t attachmentIndex, int x, int y)
 	return 0;
 }
 
-void	HeadlessFramebuffer::ClearAttachment(uint32_t attachmentIndex, int value)
+void HeadlessFramebuffer::BindAttachment(uint32_t attachmentIndex, uint32_t slot)
+{
+	KN_PROFILE_FUNC();
+
+	KN_NOTUSED(attachmentIndex);
+	KN_NOTUSED(slot);
+}
+
+void HeadlessFramebuffer::ClearAttachment(uint32_t attachmentIndex, int value)
 {
 	KN_PROFILE_FUNC();
 

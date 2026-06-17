@@ -31,7 +31,8 @@ public:
 		{
 			while (_running)
 			{
-				(void)system("make > /dev/null"); // TODO: fork and exec
+				// TODO: fork and exec
+				(void)system("make > /dev/null");
 				constexpr std::chrono::milliseconds interval(500);
 				std::this_thread::sleep_for(interval);
 			}
@@ -55,24 +56,9 @@ public:
 	{
 		assert(_state);
 
-		_lib_handle = dlopen(LIBRARY_NAME, RTLD_NOW);
-		if (!_lib_handle)
-		{
-			Kinai::Log::Critical("Failed to load {}: {}", LIBRARY_NAME, dlerror());
-			return;
-		}
-
 		using CreateAppLayerFunc = AppLayer* (*)(AppState*);
-		auto CreateAppLayer_fn = (CreateAppLayerFunc)dlsym(_lib_handle, "CreateAppLayer");
-
-		if (!CreateAppLayer_fn)
-		{
-			dlclose(_lib_handle);
-			_lib_handle = nullptr;
-
-			Kinai::Log::Critical("Failed to find CreateAppLayer symbol in {}", LIBRARY_NAME);
-			return;
-		}
+		_lib_handle = SDL_LoadObject(LIBRARY_NAME);
+		CreateAppLayerFunc CreateAppLayer_fn = (CreateAppLayerFunc)SDL_LoadFunction(_lib_handle, "CreateAppLayer");
 
 		_app_layer = CreateAppLayer_fn(_state);
 		Kinai::Application::Get().PushLayer(_app_layer);
@@ -90,7 +76,8 @@ public:
 
 		if (_lib_handle)
 		{
-			dlclose(_lib_handle);
+			// dlclose(_lib_handle);
+			SDL_UnloadObject((SDL_SharedObject*)_lib_handle);
 			_lib_handle = nullptr;
 		}
 	}
@@ -117,7 +104,7 @@ public:
 private:
 	AppState* _state;
 
-	void* _lib_handle;
+	SDL_SharedObject *_lib_handle;
 	AppLayer* _app_layer;
 
 	bool _attach;

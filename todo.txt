@@ -1,0 +1,2 @@
+don't abort on invalid shader (hotreload): shdc should throw an error before creating the file if it's invalid
+networking

@@ -16,12 +16,14 @@ HeadlessTexture2D::HeadlessTexture2D(const TextureConfig& config)
 	KN_NOTUSED(_data_format);
 }
 
-HeadlessTexture2D::HeadlessTexture2D(const std::string& path, const TextureConfig& config)
+HeadlessTexture2D::HeadlessTexture2D(const std::string& path, const TextureConfig& config, bool flip_vertically)
 	: _config(config),
 	  _path(path),
-	  _is_loaded(false)
+	  _is_loaded(false),
+	  _flip_vertically(flip_vertically)
 {
 	KN_PROFILE_FUNC();
+	KN_NOTUSED(_flip_vertically);
 }
 
 HeadlessTexture2D::~HeadlessTexture2D()

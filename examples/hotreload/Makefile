@@ -1,6 +1,6 @@
 BUILD = release
 KINAI_PATH = ../..
-KINAI_VERBOSE = 0
+KINAI_VERBOSE = 1
 KINAI_REMOVE_PREFIX = 1
 KINAI_BUILD_SHARED_LIB = 1
 include $(KINAI_PATH)/Makefile
@@ -22,6 +22,9 @@ GAME_OBJS = $(patsubst source/%.cpp,$(OBJ_DIR)/%.o,$(GAME_SRC))
 ASSETS_DIR = $(GAME_DIR)/../assets
 CXXFLAGS += -DASSETS_DIR=\"$(ASSETS_DIR)\" -DLIBRARY_NAME=\"$(GAME_LINK)\"
 INCLUDE += -I include/$(GAME_DIR) -I $(ASSETS_DIR)/shaders -I $(GAME_DIR)/source
+
+SHADERS_SRC = $(wildcard $(ASSETS_DIR)/shaders/*.glsl)
+SHADERS_INCLUDE = $(SHADERS_SRC:.glsl=.glsl.hpp)
 
 ifeq ($(TARGET),$(TARGET_EMSCRIPTEN))
   LDFLAGS += --preload-file $(ASSETS_DIR) -sEXPORTED_RUNTIME_METHODS=requestFullscreen
@@ -47,7 +50,7 @@ re::
 	$(Q)$(MAKE) $(NO_PRINT_DIRECTORY) fclean
 	$(Q)$(MAKE) $(NO_PRINT_DIRECTORY) all
 
-$(GAME): $(KINAI) $(GAME_OBJS)
+$(GAME): $(KINAI) $(SHADERS_INCLUDE) $(GAME_OBJS)
 	$(Q)mkdir -p $(dir $@)
 	@echo "[CXX] $(GAME)"
 	$(Q)$(CXX) -o $@ $(GAME_OBJS) $(LDFLAGS) $(SHARED) -L $(KINAI_BIN_DIR) -lKinai
@@ -57,10 +60,14 @@ $(GAME_LINK): $(GAME)
 	@echo "[LN] $@"
 	$(Q)ln -sf $(GAME) $@
 
-$(OBJ_DIR)/$(GAME_DIR)/%.o: source/$(GAME_DIR)/%.cpp
+$(OBJ_DIR)/$(GAME_DIR)/%.o: source/$(GAME_DIR)/%.cpp $(SHADERS_INCLUDE)
 	@echo "[CXX] $<"
 	$(Q)mkdir -p $(dir $@)
 	$(Q)$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
+
+$(ASSETS_DIR)/shaders/%.glsl.hpp: $(ASSETS_DIR)/shaders/%.glsl
+	@echo "[SHDC] $<"
+	$(Q)$(SHDC) -i $< -o $@ --slang glsl410:glsl300es -y
 
 $(OBJ_DIR)/reload/%.o: $(GAME_DIR)/%.cpp
 	@echo "[CXX] $<"

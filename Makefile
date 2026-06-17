@@ -60,9 +60,11 @@ endif
 # ==============================================================================
 # Configuration
 # ==============================================================================
-ifeq ($(KINAI_VERBOSE),0)
-    KINAI_Q := @
-    MAKEFLAGS += --no-print-directory
+ifneq ($(filter $(KINAI_VERBOSE),1 true yes ON on),)
+  KINAI_Q := @
+  MAKEFLAGS += --no-print-directory
+else
+  KINAI_FLAG_VERBOSE := 1
 endif
 
 KINAI_COLOR_DEFAULT := \033[39m
@@ -79,38 +81,46 @@ KINAI_COLOR_RED := \033[91m
 KINAI_HOST_PLATFORM := $(shell uname | tr '[:upper:]' '[:lower:]')
 KINAI_ARCH          := $(shell uname -m)
 
-TARGET_WIN32      := win32
-TARGET_LINUX      := linux
-TARGET_MACOS      := darwin
-TARGET_EMSCRIPTEN := emscripten
+KINAI_TARGET_WIN32      := win32
+KINAI_TARGET_LINUX      := linux
+KINAI_TARGET_MACOS      := darwin
+KINAI_TARGET_EMSCRIPTEN := emscripten
 
 # Normalize aliases
 TARGET_LC := $(shell echo $(KINAI_TARGET) | tr '[:upper:]' '[:lower:]')
 
 # Windows
 ifneq ($(filter $(TARGET_LC),windows win win32 win64),)
-  KINAI_TARGET := $(TARGET_WIN32)
+  KINAI_TARGET := $(KINAI_TARGET_WIN32)
+  KINAI_FLAG_TARGET_WIN32 := 1
 # Linux
 else ifneq ($(filter $(TARGET_LC),linux),)
-  KINAI_TARGET := $(TARGET_LINUX)
+  KINAI_TARGET := $(KINAI_TARGET_LINUX)
+  KINAI_FLAG_TARGET_LINUX := 1
 # MacOS
 else ifneq ($(filter $(TARGET_LC),mac macos osx darwin),)
-  KINAI_TARGET := $(TARGET_MACOS)
+  KINAI_TARGET := $(KINAI_TARGET_MACOS)
+  KINAI_FLAG_TARGET_MACOS := 1
 # Emscripten
 else ifneq ($(filter $(TARGET_LC),web wgpu emsc emscripten wasm),)
-  KINAI_TARGET := $(TARGET_EMSCRIPTEN)
+  KINAI_TARGET := $(KINAI_TARGET_EMSCRIPTEN)
+  KINAI_FLAG_TARGET_EMSCRIPTEN := 1
 
 else ifeq ($(KINAI_TARGET),auto)
   ifeq ($(KINAI_HOST_PLATFORM),linux)
     ifneq (,$(findstring microsoft-standard-WSL2,$(shell uname -r)))
-      KINAI_TARGET := $(TARGET_WIN32)
+      KINAI_TARGET := $(KINAI_TARGET_WIN32)
+      KINAI_FLAG_TARGET_WIN32 := 1
+      KINAI_FLAG_WSL := 1
     else
-      KINAI_TARGET := $(TARGET_LINUX)
+      KINAI_TARGET := $(KINAI_TARGET_LINUX)
+      KINAI_FLAG_TARGET_LINUX := 1
     endif
   else ifeq ($(KINAI_HOST_PLATFORM),darwin)
-    KINAI_TARGET := $(TARGET_MACOS)
+    KINAI_TARGET := $(KINAI_TARGET_MACOS)
+    KINAI_FLAG_TARGET_MACOS := 1
   else
-    KINAI_TARGET := $(KINAI_HOST_PLATFORM)
+    $(error Unknown target '$(KINAI_TARGET)')
   endif
 else
   $(error Unknown target '$(KINAI_TARGET)')
@@ -120,23 +130,27 @@ endif
 # Build Configuration
 # ==============================================================================
 KINAI_CFLAGS   := -Wall -Wextra -Werror
-KINAI_CXXFLAGS := -Wall -Wextra -Werror -std=c++14 -Wno-missing-field-initializers
+KINAI_CXXFLAGS := -Wall -Wextra -Werror -std=c++14
 KINAI_LDFLAGS  :=
 
 ifeq ($(KINAI_BUILD),debug)
-    KINAI_CFLAGS   += -DKINAI_DEBUG -ggdb -O0
-    KINAI_CXXFLAGS += -DKINAI_DEBUG -ggdb -O0
+  KINAI_FLAG_BUILD_DEBUG := 1
+  KINAI_CFLAGS   += -DKINAI_DEBUG -ggdb -O0
+  KINAI_CXXFLAGS += -DKINAI_DEBUG -ggdb -O0
 else ifeq ($(KINAI_BUILD),dev)
+  KINAI_FLAG_BUILD_DEV := 1
   KINAI_CFLAGS   += -O2 -DKINAI_DEV
   KINAI_CXXFLAGS += -O2 -DKINAI_DEV
 else ifeq ($(KINAI_BUILD),release)
+  KINAI_FLAG_BUILD_RELEASE := 1
   KINAI_CFLAGS   += -O3 -DKINAI_RELEASE
   KINAI_CXXFLAGS += -O3 -DKINAI_RELEASE
 else
   $(error Unknown build '$(KINAI_BUILD)')
 endif
 
-ifdef KINAI_BUILD_SHARED_LIB
+ifneq ($(filter $(KINAI_BUILD_SHARED_LIB),1 true yes ON on),)
+  KINAI_FLAG_BUILD_SHARED_LIB := 1
   KINAI_CFLAGS += -fPIC
   KINAI_CXXFLAGS += -fPIC
 endif
@@ -147,9 +161,11 @@ endif
 BACKEND_LC := $(shell echo $(KINAI_BACKEND) | tr '[:upper:]' '[:lower:]')
 
 ifneq ($(filter $(BACKEND_LC),opengl gl),)
- KINAI_BACKEND := OpenGL
- KINAI_CXXFLAGS += -DKINAI_OPENGL
+  KINAI_FLAG_BACKEND_OPENGL := 1
+  KINAI_BACKEND := OpenGL
+  KINAI_CXXFLAGS += -DKINAI_OPENGL
 else ifneq ($(filter $(BACKEND_LC),headless null none),)
+  KINAI_FLAG_BACKEND_HEADLESS := 1
   KINAI_BACKEND := Headless
   KINAI_CXXFLAGS += -DKINAI_HEADLESS
 else
@@ -175,7 +191,7 @@ CMAKE   := cmake
 KINAI_INCLUDE := -I $(KINAI_PATH)/include -I $(KINAI_PATH)/include/Kinai -I $(KINAI_PATH)
 
 # Platform overrides
-ifeq ($(KINAI_TARGET),$(TARGET_WIN32))
+ifdef KINAI_FLAG_TARGET_WIN32
   EXE := .exe
   DLL := .dll
   KINAI_SHARED := -s -shared -Wl,--subsystem,windows,--out-implib,$(notdir $@).a
@@ -187,12 +203,12 @@ ifeq ($(KINAI_TARGET),$(TARGET_WIN32))
     -lopengl32 \
     -lglu32 \
     -static
-else ifeq ($(KINAI_TARGET),$(TARGET_LINUX))
+else ifdef KINAI_FLAG_TARGET_LINUX
   EXE := .out
   DLL := .so
   KINAI_SHARED := -shared -fPIC -Wl,-rpath,$(KINAI_BIN_DIR)
   KINAI_LDFLAGS += -lm -lGL
-else ifeq ($(KINAI_TARGET),$(TARGET_MACOS))
+else ifdef KINAI_FLAG_TARGET_MACOS
   CC  := clang
   CXX := clang++
   DLL := .dylib
@@ -203,7 +219,7 @@ else ifeq ($(KINAI_TARGET),$(TARGET_MACOS))
     -framework Cocoa \
     -framework IOKit \
     -framework CoreVideo
-else ifeq ($(KINAI_TARGET),$(TARGET_EMSCRIPTEN))
+else ifdef KINAI_FLAG_TARGET_EMSCRIPTEN
   EXE := .html
   CC  := emcc
   CXX   := em++
@@ -254,12 +270,11 @@ $(KINAI_LIB_OBJ_DIR)/glad/%.o: $(KINAI_GLAD_DIR)/src/%.c
 	$(KINAI_Q)$(CC) $(KINAI_CFLAGS) $(KINAI_INCLUDE) -c $< -o $@
 
 # ImGui
-ifeq ($(KINAI_BACKEND),Headless)
-  KINAI_IMGUI_SRC = $(wildcard $(KINAI_IMGUI_DIR)/*.cpp)
-else
+KINAI_IMGUI_SRC = $(wildcard $(KINAI_IMGUI_DIR)/*.cpp)
+ifdef KINAI_FLAG_BACKEND_OPENGL
   IMGUI_BACKEND	= opengl3
   IMGUI_PLATFORM = sdl3
-  KINAI_IMGUI_SRC = $(wildcard $(KINAI_IMGUI_DIR)/*.cpp) $(KINAI_IMGUI_DIR)/backends/imgui_impl_$(IMGUI_BACKEND).cpp  $(KINAI_IMGUI_DIR)/backends/imgui_impl_$(IMGUI_PLATFORM).cpp
+  KINAI_IMGUI_SRC += $(KINAI_IMGUI_DIR)/backends/imgui_impl_$(IMGUI_BACKEND).cpp  $(KINAI_IMGUI_DIR)/backends/imgui_impl_$(IMGUI_PLATFORM).cpp
 endif
 KINAI_IMGUI_OBJS = $(patsubst $(KINAI_IMGUI_DIR)/%.cpp,$(KINAI_LIB_OBJ_DIR)/imgui/%.o,$(KINAI_IMGUI_SRC))
 
@@ -272,12 +287,12 @@ KINAI_LIB_OBJS += $(KINAI_IMGUI_OBJS)
 # SDL3
 SDL3_BUILD_DIR = $(KINAI_SDL3_DIR)/build_$(KINAI_TARGET)_$(KINAI_ARCH)_$(KINAI_BUILD)
 
-ifeq ($(KINAI_BACKEND),OpenGL)
-	ifeq ($(KINAI_TARGET),$(TARGET_MACOS))
+ifdef KINAI_FLAG_BACKEND_OPENGL
+	ifdef KINAI_FLAG_TARGET_MACOS
     KINAI_LDFLAGS += $(shell pkgconf --libs SDL3)
-	else ifeq ($(KINAI_TARGET),$(TARGET_WIN32))
+	else ifdef KINAI_FLAG_TARGET_WIN32
     KINAI_LDFLAGS += $(KINAI_SDL3_DIR)/bin/$(KINAI_TARGET)/libSDL3.dll.a
-	else ifeq ($(KINAI_TARGET),$(TARGET_LINUX))
+	else ifdef KINAI_FLAG_TARGET_LINUX
     LIB_SDL3 = $(SDL3_BUILD_DIR)/libSDL3.so
     KINAI_LDFLAGS += -L $(SDL3_BUILD_DIR) -lSDL3
 	endif
@@ -303,7 +318,7 @@ $(KINAI_LIB_OBJ_DIR)/stb_image/%.o: $(KINAI_STB_DIR)/%.c
 KINAI_LIB_OBJS += $(STB_IMAGE_OBJS)
 
 # fmt
-ifdef KINAI_BUILD_SHARED_LIB
+ifdef KINAI_FLAG_BUILD_SHARED_LIB
   FMT_BUILD_DIR = $(KINAI_FMT_DIR)/build_$(KINAI_TARGET)_$(KINAI_ARCH)_$(KINAI_BUILD)/shared
   LIB_FMT = $(FMT_BUILD_DIR)/libfmt$(DLL)
   LIB_FMT_FLAGS = -DBUILD_SHARED_LIBS=ON
@@ -325,6 +340,15 @@ $(LIB_FMT): $(FMT_MAKEFILE)
 	$(KINAI_Q)$(MAKE) -C $(FMT_BUILD_DIR)
 
 # ==============================================================================
+# Shader compiler
+# ==============================================================================
+KINAI_SHDC_PATH = $(KINAI_PATH)/tools/shdc
+KINAI_SHDC = $(KINAI_SHDC_PATH)/shdc
+
+$(KINAI_SHDC):
+	$(KINAI_Q)$(MAKE) $(NO_PRINT_DIRECTORY) -C $(KINAI_SHDC_PATH)
+
+# ==============================================================================
 # Source Files
 # ==============================================================================
 KINAI_SRC = $(wildcard					\
@@ -336,14 +360,14 @@ KINAI_SRC = $(wildcard					\
 )
 
 # Backend-specific additions
-ifeq ($(KINAI_BACKEND),OpenGL)
+ifdef KINAI_FLAG_BACKEND_OPENGL
   KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/OpenGL/*.cpp)
-  ifeq ($(KINAI_TARGET),$(TARGET_EMSCRIPTEN))
+  ifdef KINAI_FLAG_TARGET_EMSCRIPTEN
     KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/Emscripten/*.cpp)
   else
     KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/SDL/*.cpp)
   endif
-else ifeq ($(KINAI_BACKEND),Headless)
+else ifdef KINAI_FLAG_BACKEND_HEADLESS
   KINAI_SRC += $(wildcard $(KINAI_PATH)/src/Platform/Headless/*.cpp)
 endif
 
@@ -354,7 +378,7 @@ KINAI_OBJS = $(patsubst $(KINAI_PATH)/src/%.cpp,$(KINAI_OBJ_DIR)/%.o,$(KINAI_SRC
 # Build Rules
 # ==============================================================================
 # === Shared library ===
-ifdef KINAI_BUILD_SHARED_LIB
+ifdef KINAI_FLAG_BUILD_SHARED_LIB
 KINAI := $(KINAI_BIN_DIR)/libKinai$(DLL)
 
 $(KINAI_OBJ_DIR)/%.o: $(KINAI_PATH)/src/%.cpp
@@ -364,7 +388,7 @@ $(KINAI_OBJ_DIR)/%.o: $(KINAI_PATH)/src/%.cpp
 
 all: $(KINAI)
 
-$(KINAI): $(LIB_FMT) $(LIB_SDL3) $(KINAI_LIB_OBJS) $(KINAI_OBJS)
+$(KINAI): $(KINAI_SHDC) $(LIB_FMT) $(LIB_SDL3) $(KINAI_LIB_OBJS) $(KINAI_OBJS)
 	@echo "[ LD] $@"
 	$(KINAI_Q)mkdir -p $(dir $@)
 	$(KINAI_Q)$(CXX) -o $@ $(KINAI_OBJS) $(KINAI_LIB_OBJS) $(KINAI_LDFLAGS) $(KINAI_SHARED)
@@ -380,7 +404,7 @@ $(KINAI_OBJ_DIR)/%.o: $(KINAI_PATH)/src/%.cpp
 
 all: $(KINAI)
 
-$(KINAI): $(LIB_FMT) $(LIB_SDL3) $(KINAI_LIB_OBJS) $(KINAI_OBJS)
+$(KINAI): $(KINAI_SHDC) $(LIB_FMT) $(LIB_SDL3) $(KINAI_LIB_OBJS) $(KINAI_OBJS)
 	@echo "[ AR] $@"
 	$(KINAI_Q)mkdir -p $(dir $@)
 	$(KINAI_Q)$(AR) $(ARFLAGS) $(KINAI) $(KINAI_OBJS) $(KINAI_LIB_OBJS)
@@ -392,11 +416,11 @@ endif
 # ==============================================================================
 ifneq (,$(filter $(KINAI_VERBOSE),1 true yes))
 $(info ===== Kinai Build =====)
-$(info Target  | $(KINAI_TARGET))
-$(info Arch    | $(KINAI_ARCH))
-$(info Backend | $(KINAI_BACKEND))
-$(info Build   | $(KINAI_BUILD))
-$(info Shared  | $(KINAI_BUILD_SHARED_LIB))
+$(info Target         | $(KINAI_TARGET))
+$(info Arch           | $(KINAI_ARCH))
+$(info Backend        | $(KINAI_BACKEND))
+$(info Build          | $(KINAI_BUILD))
+$(info Shared         | $(KINAI_BUILD_SHARED_LIB))
 $(info KINAI_PATH     | $(KINAI_PATH))
 $(info KINAI_INCLUDE  | $(KINAI_INCLUDE))
 $(info KINAI_CFLAGS   | $(KINAI_CFLAGS))
@@ -404,7 +428,7 @@ $(info KINAI_CXXFLAGS | $(KINAI_CXXFLAGS))
 $(info KINAI_LDFLAGS  | $(KINAI_LDFLAGS))
 $(info KINAI_OBJ_DIR  | $(KINAI_OBJ_DIR))
 $(info KINAI_BIN_DIR  | $(KINAI_BIN_DIR))
-$(info Kinai    | $(KINAI))
+$(info KINAI          | $(KINAI))
 $(info =======================)
 endif
 
@@ -435,4 +459,5 @@ ifdef KINAI_REMOVE_PREFIX
   COLOR_YELLOW := $(KINAI_COLOR_YELLOW)
   COLOR_GREY := $(KINAI_COLOR_GREY)
   COLOR_RED := $(KINAI_COLOR_RED)
+  SHDC := $(KINAI_SHDC)
 endif

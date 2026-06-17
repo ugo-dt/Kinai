@@ -9,7 +9,7 @@ class HeadlessTexture2D : public Texture2D
 {
 public:
 	HeadlessTexture2D(const TextureConfig& config);
-	HeadlessTexture2D(const std::string& path, const TextureConfig& config);
+	HeadlessTexture2D(const std::string& path, const TextureConfig& config, bool flip_vertically = true);
 	~HeadlessTexture2D();
 
 	const TextureConfig& GetConfig() const override { return _config; }
@@ -31,10 +31,10 @@ public:
 private:
 	TextureConfig _config;
 	std::string _path;
-	bool _is_loaded;
+	bool _is_loaded, _flip_vertically;
 	int _width, _height;
 	uint32_t _renderer_id;
-	GLenum _internal_format, _data_format;
+	unsigned int _internal_format, _data_format;
 };
 
 class HeadlessTextureCubeMap : public TextureCubeMap
@@ -65,7 +65,7 @@ private:
 	bool _is_loaded;
 	int _width, _height;
 	uint32_t _renderer_id;
-	GLenum _internal_format, _data_format;
+	unsigned int _internal_format, _data_format;
 };
 
 } // Kinai

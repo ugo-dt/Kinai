@@ -11,23 +11,24 @@ public:
 	HeadlessFramebuffer(const FramebufferConfig &spec);
 	~HeadlessFramebuffer();
 
-	void	Invalidate();
+	void Invalidate();
 
-	void	Bind() override;
-	void	Unbind() override;
+	void Bind() override;
+	void Unbind() override;
 
-	void	Resize(int width, int height) override;
-	int		ReadPixel(uint32_t attachmentIndex, int x, int y) override;
+	void Resize(int width, int height) override;
+	int ReadPixel(uint32_t attachmentIndex, int x, int y) override;
 
-	void	ClearAttachment(uint32_t attachmentIndex, int value) override;
+	void BindAttachment(uint32_t attachmentIndex, uint32_t slot = 0) override;
+	void ClearAttachment(uint32_t attachmentIndex, int value) override;
 
-	uint32_t	GetColorAttachmentRendererID(uint32_t index = 0) const override
+	uint32_t GetColorAttachmentRendererID(uint32_t index = 0) const override
 	{
 		KN_ASSERT(index < _color_attachments.size());
 		return _color_attachments[index];
 	}
-	uint32_t	GetRendererID() const override { return _renderer_id; }
-	uint32_t	GetDepthAttachmentRendererID() const override { return _depth_attachment; }
+	uint32_t GetRendererID() const override { return _renderer_id; }
+	uint32_t GetDepthAttachmentRendererID() const override { return _depth_attachment; }
 
 	const FramebufferConfig&	GetConfig() const override { return _config; }
 

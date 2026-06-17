@@ -16,7 +16,7 @@ public:
 
 	void	OnRender()
 	{
-		float time = SDL_GetTicks() / 1000.f;
+		float time = std::chrono::duration<float>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
 		float r = glm::sin(time) * 0.5f + 0.5f,
 			g = glm::cos(time) * 0.5f + 0.5f;
 
@@ -114,7 +114,17 @@ uint32_t indices[] = {
 
 AppLayer::AppLayer(AppState *state)
 	: Kinai::Layer("App Layer"),
-	  _state(state)
+	  _state(state),
+	  _pipeline(Kinai::Pipeline::Create(Kinai::PipelineConfig{
+	  	.vao = Kinai::VertexArray::Create(),
+	  	.shader = Kinai::Shader::Create(quadProgramShaderConfig()),
+	  	.layout = Kinai::BufferLayout{
+	  		{ Kinai::ShaderDataType::Float3, "a_Position" },
+	  		{ Kinai::ShaderDataType::Float4, "a_Color" }
+	  	},
+	  	.label = "Cube pipeline",
+	  })),
+	  _bindings(Kinai::Bindings::Create())
 {
 	g_state = state; // Store the state in a global variable for the EventsLayer
 	assert(state);
@@ -125,24 +135,14 @@ AppLayer::AppLayer(AppState *state)
 			.camera = Kinai::PerspectiveCameraController(Kinai::PerspectiveCameraControllerConfig{
 				.position = {0.0f, 0.0f, 5.0f},
 			}),
-			.pipeline = Kinai::Pipeline::Create(Kinai::PipelineConfig{
-				.vao = Kinai::VertexArray::Create(),
-				.shader = Kinai::Shader::Create(quadProgramShaderConfig()),
-				.layout = Kinai::BufferLayout{
-					{ Kinai::ShaderDataType::Float3, "a_Position" },
-					{ Kinai::ShaderDataType::Float4, "a_Color" }
-				},
-				.label = "Cube pipeline",
-			}),
-			.bindings = Kinai::Bindings::Create(),
 			.mode = Kinai::PolygonMode::Fill,
 			.rotation = 0.0f,
 			.rotate = true,
 			.show_back_faces = false,
 		};
 	}
-	_state->bindings->AddVertexBuffer(Kinai::VertexBuffer::Create(cube_vertices, sizeof(cube_vertices)));
-	_state->bindings->SetIndexBuffer(Kinai::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+	_bindings->AddVertexBuffer(Kinai::VertexBuffer::Create(cube_vertices, sizeof(cube_vertices)));
+	_bindings->SetIndexBuffer(Kinai::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 }
 
 AppLayer::~AppLayer()
@@ -166,8 +166,8 @@ void AppLayer::OnRender()
 		Kinai::Renderer::SetClearColor(0.25f, 0.5f, 0.75f, 1.0f);
 		Kinai::Renderer::Clear();
 
-		Kinai::Renderer::ApplyPipeline(_state->pipeline);
-		Kinai::Renderer::ApplyBindings(_state->bindings);
+		Kinai::Renderer::ApplyPipeline(_pipeline);
+		Kinai::Renderer::ApplyBindings(_bindings);
 
 		glm::mat4 transform = glm::mat4(1.0f);
 		if (_state->rotate)
@@ -209,13 +209,13 @@ void AppLayer::OnImGuiRender()
 		_state->rotation = !_state->rotation;
 	if (ImGui::Button(app.GetWindow().IsVSync() ? "(F3) VSync ON" : "(F3) VSync OFF"))
 		app.GetWindow().SetVSync(!app.GetWindow().IsVSync());
-	if (ImGui::Button(_state->pipeline->GetFaceWinding() == Kinai::FaceWinding::CCW
+	if (ImGui::Button(_pipeline->GetFaceWinding() == Kinai::FaceWinding::CCW
 		? "(F4) glFrontFace(GL_CCW)"
 		: "(F4) glFrontFace(GL_CW)")
 	)
 	{
-		_state->pipeline->SetFaceWinding(
-			_state->pipeline->GetFaceWinding() == Kinai::FaceWinding::CCW
+		_pipeline->SetFaceWinding(
+			_pipeline->GetFaceWinding() == Kinai::FaceWinding::CCW
 			? Kinai::FaceWinding::CW : Kinai::FaceWinding::CCW
 		);
 	}
@@ -229,10 +229,10 @@ void AppLayer::OnImGuiRender()
 		_state->mode = _state->mode == Kinai::PolygonMode::Fill ? Kinai::PolygonMode::Line : Kinai::PolygonMode::Fill;
 		Kinai::Renderer::SetPolygonMode(_state->mode);
 	}
-	if (ImGui::Button(_state->pipeline->GetCullMode() == Kinai::CullMode::Back ? "glCullFace(GL_BACK)" : "glCullFace(GL_FRONT)"))
+	if (ImGui::Button(_pipeline->GetCullMode() == Kinai::CullMode::Back ? "glCullFace(GL_BACK)" : "glCullFace(GL_FRONT)"))
 	{
-		_state->pipeline->SetCullMode(
-			_state->pipeline->GetCullMode() == Kinai::CullMode::Back
+		_pipeline->SetCullMode(
+			_pipeline->GetCullMode() == Kinai::CullMode::Back
 			? Kinai::CullMode::Front : Kinai::CullMode::Back
 		);
 	}
@@ -266,8 +266,8 @@ bool AppLayer::OnKeyPressed(Kinai::KeyPressedEvent &event)
 			Kinai::Application::Get().GetWindow().SetVSync(!Kinai::Application::Get().GetWindow().IsVSync());
 			break;
 		case Kinai::Key::F4:
-			_state->pipeline->SetFaceWinding(
-				_state->pipeline->GetFaceWinding() == Kinai::FaceWinding::CCW
+			_pipeline->SetFaceWinding(
+				_pipeline->GetFaceWinding() == Kinai::FaceWinding::CCW
 				? Kinai::FaceWinding::CW : Kinai::FaceWinding::CCW
 			);
 			break;

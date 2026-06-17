@@ -25,6 +25,7 @@ public:
 	bool SetVSync(bool enabled) override;
 	bool SetEventCallback(const EventCallback &callback) override;
 	bool SetTitle(const std::string &title) override;
+	bool SetIcon(const std::string &icon_path) override;
 	bool SetRelativeMouseMode(bool enabled) override;
 	void WarpMouse(float x, float y) override;
 	bool ToggleFullscreen() override;
@@ -41,6 +42,7 @@ private:
 	bool _hovered;
 	bool _fullscreen;
 	glm::ivec2 _size;
+	std::string _icon_path;
 };
 
 } // Kinai

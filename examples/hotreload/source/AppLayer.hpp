@@ -12,8 +12,6 @@ struct AppState
 {
 	bool first_load;
 	Kinai::PerspectiveCameraController	camera;
-	Kinai::Ref<Kinai::Pipeline>	pipeline;
-	Kinai::Ref<Kinai::Bindings>	bindings;
 	Kinai::PolygonMode mode = Kinai::PolygonMode::Fill;
 	float rotation;
 	bool rotate;
@@ -35,4 +33,6 @@ public:
 
 private:
 	AppState *_state;
+	Kinai::Ref<Kinai::Pipeline>	_pipeline;
+	Kinai::Ref<Kinai::Bindings>	_bindings;
 };

@@ -124,6 +124,14 @@ bool HeadlessWindow::SetTitle(const std::string &title)
 	return true;
 }
 
+bool HeadlessWindow::SetIcon(const std::string &icon_path)
+{
+	KN_PROFILE_FUNC();
+
+	_icon_path = icon_path;
+	return true;
+}
+
 bool HeadlessWindow::SetRelativeMouseMode(bool enabled)
 {
 	KN_PROFILE_FUNC();
