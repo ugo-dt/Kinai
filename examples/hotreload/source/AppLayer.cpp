@@ -12,6 +12,7 @@ public:
 	void	OnUpdate(float delta)
 	{
 		KN_NOTUSED(delta);
+		std::cout << "eventslayer" << std::endl;
 	}
 
 	void	OnRender()
@@ -20,6 +21,7 @@ public:
 		float r = glm::sin(time) * 0.5f + 0.5f,
 			g = glm::cos(time) * 0.5f + 0.5f;
 
+		Kinai::Renderer::SetViewport(0, 0, 400, 400);
 		Kinai::Renderer::SetClearColor(r, g, 0.3f, 1.0f);
 		Kinai::Renderer::Clear();
 	}
@@ -37,6 +39,8 @@ public:
 
 	bool	OnKeyPressed(Kinai::KeyPressedEvent &event)
 	{
+		if (event.IsRepeat())
+			return false;
 		switch (event.GetKeyCode())
 		{
 			case Kinai::Key::Escape:
@@ -46,19 +50,21 @@ public:
 				g_state->current_layer = AppLayerType::AppLayer;
 				TransitionTo<AppLayer>(g_state);
 				break;
+			case Kinai::Key::E:
+				QueueRemoval();
+				break;
 			default:
 				break;
 		}
 		return true;
 	}
 
-	bool	OnMouseButtonPressed(Kinai::MouseButtonPressedEvent &event)
+	bool OnMouseButtonPressed(Kinai::MouseButtonPressedEvent &event)
 	{
 		std::cout << event.ToString() << std::endl;
 		return true;
 	}
 };
-
 
 float	cube_vertices[] = {
 	-1.0, -1.0, -1.0,   1.0, 0.0, 0.0, 1.0,
@@ -155,6 +161,8 @@ void AppLayer::OnUpdate(float delta)
 		TransitionTo<EventsLayer>();
 	_state->camera.OnUpdate(delta);
 	_state->rotation += delta;
+
+	std::cout << "applayer" << std::endl;
 }
 
 void AppLayer::OnRender()
@@ -163,6 +171,7 @@ void AppLayer::OnRender()
 		return;
 	Kinai::Renderer::BeginPass();
 	{
+		Kinai::Renderer::SetViewport(0, 0, Kinai::Application::Get().GetWindow().GetSizeInPixels().x, Kinai::Application::Get().GetWindow().GetSizeInPixels().y);
 		Kinai::Renderer::SetClearColor(0.25f, 0.5f, 0.75f, 1.0f);
 		Kinai::Renderer::Clear();
 
@@ -249,6 +258,8 @@ void AppLayer::OnEvent(Kinai::Event& event)
 
 bool AppLayer::OnKeyPressed(Kinai::KeyPressedEvent &event)
 {
+	if (event.IsRepeat())
+		return false;
 	switch (event.GetKeyCode())
 	{
 		case Kinai::Key::Escape:
@@ -278,6 +289,9 @@ bool AppLayer::OnKeyPressed(Kinai::KeyPressedEvent &event)
 		case Kinai::Key::Q:
 			_state->current_layer = AppLayerType::EventsLayer;
 			TransitionTo<EventsLayer>();
+			break;
+		case Kinai::Key::E:
+			Push<EventsLayer>();
 			break;
 		default:
 			break;

@@ -56,7 +56,7 @@ $(GAME): $(KINAI) $(GAME_OBJS)
 	@echo "$(COLOR_GREEN)Successfully built $(notdir $@)$(COLOR_DEFAULT)"
 
 $(GAME_LINK): $(GAME)
-	@echo "[LN] $@"
+	@echo "[ LN] $@"
 	$(Q)ln -sf $(GAME) $@
 
 $(OBJ_DIR)/%.o: %.cpp

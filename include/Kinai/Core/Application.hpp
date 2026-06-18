@@ -48,6 +48,11 @@ public:
 		_layerStack.push_back(std::make_unique<T>(std::forward<Args>(args)...));
 	}
 
+	void PushLayer(std::unique_ptr<Layer> layer)
+	{
+		_layerStack.push_back(std::move(layer));
+	}
+
 	void PushLayer(Layer *layer)
 	{
 		_layerStack.push_back(std::unique_ptr<Layer>(layer));

@@ -29,7 +29,7 @@ constexpr uint32_t MAX_TEXTURE_SLOTS = 4;
 
 struct QuadVertex
 {
-	glm::vec4 position;
+	glm::vec4 position; // xy = position, zw = uv
 	glm::vec4 color;
 };
 

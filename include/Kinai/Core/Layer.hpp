@@ -28,13 +28,26 @@ public:
 		QueueTransition(std::move(std::make_unique<T>(std::forward<Args>(args)...)));
 	}
 
+	template <typename T, typename... Args>
+	void Push(Args&&... args)
+	{
+		QueuePush(std::move(std::make_unique<T>(std::forward<Args>(args)...)));
+	}
+
+	void QueueRemoval();
+
 private:
 	void QueueTransition(std::unique_ptr<Layer> layer);
+	void QueuePush(std::unique_ptr<Layer> layer);
 
 private:
 	friend class Application;
-	static std::vector<std::tuple<Layer*, std::unique_ptr<Layer>>>	_pendingTransitions;
+	static std::vector<std::tuple<Layer*, std::unique_ptr<Layer>>> _pendingTransitions;
+	static std::vector<std::unique_ptr<Layer>> _pendingPushes;
+	static std::vector<Layer*> _pendingRemovals;
 	void DoTransition(std::unique_ptr<Layer> to);
+	void DoPush(std::unique_ptr<Layer> to);
+	void DoRemoval();
 
 private:
 	std::string	_debug_name;

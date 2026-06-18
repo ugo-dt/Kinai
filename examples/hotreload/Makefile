@@ -57,7 +57,7 @@ $(GAME): $(KINAI) $(SHADERS_INCLUDE) $(GAME_OBJS)
 	@echo "$(COLOR_GREEN)Successfully built $(GAME)$(COLOR_DEFAULT)"
 
 $(GAME_LINK): $(GAME)
-	@echo "[LN] $@"
+	@echo "[ LN] $@"
 	$(Q)ln -sf $(GAME) $@
 
 $(OBJ_DIR)/$(GAME_DIR)/%.o: source/$(GAME_DIR)/%.cpp $(SHADERS_INCLUDE)
@@ -81,7 +81,7 @@ $(RELOAD): $(KINAI) $(GAME) $(GAME_LINK) $(RELOAD_OBJ)
 	@echo "$(COLOR_GREEN)Successfully built $(RELOAD)$(COLOR_DEFAULT)"
 
 $(RELOAD_LINK): $(RELOAD)
-	@echo "[LN] $@"
+	@echo "[ LN] $@"
 	$(Q)ln -sf $(RELOAD) $@
 
 run: $(RELOAD_LINK)

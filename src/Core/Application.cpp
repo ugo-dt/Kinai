@@ -143,6 +143,14 @@ void Application::Run()
 		_window->OnUpdate();
 
 		// Handle layer transitions
+		for (auto& removal : Layer::_pendingRemovals)
+			removal->DoRemoval();
+		Layer::_pendingRemovals.clear();
+
+		for (auto& push : Layer::_pendingPushes)
+			push->DoPush(std::move(push));
+		Layer::_pendingPushes.clear();
+
 		for (auto& pending : Layer::_pendingTransitions)
 		{
 			auto& from = std::get<0>(pending);
