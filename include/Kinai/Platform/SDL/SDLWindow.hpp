@@ -16,7 +16,7 @@ public:
 	~SDLWindow();
 
 	void OnUpdate() override;
-
+	const char* GetLastError() const override;
 	void* GetNativeWindow() const override;
 	glm::ivec2 GetSize() const override;
 	glm::ivec2 GetSizeInPixels() const override;

@@ -44,6 +44,13 @@ void* HeadlessWindow::GetNativeWindow() const
 	return nullptr;
 }
 
+const char* HeadlessWindow::GetLastError() const
+{
+	KN_PROFILE_FUNC();
+
+	return "No error";
+}
+
 glm::ivec2 HeadlessWindow::GetSize() const
 {
 	KN_PROFILE_FUNC();

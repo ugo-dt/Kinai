@@ -36,7 +36,6 @@ EmWindow::EmWindow(const WindowProps& props, int flags)
 	ctx = emscripten_webgl_create_context(_canvas_name, &attrs);
 	emscripten_webgl_make_context_current(ctx);
 	glGetIntegerv(GL_FRAMEBUFFER_BINDING, (GLint *)&_framebuffer);
-
 	
 	emscripten_set_keydown_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, this, true, EmWindow::OnKeyPressed);
 	emscripten_set_keyup_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, this, true, EmWindow::OnKeyReleased);
@@ -72,33 +71,38 @@ void EmWindow::OnUpdate()
 	KN_PROFILE_FUNC();
 }
 
-void*	EmWindow::GetNativeWindow() const
+void* EmWindow::GetNativeWindow() const
 {
 	return nullptr;
 }
 
-glm::ivec2	EmWindow::GetSize() const
+const char* EmWindow::GetLastError() const
+{
+	return "No error";
+}
+
+glm::ivec2 EmWindow::GetSize() const
 {
 	KN_PROFILE_FUNC();
 
 	return glm::ivec2(GetWidth(), GetHeight());
 }
 
-glm::ivec2	EmWindow::GetSizeInPixels() const
+glm::ivec2 EmWindow::GetSizeInPixels() const
 {
 	KN_PROFILE_FUNC();
 
 	return GetSize();
 }
 
-uint32_t	EmWindow::GetWidth() const
+uint32_t EmWindow::GetWidth() const
 {
 	KN_PROFILE_FUNC();
 
 	return _width;
 }
 
-uint32_t	EmWindow::GetHeight() const
+uint32_t EmWindow::GetHeight() const
 {
 	KN_PROFILE_FUNC();
 

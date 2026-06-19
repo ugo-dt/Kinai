@@ -218,9 +218,14 @@ void SDLWindow::OnUpdate()
 	SDL_GL_SwapWindow(_handle);
 }
 
-void	*SDLWindow::GetNativeWindow() const
+void *SDLWindow::GetNativeWindow() const
 {
 	return _handle;
+}
+
+const char* SDLWindow::GetLastError() const
+{
+	return SDL_GetError();
 }
 
 glm::ivec2	SDLWindow::GetSize() const
@@ -278,8 +283,7 @@ bool SDLWindow::SetTitle(const std::string &title)
 bool SDLWindow::SetIcon(const std::string &icon_path)
 {
 	//TODO
-	// Log::Warn("SDL version 3.4.0 or higher is required");
-	return false;
+	// return false;
 	KN_ASSERT(_handle, "invalid window handle!");
 	// KN_ASSERT(icon_path.ends_with(".png"), "expected .png file, got {}", icon_path);
 	SDL_Surface *icon = SDL_LoadPNG(icon_path.c_str());
@@ -289,6 +293,7 @@ bool SDLWindow::SetIcon(const std::string &icon_path)
 		SDL_DestroySurface(icon);
 		return status;
 	}
+	Log::Warn("SDL version 3.4.0 or higher is required");
 	Log::Error("Failed to load window icon from '{}': {}", icon_path, SDL_GetError());
 	return false;
 }

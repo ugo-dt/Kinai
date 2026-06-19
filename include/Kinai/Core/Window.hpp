@@ -41,7 +41,7 @@ public:
 	virtual ~Window() = default;
 
 	virtual void OnUpdate() = 0;
-
+	virtual const char* GetLastError() const = 0;
 	virtual void* GetNativeWindow() const = 0;
 	virtual glm::ivec2 GetSize() const = 0;
 	virtual glm::ivec2 GetSizeInPixels() const = 0;
