@@ -183,7 +183,7 @@ KINAI_BIN_DIR     := $(KINAI_PATH)/bin/$(KINAI_TARGET)/$(KINAI_ARCH)/$(KINAI_BAC
 # ==============================================================================
 # Toolchain
 # ==============================================================================
-CC      := gcc-14
+CC      := gcc
 CXX     := g++
 AR      := ar
 ARFLAGS := rcs
@@ -293,13 +293,14 @@ ifdef KINAI_FLAG_BACKEND_OPENGL
 	else
     LIB_SDL3 = $(SDL3_BUILD_DIR)/libSDL3$(DLL)
     KINAI_LDFLAGS += -L $(SDL3_BUILD_DIR) -lSDL3 -Wl,-rpath,$(SDL3_BUILD_DIR)
+#     KINAI_LDFLAGS += $(shell pkg-config --libs sdl3)
 	endif
 endif
 
 $(SDL3_BUILD_DIR): $(KINAI_SDL3_DIR)/CMakeLists.txt
 	@echo "$(COLOR_GREY)Configuring SDL3...$(COLOR_DEFAULT)"
 	$(KINAI_Q)mkdir -p $(SDL3_BUILD_DIR)
-	$(KINAI_Q)$(CMAKE) -S $(KINAI_SDL3_DIR) -B $(SDL3_BUILD_DIR) -DSDL_TEST_LIBRARY=OFF -DSDL_TESTS=OFF
+	$(KINAI_Q)$(CMAKE) -S $(KINAI_SDL3_DIR) -B $(SDL3_BUILD_DIR) -DSDL_TEST_LIBRARY=OFF -DSDL_TESTS=OFF -DSDL_X11_XSCRNSAVER=OFF -DSDL_X11_XTEST=OFF
 
 $(LIB_SDL3): $(SDL3_BUILD_DIR)
 	@echo "$(COLOR_GREY)Building SDL3...$(COLOR_DEFAULT)"

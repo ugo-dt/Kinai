@@ -1,6 +1,7 @@
 #include "Kinai/Platform/SDL/SDLWindow.hpp"
 #include "Kinai/ImGui/ImGuiLayer.hpp"
 #include "Kinai/Core/Application.hpp"
+#include "SDL3/SDL_revision.h"
 
 namespace Kinai
 {
@@ -42,6 +43,7 @@ SDLWindow::SDLWindow(const WindowProps &props)
 		SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS) == true,
 		"Failed to init SDL! {}", SDL_GetError()
 	);
+    Log::Info("SDL version: %d.%d.%d", SDL_MAJOR_VERSION, SDL_MINOR_VERSION, SDL_MICRO_VERSION);
 
 	if (desc_def.no_depth_buffer)
 	{
@@ -207,7 +209,7 @@ void SDLWindow::_handle_event(SDL_Event &event)
 void SDLWindow::OnUpdate()
 {
 	KN_ASSERT(_handle, "invalid window handle!");
-	SDL_Event	event;
+	SDL_Event event;
 
 	while (SDL_PollEvent(&event))
 	{
