@@ -43,7 +43,15 @@
 	#define KINAI_HAS_THREADS 1
 	#include <glad/glad.h>
 	#if defined(_WIN32)
-		#define WIN32_MEAN_AND_LEAN
+		#ifndef WIN32_LEAN_AND_MEAN
+		#define WIN32_LEAN_AND_MEAN
+		#endif
+		#ifndef NOMINMAX
+		#define NOMINMAX
+		#endif
+		#include <winsock2.h>
+		#include <ws2tcpip.h>
+		#include <ws2ipdef.h>
 		#include <windows.h>
 		#include <direct.h>
 	#elif defined(__APPLE__)
@@ -54,11 +62,25 @@
 		#include <GL/gl.h>
 		#include <GL/glu.h>
 	#endif
+
+	#if !defined(_WIN32)
+		#include <arpa/inet.h>
+		#include <dlfcn.h>
+		#include <fcntl.h>
+		#include <net/if.h>
+		#include <netinet/ip.h>
+		#include <netinet/in.h>
+		#include <sys/ioctl.h>
+		#include <poll.h>
+		#include <sys/socket.h>
+		#include <sys/types.h>
+	#endif
 #elif defined(KN_PLATFORM_WEB)
 	#include <emscripten/emscripten.h>
 	#include <emscripten/html5.h>
 	#include <emscripten/key_codes.h>
 	#include <GLES3/gl3.h>
+	#define KINAI_HAS_THREADS 0
 #endif
 
 #if defined(KINAI_OPENGL)
