@@ -378,6 +378,8 @@ KINAI_OBJS = $(patsubst $(KINAI_PATH)/src/%.cpp,$(KINAI_OBJ_DIR)/%.o,$(KINAI_SRC
 # ==============================================================================
 # Build Rules
 # ==============================================================================
+KINAI_DEPS = $(KINAI_LIB_DIR)/.deps
+
 # === Shared library ===
 ifdef KINAI_FLAG_BUILD_SHARED_LIB
 KINAI := $(KINAI_BIN_DIR)/libKinai$(DLL)
@@ -389,7 +391,7 @@ $(KINAI_OBJ_DIR)/%.o: $(KINAI_PATH)/src/%.cpp
 
 all: $(KINAI)
 
-$(KINAI): $(KINAI_SHDC) $(LIB_FMT) $(LIB_SDL3) $(KINAI_LIB_OBJS) $(KINAI_OBJS)
+$(KINAI): $(KINAI_DEPS) $(KINAI_SHDC) $(LIB_FMT) $(LIB_SDL3) $(KINAI_LIB_OBJS) $(KINAI_OBJS)
 	@echo "[ LD] $@"
 	$(KINAI_Q)mkdir -p $(dir $@)
 	$(KINAI_Q)$(CXX) -o $@ $(KINAI_OBJS) $(KINAI_LIB_OBJS) $(KINAI_LDFLAGS) $(KINAI_SHARED)
@@ -405,12 +407,17 @@ $(KINAI_OBJ_DIR)/%.o: $(KINAI_PATH)/src/%.cpp
 
 all: $(KINAI)
 
-$(KINAI): $(KINAI_SHDC) $(LIB_FMT) $(LIB_SDL3) $(KINAI_LIB_OBJS) $(KINAI_OBJS)
+$(KINAI): $(KINAI_DEPS) $(KINAI_SHDC) $(LIB_FMT) $(LIB_SDL3) $(KINAI_LIB_OBJS) $(KINAI_OBJS)
 	@echo "[ AR] $@"
 	$(KINAI_Q)mkdir -p $(dir $@)
 	$(KINAI_Q)$(AR) $(ARFLAGS) $(KINAI) $(KINAI_OBJS) $(KINAI_LIB_OBJS)
 	@echo "$(KINAI_COLOR_GREEN)Successfully built $(notdir $(KINAI)) ($(KINAI_BACKEND) - $(KINAI_TARGET) - $(KINAI_BUILD))$(KINAI_COLOR_DEFAULT)"
 endif
+
+$(KINAI_DEPS):
+	@echo "$(COLOR_GREY)Updating dependencies...$(COLOR_DEFAULT)"
+	$(KINAI_Q)git submodule update --init --recursive
+	@touch $@
 
 # ==============================================================================
 # Utility
